@@ -241,7 +241,7 @@ nav {
   font-size: clamp(3rem, 9vw, 7rem);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--brass);
   font-weight: 400;
   margin-bottom: 1.6rem;
   opacity: 0;
@@ -281,11 +281,44 @@ nav {
 }
 
 @media (max-width: 640px) {
-  .hero { padding: 7rem 1.5rem 4rem; }
-  .hero-glow { top: 12%; }
-  .hero-wordmark { letter-spacing: 0.13em; }
-  .hero-ctas { flex-direction: column; gap: 0.8rem; width: 100%; max-width: 280px; }
-  .hero-ctas .btn { width: 100%; text-align: center; }
+  .hero {
+    padding: 6.5rem 1.5rem 3rem;
+    min-height: calc(100svh - 1px);
+  }
+  .hero-glow { top: 14%; }
+  .hero-mark {
+    width: clamp(96px, 26vw, 130px);
+    margin-bottom: 1.6rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.26em;
+    margin-bottom: 1rem;
+  }
+  .hero-wordmark {
+    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    letter-spacing: 0.13em;
+    margin-bottom: 1.2rem;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 320px;
+    margin-bottom: 2.2rem;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem 1.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
