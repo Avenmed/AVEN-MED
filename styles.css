@@ -88,10 +88,11 @@ nav {
   line-height: 1;
 }
 .logo-icon {
-  width: 28px;
-  height: auto;
+  height: 36px;
+  width: auto;
   flex-shrink: 0;
   display: block;
+  mix-blend-mode: multiply;
 }
 .logo-text {
   display: flex;
@@ -117,7 +118,7 @@ nav {
 }
 @media (max-width: 640px) {
   .logo { gap: 0.55rem; }
-  .logo-icon { width: 24px; }
+  .logo-icon { height: 30px; }
   .logo .logo-mark { font-size: 1.05rem; letter-spacing: 0.28em; }
   .logo .logo-tag { font-size: 0.48rem; letter-spacing: 0.26em; }
 }
@@ -224,19 +225,16 @@ nav {
   50%      { opacity: 1;    transform: translateX(-50%) scale(1.06); }
 }
 
-/* Brass sprig — illuminated, embossed, gently floating */
+/* Brass sprig — your real logo, illuminated, gently floating */
 .hero-mark {
   position: relative;
   z-index: 1;
-  width: clamp(150px, 18vw, 240px);
+  width: clamp(200px, 24vw, 320px);
   height: auto;
   margin: 0 auto 1.6rem;
   display: block;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 250, 240, 0.85))
-    drop-shadow(0 -1px 0 rgba(124, 88, 40, 0.20))
-    drop-shadow(0 6px 14px rgba(124, 88, 40, 0.22))
-    drop-shadow(0 14px 36px rgba(176, 141, 91, 0.18));
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 14px 32px rgba(124, 88, 40, 0.22));
   opacity: 0;
   transform: translateY(18px) scale(0.96);
   animation:
@@ -314,7 +312,7 @@ nav {
     height: clamp(260px, 70vw, 360px);
   }
   .hero-mark {
-    width: clamp(120px, 32vw, 180px);
+    width: clamp(160px, 44vw, 240px);
     margin-bottom: 1rem;
   }
   .hero-wordmark {
@@ -350,7 +348,7 @@ nav {
 
 @media (max-width: 640px) and (max-height: 720px) {
   .hero { padding-top: 4.5rem; padding-bottom: 2rem; }
-  .hero-mark { width: clamp(100px, 24vw, 140px); margin-bottom: 0.6rem; }
+  .hero-mark { width: clamp(130px, 32vw, 180px); margin-bottom: 0.6rem; }
   .hero-wordmark { font-size: clamp(2.2rem, 10vw, 3.2rem); margin-bottom: 0.8rem; }
   .hero-sub { margin-bottom: 1.4rem; }
 }
@@ -1183,15 +1181,12 @@ footer { background: var(--plaster); padding: 4rem 0 2rem; border-top: 1px solid
   margin: 0 auto;
 }
 .logo-feature-image {
-  width: clamp(160px, 22vw, 240px);
+  width: clamp(220px, 28vw, 360px);
   height: auto;
   margin: 4rem auto;
   display: block;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 250, 240, 0.85))
-    drop-shadow(0 -1px 0 rgba(124, 88, 40, 0.20))
-    drop-shadow(0 6px 14px rgba(124, 88, 40, 0.22))
-    drop-shadow(0 14px 36px rgba(176, 141, 91, 0.18));
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 16px 36px rgba(124, 88, 40, 0.20));
 }
 .logo-feature-caption {
   font-family: var(--display);
