@@ -202,17 +202,16 @@ nav {
   50%      { opacity: 1;    transform: translateX(-50%) scale(1.06); }
 }
 
-/* Botanical hero mark — embossed, illuminated, gently floating */
+/* Botanical hero mark — embossed brass sprig, illuminated, gently floating */
 .hero-mark {
   position: relative;
   z-index: 1;
-  width: clamp(110px, 13vw, 170px);
+  width: clamp(170px, 22vw, 280px);
   height: auto;
-  margin: 0 auto 2.2rem;
+  margin: 0 auto 2rem;
   display: block;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 248, 232, 0.7))
-    drop-shadow(0 6px 22px rgba(176, 141, 91, 0.22));
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 8px 24px rgba(124, 92, 48, 0.18));
   opacity: 0;
   transform: translateY(18px) scale(0.96);
   animation:
@@ -288,8 +287,8 @@ nav {
   }
   .hero-glow { top: 14%; }
   .hero-mark {
-    width: clamp(96px, 26vw, 130px);
-    margin-bottom: 1.6rem;
+    width: clamp(160px, 44vw, 220px);
+    margin-bottom: 1.4rem;
   }
   .hero-eyebrow {
     font-size: 0.62rem;
