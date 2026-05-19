@@ -1743,6 +1743,50 @@ footer { background: var(--plaster); padding: 4rem 0 2rem; border-top: 1px solid
 .vip-saturdays .btn::before { background: var(--brass-soft); }
 .vip-saturdays .btn:hover { color: var(--ink); }
 
+/* === The Meaning of AVEN MED (about page) === */
+.aven-meaning {
+  background: var(--quartz);
+  padding: 8rem 2rem;
+  text-align: center;
+}
+.aven-meaning-logo {
+  width: clamp(140px, 16vw, 200px);
+  height: auto;
+  display: block;
+  margin: 0 auto 1.6rem;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 12px 28px rgba(124, 88, 40, 0.18));
+}
+.aven-meaning-name {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 400;
+  margin: 0 auto 2.8rem;
+  padding-left: 0.22em;
+  line-height: 1;
+}
+.aven-meaning-body {
+  max-width: 680px;
+  margin: 0 auto;
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.65vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 300;
+  text-align: left;
+}
+.aven-meaning-body p + p { margin-top: 1.4rem; }
+.aven-meaning-body .brass-italic { font-weight: 400; }
+
+@media (max-width: 640px) {
+  .aven-meaning { padding: 5rem 1.4rem; }
+  .aven-meaning-name { font-size: clamp(2.2rem, 9vw, 3rem); letter-spacing: 0.18em; margin-bottom: 2rem; }
+  .aven-meaning-body { font-size: 1.05rem; line-height: 1.65; }
+}
+
 /* === What we are not === */
 .what-we-are-not {
   background: var(--bone);
