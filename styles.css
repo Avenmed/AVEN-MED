@@ -1393,3 +1393,402 @@ footer { background: var(--plaster); padding: 4rem 0 2rem; border-top: 1px solid
   .logo-feature { padding: 5rem 1.5rem; }
   .logo-feature-image { max-width: 240px; margin: 2.5rem auto; }
 }
+
+/* ========================================================
+   BRAND EVOLUTION — Ecosystem, Aura, VIP, What-We-Are-Not
+   ======================================================== */
+
+/* Hero headline (replaces .hero-wordmark for new copy) */
+.hero-headline {
+  position: relative;
+  z-index: 1;
+  font-family: var(--display);
+  font-size: clamp(3rem, 8.5vw, 6.6rem);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--ink);
+  font-weight: 400;
+  margin: 0 auto 1.6rem;
+  opacity: 0;
+  animation: fadeUp 1.6s 1s ease forwards;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--brass);
+  font-weight: 300;
+}
+
+/* === Ecosystem (3-pillar) cards === */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(176, 141, 91, 0.22);
+  margin-top: 4rem;
+  border: 1px solid rgba(176, 141, 91, 0.22);
+}
+.ecosystem-card {
+  background: var(--bone);
+  padding: 3.5rem 2.6rem 3rem;
+  cursor: pointer;
+  transition: background 0.5s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  min-height: 460px;
+}
+.ecosystem-card:hover { background: var(--plaster); }
+.ecosystem-num {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.6rem;
+}
+.ecosystem-name {
+  font-family: var(--display);
+  font-size: 2.4rem;
+  color: var(--ink);
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+.ecosystem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  flex-grow: 1;
+}
+.ecosystem-list li {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--olive);
+  line-height: 1.5;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(176, 141, 91, 0.12);
+  position: relative;
+  padding-left: 1.1rem;
+}
+.ecosystem-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+  font-size: 1.2rem;
+  top: 0.4rem;
+}
+.ecosystem-list li:last-child { border-bottom: none; }
+.ecosystem-arrow {
+  margin-top: auto;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  transition: all 0.4s ease;
+}
+.ecosystem-card:hover .ecosystem-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* === Aura preview (index.html) === */
+.aura-preview {
+  background: var(--quartz);
+  padding: 7rem 0;
+  text-align: center;
+}
+.aura-preview-lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--olive);
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  line-height: 1.5;
+}
+.aura-preview-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin: 3rem 0 2.5rem;
+}
+.aura-step {
+  text-align: center;
+  padding: 0 1rem;
+}
+.aura-step-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--brass);
+  margin-bottom: 0.8rem;
+}
+.aura-step-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  display: block;
+}
+.aura-step-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--olive);
+  max-width: 220px;
+  margin: 0 auto;
+}
+.aura-preview-quote {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  color: var(--brass);
+  margin: 3.5rem auto 0;
+  max-width: 540px;
+  line-height: 1.45;
+}
+
+/* === Aura framework (services.html — extends plaster-panel) === */
+.aura-framework {
+  background: var(--plaster);
+  padding: 9rem 2rem;
+  position: relative;
+}
+.aura-panel {
+  max-width: 780px;
+  padding: 5.5rem 4rem;
+}
+.aura-panel-body { text-align: center; }
+.aura-panel-lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: var(--brass);
+  margin-bottom: 1.4rem;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+.aura-panel-intro {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 540px;
+  margin: 0 auto 2.6rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 300;
+}
+.aura-panel-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  text-align: left;
+}
+.aura-panel-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(176, 141, 91, 0.18);
+}
+.aura-panel-step:last-of-type { border-bottom: none; }
+.aura-panel-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--brass);
+  line-height: 1;
+}
+.aura-panel-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.34em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.aura-panel-desc {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--olive);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 300;
+}
+.aura-panel-quote {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+  color: var(--brass);
+  margin: 1.5rem auto 0;
+  max-width: 520px;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+/* === VIP Consultation Saturdays === */
+.vip-saturdays {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.vip-saturdays::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(201, 168, 120, 0.10), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(176, 141, 91, 0.06), transparent 55%);
+  pointer-events: none;
+}
+.vip-saturdays > * { position: relative; z-index: 1; }
+.vip-saturdays .small-caps { color: var(--brass-soft); }
+.vip-saturdays .section-title { color: var(--bone); }
+.vip-saturdays .section-title em { color: var(--brass-soft); }
+.vip-lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  color: var(--brass-soft);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.vip-detail {
+  font-size: 0.95rem;
+  color: var(--bone);
+  opacity: 0.85;
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+.vip-includes {
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+  border-top: 1px solid rgba(201, 168, 120, 0.35);
+  border-bottom: 1px solid rgba(201, 168, 120, 0.35);
+  padding: 2rem 1.5rem;
+}
+.vip-includes-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  color: var(--brass-soft);
+  margin-bottom: 1.2rem;
+  display: block;
+  text-align: center;
+}
+.vip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vip-list li {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--bone);
+  padding: 0.55rem 0 0.55rem 1.4rem;
+  position: relative;
+  opacity: 0.9;
+}
+.vip-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--brass-soft);
+  font-size: 0.7rem;
+  top: 0.85rem;
+}
+.vip-closing {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: var(--bone);
+  opacity: 0.92;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+.vip-closing em { color: var(--brass-soft); }
+.vip-saturdays .btn {
+  background: transparent;
+  border-color: var(--brass-soft);
+  color: var(--brass-soft);
+}
+.vip-saturdays .btn::before { background: var(--brass-soft); }
+.vip-saturdays .btn:hover { color: var(--ink); }
+
+/* === What we are not === */
+.what-we-are-not {
+  background: var(--bone);
+  padding: 7rem 2rem;
+  text-align: center;
+}
+.not-list {
+  list-style: none;
+  padding: 0;
+  margin: 3rem auto;
+  max-width: 460px;
+  text-align: left;
+}
+.not-list li {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+  color: var(--ink);
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(176, 141, 91, 0.2);
+  line-height: 1.4;
+  font-weight: 300;
+}
+.not-list li:last-child { border-bottom: none; }
+.not-mark {
+  color: var(--brass);
+  margin-right: 0.8rem;
+  font-style: italic;
+}
+.not-closing {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+  color: var(--brass);
+  max-width: 580px;
+  margin: 3rem auto 0;
+  line-height: 1.55;
+}
+
+/* === Mobile responsive for new sections === */
+@media (max-width: 900px) {
+  .ecosystem-grid { grid-template-columns: 1fr; }
+  .ecosystem-card { min-height: auto; padding: 3rem 2rem 2.6rem; }
+  .aura-preview-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 640px) {
+  .ecosystem-card { padding: 2.6rem 1.8rem 2.4rem; }
+  .ecosystem-name { font-size: 2rem; }
+  .ecosystem-num { font-size: 1.2rem; margin-bottom: 1.2rem; }
+
+  .aura-preview { padding: 5rem 0; }
+  .aura-preview-lede { padding: 0 1.5rem; }
+
+  .aura-framework { padding: 5rem 1.4rem; }
+  .aura-panel { padding: 3.2rem 1.8rem; }
+  .aura-panel-step { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.2rem 0; }
+  .aura-panel-num { font-size: 1.6rem; }
+
+  .vip-saturdays { padding: 5rem 1.5rem; }
+  .vip-includes { padding: 1.6rem 1.2rem; }
+
+  .what-we-are-not { padding: 5rem 1.5rem; }
+  .not-list li { padding: 0.9rem 0; }
+}
