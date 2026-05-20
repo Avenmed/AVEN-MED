@@ -46,7 +46,7 @@ const WellnessPage = ({ navigate }) => {
               { n: "01", k: "Longevity Panels", b: "Quarterly bloodwork tracking inflammation, hormones, metabolic and cardiovascular markers — interpreted, not just delivered." },
               { n: "02", k: "IV Therapy", b: "Custom-formulated infusions for immune support, cognitive performance, recovery, and pre-aesthetic optimization." },
               { n: "03", k: "Hormone Optimization", b: "Bio-identical hormone replacement and peptide therapies, prescribed conservatively and reviewed annually." },
-              { n: "04", k: "Concierge Primary Care", b: "Same-day access, unhurried visits, and a single physician who actually knows your file." }
+              { n: "04", k: "Concierge Primary Care", b: "Same-day access, unhurried visits, and a single practitioner who actually knows your file." }
             ].map((p, i) => (
               <Reveal key={p.n} delay={i * 100}>
                 <div style={{ padding: "36px 28px", border: "1px solid var(--hairline)", height: "100%", background: "var(--surface)" }}>
@@ -75,8 +75,8 @@ const WellnessPage = ({ navigate }) => {
               {
                 k: "The Foundation",
                 p: "8 weeks",
-                d: "A quarterly bloodwork baseline, two physician consultations, and an Aura skin reading. The starting point for every new AVEN patient.",
-                items: ["Comprehensive 70-marker panel", "Two physician consultations", "One IV infusion", "Aura skin reading"]
+                d: "A quarterly bloodwork baseline, two practitioner consultations, and an Aura skin reading. The starting point for every new AVEN patient.",
+                items: ["Comprehensive 70-marker panel", "Two practitioner consultations", "One IV infusion", "Aura skin reading"]
               },
               {
                 k: "The Compound",
@@ -166,7 +166,7 @@ const WellnessPage = ({ navigate }) => {
             </h2>
             <p className="body">
               We are quietly building a full concierge medical practice within
-              AVEN — a small panel, direct physician access, and the same
+              AVEN — a small panel, direct practitioner access, and the same
               standard of restraint we bring to aesthetics. Founding
               memberships will open by invitation.
             </p>

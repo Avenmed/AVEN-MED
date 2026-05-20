@@ -52,7 +52,7 @@ const ContactPage = ({ navigate }) => {
                   </div>
                   <div className="field">
                     <label>Phone</label>
-                    <input value={form.phone} onChange={set("phone")} placeholder="(212) 555 · 0148" />
+                    <input value={form.phone} onChange={set("phone")} placeholder="(704) 488 · 8280" />
                   </div>
                 </div>
 
@@ -99,7 +99,7 @@ const ContactPage = ({ navigate }) => {
                   <button className="link" onClick={() => setSent(false)}>
                     <span>Send another</span><span className="arrow"></span>
                   </button>
-                  <button className="link" onClick={() => navigate("/aura")}>
+                  <button className="link" onClick={() => navigate("/reading")}>
                     <span>Read about Aura</span><span className="arrow"></span>
                   </button>
                 </div>
@@ -113,7 +113,7 @@ const ContactPage = ({ navigate }) => {
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Visit</div>
                 <div className="display" style={{ fontSize: 22, marginTop: 8, lineHeight: 1.4, fontWeight: 300 }}>
-                  Suite 402<br />1640 Bayfront, Miami FL 33132
+                  Clinic address — to be confirmed<br />Orland Park, IL
                 </div>
               </div>
               <div>
@@ -128,7 +128,7 @@ const ContactPage = ({ navigate }) => {
                 <div className="label" style={{ color: "var(--gold)" }}>Direct</div>
                 <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
                   hello@avenmed.co<br />
-                  (212) 555 · 0148
+                  (704) 488 · 8280
                 </div>
               </div>
             </div>
@@ -140,7 +140,7 @@ const ContactPage = ({ navigate }) => {
       <section style={{ marginTop: 40 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Clinic map · Miami · hand-rendered" meta="ivory on slate · letterpress" aspect="21/9" />
+            <Ph label="Clinic map · Orland Park · hand-rendered" meta="ivory on slate · letterpress" aspect="21/9" />
           </Reveal>
         </div>
       </section>

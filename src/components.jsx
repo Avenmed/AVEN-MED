@@ -36,7 +36,7 @@ const NAV = [
   { label: "About AVEN", path: "/about" },
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
-  { label: "Aura Experience", path: "/aura" },
+  { label: "The Reading", path: "/reading" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },
 ];
@@ -67,7 +67,7 @@ const Header = ({ route, navigate }) => {
           ))}
         </nav>
         <div className="right">
-          <span className="phone">(212) 555 · 0148</span>
+          <span className="phone">(704) 488 · 8280</span>
           <a
             href="#/contact"
             onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
@@ -153,8 +153,8 @@ const Footer = ({ navigate }) => (
           <ul>
             {[
               ["Aesthetics", "/aesthetics"], ["Wellness", "/wellness"],
-              ["Aura Experience", "/aura"], ["Concierge", "/wellness"],
-              ["XERF · Laser", "/aesthetics"]
+              ["The Reading", "/reading"], ["Concierge", "/wellness"],
+              ["Advanced Rejuvenation", "/aesthetics"]
             ].map(([l, p]) => (
               <li key={l}><a href={"#" + p} onClick={(e) => { e.preventDefault(); navigate(p); }}>{l}</a></li>
             ))}
@@ -164,10 +164,10 @@ const Footer = ({ navigate }) => (
         <div>
           <h5>Visit</h5>
           <ul>
-            <li>Suite 402 · 1640 Bayfront</li>
-            <li>Miami · FL 33132</li>
+            <li>Clinic address — TBD</li>
+            <li>Orland Park · IL 60462</li>
             <li style={{ marginTop: 14 }}>hello@avenmed.co</li>
-            <li>(212) 555 · 0148</li>
+            <li>(704) 488 · 8280</li>
             <li style={{ marginTop: 14, color: "var(--muted)" }}>Mon – Sat · By Appointment</li>
           </ul>
         </div>

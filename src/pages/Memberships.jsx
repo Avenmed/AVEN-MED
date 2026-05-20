@@ -36,15 +36,14 @@ const MembershipsPage = ({ navigate }) => {
                 the clinic.
               </p>
               <div className="price">
-                <span className="amt">$150</span>
-                <span className="per">/ month</span>
+                <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>Monthly contribution</span>
               </div>
               <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
-                $1,800 / year · banked toward treatments
+                Determined in consultation
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "Monthly $150 banked toward any treatment, no expiry",
+                  "Monthly contribution banked toward any treatment, no expiry",
                   "Personalized 12-month pathway, reviewed quarterly",
                   "Priority booking · 48-hour advance access",
                   "Annual Aura skin reading included",
@@ -71,21 +70,23 @@ const MembershipsPage = ({ navigate }) => {
                 technology AVEN introduces.
               </p>
               <div className="price">
-                <span className="amt">$300</span>
-                <span className="per">/ month</span>
+                <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>By application</span>
               </div>
-              <div className="label" style={{ color: "var(--gold)", marginTop: -12 }}>
+              <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
+                Contribution structured to your plan
+              </div>
+              <div className="label" style={{ color: "var(--gold)", marginTop: 20, letterSpacing: "0.28em" }}>
                 Everything in Essential, plus —
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "$300 banked monthly toward any aesthetics or wellness service",
+                  "Monthly contribution banked toward any aesthetics or wellness service",
                   "VIP Saturday clinic hours by appointment",
                   "Two complimentary Aura consultations annually",
-                  "Early access to XERF, lasers and new technology",
-                  "Direct line to Dr. Renaud's clinical coordinator",
+                  "Early access to new treatments and clinic technology",
+                  "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Priority overflow into Wellness concierge (2027)",
-                  "Invitation to AVEN Clinic Salon events"
+                  "Member-only seasonal previews"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
                 ))}
@@ -144,13 +145,13 @@ const MembershipsPage = ({ navigate }) => {
               <div className="label" style={{ color: "var(--gold)" }}>Elevate</div>
             </div>
             {[
-              ["Monthly banked credit", "$150", "$300"],
+              ["Monthly contribution", "Determined in consultation", "By application"],
               ["Aura skin reading", "Annual", "Twice annually"],
               ["Pathway review", "Quarterly", "Quarterly + on-demand"],
               ["Priority booking", "48 hours", "Concierge line"],
               ["Saturday clinic access", "—", "Included"],
               ["Early access · new technology", "—", "First access"],
-              ["AVEN Salon events", "—", "Invitation"],
+              ["Member-only seasonal previews", "—", "Invitation"],
               ["Concierge Wellness (2027)", "Waitlist", "Priority"]
             ].map(([k, e, el], i) => (
               <div key={k}
@@ -195,7 +196,7 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
           </Reveal>
           {[
-            ["What does my monthly fee actually pay for?", "Your full monthly fee is banked toward any treatment or wellness service at AVEN — nothing is held as an administrative fee. The benefits above (priority booking, Aura readings, salon access) are included on top."],
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN — nothing is held as an administrative fee. The benefits above (priority booking, Aura readings, seasonal previews) are included on top."],
             ["What happens if I pause?", "Membership can be paused for up to twelve months without penalty. Your banked credit remains in your file and continues to be available for any service."],
             ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments and include a complimentary Aura reading for the recipient."],
             ["Is there a contract or commitment?", "There is no contract. We ask for a soft three-month minimum so that we can begin a meaningful pathway together — beyond that, you are free to continue, pause, or close at any time."],

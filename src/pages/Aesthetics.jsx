@@ -49,11 +49,11 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Advanced Rejuvenation",
-      tag: "XERF · Laser · Future",
+      tag: "Laser · Energy · Future",
       lede: "Forthcoming technology arriving at AVEN — radiofrequency, fractional laser, and energy-based skin tightening.",
       coming: "Arriving Q3 · 2026",
       treatments: [
-        { n: "XERF Skin Tightening", t: "60 min", d: "Bipolar radiofrequency for deep collagen remodeling. Comfortable, non-ablative." },
+        { n: "Radiofrequency Skin Tightening", t: "60 min", d: "Bipolar radiofrequency for deep collagen remodeling. Comfortable, non-ablative." },
         { n: "Fractional Resurfacing", t: "75 min", d: "Selective fractional laser for texture, tone, and surgical-scar refinement." },
         { n: "Vascular Laser", t: "30 min", d: "Targeted treatment of redness, telangiectasias, and rosacea-related vessels." },
         { n: "Pigment Laser", t: "30 min", d: "Q-switched targeting of solar lentigines and post-inflammatory pigment." }

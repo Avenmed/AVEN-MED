@@ -28,14 +28,14 @@ const Home = ({ navigate }) => {
                 <span>Begin a Consultation</span>
                 <span className="arrow"></span>
               </a>
-              <a href="#/aura" onClick={(e) => { e.preventDefault(); navigate("/aura"); }} className="btn">
+              <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
                 <span>Discover Aura</span>
                 <span className="arrow"></span>
               </a>
             </div>
           </div>
           <div className="meta">
-            <span>Miami · By Appointment</span>
+            <span>Orland Park · By Appointment</span>
             <span>Aesthetics · Wellness · Aura</span>
             <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
           </div>
@@ -144,7 +144,7 @@ const Home = ({ navigate }) => {
                 ph: "Botanical · ivory linen still"
               },
               {
-                k: "Aura", path: "/aura",
+                k: "Aura", path: "/reading",
                 tag: "Education · Analysis",
                 copy: "A skin analysis and consultation system that maps your face, plans your pathway, and explains rather than sells.",
                 ph: "Aura console · soft halo light"
@@ -179,14 +179,14 @@ const Home = ({ navigate }) => {
           <Reveal delay={160}>
             <Eyebrow>03 — Meet your Injector</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 24px", maxWidth: "18ch" }}>
-              Dr. Ava <em>Renaud,</em><br />MD, FAAD
+              Alaa <em>Mashal,</em><br />FNP-BC
             </h2>
             <p className="lede" style={{ marginBottom: 22 }}>
               "I read a face the way one reads a long letter — slowly, in
               context, and never out loud."
             </p>
             <p className="body">
-              Trained in dermatology and reconstructive anatomy, Dr. Renaud is the
+              Board-certified as a Family Nurse Practitioner, Alaa Mashal, FNP-BC is the
               sole injector at AVEN. She does not believe in rotating providers,
               package upsells, or treatments that announce themselves. Her
               consultations are educational and her hand is famously restrained.
@@ -196,7 +196,7 @@ const Home = ({ navigate }) => {
                 <span>Read her Philosophy</span><span className="arrow"></span>
               </a>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-                <span>Book with Dr. Renaud</span><span className="arrow"></span>
+                <span>Book with Alaa Mashal</span><span className="arrow"></span>
               </a>
             </div>
           </Reveal>
@@ -236,7 +236,7 @@ const Home = ({ navigate }) => {
             </div>
           </Reveal>
           <Reveal delay={160}>
-            <Eyebrow>04 — The Aura Experience</Eyebrow>
+            <Eyebrow>04 — The Reading</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 24px", maxWidth: "16ch" }}>
               Your face,<br />mapped in <em>light.</em>
             </h2>
@@ -247,7 +247,7 @@ const Home = ({ navigate }) => {
               calm, year-long care pathway. It does not prescribe. It explains.
             </p>
             <div style={{ marginTop: 32 }}>
-              <a href="#/aura" onClick={(e) => { e.preventDefault(); navigate("/aura"); }} className="btn">
+              <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
                 <span>Enter the Aura Page</span><span className="arrow"></span>
               </a>
             </div>
@@ -308,14 +308,15 @@ const Home = ({ navigate }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 60 }}>
             {[
-              { tier: "AVEN Essential", price: "$150", per: "month", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
-              { tier: "AVEN Elevate", price: "$300", per: "month", desc: "Concierge access. VIP Saturday hours, two annual Aura consultations, first access to new technology.", feat: true }
+              { tier: "AVEN Essential", price: "Monthly contribution", per: "Determined in consultation", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
+              { tier: "AVEN Elevate", price: "By application", per: "Structured to your plan", desc: "Concierge access. VIP Saturday hours, two annual Aura consultations, first access to new treatments.", feat: true }
             ].map((p, i) => (
               <Reveal key={p.tier} delay={i * 140} className={"plan" + (p.feat ? " feat" : "")}>
                 <div className="tier">{p.tier}{p.feat && <span style={{ color: "var(--ivory-soft)", marginLeft: 14 }}>· Founding</span>}</div>
                 <h3>{p.tier.replace("AVEN ", "")}</h3>
                 <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>{p.desc}</p>
-                <div className="price"><span className="amt">{p.price}</span><span className="per">/{p.per}</span></div>
+                <div className="price"><span className="amt" style={{ fontSize: "0.42em", fontStyle: "italic", letterSpacing: "0.02em" }}>{p.price}</span></div>
+                <div className="label" style={{ color: "var(--muted)", marginTop: -8 }}>{p.per}</div>
                 <a href="#/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link" style={{ alignSelf: "flex-start" }}>
                   <span>Inquire</span><span className="arrow"></span>
                 </a>

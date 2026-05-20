@@ -12,7 +12,7 @@ const AboutPage = ({ navigate }) => {
             <h1 className="display" style={{ fontSize: "clamp(48px, 6.4vw, 96px)", margin: "28px auto 12px", lineHeight: 1.02, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
               A name that became its own <em>meaning.</em>
             </h1>
-            <div className="label" style={{ color: "var(--muted)", marginTop: 22 }}>Founded · Miami · 2026</div>
+            <div className="label" style={{ color: "var(--muted)", marginTop: 22 }}>Founded · Orland Park · 2026</div>
           </Reveal>
 
           <div style={{ marginTop: 80, display: "flex", flexDirection: "column", gap: 28 }}>
@@ -91,6 +91,15 @@ const AboutPage = ({ navigate }) => {
             <Reveal delay={280} style={{ textAlign: "center", marginTop: 24 }}>
               <span className="label" style={{ color: "var(--gold)" }}>— The AVEN MED Philosophy</span>
             </Reveal>
+
+            <Reveal delay={340} style={{ marginTop: 64, paddingTop: 48, borderTop: "1px solid var(--hairline)" }}>
+              <div className="label" style={{ color: "var(--muted)", textAlign: "center", marginBottom: 22 }}>Founder &amp; Lead Practitioner</div>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch", textAlign: "center" }}>
+                AVEN MED is founded and led by <em style={{ fontFamily: "var(--serif)", fontStyle: "italic" }}>Alaa Mashal, FNP-BC</em> —
+                a board-certified Family Nurse Practitioner whose practice
+                is built around restraint, anatomy, and the long view of patient care.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -99,7 +108,7 @@ const AboutPage = ({ navigate }) => {
       <section style={{ paddingBottom: 80 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Dr. Renaud · environmental portrait" meta="natural light · medium format · 6×7" aspect="16/9" />
+            <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 6×7" aspect="16/9" />
           </Reveal>
         </div>
       </section>
@@ -118,7 +127,7 @@ const AboutPage = ({ navigate }) => {
                   ["01", "We look before we touch.", "Every relationship begins with a 90-minute consultation and an Aura skin reading. We do not prescribe on the first visit."],
                   ["02", "We work in millimeters.", "Aesthetic injection is anatomy first, art second. The aim is never visibility — it is balance."],
                   ["03", "We do not sell units.", "There are no packages, syringes-of-the-month, or limited-time offers. Care is sequenced across years, not appointments."],
-                  ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Dr. Renaud."],
+                  ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
                   ["05", "We educate, then we treat.", "If we have done our work properly, you will leave a consultation understanding your face better than you did when you arrived."]
                 ].map(([n, h, b]) => (
                   <div key={n} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 40, padding: "44px 0", borderTop: "1px solid var(--hairline)" }}>
@@ -146,43 +155,11 @@ const AboutPage = ({ navigate }) => {
               It is a long, slow letter the body
               is writing to itself.
             </div>
-            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— DR. AVA RENAUD</div>
+            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— ALAA MASHAL, FNP-BC</div>
           </Reveal>
         </div>
       </section>
 
-      {/* CREDENTIALS */}
-      <section className="section">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "start" }}>
-          <Reveal>
-            <Eyebrow>Training</Eyebrow>
-            <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 56px)", margin: "20px 0 0", maxWidth: "14ch" }}>
-              A practice rooted in <em>anatomy.</em>
-            </h2>
-            <Ph label="Detail · clinic still" meta="ivory linen · gold instrument" aspect="4/5" style={{ marginTop: 48 }} />
-          </Reveal>
-          <Reveal delay={140}>
-            <div style={{ display: "grid", gap: 0 }}>
-              {[
-                ["Medical Doctorate", "University of Pennsylvania School of Medicine", "2008"],
-                ["Dermatology Residency", "Mount Sinai · New York", "2012"],
-                ["Aesthetic Anatomy Fellowship", "Centre Européen d'Esthétique · Paris", "2014"],
-                ["Board Certified", "American Academy of Dermatology", "2013"],
-                ["Faculty Educator", "Allergan Medical Institute · 2018 – present", "Lecturer"],
-                ["Founder", "AVEN MED · Miami", "2026"]
-              ].map(([k, w, y]) => (
-                <div key={k} style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 24, padding: "28px 0", borderTop: "1px solid var(--hairline)" }}>
-                  <div>
-                    <div className="display" style={{ fontSize: 24, fontWeight: 300, margin: 0 }}>{k}</div>
-                    <div className="body-sm" style={{ marginTop: 4 }}>{w}</div>
-                  </div>
-                  <div className="label" style={{ alignSelf: "center", color: "var(--gold)" }}>{y}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* CONSULTATION JOURNEY */}
       <section className="section" style={{ background: "var(--bg-1)" }}>

@@ -1,4 +1,4 @@
-/* AVEN MED — Aura Experience (centerpiece) */
+/* AVEN MED — The Reading (centerpiece consultation) */
 
 const AuraVideo = () => {
   const videoRef = React.useRef(null);
@@ -45,7 +45,7 @@ const AuraVideo = () => {
   );
 };
 
-const AuraPage = ({ navigate }) => {
+const ReadingPage = ({ navigate }) => {
   const [activePin, setActivePin] = React.useState(2);
   const pins = [
     { x: 38, y: 22, k: "Pigment", v: "0.42", l: "Mild sun mapping along the upper cheek." },
@@ -70,15 +70,14 @@ const AuraPage = ({ navigate }) => {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(243,236,220,0.4), rgba(243,236,220,0.2) 30%, rgba(243,236,220,0.9))" }}></div>
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <Reveal>
-            <Eyebrow>The Aura Experience</Eyebrow>
-            <h1 className="display" style={{ fontSize: "clamp(56px, 9vw, 140px)", margin: "24px 0 24px", lineHeight: 0.94, maxWidth: "10ch" }}>
-              See your skin<br /><em>in light.</em>
+            <Eyebrow>The Reading</Eyebrow>
+            <h1 className="display" style={{ fontSize: "clamp(56px, 9vw, 140px)", margin: "24px 0 24px", lineHeight: 0.94, maxWidth: "12ch" }}>
+              Every plan begins<br />with a <em>reading.</em>
             </h1>
-            <p className="lede" style={{ maxWidth: "44ch" }}>
-              Aura is our consultation system — a high-resolution skin analysis
-              that maps your face across five dimensions and translates the
-              reading into a calm, year-long pathway. It does not prescribe.
-              It explains.
+            <p className="lede" style={{ maxWidth: "48ch" }}>
+              A considered consultation — built to read what's there, plan
+              what's next, and protect the long arc of your care. The reading
+              is complimentary. The plan is yours.
             </p>
           </Reveal>
         </div>
@@ -89,9 +88,9 @@ const AuraPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 40, alignItems: "center" }}>
           <div className="label" style={{ color: "var(--gold)" }}>AURA · A FOUNDING PRINCIPLE</div>
           <div className="display italic" style={{ fontSize: "clamp(20px, 1.8vw, 26px)", color: "var(--ivory)" }}>
-            "We built Aura to slow the consultation down — to look before we touch."
+            "We built the reading to slow the consultation down — to look before we touch."
           </div>
-          <div className="label" style={{ color: "var(--muted)" }}>— Dr. Renaud</div>
+          <div className="label" style={{ color: "var(--muted)" }}>— Alaa Mashal, FNP-BC</div>
         </div>
       </section>
 
@@ -100,7 +99,7 @@ const AuraPage = ({ navigate }) => {
         <Logo size={520} style={{ position: "absolute", right: "-120px", top: "10%", opacity: 0.06 }} />
         <div className="container" style={{ position: "relative" }}>
           <Reveal style={{ textAlign: "center" }}>
-            <Eyebrow>The Aura Consultation Experience</Eyebrow>
+            <Eyebrow>Inside The Reading</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "20px auto 0", maxWidth: "20ch" }}>
               A considered <em>consultation,</em><br />not a sales pitch.
             </h2>
@@ -140,6 +139,44 @@ const AuraPage = ({ navigate }) => {
               "We guide patients. We do not pressure them."
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* WHAT WE SEE — Aura 3D Imaging device's role */}
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="container">
+          <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
+            <Eyebrow>The Instrument</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "20px auto 0", maxWidth: "22ch" }}>
+              What we see,<br /><em>how we see it.</em>
+            </h2>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, maxWidth: 1080, margin: "0 auto" }}>
+            <Reveal>
+              <p className="body" style={{ margin: 0 }}>
+                The reading is anchored by the <em>Aura 3D Imaging System</em> —
+                a high-resolution skin analysis device that maps the face across
+                five layered dimensions: pigment, vascular, collagen, texture,
+                and volume.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="body" style={{ margin: 0 }}>
+                In twelve quiet seconds, Aura captures a three-dimensional
+                portrait of your skin in light. The image becomes the
+                conversation — every recommendation grounded in what's
+                actually there, not what could be sold.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="body" style={{ margin: 0 }}>
+                The device informs. It does not decide. Every plan that
+                follows is built by Alaa Mashal, FNP-BC, in conversation with
+                you — slowly, carefully, across the long arc of your care.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -236,7 +273,7 @@ const AuraPage = ({ navigate }) => {
                   <Ph label="Consult footage · whiteboard reading" meta="quiet dialogue · 4K" aspect="16/10" />
                   <h3 className="display" style={{ fontSize: 44, margin: "32px 0 18px" }}><em>Analyse.</em></h3>
                   <p className="body">
-                    Dr. Renaud walks you through every layer of the map at her
+                    Alaa Mashal, FNP-BC walks you through every layer of the map at her
                     own pace. She explains what she sees, what she doesn't see,
                     and what is not worth treating. Questions are encouraged.
                     Nothing is prescribed on this visit.
@@ -429,7 +466,7 @@ const AuraPage = ({ navigate }) => {
               MED, and complimentary twice annually for Elevate members.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Book the Aura Experience</span><span className="arrow"></span>
+              <span>Book The Reading</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>
@@ -438,4 +475,4 @@ const AuraPage = ({ navigate }) => {
   );
 };
 
-window.AuraPage = AuraPage;
+window.ReadingPage = ReadingPage;

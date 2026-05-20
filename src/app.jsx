@@ -116,7 +116,7 @@ const App = () => {
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
-      case "/aura": return AuraPage;
+      case "/reading": return ReadingPage;
       case "/memberships": return MembershipsPage;
       case "/contact": return ContactPage;
       default: return Home;
