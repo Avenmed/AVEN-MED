@@ -1,0 +1,238 @@
+/* AVEN MED — About / Philosophy / Injector */
+
+const AboutPage = ({ navigate }) => {
+  return (
+    <main className="page">
+      {/* HERO — AVEN MED story (centered logo + editorial essay) */}
+      <section style={{ paddingTop: 160, paddingBottom: 80, position: "relative" }}>
+        <div className="container" style={{ maxWidth: 880 }}>
+          <Reveal style={{ textAlign: "center" }}>
+            <Logo size={84} style={{ margin: "0 auto 36px" }} />
+            <Eyebrow>The AVEN Story</Eyebrow>
+            <h1 className="display" style={{ fontSize: "clamp(48px, 6.4vw, 96px)", margin: "28px auto 12px", lineHeight: 1.02, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
+              A name that became its own <em>meaning.</em>
+            </h1>
+            <div className="label" style={{ color: "var(--muted)", marginTop: 22 }}>Founded · Miami · 2026</div>
+          </Reveal>
+
+          <div style={{ marginTop: 80, display: "flex", flexDirection: "column", gap: 28 }}>
+            <Reveal>
+              <p className="lede" style={{ fontSize: "clamp(20px, 1.7vw, 24px)", textAlign: "center", maxWidth: "44ch", margin: "0 auto" }}>
+                AVEN MED was created around the idea that aesthetics and wellness
+                are a journey — not a one-time treatment.
+              </p>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "32px auto 0", maxWidth: "62ch" }}>
+                The name <em style={{ fontFamily: "var(--serif)", fontStyle: "italic" }}>AVEN</em> comes
+                from the inspiration of an avenue — a path, a direction, a
+                progression forward. Every patient walks into AVEN at a
+                different stage in life, and our goal is to guide them through
+                that journey with intention, education, honesty, and
+                personalized care.
+              </p>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
+                AVEN is not a word you'll find in the dictionary, and that was
+                intentional. We wanted to create something original — a name
+                that could become its own meaning over time. A name that feels
+                calm, refined, timeless, and elevated. To us, AVEN represents
+                growth, confidence, wellness, natural beauty, and long-term
+                refinement.
+              </p>
+            </Reveal>
+
+            {/* Botanical pause */}
+            <Reveal delay={180} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 32, padding: "44px 0 32px" }}>
+              <span style={{ flex: 1, maxWidth: 160, height: 1, background: "var(--hairline)" }}></span>
+              <Logo size={28} />
+              <span style={{ flex: 1, maxWidth: 160, height: 1, background: "var(--hairline)" }}></span>
+            </Reveal>
+
+            <Reveal>
+              <p className="display italic" style={{ fontSize: "clamp(22px, 2.4vw, 32px)", lineHeight: 1.45, textAlign: "center", color: "var(--ivory)", maxWidth: "30ch", margin: "0 auto" }}>
+                "The botanical emblem reflects our philosophy: growth, balance,
+                renewal — beauty that evolves naturally over time."
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "44px auto 0", maxWidth: "62ch" }}>
+                We believe aesthetics should enhance what already exists — not
+                change who you are. Our philosophy has always been centered
+                around natural results, prevention, skin health, and helping
+                patients feel like the best version of themselves.
+              </p>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
+                At AVEN MED, consultations are not built around selling
+                treatments. They are built around education, trust, and
+                creating personalized pathways for each patient. Whether it's
+                aesthetics, skin health, collagen support, wellness, or
+                preventative care, our approach is always thoughtful,
+                personalized, and long-term.
+              </p>
+            </Reveal>
+
+            <Reveal delay={220}>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
+                AVEN MED was intentionally designed to feel different — quieter,
+                more personal, more refined. A place where patients feel
+                comfortable, understood, educated, and cared for throughout
+                every stage of their journey.
+              </p>
+            </Reveal>
+
+            <Reveal delay={280} style={{ textAlign: "center", marginTop: 24 }}>
+              <span className="label" style={{ color: "var(--gold)" }}>— The AVEN MED Philosophy</span>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* PORTRAIT */}
+      <section style={{ paddingBottom: 80 }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="Dr. Renaud · environmental portrait" meta="natural light · medium format · 6×7" aspect="16/9" />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY GRID */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "start" }}>
+            <Reveal>
+              <Eyebrow>The Philosophy</Eyebrow>
+              <div className="label" style={{ marginTop: 22, color: "var(--muted)" }}>Five quiet rules</div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div style={{ display: "grid", gap: 0 }}>
+                {[
+                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute consultation and an Aura skin reading. We do not prescribe on the first visit."],
+                  ["02", "We work in millimeters.", "Aesthetic injection is anatomy first, art second. The aim is never visibility — it is balance."],
+                  ["03", "We do not sell units.", "There are no packages, syringes-of-the-month, or limited-time offers. Care is sequenced across years, not appointments."],
+                  ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Dr. Renaud."],
+                  ["05", "We educate, then we treat.", "If we have done our work properly, you will leave a consultation understanding your face better than you did when you arrived."]
+                ].map(([n, h, b]) => (
+                  <div key={n} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 40, padding: "44px 0", borderTop: "1px solid var(--hairline)" }}>
+                    <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--gold)", letterSpacing: "0.2em" }}>{n}</div>
+                    <div>
+                      <h3 className="display" style={{ fontSize: 34, margin: 0, fontWeight: 300, letterSpacing: "-0.005em" }}>{h}</h3>
+                      <p className="body" style={{ marginTop: 14, maxWidth: "56ch" }}>{b}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* PULL QUOTE */}
+      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(80px, 10vw, 140px) 0", position: "relative" }}>
+        <Logo size={420} style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
+        <div className="container" style={{ position: "relative", textAlign: "center" }}>
+          <Reveal>
+            <div style={{ fontFamily: "var(--serif)", color: "var(--gold)", fontSize: 80, lineHeight: 0.5, marginBottom: 28 }}>"</div>
+            <div className="display italic" style={{ fontSize: "clamp(30px, 4vw, 56px)", lineHeight: 1.3, maxWidth: "22ch", margin: "0 auto" }}>
+              A face is not a problem to be solved.
+              It is a long, slow letter the body
+              is writing to itself.
+            </div>
+            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— DR. AVA RENAUD</div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CREDENTIALS */}
+      <section className="section">
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "start" }}>
+          <Reveal>
+            <Eyebrow>Training</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 56px)", margin: "20px 0 0", maxWidth: "14ch" }}>
+              A practice rooted in <em>anatomy.</em>
+            </h2>
+            <Ph label="Detail · clinic still" meta="ivory linen · gold instrument" aspect="4/5" style={{ marginTop: 48 }} />
+          </Reveal>
+          <Reveal delay={140}>
+            <div style={{ display: "grid", gap: 0 }}>
+              {[
+                ["Medical Doctorate", "University of Pennsylvania School of Medicine", "2008"],
+                ["Dermatology Residency", "Mount Sinai · New York", "2012"],
+                ["Aesthetic Anatomy Fellowship", "Centre Européen d'Esthétique · Paris", "2014"],
+                ["Board Certified", "American Academy of Dermatology", "2013"],
+                ["Faculty Educator", "Allergan Medical Institute · 2018 – present", "Lecturer"],
+                ["Founder", "AVEN MED · Miami", "2026"]
+              ].map(([k, w, y]) => (
+                <div key={k} style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 24, padding: "28px 0", borderTop: "1px solid var(--hairline)" }}>
+                  <div>
+                    <div className="display" style={{ fontSize: 24, fontWeight: 300, margin: 0 }}>{k}</div>
+                    <div className="body-sm" style={{ marginTop: 4 }}>{w}</div>
+                  </div>
+                  <div className="label" style={{ alignSelf: "center", color: "var(--gold)" }}>{y}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CONSULTATION JOURNEY */}
+      <section className="section" style={{ background: "var(--bg-1)" }}>
+        <div className="container">
+          <Reveal>
+            <Eyebrow>What a Consultation Feels Like</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
+              Ninety unrushed minutes,<br />in a <em>quiet</em> room.
+            </h2>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
+            {[
+              { t: "00:00", k: "Arrival", b: "You arrive to a single appointment in the clinic — no other patients, no waiting room." },
+              { t: "00:10", k: "Aura reading", b: "A multispectral scan and skin map. Twelve seconds; one quiet portrait of your face in light." },
+              { t: "00:25", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
+              { t: "01:00", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
+            ].map((s, i) => (
+              <Reveal key={s.t} delay={i * 100}>
+                <div style={{ padding: "32px 24px", border: "1px solid var(--hairline)", height: "100%", background: "var(--bg)" }}>
+                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.2em" }}>{s.t}</div>
+                  <h4 className="display" style={{ fontSize: 28, margin: "20px 0 14px" }}>{s.k}</h4>
+                  <p className="body-sm" style={{ margin: 0 }}>{s.b}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section" style={{ textAlign: "center" }}>
+        <div className="container">
+          <Reveal>
+            <Logo size={42} style={{ margin: "0 auto 28px" }} />
+            <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "16px auto 28px", maxWidth: "14ch" }}>
+              Meet the <em>practice.</em>
+            </h2>
+            <p className="body" style={{ margin: "0 auto 44px" }}>
+              Consultations are by appointment only and limited to a small
+              number of new patients each month.
+            </p>
+            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+              <span>Request an Introduction</span><span className="arrow"></span>
+            </a>
+          </Reveal>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+window.AboutPage = AboutPage;

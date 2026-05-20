@@ -1,279 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AVEN MED — Aesthetics · Wellness</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/png" href="assets/aven-logo-mark.png" />
-<link rel="apple-touch-icon" href="assets/aven-logo-mark.png" />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVEN MED · A boutique aesthetics & wellness clinic</title>
+  <meta name="description" content="AVEN MED is a boutique aesthetics and wellness clinic built around restraint, anatomy, and the long relationship between a face and its years." />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preload" href="assets/bloom-chime.mp3" as="audio" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Italiana&family=Tenor+Sans&family=Playfair+Display:wght@300;400&family=DM+Serif+Display&family=Outfit:wght@300;400;500&family=Manrope:wght@300;400;500&family=Karla:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/styles.css" />
 </head>
 <body>
+  <div id="root"></div>
 
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <symbol id="sprig" viewBox="0 0 120 160">
-      <g fill="#B08D5B">
-        <path d="M59.4 14 L59.4 148 L60.6 148 L60.6 14 Z" />
-        <path d="M60 4 C51 18 51 42 60 56 C69 42 69 18 60 4 Z" />
-        <g transform="translate(60 58) rotate(42)"><path d="M0 0 C-4.5 -10 -4.5 -32 0 -42 C4.5 -32 4.5 -10 0 0 Z" /></g>
-        <g transform="translate(60 58) rotate(-42)"><path d="M0 0 C-4.5 -10 -4.5 -32 0 -42 C4.5 -32 4.5 -10 0 0 Z" /></g>
-        <g transform="translate(60 88) rotate(82)"><path d="M0 0 C-3.8 -9 -3.8 -28 0 -36 C3.8 -28 3.8 -9 0 0 Z" /></g>
-        <g transform="translate(60 88) rotate(-82)"><path d="M0 0 C-3.8 -9 -3.8 -28 0 -36 C3.8 -28 3.8 -9 0 0 Z" /></g>
-        <g transform="translate(60 118) rotate(140)"><path d="M0 0 C-2.2 -5 -2.2 -16 0 -22 C2.2 -16 2.2 -5 0 0 Z" /></g>
-        <g transform="translate(60 118) rotate(-140)"><path d="M0 0 C-2.2 -5 -2.2 -16 0 -22 C2.2 -16 2.2 -5 0 0 Z" /></g>
-      </g>
-    </symbol>
-  </defs>
-</svg>
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<nav>
-  <a href="index.html" class="logo">
-    <img class="logo-icon" src="assets/aven-logo-mark.png" alt="" aria-hidden="true" />
-    <span class="logo-text">
-      <span class="logo-mark">AVEN MED</span>
-      <span class="logo-tag">Aesthetics · Wellness</span>
-    </span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="memberships.html">Memberships</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="book.html">Book</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
+  <!-- Shared chrome + tweaks shell -->
+  <script type="text/babel" src="src/tweaks-panel.jsx"></script>
+  <script type="text/babel" src="src/components.jsx"></script>
+  <script type="text/babel" src="src/Intro.jsx"></script>
 
-<section class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <img class="hero-mark" src="assets/aven-logo-mark.png" alt="" aria-hidden="true" />
-  <div class="hero-eyebrow small-caps">Aesthetics · Skin Health · Wellness</div>
-  <h1 class="hero-headline">Results that look<br />like <em>rest</em>.</h1>
-  <p class="hero-sub">A boutique aesthetics and wellness practice built on natural refinement, education, and long-term care. Concierge-style consultations. Never pressure.</p>
-  <div class="hero-ctas">
-    <a href="book.html" class="btn">Book Consultation</a>
-    <a href="services.html" class="btn btn-ghost">Explore Treatments</a>
-  </div>
-</section>
+  <!-- Pages -->
+  <script type="text/babel" src="src/pages/Home.jsx"></script>
+  <script type="text/babel" src="src/pages/About.jsx"></script>
+  <script type="text/babel" src="src/pages/Aesthetics.jsx"></script>
+  <script type="text/babel" src="src/pages/Wellness.jsx"></script>
+  <script type="text/babel" src="src/pages/Aura.jsx"></script>
+  <script type="text/babel" src="src/pages/Memberships.jsx"></script>
+  <script type="text/babel" src="src/pages/Contact.jsx"></script>
 
-<div class="marquee">
-  <div class="marquee-track">
-    <span class="marquee-item">Aesthetics</span><span class="marquee-item">Skin Health</span><span class="marquee-item">Injectables</span><span class="marquee-item">Wellness</span><span class="marquee-item">Hormone Care</span><span class="marquee-item">Body Restoration</span><span class="marquee-item">Longevity</span><span class="marquee-item">IV Therapy</span><span class="marquee-item">Consultation</span>
-    <span class="marquee-item">Aesthetics</span><span class="marquee-item">Skin Health</span><span class="marquee-item">Injectables</span><span class="marquee-item">Wellness</span><span class="marquee-item">Hormone Care</span><span class="marquee-item">Body Restoration</span><span class="marquee-item">Longevity</span><span class="marquee-item">IV Therapy</span><span class="marquee-item">Consultation</span>
-  </div>
-</div>
-
-<section class="editorial reveal">
-  <div class="container">
-    <div class="small-caps section-label">Our Mission</div>
-    <h2 class="section-title">Boutique <em>by intention</em></h2>
-    <div class="editorial-body">
-      <p>AVEN MED is a boutique aesthetics and wellness ecosystem — a place where considered medicine, family care, and quiet refinement meet. We believe in subtlety over spectacle, in <span class="brass-italic">long-term relationships</span>, not transactions.</p>
-      <p>Every plan begins with a conversation. Every result, with intention. We measure success not by how much has changed, but by how much more you feel like yourself.</p>
-    </div>
-  </div>
-</section>
-
-<section class="services reveal">
-  <div class="container">
-    <div class="small-caps section-label">A Practice, Not a Menu</div>
-    <h2 class="section-title">Three <em>pillars</em>, one ecosystem</h2>
-    <div class="ecosystem-grid">
-      <a href="book.html" class="ecosystem-card">
-        <div class="ecosystem-num">01</div>
-        <h3 class="ecosystem-name">Aesthetics</h3>
-        <ul class="ecosystem-list">
-          <li>Botox / Dysport / Xeomin</li>
-          <li>Facial balancing</li>
-          <li>Chin filler</li>
-          <li>Cheek filler</li>
-          <li>Sculptra</li>
-          <li>Skin boosters</li>
-        </ul>
-        <span class="ecosystem-arrow">Book a Consultation →</span>
-      </a>
-      <a href="book.html" class="ecosystem-card">
-        <div class="ecosystem-num">02</div>
-        <h3 class="ecosystem-name">Skin Health</h3>
-        <ul class="ecosystem-list">
-          <li>Microneedling</li>
-          <li>PRP</li>
-          <li>Chemical peels</li>
-          <li>Medical-grade skincare</li>
-          <li>Aura facial analysis</li>
-        </ul>
-        <span class="ecosystem-arrow">Book a Consultation →</span>
-      </a>
-      <a href="book.html" class="ecosystem-card">
-        <div class="ecosystem-num">03</div>
-        <h3 class="ecosystem-name">Wellness</h3>
-        <ul class="ecosystem-list">
-          <li>Preventive wellness</li>
-          <li>Concierge-style wellness</li>
-          <li>Weight management</li>
-          <li>Wellness optimization</li>
-          <li>Personalized wellness plans</li>
-        </ul>
-        <span class="ecosystem-arrow">Book a Consultation →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="aura-preview reveal">
-  <div class="container-narrow">
-    <div class="small-caps section-label">The Aura System</div>
-    <h2 class="section-title">A considered <em>consultation</em></h2>
-    <p class="aura-preview-lede">Every consultation follows a three-part framework — built to educate, visualize, and plan, never to pressure.</p>
-    <div class="aura-preview-steps">
-      <div class="aura-step">
-        <div class="aura-step-num">01</div>
-        <div class="aura-step-label small-caps">Today</div>
-        <p class="aura-step-desc">What can safely improve the patient now.</p>
-      </div>
-      <div class="aura-step">
-        <div class="aura-step-num">02</div>
-        <div class="aura-step-label small-caps">Next</div>
-        <p class="aura-step-desc">Treatments that build on today's plan over time.</p>
-      </div>
-      <div class="aura-step">
-        <div class="aura-step-num">03</div>
-        <div class="aura-step-label small-caps">Maintenance</div>
-        <p class="aura-step-desc">How to preserve and protect results long term.</p>
-      </div>
-    </div>
-    <p class="aura-preview-quote">"We guide patients. We do not pressure them."</p>
-    <p style="text-align: center; margin-top: 2.5rem;"><a href="services.html" class="btn btn-ghost">Learn About the Aura System</a></p>
-  </div>
-</section>
-
-<section class="memberships-preview reveal">
-  <div class="container-narrow">
-    <div class="memberships-preview-card">
-      <div class="small-caps section-label">Memberships</div>
-      <h2 class="section-title">An investment, <em>not a subscription</em></h2>
-      <p class="memberships-preview-sub">Two considered memberships. One foundational, one concierge-style.<br />Both built around the long view of your care.</p>
-      <p style="margin-top: 2.4rem;"><a href="memberships.html" class="btn">Explore Memberships</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="meaning reveal">
-  <div class="plaster-panel">
-    <div class="panel-lockup">AVEN MED</div>
-    <div class="panel-sublockup">Aesthetics · Wellness</div>
-    <svg class="panel-sprig"><use href="#sprig" /></svg>
-    <div class="panel-wall-text">
-      <div class="stanza">If you look up the word <em>"aven"</em> in the dictionary,<br />you may not find it.<br />But to us, AVEN represents something deeply meaningful.</div>
-      <div class="stanza">It stems from the word <em>"avenue"</em> — the path you choose to take,<br />the direction that keeps you moving forward,<br />growing into the person you are meant to become.</div>
-      <div class="stanza">It also draws inspiration from <em>"avens,"</em><br />a flowering plant associated with natural wellness,<br />growth, and renewal.</div>
-      <div class="panel-rule"></div>
-      <div class="stanza" style="margin-top: 1.5rem;">At <strong>AVEN MED</strong>, we are honored to be part of your <em>journey</em>.</div>
-    </div>
-  </div>
-</section>
-
-<section class="logo-feature reveal">
-  <div class="small-caps section-label" style="margin-bottom: 2rem;">Our Mark</div>
-  <img class="logo-feature-image" src="assets/aven-logo-mark.png" alt="AVEN MED olive branch" />
-  <p class="logo-feature-caption">The olive sprig in our space — a quiet reminder of what we're building toward.</p>
-</section>
-
-<section class="editorial reveal" style="background: var(--quartz);">
-  <div class="container">
-    <div class="small-caps section-label">What Patients Say</div>
-    <h2 class="section-title">Heard, <em>not sold to</em></h2>
-    <div class="testimonials-preview">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <div class="testimonial-quote">For the first time, I left an appointment feeling heard rather than sold to. They built me a plan I can actually live with.</div>
-        <div class="testimonial-attribution"><strong>S.K.</strong><br />Skin Health · 6 Months</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <div class="testimonial-quote">The most natural results I've ever had. People keep asking what's different — and no one can tell.</div>
-        <div class="testimonial-attribution"><strong>M.R.</strong><br />Injectables · 1 Year</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <div class="testimonial-quote">I came in skeptical. I left with a partner in my long-term health, not a transaction.</div>
-        <div class="testimonial-attribution"><strong>D.L.</strong><br />Preventive Wellness · 8 Months</div>
-      </div>
-    </div>
-    <p style="text-align: center; margin-top: 3rem;"><a href="testimonials.html" class="btn btn-ghost">Read More</a></p>
-  </div>
-</section>
-
-<section class="about reveal">
-  <div class="about-inner">
-    <div class="small-caps section-label">About</div>
-    <h2 class="section-title">Where you <em>arrive</em></h2>
-    <p class="about-body">AVEN MED was founded on a single conviction: that aesthetic medicine, family care, and wellness should feel like an honest dialogue, not a service transaction. We are boutique by intention — considered enough to know you, deliberate enough to plan for the long view.</p>
-    <div class="signature">Growth · Confidence · Forward movement.</div>
-    <p style="margin-top: 2.5rem;"><a href="about.html" class="btn btn-ghost">Read Our Story</a></p>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="cta-content">
-    <div class="small-caps" style="color: var(--brass-soft); margin-bottom: 1.5rem;">Begin Here</div>
-    <h2>An invitation,<br />not <em>an obligation</em></h2>
-    <p>Consultations are complimentary. Bring your questions; leave with a plan that's actually yours.</p>
-    <a href="book.html" class="btn">Book a Consultation</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="footer-lockup">AVEN MED</span>
-        <div class="footer-tagline">Aesthetics · Wellness</div>
-        <p class="footer-tag">Honored to be part of your journey.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Visit</h4>
-        <ul>
-          <li><a href="#">123 Main Street</a></li>
-          <li><a href="#">Orland Park, IL 60462</a></li>
-          <li><a href="tel:+15555555555">(555) 555-5555</a></li>
-          <li><a href="mailto:info@avenmedil.com">info@avenmedil.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Practice</h4>
-        <ul>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="memberships.html">Memberships</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="book.html">Book</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">Newsletter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">© AVEN MED · All rights reserved</div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <!-- App -->
+  <script type="text/babel" src="src/app.jsx"></script>
 </body>
 </html>
