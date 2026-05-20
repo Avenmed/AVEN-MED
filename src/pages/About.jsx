@@ -145,7 +145,7 @@ const AboutPage = ({ navigate }) => {
       </section>
 
       {/* PULL QUOTE */}
-      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(80px, 10vw, 140px) 0", position: "relative" }}>
+      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(80px, 10vw, 140px) 0", position: "relative", overflow: "hidden" }}>
         <Logo size={420} style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
         <div className="container" style={{ position: "relative", textAlign: "center" }}>
           <Reveal>

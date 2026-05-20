@@ -33,7 +33,13 @@
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-html, body { margin: 0; padding: 0; }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
 html { background: var(--bg); }
 body {
   font-family: var(--sans);
@@ -639,4 +645,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .stat-row { grid-template-columns: 1fr 1fr; }
   .hero .hero-inner { grid-template-columns: 1fr; align-items: start; }
   .hero .meta { text-align: left; }
+}
+
+/* ---------- Mobile horizontal-overflow reinforcement ---------- */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
