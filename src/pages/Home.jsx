@@ -7,8 +7,8 @@ const Home = ({ navigate }) => {
       <section className="hero">
         <Ph
           className="bg"
-          label="Hero film · slow-motion portrait"
-          meta="2400×1600 · MP4 loop · warm cinematic grade"
+          label=""
+          meta=""
           style={{ position: "absolute", inset: 0, border: 0 }}
         />
         <div className="container hero-inner">

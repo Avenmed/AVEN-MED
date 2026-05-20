@@ -16,11 +16,18 @@ const Brand = ({ onClick }) => (
     style={{ display: "flex", alignItems: "center", gap: 14 }}
     aria-label="AVEN MED home"
   >
-    <Logo size={26} />
-    <span style={{
-      fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
-      textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)"
-    }}>AVEN MED</span>
+    <Logo size={30} />
+    <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+      <span style={{
+        fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
+        textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)"
+      }}>AVEN MED</span>
+      <span style={{
+        fontFamily: "var(--sans)", fontSize: 8.5, letterSpacing: "0.34em",
+        textTransform: "uppercase", fontWeight: 400, color: "var(--gold)",
+        marginTop: 6
+      }}>Aesthetics · Wellness</span>
+    </span>
   </a>
 );
 
@@ -186,7 +193,7 @@ const Ph = ({ label = "Imagery", meta = "", style = {}, dark = false, className 
     className={"ph " + (dark ? "dark " : "") + className}
     style={{ aspectRatio: aspect, ...style }}
   >
-    <span className="ph-label">{label}</span>
+    {label && <span className="ph-label">{label}</span>}
     {meta && <span className="ph-meta">{meta}</span>}
     {children}
   </div>
