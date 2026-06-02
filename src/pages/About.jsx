@@ -1,5 +1,8 @@
 /* AVEN MED — About / Philosophy / Injector */
 
+import React from 'react';
+import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+
 const AboutPage = ({ navigate }) => {
   return (
     <main className="page">
@@ -212,4 +215,4 @@ const AboutPage = ({ navigate }) => {
   );
 };
 
-window.AboutPage = AboutPage;
+export default AboutPage;

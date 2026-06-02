@@ -1,5 +1,8 @@
 /* AVEN MED — Aesthetics */
 
+import React from 'react';
+import { DividerMark, Eyebrow, Ph, Reveal } from '../components.jsx';
+
 const AestheticsPage = ({ navigate }) => {
   const [cat, setCat] = React.useState(0);
   const categories = [
@@ -195,4 +198,4 @@ const AestheticsPage = ({ navigate }) => {
   );
 };
 
-window.AestheticsPage = AestheticsPage;
+export default AestheticsPage;

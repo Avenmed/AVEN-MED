@@ -6,47 +6,15 @@
   <title>AVEN MED · A boutique aesthetics & wellness clinic</title>
   <meta name="description" content="AVEN MED is a boutique aesthetics and wellness clinic built around restraint, anatomy, and the long relationship between a face and its years." />
 
-  <link rel="icon" type="image/png" href="assets/logo.png" />
-  <link rel="preload" href="assets/bloom-chime.mp3" as="audio" />
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="preload" href="/assets/bloom-chime.mp3" as="audio" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Italiana&family=Tenor+Sans&family=Playfair+Display:wght@300;400&family=DM+Serif+Display&family=Outfit:wght@300;400;500&family=Manrope:wght@300;400;500&family=Karla:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="src/styles.css" />
-
-  <!-- Preload core scripts so the browser starts downloading in parallel while parsing -->
-  <link rel="preload" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" as="script" crossorigin="anonymous" />
-  <link rel="preload" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" as="script" crossorigin="anonymous" />
-  <link rel="preload" href="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" as="script" crossorigin="anonymous" />
-  <link rel="preload" href="src/app.jsx" as="fetch" crossorigin="anonymous" />
-  <link rel="preload" href="src/components.jsx" as="fetch" crossorigin="anonymous" />
-  <link rel="preload" href="src/pages/Home.jsx" as="fetch" crossorigin="anonymous" />
 </head>
 <body>
   <div id="root"></div>
-
-  <!-- React + Babel (production builds for faster downloads + no dev-time warnings) -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
-
-  <!-- Shared chrome + tweaks shell -->
-  <script type="text/babel" src="src/tweaks-panel.jsx"></script>
-  <script type="text/babel" src="src/components.jsx"></script>
-  <script type="text/babel" src="src/Intro.jsx"></script>
-
-  <!-- Pages -->
-  <script type="text/babel" src="src/pages/Home.jsx"></script>
-  <script type="text/babel" src="src/pages/About.jsx"></script>
-  <script type="text/babel" src="src/pages/Aesthetics.jsx"></script>
-  <script type="text/babel" src="src/pages/Wellness.jsx"></script>
-  <script type="text/babel" src="src/pages/Reading.jsx"></script>
-  <script type="text/babel" src="src/pages/Memberships.jsx"></script>
-  <script type="text/babel" src="src/pages/Contact.jsx"></script>
-
-  <!-- App -->
-  <script type="text/babel" src="src/app.jsx"></script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

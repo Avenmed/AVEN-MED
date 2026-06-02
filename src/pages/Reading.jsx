@@ -1,5 +1,8 @@
 /* AVEN MED — The Reading (centerpiece consultation) */
 
+import React from 'react';
+import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+
 const AuraVideo = () => {
   const videoRef = React.useRef(null);
   const [muted, setMuted] = React.useState(true);
@@ -475,4 +478,4 @@ const ReadingPage = ({ navigate }) => {
   );
 };
 
-window.ReadingPage = ReadingPage;
+export default ReadingPage;

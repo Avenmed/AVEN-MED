@@ -1,5 +1,8 @@
 /* AVEN MED — Wellness */
 
+import React from 'react';
+import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+
 const WellnessPage = ({ navigate }) => {
   return (
     <main className="page">
@@ -197,4 +200,4 @@ const WellnessPage = ({ navigate }) => {
   );
 };
 
-window.WellnessPage = WellnessPage;
+export default WellnessPage;

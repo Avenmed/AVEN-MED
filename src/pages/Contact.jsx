@@ -1,5 +1,8 @@
 /* AVEN MED — Contact */
 
+import React from 'react';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+
 const ContactPage = ({ navigate }) => {
   const [form, setForm] = React.useState({
     name: "", email: "", phone: "", interest: "Aesthetics", message: ""
@@ -164,4 +167,4 @@ const ContactPage = ({ navigate }) => {
   );
 };
 
-window.ContactPage = ContactPage;
+export default ContactPage;

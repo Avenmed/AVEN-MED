@@ -1,5 +1,8 @@
 /* AVEN MED — Memberships */
 
+import React from 'react';
+import { DividerMark, Eyebrow, Logo, Reveal } from '../components.jsx';
+
 const MembershipsPage = ({ navigate }) => {
   return (
     <main className="page">
@@ -243,4 +246,4 @@ const MembershipsPage = ({ navigate }) => {
   );
 };
 
-window.MembershipsPage = MembershipsPage;
+export default MembershipsPage;

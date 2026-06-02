@@ -1,4 +1,5 @@
 /* AVEN MED — shared components */
+import React from 'react';
 
 const Logo = ({ size = 22, style = {} }) => (
   <img
@@ -232,5 +233,4 @@ const Eyebrow = ({ children, muted = false }) => (
   </div>
 );
 
-// expose for other page files
-Object.assign(window, { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV });
+export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV };

@@ -2,6 +2,7 @@
    Seed falls, root + stem draw as brass ink strokes, then the REAL AVEN MED
    logo image fades in with a gentle scale + glow at the bloom moment.
    Wordmark fades in beneath; cross-fade to bone homepage. */
+import React from 'react';
 
 const Intro = ({ onDone }) => {
   const introRef = React.useRef(null);
@@ -148,4 +149,4 @@ const Intro = ({ onDone }) => {
   );
 };
 
-window.Intro = Intro;
+export default Intro;

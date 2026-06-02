@@ -1,4 +1,6 @@
 /* AVEN MED — Home */
+import React from 'react';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
 
 const Home = ({ navigate }) => {
   return (
@@ -379,4 +381,4 @@ const Home = ({ navigate }) => {
   );
 };
 
-window.Home = Home;
+export default Home;
