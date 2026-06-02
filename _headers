@@ -1,0 +1,18 @@
+# Security + cache headers for Netlify
+# Order matters: most specific rules first, /* catch-all last
+
+# Long-cache static media (logo, audio)
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Short-cache JSX + CSS so updates propagate quickly
+/src/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Default security headers on every response
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
