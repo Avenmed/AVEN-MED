@@ -42,7 +42,7 @@ const MembershipsPage = ({ navigate }) => {
                 <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>Monthly contribution</span>
               </div>
               <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
-                Determined in consultation
+                Determined at your Reading
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
@@ -85,7 +85,7 @@ const MembershipsPage = ({ navigate }) => {
                 {[
                   "Monthly contribution banked toward any aesthetics or wellness service",
                   "VIP Saturday clinic hours by appointment",
-                  "Two complimentary Aura consultations annually",
+                  "Two complimentary Aura readings annually",
                   "Early access to new treatments and clinic technology",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Priority overflow into Wellness concierge (2027)",
@@ -148,7 +148,7 @@ const MembershipsPage = ({ navigate }) => {
               <div className="label" style={{ color: "var(--gold)" }}>Elevate</div>
             </div>
             {[
-              ["Monthly contribution", "Determined in consultation", "By application"],
+              ["Monthly contribution", "Determined at your Reading", "By application"],
               ["Aura skin reading", "Annual", "Twice annually"],
               ["Pathway review", "Quarterly", "Quarterly + on-demand"],
               ["Priority booking", "48 hours", "Concierge line"],

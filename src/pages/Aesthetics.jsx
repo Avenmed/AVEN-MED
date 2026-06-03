@@ -158,7 +158,7 @@ const AestheticsPage = ({ navigate }) => {
           <Reveal delay={120}>
             <h3 className="display" style={{ fontSize: "clamp(28px, 3vw, 44px)", margin: "0 0 24px", maxWidth: "26ch" }}>
               We do not publish per-unit prices. Care is sequenced and quoted
-              <em> only</em> after a consultation.
+              <em> only</em> after a Reading.
             </h3>
             <p className="body">
               Per-syringe and per-unit pricing encourages overuse. At AVEN, we
@@ -186,7 +186,7 @@ const AestheticsPage = ({ navigate }) => {
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
               Every aesthetics journey at AVEN begins with an Aura reading
-              and a 90-minute consultation.
+              and a 90-minute Reading.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Begin Your Pathway</span><span className="arrow"></span>

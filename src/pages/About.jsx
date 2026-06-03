@@ -64,16 +64,16 @@ const AboutPage = ({ navigate }) => {
 
             <Reveal delay={120}>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "44px auto 0", maxWidth: "62ch" }}>
-                We believe aesthetics should enhance what already exists — not
+                We believe aesthetics should support what already exists — not
                 change who you are. Our philosophy has always been centered
-                around natural results, prevention, skin health, and helping
+                around prevention, restraint, skin health, and helping
                 patients feel like the best version of themselves.
               </p>
             </Reveal>
 
             <Reveal delay={180}>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
-                At AVEN MED, consultations are not built around selling
+                At AVEN MED, Readings are not built around selling
                 treatments. They are built around education, trust, and
                 creating personalized pathways for each patient. Whether it's
                 aesthetics, skin health, collagen support, wellness, or
@@ -127,11 +127,11 @@ const AboutPage = ({ navigate }) => {
             <Reveal delay={120}>
               <div style={{ display: "grid", gap: 0 }}>
                 {[
-                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute consultation and an Aura skin reading. We do not prescribe on the first visit."],
+                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute Reading. We do not prescribe on the first visit."],
                   ["02", "We work in millimeters.", "Aesthetic injection is anatomy first, art second. The aim is never visibility — it is balance."],
                   ["03", "We do not sell units.", "There are no packages, syringes-of-the-month, or limited-time offers. Care is sequenced across years, not appointments."],
                   ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
-                  ["05", "We educate, then we treat.", "If we have done our work properly, you will leave a consultation understanding your face better than you did when you arrived."]
+                  ["05", "We educate, then we treat.", "If we have done our work properly, you will leave a Reading understanding your face better than you did when you arrived."]
                 ].map(([n, h, b]) => (
                   <div key={n} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 40, padding: "44px 0", borderTop: "1px solid var(--hairline)" }}>
                     <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--gold)", letterSpacing: "0.2em" }}>{n}</div>
@@ -168,7 +168,7 @@ const AboutPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container">
           <Reveal>
-            <Eyebrow>What a Consultation Feels Like</Eyebrow>
+            <Eyebrow>What a Reading Feels Like</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
               Ninety unrushed minutes,<br />in a <em>quiet</em> room.
             </h2>
@@ -202,7 +202,7 @@ const AboutPage = ({ navigate }) => {
               Meet the <em>practice.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
-              Consultations are by appointment only and limited to a small
+              Readings are by appointment only and limited to a small
               number of new patients each month.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">

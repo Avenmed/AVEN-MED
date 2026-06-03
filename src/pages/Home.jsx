@@ -22,16 +22,16 @@ const Home = ({ navigate }) => {
               like yourself.
             </h1>
             <p className="lede" style={{ marginTop: 28, maxWidth: "38ch" }}>
-              A boutique aesthetics and wellness clinic built around restraint,
+              A private practice built around restraint,
               anatomy, and the long relationship between a face and its years.
             </p>
             <div style={{ display: "flex", gap: 18, marginTop: 38, flexWrap: "wrap" }}>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-                <span>Begin a Consultation</span>
+                <span>Begin a Reading</span>
                 <span className="arrow"></span>
               </a>
               <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
-                <span>Discover Aura</span>
+                <span>Discover AURA · Our Philosophy</span>
                 <span className="arrow"></span>
               </a>
             </div>
@@ -42,7 +42,6 @@ const Home = ({ navigate }) => {
             <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
           </div>
         </div>
-        <div className="scroll-cue"><span className="v"></span><span>Scroll</span></div>
       </section>
 
       {/* ---------- MARQUEE ---------- */}
@@ -50,7 +49,7 @@ const Home = ({ navigate }) => {
         {[0, 1].map((i) => (
           <div key={i} className="row" aria-hidden={i === 1}>
             {[
-              "Quiet luxury", "Anatomy-led artistry", "Educational consultation",
+              "Quiet luxury", "Anatomy-led artistry", "Educational Reading",
               "Membership care", "Aura skin analysis", "Concierge wellness",
               "Natural refinement", "Restraint as a practice"
             ].map((w, idx) => (
@@ -148,7 +147,7 @@ const Home = ({ navigate }) => {
               {
                 k: "Aura", path: "/reading",
                 tag: "Education · Analysis",
-                copy: "A skin analysis and consultation system that maps your face, plans your pathway, and explains rather than sells.",
+                copy: "A skin analysis and Reading system that maps your face, plans your pathway, and explains rather than sells.",
                 ph: "Aura console · soft halo light"
               }
             ].map((p, i) => (
@@ -191,7 +190,7 @@ const Home = ({ navigate }) => {
               Board-certified as a Family Nurse Practitioner, Alaa Mashal, FNP-BC is the
               sole injector at AVEN. She does not believe in rotating providers,
               package upsells, or treatments that announce themselves. Her
-              consultations are educational and her hand is famously restrained.
+              Readings are educational and her hand is famously restrained.
             </p>
             <div style={{ marginTop: 38, display: "flex", gap: 22, flexWrap: "wrap" }}>
               <a href="#/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="btn">
@@ -243,14 +242,14 @@ const Home = ({ navigate }) => {
               Your face,<br />mapped in <em>light.</em>
             </h2>
             <p className="body">
-              Aura is our proprietary consultation system — a high-resolution
+              Aura is our proprietary skin-reading system — a high-resolution
               skin analysis that maps pigmentation, vascular tone, collagen
               density, and surface texture, then translates the data into a
               calm, year-long care pathway. It does not prescribe. It explains.
             </p>
             <div style={{ marginTop: 32 }}>
               <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
-                <span>Enter the Aura Page</span><span className="arrow"></span>
+                <span>Enter AURA</span><span className="arrow"></span>
               </a>
             </div>
           </Reveal>
@@ -278,7 +277,7 @@ const Home = ({ navigate }) => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
               {[
                 ["On restraint", "She does less than I ask for, every time. And every time, I'm grateful."],
-                ["On the consultation", "We spent the first appointment doing nothing but looking. It changed how I see my own face."],
+                ["On the Reading", "We spent the first appointment doing nothing but looking. It changed how I see my own face."],
                 ["On the room", "It is the quietest medical room I have ever been in. Like a small museum."]
               ].map(([t, q], i) => (
                 <div key={t} style={{ padding: "24px 0", borderTop: "1px solid var(--hairline)" }}>
@@ -291,6 +290,32 @@ const Home = ({ navigate }) => {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* ---------- BREATH MOMENT ---------- */}
+      <section style={{
+        minHeight: "100svh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "120px 24px",
+        background: "var(--bg)",
+      }}>
+        <Reveal>
+          <Logo size={32} style={{ opacity: 0.9, margin: "0 auto 40px" }} />
+          <p className="display italic" style={{
+            fontSize: "clamp(36px, 5vw, 64px)",
+            color: "var(--ivory)",
+            margin: 0,
+            maxWidth: "18ch",
+            lineHeight: 1.2,
+            fontWeight: 300,
+          }}>
+            Look before you touch.
+          </p>
+        </Reveal>
       </section>
 
       {/* ---------- MEMBERSHIP TEASE ---------- */}
@@ -310,8 +335,8 @@ const Home = ({ navigate }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 60 }}>
             {[
-              { tier: "AVEN Essential", price: "Monthly contribution", per: "Determined in consultation", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
-              { tier: "AVEN Elevate", price: "By application", per: "Structured to your plan", desc: "Concierge access. VIP Saturday hours, two annual Aura consultations, first access to new treatments.", feat: true }
+              { tier: "AVEN Essential", price: "Monthly contribution", per: "Determined at your Reading", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
+              { tier: "AVEN Elevate", price: "By application", per: "Structured to your plan", desc: "Concierge access. VIP Saturday hours, two annual Aura readings, first access to new treatments.", feat: true }
             ].map((p, i) => (
               <Reveal key={p.tier} delay={i * 140} className={"plan" + (p.feat ? " feat" : "")}>
                 <div className="tier">{p.tier}{p.feat && <span style={{ color: "var(--ivory-soft)", marginLeft: 14 }}>· Founding</span>}</div>
@@ -367,12 +392,12 @@ const Home = ({ navigate }) => {
               Step into the <em>clinic.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
-              First consultations are 90 minutes, by appointment, and include
+              First Readings are 90 minutes, by appointment, and include
               an Aura skin analysis. There is no pressure, and nothing is
               prescribed on the first visit.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Begin a Consultation</span><span className="arrow"></span>
+              <span>Begin a Reading</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

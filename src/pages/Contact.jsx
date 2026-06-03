@@ -62,8 +62,8 @@ const ContactPage = ({ navigate }) => {
                 <div className="field">
                   <label>I am interested in</label>
                   <select value={form.interest} onChange={set("interest")}>
-                    <option>Aesthetics consultation</option>
-                    <option>Wellness consultation</option>
+                    <option>Aesthetics Reading</option>
+                    <option>Wellness Reading</option>
                     <option>Aura skin reading</option>
                     <option>AVEN Essential membership</option>
                     <option>AVEN Elevate (founding cohort)</option>

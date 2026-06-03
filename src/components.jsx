@@ -37,6 +37,7 @@ const NAV = [
   { label: "About AVEN", path: "/about" },
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
+  { label: "AURA", path: "/aura" },
   { label: "The Reading", path: "/reading" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },
@@ -72,10 +73,10 @@ const Header = ({ route, navigate }) => {
           <a
             href="#/contact"
             onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
-            className="btn solid"
-            style={{ height: 42, padding: "0 22px", fontSize: 10 }}
+            className="btn"
+            style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
           >
-            <span>Book Consultation</span>
+            <span>Book a Reading</span>
           </a>
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>
@@ -123,7 +124,7 @@ const Footer = ({ navigate }) => (
             textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)"
           }}>AVEN MED</div>
           <p className="body-sm" style={{ margin: 0 }}>
-            A boutique clinic for aesthetics, wellness, and the long, quiet practice
+            A clinic for aesthetics, wellness, and the long, quiet practice
             of looking like yourself. By appointment only.
           </p>
           <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
@@ -181,7 +182,7 @@ const Footer = ({ navigate }) => (
       </div>
 
       <div className="copy">
-        <span>© 2026 AVEN MED · A boutique aesthetics & wellness clinic</span>
+        <span>© 2026 AVEN MED · Aesthetics & Wellness</span>
         <span>Privacy · Terms · Accessibility</span>
       </div>
     </div>

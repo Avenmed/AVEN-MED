@@ -42,7 +42,7 @@ const AuraVideo = () => {
         </button>
       </div>
       <p className="aura-video-caption">
-        Inside an AVEN MED consultation — the Aura system in use.
+        Inside an AVEN MED Reading — the Aura system in use.
       </p>
     </>
   );
@@ -78,8 +78,8 @@ const ReadingPage = ({ navigate }) => {
               Every plan begins<br />with a <em>reading.</em>
             </h1>
             <p className="lede" style={{ maxWidth: "48ch" }}>
-              A considered consultation — built to read what's there, plan
-              what's next, and protect the long arc of your care. The reading
+              A Reading (our considered first visit) — built to read what's there, plan
+              what's next, and protect the long arc of your care. The Reading
               is complimentary. The plan is yours.
             </p>
           </Reveal>
@@ -88,10 +88,15 @@ const ReadingPage = ({ navigate }) => {
 
       {/* PHILOSOPHY BAR */}
       <section style={{ padding: "32px 0", borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 40, alignItems: "center" }}>
-          <div className="label" style={{ color: "var(--gold)" }}>AURA · A FOUNDING PRINCIPLE</div>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "minmax(220px, auto) 1fr auto", gap: 40, alignItems: "center" }}>
+          <div>
+            <div className="label" style={{ color: "var(--gold)" }}>AURA · A Founding Principle</div>
+            <div style={{ marginTop: 8, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 13, color: "var(--muted)", maxWidth: "32ch", lineHeight: 1.4 }}>
+              How we approach every face — anatomy first, restraint always.
+            </div>
+          </div>
           <div className="display italic" style={{ fontSize: "clamp(20px, 1.8vw, 26px)", color: "var(--ivory)" }}>
-            "We built the reading to slow the consultation down — to look before we touch."
+            "We built the Reading to slow things down — to look before we touch."
           </div>
           <div className="label" style={{ color: "var(--muted)" }}>— Alaa Mashal, FNP-BC</div>
         </div>
@@ -104,7 +109,7 @@ const ReadingPage = ({ navigate }) => {
           <Reveal style={{ textAlign: "center" }}>
             <Eyebrow>Inside The Reading</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "20px auto 0", maxWidth: "20ch" }}>
-              A considered <em>consultation,</em><br />not a sales pitch.
+              A considered <em>Reading,</em><br />not a sales pitch.
             </h2>
           </Reveal>
 
@@ -404,7 +409,7 @@ const ReadingPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container">
           <Reveal>
-            <Eyebrow>04 — A different kind of consultation</Eyebrow>
+            <Eyebrow>04 — A different kind of Reading</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 60px", maxWidth: "18ch" }}>
               Aura is an education system — <em>not</em> a sales machine.
             </h2>
@@ -465,7 +470,7 @@ const ReadingPage = ({ navigate }) => {
               Your first <em>Aura,</em><br />included.
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
-              The Aura consultation is included with every first visit at AVEN
+              The Reading is included with every first visit at AVEN
               MED, and complimentary twice annually for Elevate members.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
