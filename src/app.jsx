@@ -14,6 +14,8 @@ import ReadingPage from './pages/Reading.jsx';
 import AuraPage from './pages/Aura.jsx';
 import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
+import ServicePage from './pages/Service.jsx';
+import NotesPage from './pages/Notes.jsx';
 
 const useHashRoute = () => {
   const [route, setRoute] = React.useState(() => {
@@ -127,6 +129,8 @@ const App = () => {
   }, [t.accent, t.bg, t.fontDisplay, t.fontSans]);
 
   const Page = (() => {
+    if (route.startsWith("/service/")) return ServicePage;
+    if (route.startsWith("/notes")) return NotesPage;
     switch (route) {
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;

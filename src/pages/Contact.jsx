@@ -8,10 +8,34 @@ const ContactPage = ({ navigate }) => {
     name: "", email: "", phone: "", interest: "Aesthetics", message: ""
   });
   const [sent, setSent] = React.useState(false);
+  const [showCeremony, setShowCeremony] = React.useState(() => {
+    try { return !localStorage.getItem('aven-booking-seen'); } catch { return false; }
+  });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  React.useEffect(() => {
+    if (!showCeremony) return;
+    const t = setTimeout(() => {
+      setShowCeremony(false);
+      try { localStorage.setItem('aven-booking-seen', '1'); } catch {}
+    }, 7400);
+    return () => clearTimeout(t);
+  }, [showCeremony]);
 
   return (
     <main className="page">
+      {showCeremony && (
+        <div className="booking-ceremony" onClick={() => setShowCeremony(false)}>
+          <p className="line">A Reading begins<br />with stillness.</p>
+          <svg className="sprig-draw" viewBox="0 0 60 60" aria-hidden="true">
+            <path d="M 30,8 L 30,52" />
+            <path d="M 30,18 C 22,18 18,24 18,30 C 26,30 30,26 30,20" />
+            <path d="M 30,18 C 38,18 42,24 42,30 C 34,30 30,26 30,20" />
+            <path d="M 30,30 C 24,30 20,34 20,40 C 27,40 30,36 30,32" />
+            <path d="M 30,30 C 36,30 40,34 40,40 C 33,40 30,36 30,32" />
+          </svg>
+        </div>
+      )}
       {/* HERO */}
       <section style={{ paddingTop: 180, paddingBottom: 80 }}>
         <div className="container">
@@ -79,7 +103,7 @@ const ContactPage = ({ navigate }) => {
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
                   <button type="submit" className="btn solid"
                     style={{ height: 56 }}>
-                    <span>Send Inquiry</span><span className="arrow"></span>
+                    <span>Send</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     We respond personally — not from a queue — within one business day.
@@ -94,16 +118,14 @@ const ContactPage = ({ navigate }) => {
                   Thank you, {form.name.split(" ")[0] || "friend"}.
                 </h2>
                 <p className="body">
-                  Your inquiry has been received quietly. Our clinic coordinator,
-                  Ines, will write to you personally within one business day.
-                  In the meantime, you might enjoy reading the Aura page.
+                  We've received your Reading request. We'll be in touch within one business day.
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>
                     <span>Send another</span><span className="arrow"></span>
                   </button>
-                  <button className="link" onClick={() => navigate("/reading")}>
-                    <span>Read about Aura</span><span className="arrow"></span>
+                  <button className="link" onClick={() => navigate("/aura")}>
+                    <span>Read AURA</span><span className="arrow"></span>
                   </button>
                 </div>
               </div>
@@ -163,6 +185,7 @@ const ContactPage = ({ navigate }) => {
           </Reveal>
         </div>
       </section>
+      <div className="brand-signature">AVEN MED · Orland Park · By appointment</div>
     </main>
   );
 };

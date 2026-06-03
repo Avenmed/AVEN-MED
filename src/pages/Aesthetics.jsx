@@ -194,6 +194,7 @@ const AestheticsPage = ({ navigate }) => {
           </Reveal>
         </div>
       </section>
+      <div className="brand-signature">AVEN MED · Orland Park · By appointment</div>
     </main>
   );
 };

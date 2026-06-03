@@ -94,14 +94,18 @@ const Header = ({ route, navigate }) => {
             <button onClick={() => setMobileOpen(false)} aria-label="Close"
               style={{ fontSize: 26, color: "var(--ivory)" }}>×</button>
           </div>
-          <nav style={{ display: "flex", flexDirection: "column", gap: 28, marginTop: 80 }}>
+          <nav style={{
+            display: "flex", flexDirection: "column", gap: 36, marginTop: 100,
+            alignItems: "center", textAlign: "center"
+          }}>
             {NAV.map((n) => (
               <a key={n.path} href={"#" + n.path}
                 onClick={(e) => { e.preventDefault(); navigate(n.path); setMobileOpen(false); }}
                 style={{
-                  fontFamily: "var(--serif)", fontSize: 38, fontWeight: 300,
+                  fontFamily: "var(--serif)", fontSize: 24, fontWeight: 300,
+                  fontStyle: "italic",
                   color: route === n.path ? "var(--gold)" : "var(--ivory)",
-                  letterSpacing: "-0.01em"
+                  letterSpacing: "-0.005em"
                 }}>
                 {n.label}
               </a>
@@ -115,75 +119,39 @@ const Header = ({ route, navigate }) => {
 
 const Footer = ({ navigate }) => (
   <footer className="ftr">
-    <div className="container">
-      <div className="ftr-grid">
-        <div className="brand-block">
-          <Logo size={42} />
-          <div style={{
-            fontFamily: "var(--serif)", fontSize: 22, letterSpacing: "0.36em",
-            textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)"
-          }}>AVEN MED</div>
-          <p className="body-sm" style={{ margin: 0 }}>
-            A clinic for aesthetics, wellness, and the long, quiet practice
-            of looking like yourself. By appointment only.
-          </p>
-          <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
-            {["Instagram", "Journal", "Newsletter"].map((s) => (
-              <a key={s} href="#" className="body-sm" style={{
-                borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2,
-                fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--ivory-soft)"
-              }}>{s}</a>
-            ))}
-          </div>
-        </div>
+    <div className="container" style={{ textAlign: "center", padding: "100px 24px 60px" }}>
+      <Logo size={36} style={{ margin: "0 auto 24px", opacity: 0.9 }} />
+      <div style={{
+        fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
+        textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)", marginBottom: 6
+      }}>AVEN MED</div>
+      <div style={{
+        fontFamily: "var(--sans)", fontSize: 10, letterSpacing: "0.34em",
+        textTransform: "uppercase", fontWeight: 400, color: "var(--gold)", marginBottom: 44
+      }}>Orland Park · By Appointment</div>
 
-        <div>
-          <h5>Clinic</h5>
-          <ul>
-            {[
-              ["Home", "/"], ["About AVEN", "/about"], ["The Philosophy", "/about"],
-              ["Memberships", "/memberships"], ["Journal", "#"]
-            ].map(([l, p]) => (
-              <li key={l}><a href={"#" + p}
-                onClick={(e) => { if (p.startsWith("/")) { e.preventDefault(); navigate(p); } }}>{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h5>Practice</h5>
-          <ul>
-            {[
-              ["Aesthetics", "/aesthetics"], ["Wellness", "/wellness"],
-              ["The Reading", "/reading"], ["Concierge", "/wellness"],
-              ["Advanced Rejuvenation", "/aesthetics"]
-            ].map(([l, p]) => (
-              <li key={l}><a href={"#" + p} onClick={(e) => { e.preventDefault(); navigate(p); }}>{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h5>Visit</h5>
-          <ul>
-            <li>Clinic address — TBD</li>
-            <li>Orland Park · IL 60462</li>
-            <li style={{ marginTop: 14 }}>hello@avenmed.co</li>
-            <li>(704) 488 · 8280</li>
-            <li style={{ marginTop: 14, color: "var(--muted)" }}>Mon – Sat · By Appointment</li>
-          </ul>
-        </div>
+      <div style={{ color: "var(--gold)", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", marginBottom: 28 }}>
+        Now welcoming founding members
       </div>
 
-      <div className="divider-mark" style={{ marginTop: 80 }}>
-        <span className="line"></span>
-        <Logo size={32} />
-        <span className="line"></span>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, fontSize: 13, color: "var(--ivory-soft)", marginBottom: 56 }}>
+        <a href="mailto:hello@avenmed.co" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>hello@avenmed.co</a>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
+        <a href="#/notes" onClick={(e) => { e.preventDefault(); navigate("/notes"); }} style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Receive Field Notes · quarterly</a>
       </div>
 
-      <div className="copy">
-        <span>© 2026 AVEN MED · Aesthetics & Wellness</span>
-        <span>Privacy · Terms · Accessibility</span>
+      <div style={{
+        fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 15,
+        color: "var(--muted)", marginTop: 28,
+      }}>
+        AVEN MED — Aesthetics · Wellness
+      </div>
+
+      <div style={{
+        marginTop: 24,
+        fontSize: 10, letterSpacing: "0.08em", color: "var(--muted-2)", textTransform: "lowercase", fontFamily: "var(--sans)"
+      }}>
+        © 2026 aven med
       </div>
     </div>
   </footer>

@@ -36,10 +36,19 @@ const Home = ({ navigate }) => {
               </a>
             </div>
           </div>
-          <div className="meta">
-            <span>Orland Park · By Appointment</span>
-            <span>Aesthetics · Wellness · Aura</span>
-            <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: 40, alignItems: "flex-end", justifyContent: "space-between" }}>
+            <div className="face-line-wrap" aria-hidden="true">
+              <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet">
+                <path className="face-line" d="M 260,80 C 220,50 165,55 145,90 C 110,180 110,210 145,222 C 180,228 230,224 252,242 C 272,262 275,290 268,310 C 260,325 244,330 252,346 C 258,362 248,378 240,392 C 200,412 165,418 150,442 C 140,468 138,492 145,500" />
+                <path className="face-line detail" d="M 188,202 Q 215,192 240,210" />
+                <path className="face-line accent" d="M 240,338 Q 256,344 270,340" />
+              </svg>
+            </div>
+            <div className="meta">
+              <span>Orland Park · By Appointment</span>
+              <span>Aesthetics · Wellness · Aura</span>
+              <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
+            </div>
           </div>
         </div>
       </section>
@@ -402,6 +411,25 @@ const Home = ({ navigate }) => {
           </Reveal>
         </div>
       </section>
+
+      {/* ---------- GALLERY STRIP (3 squares, no captions) ---------- */}
+      <section style={{ padding: "0 0 clamp(80px, 8vw, 120px)" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
+            <Reveal style={{ aspectRatio: "1/1" }}>
+              <Ph label="Interior · wide" meta="plaster · warm tungsten · 16mm" aspect="1/1" style={{ width: "100%", height: "100%" }} />
+            </Reveal>
+            <Reveal delay={100} style={{ aspectRatio: "1/1" }}>
+              <Ph label="Hand detail" meta="brass instrument · ivory tile" aspect="1/1" style={{ width: "100%", height: "100%" }} />
+            </Reveal>
+            <Reveal delay={200} style={{ aspectRatio: "1/1" }}>
+              <Ph label="Still life · sprig · stone" meta="natural light · 50mm" aspect="1/1" style={{ width: "100%", height: "100%" }} />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <div className="brand-signature">AVEN MED · Orland Park · By appointment</div>
     </main>
   );
 };

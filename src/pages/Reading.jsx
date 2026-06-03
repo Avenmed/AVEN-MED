@@ -38,7 +38,7 @@ const AuraVideo = () => {
         )}
         <div className="video-play-overlay"><span className="ring"></span></div>
         <button className="video-sound-toggle" onClick={toggleSound} aria-label="Toggle sound">
-          {muted ? "🔊" : "🔇"}
+          {muted ? "Sound" : "Mute"}
         </button>
       </div>
       <p className="aura-video-caption">
@@ -479,6 +479,7 @@ const ReadingPage = ({ navigate }) => {
           </Reveal>
         </div>
       </section>
+      <div className="brand-signature">AVEN MED · Orland Park · By appointment</div>
     </main>
   );
 };
