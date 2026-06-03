@@ -37,7 +37,6 @@ const NAV = [
   { label: "About AVEN", path: "/about" },
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
-  { label: "AURA", path: "/aura" },
   { label: "The Reading", path: "/reading" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },

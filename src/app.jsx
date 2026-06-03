@@ -11,7 +11,6 @@ import AboutPage from './pages/About.jsx';
 import AestheticsPage from './pages/Aesthetics.jsx';
 import WellnessPage from './pages/Wellness.jsx';
 import ReadingPage from './pages/Reading.jsx';
-import AuraPage from './pages/Aura.jsx';
 import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
 import ServicePage from './pages/Service.jsx';
@@ -136,7 +135,6 @@ const App = () => {
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
       case "/reading": return ReadingPage;
-      case "/aura": return AuraPage;
       case "/memberships": return MembershipsPage;
       case "/contact": return ContactPage;
       default: return Home;

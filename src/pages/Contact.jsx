@@ -124,8 +124,8 @@ const ContactPage = ({ navigate }) => {
                   <button className="link" onClick={() => setSent(false)}>
                     <span>Send another</span><span className="arrow"></span>
                   </button>
-                  <button className="link" onClick={() => navigate("/aura")}>
-                    <span>Read AURA</span><span className="arrow"></span>
+                  <button className="link" onClick={() => navigate("/reading")}>
+                    <span>About The Reading</span><span className="arrow"></span>
                   </button>
                 </div>
               </div>
