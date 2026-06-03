@@ -693,20 +693,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   max-width: 22ch;
   line-height: 1.35;
 }
-.booking-ceremony .sprig-draw {
-  width: 56px; height: 56px;
+.booking-ceremony .ceremony-logo {
+  width: 64px;
+  height: auto;
   margin-top: 56px;
   opacity: 0;
-  animation: cFadeIn 800ms 1800ms ease forwards;
+  transform: scale(0.9);
+  animation: cLogoBloom 1600ms 1800ms cubic-bezier(.22,.61,.36,1) forwards;
 }
-.booking-ceremony .sprig-draw path {
-  stroke: var(--gold);
-  stroke-width: 1.4;
-  fill: none;
-  stroke-linecap: round;
-  stroke-dasharray: 220;
-  stroke-dashoffset: 220;
-  animation: drawSprig 4500ms 2200ms cubic-bezier(.4,0,.2,1) forwards;
+@keyframes cLogoBloom {
+  0%   { opacity: 0; transform: scale(0.9); filter: brightness(0.9); }
+  100% { opacity: 1; transform: scale(1);   filter: brightness(1); }
 }
 @keyframes ceremonyFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cFadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -752,13 +749,17 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   [style*="grid-template-columns: repeat(4"] {
     grid-template-columns: 1fr 1fr !important;
   }
-  /* Footer grid (existing 4-col) was already 2-col at 880; keep */
+  /* 5-col grids fold to 2-col on tablets */
+  [style*="grid-template-columns: repeat(5"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
 
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */
   [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.2fr"],
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 1.4fr"],
   [style*="grid-template-columns: 1.1fr 1fr"],
@@ -768,7 +769,9 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   [style*="grid-template-columns: 1.1fr 0.9fr 1fr"],
   [style*="grid-template-columns: 320px 1fr"],
   [style*="grid-template-columns: minmax(220px"],
-  [style*="grid-template-columns: repeat(3"] {
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns: repeat(5"] {
     grid-template-columns: 1fr !important;
     gap: clamp(28px, 6vw, 48px) !important;
   }

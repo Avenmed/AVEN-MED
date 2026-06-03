@@ -27,13 +27,7 @@ const ContactPage = ({ navigate }) => {
       {showCeremony && (
         <div className="booking-ceremony" onClick={() => setShowCeremony(false)}>
           <p className="line">A Reading begins<br />with stillness.</p>
-          <svg className="sprig-draw" viewBox="0 0 60 60" aria-hidden="true">
-            <path d="M 30,8 L 30,52" />
-            <path d="M 30,18 C 22,18 18,24 18,30 C 26,30 30,26 30,20" />
-            <path d="M 30,18 C 38,18 42,24 42,30 C 34,30 30,26 30,20" />
-            <path d="M 30,30 C 24,30 20,34 20,40 C 27,40 30,36 30,32" />
-            <path d="M 30,30 C 36,30 40,34 40,40 C 33,40 30,36 30,32" />
-          </svg>
+          <img className="ceremony-logo" src="/assets/logo.png" alt="" aria-hidden="true" />
         </div>
       )}
       {/* HERO */}
