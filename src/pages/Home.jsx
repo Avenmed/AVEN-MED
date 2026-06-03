@@ -36,19 +36,10 @@ const Home = ({ navigate }) => {
               </a>
             </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 40, alignItems: "flex-end", justifyContent: "space-between" }}>
-            <div className="face-line-wrap" aria-hidden="true">
-              <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet">
-                <path className="face-line" d="M 260,80 C 220,50 165,55 145,90 C 110,180 110,210 145,222 C 180,228 230,224 252,242 C 272,262 275,290 268,310 C 260,325 244,330 252,346 C 258,362 248,378 240,392 C 200,412 165,418 150,442 C 140,468 138,492 145,500" />
-                <path className="face-line detail" d="M 188,202 Q 215,192 240,210" />
-                <path className="face-line accent" d="M 240,338 Q 256,344 270,340" />
-              </svg>
-            </div>
-            <div className="meta">
-              <span>Orland Park · By Appointment</span>
-              <span>Aesthetics · Wellness · Aura</span>
-              <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
-            </div>
+          <div className="meta">
+            <span>Orland Park · By Appointment</span>
+            <span>Aesthetics · Wellness · Aura</span>
+            <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
           </div>
         </div>
       </section>

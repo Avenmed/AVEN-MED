@@ -659,38 +659,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
 }
 
-/* ---------- Hero line-drawing animation (Section 2 / Option A) ---------- */
-.face-line-wrap {
-  position: relative;
-  width: clamp(220px, 32vw, 420px);
-  aspect-ratio: 4/5;
-  margin-left: auto;
-}
-.face-line-wrap svg { width: 100%; height: 100%; display: block; }
-.face-line {
-  fill: none;
-  stroke: #B08D5B;
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: drawFace 14s cubic-bezier(.4,.0,.2,1) infinite;
-}
-.face-line.detail { stroke-width: 1; opacity: 0.9; animation-delay: 1.4s; }
-.face-line.accent { stroke-width: 1.2; animation-delay: 2.6s; }
-@keyframes drawFace {
-  0%   { stroke-dashoffset: 1200; opacity: 0; }
-  6%   { opacity: 1; }
-  60%  { stroke-dashoffset: 0;    opacity: 1; }
-  80%  { stroke-dashoffset: 0;    opacity: 1; }
-  92%  { opacity: 0; }
-  100% { stroke-dashoffset: 1200; opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .face-line { animation: none; stroke-dashoffset: 0; opacity: 1; }
-}
-
 /* ---------- Brand signature line (every page bottom) ---------- */
 .brand-signature {
   text-align: center;
@@ -749,7 +717,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 768px) {
   /* Hero — force intentional line breaks and stack visual beneath */
   .hero .hero-inner { grid-template-columns: 1fr !important; gap: 36px !important; }
-  .face-line-wrap { margin: 0 auto; width: clamp(180px, 60vw, 280px); }
   /* Header — collapse Book CTA to compact text on small screens */
   .hdr .right .btn { padding: 0 14px !important; font-size: 9px !important; height: 34px !important; letter-spacing: 0.24em !important; }
   .hdr .phone { display: none; }
