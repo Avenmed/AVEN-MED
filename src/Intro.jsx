@@ -33,31 +33,31 @@ const Intro = ({ onDone }) => {
   React.useEffect(() => {
     const t = timersRef.current;
 
-    // 1.1s — seed begins to fall
+    // 0.3s — seed begins to fall
     t.push(setTimeout(() => {
       const s = seedRef.current;
       if (s) s.classList.add("falling");
-    }, 1100));
+    }, 300));
 
-    // 1.85s — root draws downward
+    // 0.65s — root draws downward
     t.push(setTimeout(() => {
       const r = rootLineRef.current;
       if (r) r.classList.add("draw-line");
-    }, 1850));
+    }, 650));
 
-    // 2.6s — stem draws upward
+    // 0.95s — stem draws upward
     t.push(setTimeout(() => {
       const s = stemLineRef.current;
       if (s) s.classList.add("draw-line");
-    }, 2600));
+    }, 950));
 
-    // 3.3s — real logo blooms (extended 2.4s)
+    // 1.3s — real AVEN logo blooms
     t.push(setTimeout(() => {
       const l = logoRef.current;
       if (l) l.classList.add("blooming");
-    }, 3300));
+    }, 1300));
 
-    // 5.7s — bloom halo + chime
+    // 2.2s — bloom halo + chime
     t.push(setTimeout(() => {
       const h = haloRef.current;
       if (h) h.classList.add("glowing");
@@ -67,16 +67,16 @@ const Intro = ({ onDone }) => {
         const p = chime.play();
         if (p && p.catch) p.catch(() => {});
       }
-    }, 5700));
+    }, 2200));
 
-    // 6.7s — wordmark (quicker 500ms fade)
+    // 2.7s — wordmark fades in
     t.push(setTimeout(() => {
       const w = wordmarkRef.current;
       if (w) w.classList.add("show");
-    }, 6700));
+    }, 2700));
 
-    // 7.5s — cross-dissolve to home
-    t.push(setTimeout(endIntro, 7500));
+    // 3.4s — cross-dissolve to home
+    t.push(setTimeout(endIntro, 3400));
 
     // Aggressive skip
     const skip = () => endIntro();
