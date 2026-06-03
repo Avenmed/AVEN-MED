@@ -717,8 +717,107 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 768px) {
   /* Hero — force intentional line breaks and stack visual beneath */
   .hero .hero-inner { grid-template-columns: 1fr !important; gap: 36px !important; }
-  /* Header — collapse Book CTA to compact text on small screens */
-  .hdr .right .btn { padding: 0 14px !important; font-size: 9px !important; height: 34px !important; letter-spacing: 0.24em !important; }
+  /* Header — Book CTA stays tappable (44px Apple HIG min) but compact text */
+  .hdr .right .btn { padding: 0 16px !important; font-size: 9px !important; height: 44px !important; letter-spacing: 0.24em !important; }
   .hdr .phone { display: none; }
 }
+
+/* ======================================================
+   COMPREHENSIVE MOBILE OPTIMIZATION PASS
+   Breakpoints: 480 (small mobile) · 768 (mobile) · 1024 (tablet) · 1440 (large)
+   ====================================================== */
+
+/* iOS Safari: prevent auto-zoom on input focus (requires 16px+) */
+input, textarea, select { font-size: 16px; }
+
+/* Touch-friendly minimum target sizes (Apple HIG / WCAG 2.5.5) */
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  -webkit-tap-highlight-color: rgba(154, 125, 74, 0.18);
+}
+
+/* Don't accidentally highlight decorative elements on long-press */
+.brand, .brand img, .logo-icon, img[src*="logo"],
+.divider-mark, .face-line, .panel-sprig, .pillar-sprig,
+.brand-signature, .hero .meta, .ribbon, .ribbon * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Lazy-load semantics for content imagery */
+img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
+
+/* === TABLET (≤ 1024px) === */
+@media (max-width: 1024px) {
+  /* 4-col grids fold to 2-col on tablets */
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Footer grid (existing 4-col) was already 2-col at 880; keep */
+}
+
+/* === MOBILE (≤ 768px) === */
+@media (max-width: 768px) {
+  /* All multi-column inline-style grids stack to single column */
+  [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 1fr 1.4fr"],
+  [style*="grid-template-columns: 1.1fr 1fr"],
+  [style*="grid-template-columns: 1.4fr 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns: 1.1fr 0.9fr 1fr"],
+  [style*="grid-template-columns: 320px 1fr"],
+  [style*="grid-template-columns: minmax(220px"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: clamp(28px, 6vw, 48px) !important;
+  }
+
+  /* Reading philosophy bar — center its single column when stacked */
+  [style*="grid-template-columns: minmax(220px"] > * {
+    text-align: center;
+  }
+
+  /* Larger top padding for stacked hero sections */
+  .container { padding-left: 24px; padding-right: 24px; }
+
+  /* Slow marquee + smaller text — easier on the eyes at 320–414px */
+  .ribbon .row { animation-duration: 80s; font-size: clamp(20px, 5vw, 32px); }
+
+  /* Touch targets: .link gets bigger tap area */
+  .link { padding: 8px 0 8px; min-height: 44px; }
+  .btn { min-height: 44px; }
+  .video-sound-toggle { width: 44px; height: 44px; }
+
+  /* Tighter section padding on mobile so pages aren't endless */
+  .section { padding: clamp(56px, 12vw, 96px) 0 !important; }
+  .section.tight { padding: clamp(40px, 8vw, 64px) 0 !important; }
+
+  /* Footer copy + ::before signature stay legible */
+  .brand-signature { font-size: 9px; letter-spacing: 0.28em; padding: 24px 16px 40px; }
+}
+
+/* === SMALL MOBILE (≤ 480px) === */
+@media (max-width: 480px) {
+  /* Intro animation: trim stage + reduce spectacle */
+  .intro-stage { width: min(86vw, 300px) !important; height: auto !important; aspect-ratio: 4/5; }
+  .intro-logo-real { width: min(38vw, 120px) !important; }
+  .intro-mark { font-size: 1.35rem !important; letter-spacing: 0.36em !important; }
+
+  /* Body padding tightens, but never enough to cramp the brand */
+  .container { padding-left: 18px; padding-right: 18px; }
+
+  /* Hero headline — keep manual breaks but cap font */
+  .hero h1 { font-size: clamp(2.4rem, 11vw, 3.2rem) !important; }
+  h1.display, .display { letter-spacing: 0 !important; }
+
+  /* Smaller buttons but still 44px tall (touch target) */
+  .btn { padding: 0 18px; letter-spacing: 0.22em; min-height: 44px; height: 44px; }
+}
+
+/* === Large desktop (≥ 1440px): give the type room === */
+@media (min-width: 1440px) {
+  .container { padding-left: 96px; padding-right: 96px; }
+}
+
 

@@ -65,22 +65,40 @@ const ContactPage = ({ navigate }) => {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
                   <div className="field">
                     <label>Full Name</label>
-                    <input value={form.name} onChange={set("name")} required placeholder="Maren Ellsworth" />
+                    <input
+                      value={form.name}
+                      onChange={set("name")}
+                      required
+                      placeholder="Maren Ellsworth"
+                      type="text"
+                      autoComplete="name"
+                      autoCapitalize="words"
+                    />
                   </div>
-                  <div className="field">
-                    <label>Preferred Pronouns</label>
-                    <input placeholder="She / Her" />
-                  </div>
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
                   <div className="field">
                     <label>Email</label>
-                    <input type="email" required value={form.email} onChange={set("email")} placeholder="maren@clinic.co" />
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={set("email")}
+                      placeholder="maren@clinic.co"
+                      autoComplete="email"
+                      autoCapitalize="off"
+                      inputMode="email"
+                    />
                   </div>
-                  <div className="field">
-                    <label>Phone</label>
-                    <input value={form.phone} onChange={set("phone")} placeholder="(704) 488 · 8280" />
-                  </div>
+                </div>
+                <div className="field">
+                  <label>Phone</label>
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={set("phone")}
+                    placeholder="(704) 488 · 8280"
+                    autoComplete="tel"
+                    inputMode="tel"
+                  />
                 </div>
 
                 <div className="field">
@@ -152,8 +170,8 @@ const ContactPage = ({ navigate }) => {
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Direct</div>
                 <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
-                  hello@avenmed.co<br />
-                  (704) 488 · 8280
+                  <a href="mailto:hello@avenmed.co" style={{ color: "var(--ivory)" }}>hello@avenmed.co</a><br />
+                  <a href="tel:+17044888280" style={{ color: "var(--ivory)" }}>(704) 488 · 8280</a>
                 </div>
               </div>
             </div>

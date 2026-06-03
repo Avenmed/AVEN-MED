@@ -68,7 +68,7 @@ const Header = ({ route, navigate }) => {
           ))}
         </nav>
         <div className="right">
-          <span className="phone">(704) 488 · 8280</span>
+          <a className="phone" href="tel:+17044888280" style={{ color: "var(--ivory-soft)" }}>(704) 488 · 8280</a>
           <a
             href="#/contact"
             onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
