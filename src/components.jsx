@@ -37,7 +37,7 @@ const NAV = [
   { label: "About AVEN", path: "/about" },
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
-  { label: "The Reading", path: "/reading" },
+  { label: "The Assessment", path: "/assessment" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },
 ];
@@ -75,7 +75,7 @@ const Header = ({ route, navigate }) => {
             className="btn"
             style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
           >
-            <span>Book a Reading</span>
+            <span>Book</span>
           </a>
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>

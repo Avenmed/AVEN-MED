@@ -127,11 +127,11 @@ const AboutPage = ({ navigate }) => {
             <Reveal delay={120}>
               <div style={{ display: "grid", gap: 0 }}>
                 {[
-                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute Reading. We do not prescribe on the first visit."],
+                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute Assessment. We do not prescribe on the first visit."],
                   ["02", "We work in millimeters.", "Aesthetic injection is anatomy first, art second. The aim is never visibility — it is balance."],
                   ["03", "We do not sell units.", "There are no packages, syringes-of-the-month, or limited-time offers. Care is sequenced across years, not appointments."],
                   ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
-                  ["05", "We educate, then we treat.", "If we have done our work properly, you will leave a Reading understanding your face better than you did when you arrived."]
+                  ["05", "We educate, then we treat.", "If we have done our work properly, you will leave an Assessment understanding your face better than you did when you arrived."]
                 ].map(([n, h, b]) => (
                   <div key={n} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 40, padding: "44px 0", borderTop: "1px solid var(--hairline)" }}>
                     <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--gold)", letterSpacing: "0.2em" }}>{n}</div>
@@ -168,7 +168,7 @@ const AboutPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container">
           <Reveal>
-            <Eyebrow>What a Reading Feels Like</Eyebrow>
+            <Eyebrow>What an Assessment Feels Like</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
               Ninety unrushed minutes,<br />in a <em>quiet</em> room.
             </h2>
@@ -177,7 +177,7 @@ const AboutPage = ({ navigate }) => {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
             {[
               { t: "00:00", k: "Arrival", b: "You arrive to a single appointment in the clinic — no other patients, no waiting room." },
-              { t: "00:10", k: "Aura reading", b: "A multispectral scan and skin map. Twelve seconds; one quiet portrait of your face in light." },
+              { t: "00:10", k: "Assessment", b: "A multispectral scan and skin map. Twelve seconds; one quiet portrait of your face in light." },
               { t: "00:25", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
               { t: "01:00", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
             ].map((s, i) => (

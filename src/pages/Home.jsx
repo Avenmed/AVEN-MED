@@ -27,18 +27,18 @@ const Home = ({ navigate }) => {
             </p>
             <div style={{ display: "flex", gap: 18, marginTop: 38, flexWrap: "wrap" }}>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-                <span>Begin a Reading</span>
+                <span>Begin an Assessment</span>
                 <span className="arrow"></span>
               </a>
-              <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
-                <span>Discover AURA · Our Philosophy</span>
+              <a href="#/assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment"); }} className="btn">
+                <span>About AVEN</span>
                 <span className="arrow"></span>
               </a>
             </div>
           </div>
           <div className="meta">
             <span>Orland Park · By Appointment</span>
-            <span>Aesthetics · Wellness · Aura</span>
+            <span>Aesthetics · Wellness · Family Medicine</span>
             <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
           </div>
         </div>
@@ -49,8 +49,8 @@ const Home = ({ navigate }) => {
         {[0, 1].map((i) => (
           <div key={i} className="row" aria-hidden={i === 1}>
             {[
-              "Quiet luxury", "Anatomy-led artistry", "Educational Reading",
-              "Membership care", "Aura skin analysis", "Concierge wellness",
+              "Quiet luxury", "Anatomy-led artistry", "Educational assessment",
+              "Membership care", "Skin assessment", "Concierge wellness",
               "Natural refinement", "Restraint as a practice"
             ].map((w, idx) => (
               <React.Fragment key={idx}>
@@ -99,7 +99,7 @@ const Home = ({ navigate }) => {
             </Reveal>
             <Reveal delay={140} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "24px 12px" }}>
               <div>
-                <Eyebrow>Aesthetics · Wellness · Aura</Eyebrow>
+                <Eyebrow>Aesthetics · Wellness · Family Medicine</Eyebrow>
                 <h3 className="display" style={{ fontSize: 38, marginTop: 22, lineHeight: 1.1 }}>
                   Three practices,<br />one long <em>relationship.</em>
                 </h3>
@@ -113,7 +113,7 @@ const Home = ({ navigate }) => {
               </a>
             </Reveal>
             <Reveal delay={260} style={{ aspectRatio: "3/4" }}>
-              <Ph label="Aura scan · skin map overlay" meta="hi-res derm imaging" aspect="3/4" style={{ width: "100%", height: "100%" }} />
+              <Ph label="Skin map · soft focus overlay" meta="hi-res derm imaging" aspect="3/4" style={{ width: "100%", height: "100%" }} />
             </Reveal>
           </div>
         </div>
@@ -145,10 +145,10 @@ const Home = ({ navigate }) => {
                 ph: "Botanical · ivory linen still"
               },
               {
-                k: "Aura", path: "/reading",
+                k: "The Assessment", path: "/assessment",
                 tag: "Education · Analysis",
-                copy: "A skin analysis and Reading system that maps your face, plans your pathway, and explains rather than sells.",
-                ph: "Aura console · soft halo light"
+                copy: "A complimentary 90-minute assessment of anatomy, history, and goals. The plan is written, considered, and yours.",
+                ph: "Assessment room · soft focus"
               }
             ].map((p, i) => (
               <Reveal key={p.k} delay={i * 120}>
@@ -223,7 +223,7 @@ const Home = ({ navigate }) => {
         </div>
       </section>
 
-      {/* ---------- AURA TEASE ---------- */}
+      {/* ---------- ASSESSMENT TEASER ---------- */}
       <section className="section" style={{ position: "relative", overflow: "hidden" }}>
         <Logo size={520} style={{ position: "absolute", right: "-120px", top: "10%", opacity: 0.06 }} />
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 96, alignItems: "center" }}>
@@ -237,19 +237,18 @@ const Home = ({ navigate }) => {
             </div>
           </Reveal>
           <Reveal delay={160}>
-            <Eyebrow>04 — The Reading</Eyebrow>
+            <Eyebrow>04 — The Assessment</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 24px", maxWidth: "16ch" }}>
               Your face,<br />mapped in <em>light.</em>
             </h2>
             <p className="body">
-              Aura is our proprietary skin-reading system — a high-resolution
-              skin analysis that maps pigmentation, vascular tone, collagen
-              density, and surface texture, then translates the data into a
-              calm, year-long care pathway. It does not prescribe. It explains.
+              The Assessment is a complimentary 90-minute assessment of anatomy,
+              history, and goals. Nothing is prescribed on the first visit. You
+              leave with a written plan — yours to follow, yours to ignore.
             </p>
             <div style={{ marginTop: 32 }}>
-              <a href="#/reading" onClick={(e) => { e.preventDefault(); navigate("/reading"); }} className="btn">
-                <span>Enter AURA</span><span className="arrow"></span>
+              <a href="#/assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment"); }} className="btn">
+                <span>About the Assessment</span><span className="arrow"></span>
               </a>
             </div>
           </Reveal>
@@ -277,7 +276,7 @@ const Home = ({ navigate }) => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
               {[
                 ["On restraint", "She does less than I ask for, every time. And every time, I'm grateful."],
-                ["On the Reading", "We spent the first appointment doing nothing but looking. It changed how I see my own face."],
+                ["On the Assessment", "We spent the first appointment doing nothing but looking. It changed how I see my own face."],
                 ["On the room", "It is the quietest medical room I have ever been in. Like a small museum."]
               ].map(([t, q], i) => (
                 <div key={t} style={{ padding: "24px 0", borderTop: "1px solid var(--hairline)" }}>
@@ -335,8 +334,8 @@ const Home = ({ navigate }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 60 }}>
             {[
-              { tier: "AVEN Essential", price: "Monthly contribution", per: "Determined at your Reading", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
-              { tier: "AVEN Elevate", price: "By application", per: "Structured to your plan", desc: "Concierge access. VIP Saturday hours, two annual Aura readings, first access to new treatments.", feat: true }
+              { tier: "AVEN Essential", price: "Monthly contribution", per: "Determined at your Assessment", desc: "Foundational continuity care. Monthly treatment banking, personalized pathway, priority booking." },
+              { tier: "AVEN Elevate", price: "By application", per: "Structured to your plan", desc: "Concierge access. VIP Saturday hours, two annual Assessments, first access to new treatments.", feat: true }
             ].map((p, i) => (
               <Reveal key={p.tier} delay={i * 140} className={"plan" + (p.feat ? " feat" : "")}>
                 <div className="tier">{p.tier}{p.feat && <span style={{ color: "var(--ivory-soft)", marginLeft: 14 }}>· Founding</span>}</div>
@@ -393,11 +392,11 @@ const Home = ({ navigate }) => {
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
               First Readings are 90 minutes, by appointment, and include
-              an Aura skin analysis. There is no pressure, and nothing is
+              an skin assessment. There is no pressure, and nothing is
               prescribed on the first visit.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Begin a Reading</span><span className="arrow"></span>
+              <span>Begin an Assessment</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

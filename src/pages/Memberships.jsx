@@ -42,14 +42,14 @@ const MembershipsPage = ({ navigate }) => {
                 <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>Monthly contribution</span>
               </div>
               <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
-                Determined at your Reading
+                Determined at your Assessment
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
                   "Monthly contribution banked toward any treatment, no expiry",
                   "Personalized 12-month pathway, reviewed quarterly",
                   "Priority booking · 48-hour advance access",
-                  "Annual Aura skin reading included",
+                  "Annual skin assessment included",
                   "Pause membership at any time — banked credit retained"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
@@ -85,7 +85,7 @@ const MembershipsPage = ({ navigate }) => {
                 {[
                   "Monthly contribution banked toward any aesthetics or wellness service",
                   "VIP Saturday clinic hours by appointment",
-                  "Two complimentary Aura readings annually",
+                  "Two complimentary Assessments annually",
                   "Early access to new treatments and clinic technology",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Priority overflow into Wellness concierge (2027)",
@@ -148,8 +148,8 @@ const MembershipsPage = ({ navigate }) => {
               <div className="label" style={{ color: "var(--gold)" }}>Elevate</div>
             </div>
             {[
-              ["Monthly contribution", "Determined at your Reading", "By application"],
-              ["Aura skin reading", "Annual", "Twice annually"],
+              ["Monthly contribution", "Determined at your Assessment", "By application"],
+              ["skin assessment", "Annual", "Twice annually"],
               ["Pathway review", "Quarterly", "Quarterly + on-demand"],
               ["Priority booking", "48 hours", "Concierge line"],
               ["Saturday clinic access", "—", "Included"],
@@ -199,9 +199,9 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
           </Reveal>
           {[
-            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN — nothing is held as an administrative fee. The benefits above (priority booking, Aura readings, seasonal previews) are included on top."],
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN — nothing is held as an administrative fee. The benefits above (priority booking, Assessments, seasonal previews) are included on top."],
             ["What happens if I pause?", "Membership can be paused for up to twelve months without penalty. Your banked credit remains in your file and continues to be available for any service."],
-            ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments and include a complimentary Aura reading for the recipient."],
+            ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments and include a complimentary Assessment for the recipient."],
             ["Is there a contract or commitment?", "There is no contract. We ask for a soft three-month minimum so that we can begin a meaningful pathway together — beyond that, you are free to continue, pause, or close at any time."],
             ["Will Elevate continue after the founding cohort closes?", "The Elevate tier will remain, but pricing and seat count will adjust once the founding cohort fills. Founding members are price-locked for the life of their membership."]
           ].map(([q, a], i) => (

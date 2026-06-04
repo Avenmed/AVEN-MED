@@ -26,7 +26,7 @@ const ContactPage = ({ navigate }) => {
     <main className="page">
       {showCeremony && (
         <div className="booking-ceremony" onClick={() => setShowCeremony(false)}>
-          <p className="line">A Reading begins<br />with stillness.</p>
+          <p className="line">An Assessment begins<br />with stillness.</p>
           <img className="ceremony-logo" src="/assets/logo.png" alt="" aria-hidden="true" />
         </div>
       )}
@@ -98,12 +98,12 @@ const ContactPage = ({ navigate }) => {
                 <div className="field">
                   <label>I am interested in</label>
                   <select value={form.interest} onChange={set("interest")}>
-                    <option>Aesthetics Reading</option>
-                    <option>Wellness Reading</option>
-                    <option>Aura skin reading</option>
+                    <option>Aesthetic Medicine Assessment</option>
+                    <option>Wellness Assessment</option>
+                    <option>Skin Assessment</option>
                     <option>AVEN Essential membership</option>
                     <option>AVEN Elevate (founding cohort)</option>
-                    <option>Salon · Press · Other</option>
+                    <option>Press · Other</option>
                   </select>
                 </div>
 
@@ -130,14 +130,14 @@ const ContactPage = ({ navigate }) => {
                   Thank you, {form.name.split(" ")[0] || "friend"}.
                 </h2>
                 <p className="body">
-                  We've received your Reading request. We'll be in touch within one business day.
+                  We've received your Assessment request. We'll be in touch within one business day.
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>
                     <span>Send another</span><span className="arrow"></span>
                   </button>
-                  <button className="link" onClick={() => navigate("/reading")}>
-                    <span>About The Reading</span><span className="arrow"></span>
+                  <button className="link" onClick={() => navigate("/assessment")}>
+                    <span>About The Assessment</span><span className="arrow"></span>
                   </button>
                 </div>
               </div>

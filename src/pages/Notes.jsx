@@ -28,14 +28,14 @@ const NOTES = [
     ],
   },
   {
-    slug: "what-a-reading-reveals",
-    title: <>What a Reading <em>Reveals.</em></>,
-    image: "Reading room · brass detail",
+    slug: "what-an-assessment-reveals",
+    title: <>What an Assessment <em>Reveals.</em></>,
+    image: "Assessment room · brass detail",
     body: [
-      "Most consultations begin with a question: \"What do you want done?\" The Reading begins with a different one — what do you see?",
-      "For ninety minutes, we do not prescribe. We map. The face under quiet light, in soft focus, traced by Aura. Pigment, vascular, collagen, texture, volume — five layered conversations that most patients have never had the words for.",
+      "Most consultations begin with a question: \"What do you want done?\" The Assessment begins with a different one — what do you see?",
+      "For ninety minutes, we do not prescribe. We map. The face under quiet light, in soft focus. Pigment, vascular, collagen, texture, volume — five layered conversations that most patients have never had the words for.",
       "What we usually find is not a list of problems. It is a shape. A pattern. A way the face is asking to be supported, not changed.",
-      "Patients leave the Reading not with a treatment plan, but with understanding — of their own anatomy, of where time has done its work, of what restraint can offer and what it cannot.",
+      "Patients leave the Assessment not with a treatment plan, but with understanding — of their own anatomy, of where time has done its work, of what restraint can offer and what it cannot.",
       "The plan, when it comes, comes second. And it is usually quieter than the patient expected.",
     ],
   },
@@ -51,7 +51,7 @@ const NotesPage = ({ navigate }) => {
             <Logo size={36} style={{ margin: "0 auto 24px", opacity: 0.85 }} />
             <Eyebrow>Field Notes</Eyebrow>
             <h1 className="display italic" style={{ fontSize: "clamp(48px, 6.4vw, 96px)", margin: "28px auto 24px", lineHeight: 1.04, maxWidth: "14ch", fontWeight: 300 }}>
-              The editorial cousin<br />to The Reading.
+              The editorial cousin<br />to The Assessment.
             </h1>
             <p className="body" style={{ margin: "24px auto 0", maxWidth: "52ch" }}>
               Quiet writing on anatomy, restraint, and the long practice of looking like yourself. A magazine column, not a blog.
@@ -98,7 +98,7 @@ const NotesPage = ({ navigate }) => {
               The next note arrives quietly.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-              <span>Begin a Reading</span><span className="arrow"></span>
+              <span>Begin an Assessment</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

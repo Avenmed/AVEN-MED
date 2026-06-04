@@ -107,9 +107,9 @@ const ServicePage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ maxWidth: 920, display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }}>
           <Reveal>
-            <Eyebrow>The Reading</Eyebrow>
+            <Eyebrow>The Assessment</Eyebrow>
             <h2 className="display italic" style={{ fontSize: "clamp(28px, 3.4vw, 44px)", margin: "20px 0 0", maxWidth: "14ch", fontWeight: 300 }}>
-              What a Reading reveals.
+              What an Assessment reveals.
             </h2>
           </Reveal>
           <Reveal delay={140}>
@@ -147,10 +147,10 @@ const ServicePage = ({ navigate }) => {
           <Reveal>
             <Logo size={28} style={{ margin: "0 auto 24px", opacity: 0.85 }} />
             <p className="display italic" style={{ fontSize: "clamp(20px, 2.2vw, 28px)", color: "var(--muted)", margin: "0 auto 36px", maxWidth: "26ch" }}>
-              Pricing shared at your Reading.
+              Pricing shared at your Assessment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Book a Reading</span><span className="arrow"></span>
+              <span>Book an Assessment</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

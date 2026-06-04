@@ -78,8 +78,8 @@ const WellnessPage = ({ navigate }) => {
               {
                 k: "The Foundation",
                 p: "8 weeks",
-                d: "A quarterly bloodwork baseline, two practitioner Readings, and an Aura skin reading. The starting point for every new AVEN patient.",
-                items: ["Comprehensive 70-marker panel", "Two practitioner Readings", "One IV infusion", "Aura skin reading"]
+                d: "A quarterly bloodwork baseline, two practitioner Readings, and an skin assessment. The starting point for every new AVEN patient.",
+                items: ["Comprehensive 70-marker panel", "Two practitioner Readings", "One IV infusion", "skin assessment"]
               },
               {
                 k: "The Compound",
@@ -191,7 +191,7 @@ const WellnessPage = ({ navigate }) => {
               Begin <em>beneath</em><br />the surface.
             </h2>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Request a Wellness Reading</span><span className="arrow"></span>
+              <span>Request a Wellness Assessment</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>
