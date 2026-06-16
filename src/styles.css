@@ -1,18 +1,18 @@
 /* AVEN MED — design system */
 :root {
-  /* Bone/cream — AVEN MED palette (warm parchment, matches screenshot) */
-  --bg-deep: #D9CBA8;        /* deeper warm cream (sparing) */
-  --bg: #E2D5B5;             /* warm parchment cream — dominant background */
-  --bg-1: #E2D5B5;           /* same as bg so diagonal texture stays continuous */
-  --surface: #DDCFAD;        /* slightly deeper for cards */
-  --surface-2: #D6C7A1;      /* deeper for featured cards */
+  /* Bone/cream — AVEN MED palette */
+  --bg-deep: #C2B07A;        /* deeper warm cream (sparing) */
+  --bg: #D8C9A0;             /* warm bone — dominant background */
+  --bg-1: #D8C9A0;           /* same as bg so diagonal texture stays continuous */
+  --surface: #D0BF90;        /* slightly deeper for cards */
+  --surface-2: #C9B784;      /* deeper for featured cards */
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 
-  /* Brass-gold — buttons + accents */
-  --gold: #B08D5B;
-  --gold-bright: #C2A06E;
-  --gold-soft: rgba(176, 141, 91, 0.55);
+  /* Brass-gold — buttons + accents (deeper, richer) */
+  --gold: #A67C42;
+  --gold-bright: #B89058;
+  --gold-soft: rgba(166, 124, 66, 0.55);
 
   /* Olive — sparing secondary accent (NOT a background) */
   --olive: #6B6A50;
