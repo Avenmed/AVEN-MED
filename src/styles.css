@@ -1,11 +1,11 @@
 /* AVEN MED — design system */
 :root {
   /* Bone/cream — AVEN MED palette */
-  --bg-deep: #C2B07A;        /* deeper warm cream (sparing) */
-  --bg: #D8C9A0;             /* warm bone — dominant background */
-  --bg-1: #D8C9A0;           /* same as bg so diagonal texture stays continuous */
-  --surface: #D0BF90;        /* slightly deeper for cards */
-  --surface-2: #C9B784;      /* deeper for featured cards */
+  --bg-deep: #D5C9AE;        /* deeper warm cream (sparing) */
+  --bg: #E5DAC2;             /* warm bone — dominant page background */
+  --bg-1: #E5DAC2;           /* same as bg so diagonal texture stays continuous */
+  --surface: #E8E0D0;        /* light neutral — image placeholders (intentionally lighter than bg) */
+  --surface-2: #DCD2C0;      /* very slight variation for featured placeholders */
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 
