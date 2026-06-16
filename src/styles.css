@@ -1,28 +1,28 @@
 /* AVEN MED — design system */
 :root {
-  /* Warm cream / ivory neutrals — AVEN MED live palette */
-  --bg-deep: #ede4d2;
-  --bg: #f3ecdc;             /* warm ivory page bg */
-  --bg-1: #ece3d0;           /* deeper warm cream — sections */
-  --surface: #e8dfc9;        /* sand · cards */
-  --surface-2: #e1d6bc;      /* deeper sand · feature cards */
-  --hairline: rgba(60, 52, 36, 0.14);
-  --hairline-strong: rgba(60, 52, 36, 0.32);
+  /* Bone/cream — AVEN MED palette (locked) */
+  --bg-deep: #F2E8D0;        /* subtle deeper bone (sparing) */
+  --bg: #F6EFE2;             /* BONE — dominant page background */
+  --bg-1: #F2E9D2;           /* very subtle deeper bone for sections */
+  --surface: #F4ECD7;        /* warm bone for cards (close to bg) */
+  --surface-2: #EFE3C5;      /* slightly deeper warm bone for featured cards */
+  --hairline: rgba(46, 38, 32, 0.14);
+  --hairline-strong: rgba(46, 38, 32, 0.32);
 
-  /* Muted brass / gold accent */
-  --gold: #9a7d4a;
-  --gold-bright: #b08f5b;
-  --gold-soft: rgba(154, 125, 74, 0.55);
+  /* Brass-gold — buttons + accents */
+  --gold: #B08D5B;
+  --gold-bright: #C2A06E;
+  --gold-soft: rgba(176, 141, 91, 0.55);
 
-  /* Sage / olive secondary (from avens / olive sprig) */
-  --olive: #6b7050;
-  --olive-soft: rgba(107, 112, 80, 0.5);
+  /* Olive — sparing secondary accent (NOT a background) */
+  --olive: #6B6A50;
+  --olive-soft: rgba(107, 106, 80, 0.5);
 
-  /* Ink (text) */
-  --ivory: #1f1b13;          /* primary text — deep warm ink */
-  --ivory-soft: #4a4232;     /* secondary text — warm taupe */
-  --muted: #7a6f59;          /* tertiary */
-  --muted-2: #a1957b;
+  /* Warm ink — headlines + body text */
+  --ivory: #2E2620;          /* primary text — warm ink */
+  --ivory-soft: #4A3D2E;     /* secondary text — slightly softer warm ink */
+  --muted: #7A6B58;          /* tertiary text — muted warm */
+  --muted-2: #A39580;        /* quietest text */
 
   --serif: "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
   --sans: "Jost", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -544,7 +544,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--serif);
   font-size: 2.2rem;
   letter-spacing: 0.48em;
-  color: #b08f5b;
+  color: var(--gold);
   font-weight: 500;
   padding-left: 0.48em;
 }
