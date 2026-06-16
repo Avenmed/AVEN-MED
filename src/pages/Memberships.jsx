@@ -36,7 +36,7 @@ const MembershipsPage = ({ navigate }) => {
               <h3 style={{ marginBottom: 10 }}>Maintenance</h3>
               <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>
                 The foundational membership. A monthly contribution that
-                banks toward any treatment and keeps your pathway moving.
+                banks toward treatments and keeps your pathway moving.
               </p>
               <div className="price">
                 <span className="amt">$100</span>
@@ -44,7 +44,7 @@ const MembershipsPage = ({ navigate }) => {
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "$100 banked monthly toward any treatment",
+                  "$100 banked monthly toward treatments",
                   "Skin assessment — we review your pathway 1–2x a year",
                   "Saturday clinic access",
                   "Priority booking · 48-hour advance access",
@@ -64,7 +64,7 @@ const MembershipsPage = ({ navigate }) => {
               <h3 style={{ marginBottom: 10 }}>Signature</h3>
               <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>
                 The deeper practice. A larger monthly contribution that
-                banks toward aesthetics or wellness, plus expanded access.
+                banks toward treatments, with expanded access.
               </p>
               <div className="price">
                 <span className="amt">$200</span>
@@ -75,10 +75,9 @@ const MembershipsPage = ({ navigate }) => {
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "$200 banked monthly toward any aesthetics or wellness service",
-                  "Skin assessment — we review your pathway 1–2x a year",
+                  "$200 banked monthly toward treatments",
+                  "One annual AVEN Assessment (up to 60 minutes), included with your Signature membership — a full review at the end of your pathway comparing your baseline to your progress and planning your next chapter",
                   "Saturday clinic access",
-                  "Two complimentary IV infusions annually",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Early access to new treatments and clinic technology"
                 ].map((s) => (
@@ -105,7 +104,7 @@ const MembershipsPage = ({ navigate }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
             {[
-              { n: "01", k: "Bank Monthly", b: "Your membership contribution accrues toward any aesthetic or wellness service. Nothing expires while active." },
+              { n: "01", k: "Bank Monthly", b: "Your membership contribution accrues toward treatments. Nothing expires while active." },
               { n: "02", k: "Plan Quarterly", b: "We review your pathway with you four times a year — adjusting for season, life, and progress." },
               { n: "03", k: "Treat When Ready", b: "Visit when your pathway calls for it. There is no pressure to spend down." },
               { n: "04", k: "Stay, or Pause", b: "Memberships pause without penalty. Banked credit stays usable for twelve months." }
@@ -140,11 +139,12 @@ const MembershipsPage = ({ navigate }) => {
             </div>
             {[
               ["Monthly contribution", "$100", "$200"],
+              ["Banked toward treatments", "$100 / month", "$200 / month"],
               ["Skin assessment review", "1–2x / year", "1–2x / year"],
+              ["Annual AVEN Assessment (up to 60 min)", "—", "Included"],
               ["Saturday clinic access", "Included", "Included"],
               ["Priority booking", "48 hours", "Concierge line"],
               ["Pathway review", "Quarterly", "Quarterly + on-demand"],
-              ["Complimentary IV infusions", "—", "Two annually"],
               ["Early access · new technology", "—", "First access"]
             ].map(([k, e, el], i, arr) => (
               <div key={k}
@@ -189,7 +189,7 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
           </Reveal>
           {[
-            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN. The benefits above (priority booking, Saturday access, skin assessment review) are included on top."],
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward treatments at AVEN. Banked credit applies to treatments only — not to wellness packages or retail products. The benefits above (priority booking, Saturday access, skin assessment review) are included on top."],
             ["What happens if I pause?", "Membership can be paused at any time. Your banked credit remains usable for twelve months from the pause date — applied to any service when you're ready to return."],
             ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments."],
             ["What's included in the skin assessment review?", "Once or twice a year, we sit down to look at your pathway together — what's working, what's next, what to adjust. The skin is read; the plan is updated."],

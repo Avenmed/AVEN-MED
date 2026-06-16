@@ -88,8 +88,8 @@ const Home = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "28px auto 18px", maxWidth: "16ch", fontWeight: 300 }}>
               Every plan begins with<br /><em>an assessment.</em>
             </h2>
-            <p className="lede" style={{ maxWidth: "36ch", margin: "0 auto 40px" }}>
-              Complimentary. Considered. Yours to keep.
+            <p className="lede" style={{ maxWidth: "40ch", margin: "0 auto 40px" }}>
+              Time with Alaa. Credited toward your treatment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Book an Assessment</span><span className="arrow"></span>
