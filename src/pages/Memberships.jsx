@@ -76,12 +76,24 @@ const MembershipsPage = ({ navigate }) => {
               <ul style={{ marginTop: 12 }}>
                 {[
                   "$200 banked monthly toward treatments",
-                  "One annual AVEN Assessment (up to 60 minutes), included with your Signature membership — a full review at the end of your pathway comparing your baseline to your progress and planning your next chapter",
+                  {
+                    primary: "One annual AVEN Assessment (up to 60 min), included with your Signature membership.",
+                    descriptor: "A full review at the end of your pathway comparing your baseline to your progress and planning your next chapter."
+                  },
                   "Saturday clinic access",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Early access to new treatments and clinic technology"
-                ].map((s) => (
-                  <li key={s}><span>{s}</span></li>
+                ].map((s, i) => (
+                  typeof s === "string" ? (
+                    <li key={i}><span>{s}</span></li>
+                  ) : (
+                    <li key={i}>
+                      <span>{s.primary}</span>
+                      <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--muted)", marginTop: 4, fontWeight: 300, fontStyle: "italic" }}>
+                        {s.descriptor}
+                      </div>
+                    </li>
+                  )
                 ))}
               </ul>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }}>

@@ -156,9 +156,9 @@ const Footer = ({ navigate }) => (
 
       <div style={{
         marginTop: 24,
-        fontSize: 10, letterSpacing: "0.08em", color: "var(--muted-2)", textTransform: "lowercase", fontFamily: "var(--sans)"
+        fontSize: 10, letterSpacing: "0.18em", color: "var(--muted-2)", textTransform: "uppercase", fontFamily: "var(--sans)"
       }}>
-        © 2026 aven med
+        © 2026 AVEN MED
       </div>
     </div>
   </footer>
