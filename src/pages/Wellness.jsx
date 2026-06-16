@@ -149,7 +149,7 @@ const WellnessPage = ({ navigate }) => {
               ["The Restore", "Hydration · Magnesium · B-Complex", "Recovery and nervous-system support."],
               ["The Glow", "Glutathione · Biotin · Vitamin C", "Skin-luminance support paired with aesthetics."],
               ["The Architect", "NAD+ · Methylated B12 · Taurine", "Cellular energy and longevity foundation."],
-              ["The Quiet", "Magnesium · Glycine · L-Theanine", "Sleep architecture and stress recovery."],
+              ["The Rest", "Magnesium · Glycine · L-Theanine", "Sleep architecture and stress recovery."],
               ["The Immune", "Zinc · C · Selenium", "Seasonal immune support pre-travel."],
               ["The Pre-Treatment", "Arnica · C · Bromelain", "Bruise prevention before facial balancing."]
             ].map(([k, ing, d], i) => (
@@ -190,7 +190,7 @@ const WellnessPage = ({ navigate }) => {
               Concierge <em>Wellness,</em><br />in its full form.
             </h2>
             <p className="body">
-              We are quietly building a full concierge medical practice within
+              We are building a full concierge medical practice within
               AVEN — a small panel, direct practitioner access, and the same
               standard of restraint we bring to aesthetics. Founding
               memberships will open by invitation.

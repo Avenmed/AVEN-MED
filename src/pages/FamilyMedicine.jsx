@@ -40,13 +40,13 @@ const FamilyMedicinePage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>· What we treat</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-              Everyday medicine, <em>practiced quietly.</em>
+              Everyday medicine, <em>practiced carefully.</em>
             </h2>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 80 }}>
             {[
-              { n: "01", k: "Sick Visits", b: "Same-day care for acute illness — colds, flu, infections, and seasonal viruses. We see patients quickly and quietly." },
+              { n: "01", k: "Sick Visits", b: "Same-day care for acute illness — colds, flu, infections, and seasonal viruses. We see patients quickly and discreetly." },
               { n: "02", k: "Preventive Care", b: "Annual physicals, screenings, vaccinations, and lifestyle guidance. The slow, steady work of staying well." },
               { n: "03", k: "Chronic Conditions", b: "Continuous management of conditions like hypertension, thyroid, and metabolic health — with a single practitioner who knows your file." }
             ].map((s, i) => (

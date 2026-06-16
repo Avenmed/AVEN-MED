@@ -9,7 +9,7 @@ const AestheticsPage = ({ navigate }) => {
     {
       k: "Neuromodulators",
       tag: "Botox · Dysport · Xeomin",
-      lede: "Quiet softening of expressive lines — placed with anatomy first, in conservative, well-distributed micro-doses.",
+      lede: "Subtle softening of expressive lines — placed with anatomy first, in conservative, well-distributed micro-doses.",
       photo: "Botox injection · gloved hand · 35mm",
       treatments: [
         { n: "Forehead & Glabella", d: "Soft, mobile expression with no frozen quality. Re-evaluated every four months." },
@@ -21,10 +21,10 @@ const AestheticsPage = ({ navigate }) => {
     {
       k: "Filler & Balancing",
       tag: "Always about balance",
-      lede: "Sub-millimeter facial balancing — never about volume for its own sake, always about quiet proportion.",
+      lede: "Sub-millimeter facial balancing — never about volume for its own sake, always about balanced proportion.",
       treatments: [
         { n: "Lip Filler", d: "Soft hyaluronic refinement — preserving border, philtrum and natural eversion." },
-        { n: "Jawline Filler", d: "Definition along the lateral jaw — proportion, structure, and quiet support." },
+        { n: "Jawline Filler", d: "Definition along the lateral jaw — proportion, structure, and subtle support." },
         { n: "Chin Projection", d: "Restores anterior projection and rebalances the profile in one or two sessions." },
         { n: "Cheek Architecture", d: "Lift and structural support through the lateral and anterior cheek." },
         { n: "Facial Balancing", d: "A holistic, mapped session addressing chin, cheek, jaw, and temple together." }
@@ -38,7 +38,7 @@ const AestheticsPage = ({ navigate }) => {
         { n: "Sculptra · Full Face", d: "Poly-L-lactic acid for long-term collagen support. Three-visit protocol." },
         { n: "Radiesse · Diluted", d: "Calcium hydroxylapatite to restore skin density along the jawline and neck." },
         { n: "Skinvive by Juvederm", d: "Microdroplet hyaluronic for hydration and surface quality — placed superficially." },
-        { n: "VAMP", d: "Vampire-style autologous plasma protocol for under-eye renewal and skin quality." }
+        { n: "VAMP", d: "Autologous plasma protocol for under-eye renewal." }
       ]
     },
     {
@@ -77,7 +77,7 @@ const AestheticsPage = ({ navigate }) => {
               </h1>
             </div>
             <p className="lede">
-              Aesthetic treatments at AVEN are sequenced into quiet pathways
+              Aesthetic treatments at AVEN are sequenced into considered pathways
               rather than offered as a menu. Each category below is a chapter
               in a longer practice — not a stand-alone purchase.
             </p>

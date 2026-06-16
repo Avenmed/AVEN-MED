@@ -36,9 +36,8 @@ const ContactPage = ({ navigate }) => {
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>
               <Eyebrow>Contact · By Appointment</Eyebrow>
-              {/* TODO: Ahmad will provide the replacement hero headline for /contact */}
               <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 132px)", margin: "24px 0 0", lineHeight: 0.96, maxWidth: "12ch" }}>
-                <em>Contact</em><br />AVEN MED.
+                <em>Let's</em><br />begin.
               </h1>
             </div>
             <p className="lede">
@@ -165,10 +164,14 @@ const ContactPage = ({ navigate }) => {
               </div>
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Hours</div>
-                {/* TODO: Ahmad will provide exact business hours */}
-                <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
-                  Hours — to be confirmed<br />
-                  <span style={{ color: "var(--muted)" }}>By appointment</span>
+                <div className="display" style={{ fontSize: 17, marginTop: 8, lineHeight: 1.7, fontWeight: 300 }}>
+                  Monday · 9 AM – 3 PM<br />
+                  Tuesday · 9 AM – 3 PM<br />
+                  Wednesday · 9 AM – 6 PM<br />
+                  Thursday · 9 AM – 3 PM<br />
+                  Friday · 9 AM – 3 PM<br />
+                  Saturday · Every other · 9 AM – 1 PM<br />
+                  <span style={{ color: "var(--muted)" }}>Closed Sunday</span>
                 </div>
               </div>
               <div>

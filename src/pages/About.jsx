@@ -117,7 +117,7 @@ const AboutPage = ({ navigate }) => {
 
             <Reveal delay={220}>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
-                AVEN MED was intentionally designed to feel different — quieter,
+                AVEN MED was intentionally designed to feel different — slower,
                 more personal, more refined. A place where patients feel
                 comfortable, understood, educated, and cared for throughout
                 every stage of their journey.
@@ -138,14 +138,13 @@ const AboutPage = ({ navigate }) => {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "start" }}>
             <Reveal>
               <Eyebrow>The Philosophy</Eyebrow>
-              <div className="label" style={{ marginTop: 22, color: "var(--muted)" }}>Five quiet rules</div>
+              <div className="label" style={{ marginTop: 22, color: "var(--muted)" }}>Five rules</div>
             </Reveal>
             <Reveal delay={120}>
               <div style={{ display: "grid", gap: 0 }}>
                 {[
-                  // TODO: Rule 01 — final wording from Ahmad
-                  ["01", "Rule 01 · TODO", "[TODO: final wording for Rule 01]"],
-                  ["02", "Every assessment turns into a relationship.", "We are not in the business of one-off visits. The assessment opens a long, considered relationship between practitioner and patient."],
+                  ["01", "You should always look like yourself.", "Care at AVEN supports what already exists. The goal is never to change who you are — only to support the long arc of your face across time."],
+                  ["02", "Every assessment starts a relationship.", "We are not in the business of one-off visits. The assessment opens a long, considered relationship between practitioner and patient."],
                   ["03", "Every individual has their own treatment plan.", "No two faces, no two histories, no two goals are the same. Every plan is written by hand, for the patient in front of us."],
                   ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
                   ["05", "We educate, then we treat.", "If we have done our work properly, you will leave an Assessment understanding your face better than you did when you arrived."]
@@ -187,14 +186,14 @@ const AboutPage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>What an Assessment Feels Like</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-              Unhurried, in a <em>quiet</em> room.
+              Unhurried, in a <em>private</em> room.
             </h2>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
             {[
               { t: "01", k: "Arrival", b: "You'll be greeted by staff." },
-              { t: "02", k: "Assessment", b: "You'll meet Aura. A multispectral scan and skin map. One quiet portrait of your face in light." },
+              { t: "02", k: "Assessment", b: "You'll meet Aura. A multispectral scan and skin map. One careful portrait of your face in light." },
               { t: "03", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
               { t: "04", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
             ].map((s, i) => (

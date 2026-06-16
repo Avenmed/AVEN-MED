@@ -29,24 +29,24 @@ const SERVICES = {
   },
   'microneedling': {
     eyebrow: "Skin · 03",
-    headline: <>Quiet,<br /><em>repeated work.</em></>,
+    headline: <>Considered,<br /><em>repeated work.</em></>,
     philosophy: "Microneedling is the slow architecture of the skin — collagen induction across visits, never in one. We pair it with PRP or topicals based on what the skin is telling us, not a fixed protocol. Seasonal pathways, not packages.",
     reveals: [
       "Pore quality, surface texture, and dermal architecture.",
       "Pigment distribution and the laxity beneath it.",
       "Hydration, barrier strength, and how the skin recovers from a single session.",
     ],
-    possible: "Refined pore size, smoother texture, brighter tone over a quiet series of three to four visits. Best results are cumulative — no single treatment is the answer. Downtime is minimal; recovery is private.",
+    possible: "Refined pore size, smoother texture, brighter tone over a considered series of three to four visits. Best results are cumulative — no single treatment is the answer. Downtime is minimal; recovery is private.",
     detailPh: "Cheek · macro · natural light",
   },
   'sculptra': {
     eyebrow: "Biostimulators · 04",
     headline: <>Architecture,<br /><em>not filler.</em></>,
-    philosophy: "Sculptra rebuilds collagen architecture beneath the skin. It is not filler — it asks the body to do its own quiet work across months. Strategic placement matters more than volume. Less, repeated, across a year, is the practice.",
+    philosophy: "Sculptra rebuilds collagen architecture beneath the skin. It is not filler — it asks the body to do its own steady work across months. Strategic placement matters more than volume. Less, repeated, across a year, is the practice.",
     reveals: [
       "Where structural support has thinned — temple, cheek, lateral jawline.",
       "Skin quality and how the face has changed across the last five years.",
-      "Whether biostimulation is the right tool, or whether something quieter would serve.",
+      "Whether biostimulation is the right tool, or whether something subtler would serve.",
     ],
     possible: "Gradual restoration of structure across three sessions, spaced six to eight weeks apart. Results emerge across three to six months and last eighteen to twenty-four. Faces look refreshed without anyone knowing why.",
     detailPh: "Cheek · profile · ivory linen",
@@ -60,7 +60,7 @@ const SERVICES = {
       "Hydration status, micronutrient gaps, the state of recovery.",
       "Whether IV is the right delivery — or whether oral and lifestyle would serve better.",
     ],
-    possible: "Targeted infusions of magnesium, B complex, glutathione, NAD+, or simple hydration — chosen for what your file is asking for, not what's on a sign. Sessions last thirty to sixty minutes in a quiet room.",
+    possible: "Targeted infusions of magnesium, B complex, glutathione, NAD+, or simple hydration — chosen for what your file is asking for, not what's on a sign. Sessions last thirty to sixty minutes in a private room.",
     detailPh: "IV room · brass detail · still",
   },
 };

@@ -18,7 +18,7 @@ const Home = ({ navigate }) => {
           <div>
             <Eyebrow>· The AVEN Clinic · Est. 2026</Eyebrow>
             <h1 style={{ marginTop: 26 }}>
-              The quiet art<br />
+              The art<br />
               of <em>looking</em><br />
               <em>like yourself.</em>
             </h1>

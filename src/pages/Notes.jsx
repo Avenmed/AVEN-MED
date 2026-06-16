@@ -23,7 +23,7 @@ const NOTES = [
       "A face is not a project. It is a long, continuous letter the body writes to itself — about the years, the climate, the laughter, the worry, the sleep.",
       "We have learned to call most of what it says \"decline.\" But aging is not decline. It is information. The architecture changes — bone reabsorbs from the medial cheek, fat pads slide, collagen thins through the dermis. None of this is failure. All of it is anatomy.",
       "The work of aesthetic medicine, when done with restraint, is to read these changes carefully and to support what is already happening — never to interrupt the letter.",
-      "A face well-cared-for across years does not look untouched. It looks like itself, only a quieter version of itself.",
+      "A face well-cared-for across years does not look untouched. It looks like itself, only a softer version of itself.",
       "The patient and the practice are not adversaries to time. They are in conversation with it.",
     ],
   },
@@ -33,10 +33,10 @@ const NOTES = [
     image: "Assessment room · brass detail",
     body: [
       "Most consultations begin with a question: \"What do you want done?\" The Assessment begins with a different one — what do you see?",
-      "For ninety minutes, we do not prescribe. We map. The face under quiet light, in soft focus. Pigment, vascular, collagen, texture, volume — five layered conversations that most patients have never had the words for.",
+      "For ninety minutes, we do not prescribe. We map. The face under warm light, in soft focus. Pigment, vascular, collagen, texture, volume — five layered conversations that most patients have never had the words for.",
       "What we usually find is not a list of problems. It is a shape. A pattern. A way the face is asking to be supported, not changed.",
       "Patients leave the Assessment not with a treatment plan, but with understanding — of their own anatomy, of where time has done its work, of what restraint can offer and what it cannot.",
-      "The plan, when it comes, comes second. And it is usually quieter than the patient expected.",
+      "The plan, when it comes, comes second. And it is usually subtler than the patient expected.",
     ],
   },
 ];
@@ -54,7 +54,7 @@ const NotesPage = ({ navigate }) => {
               The editorial cousin<br />to The Assessment.
             </h1>
             <p className="body" style={{ margin: "24px auto 0", maxWidth: "52ch" }}>
-              Quiet writing on anatomy, restraint, and the long practice of looking like yourself. A magazine column, not a blog.
+              Considered writing on anatomy, restraint, and the long practice of looking like yourself. A magazine column, not a blog.
             </p>
           </Reveal>
         </div>
@@ -95,7 +95,7 @@ const NotesPage = ({ navigate }) => {
           <Reveal>
             <Logo size={28} style={{ margin: "0 auto 24px", opacity: 0.85 }} />
             <p className="display italic" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", color: "var(--muted)", maxWidth: "26ch", margin: "0 auto 36px" }}>
-              The next note arrives quietly.
+              The next note arrives soon.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
               <span>Begin an Assessment</span><span className="arrow"></span>
