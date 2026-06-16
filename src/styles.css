@@ -1,11 +1,11 @@
 /* AVEN MED — design system */
 :root {
-  /* Roman clay — AVEN MED palette */
-  --bg-deep: #B8A47D;        /* deepest clay (sparing) */
-  --bg: #D6C5AD;             /* warm Roman clay — dominant page background */
-  --bg-1: #C8B295;           /* deeper clay — accent bands (e.g. Family Medicine "How it works") */
-  --surface: #E8E0D0;        /* light neutral — image placeholders (intentionally lighter than bg) */
-  --surface-2: #DCD2C0;      /* slight variation for featured placeholders */
+  /* Warm ivory / cream — AVEN MED original palette (restored from f123b15) */
+  --bg-deep: #ede4d2;        /* deeper warm cream (sparing) */
+  --bg: #f3ecdc;             /* warm ivory — dominant page background */
+  --bg-1: #ece3d0;           /* deeper warm cream — accent bands */
+  --surface: #e8dfc9;        /* sand — image placeholders */
+  --surface-2: #e1d6bc;      /* deeper sand — featured placeholders */
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 
