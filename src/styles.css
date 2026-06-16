@@ -1,20 +1,11 @@
 /* AVEN MED — design system */
 :root {
-<<<<<<< Updated upstream
-  /* Bone/cream — AVEN MED palette */
-  --bg-deep: #D5C9AE;        /* deeper warm cream (sparing) */
-  --bg: #E5DAC2;             /* warm bone — dominant page background */
-  --bg-1: #E5DAC2;           /* same as bg so diagonal texture stays continuous */
-  --surface: #E8E0D0;        /* light neutral — image placeholders (intentionally lighter than bg) */
-  --surface-2: #DCD2C0;      /* very slight variation for featured placeholders */
-=======
   /* Warm ivory / cream — AVEN MED original palette (restored from f123b15) */
   --bg-deep: #ede4d2;        /* deeper warm cream (sparing) */
   --bg: #f3ecdc;             /* warm ivory — dominant page background */
   --bg-1: #ece3d0;           /* deeper warm cream — accent bands */
   --surface: #e8dfc9;        /* sand — image placeholders */
   --surface-2: #e1d6bc;      /* deeper sand — featured placeholders */
->>>>>>> Stashed changes
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 
