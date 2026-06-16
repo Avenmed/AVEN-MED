@@ -21,8 +21,8 @@ const AboutPage = ({ navigate }) => {
               <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Lead Practitioner</div>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, maxWidth: "56ch" }}>
                 AVEN MED is founded and led by Alaa Mashal, FNP-BC — a board-certified
-                Family Nurse Practitioner whose practice is built around restraint,
-                anatomy, and the long view of patient care. She is the only injector
+                Family Nurse Practitioner whose practice is built around restraint
+                and the long view of patient care. She is the only injector
                 at AVEN MED; you will only ever be treated by her.
               </p>
             </Reveal>

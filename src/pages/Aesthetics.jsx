@@ -9,13 +9,13 @@ const AestheticsPage = ({ navigate }) => {
     {
       k: "Neuromodulators",
       tag: "Botox · Dysport · Xeomin",
-      lede: "Subtle softening of expressive lines — placed with anatomy first, in conservative, well-distributed micro-doses.",
+      lede: "Subtle softening of expressive lines — placed with care, in conservative, well-distributed micro-doses.",
       photo: "Botox injection · gloved hand · 35mm",
       treatments: [
         { n: "Forehead & Glabella", d: "Soft, mobile expression with no frozen quality. Re-evaluated every four months." },
         { n: "Orbicularis · Crow's Feet", d: "Subtle, targeted relaxation around the eye to soften lateral lines." },
         { n: "Lip Flip", d: "Two to four micro-units along the lip border for a soft eversion — no filler." },
-        { n: "Masseter · Jawline", d: "Slimming and clenching relief. Anatomy-mapped on each visit." }
+        { n: "Masseter · Jawline", d: "Slimming and clenching relief. Mapped carefully on each visit." }
       ]
     },
     {

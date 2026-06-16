@@ -9,7 +9,7 @@ const NOTES = [
     image: "Lip · macro · still",
     body: [
       "The conversation about lip filler has been bent for years toward addition — more, fuller, bigger. We have come to associate the word with shape that announces itself.",
-      "But a lip, like every other piece of the face, is anatomy first. Border, vermilion, philtrum, eversion. Texture across the wet line. The way a lip moves when its owner is thinking.",
+      "But a lip, like every other piece of the face, is structure first. Border, vermilion, philtrum, eversion. Texture across the wet line. The way a lip moves when its owner is thinking.",
       "Filler that works does not change a face — it returns one. A border softened back to its natural definition. A philtrum read for what it is. An upper-to-lower ratio that honors the face it sits on.",
       "The right lip treatment, when restraint is the discipline, is rarely identifiable as filler. It looks instead like a softer version of the same mouth. Half a syringe, sometimes less. Once a year, sometimes longer.",
       "A treatment that ages with the face rather than fighting it.",
@@ -21,7 +21,7 @@ const NOTES = [
     image: "Profile · soft light · 35mm",
     body: [
       "A face is not a project. It is a long, continuous letter the body writes to itself — about the years, the climate, the laughter, the worry, the sleep.",
-      "We have learned to call most of what it says \"decline.\" But aging is not decline. It is information. The architecture changes — bone reabsorbs from the medial cheek, fat pads slide, collagen thins through the dermis. None of this is failure. All of it is anatomy.",
+      "We have learned to call most of what it says \"decline.\" But aging is not decline. It is information. The architecture changes — bone reabsorbs from the medial cheek, fat pads slide, collagen thins through the dermis. None of this is failure. All of it is structure.",
       "The work of aesthetic medicine, when done with restraint, is to read these changes carefully and to support what is already happening — never to interrupt the letter.",
       "A face well-cared-for across years does not look untouched. It looks like itself, only a softer version of itself.",
       "The patient and the practice are not adversaries to time. They are in conversation with it.",
@@ -35,7 +35,7 @@ const NOTES = [
       "Most consultations begin with a question: \"What do you want done?\" The Assessment begins with a different one — what do you see?",
       "For ninety minutes, we do not prescribe. We map. The face under warm light, in soft focus. Pigment, vascular, collagen, texture, volume — five layered conversations that most patients have never had the words for.",
       "What we usually find is not a list of problems. It is a shape. A pattern. A way the face is asking to be supported, not changed.",
-      "Patients leave the Assessment not with a treatment plan, but with understanding — of their own anatomy, of where time has done its work, of what restraint can offer and what it cannot.",
+      "Patients leave the Assessment not with a treatment plan, but with understanding — of their own face, of where time has done its work, of what restraint can offer and what it cannot.",
       "The plan, when it comes, comes second. And it is usually subtler than the patient expected.",
     ],
   },
@@ -54,7 +54,7 @@ const NotesPage = ({ navigate }) => {
               The editorial cousin<br />to The Assessment.
             </h1>
             <p className="body" style={{ margin: "24px auto 0", maxWidth: "52ch" }}>
-              Considered writing on anatomy, restraint, and the long practice of looking like yourself. A magazine column, not a blog.
+              Considered writing on restraint and the long practice of looking like yourself. A magazine column, not a blog.
             </p>
           </Reveal>
         </div>

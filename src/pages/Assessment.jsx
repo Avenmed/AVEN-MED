@@ -72,7 +72,7 @@ const AssessmentPage = ({ navigate }) => {
                   <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>up to 60 minutes</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
-                  An in-depth consultation with Alaa Mashal, FNP-BC. A full review of anatomy, history, and goals — and a written plan you walk out with. The fee is credited toward your treatment.
+                  An in-depth consultation with Alaa Mashal, FNP-BC. A full review of your history and goals — and a written plan you walk out with. The fee is credited toward your treatment.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {[
@@ -108,7 +108,7 @@ const AssessmentPage = ({ navigate }) => {
               Time with a top injector, <em>valued.</em>
             </h3>
             <p className="body" style={{ marginBottom: 22 }}>
-              The consultation is where the work begins. Mapping anatomy, listening to goals, and writing a plan takes Alaa's full attention — and that time has value. A paid consultation lets the practice slow down, focus, and treat every visit with the same care.
+              The consultation is where the work begins. Listening to goals and writing a plan takes Alaa's full attention — and that time has value. A paid consultation lets the practice slow down, focus, and treat every visit with the same care.
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
               Whichever tier you choose, the fee credits directly toward your treatment. No appointment is wasted — every dollar moves with you into your care.

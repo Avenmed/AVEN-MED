@@ -16,7 +16,7 @@ const Home = ({ navigate }) => {
       <section className="hero">
         <div className="container hero-inner">
           <div>
-            <Eyebrow>· The AVEN Clinic · Est. 2026</Eyebrow>
+            <Eyebrow>· AVEN MED · Est. 2026</Eyebrow>
             <h1 style={{ marginTop: 26 }}>
               The art<br />
               of <em>looking</em><br />

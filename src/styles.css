@@ -22,7 +22,7 @@
   --ivory: #2E2620;          /* primary text — warm ink */
   --ivory-soft: #4A3D2E;     /* secondary text — slightly softer warm ink */
   --muted: #7A6B58;          /* tertiary text — muted warm */
-  --muted-2: #A39580;        /* quietest text */
+  --muted-2: #A39580;        /* softest text */
 
   --serif: "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
   --sans: "Jost", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -790,7 +790,7 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
     gap: clamp(28px, 6vw, 48px) !important;
   }
 
-  /* Reading philosophy bar — center its single column when stacked */
+  /* Philosophy bar — center its single column when stacked */
   [style*="grid-template-columns: minmax(220px"] > * {
     text-align: center;
   }

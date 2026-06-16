@@ -1,6 +1,6 @@
 # AVEN MED Website
 
-A practice website for AVEN MED — aesthetic medicine, family care, and quiet wellness in Orland Park, Illinois.
+A practice website for AVEN MED — aesthetic medicine, family care, and wellness in Orland Park, Illinois.
 
 ## Pages
 

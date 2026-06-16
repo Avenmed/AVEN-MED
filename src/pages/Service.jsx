@@ -6,7 +6,7 @@ const SERVICES = {
   'lip-filler': {
     eyebrow: "Aesthetics · Lip",
     headline: <>Definition,<br /><em>not addition.</em></>,
-    philosophy: "A lip is anatomy first — border, vermilion, philtrum, eversion. Filler placed at AVEN respects what's already there. We add restraint, not volume. The aim is a softer, more defined version of your own mouth.",
+    philosophy: "A lip has structure first — border, vermilion, philtrum, eversion. Filler placed at AVEN respects what's already there. We add restraint, not volume. The aim is a softer, more defined version of your own mouth.",
     reveals: [
       "Border integrity and the natural eversion of the lip.",
       "Asymmetry, philtrum quality, and lip-to-face proportion.",
@@ -18,7 +18,7 @@ const SERVICES = {
   'neuromodulators': {
     eyebrow: "Aesthetics · 01",
     headline: <>Expression,<br /><em>kept.</em></>,
-    philosophy: "Neuromodulators at AVEN are placed in micro-doses, mapped to your specific expression patterns — not a chart, not a template. The goal is a softer version of your face. Never frozen, never visibly treated. Anatomy first, restraint always.",
+    philosophy: "Neuromodulators at AVEN are placed in micro-doses, mapped to your specific expression patterns — not a chart, not a template. The goal is a softer version of your face. Never frozen, never visibly treated. Restraint always.",
     reveals: [
       "Resting tone and the way your face moves in conversation.",
       "Asymmetry between sides and across the brow-eye-mid-face axis.",

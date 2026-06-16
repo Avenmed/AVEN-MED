@@ -225,7 +225,7 @@ const ContactPage = ({ navigate }) => {
               "We do not advertise. We are introduced.
               Thank you for finding us."
             </div>
-            <div className="label" style={{ marginTop: 32, color: "var(--muted)" }}>— THE AVEN CLINIC</div>
+            <div className="label" style={{ marginTop: 32, color: "var(--muted)" }}>— AVEN MED</div>
           </Reveal>
         </div>
       </section>
