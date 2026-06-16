@@ -25,11 +25,11 @@ const WellnessPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* HERO IMAGE */}
+      {/* HERO IMAGE — placeholder for real photo of healthy patient */}
       <section style={{ paddingBottom: 120 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Wellness suite · ivory linens · warm tungsten" meta="anamorphic still · 2.4:1" aspect="21/9" />
+            <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9" />
           </Reveal>
         </div>
       </section>
@@ -77,33 +77,46 @@ const WellnessPage = ({ navigate }) => {
             {[
               {
                 k: "The Foundation",
-                p: "8 weeks",
-                d: "A quarterly bloodwork baseline, two practitioner Readings, and an skin assessment. The starting point for every new AVEN patient.",
-                items: ["Comprehensive 70-marker panel", "Two practitioner Readings", "One IV infusion", "skin assessment"]
+                p: "$500 / year",
+                d: "An entry-point wellness program — bloodwork twice a year, a single IV infusion, and a skin assessment.",
+                items: ["2 bloodwork panels per year", "1 IV infusion", "1 skin assessment"]
               },
               {
                 k: "The Compound",
-                p: "12 months",
-                d: "Quarterly bloodwork, monthly IV protocol, hormone optimization, and integrated aesthetics planning. The full AVEN practice in one program.",
-                items: ["Quarterly 70-marker panels", "12 monthly IV infusions", "Hormone protocol with quarterly review", "Aesthetics pathway integrated"],
+                p: "$2,500 / year",
+                d: "The deeper practice. Quarterly labs, monthly IV protocol, and twice-yearly skin assessments — the full AVEN wellness practice in one program.",
+                items: ["Quarterly bloodwork", "12 monthly IV infusions", "2 skin assessments"],
                 feat: true
+              },
+              {
+                k: "Hormone",
+                p: "Practitioner-prescribed",
+                d: "Bio-identical hormone protocol with quarterly review — conservative, monitored, and continuously adjusted.",
+                items: ["Hormone protocol", "Quarterly review", "Lab-informed adjustments"]
+              },
+              {
+                k: "Weight Loss",
+                p: "Monthly",
+                d: "A practitioner-led program built around GLP-1 medications. Semaglutide and Tirzepatide, prescribed when appropriate.",
+                items: ["Semaglutide · $300 / month", "Tirzepatide · $400 / month", "Practitioner check-ins included"]
               }
             ].map((p, i) => (
-              <Reveal key={p.k} delay={i * 140}
+              <Reveal key={p.k} delay={i * 120}
                 style={{
-                  padding: 56,
-                  borderRight: i === 0 ? "1px solid var(--hairline)" : "none",
+                  padding: 48,
+                  borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none",
+                  borderTop: i > 1 ? "1px solid var(--hairline)" : "none",
                   background: p.feat ? "var(--surface)" : "transparent"
                 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                   <div className="label" style={{ color: "var(--gold)" }}>Program 0{i + 1}</div>
                   <div className="label" style={{ color: "var(--muted)" }}>{p.p}</div>
                 </div>
-                <h3 className="display" style={{ fontSize: 48, margin: "20px 0 18px", fontWeight: 300, letterSpacing: "-0.01em" }}>
+                <h3 className="display" style={{ fontSize: 40, margin: "20px 0 18px", fontWeight: 300, letterSpacing: "-0.01em" }}>
                   {p.k}
                 </h3>
-                <p className="body" style={{ marginBottom: 32 }}>{p.d}</p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14, paddingTop: 24, borderTop: "1px solid var(--hairline)" }}>
+                <p className="body" style={{ marginBottom: 24, fontSize: 15 }}>{p.d}</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {p.items.map((it) => (
                     <li key={it} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 12, color: "var(--ivory)", fontSize: 14 }}>
                       <span style={{ width: 12, height: 1, background: "var(--gold)", marginTop: 11 }}></span><span>{it}</span>
@@ -120,13 +133,13 @@ const WellnessPage = ({ navigate }) => {
       <section className="section">
         <div className="container">
           <Reveal>
-            <Eyebrow>IV Atelier</Eyebrow>
+            <Eyebrow>IV Infusions</Eyebrow>
             <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 40 }}>
               <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-                Quiet infusions — composed for the body's <em>quietest</em> hour.
+                IV infusions — <em>types</em><br />and what each one does.
               </h2>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-                <span>The full atelier</span><span className="arrow"></span>
+                <span>The full menu</span><span className="arrow"></span>
               </a>
             </div>
           </Reveal>
@@ -153,6 +166,15 @@ const WellnessPage = ({ navigate }) => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PATIENT PHOTO PLACEHOLDER */}
+      <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="Patient · post-infusion · healthy" meta="natural light · 16:9 · placeholder" aspect="16/9" />
+          </Reveal>
         </div>
       </section>
 

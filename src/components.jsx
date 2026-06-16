@@ -37,7 +37,8 @@ const NAV = [
   { label: "About AVEN", path: "/about" },
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
-  { label: "The Assessment", path: "/assessment" },
+  { label: "Family Medicine", path: "/family-medicine" },
+  { label: "AVEN Assessment", path: "/assessment" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },
 ];
@@ -134,9 +135,16 @@ const Footer = ({ navigate }) => (
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, fontSize: 13, color: "var(--ivory-soft)", marginBottom: 56 }}>
-        <a href="mailto:hello@avenmed.co" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>hello@avenmed.co</a>
-        <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
-        <a href="#/notes" onClick={(e) => { e.preventDefault(); navigate("/notes"); }} style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Receive Field Notes · quarterly</a>
+        <a href="mailto:info@avenmedil.com" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>info@avenmedil.com</a>
+        <a href="tel:+17044888280" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>(704) 488 · 8280</a>
+        <div style={{ display: "flex", gap: 24, marginTop: 4 }}>
+          <a href="https://instagram.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
+          <a href="https://facebook.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Facebook</a>
+          <a href="https://tiktok.com/@avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>TikTok</a>
+        </div>
+        <div style={{ marginTop: 12, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", textAlign: "center", lineHeight: 1.6 }}>
+          14470 LaGrange Rd, Ste 101<br />Orland Park, IL 60462
+        </div>
       </div>
 
       <div style={{

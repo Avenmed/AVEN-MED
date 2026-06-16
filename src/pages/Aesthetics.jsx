@@ -10,33 +10,35 @@ const AestheticsPage = ({ navigate }) => {
       k: "Neuromodulators",
       tag: "Botox · Dysport · Xeomin",
       lede: "Quiet softening of expressive lines — placed with anatomy first, in conservative, well-distributed micro-doses.",
+      photo: "Botox injection · gloved hand · 35mm",
       treatments: [
-        { n: "Forehead & Glabella", t: "30 min", d: "Soft, mobile expression with no frozen quality. Re-evaluated every four months." },
-        { n: "Orbicularis · Crow's Feet", t: "20 min", d: "Subtle, targeted relaxation around the eye to soften lateral lines." },
-        { n: "Lip Flip", t: "15 min", d: "Two to four micro-units along the lip border for a soft eversion — no filler." },
-        { n: "Masseter · Jawline", t: "25 min", d: "Slimming and clenching relief. Anatomy-mapped on each visit." }
+        { n: "Forehead & Glabella", d: "Soft, mobile expression with no frozen quality. Re-evaluated every four months." },
+        { n: "Orbicularis · Crow's Feet", d: "Subtle, targeted relaxation around the eye to soften lateral lines." },
+        { n: "Lip Flip", d: "Two to four micro-units along the lip border for a soft eversion — no filler." },
+        { n: "Masseter · Jawline", d: "Slimming and clenching relief. Anatomy-mapped on each visit." }
       ]
     },
     {
       k: "Filler & Balancing",
-      tag: "Lip · Chin · Cheek · Profile",
+      tag: "Always about balance",
       lede: "Sub-millimeter facial balancing — never about volume for its own sake, always about quiet proportion.",
       treatments: [
-        { n: "Lip Hydration", t: "45 min", d: "Soft hyaluronic refinement — preserving border, philtrum and natural eversion." },
-        { n: "Chin Projection", t: "45 min", d: "Restores anterior projection and rebalances the profile in one or two sessions." },
-        { n: "Cheek Architecture", t: "60 min", d: "Lift and structural support through the lateral and anterior cheek." },
-        { n: "Facial Balancing", t: "75 min", d: "A holistic, mapped session addressing chin, cheek, jaw, and temple together." }
+        { n: "Lip Filler", d: "Soft hyaluronic refinement — preserving border, philtrum and natural eversion." },
+        { n: "Jawline Filler", d: "Definition along the lateral jaw — proportion, structure, and quiet support." },
+        { n: "Chin Projection", d: "Restores anterior projection and rebalances the profile in one or two sessions." },
+        { n: "Cheek Architecture", d: "Lift and structural support through the lateral and anterior cheek." },
+        { n: "Facial Balancing", d: "A holistic, mapped session addressing chin, cheek, jaw, and temple together." }
       ]
     },
     {
       k: "Biostimulators",
-      tag: "Sculptra · Skin Boosters",
+      tag: "Sculptra · Radiesse · Skin Boosters",
       lede: "Collagen-led treatments. We build the architecture beneath the skin so that less filler is ever needed.",
       treatments: [
-        { n: "Sculptra · Full Face", t: "60 min", d: "Poly-L-lactic acid for long-term collagen support. Three-visit protocol." },
-        { n: "Profhilo · Skin Booster", t: "30 min", d: "Bio-remodeling hyaluronic for skin laxity, glow, and hydration." },
-        { n: "Radiesse · Diluted", t: "45 min", d: "Calcium hydroxylapatite to restore skin density along the jawline and neck." },
-        { n: "Polynucleotides", t: "30 min", d: "Tissue regeneration for the periorbital area and eyelid texture." }
+        { n: "Sculptra · Full Face", d: "Poly-L-lactic acid for long-term collagen support. Three-visit protocol." },
+        { n: "Radiesse · Diluted", d: "Calcium hydroxylapatite to restore skin density along the jawline and neck." },
+        { n: "Skinvive by Juvederm", d: "Microdroplet hyaluronic for hydration and surface quality — placed superficially." },
+        { n: "VAMP", d: "Vampire-style autologous plasma protocol for under-eye renewal and skin quality." }
       ]
     },
     {
@@ -44,22 +46,20 @@ const AestheticsPage = ({ navigate }) => {
       tag: "Microneedling · PRP · Peels",
       lede: "Texture, tone, and pigment — addressed in seasonal pathways rather than aggressive one-off treatments.",
       treatments: [
-        { n: "Microneedling + PRP", t: "60 min", d: "Collagen induction with autologous plasma. Three to four sessions, seasonally." },
-        { n: "Chemical Peels", t: "45 min", d: "Medical-grade peels tailored to your pigment and texture maps." },
-        { n: "Hydrafacial · AVEN", t: "60 min", d: "Curated for AVEN — gentle cleansing, infusion, and biome-supportive serums." },
-        { n: "Dermaplaning + Mask", t: "45 min", d: "Surface refresh paired with a calming, custom topical." }
+        { n: "Microneedling + PRP", d: "Collagen induction with autologous plasma. Three to four sessions, seasonally." },
+        { n: "Chemical Peels", d: "Medical-grade peels tailored to your pigment and texture maps." }
       ]
     },
     {
       k: "Advanced Rejuvenation",
-      tag: "Laser · Energy · Future",
+      tag: "Laser · Energy · Coming soon",
       lede: "Forthcoming technology arriving at AVEN — radiofrequency, fractional laser, and energy-based skin tightening.",
-      coming: "Arriving Q3 · 2026",
+      coming: "Coming soon",
       treatments: [
-        { n: "Radiofrequency Skin Tightening", t: "60 min", d: "Bipolar radiofrequency for deep collagen remodeling. Comfortable, non-ablative." },
-        { n: "Fractional Resurfacing", t: "75 min", d: "Selective fractional laser for texture, tone, and surgical-scar refinement." },
-        { n: "Vascular Laser", t: "30 min", d: "Targeted treatment of redness, telangiectasias, and rosacea-related vessels." },
-        { n: "Pigment Laser", t: "30 min", d: "Q-switched targeting of solar lentigines and post-inflammatory pigment." }
+        { n: "Radiofrequency Skin Tightening", d: "Bipolar radiofrequency for deep collagen remodeling. Comfortable, non-ablative." },
+        { n: "Fractional Resurfacing", d: "Selective fractional laser for texture, tone, and surgical-scar refinement." },
+        { n: "Vascular Laser", d: "Targeted treatment of redness, telangiectasias, and rosacea-related vessels." },
+        { n: "Pigment Laser", d: "Q-switched targeting of solar lentigines and post-inflammatory pigment." }
       ]
     }
   ];
@@ -73,7 +73,7 @@ const AestheticsPage = ({ navigate }) => {
             <div>
               <Eyebrow>Aesthetics</Eyebrow>
               <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 132px)", margin: "24px 0 0", lineHeight: 0.96, maxWidth: "12ch" }}>
-                Anatomy,<br /><em>millimeter</em><br />by millimeter.
+                Treatments,<br /><em>carefully</em><br />placed.
               </h1>
             </div>
             <p className="lede">
@@ -124,7 +124,7 @@ const AestheticsPage = ({ navigate }) => {
                   </div>
                 )}
               </div>
-              <Ph label={"Editorial · " + categories[cat].k} meta="warm key · 35mm" aspect="4/5" />
+              <Ph label={categories[cat].photo || ("Editorial · " + categories[cat].k)} meta="warm key · 35mm · placeholder" aspect="4/5" />
             </div>
 
             <div style={{ marginTop: 100, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
@@ -137,10 +137,7 @@ const AestheticsPage = ({ navigate }) => {
                     paddingLeft: i % 2 === 1 ? 60 : 0,
                     borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none"
                   }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <h4 className="display" style={{ fontSize: 30, margin: 0, fontWeight: 300 }}>{t.n}</h4>
-                    <span className="label" style={{ color: "var(--gold)" }}>{t.t}</span>
-                  </div>
+                  <h4 className="display" style={{ fontSize: 30, margin: 0, fontWeight: 300 }}>{t.n}</h4>
                   <p className="body" style={{ marginTop: 12 }}>{t.d}</p>
                 </div>
               ))}
@@ -163,8 +160,7 @@ const AestheticsPage = ({ navigate }) => {
             <p className="body">
               Per-syringe and per-unit pricing encourages overuse. At AVEN, we
               quote the full year of a pathway after we have read your skin
-              and understood your goals. Most patients invest between $4,000
-              and $14,000 annually across aesthetics and wellness combined.
+              and understood your goals.
             </p>
             <div style={{ marginTop: 36 }}>
               <a href="#/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
@@ -185,8 +181,7 @@ const AestheticsPage = ({ navigate }) => {
               A pathway, not a <em>menu.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
-              Every aesthetics journey at AVEN begins with an Assessment
-              and a 90-minute Assessment.
+              Every aesthetics journey at AVEN begins with the AVEN Assessment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Begin Your Pathway</span><span className="arrow"></span>

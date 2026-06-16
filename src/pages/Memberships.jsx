@@ -13,13 +13,13 @@ const MembershipsPage = ({ navigate }) => {
             <div>
               <Eyebrow>Memberships</Eyebrow>
               <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 132px)", margin: "24px 0 0", lineHeight: 0.96, maxWidth: "12ch" }}>
-                Care that<br /><em>compounds</em><br />quietly.
+                Care that<br /><em>compounds</em><br />over time.
               </h1>
             </div>
             <p className="lede">
-              An AVEN membership is not a discount. It is a treatment-banking
-              and continuity system — a way of investing in the long, slow
-              practice of looking like yourself.
+              An AVEN membership is a way of investing in your care steadily —
+              banking toward treatments and unlocking ongoing access to the
+              practice.
             </p>
           </Reveal>
         </div>
@@ -29,73 +29,64 @@ const MembershipsPage = ({ navigate }) => {
       <section className="section" style={{ paddingTop: 40 }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            {/* Essential */}
+
+            {/* MAINTENANCE — $100/month */}
             <Reveal className="plan">
-              <div className="tier">AVEN Essential</div>
-              <h3 style={{ marginBottom: 10 }}>Essential</h3>
+              <div className="tier">AVEN Maintenance</div>
+              <h3 style={{ marginBottom: 10 }}>Maintenance</h3>
               <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>
-                The foundational practice. A monthly investment that banks
-                toward your aesthetics pathway and unlocks priority access to
-                the clinic.
+                The foundational membership. A monthly contribution that
+                banks toward any treatment and keeps your pathway moving.
               </p>
               <div className="price">
-                <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>Monthly contribution</span>
-              </div>
-              <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
-                Determined at your Assessment
+                <span className="amt">$100</span>
+                <span className="per">/ month</span>
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "Monthly contribution banked toward any treatment, no expiry",
-                  "Personalized 12-month pathway, reviewed quarterly",
+                  "$100 banked monthly toward any treatment",
+                  "Skin assessment — we review your pathway 1–2x a year",
+                  "Saturday clinic access",
                   "Priority booking · 48-hour advance access",
-                  "Annual skin assessment included",
-                  "Pause membership at any time — banked credit retained"
+                  "Banked credit retained if you pause"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
                 ))}
               </ul>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: 8 }}>
-                <span>Inquire about Essential</span><span className="arrow"></span>
+                <span>Inquire about Maintenance</span><span className="arrow"></span>
               </a>
             </Reveal>
 
-            {/* Elevate */}
+            {/* SIGNATURE — $200/month */}
             <Reveal delay={140} className="plan feat">
-              <div style={{ position: "absolute", top: 24, right: 24, padding: "6px 14px", border: "1px solid var(--gold)", color: "var(--gold)", fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase" }}>
-                Founding · Limited
-              </div>
-              <div className="tier">AVEN Elevate</div>
-              <h3 style={{ marginBottom: 10 }}>Elevate</h3>
+              <div className="tier">AVEN Signature</div>
+              <h3 style={{ marginBottom: 10 }}>Signature</h3>
               <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>
-                Concierge access to the clinic and its full ecosystem. For
-                patients who want priority, privacy, and first access to every
-                technology AVEN introduces.
+                The deeper practice. A larger monthly contribution that
+                banks toward aesthetics or wellness, plus expanded access.
               </p>
               <div className="price">
-                <span className="amt" style={{ fontSize: "0.5em", fontStyle: "italic", letterSpacing: "0.02em" }}>By application</span>
-              </div>
-              <div className="label" style={{ color: "var(--muted)", marginTop: -12 }}>
-                Contribution structured to your plan
+                <span className="amt">$200</span>
+                <span className="per">/ month</span>
               </div>
               <div className="label" style={{ color: "var(--gold)", marginTop: 20, letterSpacing: "0.28em" }}>
-                Everything in Essential, plus —
+                Everything in Maintenance, plus —
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "Monthly contribution banked toward any aesthetics or wellness service",
-                  "VIP Saturday clinic hours by appointment",
-                  "Two complimentary Assessments annually",
-                  "Early access to new treatments and clinic technology",
+                  "$200 banked monthly toward any aesthetics or wellness service",
+                  "Skin assessment — we review your pathway 1–2x a year",
+                  "Saturday clinic access",
+                  "Two complimentary IV infusions annually",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
-                  "Priority overflow into Wellness concierge (2027)",
-                  "Member-only seasonal previews"
+                  "Early access to new treatments and clinic technology"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
                 ))}
               </ul>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }}>
-                <span>Apply for Elevate</span><span className="arrow"></span>
+                <span>Inquire about Signature</span><span className="arrow"></span>
               </a>
             </Reveal>
           </div>
@@ -108,16 +99,16 @@ const MembershipsPage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>How Membership Works</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-              A quiet banking system <em>for</em> the face.
+              A simple banking <em>system</em> for the face.
             </h2>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
             {[
-              { n: "01", k: "Bank Monthly", b: "Your membership fee accrues toward any aesthetic or wellness service. Nothing expires." },
+              { n: "01", k: "Bank Monthly", b: "Your membership contribution accrues toward any aesthetic or wellness service. Nothing expires while active." },
               { n: "02", k: "Plan Quarterly", b: "We review your pathway with you four times a year — adjusting for season, life, and progress." },
-              { n: "03", k: "Treat Calmly", b: "Visit when your pathway calls for it, not when a promotion does. There is no pressure to spend down." },
-              { n: "04", k: "Stay, or Pause", b: "Memberships pause without penalty. Your banked balance remains yours, indefinitely." }
+              { n: "03", k: "Treat When Ready", b: "Visit when your pathway calls for it. There is no pressure to spend down." },
+              { n: "04", k: "Stay, or Pause", b: "Memberships pause without penalty. Banked credit stays usable for twelve months." }
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 100}>
                 <div style={{ padding: "36px 28px", border: "1px solid var(--hairline)", height: "100%", background: "var(--bg)" }}>
@@ -137,30 +128,29 @@ const MembershipsPage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>Compare</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 60px", maxWidth: "18ch" }}>
-              A side-by-side, <em>quietly.</em>
+              Side by side.
             </h2>
           </Reveal>
 
           <div style={{ border: "1px solid var(--hairline)" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", padding: "20px 32px", borderBottom: "1px solid var(--hairline)" }}>
               <div className="label" style={{ color: "var(--muted)" }}>Benefit</div>
-              <div className="label" style={{ color: "var(--ivory-soft)" }}>Essential</div>
-              <div className="label" style={{ color: "var(--gold)" }}>Elevate</div>
+              <div className="label" style={{ color: "var(--ivory-soft)" }}>Maintenance</div>
+              <div className="label" style={{ color: "var(--gold)" }}>Signature</div>
             </div>
             {[
-              ["Monthly contribution", "Determined at your Assessment", "By application"],
-              ["skin assessment", "Annual", "Twice annually"],
-              ["Pathway review", "Quarterly", "Quarterly + on-demand"],
+              ["Monthly contribution", "$100", "$200"],
+              ["Skin assessment review", "1–2x / year", "1–2x / year"],
+              ["Saturday clinic access", "Included", "Included"],
               ["Priority booking", "48 hours", "Concierge line"],
-              ["Saturday clinic access", "—", "Included"],
-              ["Early access · new technology", "—", "First access"],
-              ["Member-only seasonal previews", "—", "Invitation"],
-              ["Concierge Wellness (2027)", "Waitlist", "Priority"]
-            ].map(([k, e, el], i) => (
+              ["Pathway review", "Quarterly", "Quarterly + on-demand"],
+              ["Complimentary IV infusions", "—", "Two annually"],
+              ["Early access · new technology", "—", "First access"]
+            ].map(([k, e, el], i, arr) => (
               <div key={k}
                 style={{
                   display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr",
-                  padding: "22px 32px", borderBottom: i === 6 ? "none" : "1px solid var(--hairline)",
+                  padding: "22px 32px", borderBottom: i === arr.length - 1 ? "none" : "1px solid var(--hairline)",
                   alignItems: "center", fontSize: 14
                 }}>
                 <div style={{ color: "var(--ivory)" }}>{k}</div>
@@ -178,11 +168,11 @@ const MembershipsPage = ({ navigate }) => {
           <Reveal>
             <Logo size={42} style={{ margin: "0 auto 28px" }} />
             <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 72px)", margin: "0 auto 36px", maxWidth: "20ch" }}>
-              An investment in <em>yourself</em> —<br />not a discount on units.
+              An investment in <em>yourself.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto", maxWidth: "60ch" }}>
               A face does not change on a coupon cycle. It changes over years,
-              with the steady, quiet attention of a single practitioner. The
+              with the steady attention of a single practitioner. The
               membership exists so that the practice can.
             </p>
           </Reveal>
@@ -195,15 +185,15 @@ const MembershipsPage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>Questions</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 56px)", margin: "20px 0 60px" }}>
-              Common <em>quiet</em> ones.
+              Common ones.
             </h2>
           </Reveal>
           {[
-            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN — nothing is held as an administrative fee. The benefits above (priority booking, Assessments, seasonal previews) are included on top."],
-            ["What happens if I pause?", "Membership can be paused for up to twelve months without penalty. Your banked credit remains in your file and continues to be available for any service."],
-            ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments and include a complimentary Assessment for the recipient."],
-            ["Is there a contract or commitment?", "There is no contract. We ask for a soft three-month minimum so that we can begin a meaningful pathway together — beyond that, you are free to continue, pause, or close at any time."],
-            ["Will Elevate continue after the founding cohort closes?", "The Elevate tier will remain, but pricing and seat count will adjust once the founding cohort fills. Founding members are price-locked for the life of their membership."]
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward any treatment or wellness service at AVEN. The benefits above (priority booking, Saturday access, skin assessment review) are included on top."],
+            ["What happens if I pause?", "Membership can be paused at any time. Your banked credit remains usable for twelve months from the pause date — applied to any service when you're ready to return."],
+            ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments."],
+            ["What's included in the skin assessment review?", "Once or twice a year, we sit down to look at your pathway together — what's working, what's next, what to adjust. The skin is read; the plan is updated."],
+            ["Can I switch between Maintenance and Signature?", "Yes. You can move between the two tiers at any time. Banked credit carries over."]
           ].map(([q, a], i) => (
             <Reveal key={q} delay={i * 60}>
               <details style={{
@@ -230,12 +220,8 @@ const MembershipsPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 28px", maxWidth: "16ch" }}>
-              Begin a <em>quiet</em><br />membership.
+              Begin a <em>membership.</em>
             </h2>
-            <p className="body" style={{ margin: "0 auto 44px" }}>
-              The Elevate founding cohort is limited to 80 patients.
-              Twenty-three seats remain.
-            </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Apply for Membership</span><span className="arrow"></span>
             </a>

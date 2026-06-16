@@ -11,6 +11,7 @@ import AboutPage from './pages/About.jsx';
 import AestheticsPage from './pages/Aesthetics.jsx';
 import WellnessPage from './pages/Wellness.jsx';
 import AssessmentPage from './pages/Assessment.jsx';
+import FamilyMedicinePage from './pages/FamilyMedicine.jsx';
 import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
 import ServicePage from './pages/Service.jsx';
@@ -134,6 +135,7 @@ const App = () => {
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
+      case "/family-medicine": return FamilyMedicinePage;
       case "/assessment": return AssessmentPage;
       case "/memberships": return MembershipsPage;
       case "/contact": return ContactPage;

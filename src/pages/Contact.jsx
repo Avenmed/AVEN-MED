@@ -36,8 +36,9 @@ const ContactPage = ({ navigate }) => {
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>
               <Eyebrow>Contact · By Appointment</Eyebrow>
+              {/* TODO: Ahmad will provide the replacement hero headline for /contact */}
               <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 132px)", margin: "24px 0 0", lineHeight: 0.96, maxWidth: "12ch" }}>
-                Begin a <em>quiet</em><br />conversation.
+                <em>Contact</em><br />AVEN MED.
               </h1>
             </div>
             <p className="lede">
@@ -45,6 +46,15 @@ const ContactPage = ({ navigate }) => {
               share a few details and our clinic coordinator will be in touch
               within one business day.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CLINIC PHOTO — placeholder */}
+      <section style={{ paddingBottom: 60 }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="The clinic · interior · 16:9" meta="warm tungsten · plaster · placeholder" aspect="16/9" />
           </Reveal>
         </div>
       </section>
@@ -145,27 +155,35 @@ const ContactPage = ({ navigate }) => {
           </Reveal>
 
           <Reveal delay={140}>
-            <Ph label="The Clinic · entry" meta="warm tungsten · brass detail" aspect="4/5" />
+            <Ph label="The clinic · entry · 4:5" meta="warm tungsten · brass detail · placeholder" aspect="4/5" />
             <div style={{ marginTop: 40, display: "grid", gap: 28 }}>
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Visit</div>
                 <div className="display" style={{ fontSize: 22, marginTop: 8, lineHeight: 1.4, fontWeight: 300 }}>
-                  Clinic address — to be confirmed<br />Orland Park, IL
+                  14470 LaGrange Rd, Ste 101<br />Orland Park, IL 60462
                 </div>
               </div>
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Hours</div>
+                {/* TODO: Ahmad will provide exact business hours */}
                 <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
-                  Tuesday – Friday · 10 – 6<br />
-                  Saturday · By appointment<br />
-                  <span style={{ color: "var(--muted)" }}>Closed Sunday & Monday</span>
+                  Hours — to be confirmed<br />
+                  <span style={{ color: "var(--muted)" }}>By appointment</span>
                 </div>
               </div>
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Direct</div>
                 <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
-                  <a href="mailto:hello@avenmed.co" style={{ color: "var(--ivory)" }}>hello@avenmed.co</a><br />
+                  <a href="mailto:info@avenmedil.com" style={{ color: "var(--ivory)" }}>info@avenmedil.com</a><br />
                   <a href="tel:+17044888280" style={{ color: "var(--ivory)" }}>(704) 488 · 8280</a>
+                </div>
+              </div>
+              <div>
+                <div className="label" style={{ color: "var(--gold)" }}>Follow</div>
+                <div style={{ marginTop: 8, display: "flex", gap: 18, fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase" }}>
+                  <a href="https://instagram.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
+                  <a href="https://facebook.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Facebook</a>
+                  <a href="https://tiktok.com/@avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>TikTok</a>
                 </div>
               </div>
             </div>
@@ -173,11 +191,22 @@ const ContactPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* MAP */}
+      {/* MAP — Google Maps embed for 14470 LaGrange Rd, Ste 101, Orland Park, IL 60462 */}
       <section style={{ marginTop: 40 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Clinic map · Orland Park · hand-rendered" meta="ivory on slate · letterpress" aspect="21/9" />
+            <div style={{ aspectRatio: "21/9", border: "1px solid var(--hairline)", overflow: "hidden", background: "var(--surface)" }}>
+              <iframe
+                title="AVEN MED — 14470 LaGrange Rd, Ste 101, Orland Park, IL 60462"
+                src="https://www.google.com/maps?q=14470+LaGrange+Rd+Ste+101+Orland+Park+IL+60462&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </Reveal>
         </div>
       </section>

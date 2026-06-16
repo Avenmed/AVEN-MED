@@ -6,8 +6,41 @@ import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
 const AboutPage = ({ navigate }) => {
   return (
     <main className="page">
+      {/* FOUNDER — Alaa Mashal, FNP-BC (FIRST on page) */}
+      <section style={{ paddingTop: 180, paddingBottom: 80 }}>
+        <div className="container" style={{ maxWidth: 1120 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}>
+            <Reveal>
+              <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5" />
+            </Reveal>
+            <Reveal delay={140}>
+              <Eyebrow>· The Practitioner</Eyebrow>
+              <h1 className="display" style={{ fontSize: "clamp(40px, 5.4vw, 78px)", margin: "24px 0 24px", lineHeight: 1.05, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
+                <em>Alaa Mashal,</em><br />FNP-BC.
+              </h1>
+              <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Lead Practitioner</div>
+              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, maxWidth: "56ch" }}>
+                AVEN MED is founded and led by Alaa Mashal, FNP-BC — a board-certified
+                Family Nurse Practitioner whose practice is built around restraint,
+                anatomy, and the long view of patient care. She is the only injector
+                at AVEN MED; you will only ever be treated by her.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* PRACTICE INTERIOR — placeholder for real photo */}
+      <section style={{ paddingBottom: 80 }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 21:9" aspect="21/9" />
+          </Reveal>
+        </div>
+      </section>
+
       {/* HERO — AVEN MED story (centered logo + editorial essay) */}
-      <section style={{ paddingTop: 160, paddingBottom: 80, position: "relative" }}>
+      <section style={{ paddingTop: 80, paddingBottom: 80, position: "relative" }}>
         <div className="container" style={{ maxWidth: 880 }}>
           <Reveal style={{ textAlign: "center" }}>
             <Logo size={84} style={{ margin: "0 auto 36px" }} />
@@ -73,7 +106,7 @@ const AboutPage = ({ navigate }) => {
 
             <Reveal delay={180}>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch" }}>
-                At AVEN MED, Readings are not built around selling
+                At AVEN MED, assessments are not built around selling
                 treatments. They are built around education, trust, and
                 creating personalized pathways for each patient. Whether it's
                 aesthetics, skin health, collagen support, wellness, or
@@ -95,24 +128,7 @@ const AboutPage = ({ navigate }) => {
               <span className="label" style={{ color: "var(--gold)" }}>— The AVEN MED Philosophy</span>
             </Reveal>
 
-            <Reveal delay={340} style={{ marginTop: 64, paddingTop: 48, borderTop: "1px solid var(--hairline)" }}>
-              <div className="label" style={{ color: "var(--muted)", textAlign: "center", marginBottom: 22 }}>Founder &amp; Lead Practitioner</div>
-              <p className="body" style={{ fontSize: 17, lineHeight: 1.85, margin: "0 auto", maxWidth: "62ch", textAlign: "center" }}>
-                AVEN MED is founded and led by <em style={{ fontFamily: "var(--serif)", fontStyle: "italic" }}>Alaa Mashal, FNP-BC</em> —
-                a board-certified Family Nurse Practitioner whose practice
-                is built around restraint, anatomy, and the long view of patient care.
-              </p>
-            </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* PORTRAIT */}
-      <section style={{ paddingBottom: 80 }}>
-        <div className="container">
-          <Reveal>
-            <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 6×7" aspect="16/9" />
-          </Reveal>
         </div>
       </section>
 
@@ -127,9 +143,10 @@ const AboutPage = ({ navigate }) => {
             <Reveal delay={120}>
               <div style={{ display: "grid", gap: 0 }}>
                 {[
-                  ["01", "We look before we touch.", "Every relationship begins with a 90-minute Assessment. We do not prescribe on the first visit."],
-                  ["02", "We work in millimeters.", "Aesthetic injection is anatomy first, art second. The aim is never visibility — it is balance."],
-                  ["03", "We do not sell units.", "There are no packages, syringes-of-the-month, or limited-time offers. Care is sequenced across years, not appointments."],
+                  // TODO: Rule 01 — final wording from Ahmad
+                  ["01", "Rule 01 · TODO", "[TODO: final wording for Rule 01]"],
+                  ["02", "Every assessment turns into a relationship.", "We are not in the business of one-off visits. The assessment opens a long, considered relationship between practitioner and patient."],
+                  ["03", "Every individual has their own treatment plan.", "No two faces, no two histories, no two goals are the same. Every plan is written by hand, for the patient in front of us."],
                   ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
                   ["05", "We educate, then we treat.", "If we have done our work properly, you will leave an Assessment understanding your face better than you did when you arrived."]
                 ].map(([n, h, b]) => (
@@ -170,16 +187,16 @@ const AboutPage = ({ navigate }) => {
           <Reveal>
             <Eyebrow>What an Assessment Feels Like</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-              Ninety unrushed minutes,<br />in a <em>quiet</em> room.
+              Unhurried, in a <em>quiet</em> room.
             </h2>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
             {[
-              { t: "00:00", k: "Arrival", b: "You arrive to a single appointment in the clinic — no other patients, no waiting room." },
-              { t: "00:10", k: "Assessment", b: "A multispectral scan and skin map. Twelve seconds; one quiet portrait of your face in light." },
-              { t: "00:25", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
-              { t: "01:00", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
+              { t: "01", k: "Arrival", b: "You'll be greeted by staff." },
+              { t: "02", k: "Assessment", b: "You'll meet Aura. A multispectral scan and skin map. One quiet portrait of your face in light." },
+              { t: "03", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
+              { t: "04", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
             ].map((s, i) => (
               <Reveal key={s.t} delay={i * 100}>
                 <div style={{ padding: "32px 24px", border: "1px solid var(--hairline)", height: "100%", background: "var(--bg)" }}>
@@ -202,7 +219,7 @@ const AboutPage = ({ navigate }) => {
               Meet the <em>practice.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto 44px" }}>
-              Readings are by appointment only and limited to a small
+              Assessments are by appointment only and limited to a small
               number of new patients each month.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">

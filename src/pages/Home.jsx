@@ -23,8 +23,8 @@ const Home = ({ navigate }) => {
               <em>like yourself.</em>
             </h1>
             <p className="lede" style={{ marginTop: 28, maxWidth: "44ch" }}>
-              Aesthetics, wellness, and family medicine.<br />
-              Built around restraint.
+              Every plan begins with the AVEN Assessment.<br />
+              Aesthetics, wellness, and family medicine.
             </p>
             <div style={{ display: "flex", gap: 24, marginTop: 38, flexWrap: "wrap", alignItems: "center" }}>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
@@ -60,6 +60,15 @@ const Home = ({ navigate }) => {
           </div>
         ))}
       </div>
+
+      {/* PRACTICE PHOTO — placeholder for real photo */}
+      <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 16:9" aspect="16/9" />
+          </Reveal>
+        </div>
+      </section>
 
       {/* BREATH MOMENT — full screen */}
       <section className="breath-moment">
@@ -101,6 +110,34 @@ const Home = ({ navigate }) => {
               <span>About AVEN</span><span className="arrow"></span>
             </a>
           </Reveal>
+        </div>
+      </section>
+
+      {/* THREE SERVICE BOXES — lip filler · Botox · microneedling */}
+      <section className="section" style={{ paddingTop: 60 }}>
+        <div className="container">
+          <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
+            <Eyebrow>· Considered treatments</Eyebrow>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            {[
+              { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format" },
+              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm" },
+              { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro" },
+            ].map((s, i) => (
+              <Reveal key={s.label} delay={i * 100}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+                  <Ph label={s.photo} meta="ivory · natural light · placeholder" aspect="4/5" />
+                  <div>
+                    <div className="display" style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400, color: "var(--ivory)", letterSpacing: "-0.005em" }}>
+                      {s.label}
+                    </div>
+                    <div className="label" style={{ marginTop: 6, color: "var(--muted)" }}>{s.meta}</div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
