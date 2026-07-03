@@ -19,7 +19,7 @@ const FamilyMedicinePage = ({ navigate }) => {
             <p className="lede">
               Family medicine at AVEN includes sick visits, preventive care,
               chronic condition management, and the everyday medicine a
-              family relies on. Self-pay or insurance.
+              family relies on. Self-pay.
             </p>
           </Reveal>
         </div>
@@ -70,17 +70,17 @@ const FamilyMedicinePage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={120}>
             <h3 className="display" style={{ fontSize: "clamp(28px, 3vw, 44px)", margin: "0 0 32px", maxWidth: "26ch" }}>
-              Self-pay or <em>insurance</em> — both accepted.
+              <em>Self-pay</em>, made simple.
             </h3>
             <p className="body" style={{ marginBottom: 22 }}>
-              AVEN family medicine accepts most major insurance plans, and
-              welcomes self-pay patients who prefer the simplicity of paying
-              directly. Either way, the practice is built around continuity —
+              AVEN family medicine is self-pay — no claims, no billing
+              surprises. Patients pay directly for the simplicity and
+              transparency of it. The practice is built around continuity —
               the same practitioner, the same room, every visit.
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
-              Insurance verification is handled before your first visit. We'll
-              walk you through what's covered and what isn't.
+              Pricing is shared clearly before your first visit, so you always
+              know what a visit costs — no surprises.
             </p>
           </Reveal>
         </div>
