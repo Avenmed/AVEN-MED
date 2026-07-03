@@ -1,11 +1,11 @@
 /* AVEN MED — design system */
 :root {
-  /* Roman clay — warm plaster palette (Casa Forma, true clay) */
-  --bg-deep: #C7B08F;        /* deeper clay (sparing) */
-  --bg: #CDB89A;             /* Roman clay — dominant page background */
-  --bg-1: #C4AE8D;           /* deeper clay — accent bands */
-  --surface: #BCA47F;        /* clay sand — image placeholders */
-  --surface-2: #B39A73;      /* deeper clay sand — featured placeholders */
+  /* Antigua Roman Clay (Portola) — warm, balanced rich off-white */
+  --bg-deep: #E2D4BC;        /* deeper warm off-white (sparing) */
+  --bg: #E9DDC8;             /* Antigua — warm rich off-white, dominant bg */
+  --bg-1: #E3D6C0;           /* softly deeper — accent bands */
+  --surface: #DCCDB3;        /* warm sand — image placeholders */
+  --surface-2: #D3C2A4;      /* deeper warm sand — featured placeholders */
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 
