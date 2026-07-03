@@ -1,11 +1,11 @@
 /* AVEN MED — design system */
 :root {
-  /* Warm ivory / cream — AVEN MED original palette (restored from f123b15) */
-  --bg-deep: #ede4d2;        /* deeper warm cream (sparing) */
-  --bg: #f3ecdc;             /* warm ivory — dominant page background */
-  --bg-1: #ece3d0;           /* deeper warm cream — accent bands */
-  --surface: #e8dfc9;        /* sand — image placeholders */
-  --surface-2: #e1d6bc;      /* deeper sand — featured placeholders */
+  /* Roman clay — warm plaster palette (Casa Forma, true clay) */
+  --bg-deep: #C7B08F;        /* deeper clay (sparing) */
+  --bg: #CDB89A;             /* Roman clay — dominant page background */
+  --bg-1: #C4AE8D;           /* deeper clay — accent bands */
+  --surface: #BCA47F;        /* clay sand — image placeholders */
+  --surface-2: #B39A73;      /* deeper clay sand — featured placeholders */
   --hairline: rgba(46, 38, 32, 0.14);
   --hairline-strong: rgba(46, 38, 32, 0.32);
 

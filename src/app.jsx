@@ -44,7 +44,7 @@ const useHashRoute = () => {
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#9a7d4a",
-  "bg": "#f3ecdc",
+  "bg": "#CDB89A",
   "showWatermarks": true,
   "fontDisplay": "Cormorant Garamond",
   "fontSans": "Jost"
@@ -63,7 +63,7 @@ const Tweaks = ({ t, setTweak }) => (
       label="Background"
       value={t.bg}
       onChange={(v) => setTweak("bg", v)}
-      options={["#f3ecdc", "#ede4d2", "#f7f1e3", "#e9dfc7", "#fbf5e7"]}
+      options={["#CDB89A", "#C7B08F", "#DBCAB0", "#BFA07E", "#f3ecdc"]}
     />
     <TweakSection label="Typography" />
     <TweakSelect
