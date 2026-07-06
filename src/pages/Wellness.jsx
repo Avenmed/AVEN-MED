@@ -182,7 +182,7 @@ const WellnessPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
-            <Ph label="Concierge suite · early study" meta="design in development" aspect="4/5" />
+            <Ph note="Design in development" aspect="4/5" />
           </Reveal>
           <Reveal delay={140}>
             <Eyebrow>Arriving 2027</Eyebrow>

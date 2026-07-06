@@ -89,7 +89,7 @@ const MembershipsPage = ({ navigate }) => {
                   ) : (
                     <li key={i}>
                       <span>{s.primary}</span>
-                      <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--muted)", marginTop: 4, fontWeight: 300, fontStyle: "italic" }}>
+                      <div style={{ gridColumn: 2, fontSize: 12, lineHeight: 1.5, color: "var(--muted)", marginTop: 4, fontWeight: 300, fontStyle: "italic" }}>
                         {s.descriptor}
                       </div>
                     </li>

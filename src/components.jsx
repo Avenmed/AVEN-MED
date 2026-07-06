@@ -86,7 +86,7 @@ const Header = ({ route, navigate }) => {
 
       {mobileOpen && (
         <div style={{
-          position: "fixed", inset: 0, zIndex: 100, background: "rgba(243,236,220,0.97)",
+          position: "fixed", inset: 0, zIndex: 100, background: "rgba(233,221,200,0.97)",
           backdropFilter: "blur(20px)", padding: 32, display: "flex", flexDirection: "column"
         }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -164,14 +164,16 @@ const Footer = ({ navigate }) => (
   </footer>
 );
 
-// Placeholder image slot with explainer label (intentional — to be filled with real cinematic stills/video)
-const Ph = ({ label = "Imagery", meta = "", style = {}, dark = false, className = "", aspect, children }) => (
+// Image slot — a clean clay-toned block until a real photo is dropped into the
+// same container later. `label`/`meta` (art-direction hints) are accepted but no
+// longer rendered, so nothing reads as unfinished on the live site. Pass `note`
+// only for an intentional status label (e.g. "Design in development").
+const Ph = ({ label, meta, style = {}, dark = false, className = "", aspect, children, note }) => (
   <div
     className={"ph " + (dark ? "dark " : "") + className}
     style={{ aspectRatio: aspect, ...style }}
   >
-    {label && <span className="ph-label">{label}</span>}
-    {meta && <span className="ph-meta">{meta}</span>}
+    {note && <span className="ph-note">{note}</span>}
     {children}
   </div>
 );

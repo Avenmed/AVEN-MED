@@ -86,7 +86,7 @@ const AestheticsPage = ({ navigate }) => {
       </section>
 
       {/* CATEGORY NAV */}
-      <section style={{ borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", padding: "24px 0", position: "sticky", top: 78, zIndex: 50, background: "rgba(243,236,220,0.92)", backdropFilter: "blur(14px)" }}>
+      <section style={{ borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", padding: "24px 0", position: "sticky", top: 78, zIndex: 50, background: "rgba(233,221,200,0.92)", backdropFilter: "blur(14px)" }}>
         <div className="container" style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
           {categories.map((c, i) => (
             <button key={c.k} onClick={() => setCat(i)}
