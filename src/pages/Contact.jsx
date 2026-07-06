@@ -2,16 +2,40 @@
 
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { BOOKING_ENABLED, WAITLIST_EMAIL } from '../config.js';
 
 const ContactPage = ({ navigate }) => {
   const [form, setForm] = React.useState({
     name: "", email: "", phone: "", interest: "Aesthetics", message: ""
   });
   const [sent, setSent] = React.useState(false);
+  // Pre-launch: no booking ceremony (there's nothing to book yet).
   const [showCeremony, setShowCeremony] = React.useState(() => {
+    if (!BOOKING_ENABLED) return false;
     try { return !localStorage.getItem('aven-booking-seen'); } catch { return false; }
   });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  // Pre-launch, the form is a waitlist sign-up: hand the details off to our real
+  // inbox via the visitor's mail app (nothing is stored or silently dropped).
+  // When BOOKING_ENABLED flips to true this reverts to the normal submit.
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!BOOKING_ENABLED) {
+      const subject = `AVEN waitlist — ${form.name || "new sign-up"}`;
+      const body =
+        `Please add me to the AVEN MED list.\n\n` +
+        `Name: ${form.name}\n` +
+        `Email: ${form.email}\n` +
+        `Phone: ${form.phone}\n` +
+        `Interested in: ${form.interest}\n\n` +
+        `${form.message}`;
+      window.location.href =
+        `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+    }
+    setSent(true);
+  };
 
   React.useEffect(() => {
     if (!showCeremony) return;
@@ -63,7 +87,7 @@ const ContactPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 96, alignItems: "start" }}>
           <Reveal>
             {!sent ? (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+              <form onSubmit={onSubmit}
                 style={{ display: "grid", gap: 36 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
                   <div className="field">
@@ -124,22 +148,26 @@ const ContactPage = ({ navigate }) => {
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
                   <button type="submit" className="btn solid"
                     style={{ height: 56 }}>
-                    <span>Send</span><span className="arrow"></span>
+                    <span>{BOOKING_ENABLED ? "Send" : "Join the Waitlist"}</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
-                    We respond personally — not from a queue — within one business day.
+                    {BOOKING_ENABLED
+                      ? "We respond personally — not from a queue — within one business day."
+                      : "We're opening Fall 2026. Add your details and we'll let you know the moment we do."}
                   </div>
                 </div>
               </form>
             ) : (
               <div style={{ padding: "80px 0", textAlign: "left" }}>
                 <Logo size={48} />
-                <div className="label" style={{ marginTop: 32, color: "var(--gold)" }}>Received</div>
+                <div className="label" style={{ marginTop: 32, color: "var(--gold)" }}>{BOOKING_ENABLED ? "Received" : "Almost there"}</div>
                 <h2 className="display" style={{ fontSize: 56, margin: "20px 0 24px", fontWeight: 300 }}>
                   Thank you, {form.name.split(" ")[0] || "friend"}.
                 </h2>
                 <p className="body">
-                  We've received your Assessment request. We'll be in touch within one business day.
+                  {BOOKING_ENABLED
+                    ? "We've received your Assessment request. We'll be in touch within one business day."
+                    : "Your email app should have opened with your details — just hit send and you're on the list. Prefer to reach us directly? Email info@avenmedil.com or text (704) 488 · 8280."}
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>

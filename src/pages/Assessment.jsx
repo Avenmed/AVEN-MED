@@ -1,6 +1,7 @@
 /* AVEN MED — The AVEN Assessment (two-tier paid consultation) */
 import React from 'react';
 import { Eyebrow, Logo, Reveal } from '../components.jsx';
+import { BOOKING_ENABLED } from '../config.js';
 
 const AssessmentPage = ({ navigate }) => {
   return (
@@ -52,7 +53,7 @@ const AssessmentPage = ({ navigate }) => {
                   ))}
                 </ul>
                 <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-                  <span>Book a Quick Consultation</span><span className="arrow"></span>
+                  <span>{BOOKING_ENABLED ? "Book a Quick Consultation" : "Join the Waitlist"}</span><span className="arrow"></span>
                 </a>
               </div>
             </Reveal>
@@ -88,7 +89,7 @@ const AssessmentPage = ({ navigate }) => {
                   ))}
                 </ul>
                 <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-                  <span>Book the AVEN Assessment</span><span className="arrow"></span>
+                  <span>{BOOKING_ENABLED ? "Book the AVEN Assessment" : "Join the Waitlist"}</span><span className="arrow"></span>
                 </a>
               </div>
             </Reveal>
@@ -126,7 +127,7 @@ const AssessmentPage = ({ navigate }) => {
               Begin a <em>consultation.</em>
             </h2>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Book a Consultation</span><span className="arrow"></span>
+              <span>{BOOKING_ENABLED ? "Book a Consultation" : "Join the Waitlist"}</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

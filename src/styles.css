@@ -194,9 +194,46 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
+/* ---------- Pre-launch announcement bar (homepage) ---------- */
+.announce {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px;
+  padding: 0 var(--gutter);
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ivory);
+}
+.announce-msg,
+.announce-actions { margin: 0; display: inline-flex; align-items: center; }
+.announce-msg {
+  font-family: var(--serif);
+  font-size: 14px; letter-spacing: 0.01em; gap: 10px;
+}
+.announce-mark { font-style: italic; color: var(--gold); }
+.announce-dot { color: var(--gold-soft); }
+.announce-tag { color: var(--ivory-soft); }
+.announce-actions { gap: 16px; }
+.announce-cta {
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--ivory-soft);
+  border-bottom: 1px solid var(--gold-soft); padding-bottom: 2px;
+  transition: color 200ms ease, border-color 200ms ease;
+  min-height: 24px; display: inline-flex; align-items: center;
+}
+.announce-cta:hover { color: var(--ivory); border-bottom-color: var(--gold); }
+@media (max-width: 600px) {
+  .announce { gap: 12px; padding: 0 16px; }
+  .announce-msg { font-size: 12px; gap: 7px; }
+  .announce-tag { display: none; } /* keep it to one clean line on small phones */
+  .announce-dot { display: none; }
+  .announce-actions { gap: 12px; }
+}
+
 /* ---------- Header / Nav ---------- */
 .hdr {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: fixed; top: var(--announce-h, 0); left: 0; right: 0;
   z-index: 80;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px var(--gutter);
@@ -281,7 +318,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-height: 100vh;
   min-height: 100svh; /* mobile-safe: excludes collapsing browser chrome, no scroll jump */
   display: flex; flex-direction: column; justify-content: center;
-  padding: clamp(110px, 14vh, 180px) 0 0;
+  /* extra top room for the announcement bar when it's present (--announce-h) */
+  padding: calc(clamp(110px, 14vh, 180px) + var(--announce-h, 0px)) 0 0;
   background: var(--bg);
   overflow: hidden;
 }

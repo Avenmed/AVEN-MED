@@ -1,6 +1,7 @@
 /* AVEN MED — Service pages (template + 5 services) */
 import React from 'react';
 import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { BOOKING_ENABLED } from '../config.js';
 
 const SERVICES = {
   'lip-filler': {
@@ -150,7 +151,7 @@ const ServicePage = ({ navigate }) => {
               Pricing shared at your Assessment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Book an Assessment</span><span className="arrow"></span>
+              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Join the Waitlist"}</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

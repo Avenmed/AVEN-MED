@@ -1,5 +1,6 @@
 /* AVEN MED — shared components */
 import React from 'react';
+import { BOOKING_ENABLED } from './config.js';
 
 const Logo = ({ size = 22, style = {} }) => (
   <img
@@ -76,7 +77,7 @@ const Header = ({ route, navigate }) => {
             className="btn"
             style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
           >
-            <span>Book</span>
+            <span>{BOOKING_ENABLED ? "Book" : "Join Waitlist"}</span>
           </a>
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>
