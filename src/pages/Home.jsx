@@ -1,6 +1,7 @@
 /* AVEN MED — Home */
 import React from 'react';
 import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 import { BOOKING_ENABLED } from '../config.js';
 
 const SERVICES = [
@@ -114,7 +115,7 @@ const Home = ({ navigate }) => {
         </div>
       </section>
 
-      {/* THREE SERVICE BOXES — lip filler · Botox · microneedling */}
+      {/* FIVE SERVICE BOXES — cinematic treatment videos */}
       <section className="section" style={{ paddingTop: 60 }}>
         <div className="container">
           <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
@@ -122,13 +123,17 @@ const Home = ({ navigate }) => {
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {[
-              { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format" },
-              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm" },
-              { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro" },
+              { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format", video: "assets/lip-filler.mp4" },
+              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "assets/botox.mp4" },
+              { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro", video: "assets/microneedling.mp4" },
+              { label: "Sculptra", meta: "biostimulator · collagen-led", photo: "Sculptra · in-room · medium format", video: "assets/sculptra.mp4" },
+              { label: "Advanced Rejuvenation", meta: "laser · energy · forthcoming", photo: "Advanced rejuvenation · editorial", video: "assets/skin-rejuvenation.mp4" },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 100}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-                  <Ph label={s.photo} meta="ivory · natural light · placeholder" aspect="4/5" />
+                  <Ph label={s.photo} meta="ivory · natural light · placeholder" aspect="4/5">
+                    {s.video && <Video src={s.video} />}
+                  </Ph>
                   <div>
                     <div className="display" style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400, color: "var(--ivory)", letterSpacing: "-0.005em" }}>
                       {s.label}
@@ -145,15 +150,12 @@ const Home = ({ navigate }) => {
       {/* GALLERY STRIP — three squares, no copy */}
       <section style={{ padding: "0 0 clamp(80px, 8vw, 120px)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 2 }}>
             <Reveal style={{ aspectRatio: "1/1" }}>
               <Ph label="Interior · wide" meta="plaster · warm tungsten · 16mm" aspect="1/1" style={{ width: "100%", height: "100%" }} />
             </Reveal>
             <Reveal delay={100} style={{ aspectRatio: "1/1" }}>
               <Ph label="Hand detail" meta="brass instrument · ivory tile" aspect="1/1" style={{ width: "100%", height: "100%" }} />
-            </Reveal>
-            <Reveal delay={200} style={{ aspectRatio: "1/1" }}>
-              <Ph label="Still life · sprig · stone" meta="natural light · 50mm" aspect="1/1" style={{ width: "100%", height: "100%" }} />
             </Reveal>
           </div>
         </div>
