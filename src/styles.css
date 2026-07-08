@@ -13,6 +13,7 @@
   --gold: #A67C42;
   --gold-bright: #B89058;
   --gold-soft: rgba(166, 124, 66, 0.55);
+  --gold-line: rgba(166, 124, 66, 0.42);   /* subtle brass hairline — box outlines + underlines */
 
   /* Olive — sparing secondary accent (NOT a background) */
   --olive: #6B6A50;
@@ -84,6 +85,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 400;
 }
 .eyebrow.muted { color: var(--ivory-soft); }
+.eyebrow::after {
+  content: ""; display: block;
+  width: 34px; height: 1px;
+  background: var(--gold-line);
+  margin-top: 12px;
+}
 .eyebrow .dot {
   display: inline-block;
   width: 4px; height: 4px; border-radius: 50%;
@@ -171,7 +178,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex; align-items: center; justify-content: center; gap: 32px;
   padding: 56px 0;
 }
-.divider-mark .line { flex: 1; height: 1px; background: var(--hairline); max-width: 200px; }
+.divider-mark .line { flex: 1; height: 1px; background: var(--gold-line); max-width: 200px; }
 .divider-mark img { width: 38px; height: auto; opacity: 0.8; }
 
 /* ---------- Placeholders (intentionally unstyled imagery slots) ---------- */
@@ -179,12 +186,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: relative;
   background: var(--surface);
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--gold-line);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .ph.dark { background: var(--surface-2); }
+/* Cinematic video fills the slot; clay block shows behind until it loads */
+.ph .ph-video,
+.ph video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
 /* Optional intentional status label (e.g. "Design in development") */
 .ph .ph-note {
   font-family: var(--mono);
@@ -394,7 +409,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tile {
   position: relative;
   background: var(--surface);
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--gold-line);
   overflow: hidden;
   transition: border-color 380ms ease, transform 480ms ease;
 }
@@ -453,7 +468,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- Membership cards ---------- */
 .plan {
-  background: var(--surface); border: 1px solid var(--hairline);
+  background: var(--surface); border: 1px solid var(--gold-line);
   padding: 56px 44px; display: flex; flex-direction: column; gap: 28px;
   position: relative; overflow: hidden;
 }
