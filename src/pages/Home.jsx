@@ -147,20 +147,6 @@ const Home = ({ navigate }) => {
         </div>
       </section>
 
-      {/* GALLERY STRIP — three squares, no copy */}
-      <section style={{ padding: "0 0 clamp(80px, 8vw, 120px)" }}>
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 2 }}>
-            <Reveal style={{ aspectRatio: "1/1" }}>
-              <Ph label="Interior · wide" meta="plaster · warm tungsten · 16mm" aspect="1/1" style={{ width: "100%", height: "100%" }} />
-            </Reveal>
-            <Reveal delay={100} style={{ aspectRatio: "1/1" }}>
-              <Ph label="Hand detail" meta="brass instrument · ivory tile" aspect="1/1" style={{ width: "100%", height: "100%" }} />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* CLOSING BAND */}
       <section className="closing-band">
         <Reveal>
