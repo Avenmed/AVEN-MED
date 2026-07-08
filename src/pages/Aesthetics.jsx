@@ -2,12 +2,14 @@
 
 import React from 'react';
 import { DividerMark, Eyebrow, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 
 const AestheticsPage = ({ navigate }) => {
   const [cat, setCat] = React.useState(0);
   const categories = [
     {
       k: "Neuromodulators",
+      video: "assets/botox.mp4",
       tag: "Botox · Dysport · Xeomin",
       lede: "Subtle softening of expressive lines — placed with care, in conservative, well-distributed micro-doses.",
       photo: "Botox injection · gloved hand · 35mm",
@@ -20,6 +22,7 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Filler & Balancing",
+      video: "assets/lip-filler.mp4",
       tag: "Always about balance",
       lede: "Sub-millimeter facial balancing — never about volume for its own sake, always about balanced proportion.",
       treatments: [
@@ -32,6 +35,7 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Biostimulators",
+      video: "assets/sculptra.mp4",
       tag: "Sculptra · Radiesse · Skin Boosters",
       lede: "Collagen-led treatments. We build the architecture beneath the skin so that less filler is ever needed.",
       treatments: [
@@ -43,6 +47,7 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Skin & Resurfacing",
+      video: "assets/microneedling.mp4",
       tag: "Microneedling · PRP · Peels",
       lede: "Texture, tone, and pigment — addressed in seasonal pathways rather than aggressive one-off treatments.",
       treatments: [
@@ -52,6 +57,7 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Advanced Rejuvenation",
+      video: "assets/skin-rejuvenation.mp4",
       tag: "Laser · Energy · Coming soon",
       lede: "Forthcoming technology arriving at AVEN — radiofrequency, fractional laser, and energy-based skin tightening.",
       coming: "Coming soon",
@@ -124,7 +130,9 @@ const AestheticsPage = ({ navigate }) => {
                   </div>
                 )}
               </div>
-              <Ph label={categories[cat].photo || ("Editorial · " + categories[cat].k)} meta="warm key · 35mm · placeholder" aspect="4/5" />
+              <Ph label={categories[cat].photo || ("Editorial · " + categories[cat].k)} meta="warm key · 35mm · placeholder" aspect="4/5">
+                {categories[cat].video && <Video key={categories[cat].video} src={categories[cat].video} />}
+              </Ph>
             </div>
 
             <div style={{ marginTop: 100, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
