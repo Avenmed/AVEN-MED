@@ -339,6 +339,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg);
   overflow: hidden;
 }
+/* Full-bleed hero background animation, behind the headline */
+.hero .hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero .hero-bg video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Warm clay wash keeps the warm-ink headline fully legible over the video */
+.hero .hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(233,221,200,0.58) 0%, rgba(233,221,200,0.66) 60%, rgba(233,221,200,0.82) 100%);
+}
 .hero .hero-inner {
   position: relative; z-index: 2;
   display: block;

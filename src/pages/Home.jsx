@@ -16,6 +16,9 @@ const Home = ({ navigate }) => {
     <main className="page">
       {/* HERO */}
       <section className="hero">
+        <div className="hero-bg" aria-hidden="true">
+          <Video src="assets/home-hero-bg.mp4" />
+        </div>
         <div className="container hero-inner">
           <div>
             <Eyebrow>· AVEN MED · Est. 2026</Eyebrow>
