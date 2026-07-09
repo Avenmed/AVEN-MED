@@ -35,7 +35,7 @@ const AboutPage = ({ navigate }) => {
       </section>
 
       {/* ALAA IN ACTION — video below the portrait */}
-      <section style={{ paddingBottom: 80 }}>
+      <section style={{ paddingBottom: 44 }}>
         <div className="container">
           <Reveal>
             <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 21:9" aspect="21/9">
@@ -46,7 +46,7 @@ const AboutPage = ({ navigate }) => {
       </section>
 
       {/* HERO — AVEN MED story (centered logo + editorial essay) */}
-      <section style={{ paddingTop: 80, paddingBottom: 80, position: "relative" }}>
+      <section style={{ paddingTop: 44, paddingBottom: 44, position: "relative" }}>
         <div className="container" style={{ maxWidth: 880 }}>
           <Reveal style={{ textAlign: "center" }}>
             <Logo size={84} style={{ margin: "0 auto 36px" }} />
@@ -57,7 +57,7 @@ const AboutPage = ({ navigate }) => {
             <div className="label" style={{ color: "var(--muted)", marginTop: 22 }}>Founded · Orland Park · 2026</div>
           </Reveal>
 
-          <div style={{ marginTop: 80, display: "flex", flexDirection: "column", gap: 28 }}>
+          <div style={{ marginTop: 48, display: "flex", flexDirection: "column", gap: 28 }}>
             <Reveal>
               <p className="lede" style={{ fontSize: "clamp(20px, 1.7vw, 24px)", textAlign: "center", maxWidth: "44ch", margin: "0 auto" }}>
                 AVEN MED was created around the idea that aesthetics and wellness
@@ -170,7 +170,7 @@ const AboutPage = ({ navigate }) => {
       </section>
 
       {/* PULL QUOTE */}
-      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(80px, 10vw, 140px) 0", position: "relative", overflow: "hidden" }}>
+      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(48px, 7vw, 80px) 0", position: "relative", overflow: "hidden" }}>
         <Logo size={420} style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
         <div className="container" style={{ position: "relative", textAlign: "center" }}>
           <Reveal>
@@ -196,7 +196,7 @@ const AboutPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
             {[
               { t: "01", k: "Arrival", b: "You'll be greeted by staff." },
               { t: "02", k: "Assessment", b: "You'll meet Aura. A multispectral scan and skin map. One careful portrait of your face in light." },

@@ -24,7 +24,7 @@ const AssessmentPage = ({ navigate }) => {
       </section>
 
       {/* TWO TIERS */}
-      <section style={{ paddingBottom: 100 }}>
+      <section style={{ paddingBottom: 48 }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
 

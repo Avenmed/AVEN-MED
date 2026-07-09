@@ -62,7 +62,7 @@ const NotesPage = ({ navigate }) => {
 
       {/* NOTES STACK */}
       {NOTES.map((note, idx) => (
-        <section key={note.slug} id={note.slug} className="section" style={{ paddingTop: idx === 0 ? 0 : 80, paddingBottom: 120, borderTop: idx === 0 ? "none" : "1px solid var(--hairline)" }}>
+        <section key={note.slug} id={note.slug} className="section" style={{ paddingTop: idx === 0 ? 0 : 48, paddingBottom: 64, borderTop: idx === 0 ? "none" : "1px solid var(--hairline)" }}>
           <div className="container" style={{ maxWidth: 820 }}>
             <Reveal>
               <Ph label={note.image} meta="ivory · medium format · natural light" aspect="16/9" />
@@ -90,7 +90,7 @@ const NotesPage = ({ navigate }) => {
       ))}
 
       {/* CLOSING */}
-      <section className="section" style={{ textAlign: "center", paddingTop: 60, paddingBottom: 120 }}>
+      <section className="section" style={{ textAlign: "center", paddingTop: 40, paddingBottom: 64 }}>
         <div className="container">
           <Reveal>
             <Logo size={28} style={{ margin: "0 auto 24px", opacity: 0.85 }} />

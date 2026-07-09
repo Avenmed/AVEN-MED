@@ -28,7 +28,7 @@ const WellnessPage = ({ navigate }) => {
       </section>
 
       {/* HERO IMAGE — placeholder for real photo of healthy patient */}
-      <section style={{ paddingBottom: 120 }}>
+      <section style={{ paddingBottom: 56 }}>
         <div className="container">
           <Reveal>
             <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9">
@@ -48,7 +48,7 @@ const WellnessPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
             {[
               { n: "01", k: "Longevity Panels", b: "Quarterly bloodwork tracking inflammation, hormones, metabolic and cardiovascular markers — interpreted, not just delivered." },
               { n: "02", k: "IV Therapy", b: "Custom-formulated infusions for immune support, cognitive performance, recovery, and pre-aesthetic optimization." },
@@ -148,7 +148,7 @@ const WellnessPage = ({ navigate }) => {
             </div>
           </Reveal>
 
-          <div style={{ marginTop: 80, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--hairline)" }}>
+          <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--hairline)" }}>
             {[
               ["The Restore", "Hydration · Magnesium · B-Complex", "Recovery and nervous-system support."],
               ["The Glow", "Glutathione · Biotin · Vitamin C", "Skin-luminance support paired with aesthetics."],

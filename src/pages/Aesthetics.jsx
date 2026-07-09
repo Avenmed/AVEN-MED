@@ -136,7 +136,7 @@ const AestheticsPage = ({ navigate }) => {
               </Ph>
             </div>
 
-            <div style={{ marginTop: 100, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
+            <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
               {categories[cat].treatments.map((t, i) => (
                 <div key={t.n}
                   style={{

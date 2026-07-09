@@ -115,7 +115,7 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 80 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
             {[
               { n: "01", k: "Bank Monthly", b: "Your membership contribution accrues toward treatments. Nothing expires while active." },
               { n: "02", k: "Plan Quarterly", b: "We review your pathway with you four times a year — adjusting for season, life, and progress." },

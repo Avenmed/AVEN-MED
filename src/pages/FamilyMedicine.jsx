@@ -28,7 +28,7 @@ const FamilyMedicinePage = ({ navigate }) => {
       </section>
 
       {/* CLINIC PHOTO */}
-      <section style={{ paddingBottom: 80 }}>
+      <section style={{ paddingBottom: 44 }}>
         <div className="container">
           <Reveal>
             <Ph label="Family medicine room · interior · 16:9" meta="warm tungsten · placeholder" aspect="16/9">
@@ -48,7 +48,7 @@ const FamilyMedicinePage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 80 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 48 }}>
             {[
               { n: "01", k: "Sick Visits", b: "Same-day care for acute illness — colds, flu, infections, and seasonal viruses. We see patients quickly and discreetly." },
               { n: "02", k: "Preventive Care", b: "Annual physicals, screenings, vaccinations, and lifestyle guidance. The slow, steady work of staying well." },

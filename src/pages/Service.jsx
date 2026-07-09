@@ -96,7 +96,7 @@ const ServicePage = ({ navigate }) => {
       </section>
 
       {/* OPTIONAL DETAIL VISUAL */}
-      <section style={{ paddingBottom: 100 }}>
+      <section style={{ paddingBottom: 48 }}>
         <div className="container" style={{ maxWidth: 1080 }}>
           <Reveal>
             <Ph label={data.detailPh} meta="ivory · brass · medium format" aspect="16/9" />
