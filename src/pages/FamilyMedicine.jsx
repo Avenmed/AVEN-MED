@@ -100,7 +100,7 @@ const FamilyMedicinePage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Eyebrow>· Coming Soon</Eyebrow>
-            <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 24px", maxWidth: "18ch" }}>
+            <h2 className="display" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", margin: "16px 0 20px", maxWidth: "18ch" }}>
               AVEN <em>Concierge</em><br />Family Medicine.
             </h2>
             <p className="body">
