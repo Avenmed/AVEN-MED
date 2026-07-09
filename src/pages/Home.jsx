@@ -87,6 +87,17 @@ const Home = ({ navigate }) => {
         </Reveal>
       </section>
 
+      {/* AURA SCAN — cinematic video */}
+      <section style={{ padding: "clamp(20px, 4vw, 48px) 0 clamp(40px, 6vw, 80px)" }}>
+        <div className="container">
+          <Reveal>
+            <Ph label="Aura · multispectral scan" meta="skin map · 16:9" aspect="16/9">
+              <Video src="assets/aura-scan.mp4" />
+            </Ph>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ASSESSMENT TEASER */}
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container" style={{ maxWidth: 760 }}>
