@@ -185,7 +185,9 @@ const ContactPage = ({ navigate }) => {
           </Reveal>
 
           <Reveal delay={140}>
-            <Ph label="The clinic · entry · 4:5" meta="warm tungsten · brass detail · placeholder" aspect="4/5" />
+            <Ph label="The clinic · entry · 4:5" meta="warm tungsten · brass detail · placeholder" aspect="4/5">
+              <Video src="assets/contact-entry.mp4" />
+            </Ph>
             <div style={{ marginTop: 40, display: "grid", gap: 28 }}>
               <div>
                 <div className="label" style={{ color: "var(--gold)" }}>Visit</div>
