@@ -339,6 +339,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg);
   overflow: hidden;
 }
+/* Page-wide background animation (About) — fixed backdrop behind every section */
+.about-with-bg { position: relative; }
+.about-page-bg {
+  position: fixed; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none;
+}
+.about-page-bg video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* Clay wash keeps the text-heavy page fully legible over the animation */
+.about-page-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(233, 221, 200, 0.82);
+}
+/* Lift all real content above the fixed background */
+.about-with-bg > section,
+.about-with-bg > .brand-signature { position: relative; z-index: 1; }
+
 /* Full-bleed hero background animation, behind the headline */
 .hero .hero-bg {
   position: absolute; inset: 0; z-index: 0;
