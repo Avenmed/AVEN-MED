@@ -35,7 +35,7 @@ const AestheticsPage = ({ navigate }) => {
     },
     {
       k: "Biostimulators",
-      video: "assets/sculptra.mp4",
+      video: "assets/sculptra-v2.mp4",
       tag: "Sculptra · Radiesse · Skin Boosters",
       lede: "Collagen-led treatments. We build the architecture beneath the skin so that less filler is ever needed.",
       treatments: [
