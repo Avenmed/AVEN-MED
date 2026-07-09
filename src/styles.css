@@ -359,6 +359,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .about-with-bg > section,
 .about-with-bg > .brand-signature { position: relative; z-index: 1; }
 
+/* About page — thicker, bolder type throughout (weights that are actually loaded) */
+.about-with-bg .display,
+.about-with-bg h1, .about-with-bg h2,
+.about-with-bg h3, .about-with-bg h4 { font-weight: 600 !important; }
+/* Cormorant italic only ships to 500 — cap italics so they stay crisp, not faux-bold */
+.about-with-bg .display.italic,
+.about-with-bg .display em,
+.about-with-bg em,
+.about-with-bg .lede { font-weight: 500 !important; }
+.about-with-bg .body,
+.about-with-bg .body-sm,
+.about-with-bg p { font-weight: 500 !important; }
+.about-with-bg .label,
+.about-with-bg .eyebrow { font-weight: 600 !important; }
+
 /* Full-bleed hero background animation, behind the headline */
 .hero .hero-bg {
   position: absolute; inset: 0; z-index: 0;
