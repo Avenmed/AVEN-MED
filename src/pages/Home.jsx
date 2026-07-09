@@ -17,7 +17,7 @@ const Home = ({ navigate }) => {
       {/* HERO */}
       <section className="hero">
         <div className="hero-bg" aria-hidden="true">
-          <Video src="assets/home-hero-bg.mp4" />
+          <Video src="assets/home-hero-bg-v2.mp4" />
         </div>
         <div className="container hero-inner">
           <div>
