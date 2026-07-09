@@ -67,7 +67,7 @@ const Home = ({ navigate }) => {
       </div>
 
       {/* PRACTICE VIDEO — Roman clay wall */}
-      <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
+      <section style={{ padding: "clamp(40px, 5vw, 64px) 0 clamp(24px, 3vw, 40px)" }}>
         <div className="container">
           <Reveal>
             <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 16:9" aspect="16/9">
@@ -88,7 +88,7 @@ const Home = ({ navigate }) => {
       </section>
 
       {/* AURA SCAN — cinematic video */}
-      <section style={{ padding: "clamp(20px, 4vw, 48px) 0 clamp(40px, 6vw, 80px)" }}>
+      <section style={{ padding: "clamp(16px, 3vw, 32px) 0 clamp(20px, 3vw, 36px)" }}>
         <div className="container">
           <Reveal>
             <Ph label="Aura · multispectral scan" meta="skin map · 16:9" aspect="16/9">
@@ -99,7 +99,7 @@ const Home = ({ navigate }) => {
       </section>
 
       {/* ASSESSMENT TEASER */}
-      <section className="section" style={{ textAlign: "center" }}>
+      <section className="section" style={{ textAlign: "center", padding: "clamp(32px, 5vw, 64px) 0" }}>
         <div className="container" style={{ maxWidth: 760 }}>
           <Reveal>
             <Eyebrow>· The Assessment</Eyebrow>
@@ -117,7 +117,7 @@ const Home = ({ navigate }) => {
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="section" style={{ textAlign: "center", background: "var(--bg-1)" }}>
+      <section className="section" style={{ textAlign: "center", background: "var(--bg-1)", padding: "clamp(48px, 7vw, 88px) 0" }}>
         <div className="container" style={{ maxWidth: 720 }}>
           <Reveal>
             <Eyebrow>· The Practice</Eyebrow>
@@ -132,12 +132,12 @@ const Home = ({ navigate }) => {
       </section>
 
       {/* FIVE SERVICE BOXES — cinematic treatment videos */}
-      <section className="section" style={{ paddingTop: 60 }}>
+      <section className="section" style={{ padding: "clamp(32px, 5vw, 56px) 0 clamp(40px, 6vw, 72px)" }}>
         <div className="container">
-          <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
+          <Reveal style={{ textAlign: "center", marginBottom: 44 }}>
             <Eyebrow>· Considered treatments</Eyebrow>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="treatments">
             {[
               { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format", video: "assets/lip-filler.mp4" },
               { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "assets/botox.mp4" },
