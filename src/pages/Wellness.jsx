@@ -31,7 +31,7 @@ const WellnessPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9">
-              <Video src="assets/iv-drip.mp4" />
+              <Video src="assets/iv-drip-v2.mp4" />
             </Ph>
           </Reveal>
         </div>
