@@ -63,11 +63,13 @@ const Home = ({ navigate }) => {
         ))}
       </div>
 
-      {/* PRACTICE PHOTO — placeholder for real photo */}
+      {/* PRACTICE VIDEO — Roman clay wall */}
       <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
         <div className="container">
           <Reveal>
-            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 16:9" aspect="16/9" />
+            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 16:9" aspect="16/9">
+              <Video src="assets/home-hero.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
