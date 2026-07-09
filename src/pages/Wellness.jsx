@@ -177,7 +177,9 @@ const WellnessPage = ({ navigate }) => {
       <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
         <div className="container">
           <Reveal>
-            <Ph label="Patient · post-infusion · healthy" meta="natural light · 16:9 · placeholder" aspect="16/9" />
+            <Ph label="Patient · post-infusion · healthy" meta="natural light · 16:9 · placeholder" aspect="16/9">
+              <Video src="assets/weight-loss.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
