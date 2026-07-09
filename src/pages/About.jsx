@@ -33,11 +33,13 @@ const AboutPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* PRACTICE INTERIOR — placeholder for real photo */}
+      {/* ALAA IN ACTION — video below the portrait */}
       <section style={{ paddingBottom: 80 }}>
         <div className="container">
           <Reveal>
-            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 21:9" aspect="21/9" />
+            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 21:9" aspect="21/9">
+              <Video src="assets/alaa-action.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
