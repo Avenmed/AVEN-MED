@@ -189,7 +189,7 @@ const WellnessPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
             <Ph aspect="4/5">
-              <Video src="assets/concierge.mp4" />
+              <Video src="assets/concierge-wellness.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>

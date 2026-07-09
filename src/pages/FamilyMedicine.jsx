@@ -94,7 +94,9 @@ const FamilyMedicinePage = ({ navigate }) => {
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
-            <Ph note="Design in development" aspect="4/5" />
+            <Ph aspect="4/5">
+              <Video src="assets/concierge-family-med.mp4" />
+            </Ph>
           </Reveal>
           <Reveal delay={140}>
             <Eyebrow>· Coming Soon</Eyebrow>
