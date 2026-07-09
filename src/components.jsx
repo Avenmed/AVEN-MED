@@ -1,6 +1,15 @@
 /* AVEN MED — shared components */
 import React from 'react';
 import { BOOKING_ENABLED } from './config.js';
+import Video from './Video.jsx';
+
+/* Cinematic animation behind a page's top hero/title area.
+ * Drop as the first child of a hero <section className="has-hero-bg">. */
+const HeroBg = () => (
+  <div className="hero-header-bg" aria-hidden="true">
+    <Video src="assets/home-hero-bg-v2.mp4" />
+  </div>
+);
 
 const Logo = ({ size = 22, style = {} }) => (
   <img
@@ -120,7 +129,7 @@ const Header = ({ route, navigate }) => {
 
 const Footer = ({ navigate }) => (
   <footer className="ftr">
-    <div className="container" style={{ textAlign: "center", padding: "100px 24px 60px" }}>
+    <div className="container" style={{ textAlign: "center", padding: "clamp(48px, 6vw, 72px) 24px clamp(32px, 4vw, 48px)" }}>
       <Logo size={36} style={{ margin: "0 auto 24px", opacity: 0.9 }} />
       <div style={{
         fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
@@ -212,4 +221,4 @@ const Eyebrow = ({ children, muted = false }) => (
   </div>
 );
 
-export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV };
+export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV, HeroBg };

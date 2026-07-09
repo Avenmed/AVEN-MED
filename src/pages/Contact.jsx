@@ -1,7 +1,7 @@
 /* AVEN MED — Contact */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
 import Video from '../Video.jsx';
 import { BOOKING_ENABLED, WAITLIST_EMAIL } from '../config.js';
 
@@ -56,7 +56,8 @@ const ContactPage = ({ navigate }) => {
         </div>
       )}
       {/* HERO */}
-      <section style={{ paddingTop: 180, paddingBottom: 80 }}>
+      <section className="has-hero-bg" style={{ paddingTop: 180, paddingBottom: 80 }}>
+        <HeroBg />
         <div className="container">
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>

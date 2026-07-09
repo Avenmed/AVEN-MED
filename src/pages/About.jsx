@@ -1,19 +1,15 @@
 /* AVEN MED — About / Philosophy / Injector */
 
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const AboutPage = ({ navigate }) => {
   return (
     <main className="page about-with-bg">
-      {/* PAGE-WIDE ANIMATION — behind every section */}
-      <div className="about-page-bg" aria-hidden="true">
-        <Video src="assets/home-hero-bg-v2.mp4" />
-      </div>
-
       {/* FOUNDER — Alaa Mashal, FNP-BC (FIRST on page) */}
-      <section style={{ paddingTop: 180, paddingBottom: 80 }}>
+      <section className="has-hero-bg" style={{ paddingTop: 180, paddingBottom: 80 }}>
+        <HeroBg />
         <div className="container" style={{ maxWidth: 1120 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}>
             <Reveal>
@@ -174,7 +170,7 @@ const AboutPage = ({ navigate }) => {
       </section>
 
       {/* PULL QUOTE */}
-      <section className="section" style={{ padding: "clamp(80px, 10vw, 140px) 0", position: "relative", overflow: "hidden" }}>
+      <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(80px, 10vw, 140px) 0", position: "relative", overflow: "hidden" }}>
         <Logo size={420} style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
         <div className="container" style={{ position: "relative", textAlign: "center" }}>
           <Reveal>
@@ -191,7 +187,7 @@ const AboutPage = ({ navigate }) => {
 
 
       {/* CONSULTATION JOURNEY */}
-      <section className="section">
+      <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container">
           <Reveal>
             <Eyebrow>What an Assessment Feels Like</Eyebrow>

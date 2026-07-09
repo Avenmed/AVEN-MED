@@ -291,7 +291,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- Footer ---------- */
-.ftr { padding: 96px 0 28px; background: var(--bg); border-top: 1px solid var(--hairline); margin-top: 60px; }
+.ftr { padding: 0; background: var(--bg); border-top: 1px solid var(--hairline); margin-top: 0; }
 .ftr-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 64px; }
 .ftr h5 { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin: 0 0 22px; font-weight: 500; }
 .ftr ul { list-style: none; padding: 0; margin: 0; }
@@ -339,25 +339,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg);
   overflow: hidden;
 }
-/* Page-wide background animation (About) — fixed backdrop behind every section */
-.about-with-bg { position: relative; }
-.about-page-bg {
-  position: fixed; inset: 0; z-index: 0;
+/* Cinematic animation behind a page's top hero/title area */
+.has-hero-bg { position: relative; }
+.has-hero-bg > *:not(.hero-header-bg) { position: relative; z-index: 1; }
+.hero-header-bg {
+  position: absolute; inset: 0; z-index: 0;
   overflow: hidden; pointer-events: none;
 }
-.about-page-bg video {
+.hero-header-bg video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
-/* Clay wash keeps the text-heavy page fully legible over the animation */
-.about-page-bg::after {
+/* Clay wash for legibility, fading to solid clay at the base so the hero
+   blends seamlessly into the normal page content below it */
+.hero-header-bg::after {
   content: ""; position: absolute; inset: 0;
-  background: rgba(233, 221, 200, 0.82);
+  background: linear-gradient(180deg, rgba(233,221,200,0.52) 0%, rgba(233,221,200,0.66) 62%, rgba(233,221,200,0.98) 100%);
 }
-/* Lift all real content above the fixed background */
-.about-with-bg > section,
-.about-with-bg > .brand-signature { position: relative; z-index: 1; }
 
 /* About page — thicker, bolder type throughout (weights that are actually loaded) */
 .about-with-bg .display,

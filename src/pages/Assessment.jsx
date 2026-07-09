@@ -1,13 +1,14 @@
 /* AVEN MED — The AVEN Assessment (two-tier paid consultation) */
 import React from 'react';
-import { Eyebrow, Logo, Reveal } from '../components.jsx';
+import { Eyebrow, Logo, Reveal, HeroBg } from '../components.jsx';
 import { BOOKING_ENABLED } from '../config.js';
 
 const AssessmentPage = ({ navigate }) => {
   return (
     <main className="page">
       {/* HERO */}
-      <section style={{ paddingTop: 200, paddingBottom: 100 }}>
+      <section className="has-hero-bg" style={{ paddingTop: 200, paddingBottom: 100 }}>
+        <HeroBg />
         <div className="container" style={{ maxWidth: 880, textAlign: "center" }}>
           <Reveal>
             <Logo size={48} style={{ margin: "0 auto 32px", opacity: 0.9 }} />

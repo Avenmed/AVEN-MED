@@ -1,13 +1,14 @@
 /* AVEN MED — Memberships */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Reveal } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Reveal, HeroBg } from '../components.jsx';
 
 const MembershipsPage = ({ navigate }) => {
   return (
     <main className="page">
       {/* HERO */}
-      <section style={{ paddingTop: 180, paddingBottom: 80 }}>
+      <section className="has-hero-bg" style={{ paddingTop: 180, paddingBottom: 80 }}>
+        <HeroBg />
         <div className="container">
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>

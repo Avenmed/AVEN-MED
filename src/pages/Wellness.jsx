@@ -1,14 +1,15 @@
 /* AVEN MED — Wellness */
 
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const WellnessPage = ({ navigate }) => {
   return (
     <main className="page">
       {/* HERO */}
-      <section style={{ paddingTop: 180, paddingBottom: 80, position: "relative" }}>
+      <section className="has-hero-bg" style={{ paddingTop: 180, paddingBottom: 80, position: "relative" }}>
+        <HeroBg />
         <div className="container">
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>
