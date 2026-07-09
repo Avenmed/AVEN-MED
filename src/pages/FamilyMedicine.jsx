@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 
 const FamilyMedicinePage = ({ navigate }) => {
   return (
@@ -29,7 +30,9 @@ const FamilyMedicinePage = ({ navigate }) => {
       <section style={{ paddingBottom: 80 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Family medicine room · interior · 16:9" meta="warm tungsten · placeholder" aspect="16/9" />
+            <Ph label="Family medicine room · interior · 16:9" meta="warm tungsten · placeholder" aspect="16/9">
+              <Video src="assets/family-med.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
