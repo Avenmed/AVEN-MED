@@ -341,23 +341,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg);
   overflow: hidden;
 }
-/* Aesthetics category tabs — single-row horizontal scroll (no page-eating wrap) */
-.cat-nav-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;              /* Firefox */
-  justify-content: flex-start;
-  scroll-snap-type: x proximity;
-}
-.cat-nav-row::-webkit-scrollbar { display: none; }   /* WebKit */
-.cat-nav-row > button { scroll-snap-align: start; }
-@media (min-width: 900px) {
-  .cat-nav-row { justify-content: center; }          /* they fit → centered, no scroll */
-}
-
 /* Cinematic animation behind a page's top hero/title area */
 .has-hero-bg { position: relative; }
 .has-hero-bg > *:not(.hero-header-bg) { position: relative; z-index: 1; }

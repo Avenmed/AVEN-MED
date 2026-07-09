@@ -93,12 +93,11 @@ const AestheticsPage = ({ navigate }) => {
       </section>
 
       {/* CATEGORY NAV */}
-      <section style={{ borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", padding: "14px 0", position: "sticky", top: 78, zIndex: 50, background: "rgba(233,221,200,0.92)", backdropFilter: "blur(14px)" }}>
-        <div className="container cat-nav-row">
+      <section style={{ borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", padding: "18px 0" }}>
+        <div className="container" style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
           {categories.map((c, i) => (
             <button key={c.k} onClick={() => setCat(i)}
               style={{
-                flex: "0 0 auto",
                 whiteSpace: "nowrap",
                 padding: "10px 22px",
                 border: "1px solid " + (cat === i ? "var(--gold)" : "var(--hairline)"),
