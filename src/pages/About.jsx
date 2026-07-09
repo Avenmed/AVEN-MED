@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 
 const AboutPage = ({ navigate }) => {
   return (
@@ -11,7 +12,9 @@ const AboutPage = ({ navigate }) => {
         <div className="container" style={{ maxWidth: 1120 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}>
             <Reveal>
-              <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5" />
+              <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5">
+                <Video src="assets/alaa.mp4" />
+              </Ph>
             </Reveal>
             <Reveal delay={140}>
               <Eyebrow>· The Practitioner</Eyebrow>
