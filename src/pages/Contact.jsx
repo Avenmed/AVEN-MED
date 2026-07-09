@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 import { BOOKING_ENABLED, WAITLIST_EMAIL } from '../config.js';
 
 const ContactPage = ({ navigate }) => {
@@ -77,7 +78,9 @@ const ContactPage = ({ navigate }) => {
       <section style={{ paddingBottom: 60 }}>
         <div className="container">
           <Reveal>
-            <Ph label="The clinic · interior · 16:9" meta="warm tungsten · plaster · placeholder" aspect="16/9" />
+            <Ph label="The clinic · interior · 16:9" meta="warm tungsten · plaster · placeholder" aspect="16/9">
+              <Video src="assets/contact.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
