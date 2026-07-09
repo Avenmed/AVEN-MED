@@ -188,13 +188,13 @@ const WellnessPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
-            <Ph aspect="4/5">
+            <Ph aspect="16/9">
               <Video src="assets/concierge-wellness.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>
             <Eyebrow>Arriving 2027</Eyebrow>
-            <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 24px", maxWidth: "18ch" }}>
+            <h2 className="display" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", margin: "16px 0 20px", maxWidth: "18ch" }}>
               Concierge <em>Wellness,</em><br />in its full form.
             </h2>
             <p className="body">
