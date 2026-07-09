@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import Video from '../Video.jsx';
 
 const WellnessPage = ({ navigate }) => {
   return (
@@ -29,7 +30,9 @@ const WellnessPage = ({ navigate }) => {
       <section style={{ paddingBottom: 120 }}>
         <div className="container">
           <Reveal>
-            <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9" />
+            <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9">
+              <Video src="assets/iv-drip.mp4" />
+            </Ph>
           </Reveal>
         </div>
       </section>
