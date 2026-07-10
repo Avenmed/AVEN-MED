@@ -14,7 +14,7 @@ const AboutPage = ({ navigate }) => {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}>
             <Reveal>
               <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5">
-                <Video src="assets/alaa.mp4" />
+                <Video src="assets/alaa-2.mp4" />
               </Ph>
             </Reveal>
             <Reveal delay={140}>
@@ -39,7 +39,7 @@ const AboutPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 21:9" aspect="21/9">
-              <Video src="assets/alaa-action.mp4" />
+              <Video src="assets/alaa-loop-2.mp4" />
             </Ph>
           </Reveal>
         </div>
