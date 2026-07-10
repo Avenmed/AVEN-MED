@@ -140,7 +140,7 @@ const Home = ({ navigate }) => {
           <div className="treatments">
             {[
               { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format", video: "assets/lip-filler.mp4" },
-              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "assets/botox.mp4" },
+              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "assets/botox-v2.mp4" },
               { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro", video: "assets/microneedling.mp4" },
               { label: "Sculptra", meta: "biostimulator · collagen-led", photo: "Sculptra · in-room · medium format", video: "assets/sculptra-v2.mp4" },
               { label: "Advanced Rejuvenation", meta: "laser · energy · forthcoming", photo: "Advanced rejuvenation · editorial", video: "assets/skin-rejuvenation.mp4" },

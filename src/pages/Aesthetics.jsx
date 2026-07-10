@@ -9,7 +9,7 @@ const AestheticsPage = ({ navigate }) => {
   const categories = [
     {
       k: "Neuromodulators",
-      video: "assets/botox.mp4",
+      video: "assets/botox-v2.mp4",
       tag: "Botox · Dysport · Xeomin",
       lede: "Subtle softening of expressive lines — placed with care, in conservative, well-distributed micro-doses.",
       photo: "Botox injection · gloved hand · 35mm",
