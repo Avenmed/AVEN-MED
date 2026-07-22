@@ -3,7 +3,7 @@
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
 import Video from '../Video.jsx';
-import { BOOKING_ENABLED, WAITLIST_EMAIL } from '../config.js';
+import { BOOKING_ENABLED, BOOKING_URL } from '../config.js';
 
 const ContactPage = ({ navigate }) => {
   const [form, setForm] = React.useState({
@@ -17,25 +17,11 @@ const ContactPage = ({ navigate }) => {
   });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  // Pre-launch, the form is a waitlist sign-up: hand the details off to our real
-  // inbox via the visitor's mail app (nothing is stored or silently dropped).
-  // When BOOKING_ENABLED flips to true this reverts to the normal submit.
+  // Once the visitor has shared their details and hit Book, hand them off to
+  // Podium to choose a time. (Podium collects the booking details on its side.)
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!BOOKING_ENABLED) {
-      const subject = `AVEN waitlist — ${form.name || "new sign-up"}`;
-      const body =
-        `Please add me to the AVEN MED list.\n\n` +
-        `Name: ${form.name}\n` +
-        `Email: ${form.email}\n` +
-        `Phone: ${form.phone}\n` +
-        `Interested in: ${form.interest}\n\n` +
-        `${form.message}`;
-      window.location.href =
-        `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
-    }
-    setSent(true);
+    window.location.href = BOOKING_URL;
   };
 
   React.useEffect(() => {
