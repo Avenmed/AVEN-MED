@@ -152,7 +152,7 @@ const ContactPage = ({ navigate }) => {
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
                   <button type="submit" className="btn solid"
                     style={{ height: 56 }}>
-                    <span>{BOOKING_ENABLED ? "Send" : "Join the Waitlist"}</span><span className="arrow"></span>
+                    <span>{BOOKING_ENABLED ? "Send" : "Book"}</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED

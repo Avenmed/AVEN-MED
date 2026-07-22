@@ -54,7 +54,7 @@ const AssessmentPage = ({ navigate }) => {
                   ))}
                 </ul>
                 <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-                  <span>{BOOKING_ENABLED ? "Book a Quick Consultation" : "Join the Waitlist"}</span><span className="arrow"></span>
+                  <span>{BOOKING_ENABLED ? "Book a Quick Consultation" : "Book"}</span><span className="arrow"></span>
                 </a>
               </div>
             </Reveal>
@@ -90,7 +90,7 @@ const AssessmentPage = ({ navigate }) => {
                   ))}
                 </ul>
                 <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-                  <span>{BOOKING_ENABLED ? "Book the AVEN Assessment" : "Join the Waitlist"}</span><span className="arrow"></span>
+                  <span>{BOOKING_ENABLED ? "Book the AVEN Assessment" : "Book"}</span><span className="arrow"></span>
                 </a>
               </div>
             </Reveal>
@@ -128,7 +128,7 @@ const AssessmentPage = ({ navigate }) => {
               Begin a <em>consultation.</em>
             </h2>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>{BOOKING_ENABLED ? "Book a Consultation" : "Join the Waitlist"}</span><span className="arrow"></span>
+              <span>{BOOKING_ENABLED ? "Book a Consultation" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

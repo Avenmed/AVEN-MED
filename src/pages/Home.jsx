@@ -33,7 +33,7 @@ const Home = ({ navigate }) => {
             </p>
             <div style={{ display: "flex", gap: 24, marginTop: 38, flexWrap: "wrap", alignItems: "center" }}>
               <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-                <span>{BOOKING_ENABLED ? "Book an Assessment" : "Join the Waitlist"}</span>
+                <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span>
                 <span className="arrow"></span>
               </a>
               <a href="#/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
@@ -110,7 +110,7 @@ const Home = ({ navigate }) => {
               Time with Alaa. Credited toward your treatment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Join the Waitlist"}</span><span className="arrow"></span>
+              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

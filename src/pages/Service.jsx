@@ -151,7 +151,7 @@ const ServicePage = ({ navigate }) => {
               Pricing shared at your Assessment.
             </p>
             <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Join the Waitlist"}</span><span className="arrow"></span>
+              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>
         </div>

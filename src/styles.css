@@ -151,9 +151,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   width: 6px; height: 6px; border-right: 1px solid currentColor; border-top: 1px solid currentColor;
   transform: rotate(45deg);
 }
-.btn.solid { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+.btn.solid { background: var(--ivory); color: var(--bg); border-color: var(--ivory); }
 .btn.solid::before { background: transparent; }
-.btn.solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+.btn.solid:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); }
 
 .link {
   font-family: var(--sans); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;

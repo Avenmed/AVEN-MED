@@ -86,7 +86,7 @@ const Header = ({ route, navigate }) => {
             className="btn"
             style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
           >
-            <span>{BOOKING_ENABLED ? "Book" : "Join Waitlist"}</span>
+            <span>{BOOKING_ENABLED ? "Book" : "Book"}</span>
           </a>
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>
