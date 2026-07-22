@@ -83,7 +83,11 @@ const MembershipsPage = ({ navigate }) => {
                   },
                   "Saturday clinic access",
                   "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
-                  "Early access to new treatments and clinic technology"
+                  "Early access to new treatments and clinic technology",
+                  {
+                    primary: "The AVEN Birthday.",
+                    descriptor: "Every year, we mark yours the way it should be — with something personal, chosen just for you. What it is stays a surprise. That we remembered doesn't."
+                  }
                 ].map((s, i) => (
                   typeof s === "string" ? (
                     <li key={i}><span>{s}</span></li>
