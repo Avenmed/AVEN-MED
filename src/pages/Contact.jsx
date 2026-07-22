@@ -18,10 +18,16 @@ const ContactPage = ({ navigate }) => {
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
   // Once the visitor has shared their details and hit Book, hand them off to
-  // Podium to choose a time. (Podium collects the booking details on its side.)
+  // Podium to choose a time. Best-effort prefill: pass name/email/phone as URL
+  // params — Podium uses them if its booking page supports prefill, else ignores.
   const onSubmit = (e) => {
     e.preventDefault();
-    window.location.href = BOOKING_URL;
+    const params = new URLSearchParams();
+    if (form.name) params.set("name", form.name);
+    if (form.email) params.set("email", form.email);
+    if (form.phone) params.set("phone", form.phone);
+    const qs = params.toString();
+    window.location.href = qs ? `${BOOKING_URL}?${qs}` : BOOKING_URL;
   };
 
   React.useEffect(() => {
