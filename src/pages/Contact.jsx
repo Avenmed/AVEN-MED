@@ -126,7 +126,7 @@ const ContactPage = ({ navigate }) => {
                     type="tel"
                     value={form.phone}
                     onChange={set("phone")}
-                    placeholder="(704) 488 · 8280"
+                    placeholder="(708) 734 · 6902"
                     autoComplete="tel"
                     inputMode="tel"
                   />
@@ -171,7 +171,7 @@ const ContactPage = ({ navigate }) => {
                 <p className="body">
                   {BOOKING_ENABLED
                     ? "We've received your Assessment request. We'll be in touch within one business day."
-                    : "Your email app should have opened with your details — just hit send and you're on the list. Prefer to reach us directly? Email info@avenmedil.com or text (704) 488 · 8280."}
+                    : "Your email app should have opened with your details — just hit send and you're on the list. Prefer to reach us directly? Email info@avenmedil.com or text (708) 734 · 6902."}
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>
@@ -212,7 +212,7 @@ const ContactPage = ({ navigate }) => {
                 <div className="label" style={{ color: "var(--gold)" }}>Direct</div>
                 <div className="display" style={{ fontSize: 20, marginTop: 8, lineHeight: 1.6, fontWeight: 300 }}>
                   <a href="mailto:info@avenmedil.com" style={{ color: "var(--ivory)" }}>info@avenmedil.com</a><br />
-                  <a href="tel:+17044888280" style={{ color: "var(--ivory)" }}>(704) 488 · 8280</a>
+                  <a href="tel:+17087346902" style={{ color: "var(--ivory)" }}>(708) 734 · 6902</a>
                 </div>
               </div>
               <div>

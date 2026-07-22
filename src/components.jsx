@@ -79,7 +79,7 @@ const Header = ({ route, navigate }) => {
           ))}
         </nav>
         <div className="right">
-          <a className="phone" href="tel:+17044888280" style={{ color: "var(--ivory-soft)" }}>(704) 488 · 8280</a>
+          <a className="phone" href="tel:+17087346902" style={{ color: "var(--ivory-soft)" }}>(708) 734 · 6902</a>
           <a
             href="#/contact"
             onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
@@ -146,7 +146,7 @@ const Footer = ({ navigate }) => (
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, fontSize: 13, color: "var(--ivory-soft)", marginBottom: 56 }}>
         <a href="mailto:info@avenmedil.com" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>info@avenmedil.com</a>
-        <a href="tel:+17044888280" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>(704) 488 · 8280</a>
+        <a href="tel:+17087346902" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>(708) 734 · 6902</a>
         <div style={{ display: "flex", gap: 24, marginTop: 4 }}>
           <a href="https://instagram.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
           <a href="https://facebook.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Facebook</a>

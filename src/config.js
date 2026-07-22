@@ -19,4 +19,4 @@ export const BOOKING_ENABLED = false;
  * These reach the real inbox/phone — nothing is stored or dropped.
  * At launch, wire the waitlist to Podium instead (see AnnouncementBar.jsx). */
 export const WAITLIST_EMAIL = "info@avenmedil.com";
-export const WAITLIST_PHONE = "+17044888280";
+export const WAITLIST_PHONE = "+17087346902";
