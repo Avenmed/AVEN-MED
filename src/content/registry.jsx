@@ -23,6 +23,12 @@ import tmj from '../pages/TMJBotoxOrlandPark.jsx';
 import hyperhidrosis from '../pages/HyperhidrosisOrlandPark.jsx';
 import skinpen from '../pages/SkinPenMicroneedlingOrlandPark.jsx';
 import sculptra from '../pages/SculptraOrlandPark.jsx';
+import chemicalPeels from '../pages/ChemicalPeelsOrlandPark.jsx';
+import skinRejuvenation from '../pages/SkinRejuvenationOrlandPark.jsx';
+import acneTreatment from '../pages/AcneTreatmentOrlandPark.jsx';
+import acneScarTreatment from '../pages/AcneScarTreatmentOrlandPark.jsx';
+import medicalGradeSkincare from '../pages/MedicalGradeSkincareOrlandPark.jsx';
+import facials from '../pages/FacialsOrlandPark.jsx';
 
 // type -> template component
 export const TEMPLATES = {
@@ -30,7 +36,10 @@ export const TEMPLATES = {
 };
 
 // Grouped by type so new categories slot in cleanly.
-const TREATMENTS = [botox, lipFillers, cheek, jawline, chin, lipFlip, masseter, tmj, hyperhidrosis, skinpen, sculptra];
+const TREATMENTS = [
+  botox, lipFillers, cheek, jawline, chin, lipFlip, masseter, tmj, hyperhidrosis, skinpen, sculptra,
+  chemicalPeels, skinRejuvenation, acneTreatment, acneScarTreatment, medicalGradeSkincare, facials,
+];
 
 const GROUPS = [
   { type: 'treatment', pages: TREATMENTS },
