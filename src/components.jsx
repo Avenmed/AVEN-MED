@@ -95,9 +95,9 @@ const Header = ({ route, navigate }) => {
           <a className="phone" href="tel:+17087346902" style={{ color: "var(--ivory-soft)" }}>(708) 734 · 6902</a>
           <AssessmentCTA
             navigate={navigate}
-            className="btn hdr-cta"
+            className="btn solid hdr-cta"
             showArrow={false}
-            style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
+            style={{ height: 38, padding: "0 18px", fontSize: 10 }}
           />
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>
