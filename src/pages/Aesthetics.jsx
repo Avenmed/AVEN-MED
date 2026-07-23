@@ -1,7 +1,7 @@
 /* AVEN MED — Aesthetics */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Ph, Reveal, HeroBg } from '../components.jsx';
+import { DividerMark, Eyebrow, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const AestheticsPage = ({ navigate }) => {
@@ -193,9 +193,7 @@ const AestheticsPage = ({ navigate }) => {
             <p className="body" style={{ margin: "0 auto 44px" }}>
               Every aesthetics journey at AVEN begins with the AVEN Assessment.
             </p>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Begin Your Pathway</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>

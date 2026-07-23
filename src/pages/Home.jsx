@@ -1,8 +1,7 @@
 /* AVEN MED — Home */
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
-import { BOOKING_ENABLED } from '../config.js';
 
 const SERVICES = [
   "Neuromodulators", "Facial Filler", "Sculptra", "Radiesse",
@@ -32,10 +31,7 @@ const Home = ({ navigate }) => {
               Aesthetics, wellness, and family medicine.
             </p>
             <div style={{ display: "flex", gap: 24, marginTop: 38, flexWrap: "wrap", alignItems: "center" }}>
-              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-                <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span>
-                <span className="arrow"></span>
-              </a>
+              <AssessmentCTA navigate={navigate} />
               <a href="/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
                 <span>About AVEN</span>
                 <span className="arrow"></span>
@@ -109,9 +105,7 @@ const Home = ({ navigate }) => {
             <p className="lede" style={{ maxWidth: "40ch", margin: "0 auto 40px" }}>
               Time with Alaa. Credited toward your treatment.
             </p>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>

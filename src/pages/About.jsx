@@ -1,7 +1,7 @@
 /* AVEN MED — About / Philosophy / Injector */
 
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const AboutPage = ({ navigate }) => {
@@ -227,9 +227,7 @@ const AboutPage = ({ navigate }) => {
               Assessments are by appointment only and limited to a small
               number of new patients each month.
             </p>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Request an Introduction</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>

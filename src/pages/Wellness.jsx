@@ -1,7 +1,7 @@
 /* AVEN MED — Wellness */
 
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const WellnessPage = ({ navigate }) => {
@@ -220,9 +220,7 @@ const WellnessPage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "16px auto 28px", maxWidth: "14ch" }}>
               Begin <em>beneath</em><br />the surface.
             </h2>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Request a Wellness Assessment</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>

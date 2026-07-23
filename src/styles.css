@@ -291,6 +291,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 980px) {
   .hdr nav, .hdr .phone { display: none; }
 }
+/* The header CTA carries the full "Start Your AVEN Assessment" label — it only
+   fits alongside the full nav on wide screens. Below that, the nav/menu (which
+   includes Contact) carries the action, so hide the header CTA to keep the
+   compact header from overflowing. Body CTAs remain everywhere. */
+@media (max-width: 1200px) {
+  .hdr-cta { display: none; }
+}
 
 /* ---------- Footer ---------- */
 .ftr { padding: 0; background: var(--bg); border-top: 1px solid var(--hairline); margin-top: 0; }

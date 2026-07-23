@@ -1,7 +1,7 @@
 /* AVEN MED — Contact */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, ASSESSMENT_CTA_LABEL } from '../components.jsx';
 import Video from '../Video.jsx';
 import { BOOKING_ENABLED, BOOKING_URL } from '../config.js';
 
@@ -144,7 +144,7 @@ const ContactPage = ({ navigate }) => {
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
                   <button type="submit" className="btn solid"
                     style={{ height: 56 }}>
-                    <span>{BOOKING_ENABLED ? "Send" : "Book"}</span><span className="arrow"></span>
+                    <span>{ASSESSMENT_CTA_LABEL}</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED

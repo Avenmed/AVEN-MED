@@ -1,7 +1,7 @@
 /* AVEN MED — Family Medicine */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
 
 const FamilyMedicinePage = ({ navigate }) => {
@@ -127,9 +127,7 @@ const FamilyMedicinePage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 28px", maxWidth: "14ch" }}>
               Care, <em>continued.</em>
             </h2>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>Become a Patient</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>

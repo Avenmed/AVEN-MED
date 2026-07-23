@@ -1,6 +1,5 @@
 /* AVEN MED — shared components */
 import React from 'react';
-import { BOOKING_ENABLED } from './config.js';
 import Video from './Video.jsx';
 
 /* Cinematic animation behind a page's top hero/title area.
@@ -9,6 +8,20 @@ const HeroBg = () => (
   <div className="hero-header-bg" aria-hidden="true">
     <Video src="assets/home-hero-bg-v2.mp4" />
   </div>
+);
+
+// The one primary call-to-action, site-wide. Change the label in ONE place here.
+// Destination and styling are unchanged — it routes to /contact like before.
+const ASSESSMENT_CTA_LABEL = "Start Your AVEN Assessment";
+const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArrow = true, label = ASSESSMENT_CTA_LABEL }) => (
+  <a
+    href="/contact"
+    onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
+    className={className}
+    style={style}
+  >
+    <span>{label}</span>{showArrow && <span className="arrow"></span>}
+  </a>
 );
 
 const Logo = ({ size = 22, style = {} }) => (
@@ -80,14 +93,12 @@ const Header = ({ route, navigate }) => {
         </nav>
         <div className="right">
           <a className="phone" href="tel:+17087346902" style={{ color: "var(--ivory-soft)" }}>(708) 734 · 6902</a>
-          <a
-            href="/contact"
-            onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
-            className="btn"
+          <AssessmentCTA
+            navigate={navigate}
+            className="btn hdr-cta"
+            showArrow={false}
             style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
-          >
-            <span>{BOOKING_ENABLED ? "Book" : "Book"}</span>
-          </a>
+          />
           <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
@@ -221,4 +232,4 @@ const Eyebrow = ({ children, muted = false }) => (
   </div>
 );
 
-export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV, HeroBg };
+export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV, HeroBg, AssessmentCTA, ASSESSMENT_CTA_LABEL };

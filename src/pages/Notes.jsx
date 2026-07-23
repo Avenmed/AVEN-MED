@@ -1,6 +1,6 @@
 /* AVEN MED — Field Notes (editorial column) */
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, AssessmentCTA } from '../components.jsx';
 
 const NOTES = [
   {
@@ -97,9 +97,7 @@ const NotesPage = ({ navigate }) => {
             <p className="display italic" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", color: "var(--muted)", maxWidth: "26ch", margin: "0 auto 36px" }}>
               The next note arrives soon.
             </p>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-              <span>Begin an Assessment</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} className="link" />
           </Reveal>
         </div>
       </section>

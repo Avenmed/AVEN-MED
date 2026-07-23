@@ -1,7 +1,6 @@
 /* AVEN MED — Service pages (template + 5 services) */
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal } from '../components.jsx';
-import { BOOKING_ENABLED } from '../config.js';
+import { Eyebrow, Logo, Ph, Reveal, AssessmentCTA } from '../components.jsx';
 
 const SERVICES = {
   'lip-filler': {
@@ -183,9 +182,7 @@ const ServicePage = ({ navigate }) => {
             <p className="display italic" style={{ fontSize: "clamp(20px, 2.2vw, 28px)", color: "var(--muted)", margin: "0 auto 36px", maxWidth: "26ch" }}>
               Pricing shared at your Assessment.
             </p>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
-              <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
-            </a>
+            <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>
       </section>
