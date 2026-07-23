@@ -81,15 +81,12 @@ const botox = {
   ],
 
   related: [
-    // Point to the best existing pages for now; repoint to dedicated
-    // treatment pages as each is built.
-    { label: "Lip Fillers", path: "/lip-fillers-orland-park" },
-    { label: "Chin Fillers", path: "/chin-fillers-orland-park" },
-    { label: "Jawline Fillers", path: "/jawline-fillers-orland-park" },
-    { label: "Cheek Fillers", path: "/cheek-fillers-orland-park" },
-    { label: "Sculptra", path: "/sculptra-orland-park" },
-    { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
-    { label: "Medical Weight Loss", path: "/wellness" },
+    { label: "Lip Flip in Orland Park", path: "/lip-flip-orland-park" },
+    { label: "Masseter Botox in Orland Park", path: "/masseter-botox-orland-park" },
+    { label: "TMJ Botox in Orland Park", path: "/tmj-botox-orland-park" },
+    { label: "Hyperhidrosis Treatment in Orland Park", path: "/hyperhidrosis-treatment-orland-park" },
+    { label: "Lip Fillers in Orland Park", path: "/lip-fillers-orland-park" },
+    { label: "Sculptra in Orland Park", path: "/sculptra-orland-park" },
   ],
 
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],

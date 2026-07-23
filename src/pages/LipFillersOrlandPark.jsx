@@ -79,12 +79,12 @@ const lipFillers = {
   ],
 
   related: [
-    { label: "Botox", path: "/botox-orland-park" },
-    { label: "Chin Filler", path: "/chin-fillers-orland-park" },
-    { label: "Cheek Filler", path: "/cheek-fillers-orland-park" },
-    { label: "Jawline Filler", path: "/jawline-fillers-orland-park" },
-    { label: "Sculptra", path: "/sculptra-orland-park" },
-    { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
+    { label: "Lip Flip in Orland Park", path: "/lip-flip-orland-park" },
+    { label: "Botox in Orland Park", path: "/botox-orland-park" },
+    { label: "Cheek Fillers in Orland Park", path: "/cheek-fillers-orland-park" },
+    { label: "Chin Fillers in Orland Park", path: "/chin-fillers-orland-park" },
+    { label: "Jawline Fillers in Orland Park", path: "/jawline-fillers-orland-park" },
+    { label: "Sculptra in Orland Park", path: "/sculptra-orland-park" },
   ],
 
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],

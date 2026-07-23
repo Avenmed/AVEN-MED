@@ -93,12 +93,12 @@ const jawline = {
   ],
 
   related: [
+    { label: "Masseter Botox in Orland Park", path: "/masseter-botox-orland-park" },
     { label: "Chin Fillers in Orland Park", path: "/chin-fillers-orland-park" },
     { label: "Cheek Fillers in Orland Park", path: "/cheek-fillers-orland-park" },
     { label: "Lip Fillers in Orland Park", path: "/lip-fillers-orland-park" },
     { label: "Botox in Orland Park", path: "/botox-orland-park" },
     { label: "Sculptra in Orland Park", path: "/sculptra-orland-park" },
-    { label: "SkinPen Microneedling in Orland Park", path: "/skinpen-microneedling-orland-park" },
   ],
 
   finalCta: {

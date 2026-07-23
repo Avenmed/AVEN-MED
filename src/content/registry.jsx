@@ -17,6 +17,10 @@ import lipFillers from '../pages/LipFillersOrlandPark.jsx';
 import cheek from '../pages/CheekFillersOrlandPark.jsx';
 import jawline from '../pages/JawlineFillersOrlandPark.jsx';
 import chin from '../pages/ChinFillersOrlandPark.jsx';
+import lipFlip from '../pages/LipFlipOrlandPark.jsx';
+import masseter from '../pages/MasseterBotoxOrlandPark.jsx';
+import tmj from '../pages/TMJBotoxOrlandPark.jsx';
+import hyperhidrosis from '../pages/HyperhidrosisOrlandPark.jsx';
 import skinpen from '../pages/SkinPenMicroneedlingOrlandPark.jsx';
 import sculptra from '../pages/SculptraOrlandPark.jsx';
 
@@ -26,7 +30,7 @@ export const TEMPLATES = {
 };
 
 // Grouped by type so new categories slot in cleanly.
-const TREATMENTS = [botox, lipFillers, cheek, jawline, chin, skinpen, sculptra];
+const TREATMENTS = [botox, lipFillers, cheek, jawline, chin, lipFlip, masseter, tmj, hyperhidrosis, skinpen, sculptra];
 
 const GROUPS = [
   { type: 'treatment', pages: TREATMENTS },
