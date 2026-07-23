@@ -21,6 +21,7 @@ import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
 import BotoxOrlandPark from './pages/BotoxOrlandPark.jsx';
 import LipFillersOrlandPark from './pages/LipFillersOrlandPark.jsx';
+import SkinPenMicroneedlingOrlandPark from './pages/SkinPenMicroneedlingOrlandPark.jsx';
 
 // Clean-path routing via the History API.
 // Legacy #/ hash URLs (old links, bookmarks, cached Google results) are read as
@@ -157,6 +158,7 @@ const App = () => {
     switch (route) {
       case "/botox-orland-park": return BotoxOrlandPark;
       case "/lip-fillers-orland-park": return LipFillersOrlandPark;
+      case "/skinpen-microneedling-orland-park": return SkinPenMicroneedlingOrlandPark;
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;

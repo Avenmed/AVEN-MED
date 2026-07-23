@@ -80,7 +80,7 @@ const lipFillers = {
     { label: "Cheek Filler", path: "/aesthetics" },
     { label: "Jawline Filler", path: "/aesthetics" },
     { label: "Sculptra", path: "/service/sculptra" },
-    { label: "SkinPen Microneedling", path: "/service/microneedling" },
+    { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
   ],
 
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],

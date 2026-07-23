@@ -84,7 +84,7 @@ const botox = {
     { label: "Jawline Fillers", path: "/aesthetics" },
     { label: "Cheek Fillers", path: "/aesthetics" },
     { label: "Sculptra", path: "/service/sculptra" },
-    { label: "SkinPen Microneedling", path: "/service/microneedling" },
+    { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
     { label: "Medical Weight Loss", path: "/wellness" },
   ],
 

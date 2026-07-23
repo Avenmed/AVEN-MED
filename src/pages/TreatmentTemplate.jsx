@@ -156,21 +156,25 @@ const TreatmentTemplate = ({ data, navigate }) => {
           </Reveal>
           <Reveal delay={120}>
             <h2 className="display" style={{ fontSize: "clamp(28px, 3.2vw, 46px)", margin: "0 0 28px", maxWidth: "24ch", fontWeight: 300 }}>
-              We do not sell injections. We build a <em>plan.</em>
+              {data.whyAven?.headline || <>We do not sell injections. We build a <em>plan.</em></>}
             </h2>
             <p className="body" style={{ marginBottom: 22 }}>
-              Every recommendation at AVEN MED begins with the AVEN Assessment — never with a syringe.
-              Before we suggest {data.treatmentShort}, we evaluate your facial anatomy, the way your
-              muscles move, the quality of your skin, the balance of your face, and your long-term goals.
+              {data.whyAven?.intro || <>Every recommendation at AVEN MED begins with the AVEN Assessment — never with a syringe. Before we suggest {data.treatmentShort}, we evaluate your facial anatomy, the way your muscles move, the quality of your skin, the balance of your face, and your long-term goals.</>}
             </p>
+            {data.whyAven?.considers && (
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 26px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 32px" }}>
+                {data.whyAven.considers.map((c) => (
+                  <li key={c} style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 10, color: "var(--ivory)", fontSize: 14 }}>
+                    <span style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 10 }}></span><span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
             <p className="body" style={{ marginBottom: 22 }}>
-              Only then do we write a plan. Natural-looking results are always the priority — the aim is a
-              softer, rested version of your own expression, never a treated or frozen one. You should still
-              look like yourself.
+              {data.whyAven?.body || <>Only then do we write a plan. Natural-looking results are always the priority — the aim is a softer, rested version of your own expression, never a treated or frozen one. You should still look like yourself.</>}
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
-              You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse
-              Practitioner and the only injector at the practice.
+              {data.whyAven?.practitionerLine || <>You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.</>}
             </p>
           </Reveal>
         </div>
@@ -198,6 +202,25 @@ const TreatmentTemplate = ({ data, navigate }) => {
           </div>
         </div>
       </section>
+
+      {/* 3b — HOW IT WORKS (optional) */}
+      {data.howItWorks && (
+        <section className="section">
+          <div className="container" style={{ maxWidth: 900 }}>
+            <Reveal>
+              <Eyebrow>{data.howItWorks.eyebrow}</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "20px 0 32px", maxWidth: "22ch", fontWeight: 300 }}>
+                {data.howItWorks.headline}
+              </h2>
+            </Reveal>
+            {data.howItWorks.body.map((p, i) => (
+              <Reveal key={i} delay={Math.min(i, 4) * 70}>
+                <p className="body" style={{ marginBottom: 20, maxWidth: "64ch", fontSize: 17, lineHeight: 1.85 }}>{p}</p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 4 — COMPARISON */}
       {data.comparison && (
@@ -292,6 +315,38 @@ const TreatmentTemplate = ({ data, navigate }) => {
         </div>
       </section>
 
+      {/* 6b — TREATMENT PLANNING (optional) */}
+      {data.treatmentPlanning && (
+        <section className="section">
+          <div className="container">
+            <Reveal>
+              <Eyebrow>{data.treatmentPlanning.eyebrow}</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "20px 0 24px", maxWidth: "22ch", fontWeight: 300 }}>
+                {data.treatmentPlanning.headline}
+              </h2>
+              <p className="body" style={{ marginBottom: 48, maxWidth: "62ch" }}>{data.treatmentPlanning.intro}</p>
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
+              {data.treatmentPlanning.factors.map((f, i) => (
+                <Reveal key={f} delay={(i % 2) * 80}>
+                  <div style={{ padding: "24px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none", display: "grid", gridTemplateColumns: "16px 1fr", gap: 12 }}>
+                    <span style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 11 }}></span>
+                    <span className="body" style={{ margin: 0 }}>{f}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            {data.treatmentPlanning.closing && (
+              <Reveal>
+                <p className="body" style={{ marginTop: 36, maxWidth: "62ch", color: "var(--ivory-soft)", fontStyle: "italic", fontFamily: "var(--serif)", fontSize: 18 }}>
+                  {data.treatmentPlanning.closing}
+                </p>
+              </Reveal>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* 7 — FAQ */}
       <section className="section">
         <div className="container" style={{ maxWidth: 920 }}>
@@ -348,9 +403,12 @@ const TreatmentTemplate = ({ data, navigate }) => {
         <div className="container">
           <Reveal>
             <Logo size={40} style={{ margin: "0 auto 26px", opacity: 0.85 }} />
-            <h2 className="display" style={{ fontSize: "clamp(36px, 5.4vw, 72px)", margin: "0 auto 36px", maxWidth: "16ch", fontWeight: 300 }}>
-              Let's create your personalized <em>treatment plan.</em>
+            <h2 className="display" style={{ fontSize: "clamp(36px, 5.4vw, 72px)", margin: data.finalCta?.copy ? "0 auto 24px" : "0 auto 36px", maxWidth: "16ch", fontWeight: 300 }}>
+              {data.finalCta?.headline || <>Let's create your personalized <em>treatment plan.</em></>}
             </h2>
+            {data.finalCta?.copy && (
+              <p className="body" style={{ margin: "0 auto 40px", maxWidth: "52ch" }}>{data.finalCta.copy}</p>
+            )}
             <AssessmentCTA navigate={navigate} />
           </Reveal>
         </div>

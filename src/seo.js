@@ -59,6 +59,10 @@ export const ROUTE_SEO = {
     title: "Lip Fillers in Orland Park, IL — Natural Lip Enhancement | AVEN MED",
     description: "Natural-looking lip fillers in Orland Park, IL at AVEN MED. Hyaluronic acid lip enhancement for shape, hydration, symmetry, and proportion, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
+  "/skinpen-microneedling-orland-park": {
+    title: "SkinPen® Microneedling in Orland Park, IL — Collagen Induction | AVEN MED",
+    description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
 };
 
 function setMeta(attr, key, value) {
