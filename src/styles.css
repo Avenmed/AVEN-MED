@@ -151,7 +151,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   width: 6px; height: 6px; border-right: 1px solid currentColor; border-top: 1px solid currentColor;
   transform: rotate(45deg);
 }
-.btn.solid { background: var(--ivory); color: var(--bg); border-color: var(--ivory); }
+/* Primary CTA: light brass border (like the header CTA), dark gold-brass text
+   on a clear background so the wording reads clearly. Fills gold on hover. */
+.btn.solid { background: transparent; color: #7a5c30; border-color: var(--gold-soft); }
 .btn.solid::before { background: transparent; }
 .btn.solid:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); }
 
