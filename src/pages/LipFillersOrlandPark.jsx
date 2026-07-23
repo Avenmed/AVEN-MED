@@ -79,7 +79,7 @@ const lipFillers = {
     { label: "Chin Filler", path: "/aesthetics" },
     { label: "Cheek Filler", path: "/aesthetics" },
     { label: "Jawline Filler", path: "/aesthetics" },
-    { label: "Sculptra", path: "/service/sculptra" },
+    { label: "Sculptra", path: "/sculptra-orland-park" },
     { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
   ],
 

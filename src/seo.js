@@ -63,6 +63,10 @@ export const ROUTE_SEO = {
     title: "SkinPen® Microneedling in Orland Park, IL — Collagen Induction | AVEN MED",
     description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
+  "/sculptra-orland-park": {
+    title: "Sculptra® in Orland Park, IL — Collagen-Stimulating Injectable | AVEN MED",
+    description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
 };
 
 function setMeta(attr, key, value) {

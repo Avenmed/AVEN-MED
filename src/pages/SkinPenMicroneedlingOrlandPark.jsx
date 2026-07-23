@@ -132,7 +132,7 @@ const skinpen = {
   related: [
     { label: "Botox in Orland Park", path: "/botox-orland-park" },
     { label: "Lip Fillers in Orland Park", path: "/lip-fillers-orland-park" },
-    { label: "Sculptra", path: "/service/sculptra" },
+    { label: "Sculptra", path: "/sculptra-orland-park" },
     { label: "Chemical Peels", path: "/aesthetics" },
     { label: "Medical-Grade Skincare", path: "/aesthetics" },
     { label: "Facials", path: "/aesthetics" },
