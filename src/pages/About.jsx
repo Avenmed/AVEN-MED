@@ -227,7 +227,7 @@ const AboutPage = ({ navigate }) => {
               Assessments are by appointment only and limited to a small
               number of new patients each month.
             </p>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Request an Introduction</span><span className="arrow"></span>
             </a>
           </Reveal>

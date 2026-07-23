@@ -173,7 +173,7 @@ const AestheticsPage = ({ navigate }) => {
               and understood your goals.
             </p>
             <div style={{ marginTop: 36 }}>
-              <a href="#/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
+              <a href="/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
                 <span>See memberships</span><span className="arrow"></span>
               </a>
             </div>
@@ -193,7 +193,7 @@ const AestheticsPage = ({ navigate }) => {
             <p className="body" style={{ margin: "0 auto 44px" }}>
               Every aesthetics journey at AVEN begins with the AVEN Assessment.
             </p>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Begin Your Pathway</span><span className="arrow"></span>
             </a>
           </Reveal>

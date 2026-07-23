@@ -142,7 +142,7 @@ const WellnessPage = ({ navigate }) => {
               <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
                 IV infusions — <em>types</em><br />and what each one does.
               </h2>
-              <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
                 <span>The full menu</span><span className="arrow"></span>
               </a>
             </div>
@@ -204,7 +204,7 @@ const WellnessPage = ({ navigate }) => {
               memberships will open by invitation.
             </p>
             <div style={{ marginTop: 36 }}>
-              <a href="#/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
+              <a href="/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
                 <span>Join the founding list</span><span className="arrow"></span>
               </a>
             </div>
@@ -220,7 +220,7 @@ const WellnessPage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "16px auto 28px", maxWidth: "14ch" }}>
               Begin <em>beneath</em><br />the surface.
             </h2>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Request a Wellness Assessment</span><span className="arrow"></span>
             </a>
           </Reveal>

@@ -21,7 +21,7 @@ const Logo = ({ size = 22, style = {} }) => (
 
 const Brand = ({ onClick }) => (
   <a
-    href="#/"
+    href="/"
     onClick={(e) => { e.preventDefault(); onClick && onClick("/"); }}
     className="brand"
     style={{ display: "flex", alignItems: "center", gap: 14 }}
@@ -70,7 +70,7 @@ const Header = ({ route, navigate }) => {
           {NAV.map((n) => (
             <a
               key={n.path}
-              href={"#" + n.path}
+              href={n.path}
               onClick={(e) => { e.preventDefault(); navigate(n.path); }}
               className={route === n.path ? "active" : ""}
             >
@@ -81,7 +81,7 @@ const Header = ({ route, navigate }) => {
         <div className="right">
           <a className="phone" href="tel:+17087346902" style={{ color: "var(--ivory-soft)" }}>(708) 734 · 6902</a>
           <a
-            href="#/contact"
+            href="/contact"
             onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
             className="btn"
             style={{ height: 38, padding: "0 18px", fontSize: 10, color: "var(--gold)", borderColor: "var(--gold-soft)" }}
@@ -109,7 +109,7 @@ const Header = ({ route, navigate }) => {
             alignItems: "center", textAlign: "center"
           }}>
             {NAV.map((n) => (
-              <a key={n.path} href={"#" + n.path}
+              <a key={n.path} href={n.path}
                 onClick={(e) => { e.preventDefault(); navigate(n.path); setMobileOpen(false); }}
                 style={{
                   fontFamily: "var(--serif)", fontSize: 24, fontWeight: 300,

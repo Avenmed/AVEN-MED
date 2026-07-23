@@ -6,7 +6,11 @@
  * social scrapers, and the browser tab. It is fully effective once the app
  * moves from hash routing to History-API routing (see SEO_AUDIT.md, Critical #1). */
 
+import { SERVICE_SLUGS } from './pages/Service.jsx';
+
 const BASE_URL = "https://avenmedil.com";
+const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+const ROBOTS_NOINDEX = "noindex, follow";
 
 const DEFAULT = {
   title: "AVEN MED · Medical Spa & Family Medicine in Orland Park, IL",
@@ -74,14 +78,61 @@ function titleize(slug) {
   return slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// Short breadcrumb labels for the clean routes (Home is implicit).
+const CRUMBS = {
+  "/about": "About",
+  "/aesthetics": "Aesthetics",
+  "/wellness": "Wellness",
+  "/family-medicine": "Family Medicine",
+  "/assessment": "The AVEN Assessment",
+  "/memberships": "Memberships",
+  "/contact": "Contact",
+  "/notes": "Notes",
+};
+
+function setBreadcrumb(route, url) {
+  const existing = document.getElementById("breadcrumb-dynamic");
+  let name = CRUMBS[route];
+  if (!name && route.startsWith("/service/")) name = titleize(route.replace("/service/", ""));
+  // Home (or unknown) has no second crumb — drop any dynamic breadcrumb.
+  if (!name) { if (existing) existing.remove(); return; }
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE_URL + "/" },
+      { "@type": "ListItem", "position": 2, "name": name, "item": url },
+    ],
+  };
+  let el = existing;
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = "breadcrumb-dynamic";
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
+}
+
 export function applySeo(route) {
   let meta = ROUTE_SEO[route];
+  let robots = ROBOTS_INDEX;
+  let notFound = false;
+
   if (!meta && route && route.startsWith("/service/")) {
-    const name = titleize(route.replace("/service/", ""));
-    meta = {
-      title: `${name} · AVEN MED, Orland Park IL`,
-      description: `${name} at AVEN MED — a private medical spa and family medicine practice in Orland Park, IL, led by Alaa Mashal, FNP-BC.`,
-    };
+    const slug = route.replace("/service/", "").split("/")[0];
+    if (SERVICE_SLUGS.includes(slug)) {
+      const name = titleize(slug);
+      meta = {
+        title: `${name} · AVEN MED, Orland Park IL`,
+        description: `${name} at AVEN MED — a private medical spa and family medicine practice in Orland Park, IL, led by Alaa Mashal, FNP-BC.`,
+      };
+    } else {
+      // Unknown service slug — not a real page. Don't let it get indexed.
+      notFound = true;
+      robots = ROBOTS_NOINDEX;
+      meta = { title: "Page not found · AVEN MED", description: "This page could not be found." };
+    }
   }
   if (!meta) meta = DEFAULT;
 
@@ -89,10 +140,17 @@ export function applySeo(route) {
 
   document.title = meta.title;
   setMeta("name", "description", meta.description);
+  setMeta("name", "robots", robots);
   setCanonical(url);
   setMeta("property", "og:title", meta.title);
   setMeta("property", "og:description", meta.description);
   setMeta("property", "og:url", url);
   setMeta("name", "twitter:title", meta.title);
   setMeta("name", "twitter:description", meta.description);
+  if (notFound) {
+    const b = document.getElementById("breadcrumb-dynamic");
+    if (b) b.remove();
+  } else {
+    setBreadcrumb(route, url);
+  }
 }

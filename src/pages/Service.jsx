@@ -66,9 +66,42 @@ const SERVICES = {
   },
 };
 
+export const SERVICE_SLUGS = Object.keys(SERVICES);
+
 const ServicePage = ({ navigate }) => {
-  const slug = (window.location.hash.match(/#\/service\/([^/?]+)/) || [, 'lip-filler'])[1];
-  const data = SERVICES[slug] || SERVICES['lip-filler'];
+  const slug = (window.location.pathname.match(/\/service\/([^/?]+)/) || [, ''])[1];
+  const data = SERVICES[slug];
+
+  // Unknown slug → a real not-found state (never silently show another service).
+  if (!data) {
+    return (
+      <main className="page">
+        <section style={{ paddingTop: 180, paddingBottom: 140, textAlign: "center" }}>
+          <div className="container" style={{ maxWidth: 640 }}>
+            <Reveal>
+              <Logo size={48} style={{ margin: "0 auto 28px" }} />
+              <Eyebrow>· Not found</Eyebrow>
+              <h1 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "20px auto 20px", maxWidth: "16ch", fontWeight: 300 }}>
+                This page isn't here.
+              </h1>
+              <p className="body" style={{ margin: "0 auto 40px" }}>
+                The treatment you're looking for doesn't exist at this address.
+                Explore our aesthetics, or reach out and we'll point you the right way.
+              </p>
+              <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
+                <a href="/aesthetics" onClick={(e) => { e.preventDefault(); navigate("/aesthetics"); }} className="btn solid">
+                  <span>View Aesthetics</span><span className="arrow"></span>
+                </a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="link">
+                  <span>Back home</span><span className="arrow"></span>
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="page">
@@ -150,7 +183,7 @@ const ServicePage = ({ navigate }) => {
             <p className="display italic" style={{ fontSize: "clamp(20px, 2.2vw, 28px)", color: "var(--muted)", margin: "0 auto 36px", maxWidth: "26ch" }}>
               Pricing shared at your Assessment.
             </p>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>

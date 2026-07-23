@@ -5,6 +5,45 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# ---------------------------------------------------------------------------
+# Redirects (evaluated top-to-bottom). Defined here in netlify.toml — which
+# Netlify reads directly from the repo root — so they never depend on a
+# _redirects file being copied into the publish directory.
+# ---------------------------------------------------------------------------
+
+# Legacy paths → Assessment (migrated from the old, misplaced root _redirects).
+[[redirects]]
+  from = "/aura"
+  to = "/assessment"
+  status = 301
+
+[[redirects]]
+  from = "/aura/*"
+  to = "/assessment"
+  status = 301
+
+[[redirects]]
+  from = "/reading"
+  to = "/assessment"
+  status = 301
+
+[[redirects]]
+  from = "/reading/*"
+  to = "/assessment"
+  status = 301
+
+# SPA fallback — every other clean route serves the app (History-API routing).
+# Existing static files in the publish dir (assets, robots.txt, sitemap.xml)
+# are served before this rule applies.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ---------------------------------------------------------------------------
+# Headers
+# ---------------------------------------------------------------------------
+
 # Content-hashed build assets never change — cache them hard.
 [[headers]]
   for = "/assets/*.js"
@@ -16,7 +55,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Baseline security headers (also a small SEO/trust signal).
+# Baseline security headers.
 [[headers]]
   for = "/*"
   [headers.values]

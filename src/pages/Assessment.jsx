@@ -53,7 +53,7 @@ const AssessmentPage = ({ navigate }) => {
                     </li>
                   ))}
                 </ul>
-                <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
+                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
                   <span>{BOOKING_ENABLED ? "Book a Quick Consultation" : "Book"}</span><span className="arrow"></span>
                 </a>
               </div>
@@ -89,7 +89,7 @@ const AssessmentPage = ({ navigate }) => {
                     </li>
                   ))}
                 </ul>
-                <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
+                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
                   <span>{BOOKING_ENABLED ? "Book the AVEN Assessment" : "Book"}</span><span className="arrow"></span>
                 </a>
               </div>
@@ -127,7 +127,7 @@ const AssessmentPage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 64px)", margin: "0 auto 28px", maxWidth: "16ch" }}>
               Begin a <em>consultation.</em>
             </h2>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>{BOOKING_ENABLED ? "Book a Consultation" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>
