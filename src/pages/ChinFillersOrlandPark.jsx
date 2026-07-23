@@ -10,6 +10,7 @@ const chin = {
   },
   treatmentName: "Chin Filler",
   treatmentShort: "Chin Filler",
+  tags: ["injectable", "filler", "chin", "lower-face", "contour", "profile"],
   breadcrumbName: "Chin Fillers in Orland Park",
   procedureName: "Chin Filler — Non-Surgical Hyaluronic Acid Enhancement",
   procedureDescription:

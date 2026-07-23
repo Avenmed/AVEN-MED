@@ -10,6 +10,7 @@ const lipFlip = {
   },
   treatmentName: "Lip Flip",
   treatmentShort: "Lip Flip",
+  tags: ["injectable", "neuromodulator", "lips"],
   breadcrumbName: "Lip Flip in Orland Park",
   procedureName: "Lip Flip — Neuromodulator Upper-Lip Treatment",
   procedureDescription:

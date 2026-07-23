@@ -10,6 +10,7 @@ const masseter = {
   },
   treatmentName: "Masseter Botox",
   treatmentShort: "Masseter Botox",
+  tags: ["injectable", "neuromodulator", "jaw", "lower-face"],
   breadcrumbName: "Masseter Botox in Orland Park",
   procedureName: "Masseter Botox — Neuromodulator Jaw Treatment",
   procedureDescription:

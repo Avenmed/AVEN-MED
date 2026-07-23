@@ -11,21 +11,9 @@
  * patterns as the Assessment / Memberships pages. */
 import React from 'react';
 import { Eyebrow, Logo, Reveal, DividerMark, HeroBg, AssessmentCTA } from '../components.jsx';
+import { CLINIC, DEFAULT_AREAS } from '../content/clinic.js';
 
-const BASE_URL = "https://avenmedil.com";
-const CLINIC = {
-  name: "AVEN MED",
-  streetAddress: "14470 LaGrange Rd, Ste 101",
-  addressLocality: "Orland Park",
-  addressRegion: "IL",
-  postalCode: "60462",
-  country: "US",
-  telephone: "+1-708-734-6902",
-  email: "info@avenmedil.com",
-  lat: 41.6063,
-  lng: -87.8614,
-};
-const DEFAULT_AREAS = ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"];
+const BASE_URL = CLINIC.url;
 
 // Injects page-specific JSON-LD (Breadcrumb + FAQ + MedicalBusiness) and cleans
 // it up on unmount so it never leaks onto the next route.
@@ -55,7 +43,7 @@ function useTreatmentSchema(data) {
         "@id": `${BASE_URL}/#clinic`,
         "name": CLINIC.name,
         "url": `${BASE_URL}/`,
-        "telephone": CLINIC.telephone,
+        "telephone": CLINIC.phoneSchema,
         "email": CLINIC.email,
         "priceRange": "$$",
         "address": {

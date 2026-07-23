@@ -10,6 +10,7 @@ const cheek = {
   },
   treatmentName: "Cheek Filler",
   treatmentShort: "Cheek Filler",
+  tags: ["injectable", "filler", "midface", "cheek", "volume", "contour"],
   breadcrumbName: "Cheek Fillers in Orland Park",
   procedureName: "Cheek Filler — Midface Hyaluronic Acid Enhancement",
   procedureDescription:

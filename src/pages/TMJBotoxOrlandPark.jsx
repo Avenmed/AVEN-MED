@@ -13,6 +13,7 @@ const tmj = {
   },
   treatmentName: "TMJ Botox",
   treatmentShort: "TMJ Botox",
+  tags: ["injectable", "neuromodulator", "jaw"],
   breadcrumbName: "TMJ Botox in Orland Park",
   procedureName: "TMJ Botox — Neuromodulator for Jaw-Muscle Tension",
   procedureDescription:

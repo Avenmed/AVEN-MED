@@ -1,6 +1,7 @@
 /* AVEN MED — shared components */
 import React from 'react';
 import Video from './Video.jsx';
+import { CLINIC } from './content/clinic.js';
 
 /* Cinematic animation behind a page's top hero/title area.
  * Drop as the first child of a hero <section className="has-hero-bg">. */
@@ -92,7 +93,7 @@ const Header = ({ route, navigate }) => {
           ))}
         </nav>
         <div className="right">
-          <a className="phone" href="tel:+17087346902" style={{ color: "var(--ivory-soft)" }}>(708) 734 · 6902</a>
+          <a className="phone" href={`tel:${CLINIC.phoneE164}`} style={{ color: "var(--ivory-soft)" }}>{CLINIC.phoneDisplay}</a>
           <AssessmentCTA
             navigate={navigate}
             className="btn solid hdr-cta"
@@ -156,15 +157,15 @@ const Footer = ({ navigate }) => (
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, fontSize: 13, color: "var(--ivory-soft)", marginBottom: 56 }}>
-        <a href="mailto:info@avenmedil.com" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>info@avenmedil.com</a>
-        <a href="tel:+17087346902" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>(708) 734 · 6902</a>
+        <a href={`mailto:${CLINIC.email}`} style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>{CLINIC.email}</a>
+        <a href={`tel:${CLINIC.phoneE164}`} style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>{CLINIC.phoneDisplay}</a>
         <div style={{ display: "flex", gap: 24, marginTop: 4 }}>
-          <a href="https://instagram.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
-          <a href="https://facebook.com/avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Facebook</a>
-          <a href="https://tiktok.com/@avenmedil" target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>TikTok</a>
+          <a href={CLINIC.social.instagram} target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Instagram</a>
+          <a href={CLINIC.social.facebook} target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>Facebook</a>
+          <a href={CLINIC.social.tiktok} target="_blank" rel="noreferrer" style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>TikTok</a>
         </div>
         <div style={{ marginTop: 12, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", textAlign: "center", lineHeight: 1.6 }}>
-          14470 LaGrange Rd, Ste 101<br />Orland Park, IL 60462
+          {CLINIC.streetAddress}<br />{CLINIC.addressLocality}, {CLINIC.addressRegion} {CLINIC.postalCode}
         </div>
       </div>
 

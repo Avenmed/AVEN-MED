@@ -47,6 +47,27 @@ export const ENTRIES = GROUPS.flatMap((g) =>
   }))
 );
 
+// Tag-based related content: rank other pages by shared descriptive tags,
+// most-overlap first, and return descriptive-anchor links.
+function relatedFromTags(entry, all, limit = 6) {
+  const mine = new Set(entry.data.tags || []);
+  if (!mine.size) return [];
+  return all
+    .filter((o) => o.slug !== entry.slug && (o.data.tags || []).some((t) => mine.has(t)))
+    .map((o) => ({ o, score: (o.data.tags || []).filter((t) => mine.has(t)).length }))
+    .sort((a, b) => b.score - a.score || b.o.priority - a.o.priority)
+    .slice(0, limit)
+    .map((x) => ({ label: x.o.data.breadcrumbName, path: `/${x.o.slug}` }));
+}
+
+// A page with an explicit `related` keeps it (hand-curated). A page with `tags`
+// and no explicit `related` gets links generated automatically from its tags.
+ENTRIES.forEach((e) => {
+  if (!e.data.related && e.data.tags) {
+    e.data.related = relatedFromTags(e, ENTRIES);
+  }
+});
+
 const BY_SLUG = Object.fromEntries(ENTRIES.map((e) => [e.slug, e]));
 
 // Router helper: pathname ("/botox-orland-park") -> entry or null.

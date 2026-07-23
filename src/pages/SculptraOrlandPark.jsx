@@ -11,6 +11,7 @@ const sculptra = {
   },
   treatmentName: "Sculptra®",
   treatmentShort: "Sculptra",
+  tags: ["injectable", "biostimulator", "collagen", "volume", "aging", "contour"],
   breadcrumbName: "Sculptra in Orland Park",
   procedureName: "Sculptra — Poly-L-Lactic Acid Collagen Stimulator",
   procedureDescription:

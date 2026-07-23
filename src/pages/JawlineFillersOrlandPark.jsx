@@ -10,6 +10,7 @@ const jawline = {
   },
   treatmentName: "Jawline Filler",
   treatmentShort: "Jawline Filler",
+  tags: ["injectable", "filler", "jaw", "lower-face", "contour"],
   breadcrumbName: "Jawline Fillers in Orland Park",
   procedureName: "Jawline Filler — Hyaluronic Acid Contouring",
   procedureDescription:

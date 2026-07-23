@@ -11,6 +11,7 @@ const skinpen = {
   },
   treatmentName: "SkinPen®",
   treatmentShort: "SkinPen",
+  tags: ["skin", "collagen", "texture", "acne-scars", "aging"],
   breadcrumbName: "SkinPen Microneedling in Orland Park",
   procedureName: "SkinPen Microneedling — Collagen Induction Therapy",
   procedureDescription:

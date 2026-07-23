@@ -13,13 +13,15 @@
  *
  * Reverting the pre-launch changes is this one line.
  */
+import { CLINIC } from './content/clinic.js';
+
 export const BOOKING_ENABLED = false;
 
 /* Working channels used for the pre-launch waitlist (email + text hand-off).
  * These reach the real inbox/phone — nothing is stored or dropped.
  * At launch, wire the waitlist to Podium instead (see AnnouncementBar.jsx). */
-export const WAITLIST_EMAIL = "info@avenmedil.com";
-export const WAITLIST_PHONE = "+17087346902";
+export const WAITLIST_EMAIL = CLINIC.email;
+export const WAITLIST_PHONE = CLINIC.phoneE164;
 
 /* Podium online booking. After a visitor fills out the Contact form and hits
  * Book, they're handed off here to pick a time. */

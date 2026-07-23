@@ -10,6 +10,7 @@ const hyperhidrosis = {
   },
   treatmentName: "Hyperhidrosis Treatment",
   treatmentShort: "Hyperhidrosis Treatment",
+  tags: ["injectable", "neuromodulator"],
   breadcrumbName: "Hyperhidrosis Treatment in Orland Park",
   procedureName: "Hyperhidrosis Treatment — Neuromodulator for Excessive Sweating",
   procedureDescription:

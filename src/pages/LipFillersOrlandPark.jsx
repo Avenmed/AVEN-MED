@@ -11,6 +11,7 @@ const lipFillers = {
   },
   treatmentName: "Lip Filler",
   treatmentShort: "Lip Filler",
+  tags: ["injectable", "filler", "lips", "volume"],
   breadcrumbName: "Lip Fillers in Orland Park",
   procedureName: "Lip Filler — Hyaluronic Acid Lip Enhancement",
   procedureDescription:

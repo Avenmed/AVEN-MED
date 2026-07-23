@@ -12,6 +12,7 @@ const botox = {
   },
   treatmentName: "Botox®",
   treatmentShort: "Botox",
+  tags: ["injectable", "neuromodulator", "wrinkles", "aging"],
   breadcrumbName: "Botox in Orland Park",
   procedureName: "Botox — Neuromodulator Injections",
   procedureDescription:
