@@ -29,6 +29,7 @@ import acneTreatment from '../pages/AcneTreatmentOrlandPark.jsx';
 import acneScarTreatment from '../pages/AcneScarTreatmentOrlandPark.jsx';
 import medicalGradeSkincare from '../pages/MedicalGradeSkincareOrlandPark.jsx';
 import facials from '../pages/FacialsOrlandPark.jsx';
+import skinTightening from '../pages/SkinTighteningOrlandPark.jsx';
 
 // type -> template component
 export const TEMPLATES = {
@@ -39,6 +40,7 @@ export const TEMPLATES = {
 const TREATMENTS = [
   botox, lipFillers, cheek, jawline, chin, lipFlip, masseter, tmj, hyperhidrosis, skinpen, sculptra,
   chemicalPeels, skinRejuvenation, acneTreatment, acneScarTreatment, medicalGradeSkincare, facials,
+  skinTightening,
 ];
 
 const GROUPS = [
