@@ -20,27 +20,40 @@ import ContactPage from './pages/Contact.jsx';
 import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
 
-const useHashRoute = () => {
-  const [route, setRoute] = React.useState(() => {
-    const h = window.location.hash.replace(/^#/, "");
-    return h && h.startsWith("/") ? h : "/";
-  });
+// Clean-path routing via the History API.
+// Legacy #/ hash URLs (old links, bookmarks, cached Google results) are read as
+// the clean path so nothing breaks; an in-page anchor like #section (no slash)
+// is left alone for native scrolling.
+const cleanRouteFromLocation = () => {
+  const h = window.location.hash;
+  let p = (h && h.startsWith("#/")) ? h.slice(1).split("?")[0] : window.location.pathname;
+  p = (p || "/").replace(/\/+$/, "");   // normalize trailing slash
+  return p === "" ? "/" : p;
+};
+
+const useHistoryRoute = () => {
+  const [route, setRoute] = React.useState(cleanRouteFromLocation);
   React.useEffect(() => {
-    const onHash = () => {
-      const h = window.location.hash.replace(/^#/, "");
-      const next = h && h.startsWith("/") ? h : "/";
-      setRoute(next);
+    // One-time: rewrite a legacy #/ hash URL to its clean path.
+    const h = window.location.hash;
+    if (h && h.startsWith("#/")) {
+      window.history.replaceState(null, "", cleanRouteFromLocation());
+    }
+    const onPop = () => {
+      setRoute(cleanRouteFromLocation());
       window.scrollTo({ top: 0, behavior: "instant" });
     };
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
   const navigate = (p) => {
     if (p === route) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    window.location.hash = p;
+    window.history.pushState(null, "", p);
+    setRoute(p);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
   return [route, navigate];
 };
@@ -91,7 +104,7 @@ const Tweaks = ({ t, setTweak }) => (
 );
 
 const App = () => {
-  const [route, navigate] = useHashRoute();
+  const [route, navigate] = useHistoryRoute();
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
   // ---------- First-visit intro ----------

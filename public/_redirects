@@ -1,0 +1,4 @@
+# SPA fallback — every clean route serves the app so direct visits and
+# refreshes on inner pages resolve. Real static files (assets, robots.txt,
+# sitemap.xml) are served first and are unaffected by this rule.
+/*    /index.html   200

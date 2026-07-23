@@ -54,7 +54,7 @@ const MembershipsPage = ({ navigate }) => {
                   <li key={s}><span>{s}</span></li>
                 ))}
               </ul>
-              <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: 8 }}>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: 8 }}>
                 <span>Inquire about Maintenance</span><span className="arrow"></span>
               </a>
             </Reveal>
@@ -101,7 +101,7 @@ const MembershipsPage = ({ navigate }) => {
                   )
                 ))}
               </ul>
-              <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }}>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }}>
                 <span>Inquire about Signature</span><span className="arrow"></span>
               </a>
             </Reveal>
@@ -239,7 +239,7 @@ const MembershipsPage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 28px", maxWidth: "16ch" }}>
               Begin a <em>membership.</em>
             </h2>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>Apply for Membership</span><span className="arrow"></span>
             </a>
           </Reveal>

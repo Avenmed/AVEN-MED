@@ -67,7 +67,7 @@ const SERVICES = {
 };
 
 const ServicePage = ({ navigate }) => {
-  const slug = (window.location.hash.match(/#\/service\/([^/?]+)/) || [, 'lip-filler'])[1];
+  const slug = (window.location.pathname.match(/\/service\/([^/?]+)/) || [, 'lip-filler'])[1];
   const data = SERVICES[slug] || SERVICES['lip-filler'];
 
   return (
@@ -150,7 +150,7 @@ const ServicePage = ({ navigate }) => {
             <p className="display italic" style={{ fontSize: "clamp(20px, 2.2vw, 28px)", color: "var(--muted)", margin: "0 auto 36px", maxWidth: "26ch" }}>
               Pricing shared at your Assessment.
             </p>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>

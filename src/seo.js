@@ -74,6 +74,42 @@ function titleize(slug) {
   return slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// Short breadcrumb labels for the clean routes (Home is implicit).
+const CRUMBS = {
+  "/about": "About",
+  "/aesthetics": "Aesthetics",
+  "/wellness": "Wellness",
+  "/family-medicine": "Family Medicine",
+  "/assessment": "The AVEN Assessment",
+  "/memberships": "Memberships",
+  "/contact": "Contact",
+  "/notes": "Notes",
+};
+
+function setBreadcrumb(route, url) {
+  const existing = document.getElementById("breadcrumb-dynamic");
+  let name = CRUMBS[route];
+  if (!name && route.startsWith("/service/")) name = titleize(route.replace("/service/", ""));
+  // Home (or unknown) has no second crumb — drop any dynamic breadcrumb.
+  if (!name) { if (existing) existing.remove(); return; }
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE_URL + "/" },
+      { "@type": "ListItem", "position": 2, "name": name, "item": url },
+    ],
+  };
+  let el = existing;
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = "breadcrumb-dynamic";
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
+}
+
 export function applySeo(route) {
   let meta = ROUTE_SEO[route];
   if (!meta && route && route.startsWith("/service/")) {
@@ -95,4 +131,5 @@ export function applySeo(route) {
   setMeta("property", "og:url", url);
   setMeta("name", "twitter:title", meta.title);
   setMeta("name", "twitter:description", meta.description);
+  setBreadcrumb(route, url);
 }

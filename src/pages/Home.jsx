@@ -32,11 +32,11 @@ const Home = ({ navigate }) => {
               Aesthetics, wellness, and family medicine.
             </p>
             <div style={{ display: "flex", gap: 24, marginTop: 38, flexWrap: "wrap", alignItems: "center" }}>
-              <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
                 <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span>
                 <span className="arrow"></span>
               </a>
-              <a href="#/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
+              <a href="/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
                 <span>About AVEN</span>
                 <span className="arrow"></span>
               </a>
@@ -109,7 +109,7 @@ const Home = ({ navigate }) => {
             <p className="lede" style={{ maxWidth: "40ch", margin: "0 auto 40px" }}>
               Time with Alaa. Credited toward your treatment.
             </p>
-            <a href="#/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid">
               <span>{BOOKING_ENABLED ? "Book an Assessment" : "Book"}</span><span className="arrow"></span>
             </a>
           </Reveal>
@@ -124,7 +124,7 @@ const Home = ({ navigate }) => {
             <h2 className="display italic" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "28px auto 36px", maxWidth: "18ch", fontWeight: 300, color: "var(--ivory)" }}>
               A practice built on trust.
             </h2>
-            <a href="#/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
+            <a href="/about" onClick={(e) => { e.preventDefault(); navigate("/about"); }} className="link">
               <span>About AVEN</span><span className="arrow"></span>
             </a>
           </Reveal>
