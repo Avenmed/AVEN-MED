@@ -52,8 +52,9 @@ function useTreatmentSchema(data) {
       },
       {
         "@type": ["MedicalBusiness", "MedicalClinic"],
+        "@id": `${BASE_URL}/#clinic`,
         "name": CLINIC.name,
-        "url": url,
+        "url": `${BASE_URL}/`,
         "telephone": CLINIC.telephone,
         "email": CLINIC.email,
         "priceRange": "$$",
