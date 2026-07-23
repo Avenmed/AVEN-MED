@@ -24,6 +24,10 @@ const STATIC_ROUTE_SEO = {
     title: "About & Founder — Alaa Mashal, FNP-BC · AVEN MED, Orland Park IL",
     description: "Meet Alaa Mashal, FNP-BC — founder and lead practitioner of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
+  "/concerns": {
+    title: "Patient Concerns — Causes & Treatment Options · AVEN MED, Orland Park IL",
+    description: "Explore common skin and aesthetic concerns — fine lines, volume loss, uneven tone, sun damage, texture, pores, acne, scarring, laxity, and excessive sweating. Understand the causes, then plan individualized treatment through the AVEN Assessment at AVEN MED in Orland Park, IL.",
+  },
   "/aesthetics": {
     title: "Botox, Fillers, Sculptra & Microneedling · AVEN MED, Orland Park IL",
     description: "Botox, dermal fillers, Sculptra biostimulators, and microneedling in Orland Park, IL. Considered aesthetic treatments sequenced into pathways at AVEN MED, led by Alaa Mashal, FNP-BC.",
@@ -86,6 +90,7 @@ function titleize(slug) {
 // Short breadcrumb labels for the clean routes (Home is implicit).
 const CRUMBS = {
   "/about": "About",
+  "/concerns": "Patient Concerns",
   "/aesthetics": "Aesthetics",
   "/wellness": "Wellness",
   "/family-medicine": "Family Medicine",

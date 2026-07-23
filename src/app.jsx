@@ -17,6 +17,7 @@ import AssessmentPage from './pages/Assessment.jsx';
 import FamilyMedicinePage from './pages/FamilyMedicine.jsx';
 import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
+import ConcernsPage from './pages/Concerns.jsx';
 import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
 import { getRegistryPage, TEMPLATES } from './content/registry.jsx';
@@ -166,6 +167,7 @@ const App = () => {
     if (route.startsWith("/notes")) return NotesPage;
     switch (route) {
       case "/about": return AboutPage;
+      case "/concerns": return ConcernsPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
       case "/family-medicine": return FamilyMedicinePage;
