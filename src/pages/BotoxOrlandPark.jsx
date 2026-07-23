@@ -2,10 +2,14 @@
  * First treatment landing page; content only. Layout/SEO come from
  * TreatmentTemplate. To add another treatment, copy this file's shape. */
 import React from 'react';
-import TreatmentTemplate from './TreatmentTemplate.jsx';
 
 const botox = {
   slug: "botox-orland-park",
+  priority: 0.9,
+  seo: {
+    title: "Botox® in Orland Park, IL — Natural Neuromodulator Treatments | AVEN MED",
+    description: "Natural-looking Botox in Orland Park, IL at AVEN MED. Neuromodulator treatments for forehead lines, crow's feet, brow lift, and lip flip, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
   treatmentName: "Botox®",
   treatmentShort: "Botox",
   breadcrumbName: "Botox in Orland Park",
@@ -80,9 +84,9 @@ const botox = {
     // Point to the best existing pages for now; repoint to dedicated
     // treatment pages as each is built.
     { label: "Lip Fillers", path: "/lip-fillers-orland-park" },
-    { label: "Chin Fillers", path: "/aesthetics" },
-    { label: "Jawline Fillers", path: "/aesthetics" },
-    { label: "Cheek Fillers", path: "/aesthetics" },
+    { label: "Chin Fillers", path: "/chin-fillers-orland-park" },
+    { label: "Jawline Fillers", path: "/jawline-fillers-orland-park" },
+    { label: "Cheek Fillers", path: "/cheek-fillers-orland-park" },
     { label: "Sculptra", path: "/sculptra-orland-park" },
     { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
     { label: "Medical Weight Loss", path: "/wellness" },
@@ -91,6 +95,4 @@ const botox = {
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],
 };
 
-const BotoxOrlandPark = ({ navigate }) => <TreatmentTemplate data={botox} navigate={navigate} />;
-
-export default BotoxOrlandPark;
+export default botox;

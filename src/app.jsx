@@ -19,10 +19,17 @@ import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
 import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
-import BotoxOrlandPark from './pages/BotoxOrlandPark.jsx';
-import LipFillersOrlandPark from './pages/LipFillersOrlandPark.jsx';
-import SkinPenMicroneedlingOrlandPark from './pages/SkinPenMicroneedlingOrlandPark.jsx';
-import SculptraOrlandPark from './pages/SculptraOrlandPark.jsx';
+import { getRegistryPage, TEMPLATES } from './content/registry.jsx';
+
+// Stable wrapper so registry pages don't remount on every App render.
+// key={route} handles remounting on navigation; the schema template cleans
+// up its own JSON-LD on unmount.
+const RegistryPage = ({ route, navigate }) => {
+  const entry = getRegistryPage(route);
+  if (!entry) return null;
+  const Template = TEMPLATES[entry.type];
+  return <Template data={entry.data} navigate={navigate} />;
+};
 
 // Clean-path routing via the History API.
 // Legacy #/ hash URLs (old links, bookmarks, cached Google results) are read as
@@ -154,13 +161,10 @@ const App = () => {
   }, [t.accent, t.bg, t.fontDisplay, t.fontSans]);
 
   const Page = (() => {
+    if (getRegistryPage(route)) return RegistryPage;
     if (route.startsWith("/service/")) return ServicePage;
     if (route.startsWith("/notes")) return NotesPage;
     switch (route) {
-      case "/botox-orland-park": return BotoxOrlandPark;
-      case "/lip-fillers-orland-park": return LipFillersOrlandPark;
-      case "/skinpen-microneedling-orland-park": return SkinPenMicroneedlingOrlandPark;
-      case "/sculptra-orland-park": return SculptraOrlandPark;
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
@@ -180,10 +184,10 @@ const App = () => {
       <Header route={route} navigate={navigate} />
       {isHome ? (
         <div className={"homepage-content" + (homeRevealed ? " revealed" : "")}>
-          <Page key={route} navigate={navigate} />
+          <Page key={route} route={route} navigate={navigate} />
         </div>
       ) : (
-        <Page key={route} navigate={navigate} />
+        <Page key={route} route={route} navigate={navigate} />
       )}
       <Footer navigate={navigate} />
       {new URLSearchParams(window.location.search).get('tweaks') === '1' && <Tweaks t={t} setTweak={setTweak} />}

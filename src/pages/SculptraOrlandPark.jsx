@@ -1,10 +1,14 @@
 /* AVEN MED — Sculptra® in Orland Park.
  * Original, medically-toned content on the shared TreatmentTemplate. */
 import React from 'react';
-import TreatmentTemplate from './TreatmentTemplate.jsx';
 
 const sculptra = {
   slug: "sculptra-orland-park",
+  priority: 0.9,
+  seo: {
+    title: "Sculptra® in Orland Park, IL — Collagen-Stimulating Injectable | AVEN MED",
+    description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
   treatmentName: "Sculptra®",
   treatmentShort: "Sculptra",
   breadcrumbName: "Sculptra in Orland Park",
@@ -131,9 +135,9 @@ const sculptra = {
     { label: "Botox in Orland Park", path: "/botox-orland-park" },
     { label: "Lip Fillers in Orland Park", path: "/lip-fillers-orland-park" },
     { label: "SkinPen Microneedling in Orland Park", path: "/skinpen-microneedling-orland-park" },
-    { label: "Cheek Filler", path: "/aesthetics" },
-    { label: "Chin Filler", path: "/aesthetics" },
-    { label: "Jawline Filler", path: "/aesthetics" },
+    { label: "Cheek Filler", path: "/cheek-fillers-orland-park" },
+    { label: "Chin Filler", path: "/chin-fillers-orland-park" },
+    { label: "Jawline Filler", path: "/jawline-fillers-orland-park" },
     { label: "Medical-Grade Skincare", path: "/aesthetics" },
   ],
 
@@ -145,6 +149,4 @@ const sculptra = {
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],
 };
 
-const SculptraOrlandPark = ({ navigate }) => <TreatmentTemplate data={sculptra} navigate={navigate} />;
-
-export default SculptraOrlandPark;
+export default sculptra;

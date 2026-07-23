@@ -1,10 +1,14 @@
 /* AVEN MED — Lip Fillers in Orland Park.
  * Original lip-filler content on the shared TreatmentTemplate. */
 import React from 'react';
-import TreatmentTemplate from './TreatmentTemplate.jsx';
 
 const lipFillers = {
   slug: "lip-fillers-orland-park",
+  priority: 0.9,
+  seo: {
+    title: "Lip Fillers in Orland Park, IL — Natural Lip Enhancement | AVEN MED",
+    description: "Natural-looking lip fillers in Orland Park, IL at AVEN MED. Hyaluronic acid lip enhancement for shape, hydration, symmetry, and proportion, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
   treatmentName: "Lip Filler",
   treatmentShort: "Lip Filler",
   breadcrumbName: "Lip Fillers in Orland Park",
@@ -76,9 +80,9 @@ const lipFillers = {
 
   related: [
     { label: "Botox", path: "/botox-orland-park" },
-    { label: "Chin Filler", path: "/aesthetics" },
-    { label: "Cheek Filler", path: "/aesthetics" },
-    { label: "Jawline Filler", path: "/aesthetics" },
+    { label: "Chin Filler", path: "/chin-fillers-orland-park" },
+    { label: "Cheek Filler", path: "/cheek-fillers-orland-park" },
+    { label: "Jawline Filler", path: "/jawline-fillers-orland-park" },
     { label: "Sculptra", path: "/sculptra-orland-park" },
     { label: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park" },
   ],
@@ -86,6 +90,4 @@ const lipFillers = {
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],
 };
 
-const LipFillersOrlandPark = ({ navigate }) => <TreatmentTemplate data={lipFillers} navigate={navigate} />;
-
-export default LipFillersOrlandPark;
+export default lipFillers;

@@ -7,6 +7,7 @@
  * moves from hash routing to History-API routing (see SEO_AUDIT.md, Critical #1). */
 
 import { SERVICE_SLUGS } from './pages/Service.jsx';
+import { REGISTRY_SEO } from './content/registry.jsx';
 
 const BASE_URL = "https://avenmedil.com";
 const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -17,7 +18,7 @@ const DEFAULT = {
   description: "AVEN MED is a private medical spa in Orland Park, IL offering Botox, dermal fillers, Sculptra, microneedling, IV therapy, medical weight loss, and family medicine. Led by Alaa Mashal, FNP-BC.",
 };
 
-export const ROUTE_SEO = {
+const STATIC_ROUTE_SEO = {
   "/": DEFAULT,
   "/about": {
     title: "About & Founder — Alaa Mashal, FNP-BC · AVEN MED, Orland Park IL",
@@ -51,23 +52,11 @@ export const ROUTE_SEO = {
     title: "Notes · AVEN MED, Orland Park IL",
     description: "Notes from AVEN MED — perspectives on aesthetics, skin health, and wellness from a private Orland Park practice.",
   },
-  "/botox-orland-park": {
-    title: "Botox® in Orland Park, IL — Natural Neuromodulator Treatments | AVEN MED",
-    description: "Natural-looking Botox in Orland Park, IL at AVEN MED. Neuromodulator treatments for forehead lines, crow's feet, brow lift, and lip flip, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
-  },
-  "/lip-fillers-orland-park": {
-    title: "Lip Fillers in Orland Park, IL — Natural Lip Enhancement | AVEN MED",
-    description: "Natural-looking lip fillers in Orland Park, IL at AVEN MED. Hyaluronic acid lip enhancement for shape, hydration, symmetry, and proportion, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
-  },
-  "/skinpen-microneedling-orland-park": {
-    title: "SkinPen® Microneedling in Orland Park, IL — Collagen Induction | AVEN MED",
-    description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
-  },
-  "/sculptra-orland-park": {
-    title: "Sculptra® in Orland Park, IL — Collagen-Stimulating Injectable | AVEN MED",
-    description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
-  },
 };
+
+// Data-driven pages (treatments, and future categories) contribute their own
+// title/description straight from the content registry.
+export const ROUTE_SEO = { ...STATIC_ROUTE_SEO, ...REGISTRY_SEO };
 
 function setMeta(attr, key, value) {
   if (!value) return;
