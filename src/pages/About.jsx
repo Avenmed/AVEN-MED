@@ -51,9 +51,9 @@ const AboutPage = ({ navigate }) => {
           <Reveal style={{ textAlign: "center" }}>
             <Logo size={84} style={{ margin: "0 auto 36px" }} />
             <Eyebrow>The AVEN Story</Eyebrow>
-            <h1 className="display" style={{ fontSize: "clamp(48px, 6.4vw, 96px)", margin: "28px auto 12px", lineHeight: 1.02, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
+            <h2 className="display" style={{ fontSize: "clamp(48px, 6.4vw, 96px)", margin: "28px auto 12px", lineHeight: 1.02, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
               A name that became its own <em>meaning.</em>
-            </h1>
+            </h2>
             <div className="label" style={{ color: "var(--muted)", marginTop: 22 }}>Founded · Orland Park · 2026</div>
           </Reveal>
 

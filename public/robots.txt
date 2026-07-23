@@ -1,0 +1,6 @@
+# AVEN MED — https://avenmedil.com
+# All search engines welcome to crawl the full site.
+User-agent: *
+Allow: /
+
+Sitemap: https://avenmedil.com/sitemap.xml

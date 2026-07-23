@@ -3,6 +3,7 @@ import React from 'react';
 import { Header, Footer } from './components.jsx';
 import AnnouncementBar from './AnnouncementBar.jsx';
 import { BOOKING_ENABLED } from './config.js';
+import { applySeo } from './seo.js';
 import Intro from './Intro.jsx';
 import {
   useTweaks, TweaksPanel, TweakSection,
@@ -118,6 +119,11 @@ const App = () => {
     setIntroActive(false);
     setHomeRevealed(true);
   }, []);
+
+  // Keep <title>, meta description, and canonical accurate per route.
+  React.useEffect(() => {
+    applySeo(route);
+  }, [route]);
 
   // Apply tweaks to :root
   React.useEffect(() => {
