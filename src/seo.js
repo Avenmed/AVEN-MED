@@ -51,6 +51,10 @@ export const ROUTE_SEO = {
     title: "Notes · AVEN MED, Orland Park IL",
     description: "Notes from AVEN MED — perspectives on aesthetics, skin health, and wellness from a private Orland Park practice.",
   },
+  "/botox-orland-park": {
+    title: "Botox® in Orland Park, IL — Natural Neuromodulator Treatments | AVEN MED",
+    description: "Natural-looking Botox in Orland Park, IL at AVEN MED. Neuromodulator treatments for forehead lines, crow's feet, brow lift, and lip flip, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+  },
 };
 
 function setMeta(attr, key, value) {

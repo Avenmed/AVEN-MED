@@ -19,6 +19,7 @@ import MembershipsPage from './pages/Memberships.jsx';
 import ContactPage from './pages/Contact.jsx';
 import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
+import BotoxOrlandPark from './pages/BotoxOrlandPark.jsx';
 
 // Clean-path routing via the History API.
 // Legacy #/ hash URLs (old links, bookmarks, cached Google results) are read as
@@ -153,6 +154,7 @@ const App = () => {
     if (route.startsWith("/service/")) return ServicePage;
     if (route.startsWith("/notes")) return NotesPage;
     switch (route) {
+      case "/botox-orland-park": return BotoxOrlandPark;
       case "/about": return AboutPage;
       case "/aesthetics": return AestheticsPage;
       case "/wellness": return WellnessPage;
