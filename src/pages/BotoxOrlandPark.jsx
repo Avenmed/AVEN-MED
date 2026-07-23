@@ -79,7 +79,7 @@ const botox = {
   related: [
     // Point to the best existing pages for now; repoint to dedicated
     // treatment pages as each is built.
-    { label: "Lip Fillers", path: "/service/lip-filler" },
+    { label: "Lip Fillers", path: "/lip-fillers-orland-park" },
     { label: "Chin Fillers", path: "/aesthetics" },
     { label: "Jawline Fillers", path: "/aesthetics" },
     { label: "Cheek Fillers", path: "/aesthetics" },
