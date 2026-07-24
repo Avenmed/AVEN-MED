@@ -132,13 +132,13 @@ const WellnessPage = ({ navigate }) => {
             {[
               {
                 k: "The Foundation",
-                p: "$500 / year",
+                p: "An entry point",
                 d: "An entry-point wellness program — bloodwork twice a year, a single IV infusion, and a skin assessment.",
                 items: ["2 bloodwork panels per year", "1 IV infusion", "1 skin assessment"]
               },
               {
                 k: "The Compound",
-                p: "$2,500 / year",
+                p: "The full practice",
                 d: "The deeper practice. Quarterly labs, monthly IV protocol, and twice-yearly skin assessments — the full AVEN wellness practice in one program.",
                 items: ["Quarterly bloodwork", "12 monthly IV infusions", "2 skin assessments"],
                 feat: true
@@ -181,6 +181,13 @@ const WellnessPage = ({ navigate }) => {
               </Reveal>
             ))}
           </div>
+          <Reveal>
+            <p className="body" style={{ marginTop: 40, maxWidth: "62ch", color: "var(--ivory-soft)", fontStyle: "italic", fontFamily: "var(--serif)", fontSize: 18 }}>
+              Each program is shaped around you at your AVEN Assessment — never a
+              fixed package. We discuss what a program includes, and what it
+              involves, once we understand your health and goals.
+            </p>
+          </Reveal>
         </div>
       </section>
 
