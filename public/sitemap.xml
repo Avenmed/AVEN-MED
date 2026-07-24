@@ -55,6 +55,30 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://avenmedil.com/wellness/consultation</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://avenmedil.com/wellness/preventive-wellness</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://avenmedil.com/wellness/longevity-lab-testing</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://avenmedil.com/wellness/nutrition-metabolic-support</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://avenmedil.com/family-medicine</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>

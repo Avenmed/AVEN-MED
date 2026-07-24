@@ -10,7 +10,6 @@ import { getHubEntries } from '../content/registry.jsx';
 // (via getHubEntries), ordered by its page's hub.order.
 const WELLNESS_SOON = [
   { label: "Hormone Optimization", blurb: "Conservative, monitored bio-identical hormone and peptide protocols.", order: 50, soon: true, path: null },
-  { label: "Longevity & Labs", blurb: "Interpreted bloodwork and metabolic markers, tracked over time.", order: 60, soon: true, path: null },
 ];
 
 const WellnessPage = ({ navigate }) => {

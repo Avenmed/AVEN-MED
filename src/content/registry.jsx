@@ -52,6 +52,10 @@ import medicalWeightLoss from '../pages/wellness/MedicalWeightLoss.jsx';
 import ivTherapy from '../pages/wellness/IVTherapy.jsx';
 import vitaminInjections from '../pages/wellness/VitaminInjections.jsx';
 import glp1Therapy from '../pages/wellness/GLP1Therapy.jsx';
+import wellnessConsultation from '../pages/wellness/WellnessConsultation.jsx';
+import preventiveWellness from '../pages/wellness/PreventiveWellness.jsx';
+import longevityLabTesting from '../pages/wellness/LongevityLabTesting.jsx';
+import nutritionMetabolicSupport from '../pages/wellness/NutritionMetabolicSupport.jsx';
 
 // type -> template component
 export const TEMPLATES = {
@@ -74,6 +78,7 @@ const CONCERNS = [
 
 const WELLNESS = [
   medicalWeightLoss, ivTherapy, vitaminInjections, glp1Therapy,
+  wellnessConsultation, preventiveWellness, longevityLabTesting, nutritionMetabolicSupport,
 ];
 
 const GROUPS = [
