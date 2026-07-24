@@ -27,7 +27,7 @@ const FamilyMedicinePage = ({ navigate }) => {
             <p className="lede">
               Family medicine at AVEN includes sick visits, preventive care,
               chronic condition management, and the everyday medicine a
-              family relies on. Self-pay.
+              family relies on. A cash-pay practice.
             </p>
           </Reveal>
         </div>
@@ -56,7 +56,7 @@ const FamilyMedicinePage = ({ navigate }) => {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 48 }}>
             {[
-              { n: "01", k: "Sick Visits", b: "Same-day care for acute illness — colds, flu, infections, and seasonal viruses. We see patients quickly and discreetly." },
+              { n: "01", k: "Sick Visits", b: "Outpatient care for acute illness — colds, flu, infections, and seasonal viruses, handled with attention and discretion." },
               { n: "02", k: "Preventive Care", b: "Annual physicals, screenings, vaccinations, and lifestyle guidance. The slow, steady work of staying well." },
               { n: "03", k: "Chronic Conditions", b: "Continuous management of conditions like hypertension, thyroid, and metabolic health — with a single practitioner who knows your file." }
             ].map((s, i) => (
@@ -125,17 +125,15 @@ const FamilyMedicinePage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={120}>
             <h3 className="display" style={{ fontSize: "clamp(28px, 3vw, 44px)", margin: "0 0 32px", maxWidth: "26ch" }}>
-              <em>Self-pay</em>, made simple.
+              A <em>cash-pay</em> practice.
             </h3>
             <p className="body" style={{ marginBottom: 22 }}>
-              AVEN family medicine is self-pay — no claims, no billing
-              surprises. Patients pay directly for the simplicity and
-              transparency of it. The practice is built around continuity —
-              the same practitioner, the same room, every visit.
+              AVEN family medicine is a cash-pay practice — you pay directly,
+              without insurance billing. The focus stays on a steady, continuous
+              relationship with your provider rather than paperwork and claims.
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
-              Pricing is shared clearly before your first visit, so you always
-              know what a visit costs — no surprises.
+              Contact AVEN MED for current visit pricing and scheduling.
             </p>
           </Reveal>
         </div>

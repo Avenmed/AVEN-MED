@@ -38,7 +38,7 @@ const STATIC_ROUTE_SEO = {
   },
   "/family-medicine": {
     title: "Family Medicine · AVEN MED, Orland Park IL",
-    description: "Self-pay family medicine in Orland Park, IL — transparent pricing, continuity of care, one practitioner every visit. AVEN MED.",
+    description: "Cash-pay family medicine in Orland Park, IL — relationship-based primary care with continuity and coordination. Contact AVEN MED for current visit pricing and scheduling.",
   },
   "/assessment": {
     title: "The AVEN Assessment · AVEN MED, Orland Park IL",
