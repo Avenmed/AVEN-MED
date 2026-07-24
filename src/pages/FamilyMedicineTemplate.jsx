@@ -247,7 +247,7 @@ const FamilyMedicineTemplate = ({ data, navigate }) => {
   const crossPaths = new Set((data.crossLinks || []).map((r) => r.path));
   const relatedItems = (data.related || []).filter((r) => !crossPaths.has(r.path));
 
-  const ctaLabel = data.ctaLabel || "Book a Family Medicine Visit";
+  const ctaLabel = data.ctaLabel || "Schedule a Family Medicine Consultation";
 
   return (
     <main className="page">

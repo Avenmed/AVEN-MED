@@ -86,7 +86,7 @@ const tmj = {
       "Whether a referral or co-management is more appropriate",
     ],
     closing:
-      "If treatment isn't likely to help — or another provider should be involved — we'll say so. Pricing, when treatment is appropriate, is discussed at your assessment. AVEN is a self-pay practice and does not bill insurance.",
+      "If treatment isn't likely to help — or another provider should be involved — we'll say so. Pricing, when treatment is appropriate, is discussed at your assessment. AVEN is a cash-pay practice and does not bill insurance.",
   },
 
   whatToExpect: [
@@ -101,7 +101,7 @@ const tmj = {
     { q: "Is TMJ Botox right for everyone with jaw pain?", a: "No. Jaw symptoms have many causes, and this treatment targets muscle-related tension specifically. Whether it may help you can only be determined through an individualized assessment, and for many people other approaches are more appropriate." },
     { q: "Does TMJ Botox cure TMJ or TMD?", a: "No. It does not cure the temporomandibular joint or treat the joint itself — it addresses overactivity in the surrounding muscles. It is often best used as one part of care alongside dental or medical management, not as a replacement for it." },
     { q: "Is relief guaranteed?", a: "No. Results vary from patient to patient, and we do not promise a specific outcome. Part of an honest assessment is discussing realistic expectations before any treatment." },
-    { q: "Does insurance cover TMJ Botox?", a: "AVEN MED is a self-pay practice and does not bill insurance. Any pricing is discussed transparently at your assessment. We can't speak to what your insurer may or may not do." },
+    { q: "Does insurance cover TMJ Botox?", a: "AVEN MED is a cash-pay practice and does not bill insurance. Any pricing is discussed at your assessment. We can't speak to what your insurer may or may not do." },
     { q: "How does it work?", a: "By relaxing overactive jaw muscles, treatment may reduce the muscle tension and clenching activity that can contribute to discomfort in selected patients. It works on the muscles, not the joint structure itself." },
     { q: "When will I notice a change?", a: "When treatment is appropriate, any change is usually noticed over one to two weeks as the muscles respond. The degree and duration of any relief vary." },
     { q: "How long do the effects last?", a: "Effects typically last a few months and are not permanent. We reassess your response at follow-up and adjust the plan over time." },

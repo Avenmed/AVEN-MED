@@ -18,7 +18,7 @@ const primaryCare = {
   procedureName: "Primary Care & Family Medicine",
   procedureDescription:
     "Relationship-based primary care and family medicine in Orland Park, IL with Alaa Mashal, FNP-BC — evidence-based preventive care, chronic-condition support, acute outpatient concerns, medication management, and specialist coordination for adults and families.",
-  ctaLabel: "Book a Family Medicine Visit",
+  ctaLabel: "Schedule a Family Medicine Consultation",
   faqHeading: "Primary care, answered.",
 
   hero: {
