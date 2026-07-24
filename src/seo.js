@@ -28,6 +28,10 @@ const STATIC_ROUTE_SEO = {
     title: "Patient Concerns — Causes & Treatment Options · AVEN MED, Orland Park IL",
     description: "Explore common skin and aesthetic concerns — fine lines, volume loss, uneven tone, sun damage, texture, pores, acne, scarring, laxity, and excessive sweating. Understand the causes, then plan individualized treatment through the AVEN Assessment at AVEN MED in Orland Park, IL.",
   },
+  "/providers": {
+    title: "Meet Your Provider — Alaa Mashal, FNP-BC · AVEN MED, Orland Park IL",
+    description: "Meet the clinician behind AVEN MED in Orland Park, IL — Alaa Mashal, FNP-BC, founder and lead practitioner. Care here is personal and continuous: the provider who assesses you is the one who cares for you.",
+  },
   "/aesthetics": {
     title: "Botox, Fillers, Sculptra & Microneedling · AVEN MED, Orland Park IL",
     description: "Botox, dermal fillers, Sculptra biostimulators, and microneedling in Orland Park, IL. Considered aesthetic treatments sequenced into pathways at AVEN MED, led by Alaa Mashal, FNP-BC.",
@@ -91,6 +95,7 @@ function titleize(slug) {
 const CRUMBS = {
   "/about": "About",
   "/concerns": "Patient Concerns",
+  "/providers": "Meet Your Provider",
   "/aesthetics": "Aesthetics",
   "/wellness": "Wellness",
   "/family-medicine": "Family Medicine",

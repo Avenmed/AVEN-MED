@@ -1,8 +1,13 @@
-/* AVEN MED — The AVEN Assessment (two-tier paid consultation) */
+/* AVEN MED — The AVEN Assessment hub (two-tier paid consultation + registry-derived directory) */
 import React from 'react';
 import { Eyebrow, Logo, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import { getHubEntries } from '../content/registry.jsx';
 
 const AssessmentPage = ({ navigate }) => {
+  // Directory cards derive from the registry; new Assessment pages appear here
+  // automatically, ordered by each page's hub.order.
+  const pages = getHubEntries("assessment");
+
   return (
     <main className="page">
       {/* HERO */}
@@ -114,8 +119,43 @@ const AssessmentPage = ({ navigate }) => {
         </div>
       </section>
 
+      {/* EXPLORE THE ASSESSMENT — registry-derived directory */}
+      {pages.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Reveal>
+              <Eyebrow>· Explore the Assessment</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 16px", maxWidth: "20ch", fontWeight: 300 }}>
+                Understand the <em>process.</em>
+              </h2>
+              <p className="body" style={{ marginBottom: 56, maxWidth: "58ch" }}>
+                A closer look at how the AVEN Assessment works — and what to expect
+                before you ever book.
+              </p>
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {pages.map((p) => (
+                <Reveal key={p.label}>
+                  <a
+                    href={p.path}
+                    onClick={(e) => { e.preventDefault(); navigate(p.path); }}
+                    style={{ display: "block", padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400, color: "var(--ivory)" }}>{p.label}</span>
+                      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                    </div>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{p.blurb}</p>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
-      <section className="section" style={{ textAlign: "center" }}>
+      <section className="section" style={{ textAlign: "center", background: "var(--bg-1)" }}>
         <div className="container">
           <Reveal>
             <Logo size={36} style={{ margin: "0 auto 24px", opacity: 0.85 }} />

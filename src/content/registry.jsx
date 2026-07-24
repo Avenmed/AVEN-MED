@@ -12,6 +12,8 @@ import TreatmentTemplate from '../pages/TreatmentTemplate.jsx';
 import ConcernTemplate from '../pages/ConcernTemplate.jsx';
 import WellnessTemplate from '../pages/WellnessTemplate.jsx';
 import FamilyMedicineTemplate from '../pages/FamilyMedicineTemplate.jsx';
+import AssessmentTemplate from '../pages/AssessmentTemplate.jsx';
+import ProviderTemplate from '../pages/ProviderTemplate.jsx';
 // Future category templates plug in here (membership, education) and get
 // registered the same way.
 
@@ -61,12 +63,24 @@ import nutritionMetabolicSupport from '../pages/wellness/NutritionMetabolicSuppo
 // Family Medicine — relationship-based primary care for adults and families.
 import primaryCare from '../pages/family-medicine/PrimaryCare.jsx';
 
+// Assessment — the consultation-first entry point to every AVEN relationship.
+import theAvenAssessment from '../pages/assessment/TheAvenAssessment.jsx';
+import quickAssessment from '../pages/assessment/QuickAssessment.jsx';
+import comprehensiveAssessment from '../pages/assessment/ComprehensiveAssessment.jsx';
+import assessmentWhatToExpect from '../pages/assessment/WhatToExpect.jsx';
+import assessmentFAQ from '../pages/assessment/AssessmentFAQ.jsx';
+
+// Meet Your Provider — the clinician(s) behind AVEN.
+import alaaMashal from '../pages/providers/AlaaMashal.jsx';
+
 // type -> template component
 export const TEMPLATES = {
   treatment: TreatmentTemplate,
   concern: ConcernTemplate,
   wellness: WellnessTemplate,
   familyMedicine: FamilyMedicineTemplate,
+  assessment: AssessmentTemplate,
+  provider: ProviderTemplate,
 };
 
 // Grouped by type so new categories slot in cleanly.
@@ -90,11 +104,21 @@ const FAMILY_MEDICINE = [
   primaryCare,
 ];
 
+const ASSESSMENT = [
+  theAvenAssessment, quickAssessment, comprehensiveAssessment, assessmentWhatToExpect, assessmentFAQ,
+];
+
+const PROVIDERS = [
+  alaaMashal,
+];
+
 const GROUPS = [
   { type: 'treatment', pages: TREATMENTS },
   { type: 'concern', pages: CONCERNS },
   { type: 'wellness', pages: WELLNESS },
   { type: 'familyMedicine', pages: FAMILY_MEDICINE },
+  { type: 'assessment', pages: ASSESSMENT },
+  { type: 'provider', pages: PROVIDERS },
 ];
 
 export const ENTRIES = GROUPS.flatMap((g) =>
