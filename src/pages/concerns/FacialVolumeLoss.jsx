@@ -14,6 +14,7 @@ const facialVolumeLoss = {
   concernShort: "Facial volume loss",
   breadcrumbName: "Facial Volume Loss",
   conditionName: "Age-Related Facial Volume Loss",
+  hub: { group: "Lines, Volume & Laxity", order: 20, blurb: "The deflation and flattening that come with collagen and fat change." },
 
   hero: {
     eyebrow: "Patient Concerns · Aging",

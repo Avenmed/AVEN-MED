@@ -14,6 +14,7 @@ const acne = {
   concernShort: "Acne",
   breadcrumbName: "Acne",
   conditionName: "Acne Vulgaris",
+  hub: { group: "Blemishes & Scarring", order: 80, blurb: "A medical concern with several drivers, calmed with an individualized plan." },
 
   hero: {
     eyebrow: "Patient Concerns · Medical Skin",

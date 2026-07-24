@@ -14,6 +14,7 @@ const unevenSkinTone = {
   concernShort: "Uneven skin tone",
   breadcrumbName: "Uneven Skin Tone",
   conditionName: "Uneven Skin Tone and Pigmentation",
+  hub: { group: "Tone, Texture & Clarity", order: 40, blurb: "Redness, blotchiness, and discoloration with several possible causes." },
 
   hero: {
     eyebrow: "Patient Concerns · Skin Quality",

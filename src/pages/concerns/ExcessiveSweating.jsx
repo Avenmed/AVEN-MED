@@ -14,6 +14,7 @@ const excessiveSweating = {
   concernShort: "Excessive sweating",
   breadcrumbName: "Excessive Sweating",
   conditionName: "Hyperhidrosis (Excessive Sweating)",
+  hub: { group: "Medical Concerns", order: 100, blurb: "Hyperhidrosis — a common, treatable medical condition." },
 
   hero: {
     eyebrow: "Patient Concerns · Medical",

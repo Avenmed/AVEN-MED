@@ -14,6 +14,7 @@ const fineLinesWrinkles = {
   concernShort: "Fine lines & wrinkles",
   breadcrumbName: "Fine Lines & Wrinkles",
   conditionName: "Facial Fine Lines and Wrinkles",
+  hub: { group: "Lines, Volume & Laxity", order: 10, blurb: "Dynamic and static lines, and what actually drives each." },
 
   hero: {
     eyebrow: "Patient Concerns · Aging",

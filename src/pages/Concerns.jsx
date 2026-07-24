@@ -1,50 +1,33 @@
 /* AVEN MED — Patient Concerns hub.
  *
  * The entry point to the concern pages: it bridges a symptom to individualized
- * treatment planning through the AVEN Assessment. Hand-built category landing in
- * the same convention as Aesthetics / Wellness (routed from app.jsx). The concern
- * pages themselves are data-driven through the content registry. */
+ * treatment planning through the AVEN Assessment. Routed from app.jsx. The
+ * concern CARDS are derived from the content registry via getHubEntries('concern')
+ * — each concern page carries its own hub card (group, blurb, order) — so newly
+ * registered concerns appear here automatically. Only the group headers, their
+ * ledes, and group order are editorial and kept here. */
 import React from 'react';
 import { Eyebrow, Reveal, HeroBg, AssessmentCTA, DividerMark, Logo } from '../components.jsx';
+import { getHubEntries } from '../content/registry.jsx';
 
-const GROUPS = [
-  {
-    k: "Lines, Volume & Laxity",
-    lede: "The structural and surface changes of aging — approached by cause, not by a single default treatment.",
-    items: [
-      { n: "Fine Lines & Wrinkles", d: "Dynamic and static lines, and what actually drives each.", path: "/concerns/fine-lines-and-wrinkles" },
-      { n: "Facial Volume Loss", d: "The deflation and flattening that come with collagen and fat change.", path: "/concerns/facial-volume-loss" },
-      { n: "Skin Laxity", d: "Early looseness and mild sagging — and where treatment can and can't help.", path: "/concerns/skin-laxity" },
-    ],
-  },
-  {
-    k: "Tone, Texture & Clarity",
-    lede: "Skin-quality concerns that respond best to a sequenced plan rather than one aggressive treatment.",
-    items: [
-      { n: "Uneven Skin Tone", d: "Redness, blotchiness, and discoloration with several possible causes.", path: "/concerns/uneven-skin-tone" },
-      { n: "Sun Damage", d: "The pigment, texture, and vessel changes that accumulate over years.", path: "/concerns/sun-damage" },
-      { n: "Skin Texture", d: "Rough, dull, or uneven surface texture — and what's beneath it.", path: "/concerns/skin-texture" },
-      { n: "Large Pores", d: "Why pores look larger, and what genuinely refines them.", path: "/concerns/large-pores" },
-    ],
-  },
-  {
-    k: "Blemishes & Scarring",
-    lede: "Active breakouts and the marks they leave — treated in the right order, never at once.",
-    items: [
-      { n: "Acne", d: "A medical concern with several drivers, calmed with an individualized plan.", path: "/concerns/acne" },
-      { n: "Acne Scars", d: "The texture left behind — softened realistically once acne is controlled.", path: "/concerns/acne-scars" },
-    ],
-  },
-  {
-    k: "Medical Concerns",
-    lede: "Concerns that are medical first — evaluated and treated as such.",
-    items: [
-      { n: "Excessive Sweating", d: "Hyperhidrosis — a common, treatable medical condition.", path: "/concerns/excessive-sweating" },
-    ],
-  },
+// Editorial group headers, ledes, and order. Concern cards are matched into a
+// group by each page's `hub.group`. A concern whose group isn't listed here
+// still appears, under a trailing "More Concerns" group — never silently dropped.
+const GROUP_META = [
+  { k: "Lines, Volume & Laxity", lede: "The structural and surface changes of aging — approached by cause, not by a single default treatment." },
+  { k: "Tone, Texture & Clarity", lede: "Skin-quality concerns that respond best to a sequenced plan rather than one aggressive treatment." },
+  { k: "Blemishes & Scarring", lede: "Active breakouts and the marks they leave — treated in the right order, never at once." },
+  { k: "Medical Concerns", lede: "Concerns that are medical first — evaluated and treated as such." },
 ];
 
 const ConcernsPage = ({ navigate }) => {
+  const entries = getHubEntries("concern");
+  const known = new Set(GROUP_META.map((g) => g.k));
+  const groups = GROUP_META.map((g) => ({ ...g, items: entries.filter((e) => e.group === g.k) }));
+  const leftover = entries.filter((e) => !e.group || !known.has(e.group));
+  if (leftover.length) groups.push({ k: "More Concerns", lede: "Further concerns we evaluate and treat.", items: leftover });
+  const shown = groups.filter((g) => g.items.length > 0);
+
   return (
     <main className="page">
       {/* HERO */}
@@ -67,8 +50,8 @@ const ConcernsPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* GROUPS */}
-      {GROUPS.map((g, gi) => (
+      {/* GROUPS (cards derived from the registry) */}
+      {shown.map((g, gi) => (
         <section key={g.k} className="section" style={gi % 2 === 1 ? { background: "var(--bg-1)" } : undefined}>
           <div className="container">
             <Reveal>
@@ -84,10 +67,10 @@ const ConcernsPage = ({ navigate }) => {
                     style={{ display: "block", padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{it.n}</span>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{it.label}</span>
                       <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
                     </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{it.d}</p>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{it.blurb}</p>
                   </a>
                 </Reveal>
               ))}

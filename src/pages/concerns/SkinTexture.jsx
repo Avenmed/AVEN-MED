@@ -14,6 +14,7 @@ const skinTexture = {
   concernShort: "Skin texture",
   breadcrumbName: "Skin Texture",
   conditionName: "Uneven Skin Texture",
+  hub: { group: "Tone, Texture & Clarity", order: 60, blurb: "Rough, dull, or uneven surface texture — and what's beneath it." },
 
   hero: {
     eyebrow: "Patient Concerns · Skin Quality",

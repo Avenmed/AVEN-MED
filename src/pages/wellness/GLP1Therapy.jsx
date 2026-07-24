@@ -13,6 +13,7 @@ const glp1Therapy = {
   serviceName: "GLP-1 Therapy",
   serviceShort: "GLP-1 therapy",
   breadcrumbName: "GLP-1 Therapy",
+  hub: { order: 40, blurb: "Dedicated, medically monitored GLP-1 care for appropriate candidates." },
   procedureName: "GLP-1 Therapy — Medically Monitored Medication",
   procedureDescription:
     "GLP-1 therapy in Orland Park, IL by Alaa Mashal, FNP-BC — semaglutide or tirzepatide, prescribed and monitored as one component of a physician-directed medical weight-management program.",

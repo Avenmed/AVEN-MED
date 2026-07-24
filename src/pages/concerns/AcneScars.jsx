@@ -14,6 +14,7 @@ const acneScars = {
   concernShort: "Acne scars",
   breadcrumbName: "Acne Scars",
   conditionName: "Acne Scarring",
+  hub: { group: "Blemishes & Scarring", order: 90, blurb: "The texture left behind — softened realistically once acne is controlled." },
 
   hero: {
     eyebrow: "Patient Concerns · Texture",

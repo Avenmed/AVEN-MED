@@ -14,6 +14,7 @@ const largePores = {
   concernShort: "Large pores",
   breadcrumbName: "Large Pores",
   conditionName: "Enlarged Facial Pores",
+  hub: { group: "Tone, Texture & Clarity", order: 70, blurb: "Why pores look larger, and what genuinely refines them." },
 
   hero: {
     eyebrow: "Patient Concerns · Skin Quality",

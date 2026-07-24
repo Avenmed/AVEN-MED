@@ -13,6 +13,7 @@ const ivTherapy = {
   serviceName: "IV Therapy",
   serviceShort: "IV therapy",
   breadcrumbName: "IV Therapy",
+  hub: { order: 20, blurb: "Custom-formulated infusions for recovery, immunity, and performance." },
   procedureName: "IV Therapy — Custom Intravenous Infusions",
   procedureDescription:
     "Custom-formulated IV therapy in Orland Park, IL by Alaa Mashal, FNP-BC — intravenous hydration and micronutrient infusions for recovery, energy, and wellness support, provided under medical evaluation and oversight.",

@@ -125,6 +125,31 @@ export function getRegistryPage(pathname) {
   return slug ? BY_SLUG[slug] || null : null;
 }
 
+// Hub directories, derived from the registry. A hub (Concerns, Wellness, and
+// future Family Medicine / Education) calls this with its content type and
+// renders the returned cards — no hardcoded page lists. Each page controls its
+// own hub card via an optional `hub` field on its data module:
+//   hub: { group?, blurb?, order?, hidden?, soon? }
+// - group : grouping label (grouped hubs like Concerns); omit for flat hubs.
+// - blurb : hub card description; falls back to the page's SEO description.
+// - order : sort order (ascending); unset sorts last, so new pages append.
+// - hidden: exclude this page from its hub entirely.
+// - soon  : render as a non-linking "Soon" card even though the page exists.
+// A newly registered page appears automatically (with fallbacks) — no hub edit.
+export function getHubEntries(type) {
+  return ENTRIES
+    .filter((e) => e.type === type && !(e.data.hub && e.data.hub.hidden))
+    .map((e) => ({
+      label: e.data.breadcrumbName,
+      path: `/${e.slug}`,
+      blurb: (e.data.hub && e.data.hub.blurb) || (e.seo && e.seo.description) || "",
+      group: (e.data.hub && e.data.hub.group) || null,
+      order: e.data.hub && typeof e.data.hub.order === "number" ? e.data.hub.order : 999,
+      soon: !!(e.data.hub && e.data.hub.soon),
+    }))
+    .sort((a, b) => a.order - b.order);
+}
+
 // Per-route SEO for seo.js: { "/slug": { title, description } }.
 export const REGISTRY_SEO = Object.fromEntries(ENTRIES.map((e) => [`/${e.slug}`, e.seo]));
 

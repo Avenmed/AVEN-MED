@@ -3,8 +3,21 @@
 import React from 'react';
 import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
+import { getHubEntries } from '../content/registry.jsx';
+
+// "Soon" teasers for services that don't have a page yet. When one is built and
+// registered, delete its line here and it appears automatically as a live card
+// (via getHubEntries), ordered by its page's hub.order.
+const WELLNESS_SOON = [
+  { label: "Hormone Optimization", blurb: "Conservative, monitored bio-identical hormone and peptide protocols.", order: 50, soon: true, path: null },
+  { label: "Longevity & Labs", blurb: "Interpreted bloodwork and metabolic markers, tracked over time.", order: 60, soon: true, path: null },
+];
 
 const WellnessPage = ({ navigate }) => {
+  // Live service cards derive from the registry; Soon teasers are merged in and
+  // everything is ordered by hub.order. New wellness pages appear automatically.
+  const services = [...getHubEntries("wellness"), ...WELLNESS_SOON].sort((a, b) => a.order - b.order);
+
   return (
     <main className="page">
       {/* HERO */}
@@ -82,34 +95,27 @@ const WellnessPage = ({ navigate }) => {
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-            {[
-              { n: "Medical Weight Loss", d: "A physician-directed, whole-person program — with GLP-1 medication as one option when appropriate.", path: "/wellness/medical-weight-loss" },
-              { n: "IV Therapy", d: "Custom-formulated infusions for recovery, immunity, and performance.", soon: true },
-              { n: "Vitamin Injections", d: "Targeted B12, lipotropic, and vitamin injections to support energy and wellness.", soon: true },
-              { n: "GLP-1 Therapy", d: "Dedicated, medically monitored GLP-1 care for appropriate candidates.", soon: true },
-              { n: "Hormone Optimization", d: "Conservative, monitored bio-identical hormone and peptide protocols.", soon: true },
-              { n: "Longevity & Labs", d: "Interpreted bloodwork and metabolic markers, tracked over time.", soon: true },
-            ].map((s, i) => (
-              <Reveal key={s.n} delay={(i % 3) * 80}>
-                {s.path ? (
+            {services.map((s, i) => (
+              <Reveal key={s.label} delay={(i % 3) * 80}>
+                {s.path && !s.soon ? (
                   <a
                     href={s.path}
                     onClick={(e) => { e.preventDefault(); navigate(s.path); }}
                     style={{ display: "block", padding: "32px 30px", border: "1px solid var(--gold-soft)", background: "var(--surface)", height: "100%", transition: "border-color 240ms ease" }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.n}</span>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
                       <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
                     </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.d}</p>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
                   </a>
                 ) : (
                   <div style={{ padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.n}</span>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
                       <span className="label" style={{ color: "var(--muted)", flexShrink: 0, letterSpacing: "0.2em" }}>Soon</span>
                     </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.d}</p>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
                   </div>
                 )}
               </Reveal>

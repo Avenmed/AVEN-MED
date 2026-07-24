@@ -13,6 +13,7 @@ const vitaminInjections = {
   serviceName: "Vitamin Injections",
   serviceShort: "Vitamin injections",
   breadcrumbName: "Vitamin Injections",
+  hub: { order: 30, blurb: "Targeted B12, lipotropic, and vitamin injections to support energy and wellness." },
   procedureName: "Vitamin Injections — Intramuscular Micronutrient Therapy",
   procedureDescription:
     "Vitamin injections in Orland Park, IL by Alaa Mashal, FNP-BC — intramuscular B12 and lipotropic injections, selected through candidate evaluation and monitored as part of an individualized wellness plan.",

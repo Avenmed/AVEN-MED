@@ -14,6 +14,7 @@ const skinLaxity = {
   concernShort: "Skin laxity",
   breadcrumbName: "Skin Laxity",
   conditionName: "Skin Laxity",
+  hub: { group: "Lines, Volume & Laxity", order: 30, blurb: "Early looseness and mild sagging — and where treatment can and can't help." },
 
   hero: {
     eyebrow: "Patient Concerns · Aging",

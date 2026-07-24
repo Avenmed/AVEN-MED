@@ -13,6 +13,7 @@ const medicalWeightLoss = {
   serviceName: "Medical Weight Loss",
   serviceShort: "Medical weight loss",
   breadcrumbName: "Medical Weight Loss",
+  hub: { order: 10, blurb: "A physician-directed, whole-person program — with GLP-1 medication as one option when appropriate." },
   procedureName: "Medical Weight Loss — Physician-Directed Program",
   procedureDescription:
     "Physician-directed medical weight loss in Orland Park, IL by Alaa Mashal, FNP-BC — an individualized, whole-person program combining medical evaluation, nutrition and lifestyle guidance, and, when clinically appropriate, GLP-1 medication.",

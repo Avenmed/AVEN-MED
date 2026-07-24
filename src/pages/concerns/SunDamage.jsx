@@ -14,6 +14,7 @@ const sunDamage = {
   concernShort: "Sun damage",
   breadcrumbName: "Sun Damage",
   conditionName: "Photoaging (Sun Damage)",
+  hub: { group: "Tone, Texture & Clarity", order: 50, blurb: "The pigment, texture, and vessel changes that accumulate over years." },
 
   hero: {
     eyebrow: "Patient Concerns · Skin Quality",
