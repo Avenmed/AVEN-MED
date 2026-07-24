@@ -9,7 +9,7 @@ const medicalWeightLoss = {
     title: "Medical Weight Loss in Orland Park, IL — Physician-Directed | AVEN MED",
     description: "Physician-directed medical weight loss in Orland Park, IL at AVEN MED — a whole-person program combining medical evaluation, nutrition, movement, coaching, and, when appropriate, GLP-1 medication. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
-  tags: ["weight", "metabolic", "glp-1", "longevity"],
+  tags: ["weight", "metabolic", "glp-1", "longevity", "wellness"],
   serviceName: "Medical Weight Loss",
   serviceShort: "Medical weight loss",
   breadcrumbName: "Medical Weight Loss",

@@ -49,6 +49,9 @@ import excessiveSweating from '../pages/concerns/ExcessiveSweating.jsx';
 // Wellness — concierge, prevention-first services (medical weight loss, IV
 // therapy, vitamin injections, …). A distinct content type from treatments.
 import medicalWeightLoss from '../pages/wellness/MedicalWeightLoss.jsx';
+import ivTherapy from '../pages/wellness/IVTherapy.jsx';
+import vitaminInjections from '../pages/wellness/VitaminInjections.jsx';
+import glp1Therapy from '../pages/wellness/GLP1Therapy.jsx';
 
 // type -> template component
 export const TEMPLATES = {
@@ -70,7 +73,7 @@ const CONCERNS = [
 ];
 
 const WELLNESS = [
-  medicalWeightLoss,
+  medicalWeightLoss, ivTherapy, vitaminInjections, glp1Therapy,
 ];
 
 const GROUPS = [

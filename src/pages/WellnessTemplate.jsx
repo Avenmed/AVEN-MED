@@ -152,6 +152,11 @@ const WellnessTemplate = ({ data, navigate }) => {
   const areas = data.localAreas || DEFAULT_AREAS;
   const areasLine = areas.slice(0, -1).join(", ") + " & " + areas[areas.length - 1];
 
+  // Never show the same link in both "Related Wellness" (auto) and "Explore
+  // Further" (curated) — curated cross-links win.
+  const crossPaths = new Set((data.crossLinks || []).map((r) => r.path));
+  const relatedItems = (data.related || []).filter((r) => !crossPaths.has(r.path));
+
   return (
     <main className="page">
       {/* 1 — HERO */}
@@ -339,7 +344,7 @@ const WellnessTemplate = ({ data, navigate }) => {
       </section>
 
       {/* 10 — RELATED WELLNESS (auto from same-type tags) */}
-      {data.related && data.related.length > 0 && (
+      {relatedItems.length > 0 && (
         <section className="section" style={{ background: "var(--bg-1)" }}>
           <div className="container">
             <Reveal>
@@ -349,7 +354,7 @@ const WellnessTemplate = ({ data, navigate }) => {
               </h2>
             </Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-              {data.related.map((r, i) => (
+              {relatedItems.map((r, i) => (
                 <Reveal key={r.label} delay={(i % 3) * 80}>
                   <a
                     href={r.path}
@@ -358,6 +363,40 @@ const WellnessTemplate = ({ data, navigate }) => {
                   >
                     <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)" }}>{r.label}</span>
                     <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 10b — EXPLORE FURTHER (curated cross-category links, where medically appropriate) */}
+      {data.crossLinks && data.crossLinks.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Reveal>
+              <Eyebrow>Explore Further</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: "20px 0 20px", maxWidth: "22ch", fontWeight: 300 }}>
+                Care that <em>connects.</em>
+              </h2>
+              {data.crossLinksIntro && (
+                <p className="body" style={{ marginBottom: 48, maxWidth: "62ch" }}>{data.crossLinksIntro}</p>
+              )}
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {data.crossLinks.map((r, i) => (
+                <Reveal key={r.path} delay={(i % 3) * 80}>
+                  <a
+                    href={r.path}
+                    onClick={(e) => { e.preventDefault(); navigate(r.path); }}
+                    style={{ display: "block", padding: "28px 28px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)" }}>{r.label}</span>
+                      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                    </div>
+                    {r.note && <p className="body-sm" style={{ marginTop: 12, color: "var(--muted)" }}>{r.note}</p>}
                   </a>
                 </Reveal>
               ))}
