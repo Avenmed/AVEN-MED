@@ -67,6 +67,57 @@ const WellnessPage = ({ navigate }) => {
         </div>
       </section>
 
+      {/* WELLNESS SERVICES — directory of service pages */}
+      <section className="section">
+        <div className="container">
+          <Reveal>
+            <Eyebrow>Wellness Services</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 16px", maxWidth: "20ch", fontWeight: 300 }}>
+              Care, service by <em>service.</em>
+            </h2>
+            <p className="body" style={{ marginBottom: 56, maxWidth: "58ch" }}>
+              Each wellness service has its own considered approach — and, like
+              everything at AVEN, begins with the AVEN Assessment rather than a
+              default protocol.
+            </p>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+            {[
+              { n: "Medical Weight Loss", d: "A physician-directed, whole-person program — with GLP-1 medication as one option when appropriate.", path: "/wellness/medical-weight-loss" },
+              { n: "IV Therapy", d: "Custom-formulated infusions for recovery, immunity, and performance.", soon: true },
+              { n: "Vitamin Injections", d: "Targeted B12, lipotropic, and vitamin injections to support energy and wellness.", soon: true },
+              { n: "GLP-1 Therapy", d: "Dedicated, medically monitored GLP-1 care for appropriate candidates.", soon: true },
+              { n: "Hormone Optimization", d: "Conservative, monitored bio-identical hormone and peptide protocols.", soon: true },
+              { n: "Longevity & Labs", d: "Interpreted bloodwork and metabolic markers, tracked over time.", soon: true },
+            ].map((s, i) => (
+              <Reveal key={s.n} delay={(i % 3) * 80}>
+                {s.path ? (
+                  <a
+                    href={s.path}
+                    onClick={(e) => { e.preventDefault(); navigate(s.path); }}
+                    style={{ display: "block", padding: "32px 30px", border: "1px solid var(--gold-soft)", background: "var(--surface)", height: "100%", transition: "border-color 240ms ease" }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.n}</span>
+                      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                    </div>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.d}</p>
+                  </a>
+                ) : (
+                  <div style={{ padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.n}</span>
+                      <span className="label" style={{ color: "var(--muted)", flexShrink: 0, letterSpacing: "0.2em" }}>Soon</span>
+                    </div>
+                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.d}</p>
+                  </div>
+                )}
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROGRAMS */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container">
@@ -100,9 +151,9 @@ const WellnessPage = ({ navigate }) => {
               },
               {
                 k: "Weight Loss",
-                p: "Monthly",
-                d: "A practitioner-led program built around GLP-1 medications. Semaglutide and Tirzepatide, prescribed when appropriate.",
-                items: ["Semaglutide · $300 / month", "Tirzepatide · $400 / month", "Practitioner check-ins included"]
+                p: "Practitioner-led",
+                d: "A physician-directed medical weight-loss program — evaluation, nutrition, movement, and coaching, with GLP-1 medication as one option when it's clinically appropriate.",
+                items: ["Medical evaluation & planning", "Nutrition, movement & coaching", "GLP-1 medication when appropriate"]
               }
             ].map((p, i) => (
               <Reveal key={p.k} delay={i * 120}

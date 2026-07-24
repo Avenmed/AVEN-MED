@@ -10,8 +10,9 @@
 
 import TreatmentTemplate from '../pages/TreatmentTemplate.jsx';
 import ConcernTemplate from '../pages/ConcernTemplate.jsx';
-// Future category templates plug in here (wellness, familyMedicine, membership,
-// education) and get registered the same way.
+import WellnessTemplate from '../pages/WellnessTemplate.jsx';
+// Future category templates plug in here (familyMedicine, membership, education)
+// and get registered the same way.
 
 import botox from '../pages/BotoxOrlandPark.jsx';
 import lipFillers from '../pages/LipFillersOrlandPark.jsx';
@@ -45,10 +46,15 @@ import acneScarsConcern from '../pages/concerns/AcneScars.jsx';
 import skinLaxity from '../pages/concerns/SkinLaxity.jsx';
 import excessiveSweating from '../pages/concerns/ExcessiveSweating.jsx';
 
+// Wellness — concierge, prevention-first services (medical weight loss, IV
+// therapy, vitamin injections, …). A distinct content type from treatments.
+import medicalWeightLoss from '../pages/wellness/MedicalWeightLoss.jsx';
+
 // type -> template component
 export const TEMPLATES = {
   treatment: TreatmentTemplate,
   concern: ConcernTemplate,
+  wellness: WellnessTemplate,
 };
 
 // Grouped by type so new categories slot in cleanly.
@@ -63,9 +69,14 @@ const CONCERNS = [
   largePores, acneConcern, acneScarsConcern, skinLaxity, excessiveSweating,
 ];
 
+const WELLNESS = [
+  medicalWeightLoss,
+];
+
 const GROUPS = [
   { type: 'treatment', pages: TREATMENTS },
   { type: 'concern', pages: CONCERNS },
+  { type: 'wellness', pages: WELLNESS },
 ];
 
 export const ENTRIES = GROUPS.flatMap((g) =>
