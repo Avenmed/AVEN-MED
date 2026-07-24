@@ -103,7 +103,7 @@ const preventiveWellness = {
   crossLinksIntro:
     "Preventive wellness works hand in hand with your primary care. Where appropriate, we coordinate with:",
   crossLinks: [
-    { label: "Family Medicine", path: "/family-medicine", note: "Primary care at AVEN — where screenings and ongoing medical care are managed and coordinated." },
+    { label: "Family Medicine", path: "/family-medicine/primary-care", note: "Primary care at AVEN — where screenings and ongoing medical care are managed and coordinated." },
   ],
 
   faqs: [

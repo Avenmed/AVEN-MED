@@ -114,7 +114,7 @@ const wellnessConsultation = {
     { label: "IV Therapy", path: "/wellness/iv-therapy", note: "Custom infusions for hydration, recovery, and wellness support." },
     { label: "Vitamin Injections", path: "/wellness/vitamin-injections", note: "Targeted B12, lipotropic, and vitamin injections, for the right candidate." },
     { label: "Longevity & Lab Testing", path: "/wellness/longevity-lab-testing", note: "Clinician-guided lab evaluation and interpretation." },
-    { label: "Family Medicine", path: "/family-medicine", note: "Ongoing primary care at AVEN, when that's what you need." },
+    { label: "Family Medicine", path: "/family-medicine/primary-care", note: "Ongoing primary care at AVEN, when that's what you need." },
   ],
 
   faqs: [

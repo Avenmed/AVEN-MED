@@ -11,8 +11,9 @@
 import TreatmentTemplate from '../pages/TreatmentTemplate.jsx';
 import ConcernTemplate from '../pages/ConcernTemplate.jsx';
 import WellnessTemplate from '../pages/WellnessTemplate.jsx';
-// Future category templates plug in here (familyMedicine, membership, education)
-// and get registered the same way.
+import FamilyMedicineTemplate from '../pages/FamilyMedicineTemplate.jsx';
+// Future category templates plug in here (membership, education) and get
+// registered the same way.
 
 import botox from '../pages/BotoxOrlandPark.jsx';
 import lipFillers from '../pages/LipFillersOrlandPark.jsx';
@@ -57,11 +58,15 @@ import preventiveWellness from '../pages/wellness/PreventiveWellness.jsx';
 import longevityLabTesting from '../pages/wellness/LongevityLabTesting.jsx';
 import nutritionMetabolicSupport from '../pages/wellness/NutritionMetabolicSupport.jsx';
 
+// Family Medicine — relationship-based primary care for adults and families.
+import primaryCare from '../pages/family-medicine/PrimaryCare.jsx';
+
 // type -> template component
 export const TEMPLATES = {
   treatment: TreatmentTemplate,
   concern: ConcernTemplate,
   wellness: WellnessTemplate,
+  familyMedicine: FamilyMedicineTemplate,
 };
 
 // Grouped by type so new categories slot in cleanly.
@@ -81,10 +86,15 @@ const WELLNESS = [
   wellnessConsultation, preventiveWellness, longevityLabTesting, nutritionMetabolicSupport,
 ];
 
+const FAMILY_MEDICINE = [
+  primaryCare,
+];
+
 const GROUPS = [
   { type: 'treatment', pages: TREATMENTS },
   { type: 'concern', pages: CONCERNS },
   { type: 'wellness', pages: WELLNESS },
+  { type: 'familyMedicine', pages: FAMILY_MEDICINE },
 ];
 
 export const ENTRIES = GROUPS.flatMap((g) =>

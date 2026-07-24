@@ -103,7 +103,7 @@ const longevityLabTesting = {
   crossLinksIntro:
     "Lab testing works best alongside your broader care. Where it's relevant, we coordinate with:",
   crossLinks: [
-    { label: "Family Medicine", path: "/family-medicine", note: "Your primary care home at AVEN — where ongoing testing and results are best coordinated." },
+    { label: "Family Medicine", path: "/family-medicine/primary-care", note: "Your primary care home at AVEN — where ongoing testing and results are best coordinated." },
   ],
 
   faqs: [

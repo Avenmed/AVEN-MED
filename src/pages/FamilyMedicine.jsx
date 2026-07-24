@@ -3,8 +3,14 @@
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
+import { getHubEntries } from '../content/registry.jsx';
 
 const FamilyMedicinePage = ({ navigate }) => {
+  // Service cards derive from the registry; new Family Medicine pages appear here
+  // automatically. The "AVEN Concierge Family Medicine" section below is the
+  // section's editorial "Soon" teaser for a genuinely planned service.
+  const services = getHubEntries("familyMedicine");
+
   return (
     <main className="page">
       {/* HERO */}
@@ -65,6 +71,51 @@ const FamilyMedicinePage = ({ navigate }) => {
           </div>
         </div>
       </section>
+
+      {/* FAMILY MEDICINE SERVICES — registry-derived directory */}
+      {services.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Reveal>
+              <Eyebrow>· Family Medicine Services</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 16px", maxWidth: "20ch", fontWeight: 300 }}>
+                Where to <em>begin.</em>
+              </h2>
+              <p className="body" style={{ marginBottom: 56, maxWidth: "58ch" }}>
+                Relationship-based primary care, with more of the family-medicine
+                practice arriving over time.
+              </p>
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {services.map((s) => (
+                <Reveal key={s.label}>
+                  {s.path && !s.soon ? (
+                    <a
+                      href={s.path}
+                      onClick={(e) => { e.preventDefault(); navigate(s.path); }}
+                      style={{ display: "block", padding: "32px 30px", border: "1px solid var(--gold-soft)", background: "var(--surface)", height: "100%", transition: "border-color 240ms ease" }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                        <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
+                        <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                      </div>
+                      <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
+                    </a>
+                  ) : (
+                    <div style={{ padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
+                        <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
+                        <span className="label" style={{ color: "var(--muted)", flexShrink: 0, letterSpacing: "0.2em" }}>Soon</span>
+                      </div>
+                      <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
+                    </div>
+                  )}
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* PAYMENT */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
