@@ -26,8 +26,8 @@ const PRINCIPLES = [
 // existing membership feature; none are invented.
 const BENEFITS = [
   { k: "A Considered Investment", b: "A steady monthly contribution banks toward your treatments, so care becomes a plan rather than a run of one-off decisions. It isn't a discount — it's your own care, funded intentionally." },
-  { k: "Ongoing Guidance", b: "Your pathway is reviewed with you through the year, with a skin assessment that keeps the plan current — attention, not just access." },
-  { k: "Priority Access", b: "Priority booking and Saturday clinic access, so care fits your life. Signature adds a direct line to your practitioner." },
+  { k: "Ongoing Guidance", b: "Your care plan is reviewed with you through the year, with a Skin Progress Review that keeps things current — attention, not just access." },
+  { k: "Priority Access", b: "Priority scheduling and Saturday clinic access, so care fits your life. Signature adds dedicated concierge support — a direct line to your practitioner." },
   { k: "Continuity of Care", b: "The same practitioner and the same plan, deepening over time. Continuity is the quiet advantage behind lasting results." },
   { k: "Flexibility", b: "Pause without penalty and keep your banked credit; switch tiers whenever it suits you. The membership bends to your life." },
   { k: "Member Moments", b: "Early access to new treatments and technology — and, for Signature, the AVEN Birthday, marked the way it should be." },
@@ -226,9 +226,9 @@ const MembershipsPage = ({ navigate }) => {
               <ul style={{ marginTop: 12 }}>
                 {[
                   "$100 banked monthly toward treatments",
-                  "Skin assessment — we review your pathway 1–2x a year",
+                  "Skin Progress Review — 1–2x a year",
                   "Saturday clinic access",
-                  "Priority booking · 48-hour advance access",
+                  "Priority Scheduling · 48-hour priority scheduling",
                   "Banked credit retained if you pause"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
@@ -258,11 +258,11 @@ const MembershipsPage = ({ navigate }) => {
                 {[
                   "$200 banked monthly toward treatments",
                   {
-                    primary: "One annual AVEN Assessment (up to 60 min), included with your Signature membership.",
+                    primary: "One Annual Comprehensive AVEN Assessment (60 minutes), included with your Signature membership.",
                     descriptor: "A full review at the end of your pathway comparing your baseline to your progress and planning your next chapter."
                   },
                   "Saturday clinic access",
-                  "Direct line to your clinical lead, Alaa Mashal, FNP-BC",
+                  "Dedicated Concierge Support — a direct line to your clinical lead, Alaa Mashal, FNP-BC",
                   "Early access to new treatments and clinic technology",
                   {
                     primary: "The AVEN Birthday.",
