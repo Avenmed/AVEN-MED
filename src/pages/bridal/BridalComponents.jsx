@@ -413,6 +413,100 @@ export function BridalTimelineBuilder({ builder, navigate }) {
   );
 }
 
+// --- Patient journey (the AVEN experience) ----------------------------------
+// Renders entirely from registry data. Semantic ordered list; optional icons and
+// optional per-step CTAs; skips disabled steps; understandable without icons or
+// animation; reflows to a single column on mobile; motion via .reveal (respects
+// reduced-motion). Audience-agnostic — works for any future journey record.
+export function BridalPatientJourneyStep({ step, navigate }) {
+  return (
+    <li style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, padding: "26px 0", borderTop: "1px solid var(--hairline)", alignItems: "start" }}>
+      <div aria-hidden="true" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: "50%", border: "1px solid var(--gold-soft)", color: "var(--gold)", fontFamily: "var(--serif)", fontSize: 18 }}>
+        {step.icon ? step.icon : step.order}
+      </div>
+      <div>
+        <h3 className="display" style={{ fontFamily: "var(--serif)", fontSize: "clamp(20px, 2.6vw, 26px)", fontWeight: 400, color: "var(--ivory)", margin: 0 }}>{step.title}</h3>
+        <p className="body" style={{ marginTop: 8, color: "var(--muted)", fontStyle: isPlaceholder(step.description) ? "italic" : "normal", maxWidth: "60ch" }}>
+          {isPlaceholder(step.description) ? "[Step description placeholder — restrained copy pending approval.]" : step.description}
+        </p>
+        {step.ctaLabel && step.ctaDestination && (
+          <div style={{ marginTop: 14 }}>
+            <a href={step.ctaDestination} className="link" onClick={(e) => { e.preventDefault(); navigate(step.ctaDestination); }}>
+              <span>{step.ctaLabel}</span><span className="arrow"></span>
+            </a>
+          </div>
+        )}
+      </div>
+    </li>
+  );
+}
+
+export function BridalPatientJourney({ patientJourney, navigate }) {
+  if (!patientJourney) return null;
+  const steps = (patientJourney.steps || []).filter((s) => s.enabled !== false).sort((a, b) => (a.order || 0) - (b.order || 0));
+  if (!steps.length) return null;
+  return (
+    <section className="section" style={{ background: "var(--bg-1)" }}>
+      <div className="container" style={{ maxWidth: 900 }}>
+        <Reveal>
+          <Eyebrow>{patientJourney.eyebrow || "Your AVEN Bridal Experience"}</Eyebrow>
+          <h2 className="display" style={{ fontSize: "clamp(34px, 5vw, 64px)", margin: "20px 0 16px", fontWeight: 300 }}>
+            {isPlaceholder(patientJourney.title) ? <span style={{ color: "var(--muted)" }}>[Experience section headline placeholder]</span> : (patientJourney.title || <>Your <em>experience.</em></>)}
+          </h2>
+          <p className="body" style={{ marginBottom: 6, maxWidth: "60ch", color: isPlaceholder(patientJourney.introduction) ? "var(--muted)" : undefined, fontStyle: isPlaceholder(patientJourney.introduction) ? "italic" : "normal" }}>
+            {isPlaceholder(patientJourney.introduction) ? "[Introduction placeholder — describes the AVEN experience from first contact through long-term care. Final copy pending approval.]" : patientJourney.introduction}
+          </p>
+          <BridalDisclaimer style={{ marginBottom: 24 }}>
+            Every plan is individual — the steps below describe the shape of the experience, not a treatment plan. No two journeys are the same.
+          </BridalDisclaimer>
+        </Reveal>
+        <Reveal>
+          <ol style={{ listStyle: "none", padding: 0, margin: 0, borderBottom: "1px solid var(--hairline)" }}>
+            {steps.map((s) => <BridalPatientJourneyStep key={s.id} step={s} navigate={navigate} />)}
+          </ol>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+// --- Resources (future materials) -------------------------------------------
+// Renders ONLY enabled resources with a destination; returns null otherwise, so
+// planned/disabled placeholders never show an empty section or a broken link.
+// Supports internal or external destinations and any future format/audience.
+export function BridalResources({ resources, navigate }) {
+  const items = ((resources && resources.items) || []).filter((r) => r.enabled && r.destination);
+  if (!items.length) return null;
+  return (
+    <section className="section">
+      <div className="container">
+        <Reveal>
+          <Eyebrow>{resources.eyebrow || "Bridal Resources"}</Eyebrow>
+          {!isPlaceholder(resources.title) && resources.title && (
+            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 56px)", margin: "20px 0 16px", fontWeight: 300 }}>{resources.title}</h2>
+          )}
+        </Reveal>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 16 }}>
+          {items.map((r) => {
+            const inner = (
+              <>
+                <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 19, fontWeight: 400, color: "var(--ivory)" }}>{r.title}</span>
+                <span aria-hidden="true" style={{ color: "var(--gold)", flexShrink: 0 }}>{r.external ? "↗" : "→"}</span>
+              </>
+            );
+            const box = { display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12, padding: "20px 22px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%" };
+            return r.external ? (
+              <Reveal key={r.id}><a href={r.destination} target="_blank" rel="noreferrer" style={box}>{inner}</a></Reveal>
+            ) : (
+              <Reveal key={r.id}><a href={r.destination} onClick={(e) => { e.preventDefault(); navigate(r.destination); }} style={box}>{inner}</a></Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // --- Final CTA --------------------------------------------------------------
 export function BridalFinalCTA({ navigate, journey }) {
   return (

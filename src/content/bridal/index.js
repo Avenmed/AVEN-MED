@@ -32,6 +32,19 @@ export const BRIDAL_AUDIENCES = [
   { id: "engagement", label: "Engagement Preparation", enabled: false },
 ];
 
+// ---- Lifecycle / campaign metadata (optional, internal) --------------------
+// Organizes content by the patient's broader WEDDING-PLANNING lifecycle — NOT a
+// medical schedule and NOT a calendar season. This metadata is optional and does
+// not affect the current page unless a consumer explicitly reads it. Future
+// consumers: campaign segmentation, personalized content, email sequences,
+// education filtering, seasonal landing experiences, CRM tagging, patient-portal
+// milestones, timeline reminders, and paid-ad campaigns. Attached at the journey,
+// education-reference, and resource levels (the cleanest levels — no duplication
+// at the timeline-stage level, which stays purely a planning-window structure).
+export const BRIDAL_LIFECYCLE_STAGES = [
+  "engagement", "planning", "preparation", "wedding", "post-wedding", "maintenance",
+];
+
 // ---- Timeline stages -------------------------------------------------------
 // Labels + date ranges are the program's approved stage structure. monthsMin/
 // monthsMax bound each window (in months before the wedding) purely for factual
@@ -148,17 +161,19 @@ export const BRIDAL_SERVICE_SLUGS = [
 // References only. These articles are NOT written yet and are NOT in the
 // Education index, so the page renders them as non-linking "planned" cards until
 // they exist. slugs are proposed (education route = /education/<slug>).
+// lifecycleStages here are content/campaign tags (see BRIDAL_LIFECYCLE_STAGES) —
+// optional, used later for bridal-education filtering. Not medical timing.
 export const BRIDAL_EDUCATION_REFS = [
-  { slug: "when-to-begin-wedding-skincare", title: "When to begin wedding skincare", status: "planned" },
-  { slug: "treatment-timing-before-a-wedding", title: "Understanding treatment timing before a wedding", status: "planned" },
-  { slug: "why-not-to-try-new-treatments-before-an-event", title: "Why new treatments shouldn't be scheduled right before an event", status: "planned" },
-  { slug: "how-to-prepare-for-a-bridal-consultation", title: "How to prepare for a bridal consultation", status: "planned" },
-  { slug: "building-a-medical-grade-skincare-routine", title: "Creating a medical-grade skincare routine", status: "planned" },
-  { slug: "managing-acne-before-a-wedding", title: "Managing acne before a wedding", status: "planned" },
-  { slug: "injectable-treatment-timing", title: "What to know about injectable treatment timing", status: "planned" },
-  { slug: "wedding-week-skincare-guidance", title: "Wedding-week skincare guidance", status: "planned" },
-  { slug: "bridal-skincare-myths", title: "Bridal skincare myths", status: "planned" },
-  { slug: "post-wedding-maintenance", title: "Post-wedding maintenance", status: "planned" },
+  { slug: "when-to-begin-wedding-skincare", title: "When to begin wedding skincare", status: "planned", lifecycleStages: ["engagement", "planning"] },
+  { slug: "treatment-timing-before-a-wedding", title: "Understanding treatment timing before a wedding", status: "planned", lifecycleStages: ["planning", "preparation"] },
+  { slug: "why-not-to-try-new-treatments-before-an-event", title: "Why new treatments shouldn't be scheduled right before an event", status: "planned", lifecycleStages: ["preparation", "wedding"] },
+  { slug: "how-to-prepare-for-a-bridal-consultation", title: "How to prepare for a bridal consultation", status: "planned", lifecycleStages: ["engagement", "planning"] },
+  { slug: "building-a-medical-grade-skincare-routine", title: "Creating a medical-grade skincare routine", status: "planned", lifecycleStages: ["planning", "preparation"] },
+  { slug: "managing-acne-before-a-wedding", title: "Managing acne before a wedding", status: "planned", lifecycleStages: ["planning", "preparation"] },
+  { slug: "injectable-treatment-timing", title: "What to know about injectable treatment timing", status: "planned", lifecycleStages: ["planning", "preparation"] },
+  { slug: "wedding-week-skincare-guidance", title: "Wedding-week skincare guidance", status: "planned", lifecycleStages: ["wedding"] },
+  { slug: "bridal-skincare-myths", title: "Bridal skincare myths", status: "planned", lifecycleStages: ["engagement", "planning"] },
+  { slug: "post-wedding-maintenance", title: "Post-wedding maintenance", status: "planned", lifecycleStages: ["post-wedding", "maintenance"] },
 ];
 
 // ---- FAQs (medically responsible placeholder answers; final copy pending) ---
@@ -258,6 +273,46 @@ export const BRIDAL_ROUTE_SEO = {
   },
 };
 
+// ---- Patient journey (the AVEN experience, first contact → long-term care) --
+// Distinct from the treatment timeline: the timeline answers "WHEN might planning
+// occur?"; this answers "WHAT does the experience with AVEN look like?" Structural
+// placeholders only — no polished marketing copy, and nothing here implies every
+// patient receives the same treatment plan (that's individualized at consultation;
+// the component surfaces that disclaimer). Reusable for any future audience.
+export const BRIDAL_PATIENT_JOURNEY = {
+  eyebrow: "Your AVEN Bridal Experience",
+  title: PLACEHOLDER,
+  introduction: PLACEHOLDER,
+  steps: [
+    { id: "assessment", order: 1, title: "Begin Your Bridal Assessment", description: PLACEHOLDER, icon: "", ctaLabel: "Begin Your Bridal Journey", ctaDestination: "/bridal-journey/assessment", enabled: true },
+    { id: "meet-provider", order: 2, title: "Meet With Your Provider", description: PLACEHOLDER, icon: "", ctaLabel: "Meet Your Provider", ctaDestination: "/providers", enabled: true },
+    { id: "personalized-plan", order: 3, title: "Receive Your Personalized Plan", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "begin-journey", order: 4, title: "Begin Your Journey", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "prepare-wedding", order: 5, title: "Prepare for the Wedding", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "maintenance", order: 6, title: "Continue With Long-Term Maintenance", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+  ],
+};
+
+// ---- Resources (FUTURE downloadable / interactive materials) ---------------
+// Architecture only. NO real PDFs/checklists/downloads/gated forms/lead-capture
+// exist or are created here. All items are status:"planned" + enabled:false with
+// empty destinations, so the BridalResources component renders NOTHING publicly
+// (no empty section, no broken links). Reusable for future groom/wedding-party/
+// wellness/event journeys.
+export const BRIDAL_RESOURCES = {
+  eyebrow: "Bridal Resources",
+  title: PLACEHOLDER,
+  introduction: PLACEHOLDER,
+  items: [
+    { id: "bridal-checklist", slug: "bridal-journey-checklist", title: "Bridal Journey Checklist", description: "", resourceType: "checklist", format: "pdf", lifecycleStages: ["engagement", "planning"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+    { id: "treatment-planner", slug: "bridal-treatment-planner", title: "Bridal Treatment Planner", description: "", resourceType: "planner", format: "interactive", lifecycleStages: ["planning", "preparation"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+    { id: "wedding-week-guide", slug: "wedding-week-skincare-guide", title: "Wedding-Week Skincare Guide", description: "", resourceType: "guide", format: "pdf", lifecycleStages: ["wedding"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+    { id: "skincare-tracker", slug: "bridal-skincare-tracker", title: "Bridal Skincare Tracker", description: "", resourceType: "tracker", format: "interactive", lifecycleStages: ["planning", "preparation"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+    { id: "consult-prep-guide", slug: "bridal-consultation-preparation-guide", title: "Bridal Consultation Preparation Guide", description: "", resourceType: "guide", format: "pdf", lifecycleStages: ["engagement", "planning"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+    { id: "post-wedding-guide", slug: "post-wedding-maintenance-guide", title: "Post-Wedding Maintenance Guide", description: "", resourceType: "guide", format: "pdf", lifecycleStages: ["post-wedding", "maintenance"], audience: ["bride"], thumbnail: "", destination: "", external: false, requiresForm: false, status: "planned", enabled: false },
+  ],
+};
+
 // ---- The journeys ----------------------------------------------------------
 // Only "bride" is enabled. New journeys slot in with the same shape.
 export const BRIDAL_JOURNEYS = [
@@ -270,6 +325,7 @@ export const BRIDAL_JOURNEYS = [
     audience: "bride",
     status: "architecture",   // architecture | draft | published
     enabled: true,
+    lifecycleStages: BRIDAL_LIFECYCLE_STAGES,  // optional/internal — see note above
     seo: BRIDAL_ROUTE_SEO["/bridal-journey"],
     hero: {
       eyebrow: "The AVEN Bridal Journey",
@@ -289,6 +345,8 @@ export const BRIDAL_JOURNEYS = [
       note: PLACEHOLDER,
     },
     timelineStages: BRIDAL_TIMELINE_STAGES,
+    patientJourney: BRIDAL_PATIENT_JOURNEY,
+    resources: BRIDAL_RESOURCES,
     relatedServices: BRIDAL_SERVICE_SLUGS,
     relatedArticles: BRIDAL_EDUCATION_REFS,
     faqs: BRIDAL_FAQS,
@@ -319,4 +377,68 @@ export function bridalSitemapRoutes() {
     rows.push({ loc: `/${j.slug}/assessment`, priority: 0.5, changefreq: "monthly" });
   });
   return rows;
+}
+
+// Only resources that are enabled AND have a destination render publicly — so
+// planned/disabled placeholders never create an empty section or a broken link.
+export function enabledResources(journey) {
+  const items = (journey && journey.resources && journey.resources.items) || [];
+  return items.filter((r) => r.enabled && r.destination);
+}
+
+// ---- Lightweight, DEV-only registry validation -----------------------------
+// No dependencies. Returns an array of issue strings (empty = valid). Existence
+// checks are dependency-injected so this pure module needs no import of the JSX
+// content registry: pass serviceSlugExists / articlePublished from the caller
+// (see the DEV call in app.jsx). Never runs in production (guarded by import.meta
+// .env.DEV there), so it has no production performance impact.
+export function validateBridal({ serviceSlugExists, articlePublished } = {}) {
+  const issues = [];
+  const seenJourneyIds = new Set();
+  const seenSlugs = new Set();
+  const validLc = new Set(BRIDAL_LIFECYCLE_STAGES);
+  const badLc = (arr, where) => (arr || []).forEach((v) => { if (!validLc.has(v)) issues.push(`${where}: invalid lifecycle "${v}"`); });
+
+  BRIDAL_JOURNEYS.forEach((j) => {
+    if (seenJourneyIds.has(j.id)) issues.push(`Duplicate journey id: ${j.id}`);
+    seenJourneyIds.add(j.id);
+    if (seenSlugs.has(j.slug)) issues.push(`Duplicate journey slug: ${j.slug}`);
+    seenSlugs.add(j.slug);
+    if (typeof j.enabled !== "boolean") issues.push(`Journey ${j.id}: enabled must be boolean`);
+    badLc(j.lifecycleStages, `Journey ${j.id}`);
+
+    const stageIds = new Set();
+    (j.timelineStages || []).forEach((s) => {
+      if (stageIds.has(s.id)) issues.push(`Journey ${j.id}: duplicate timeline-stage id "${s.id}"`);
+      stageIds.add(s.id);
+    });
+
+    const stepIds = new Set();
+    ((j.patientJourney && j.patientJourney.steps) || []).forEach((st) => {
+      if (stepIds.has(st.id)) issues.push(`Journey ${j.id}: duplicate patient-journey step id "${st.id}"`);
+      stepIds.add(st.id);
+    });
+
+    if (serviceSlugExists) (j.relatedServices || []).forEach((slug) => {
+      if (!serviceSlugExists(slug)) issues.push(`Journey ${j.id}: service reference not found in registry: "${slug}"`);
+    });
+
+    (j.relatedArticles || []).forEach((a) => {
+      badLc(a.lifecycleStages, `Article "${a.slug}"`);
+      if (a.status === "published" && articlePublished && !articlePublished(a.slug)) {
+        issues.push(`Journey ${j.id}: article marked published but not found: "${a.slug}"`);
+      }
+    });
+
+    ((j.resources && j.resources.items) || []).forEach((r) => {
+      badLc(r.lifecycleStages, `Resource "${r.id}"`);
+      if (r.enabled && !r.destination) issues.push(`Resource "${r.id}": enabled but has no destination`);
+    });
+
+    if (j.structuredData && j.structuredData.includeFaq) {
+      const withoutAnswer = (j.faqs || []).filter((f) => f.q && !f.a);
+      if (withoutAnswer.length) issues.push(`Journey ${j.id}: FAQ schema requested but ${withoutAnswer.length} question(s) have no visible answer`);
+    }
+  });
+  return issues;
 }

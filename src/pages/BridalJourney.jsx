@@ -17,8 +17,8 @@ import { CLINICAL_REVIEWER } from '../content/people.js';
 import { getServiceLinksBySlugs } from '../content/registry.jsx';
 import { getBridalJourney } from '../content/bridal/index.js';
 import {
-  useJsonLd, BridalHero, BridalIntroduction, BridalJourneyTimeline,
-  BridalTimelineBuilder, BridalServiceConnections, BridalEducationLinks,
+  useJsonLd, BridalHero, BridalIntroduction, BridalJourneyTimeline, BridalPatientJourney,
+  BridalTimelineBuilder, BridalServiceConnections, BridalEducationLinks, BridalResources,
   BridalFAQSection, BridalGalleryPlaceholder, BridalTestimonialPlaceholder, BridalFinalCTA,
 } from './bridal/BridalComponents.jsx';
 import { BRIDAL_TIMELINE_BUILDER } from '../content/bridal/index.js';
@@ -121,9 +121,13 @@ const BridalJourneyPage = ({ navigate }) => {
       <BridalHero hero={journey.hero} navigate={navigate} />
       <BridalIntroduction intro={journey.introduction} />
       <BridalJourneyTimeline stages={journey.timelineStages} navigate={navigate} />
+      {/* Your AVEN Bridal Experience — after the timeline, before the conversion sections */}
+      <BridalPatientJourney patientJourney={journey.patientJourney} navigate={navigate} />
       <BridalTimelineBuilder builder={BRIDAL_TIMELINE_BUILDER} navigate={navigate} />
       <BridalServiceConnections serviceLinks={serviceLinks} navigate={navigate} />
       <BridalEducationLinks refs={journey.relatedArticles} navigate={navigate} />
+      {/* Future materials — renders nothing until a resource is enabled with a destination */}
+      <BridalResources resources={journey.resources} navigate={navigate} />
       <BridalGalleryPlaceholder />
       <BridalTestimonialPlaceholder />
       <BridalFAQSection faqs={journey.faqs} />

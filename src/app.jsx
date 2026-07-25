@@ -26,7 +26,8 @@ import EducationCategoryPage from './pages/EducationCategory.jsx';
 import ArticleTemplate from './pages/ArticleTemplate.jsx';
 import BridalJourneyPage from './pages/BridalJourney.jsx';
 import BridalAssessmentPage from './pages/BridalAssessment.jsx';
-import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles } from './content/registry.jsx';
+import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles, getServiceLinksBySlugs } from './content/registry.jsx';
+import { validateBridal } from './content/bridal/index.js';
 
 // Stable wrapper so registry pages don't remount on every App render.
 // key={route} handles remounting on navigation; the schema template cleans
@@ -171,6 +172,17 @@ const App = () => {
   React.useEffect(() => {
     applySeo(route);
   }, [route]);
+
+  // DEV-only: surface bridal registry issues in the console. Dead-code-eliminated
+  // from production builds (import.meta.env.DEV === false), so zero prod impact.
+  React.useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    const issues = validateBridal({
+      serviceSlugExists: (s) => getServiceLinksBySlugs([s]).length > 0,
+      articlePublished: (slug) => !!getEducationArticle(slug),
+    });
+    if (issues.length) console.warn("[bridal] registry validation issues:\n" + issues.map((i) => " • " + i).join("\n"));
+  }, []);
 
   // Apply tweaks to :root
   React.useEffect(() => {
