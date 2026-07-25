@@ -74,7 +74,8 @@ const NAV = [
   { label: "Home", path: "/" },
   // Brand & Trust
   { label: "About AVEN", path: "/about", short: "About" },
-  { label: "Meet Your Provider", path: "/providers", short: "Provider" },
+  // "Meet Your Provider" kept in full on desktop too — the warmth is worth the width.
+  { label: "Meet Your Provider", path: "/providers" },
   // Clinical Services
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
@@ -132,7 +133,7 @@ const Header = ({ route, navigate }) => {
           <div className="hdr-actions">
             <AssessmentCTA
               navigate={navigate}
-              label="Start Assessment"
+              label="Start AVEN Assessment"
               className="btn solid hdr-cta"
               showArrow={false}
               style={{ height: 40, padding: "0 18px", fontSize: 10.5 }}

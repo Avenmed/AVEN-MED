@@ -274,10 +274,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hdr-nav-wrap { flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
 .hdr-nav {
   display: flex; align-items: center; flex-wrap: nowrap;
-  gap: clamp(13px, 1vw, 22px);
+  gap: clamp(10px, 0.8vw, 18px);
 }
 .hdr-nav a {
-  font-family: var(--sans); font-size: clamp(10px, 0.68vw, 11px);
+  font-family: var(--sans); font-size: clamp(10px, 0.78vw, 12.5px);
   letter-spacing: 0.15em; text-transform: uppercase; color: var(--ivory-soft);
   white-space: nowrap; position: relative; padding: 6px 0;
   transition: color 240ms ease;
@@ -290,10 +290,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hdr-actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 
 /* ---- Responsive: keep it calm; never let items crowd ---- */
-@media (max-width: 1440px) {
-  /* With the shorter "Start Assessment" label and terser nav, the CTA now sits
-     comfortably beside the nav on standard laptops (≥1441px). Below that it
-     recedes for a calm logo + centered nav; the action stays in the Contact nav
+@media (max-width: 1780px) {
+  /* With "Meet Your Provider" restored in full and a more confident (larger) nav,
+     the CTA needs a wide canvas to sit beside the eleven items; below this it
+     recedes for a calm logo + centered nav. The action stays in the Contact nav
      item and the body CTAs on every page. */
   .hdr-cta { display: none; }
 }
