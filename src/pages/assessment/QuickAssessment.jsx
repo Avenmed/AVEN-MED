@@ -7,7 +7,7 @@ const quickAssessment = {
   changefreq: "monthly",
   seo: {
     title: "Quick AVEN Assessment ($50) in Orland Park, IL | AVEN MED",
-    description: "The Quick AVEN Assessment ($50, credited toward treatment) is a focused consultation with Alaa Mashal, FNP-BC in Orland Park, IL — an expert first read and a clear recommendation. A fast, low-commitment first step.",
+    description: "The Quick AVEN Assessment ($50, credited toward treatment) is a focused consultation with Alaa Mashal, MSN, APRN, FNP-BC in Orland Park, IL — an expert first read and a clear recommendation. A fast, low-commitment first step.",
   },
   tags: ["assessment", "quick"],
   hub: { order: 20, blurb: "A focused first step — an expert read and a clear recommendation. $50, credited toward treatment." },
@@ -16,21 +16,21 @@ const quickAssessment = {
   breadcrumbName: "Quick Assessment",
   procedureName: "Quick AVEN Assessment — Focused Consultation",
   procedureDescription:
-    "The Quick AVEN Assessment in Orland Park, IL — a focused consultation with Alaa Mashal, FNP-BC including an Aura skin analysis and a first recommendation, credited toward treatment.",
+    "The Quick AVEN Assessment in Orland Park, IL — a focused consultation with Alaa Mashal, MSN, APRN, FNP-BC including an Aura skin analysis and a first recommendation, credited toward treatment.",
   faqHeading: "The Quick Assessment, answered.",
 
   hero: {
     eyebrow: "The AVEN Assessment · Quick",
     headline: <>The Quick <em>Assessment.</em></>,
     subheadline:
-      "A focused first step with Alaa Mashal, FNP-BC — an expert read on what you're seeing and a clear sense of your next step, without a long commitment.",
+      "A focused first step with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on what you're seeing and a clear sense of your next step, without a long commitment.",
   },
 
   overview: {
     eyebrow: "What It Is",
     headline: <>A focused first <em>step.</em></>,
     body: [
-      "The Quick AVEN Assessment is a short, focused consultation with Alaa Mashal, FNP-BC. It includes an Aura skin analysis — a fast, expert read on what your skin or your goal is showing, and a clear recommendation for a sensible next step.",
+      "The Quick AVEN Assessment is a short, focused consultation with Alaa Mashal, MSN, APRN, FNP-BC. It includes an Aura skin analysis — a fast, expert read on what your skin or your goal is showing, and a clear recommendation for a sensible next step.",
       "It's designed to be low-commitment: an easy, honest way to get a professional opinion and understand your options before deciding whether to go further. Like everything at AVEN, it's consultation-first — no pressure to treat.",
     ],
   },
@@ -57,7 +57,7 @@ const quickAssessment = {
     eyebrow: "What's Included",
     headline: <>What you <em>get.</em></>,
     items: [
-      "A focused consultation with Alaa Mashal, FNP-BC",
+      "A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC",
       "An Aura skin analysis — an expert read on your skin",
       "A clear first recommendation and next step",
       "Honest, no-pressure guidance",
@@ -79,11 +79,11 @@ const quickAssessment = {
   crossLinks: [
     { label: "Aesthetics", path: "/aesthetics", note: "Considered, natural-looking aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Prevention-first wellness and metabolic care." },
-    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll meet — Alaa Mashal, FNP-BC." },
+    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll meet — Alaa Mashal, MSN, APRN, FNP-BC." },
   ],
 
   faqs: [
-    { q: "What is the Quick Assessment?", a: "It's a short, focused consultation with Alaa Mashal, FNP-BC, including an Aura skin analysis and a clear first recommendation. It's an easy, low-commitment way to get an expert opinion and understand your options." },
+    { q: "What is the Quick Assessment?", a: "It's a short, focused consultation with Alaa Mashal, MSN, APRN, FNP-BC, including an Aura skin analysis and a clear first recommendation. It's an easy, low-commitment way to get an expert opinion and understand your options." },
     { q: "How much is it, and is it credited?", a: "The Quick AVEN Assessment is $50, and that fee is credited toward your treatment — so if you move forward, nothing is wasted. It moves with you into your care." },
     { q: "When does a Quick Assessment make sense?", a: "It's ideal when you're exploring, have a single concern, want a fast professional read, or are short on time. For multiple concerns or long-term planning, the Comprehensive Assessment is a better fit." },
     { q: "How is it different from the Comprehensive Assessment?", a: "The Quick Assessment is a focused first read; the Comprehensive AVEN Assessment is a longer, in-depth visit (up to 60 minutes) for multiple concerns, full planning, and a written roadmap you keep. Both are credited toward treatment." },

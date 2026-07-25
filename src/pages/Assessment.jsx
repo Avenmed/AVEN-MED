@@ -44,7 +44,7 @@ const AssessmentPage = ({ navigate }) => {
                   <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>$50</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
-                  A focused 5–10 minute consultation with Alaa Mashal, FNP-BC. Includes an Aura skin analysis — a fast, expert read on what your skin is showing and what your next step could be.
+                  A focused 5–10 minute consultation with Alaa Mashal, MSN, APRN, FNP-BC. Includes an Aura skin analysis — a fast, expert read on what your skin is showing and what your next step could be.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {[
@@ -76,7 +76,7 @@ const AssessmentPage = ({ navigate }) => {
                   <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>up to 60 minutes</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
-                  An in-depth consultation with Alaa Mashal, FNP-BC. A full review of your history and goals — and a written plan you walk out with. The fee is credited toward your treatment.
+                  An in-depth consultation with Alaa Mashal, MSN, APRN, FNP-BC. A full review of your history and goals — and a written plan you walk out with. The fee is credited toward your treatment.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {[

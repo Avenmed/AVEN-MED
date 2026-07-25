@@ -8,7 +8,7 @@ const botox = {
   priority: 0.9,
   seo: {
     title: "Botox® in Orland Park, IL — Natural Neuromodulator Treatments | AVEN MED",
-    description: "Natural-looking Botox in Orland Park, IL at AVEN MED. Neuromodulator treatments for forehead lines, crow's feet, brow lift, and lip flip, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Natural-looking Botox in Orland Park, IL at AVEN MED. Neuromodulator treatments for forehead lines, crow's feet, brow lift, and lip flip, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Botox®",
   treatmentShort: "Botox",
@@ -16,7 +16,7 @@ const botox = {
   breadcrumbName: "Botox in Orland Park",
   procedureName: "Botox — Neuromodulator Injections",
   procedureDescription:
-    "Natural-looking neuromodulator (Botox, Dysport, Xeomin) treatments in Orland Park, IL, mapped to individual facial anatomy by Alaa Mashal, FNP-BC. Softens dynamic expression lines while preserving natural movement.",
+    "Natural-looking neuromodulator (Botox, Dysport, Xeomin) treatments in Orland Park, IL, mapped to individual facial anatomy by Alaa Mashal, MSN, APRN, FNP-BC. Softens dynamic expression lines while preserving natural movement.",
 
   hero: {
     eyebrow: "Aesthetics · Neuromodulators",
@@ -64,7 +64,7 @@ const botox = {
   ],
 
   faqs: [
-    { q: "Is Botox safe?", a: "Yes. Botox has been FDA-approved and used cosmetically for over two decades. At AVEN MED it is administered only by Alaa Mashal, FNP-BC, a board-certified Family Nurse Practitioner, after a full assessment of your anatomy and health history." },
+    { q: "Is Botox safe?", a: "Yes. Botox has been FDA-approved and used cosmetically for over two decades. At AVEN MED it is administered only by Alaa Mashal, MSN, APRN, FNP-BC, a board-certified Family Nurse Practitioner, after a full assessment of your anatomy and health history." },
     { q: "Does Botox hurt?", a: "Very little. We use fine needles and precise placement; most patients describe a series of quick pinches. No numbing is usually needed, and you can return to your day right away." },
     { q: "How soon will I see results?", a: "Movement begins to soften around three to five days after treatment, with the full effect visible at ten to fourteen days. We often re-assess at two weeks to confirm you are exactly where you want to be." },
     { q: "How long does Botox last?", a: "On average, three to four months. This varies with the area treated, your metabolism, and how expressive the muscle is. We plan maintenance around your face, not a fixed calendar." },
@@ -76,7 +76,7 @@ const botox = {
     { q: "How much does Botox cost in Orland Park?", a: "We do not publish per-unit pricing, because unit counts only make sense once your face has been assessed. Your personalized plan and pricing are quoted at your AVEN Assessment — and the assessment fee is credited toward your treatment." },
     { q: "Is there any downtime?", a: "None. You can return to work and normal activities immediately. We simply ask that you stay upright for four hours and avoid strenuous exercise, facials, and heat for the rest of the day." },
     { q: "Can I exercise after Botox?", a: "We recommend avoiding strenuous exercise for twenty-four hours, as increased blood flow and pressure can affect how the product settles." },
-    { q: "Who performs Botox at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner, visit after visit." },
+    { q: "Who performs Botox at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner, visit after visit." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from across the Southwest suburbs, including Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, and New Lenox." },
     { q: "How do I get started?", a: "Every plan begins with the AVEN Assessment — a focused Quick Assessment or a Comprehensive Assessment, both credited toward your treatment. It is the honest first step before any recommendation is made." },
   ],

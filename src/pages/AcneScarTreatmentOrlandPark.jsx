@@ -6,7 +6,7 @@ const acneScarTreatment = {
   priority: 0.9,
   seo: {
     title: "Acne Scar Treatment in Orland Park, IL — Texture & Scars | AVEN MED",
-    description: "Acne scar treatment in Orland Park, IL at AVEN MED — a planned, realistic approach to softening acne-scar texture with treatments like microneedling. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Acne scar treatment in Orland Park, IL at AVEN MED — a planned, realistic approach to softening acne-scar texture with treatments like microneedling. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "acne-scars", "texture", "collagen"],
   treatmentName: "Acne Scar Treatment",
@@ -14,7 +14,7 @@ const acneScarTreatment = {
   breadcrumbName: "Acne Scar Treatment in Orland Park",
   procedureName: "Acne Scar Treatment — Texture & Scar Improvement",
   procedureDescription:
-    "Acne scar treatment in Orland Park, IL by Alaa Mashal, FNP-BC — a planned, individualized approach using treatments such as microneedling to soften acne-scar texture over a series.",
+    "Acne scar treatment in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — a planned, individualized approach using treatments such as microneedling to soften acne-scar texture over a series.",
 
   hero: {
     eyebrow: "Skin · Texture",
@@ -40,7 +40,7 @@ const acneScarTreatment = {
     body:
       "From there we build a realistic plan — usually a series, sometimes combining treatments — aimed at meaningful improvement in texture. We're clear about what's achievable, because managing expectations is part of doing this well.",
     practitionerLine:
-      "Your care is led by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — from assessment through your series.",
+      "Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — from assessment through your series.",
   },
 
   treats: {

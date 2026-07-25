@@ -7,7 +7,7 @@ const theAvenAssessment = {
   changefreq: "monthly",
   seo: {
     title: "The AVEN Assessment in Orland Park, IL — Where Every Plan Begins | AVEN MED",
-    description: "The AVEN Assessment is where every patient relationship begins at AVEN MED in Orland Park, IL — a personalized consultation with Alaa Mashal, FNP-BC that reviews your history, goals, and options, then builds a plan. Consultation-first, never sales-driven.",
+    description: "The AVEN Assessment is where every patient relationship begins at AVEN MED in Orland Park, IL — a personalized consultation with Alaa Mashal, MSN, APRN, FNP-BC that reviews your history, goals, and options, then builds a plan. Consultation-first, never sales-driven.",
   },
   tags: ["assessment", "consultation"],
   hub: { order: 10, blurb: "What the Assessment is, and why every plan at AVEN begins here." },
@@ -16,7 +16,7 @@ const theAvenAssessment = {
   breadcrumbName: "The AVEN Assessment",
   procedureName: "The AVEN Assessment — Personalized Consultation",
   procedureDescription:
-    "The AVEN Assessment in Orland Park, IL — a personalized, consultation-first evaluation with Alaa Mashal, FNP-BC that reviews a patient's history, lifestyle, and goals before any treatment recommendation.",
+    "The AVEN Assessment in Orland Park, IL — a personalized, consultation-first evaluation with Alaa Mashal, MSN, APRN, FNP-BC that reviews a patient's history, lifestyle, and goals before any treatment recommendation.",
   faqHeading: "The AVEN Assessment, answered.",
 
   hero: {
@@ -30,7 +30,7 @@ const theAvenAssessment = {
     eyebrow: "What It Is",
     headline: <>A consultation, not a <em>sales pitch.</em></>,
     body: [
-      "The AVEN Assessment is a dedicated, one-on-one consultation with Alaa Mashal, FNP-BC. It's the starting point for every patient relationship at AVEN — aesthetics, wellness, or family medicine — because good care begins with understanding, not with a syringe or a script.",
+      "The AVEN Assessment is a dedicated, one-on-one consultation with Alaa Mashal, MSN, APRN, FNP-BC. It's the starting point for every patient relationship at AVEN — aesthetics, wellness, or family medicine — because good care begins with understanding, not with a syringe or a script.",
       "In practical terms, it's protected time to talk. We listen to what's bringing you in, review your history and goals, and only then discuss what might make sense for you. Nothing is recommended before that conversation, and nothing is decided for you.",
       "Whether you arrive knowing exactly what you want or simply feeling that something could be better, the Assessment turns that into a clear, honest, individualized plan — one you understand and feel comfortable with.",
     ],
@@ -67,7 +67,7 @@ const theAvenAssessment = {
   crossLinksIntro:
     "Where the Assessment leads depends entirely on you. It may open into any part of the practice:",
   crossLinks: [
-    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll meet — Alaa Mashal, FNP-BC, founder of AVEN MED." },
+    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll meet — Alaa Mashal, MSN, APRN, FNP-BC, founder of AVEN MED." },
     { label: "Aesthetics", path: "/aesthetics", note: "Considered, natural-looking aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Prevention-first wellness, weight, and metabolic care." },
     { label: "Family Medicine", path: "/family-medicine", note: "Relationship-based primary care for adults and families." },
@@ -79,7 +79,7 @@ const theAvenAssessment = {
     { q: "Do I have to receive treatment after my Assessment?", a: "Not at all. There's no obligation and no pressure. Many patients take time to consider their plan, and that's completely welcome. The Assessment is valuable on its own — you leave with understanding and a plan you keep." },
     { q: "Can we talk about more than one concern?", a: "Yes. The Assessment is designed to look at the whole picture, and we can discuss multiple concerns — and how to prioritize them — in one conversation. The Comprehensive Assessment is especially suited to that." },
     { q: "Can wellness or family medicine be part of it?", a: "Yes, when relevant. The Assessment isn't limited to aesthetics — we can discuss wellness goals or whether ongoing primary care fits your needs, and point you to the right part of the practice." },
-    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, FNP-BC — the founder and lead practitioner of AVEN MED. Continuity matters here, so the person who assesses you is the person who cares for you." },
+    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, MSN, APRN, FNP-BC — the founder and lead practitioner of AVEN MED. Continuity matters here, so the person who assesses you is the person who cares for you." },
     { q: "Which Assessment should I choose?", a: "The Quick AVEN Assessment is a focused first step; the Comprehensive AVEN Assessment is a longer, in-depth visit with a written plan. Both are credited toward your treatment. You can read more about each and decide what fits." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],

@@ -7,7 +7,7 @@ const lipFillers = {
   priority: 0.9,
   seo: {
     title: "Lip Fillers in Orland Park, IL — Natural Lip Enhancement | AVEN MED",
-    description: "Natural-looking lip fillers in Orland Park, IL at AVEN MED. Hyaluronic acid lip enhancement for shape, hydration, symmetry, and proportion, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Natural-looking lip fillers in Orland Park, IL at AVEN MED. Hyaluronic acid lip enhancement for shape, hydration, symmetry, and proportion, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Lip Filler",
   treatmentShort: "Lip Filler",
@@ -15,7 +15,7 @@ const lipFillers = {
   breadcrumbName: "Lip Fillers in Orland Park",
   procedureName: "Lip Filler — Hyaluronic Acid Lip Enhancement",
   procedureDescription:
-    "Natural-looking hyaluronic acid lip filler in Orland Park, IL by Alaa Mashal, FNP-BC. Enhances lip shape, hydration, symmetry, and proportion while preserving a natural, balanced result.",
+    "Natural-looking hyaluronic acid lip filler in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC. Enhances lip shape, hydration, symmetry, and proportion while preserving a natural, balanced result.",
 
   hero: {
     eyebrow: "Aesthetics · Filler & Balancing",
@@ -75,7 +75,7 @@ const lipFillers = {
     { q: "Is there any downtime?", a: "Minimal. Most patients return to normal activities the same day. We ask that you expect some swelling and possible bruising for a few days and avoid strenuous exercise, heat, and alcohol for the first twenty-four hours." },
     { q: "Can lip filler be combined with other treatments?", a: "Yes. Lips are often treated as part of a broader facial-balancing plan — with a lip flip, chin or cheek support, or neuromodulators. Any combination is mapped out and sequenced during your assessment." },
     { q: "I've never had filler before — where do I start?", a: "You start with the AVEN Assessment, and we start small. A conservative first treatment — sometimes just hydration or a lip flip — lets you see how your lips respond before building toward your goal." },
-    { q: "Who performs lip filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner, visit after visit." },
+    { q: "Who performs lip filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner, visit after visit." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from across the Southwest suburbs, including Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, and New Lenox." },
   ],
 

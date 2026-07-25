@@ -9,7 +9,7 @@ const skinTightening = {
   changefreq: "monthly",
   seo: {
     title: "Skin Tightening in Orland Park, IL — Radiofrequency Collagen Remodeling | AVEN MED",
-    description: "Radiofrequency skin tightening in Orland Park, IL — a forthcoming, non-ablative treatment at AVEN MED for gradual collagen remodeling and mild laxity. Physician-directed and planned around the AVEN Assessment. Led by Alaa Mashal, FNP-BC.",
+    description: "Radiofrequency skin tightening in Orland Park, IL — a forthcoming, non-ablative treatment at AVEN MED for gradual collagen remodeling and mild laxity. Physician-directed and planned around the AVEN Assessment. Led by Alaa Mashal, MSN, APRN, FNP-BC.",
   },
   tags: ["skin", "tightening", "collagen", "aging", "laxity"],
   treatmentName: "Skin Tightening",
@@ -17,7 +17,7 @@ const skinTightening = {
   breadcrumbName: "Skin Tightening in Orland Park",
   procedureName: "Radiofrequency Skin Tightening — Non-Ablative Collagen Remodeling",
   procedureDescription:
-    "Radiofrequency skin tightening in Orland Park, IL — a forthcoming, non-ablative treatment at AVEN MED directed by Alaa Mashal, FNP-BC that uses controlled heat to prompt gradual collagen remodeling for mild skin laxity.",
+    "Radiofrequency skin tightening in Orland Park, IL — a forthcoming, non-ablative treatment at AVEN MED directed by Alaa Mashal, MSN, APRN, FNP-BC that uses controlled heat to prompt gradual collagen remodeling for mild skin laxity.",
 
   hero: {
     eyebrow: "Aesthetics · Forthcoming",
@@ -43,7 +43,7 @@ const skinTightening = {
     body:
       "For the right candidate, radiofrequency can be a valuable, low-downtime part of a plan. For others, we'll say so plainly — some concerns are better served by collagen-building treatments, structural support, or a conversation about surgical options. Honesty comes before enthusiasm.",
     practitionerLine:
-      "Skin tightening at AVEN is physician-directed and overseen by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner.",
+      "Skin tightening at AVEN is physician-directed and overseen by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner.",
   },
 
   treats: {

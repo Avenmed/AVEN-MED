@@ -16,7 +16,7 @@ const assessmentFAQ = {
   breadcrumbName: "Assessment FAQ",
   procedureName: "The AVEN Assessment — Frequently Asked Questions",
   procedureDescription:
-    "Frequently asked questions about the AVEN Assessment in Orland Park, IL — the consultation-first evaluation with Alaa Mashal, FNP-BC that begins every patient relationship.",
+    "Frequently asked questions about the AVEN Assessment in Orland Park, IL — the consultation-first evaluation with Alaa Mashal, MSN, APRN, FNP-BC that begins every patient relationship.",
   faqHeading: "Your questions, answered.",
 
   hero: {
@@ -45,7 +45,7 @@ const assessmentFAQ = {
     { q: "Do you pressure patients?", a: "No. Consultation-first and no-pressure is genuinely how we practice, not a slogan. We explain your options, answer your questions, and let you decide in your own time. You will never be pushed toward a treatment." },
     { q: "Is the Assessment paid, and is it credited?", a: "Yes. The Assessment is a paid consultation — the Quick AVEN Assessment is $50 and the Comprehensive is $200 — and the fee is credited toward your treatment, so the time you invest moves into your care." },
     { q: "Why is the consultation paid?", a: "Because it's real clinical time and attention. A paid consultation lets the practice slow down and give every patient unhurried focus — and since the fee credits toward treatment, no appointment is wasted." },
-    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, FNP-BC, the founder and lead practitioner of AVEN MED. The person who assesses you is the person who cares for you — continuity is central to how AVEN works." },
+    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and lead practitioner of AVEN MED. The person who assesses you is the person who cares for you — continuity is central to how AVEN works." },
     { q: "What if AVEN isn't the right fit for my concern?", a: "We'll tell you honestly. If something is outside our scope or better served elsewhere — including urgent, emergency, or specialty care — we'll say so and help point you in the right direction." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
@@ -53,7 +53,7 @@ const assessmentFAQ = {
   crossLinksIntro: "Want to go deeper before you book?",
   crossLinks: [
     { label: "What to Expect", path: "/assessment/what-to-expect", note: "A step-by-step walkthrough of your visit." },
-    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "Get to know Alaa Mashal, FNP-BC." },
+    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "Get to know Alaa Mashal, MSN, APRN, FNP-BC." },
     { label: "The AVEN Assessment", path: "/assessment/the-aven-assessment", note: "Why every plan at AVEN begins here." },
   ],
 

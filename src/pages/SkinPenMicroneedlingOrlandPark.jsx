@@ -7,7 +7,7 @@ const skinpen = {
   priority: 0.9,
   seo: {
     title: "SkinPen® Microneedling in Orland Park, IL — Collagen Induction | AVEN MED",
-    description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "SkinPen®",
   treatmentShort: "SkinPen",
@@ -15,7 +15,7 @@ const skinpen = {
   breadcrumbName: "SkinPen Microneedling in Orland Park",
   procedureName: "SkinPen Microneedling — Collagen Induction Therapy",
   procedureDescription:
-    "Medical-grade SkinPen Precision microneedling (collagen induction therapy) in Orland Park, IL, performed by Alaa Mashal, FNP-BC. A planned, personalized approach to skin texture, tone, and quality.",
+    "Medical-grade SkinPen Precision microneedling (collagen induction therapy) in Orland Park, IL, performed by Alaa Mashal, MSN, APRN, FNP-BC. A planned, personalized approach to skin texture, tone, and quality.",
 
   hero: {
     eyebrow: "Skin · Collagen Induction",
@@ -41,7 +41,7 @@ const skinpen = {
     body:
       "From there we build a personalized plan — depth, spacing, the number of sessions, and the skincare that supports them — as a considered skin-health strategy rather than a single appointment.",
     practitionerLine:
-      "Your treatment is performed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — in a medical setting.",
+      "Your treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — in a medical setting.",
   },
 
   treats: {
@@ -117,7 +117,7 @@ const skinpen = {
 
   faqs: [
     { q: "What is SkinPen?", a: "SkinPen Precision is a medical microneedling device used for collagen induction therapy. A licensed provider passes it over the skin to create thousands of tiny, controlled microchannels, prompting the skin's natural repair response and new collagen formation." },
-    { q: "Is SkinPen FDA-cleared?", a: "Yes. SkinPen was the first microneedling device to receive FDA clearance. At AVEN MED it is used only by Alaa Mashal, FNP-BC, in a medical setting after an assessment of your skin and history." },
+    { q: "Is SkinPen FDA-cleared?", a: "Yes. SkinPen was the first microneedling device to receive FDA clearance. At AVEN MED it is used only by Alaa Mashal, MSN, APRN, FNP-BC, in a medical setting after an assessment of your skin and history." },
     { q: "Is SkinPen the same as regular or at-home microneedling?", a: "No. SkinPen is a sealed, single-use, FDA-cleared medical device used at a tailored depth by a provider, with sterile cartridges and a treatment plan. At-home rollers and pens use a fixed, shallow depth, are reused, and skip provider evaluation — they are not the same procedure." },
     { q: "Does microneedling hurt?", a: "A numbing cream is applied first, so most patients are comfortable and describe mild pressure and vibration rather than pain. Sensitivity varies by area and by person." },
     { q: "How much downtime should I expect?", a: "Most patients have redness similar to a mild sunburn for about one to two days, sometimes with tightness, sensitivity, and light dryness or flaking as the skin renews. Individual recovery varies." },

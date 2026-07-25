@@ -7,24 +7,24 @@ import Video from '../Video.jsx';
 const AboutPage = ({ navigate }) => {
   return (
     <main className="page about-with-bg">
-      {/* FOUNDER — Alaa Mashal, FNP-BC (FIRST on page) */}
+      {/* FOUNDER — Alaa Mashal, MSN, APRN, FNP-BC (FIRST on page) */}
       <section className="has-hero-bg" style={{ paddingTop: 180, paddingBottom: 80 }}>
         <HeroBg />
         <div className="container" style={{ maxWidth: 1120 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}>
             <Reveal>
-              <Ph label="Alaa Mashal, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5">
+              <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · environmental portrait" meta="natural light · medium format · 4:5" aspect="4/5">
                 <Video src="assets/alaa-2.mp4" />
               </Ph>
             </Reveal>
             <Reveal delay={140}>
               <Eyebrow>· The Practitioner</Eyebrow>
               <h1 className="display" style={{ fontSize: "clamp(40px, 5.4vw, 78px)", margin: "24px 0 24px", lineHeight: 1.05, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
-                <em>Alaa Mashal,</em><br />FNP-BC.
+                <em>Alaa Mashal,</em><br />MSN, APRN, FNP-BC.
               </h1>
               <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Lead Practitioner</div>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, maxWidth: "56ch" }}>
-                AVEN MED is founded and led by Alaa Mashal, FNP-BC — a board-certified
+                AVEN MED is founded and led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified
                 Family Nurse Practitioner whose practice is built around restraint
                 and the long view of patient care. She is the only injector
                 at AVEN MED; you will only ever be treated by her.
@@ -152,7 +152,7 @@ const AboutPage = ({ navigate }) => {
                   ["01", "You should always look like yourself.", "Care at AVEN supports what already exists. The goal is never to change who you are — only to support the long arc of your face across time."],
                   ["02", "Every assessment starts a relationship.", "We are not in the business of one-off visits. The assessment opens a long, considered relationship between practitioner and patient."],
                   ["03", "Every individual has their own treatment plan.", "No two faces, no two histories, no two goals are the same. Every plan is written by hand, for the patient in front of us."],
-                  ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, FNP-BC."],
+                  ["04", "One injector. Always.", "Continuity is the most undervalued ingredient in aesthetics. You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC."],
                   ["05", "We educate, then we treat.", "If we have done our work properly, you will leave an Assessment understanding your face better than you did when you arrived."]
                 ].map(([n, h, b]) => (
                   <div key={n} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 40, padding: "44px 0", borderTop: "1px solid var(--hairline)" }}>
@@ -180,7 +180,7 @@ const AboutPage = ({ navigate }) => {
               It is a long, slow letter the body
               is writing to itself.
             </div>
-            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— ALAA MASHAL, FNP-BC</div>
+            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— ALAA MASHAL, MSN, APRN, FNP-BC</div>
           </Reveal>
         </div>
       </section>

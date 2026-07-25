@@ -162,7 +162,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
               {data.whyAven?.body || <>Only then do we write a plan. Natural-looking results are always the priority — the aim is a softer, rested version of your own expression, never a treated or frozen one. You should still look like yourself.</>}
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
-              {data.whyAven?.practitionerLine || <>You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.</>}
+              {data.whyAven?.practitionerLine || <>You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.</>}
             </p>
           </Reveal>
         </div>
@@ -261,7 +261,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
                 tier="Quick AVEN Assessment"
                 price="$50"
                 subtitle="focused visit"
-                blurb="A focused consultation with Alaa Mashal, FNP-BC — an expert read on your face and a clear first recommendation."
+                blurb="A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on your face and a clear first recommendation."
                 includes={["Aura Skin Analysis", "Facial Assessment", "Personalized Recommendations"]}
               />
             </Reveal>

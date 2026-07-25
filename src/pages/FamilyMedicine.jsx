@@ -320,7 +320,7 @@ const FamilyMedicinePage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
-            <Ph label="Alaa Mashal, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
               <Video src="assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
@@ -330,7 +330,7 @@ const FamilyMedicinePage = ({ navigate }) => {
               One provider, who knows <em>you.</em>
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
-              Your care is led by Alaa Mashal, FNP-BC — founder and lead practitioner of
+              Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of
               AVEN MED, and a board-certified Family Nurse Practitioner. The person who
               assesses you is the person who cares for you.
             </p>

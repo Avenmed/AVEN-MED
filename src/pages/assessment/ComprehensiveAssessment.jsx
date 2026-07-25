@@ -7,7 +7,7 @@ const comprehensiveAssessment = {
   changefreq: "monthly",
   seo: {
     title: "Comprehensive AVEN Assessment ($200) in Orland Park, IL | AVEN MED",
-    description: "The Comprehensive AVEN Assessment ($200, credited toward treatment) is an in-depth, up-to-60-minute consultation with Alaa Mashal, FNP-BC in Orland Park, IL — multiple concerns, full planning, and a written treatment roadmap you keep.",
+    description: "The Comprehensive AVEN Assessment ($200, credited toward treatment) is an in-depth, up-to-60-minute consultation with Alaa Mashal, MSN, APRN, FNP-BC in Orland Park, IL — multiple concerns, full planning, and a written treatment roadmap you keep.",
   },
   tags: ["assessment", "comprehensive"],
   hub: { order: 30, blurb: "An in-depth visit with a written plan — multiple concerns, full planning. $200, credited toward treatment." },
@@ -16,21 +16,21 @@ const comprehensiveAssessment = {
   breadcrumbName: "Comprehensive Assessment",
   procedureName: "Comprehensive AVEN Assessment — In-Depth Consultation",
   procedureDescription:
-    "The Comprehensive AVEN Assessment in Orland Park, IL — an in-depth, up-to-60-minute consultation with Alaa Mashal, FNP-BC covering multiple concerns, full planning, and a written treatment roadmap, credited toward treatment.",
+    "The Comprehensive AVEN Assessment in Orland Park, IL — an in-depth, up-to-60-minute consultation with Alaa Mashal, MSN, APRN, FNP-BC covering multiple concerns, full planning, and a written treatment roadmap, credited toward treatment.",
   faqHeading: "The Comprehensive Assessment, answered.",
 
   hero: {
     eyebrow: "The AVEN Assessment · Comprehensive",
     headline: <>The Comprehensive <em>Assessment.</em></>,
     subheadline:
-      "An in-depth consultation with Alaa Mashal, FNP-BC — time to look at the whole picture, plan across multiple concerns, and leave with a written roadmap that's yours to keep.",
+      "An in-depth consultation with Alaa Mashal, MSN, APRN, FNP-BC — time to look at the whole picture, plan across multiple concerns, and leave with a written roadmap that's yours to keep.",
   },
 
   overview: {
     eyebrow: "What It Is",
     headline: <>The full <em>conversation.</em></>,
     body: [
-      "The Comprehensive AVEN Assessment is an in-depth consultation with Alaa Mashal, FNP-BC — up to sixty minutes of protected time to understand you fully. It's designed for patients with more than one concern, or anyone who wants a considered, long-term plan rather than a single answer.",
+      "The Comprehensive AVEN Assessment is an in-depth consultation with Alaa Mashal, MSN, APRN, FNP-BC — up to sixty minutes of protected time to understand you fully. It's designed for patients with more than one concern, or anyone who wants a considered, long-term plan rather than a single answer.",
       "It goes beyond a focused read. We review your history and goals in depth, look at how different concerns relate, and think about sequence and priority — what to address first, what can wait, and how it all fits together over time.",
       "You leave with a written plan: a clear, personalized roadmap you keep, so the value of the visit stays with you whether you begin today or later.",
     ],
@@ -60,7 +60,7 @@ const comprehensiveAssessment = {
     eyebrow: "What's Included",
     headline: <>What you <em>get.</em></>,
     items: [
-      "Up to 60 minutes with Alaa Mashal, FNP-BC",
+      "Up to 60 minutes with Alaa Mashal, MSN, APRN, FNP-BC",
       "A full review of your history and goals",
       "An Aura skin analysis, where relevant",
       "Planning across multiple concerns",
@@ -84,11 +84,11 @@ const comprehensiveAssessment = {
     { label: "Aesthetics", path: "/aesthetics", note: "Considered, natural-looking aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Prevention-first wellness, weight, and metabolic care." },
     { label: "Family Medicine", path: "/family-medicine", note: "Relationship-based primary care for adults and families." },
-    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll plan with — Alaa Mashal, FNP-BC." },
+    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll plan with — Alaa Mashal, MSN, APRN, FNP-BC." },
   ],
 
   faqs: [
-    { q: "What is the Comprehensive Assessment?", a: "It's an in-depth, up-to-60-minute consultation with Alaa Mashal, FNP-BC for patients with multiple concerns or anyone wanting a considered, long-term plan. You leave with a written treatment roadmap you keep." },
+    { q: "What is the Comprehensive Assessment?", a: "It's an in-depth, up-to-60-minute consultation with Alaa Mashal, MSN, APRN, FNP-BC for patients with multiple concerns or anyone wanting a considered, long-term plan. You leave with a written treatment roadmap you keep." },
     { q: "How much is it, and is it credited?", a: "The Comprehensive AVEN Assessment is $200, and that fee is credited toward your treatment. The time and planning you invest move directly into your care." },
     { q: "When should I choose Comprehensive over Quick?", a: "Choose Comprehensive when you have several concerns, want a long-term plan, or would like to include wellness or preventive goals. The Quick Assessment is better for a single concern or a fast first opinion. Both are credited toward treatment." },
     { q: "Do I leave with a written plan?", a: "Yes. A written, personalized roadmap is a defining part of the Comprehensive Assessment — what to prioritize, what can wait, and how it fits together — so the value of the visit stays with you." },

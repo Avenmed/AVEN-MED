@@ -16,7 +16,7 @@ const PRINCIPLES = [
   { n: "03", k: "Conservative Enhancement", b: "We do the least that achieves the result. You can always add — undoing is harder." },
   { n: "04", k: "Assessment-Driven", b: "Nothing is recommended before the AVEN Assessment. The plan follows the conversation, not a menu." },
   { n: "05", k: "Personalized Planning", b: "Every plan is mapped to your anatomy and sequenced over time — never a one-size protocol." },
-  { n: "06", k: "One Practitioner", b: "You're cared for by Alaa Mashal, FNP-BC, visit after visit. Continuity is the quiet advantage behind good results." },
+  { n: "06", k: "One Practitioner", b: "You're cared for by Alaa Mashal, MSN, APRN, FNP-BC, visit after visit. Continuity is the quiet advantage behind good results." },
 ];
 
 // Light editorial grouping over the existing registry treatment pages.
@@ -271,7 +271,7 @@ const AestheticsPage = ({ navigate }) => {
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
-            <Ph label="Alaa Mashal, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
               <Video src="assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
@@ -281,7 +281,7 @@ const AestheticsPage = ({ navigate }) => {
               One practitioner, <em>always.</em>
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
-              Every treatment at AVEN is performed by Alaa Mashal, FNP-BC — founder,
+              Every treatment at AVEN is performed by Alaa Mashal, MSN, APRN, FNP-BC — founder,
               lead practitioner, and the only injector at the practice. The person who
               assesses you is the person who cares for you.
             </p>

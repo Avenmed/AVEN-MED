@@ -6,7 +6,7 @@ const jawline = {
   priority: 0.9,
   seo: {
     title: "Jawline Fillers in Orland Park, IL — Definition & Contour | AVEN MED",
-    description: "Natural-looking jawline fillers in Orland Park, IL at AVEN MED. Hyaluronic acid contouring for jaw definition, profile balance, and structural support, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Natural-looking jawline fillers in Orland Park, IL at AVEN MED. Hyaluronic acid contouring for jaw definition, profile balance, and structural support, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Jawline Filler",
   treatmentShort: "Jawline Filler",
@@ -14,7 +14,7 @@ const jawline = {
   breadcrumbName: "Jawline Fillers in Orland Park",
   procedureName: "Jawline Filler — Hyaluronic Acid Contouring",
   procedureDescription:
-    "Hyaluronic acid jawline filler in Orland Park, IL by Alaa Mashal, FNP-BC. Structural contouring that defines the jaw, supports the lower face, and balances the profile with a natural result.",
+    "Hyaluronic acid jawline filler in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC. Structural contouring that defines the jaw, supports the lower face, and balances the profile with a natural result.",
 
   hero: {
     eyebrow: "Aesthetics · Filler & Balancing",
@@ -40,7 +40,7 @@ const jawline = {
     body:
       "From there we place conservatively along the jaw — defining and supporting rather than bulking. The goal is a cleaner, more balanced lower face that still looks entirely like you.",
     practitionerLine:
-      "You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {
@@ -89,7 +89,7 @@ const jawline = {
     { q: "Will I look overfilled?", a: "Not at AVEN. Our approach is proportion-first and conservative — we would rather build slowly than overcorrect. The jaw is treated as one part of a balanced lower face." },
     { q: "Is there downtime?", a: "Minimal. Most patients return to normal activities the same day, with the possibility of mild swelling or bruising for a few days." },
     { q: "Can jawline filler be combined with other treatments?", a: "Yes. The jaw is often treated alongside the chin, cheeks, or masseter Botox as part of a lower-face balancing plan, all sequenced during your assessment." },
-    { q: "Who performs jawline filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs jawline filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

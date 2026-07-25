@@ -83,7 +83,7 @@ const NotesPage = ({ navigate }) => {
               </div>
             </Reveal>
             <Reveal delay={260} style={{ textAlign: "center", marginTop: 56 }}>
-              <div className="label" style={{ color: "var(--gold)" }}>— Alaa Mashal, FNP-BC</div>
+              <div className="label" style={{ color: "var(--gold)" }}>— Alaa Mashal, MSN, APRN, FNP-BC</div>
             </Reveal>
           </div>
         </section>

@@ -1,6 +1,6 @@
-/* AVEN MED — Provider: Alaa Mashal, FNP-BC. Registry data module (provider type).
+/* AVEN MED — Provider: Alaa Mashal, MSN, APRN, FNP-BC. Registry data module (provider type).
  *
- * Only established facts are used (name, FNP-BC / board-certified Family Nurse
+ * Only established facts are used (name, MSN / APRN / FNP-BC — board-certified Family Nurse
  * Practitioner, founder & lead practitioner, AVEN's only injector, she/her, and
  * the practice's actual service areas). Education, licensure specifics, additional
  * certifications, memberships, languages, and years of experience are NOT invented
@@ -12,20 +12,20 @@ const alaaMashal = {
   priority: 0.9,
   changefreq: "monthly",
   seo: {
-    title: "Meet Alaa Mashal, FNP-BC — Founder of AVEN MED, Orland Park IL",
-    description: "Meet Alaa Mashal, FNP-BC — founder and lead practitioner of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner who practices with restraint, continuity, and honest, patient-centered care across aesthetics, wellness, and family medicine.",
+    title: "Meet Alaa Mashal, MSN, APRN, FNP-BC — Founder of AVEN MED, Orland Park IL",
+    description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner who practices with restraint, continuity, and honest, patient-centered care across aesthetics, wellness, and family medicine.",
   },
   tags: ["provider", "founder"],
   hub: { order: 10, blurb: "Founder and lead practitioner of AVEN MED — board-certified Family Nurse Practitioner." },
-  serviceName: "Alaa Mashal, FNP-BC",
+  serviceName: "Alaa Mashal, MSN, APRN, FNP-BC",
   serviceShort: "Alaa Mashal",
-  breadcrumbName: "Alaa Mashal, FNP-BC",
-  personName: "Alaa Mashal, FNP-BC",
+  breadcrumbName: "Alaa Mashal, MSN, APRN, FNP-BC",
+  personName: "Alaa Mashal, MSN, APRN, FNP-BC",
   jobTitle: "Founder & Lead Practitioner, AVEN MED",
   faqHeading: "Getting to know Alaa.",
 
   portrait: {
-    label: "Alaa Mashal, FNP-BC · portrait",
+    label: "Alaa Mashal, MSN, APRN, FNP-BC · portrait",
     meta: "natural light · 4:5 · placeholder",
     aspect: "4/5",
     video: "assets/alaa-2.mp4",
@@ -33,7 +33,7 @@ const alaaMashal = {
 
   hero: {
     eyebrow: "Meet Your Provider",
-    headline: <>Alaa Mashal, <em>FNP-BC.</em></>,
+    headline: <>Alaa Mashal, <em>MSN, APRN, FNP-BC.</em></>,
     role: "Founder · Lead Practitioner",
     subheadline:
       "Board-certified Family Nurse Practitioner and founder of AVEN MED — the person who will listen to you, plan with you, and care for you at every visit.",
@@ -43,7 +43,7 @@ const alaaMashal = {
     eyebrow: "A Welcome",
     headline: <>You'll be cared for by one <em>practitioner.</em></>,
     body: [
-      "AVEN MED was founded and is led by Alaa Mashal, FNP-BC, a board-certified Family Nurse Practitioner. At AVEN, the person who assesses you is the person who cares for you — there's no handoff, no rotating faces, and no losing your history between visits.",
+      "AVEN MED was founded and is led by Alaa Mashal, MSN, APRN, FNP-BC, a board-certified Family Nurse Practitioner. At AVEN, the person who assesses you is the person who cares for you — there's no handoff, no rotating faces, and no losing your history between visits.",
       "That continuity is deliberate. It means your care builds over time, your provider knows your file, and every conversation picks up where the last one left off. It's the quiet advantage behind everything else AVEN does.",
     ],
   },
@@ -77,7 +77,7 @@ const alaaMashal = {
     eyebrow: "Credentials",
     headline: <>Qualifications & <em>training.</em></>,
     items: [
-      { name: "Board Certification", note: "Board-certified Family Nurse Practitioner (FNP-BC)." },
+      { name: "Education & Certification", note: "Master of Science in Nursing (MSN); Advanced Practice Registered Nurse (APRN); board-certified Family Nurse Practitioner (FNP-BC)." },
       { name: "Role at AVEN", note: "Founder and lead practitioner; AVEN's only injector." },
     ],
     note: "Full details of Alaa's education, licensure, and additional certifications are being finalized and will be published here soon — and you're always welcome to ask about them at your visit.",
@@ -133,8 +133,8 @@ const alaaMashal = {
   ],
 
   faqs: [
-    { q: "Who will I see at AVEN MED?", a: "You'll see Alaa Mashal, FNP-BC — the founder and lead practitioner. AVEN is built around continuity, so the person who assesses you is the person who cares for you at every visit." },
-    { q: "What are Alaa's credentials?", a: "Alaa is a board-certified Family Nurse Practitioner (FNP-BC) and the founder and lead practitioner of AVEN MED. Full details of her education, licensure, and additional certifications are being finalized and will appear here soon; you're welcome to ask at your visit." },
+    { q: "Who will I see at AVEN MED?", a: "You'll see Alaa Mashal, MSN, APRN, FNP-BC — the founder and lead practitioner. AVEN is built around continuity, so the person who assesses you is the person who cares for you at every visit." },
+    { q: "What are Alaa's credentials?", a: "Alaa Mashal is a Master of Science in Nursing (MSN), an Advanced Practice Registered Nurse (APRN), and a board-certified Family Nurse Practitioner (FNP-BC). She is the founder and lead practitioner of AVEN MED. You're always welcome to ask more at your visit." },
     { q: "Does Alaa perform all treatments personally?", a: "Alaa is AVEN's only injector, and she leads care across the practice. Continuity with one trusted provider is central to how AVEN works." },
     { q: "What is Alaa's approach to aesthetics?", a: "Restraint and natural-looking results. The philosophy is conservative planning and facial balance over volume — the aim is that you look like yourself, rested, never overdone." },
     { q: "Do I have to commit to treatment to meet Alaa?", a: "No. Every relationship begins with the AVEN Assessment — a consultation-first visit with no pressure to proceed. You're welcome to meet, ask questions, and decide in your own time." },

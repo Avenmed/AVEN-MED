@@ -7,7 +7,7 @@ const medicalWeightLoss = {
   changefreq: "monthly",
   seo: {
     title: "Medical Weight Loss in Orland Park, IL — Physician-Directed | AVEN MED",
-    description: "Physician-directed medical weight loss in Orland Park, IL at AVEN MED — a whole-person program combining medical evaluation, nutrition, movement, coaching, and, when appropriate, GLP-1 medication. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Physician-directed medical weight loss in Orland Park, IL at AVEN MED — a whole-person program combining medical evaluation, nutrition, movement, coaching, and, when appropriate, GLP-1 medication. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["weight", "metabolic", "glp-1", "longevity", "wellness"],
   serviceName: "Medical Weight Loss",
@@ -16,7 +16,7 @@ const medicalWeightLoss = {
   hub: { order: 10, blurb: "A physician-directed, whole-person program — with GLP-1 medication as one option when appropriate." },
   procedureName: "Medical Weight Loss — Physician-Directed Program",
   procedureDescription:
-    "Physician-directed medical weight loss in Orland Park, IL by Alaa Mashal, FNP-BC — an individualized, whole-person program combining medical evaluation, nutrition and lifestyle guidance, and, when clinically appropriate, GLP-1 medication.",
+    "Physician-directed medical weight loss in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — an individualized, whole-person program combining medical evaluation, nutrition and lifestyle guidance, and, when clinically appropriate, GLP-1 medication.",
 
   hero: {
     eyebrow: "Wellness · Metabolic Health",
@@ -115,7 +115,7 @@ const medicalWeightLoss = {
     { q: "Will I regain the weight afterward?", a: "Maintenance is built into the program precisely to reduce that risk. We focus on sustainable habits alongside any medical intervention, and we stay involved through follow-up. No approach can guarantee permanence, which is why the long-term plan matters." },
     { q: "How often will I be seen?", a: "You'll have regular follow-ups to monitor progress, safety, and how you're responding, so the plan can be adjusted over time. The exact cadence is individualized and set with you." },
     { q: "Are the medications safe?", a: "GLP-1 medications are well studied and, for appropriate patients, generally well tolerated, but like any medication they carry potential side effects. That's exactly why they're prescribed and monitored by your practitioner rather than obtained without oversight." },
-    { q: "Who leads the program?", a: "Your care is directed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — from evaluation through ongoing follow-up." },
+    { q: "Who leads the program?", a: "Your care is directed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — from evaluation through ongoing follow-up." },
     { q: "Why does it start with an assessment?", a: "Because weight is individual and medical. An assessment lets us understand your health, history, and goals so we can build a safe, personalized plan rather than guessing or defaulting to medication." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],

@@ -6,7 +6,7 @@ const chin = {
   priority: 0.9,
   seo: {
     title: "Chin Fillers in Orland Park, IL — Profile Balance | AVEN MED",
-    description: "Natural-looking chin fillers in Orland Park, IL at AVEN MED. Non-surgical hyaluronic acid chin enhancement for projection, profile balance, and proportion, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Natural-looking chin fillers in Orland Park, IL at AVEN MED. Non-surgical hyaluronic acid chin enhancement for projection, profile balance, and proportion, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Chin Filler",
   treatmentShort: "Chin Filler",
@@ -14,7 +14,7 @@ const chin = {
   breadcrumbName: "Chin Fillers in Orland Park",
   procedureName: "Chin Filler — Non-Surgical Hyaluronic Acid Enhancement",
   procedureDescription:
-    "Non-surgical hyaluronic acid chin filler in Orland Park, IL by Alaa Mashal, FNP-BC. Refines chin projection, profile balance, and proportion with a natural, adjustable result.",
+    "Non-surgical hyaluronic acid chin filler in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC. Refines chin projection, profile balance, and proportion with a natural, adjustable result.",
 
   hero: {
     eyebrow: "Aesthetics · Filler & Balancing",
@@ -40,7 +40,7 @@ const chin = {
     body:
       "From there we place precisely and conservatively — refining projection and balance rather than reshaping your face. The aim is a profile that simply looks harmonious, without an obvious change.",
     practitionerLine:
-      "You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {
@@ -89,7 +89,7 @@ const chin = {
     { q: "How much chin filler will I need?", a: "It varies with your anatomy and goals — often a small, precise amount. We build conservatively rather than overcorrecting. The right amount is determined at your assessment, never priced as a package." },
     { q: "Is there downtime?", a: "Minimal. Most patients return to normal activities the same day, with the possibility of mild swelling or bruising for a few days." },
     { q: "Can chin filler be combined with other treatments?", a: "Yes. The chin is often refined as part of a lower-face or full-face balancing plan alongside jawline filler, cheeks, lips, or neuromodulators, all sequenced during your assessment." },
-    { q: "Who performs chin filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs chin filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

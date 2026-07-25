@@ -6,7 +6,7 @@ const acneTreatment = {
   priority: 0.9,
   seo: {
     title: "Acne Treatment in Orland Park, IL — Medical Acne Care | AVEN MED",
-    description: "Medical acne treatment in Orland Park, IL at AVEN MED — an individualized approach to active acne combining in-office care, skincare, and, when appropriate, medical management. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Medical acne treatment in Orland Park, IL at AVEN MED — an individualized approach to active acne combining in-office care, skincare, and, when appropriate, medical management. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "acne"],
   treatmentName: "Acne Treatment",
@@ -14,7 +14,7 @@ const acneTreatment = {
   breadcrumbName: "Acne Treatment in Orland Park",
   procedureName: "Acne Treatment — Individualized Medical Acne Care",
   procedureDescription:
-    "Individualized medical acne treatment in Orland Park, IL by Alaa Mashal, FNP-BC — combining in-office treatments, skincare, and appropriate medical management to calm active acne and protect skin health.",
+    "Individualized medical acne treatment in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — combining in-office treatments, skincare, and appropriate medical management to calm active acne and protect skin health.",
 
   hero: {
     eyebrow: "Skin · Medical",
@@ -40,7 +40,7 @@ const acneTreatment = {
     body:
       "From there we build an individualized plan that may combine in-office treatments, a targeted skincare routine, and — when appropriate — medical management. The aim is calmer skin now and less scarring later.",
     practitionerLine:
-      "Your care is led by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — from assessment onward.",
+      "Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — from assessment onward.",
   },
 
   treats: {

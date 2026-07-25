@@ -6,7 +6,7 @@ const cheek = {
   priority: 0.9,
   seo: {
     title: "Cheek Fillers in Orland Park, IL — Midface Balancing | AVEN MED",
-    description: "Natural-looking cheek fillers in Orland Park, IL at AVEN MED. Structural midface support that restores subtle volume, lift, and balance, led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Natural-looking cheek fillers in Orland Park, IL at AVEN MED. Structural midface support that restores subtle volume, lift, and balance, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Cheek Filler",
   treatmentShort: "Cheek Filler",
@@ -14,7 +14,7 @@ const cheek = {
   breadcrumbName: "Cheek Fillers in Orland Park",
   procedureName: "Cheek Filler — Midface Hyaluronic Acid Enhancement",
   procedureDescription:
-    "Hyaluronic acid cheek filler in Orland Park, IL by Alaa Mashal, FNP-BC. Structural midface support that restores subtle volume, definition, and balance while keeping a natural result.",
+    "Hyaluronic acid cheek filler in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC. Structural midface support that restores subtle volume, definition, and balance while keeping a natural result.",
 
   hero: {
     eyebrow: "Aesthetics · Filler & Balancing",
@@ -40,7 +40,7 @@ const cheek = {
     body:
       "From there we place conservatively, and often in stages — supporting the cheek to lift and balance the face rather than adding obvious volume. The goal is that you look rested and lifted, not filled.",
     practitionerLine:
-      "You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {
@@ -90,7 +90,7 @@ const cheek = {
     { q: "Is there downtime?", a: "Minimal. Most patients return to normal activities the same day. Expect the possibility of mild swelling or bruising for a few days and avoid strenuous exercise and alcohol for the first day." },
     { q: "When will I see final results?", a: "Structure is visible immediately, but the final, settled result appears at about two weeks once swelling resolves. We often re-evaluate at that point." },
     { q: "Can cheek filler be combined with other treatments?", a: "Yes. Cheeks are frequently treated as part of a broader facial-balancing plan alongside chin, jawline, or lip refinement, neuromodulators, or a biostimulator — all sequenced during your assessment." },
-    { q: "Who performs cheek filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs cheek filler at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

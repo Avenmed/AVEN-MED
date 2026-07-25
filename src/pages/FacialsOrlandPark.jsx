@@ -7,7 +7,7 @@ const facials = {
   changefreq: "monthly",
   seo: {
     title: "Facials in Orland Park, IL — Results-Focused Treatments | AVEN MED",
-    description: "Results-focused facials in Orland Park, IL at AVEN MED — professional treatments tailored to your skin that support health, glow, and your broader skin plan. Led by Alaa Mashal, FNP-BC. Every treatment begins with the AVEN Assessment.",
+    description: "Results-focused facials in Orland Park, IL at AVEN MED — professional treatments tailored to your skin that support health, glow, and your broader skin plan. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every treatment begins with the AVEN Assessment.",
   },
   tags: ["skin", "facial", "maintenance"],
   treatmentName: "Facials",
@@ -15,7 +15,7 @@ const facials = {
   breadcrumbName: "Facials in Orland Park",
   procedureName: "Facials — Results-Focused Professional Skin Treatments",
   procedureDescription:
-    "Results-focused professional facials in Orland Park, IL guided by Alaa Mashal, FNP-BC — tailored treatments that support skin health, glow, and your broader skin plan.",
+    "Results-focused professional facials in Orland Park, IL guided by Alaa Mashal, MSN, APRN, FNP-BC — tailored treatments that support skin health, glow, and your broader skin plan.",
 
   hero: {
     eyebrow: "Skin · Treatment",
@@ -41,7 +41,7 @@ const facials = {
     body:
       "From there we tailor the treatment — the cleansing, exfoliation, extractions if appropriate, and the actives and masks used — to what your skin needs that day. The aim is healthy, glowing skin that fits into a bigger picture.",
     practitionerLine:
-      "Your skin care is overseen by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — as part of your overall plan.",
+      "Your skin care is overseen by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — as part of your overall plan.",
   },
 
   treats: {

@@ -8,7 +8,7 @@ const primaryCare = {
   changefreq: "monthly",
   seo: {
     title: "Primary Care & Family Medicine in Orland Park, IL | AVEN MED",
-    description: "Relationship-based primary care and family medicine in Orland Park, IL at AVEN MED — evidence-based, continuous care for adults and families, with prevention, chronic-condition support, and specialist coordination. Led by Alaa Mashal, FNP-BC.",
+    description: "Relationship-based primary care and family medicine in Orland Park, IL at AVEN MED — evidence-based, continuous care for adults and families, with prevention, chronic-condition support, and specialist coordination. Led by Alaa Mashal, MSN, APRN, FNP-BC.",
   },
   tags: ["primary-care", "continuity", "prevention", "family-medicine"],
   hub: { order: 10, blurb: "Relationship-based primary care for adults and families — evidence-based, continuous, and coordinated." },
@@ -17,7 +17,7 @@ const primaryCare = {
   breadcrumbName: "Primary Care & Family Medicine",
   procedureName: "Primary Care & Family Medicine",
   procedureDescription:
-    "Relationship-based primary care and family medicine in Orland Park, IL with Alaa Mashal, FNP-BC — evidence-based preventive care, chronic-condition support, acute outpatient concerns, medication management, and specialist coordination for adults and families.",
+    "Relationship-based primary care and family medicine in Orland Park, IL with Alaa Mashal, MSN, APRN, FNP-BC — evidence-based preventive care, chronic-condition support, acute outpatient concerns, medication management, and specialist coordination for adults and families.",
   ctaLabel: "Schedule a Family Medicine Consultation",
   faqHeading: "Primary care, answered.",
 

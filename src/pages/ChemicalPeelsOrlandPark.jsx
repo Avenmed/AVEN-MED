@@ -6,7 +6,7 @@ const chemicalPeels = {
   priority: 0.9,
   seo: {
     title: "Chemical Peels in Orland Park, IL — Medical-Grade Resurfacing | AVEN MED",
-    description: "Medical-grade chemical peels in Orland Park, IL at AVEN MED — resurfacing matched to your skin to improve tone, texture, and clarity. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Medical-grade chemical peels in Orland Park, IL at AVEN MED — resurfacing matched to your skin to improve tone, texture, and clarity. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "texture", "tone", "acne", "aging", "pigment"],
   treatmentName: "Chemical Peels",
@@ -14,7 +14,7 @@ const chemicalPeels = {
   breadcrumbName: "Chemical Peels in Orland Park",
   procedureName: "Chemical Peel — Medical-Grade Skin Resurfacing",
   procedureDescription:
-    "Medical-grade chemical peels in Orland Park, IL by Alaa Mashal, FNP-BC — controlled resurfacing tailored to skin type and concern to improve tone, texture, and clarity.",
+    "Medical-grade chemical peels in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — controlled resurfacing tailored to skin type and concern to improve tone, texture, and clarity.",
 
   hero: {
     eyebrow: "Skin · Resurfacing",
@@ -40,7 +40,7 @@ const chemicalPeels = {
     body:
       "From there we match the peel — its type and strength — to your skin and goals, and we build it into a plan rather than a single dramatic treatment. Restraint and skin health come first.",
     practitionerLine:
-      "Your treatment is performed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — after an assessment.",
+      "Your treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — after an assessment.",
   },
 
   treats: {
@@ -116,7 +116,7 @@ const chemicalPeels = {
     { q: "Can I wear makeup afterward?", a: "This depends on the peel. For lighter peels, makeup is often fine within a day; deeper peels require more recovery before makeup. We provide specific guidance for your treatment." },
     { q: "Why is sun protection so important after a peel?", a: "Freshly resurfaced skin is more vulnerable to the sun, and sun exposure can undo results or cause pigment change. Diligent daily SPF is essential during recovery and beyond." },
     { q: "Can a peel be combined with other treatments?", a: "Yes. Peels are often one part of a broader skin plan alongside microneedling or medical-grade skincare, sequenced thoughtfully during your assessment." },
-    { q: "Who performs peels at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder of AVEN MED — after an assessment of your skin and history." },
+    { q: "Who performs peels at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder of AVEN MED — after an assessment of your skin and history." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

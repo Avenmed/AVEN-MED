@@ -6,7 +6,7 @@ const masseter = {
   priority: 0.9,
   seo: {
     title: "Masseter Botox in Orland Park, IL — Jaw Slimming & Clenching | AVEN MED",
-    description: "Masseter Botox in Orland Park, IL at AVEN MED — neuromodulator treatment that may slim a strong jawline and ease clenching for appropriately selected patients. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Masseter Botox in Orland Park, IL at AVEN MED — neuromodulator treatment that may slim a strong jawline and ease clenching for appropriately selected patients. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Masseter Botox",
   treatmentShort: "Masseter Botox",
@@ -14,7 +14,7 @@ const masseter = {
   breadcrumbName: "Masseter Botox in Orland Park",
   procedureName: "Masseter Botox — Neuromodulator Jaw Treatment",
   procedureDescription:
-    "Masseter (jaw muscle) neuromodulator treatment in Orland Park, IL by Alaa Mashal, FNP-BC. May soften a strong jawline and ease clenching for appropriately selected patients following an individualized assessment.",
+    "Masseter (jaw muscle) neuromodulator treatment in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC. May soften a strong jawline and ease clenching for appropriately selected patients following an individualized assessment.",
 
   hero: {
     eyebrow: "Aesthetics · Neuromodulators",
@@ -40,7 +40,7 @@ const masseter = {
     body:
       "From there we plan conservatively. Whether your goal is a softer jawline, relief from clenching, or both, we map the muscle and dose accordingly — and results and suitability vary from patient to patient.",
     practitionerLine:
-      "You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {
@@ -87,7 +87,7 @@ const masseter = {
     { q: "Will my smile or chewing be affected?", a: "When dosed and placed appropriately, masseter treatment is intended to relax the muscle without impairing normal chewing or expression. Conservative, individualized dosing is central to how we plan it." },
     { q: "Is masseter Botox the same as TMJ Botox?", a: "They overlap. Both can involve the jaw muscles, but 'masseter Botox' usually refers to the cosmetic and clenching-focused use, while TMJ-focused treatment is symptom-directed and considered only for selected patients after an individualized medical assessment." },
     { q: "Can masseter Botox be combined with other treatments?", a: "Yes. It is often planned alongside jawline or chin filler to both slim and define the lower face, all sequenced during your assessment." },
-    { q: "Who performs masseter Botox at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs masseter Botox at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

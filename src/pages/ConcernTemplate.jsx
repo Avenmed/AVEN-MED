@@ -252,7 +252,7 @@ const ConcernTemplate = ({ data, navigate }) => {
                 tier="Quick AVEN Assessment"
                 price="$50"
                 subtitle="focused visit"
-                blurb="A focused consultation with Alaa Mashal, FNP-BC — an expert read on your skin and a clear first recommendation."
+                blurb="A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on your skin and a clear first recommendation."
                 includes={["Aura Skin Analysis", "Focused Evaluation", "Personalized Recommendations"]}
               />
             </Reveal>

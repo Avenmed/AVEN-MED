@@ -7,7 +7,7 @@ const medicalGradeSkincare = {
   changefreq: "monthly",
   seo: {
     title: "Medical-Grade Skincare in Orland Park, IL — Personalized Routines | AVEN MED",
-    description: "Medical-grade skincare in Orland Park, IL at AVEN MED — professionally selected, personalized routines that protect and extend your in-office results. Led by Alaa Mashal, FNP-BC. Every routine begins with the AVEN Assessment.",
+    description: "Medical-grade skincare in Orland Park, IL at AVEN MED — professionally selected, personalized routines that protect and extend your in-office results. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every routine begins with the AVEN Assessment.",
   },
   tags: ["skin", "skincare", "maintenance"],
   treatmentName: "Medical-Grade Skincare",
@@ -15,7 +15,7 @@ const medicalGradeSkincare = {
   breadcrumbName: "Medical-Grade Skincare in Orland Park",
   procedureName: "Medical-Grade Skincare — Personalized Professional Routines",
   procedureDescription:
-    "Personalized medical-grade skincare in Orland Park, IL guided by Alaa Mashal, FNP-BC — professionally selected products and routines that support skin health and extend in-office results.",
+    "Personalized medical-grade skincare in Orland Park, IL guided by Alaa Mashal, MSN, APRN, FNP-BC — professionally selected products and routines that support skin health and extend in-office results.",
 
   hero: {
     eyebrow: "Skin · Daily Care",
@@ -41,7 +41,7 @@ const medicalGradeSkincare = {
     body:
       "From there we build a routine that's effective but realistic — one you'll actually follow — and we adjust it as your skin and your treatment plan evolve. Fewer, better-chosen products beat a crowded shelf.",
     practitionerLine:
-      "Your routine is guided by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — as part of your overall plan.",
+      "Your routine is guided by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — as part of your overall plan.",
   },
 
   treats: {

@@ -7,7 +7,7 @@ const whatToExpect = {
   changefreq: "monthly",
   seo: {
     title: "What to Expect at Your AVEN Assessment — Orland Park, IL | AVEN MED",
-    description: "What to expect at your AVEN Assessment in Orland Park, IL — from before your visit through meeting Alaa Mashal, FNP-BC, your consultation and evaluation, to leaving with a personalized plan. A calm, unhurried, no-pressure experience.",
+    description: "What to expect at your AVEN Assessment in Orland Park, IL — from before your visit through meeting Alaa Mashal, MSN, APRN, FNP-BC, your consultation and evaluation, to leaving with a personalized plan. A calm, unhurried, no-pressure experience.",
   },
   tags: ["assessment", "experience"],
   hub: { order: 40, blurb: "A step-by-step walkthrough of your visit — so you know exactly what to expect." },
@@ -16,7 +16,7 @@ const whatToExpect = {
   breadcrumbName: "What to Expect",
   procedureName: "The AVEN Assessment — What to Expect",
   procedureDescription:
-    "A step-by-step overview of the AVEN Assessment experience in Orland Park, IL — from preparation through meeting Alaa Mashal, FNP-BC, consultation, evaluation, and leaving with a personalized plan.",
+    "A step-by-step overview of the AVEN Assessment experience in Orland Park, IL — from preparation through meeting Alaa Mashal, MSN, APRN, FNP-BC, consultation, evaluation, and leaving with a personalized plan.",
   faqHeading: "Your visit, answered.",
 
   hero: {
@@ -41,7 +41,7 @@ const whatToExpect = {
     steps: [
       { label: "Before Your Visit", body: "There's little you need to do. It helps to jot down your goals and questions, and to bring a list of any medications or supplements you take. Come as you are." },
       { label: "Arrival", body: "You're welcomed into a calm, private space. There's no crowded waiting room and no rush — the visit is yours." },
-      { label: "Meeting Your Provider", body: "You meet Alaa Mashal, FNP-BC, the founder and lead practitioner. The same person who assesses you is the person who'll care for you." },
+      { label: "Meeting Your Provider", body: "You meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and lead practitioner. The same person who assesses you is the person who'll care for you." },
       { label: "The Consultation", body: "We start by listening — what's bringing you in, what you'd like to change or maintain, and what matters most to you. This is the heart of the visit." },
       { label: "Evaluation", body: "Depending on your goals, this may include a review of your history, an Aura skin analysis, or a considered look at your facial anatomy or health — always explained as we go." },
       { label: "Your Recommendations", body: "We talk through your options honestly — what may help, what to prioritize, what can wait, and the alternatives — so the plan reflects you, not a template." },
@@ -67,7 +67,7 @@ const whatToExpect = {
 
   crossLinksIntro: "Ready to begin, or want to understand your options first?",
   crossLinks: [
-    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "Get to know Alaa Mashal, FNP-BC before your visit." },
+    { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "Get to know Alaa Mashal, MSN, APRN, FNP-BC before your visit." },
     { label: "Aesthetics", path: "/aesthetics", note: "Explore considered aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Explore prevention-first wellness care." },
   ],

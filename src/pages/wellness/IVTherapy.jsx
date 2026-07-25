@@ -7,7 +7,7 @@ const ivTherapy = {
   changefreq: "monthly",
   seo: {
     title: "IV Therapy in Orland Park, IL — Custom Infusions | AVEN MED",
-    description: "IV therapy in Orland Park, IL at AVEN MED — custom-formulated infusions for hydration, recovery, energy, and wellness support, delivered under medical oversight. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "IV therapy in Orland Park, IL at AVEN MED — custom-formulated infusions for hydration, recovery, energy, and wellness support, delivered under medical oversight. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["iv", "hydration", "recovery", "energy", "wellness"],
   serviceName: "IV Therapy",
@@ -16,7 +16,7 @@ const ivTherapy = {
   hub: { order: 20, blurb: "Custom-formulated infusions for recovery, immunity, and performance." },
   procedureName: "IV Therapy — Custom Intravenous Infusions",
   procedureDescription:
-    "Custom-formulated IV therapy in Orland Park, IL by Alaa Mashal, FNP-BC — intravenous hydration and micronutrient infusions for recovery, energy, and wellness support, provided under medical evaluation and oversight.",
+    "Custom-formulated IV therapy in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — intravenous hydration and micronutrient infusions for recovery, energy, and wellness support, provided under medical evaluation and oversight.",
 
   hero: {
     eyebrow: "Wellness · Infusions",
@@ -55,7 +55,7 @@ const ivTherapy = {
     headline: <>A medical treatment, treated <em>seriously.</em></>,
     body: [
       "IV therapy is safe for most healthy adults when done properly, but it isn't right for everyone. Certain heart, kidney, or other medical conditions, some medications, and pregnancy can make infusions inappropriate — which is exactly why we evaluate before we ever place an IV.",
-      "Every infusion at AVEN is reviewed and overseen by Alaa Mashal, FNP-BC, and administered with proper technique and monitoring. Minor effects like a cool sensation, mild bruising at the site, or a vitamin taste can occur; we watch for anything more and keep the visit comfortable and controlled.",
+      "Every infusion at AVEN is reviewed and overseen by Alaa Mashal, MSN, APRN, FNP-BC, and administered with proper technique and monitoring. Minor effects like a cool sensation, mild bruising at the site, or a vitamin taste can occur; we watch for anything more and keep the visit comfortable and controlled.",
       "We also won't offer an infusion we don't think you need. If hydration, rest, or a conversation with your physician is the better answer, we'll say so.",
     ],
     note: "Nothing here is a diagnosis or a promise — appropriateness is determined only through a medical evaluation.",

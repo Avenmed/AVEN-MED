@@ -6,7 +6,7 @@ const skinRejuvenation = {
   priority: 0.9,
   seo: {
     title: "Skin Rejuvenation in Orland Park, IL — Personalized Skin Plans | AVEN MED",
-    description: "Skin rejuvenation in Orland Park, IL at AVEN MED — a personalized plan combining medical-grade treatments to improve skin quality, texture, and tone over time. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Skin rejuvenation in Orland Park, IL at AVEN MED — a personalized plan combining medical-grade treatments to improve skin quality, texture, and tone over time. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "texture", "tone", "collagen", "aging"],
   treatmentName: "Skin Rejuvenation",
@@ -14,7 +14,7 @@ const skinRejuvenation = {
   breadcrumbName: "Skin Rejuvenation in Orland Park",
   procedureName: "Skin Rejuvenation — Personalized Skin-Health Plan",
   procedureDescription:
-    "Personalized skin rejuvenation in Orland Park, IL by Alaa Mashal, FNP-BC — a considered plan combining medical-grade treatments to improve skin texture, tone, and overall quality over time.",
+    "Personalized skin rejuvenation in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — a considered plan combining medical-grade treatments to improve skin texture, tone, and overall quality over time.",
 
   hero: {
     eyebrow: "Skin · Rejuvenation",
@@ -40,7 +40,7 @@ const skinRejuvenation = {
     body:
       "From there we design a considered pathway — the treatments, the order, the pace, and the skincare that supports it — as a long-term skin-health strategy rather than a one-off.",
     practitionerLine:
-      "Your care is led by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — from assessment through every step.",
+      "Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — from assessment through every step.",
   },
 
   treats: {

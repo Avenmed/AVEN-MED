@@ -230,7 +230,7 @@ const ConcernsPage = ({ navigate }) => {
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
-            <Ph label="Alaa Mashal, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
               <Video src="assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
@@ -240,7 +240,7 @@ const ConcernsPage = ({ navigate }) => {
               One practitioner, <em>always.</em>
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
-              You'll be cared for by Alaa Mashal, FNP-BC — founder and lead practitioner of
+              You'll be cared for by Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of
               AVEN MED. The person who reads your concern is the person who plans and
               delivers your care.
             </p>

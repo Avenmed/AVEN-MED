@@ -7,7 +7,7 @@ const glp1Therapy = {
   changefreq: "monthly",
   seo: {
     title: "GLP-1 Therapy in Orland Park, IL — Medically Monitored | AVEN MED",
-    description: "GLP-1 therapy in Orland Park, IL at AVEN MED — semaglutide and tirzepatide prescribed and monitored as one part of a physician-directed weight-management program, never in isolation. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "GLP-1 therapy in Orland Park, IL at AVEN MED — semaglutide and tirzepatide prescribed and monitored as one part of a physician-directed weight-management program, never in isolation. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["glp-1", "weight", "metabolic", "medication", "wellness"],
   serviceName: "GLP-1 Therapy",
@@ -16,7 +16,7 @@ const glp1Therapy = {
   hub: { order: 40, blurb: "Dedicated, medically monitored GLP-1 care for appropriate candidates." },
   procedureName: "GLP-1 Therapy — Medically Monitored Medication",
   procedureDescription:
-    "GLP-1 therapy in Orland Park, IL by Alaa Mashal, FNP-BC — semaglutide or tirzepatide, prescribed and monitored as one component of a physician-directed medical weight-management program.",
+    "GLP-1 therapy in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — semaglutide or tirzepatide, prescribed and monitored as one component of a physician-directed medical weight-management program.",
 
   hero: {
     eyebrow: "Wellness · Metabolic Health",
@@ -114,7 +114,7 @@ const glp1Therapy = {
     { q: "Do I take it forever?", a: "Not necessarily. Duration is individualized, and we plan deliberately around how long to continue and whether to adjust or taper, rather than defaulting to indefinite use. Building sustainable habits alongside the medication is what supports results if it's later reduced." },
     { q: "Will I regain weight if I stop?", a: "Weight can return if a medication simply stops without a plan, which is exactly why maintenance is built into the program from the start. We focus on the habits that carry results forward, and any tapering is planned with your practitioner." },
     { q: "Are GLP-1 medications safe?", a: "They're well studied and, for appropriate patients, generally well tolerated — but they carry potential risks and aren't right for everyone. That's why they're prescribed and monitored medically rather than obtained without oversight." },
-    { q: "Who prescribes and oversees the medication?", a: "Your care is directed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — from evaluation through ongoing monitoring and follow-up." },
+    { q: "Who prescribes and oversees the medication?", a: "Your care is directed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — from evaluation through ongoing monitoring and follow-up." },
     { q: "Why does it start with an assessment?", a: "Because whether a GLP-1 is safe and appropriate for you is an individual medical decision. An assessment lets us evaluate your health and goals and, if suitable, integrate the medication into a proper program." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],

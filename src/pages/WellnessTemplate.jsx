@@ -301,7 +301,7 @@ const WellnessTemplate = ({ data, navigate }) => {
                 tier="Quick AVEN Assessment"
                 price="$50"
                 subtitle="focused visit"
-                blurb="A focused consultation with Alaa Mashal, FNP-BC — an initial review of your goals and health, and a clear first recommendation."
+                blurb="A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an initial review of your goals and health, and a clear first recommendation."
                 includes={["Goal & History Review", "Focused Evaluation", "Personalized Recommendations"]}
               />
             </Reveal>

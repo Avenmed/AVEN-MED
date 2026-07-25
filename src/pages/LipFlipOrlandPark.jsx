@@ -6,7 +6,7 @@ const lipFlip = {
   priority: 0.9,
   seo: {
     title: "Lip Flip in Orland Park, IL — Subtle Upper-Lip Enhancement | AVEN MED",
-    description: "A lip flip in Orland Park, IL at AVEN MED — a few units of neuromodulator that subtly reveal more of the upper lip, with no filler. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "A lip flip in Orland Park, IL at AVEN MED — a few units of neuromodulator that subtly reveal more of the upper lip, with no filler. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Lip Flip",
   treatmentShort: "Lip Flip",
@@ -14,7 +14,7 @@ const lipFlip = {
   breadcrumbName: "Lip Flip in Orland Park",
   procedureName: "Lip Flip — Neuromodulator Upper-Lip Treatment",
   procedureDescription:
-    "A lip flip in Orland Park, IL by Alaa Mashal, FNP-BC — a few units of neuromodulator along the upper lip that gently everts it for a subtle, natural enhancement without filler.",
+    "A lip flip in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — a few units of neuromodulator along the upper lip that gently everts it for a subtle, natural enhancement without filler.",
 
   hero: {
     eyebrow: "Aesthetics · Neuromodulators",
@@ -40,7 +40,7 @@ const lipFlip = {
     body:
       "From there we place just a few units with intention. The goal is a soft, natural improvement — never a change to how your mouth moves or speaks. If filler would serve your goal better, we'll say so.",
     practitionerLine:
-      "You will only ever be treated by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {
@@ -87,7 +87,7 @@ const lipFlip = {
     { q: "Can I combine a lip flip with lip filler?", a: "Yes. For some lips, a small lip flip paired with conservative filler gives the most balanced, natural result. We plan the combination during your assessment based on your anatomy and goals." },
     { q: "Is a lip flip a good first step if I've never had lip treatment?", a: "It can be. A lip flip is subtle, temporary, and adds nothing to the lip, which makes it a low-commitment way to explore a small change before considering filler." },
     { q: "Is there any downtime?", a: "Essentially none. You can return to your day immediately. We simply ask that you avoid pressing on the area and follow the same short aftercare as other neuromodulator treatments." },
-    { q: "Who performs the lip flip at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs the lip flip at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

@@ -7,7 +7,7 @@ const sculptra = {
   priority: 0.9,
   seo: {
     title: "Sculptra® in Orland Park, IL — Collagen-Stimulating Injectable | AVEN MED",
-    description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Sculptra®",
   treatmentShort: "Sculptra",
@@ -15,7 +15,7 @@ const sculptra = {
   breadcrumbName: "Sculptra in Orland Park",
   procedureName: "Sculptra — Poly-L-Lactic Acid Collagen Stimulator",
   procedureDescription:
-    "Sculptra (poly-L-lactic acid) collagen-stimulating injectable in Orland Park, IL, performed by Alaa Mashal, FNP-BC. A gradual, planned approach to facial structure, subtle volume, and balance.",
+    "Sculptra (poly-L-lactic acid) collagen-stimulating injectable in Orland Park, IL, performed by Alaa Mashal, MSN, APRN, FNP-BC. A gradual, planned approach to facial structure, subtle volume, and balance.",
 
   hero: {
     eyebrow: "Aesthetics · Biostimulators",
@@ -41,7 +41,7 @@ const sculptra = {
     body:
       "From there we plan conservatively — the areas, the number of sessions, and the pace — so change arrives gradually and looks natural. The aim is that you simply look rested and like yourself, not treated.",
     practitionerLine:
-      "Your treatment is performed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
+      "Your treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
 
   treats: {

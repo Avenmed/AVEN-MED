@@ -6,7 +6,7 @@ const hyperhidrosis = {
   priority: 0.9,
   seo: {
     title: "Hyperhidrosis Treatment in Orland Park, IL — Excessive Sweating | AVEN MED",
-    description: "Neuromodulator treatment for excessive sweating (hyperhidrosis) in Orland Park, IL at AVEN MED — may reduce underarm and other focal sweating for appropriate candidates. Led by Alaa Mashal, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "Neuromodulator treatment for excessive sweating (hyperhidrosis) in Orland Park, IL at AVEN MED — may reduce underarm and other focal sweating for appropriate candidates. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Hyperhidrosis Treatment",
   treatmentShort: "Hyperhidrosis Treatment",
@@ -14,7 +14,7 @@ const hyperhidrosis = {
   breadcrumbName: "Hyperhidrosis Treatment in Orland Park",
   procedureName: "Hyperhidrosis Treatment — Neuromodulator for Excessive Sweating",
   procedureDescription:
-    "Neuromodulator treatment for focal hyperhidrosis (excessive sweating) in Orland Park, IL by Alaa Mashal, FNP-BC — may reduce underarm and other focal sweating for appropriate candidates following an assessment.",
+    "Neuromodulator treatment for focal hyperhidrosis (excessive sweating) in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — may reduce underarm and other focal sweating for appropriate candidates following an assessment.",
 
   hero: {
     eyebrow: "Aesthetics · Neuromodulators",
@@ -40,7 +40,7 @@ const hyperhidrosis = {
     body:
       "From there we plan conservatively and focally. Neuromodulator treatment may reduce sweating in the treated area for appropriate candidates — results vary, and part of our role is making sure it's the right step for you.",
     practitionerLine:
-      "Your treatment is performed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — after an assessment.",
+      "Your treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — after an assessment.",
   },
 
   treats: {
@@ -87,7 +87,7 @@ const hyperhidrosis = {
     { q: "Should I try antiperspirants first?", a: "Often, yes. Clinical-strength antiperspirants are a reasonable first approach and are enough for many people. Neuromodulator treatment is typically considered when topicals don't provide adequate relief." },
     { q: "Is there downtime?", a: "Minimal. Most patients return to normal activities the same day. We'll provide simple aftercare, including a short period of avoiding heat and strenuous exercise." },
     { q: "Could my sweating have another cause?", a: "Sometimes excessive sweating is related to another underlying factor. Part of a responsible assessment is considering whether further evaluation is appropriate before treatment." },
-    { q: "Who performs the treatment at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
+    { q: "Who performs the treatment at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

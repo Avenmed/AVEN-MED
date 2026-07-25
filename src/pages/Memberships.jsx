@@ -262,7 +262,7 @@ const MembershipsPage = ({ navigate }) => {
                     descriptor: "A full review at the end of your pathway comparing your baseline to your progress and planning your next chapter."
                   },
                   "Saturday clinic access",
-                  "Dedicated Concierge Support — a direct line to your clinical lead, Alaa Mashal, FNP-BC",
+                  "Dedicated Concierge Support — a direct line to your clinical lead, Alaa Mashal, MSN, APRN, FNP-BC",
                   "Early access to new treatments and clinic technology",
                   {
                     primary: "The AVEN Birthday.",
@@ -404,7 +404,7 @@ const MembershipsPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
-            <Ph label="Alaa Mashal, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
               <Video src="assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
@@ -415,7 +415,7 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               A membership is a relationship with a person, not a plan. That person is
-              Alaa Mashal, FNP-BC — founder and lead practitioner of AVEN MED — and
+              Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of AVEN MED — and
               Signature members have a direct line to her.
             </p>
             <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">

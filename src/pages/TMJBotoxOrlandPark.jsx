@@ -9,7 +9,7 @@ const tmj = {
   priority: 0.9,
   seo: {
     title: "TMJ Botox in Orland Park, IL — Jaw-Muscle Tension | AVEN MED",
-    description: "TMJ-focused Botox in Orland Park, IL at AVEN MED — a treatment that may be appropriate for selected patients with clenching-related jaw-muscle tension, following an individualized medical assessment. Led by Alaa Mashal, FNP-BC.",
+    description: "TMJ-focused Botox in Orland Park, IL at AVEN MED — a treatment that may be appropriate for selected patients with clenching-related jaw-muscle tension, following an individualized medical assessment. Led by Alaa Mashal, MSN, APRN, FNP-BC.",
   },
   treatmentName: "TMJ Botox",
   treatmentShort: "TMJ Botox",
@@ -17,7 +17,7 @@ const tmj = {
   breadcrumbName: "TMJ Botox in Orland Park",
   procedureName: "TMJ Botox — Neuromodulator for Jaw-Muscle Tension",
   procedureDescription:
-    "Neuromodulator treatment of the jaw muscles in Orland Park, IL by Alaa Mashal, FNP-BC — may be appropriate for selected patients with clenching-related jaw-muscle tension, following an individualized medical assessment.",
+    "Neuromodulator treatment of the jaw muscles in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — may be appropriate for selected patients with clenching-related jaw-muscle tension, following an individualized medical assessment.",
 
   hero: {
     eyebrow: "Aesthetics · Neuromodulators",
@@ -43,7 +43,7 @@ const tmj = {
     body:
       "This treatment targets muscle-related tension — it is not a cure for the temporomandibular joint itself, and it is often best used alongside dental or medical care rather than in place of it. If it isn't right for you, we'll tell you.",
     practitionerLine:
-      "Any treatment is performed by Alaa Mashal, FNP-BC — a board-certified Family Nurse Practitioner — after an individualized assessment.",
+      "Any treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner — after an individualized assessment.",
   },
 
   treats: {
