@@ -313,7 +313,8 @@ const MembershipsPage = ({ navigate }) => {
               ["Saturday clinic access", "Included", "Included"],
               ["Priority booking", "48 hours", "Concierge line"],
               ["Pathway review", "Quarterly", "Quarterly + on-demand"],
-              ["Early access · new technology", "—", "First access"]
+              ["Early access · new technology", "—", "First access"],
+              ["The AVEN Birthday", "—", "Included"]
             ].map(([k, e, el], i, arr) => (
               <div key={k}
                 style={{
