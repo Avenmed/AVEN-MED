@@ -267,6 +267,35 @@ const AestheticsPage = ({ navigate }) => {
         </div>
       </section>
 
+      {/* 6b — THE AVEN BRIDAL JOURNEY (featured) */}
+      <section className="section">
+        <div className="container">
+          <Reveal>
+            <div style={{ padding: "clamp(40px, 6vw, 72px)", border: "1px solid var(--gold-soft)", background: "var(--surface)", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+              <div>
+                <Eyebrow>A Signature Experience</Eyebrow>
+                <h2 className="display" style={{ fontSize: "clamp(32px, 4.2vw, 56px)", margin: "18px 0 20px", maxWidth: "16ch", fontWeight: 300 }}>
+                  The AVEN <em>Bridal Journey.</em>
+                </h2>
+                <p className="body" style={{ marginBottom: 26, maxWidth: "48ch" }}>
+                  For brides, a personalized path to your wedding day — aesthetics, skin health,
+                  and wellness, planned around your date and shaped by your AVEN Assessment.
+                </p>
+                <a href="/bridal-journey" onClick={(e) => { e.preventDefault(); navigate("/bridal-journey"); }} className="link">
+                  <span>Explore the Bridal Journey</span><span className="arrow"></span>
+                </a>
+              </div>
+              <div style={{ textAlign: "center" }}>
+                <Logo size={44} style={{ opacity: 0.85 }} />
+                <div className="display italic" style={{ fontSize: "clamp(18px, 2.2vw, 24px)", color: "var(--muted)", marginTop: 20, maxWidth: "18ch", marginInline: "auto" }}>
+                  Begin early. Arrive as yourself.
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* 7 — MEET YOUR PROVIDER */}
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>

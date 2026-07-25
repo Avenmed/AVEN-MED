@@ -12,6 +12,10 @@
 import React from 'react';
 import { Eyebrow, Logo, Reveal, DividerMark, HeroBg, AssessmentCTA } from '../components.jsx';
 import { CLINIC, DEFAULT_AREAS } from '../content/clinic.js';
+// Bridal registry is the single source of truth for which services are commonly
+// part of a bridal plan — so the cross-link surfaces on exactly those pages with
+// no per-page data edits and no duplicated list.
+import { BRIDAL_SERVICE_SLUGS } from '../content/bridal/index.js';
 
 const BASE_URL = CLINIC.url;
 
@@ -383,6 +387,27 @@ const TreatmentTemplate = ({ data, navigate }) => {
           </div>
         </div>
       </section>
+
+      {/* 8b — BRIDAL JOURNEY cross-link (only for bridal-relevant services) */}
+      {BRIDAL_SERVICE_SLUGS.includes(data.slug) && (
+        <section className="section" style={{ textAlign: "center" }}>
+          <div className="container" style={{ maxWidth: 720 }}>
+            <Reveal>
+              <Eyebrow>Planning a Wedding?</Eyebrow>
+              <h2 className="display" style={{ fontSize: "clamp(28px, 3.6vw, 46px)", margin: "18px auto 18px", maxWidth: "22ch", fontWeight: 300 }}>
+                See how this fits into <em>The AVEN Bridal Journey.</em>
+              </h2>
+              <p className="body" style={{ margin: "0 auto 28px", maxWidth: "52ch" }}>
+                A personalized, consultation-first way to plan your care in the months before
+                your wedding — coordinated around your date.
+              </p>
+              <a href="/bridal-journey" onClick={(e) => { e.preventDefault(); navigate("/bridal-journey"); }} className="link">
+                <span>Explore the Bridal Journey</span><span className="arrow"></span>
+              </a>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       <DividerMark />
 

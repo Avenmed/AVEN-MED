@@ -157,6 +157,25 @@ const Home = ({ navigate }) => {
         </div>
       </section>
 
+      {/* SIGNATURE EXPERIENCE — The AVEN Bridal Journey */}
+      <section className="section" style={{ textAlign: "center", background: "var(--bg-1)", padding: "clamp(48px, 7vw, 88px) 0" }}>
+        <div className="container" style={{ maxWidth: 760 }}>
+          <Reveal>
+            <Eyebrow>· A Signature Experience</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "28px auto 18px", maxWidth: "16ch", fontWeight: 300 }}>
+              The AVEN <em>Bridal Journey.</em>
+            </h2>
+            <p className="lede" style={{ maxWidth: "44ch", margin: "0 auto 40px" }}>
+              A considered path to your wedding day — aesthetics, skin, and wellness,
+              planned around your date.
+            </p>
+            <a href="/bridal-journey" onClick={(e) => { e.preventDefault(); navigate("/bridal-journey"); }} className="link">
+              <span>Explore the Bridal Journey</span><span className="arrow"></span>
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CLOSING BAND */}
       <section className="closing-band">
         <Reveal>

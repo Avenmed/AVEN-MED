@@ -154,6 +154,25 @@ const AssessmentPage = ({ navigate }) => {
         </section>
       )}
 
+      {/* PLANNING FOR A WEDDING — Bridal Journey link */}
+      <section className="section" style={{ textAlign: "center" }}>
+        <div className="container" style={{ maxWidth: 680 }}>
+          <Reveal>
+            <Eyebrow>· Planning for a Wedding</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(28px, 3.6vw, 46px)", margin: "18px auto 18px", maxWidth: "22ch", fontWeight: 300 }}>
+              There's a path made <em>for brides.</em>
+            </h2>
+            <p className="body" style={{ margin: "0 auto 26px", maxWidth: "50ch" }}>
+              The AVEN Bridal Journey coordinates your Assessment and care around your
+              wedding date — a personalized plan, begun early.
+            </p>
+            <a href="/bridal-journey" onClick={(e) => { e.preventDefault(); navigate("/bridal-journey"); }} className="link">
+              <span>Explore the Bridal Journey</span><span className="arrow"></span>
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section" style={{ textAlign: "center", background: "var(--bg-1)" }}>
         <div className="container">
