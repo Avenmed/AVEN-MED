@@ -41,16 +41,17 @@ const Brand = ({ onClick }) => (
     style={{ display: "flex", alignItems: "center", gap: 14 }}
     aria-label="AVEN MED home"
   >
-    <Logo size={30} />
+    <Logo size={34} />
     <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
       <span style={{
-        fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
-        textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)"
+        fontFamily: "var(--serif)", fontSize: 19, letterSpacing: "0.42em",
+        textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)",
+        whiteSpace: "nowrap"
       }}>AVEN MED</span>
       <span style={{
         fontFamily: "var(--sans)", fontSize: 8.5, letterSpacing: "0.34em",
         textTransform: "uppercase", fontWeight: 400, color: "var(--gold)",
-        marginTop: 6
+        marginTop: 6, whiteSpace: "nowrap"
       }}>Aesthetics · Wellness</span>
     </span>
   </a>
@@ -62,24 +63,31 @@ const Brand = ({ onClick }) => (
 // below are code-organization only (no visible dividers/labels/dropdowns). If AVEN
 // later launches multiple journeys, the "Signature Programs" group is where a
 // broader "Journeys" item would evolve.
+// Single source of truth for ALL navigation. Array ORDER is the mobile-menu order
+// (unchanged). `tier` drives the DESKTOP two-tier header hierarchy — not every item
+// deserves equal visual weight:
+//   primary  → the core offerings, given prominence in the main bar
+//   utility  → brand / relationship / contact, in the quiet upper utility bar
+//   brand    → Home, represented by the logo (never a text link)
+// The mobile menu still renders every item in this order, so nothing is lost.
 const NAV = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/", tier: "brand" },
   // Brand & Trust
-  { label: "About AVEN", path: "/about" },
-  { label: "Meet Your Provider", path: "/providers" },
+  { label: "About AVEN", path: "/about", tier: "utility" },
+  { label: "Meet Your Provider", path: "/providers", tier: "utility" },
   // Clinical Services
-  { label: "Aesthetics", path: "/aesthetics" },
-  { label: "Wellness", path: "/wellness" },
-  { label: "Family Medicine", path: "/family-medicine" },
+  { label: "Aesthetics", path: "/aesthetics", tier: "primary" },
+  { label: "Wellness", path: "/wellness", tier: "primary" },
+  { label: "Family Medicine", path: "/family-medicine", tier: "primary" },
   // Signature Programs
-  { label: "Bridal Journey", path: "/bridal-journey" },
+  { label: "Bridal Journey", path: "/bridal-journey", tier: "primary" },
   // Patient Journey
-  { label: "AVEN Assessment", path: "/assessment" },
-  { label: "Memberships", path: "/memberships" },
+  { label: "AVEN Assessment", path: "/assessment", tier: "utility" },
+  { label: "Memberships", path: "/memberships", tier: "utility" },
   // Education
-  { label: "Education", path: "/education" },
+  { label: "Education", path: "/education", tier: "utility" },
   // Contact
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/contact", tier: "utility" },
 ];
 
 const Header = ({ route, navigate }) => {
@@ -91,33 +99,56 @@ const Header = ({ route, navigate }) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  const primaryNav = NAV.filter((n) => n.tier === "primary");
+  const utilityNav = NAV.filter((n) => n.tier === "utility");
+
   return (
     <>
       <header className={"hdr" + (scrolled ? " scrolled" : "")}>
-        <Brand onClick={navigate} />
-        <nav>
-          {NAV.map((n) => (
-            <a
-              key={n.path}
-              href={n.path}
-              onClick={(e) => { e.preventDefault(); navigate(n.path); }}
-              className={route === n.path ? "active" : ""}
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <div className="right">
-          <a className="phone" href={`tel:${CLINIC.phoneE164}`} style={{ color: "var(--ivory-soft)" }}>{CLINIC.phoneDisplay}</a>
-          <AssessmentCTA
-            navigate={navigate}
-            className="btn solid hdr-cta"
-            showArrow={false}
-            style={{ height: 38, padding: "0 18px", fontSize: 10 }}
-          />
-          <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu">
-            <span></span><span></span><span></span>
-          </button>
+        {/* Utility tier — quiet secondary wayfinding + contact (wide screens only) */}
+        <div className="hdr-utility">
+          <span className="hdr-util-tag">Orland Park · By Appointment</span>
+          <nav className="hdr-util-nav" aria-label="Secondary">
+            {utilityNav.map((n) => (
+              <a
+                key={n.path}
+                href={n.path}
+                onClick={(e) => { e.preventDefault(); navigate(n.path); }}
+                className={route === n.path ? "active" : ""}
+              >
+                {n.label}
+              </a>
+            ))}
+            <a className="phone" href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phoneDisplay}</a>
+          </nav>
+        </div>
+
+        {/* Main tier — logo anchor · core offerings · one CTA */}
+        <div className="hdr-main">
+          <Brand onClick={navigate} />
+          <nav className="hdr-primary" aria-label="Primary">
+            {primaryNav.map((n) => (
+              <a
+                key={n.path}
+                href={n.path}
+                onClick={(e) => { e.preventDefault(); navigate(n.path); }}
+                className={route === n.path ? "active" : ""}
+              >
+                {n.label}
+              </a>
+            ))}
+          </nav>
+          <div className="hdr-actions">
+            <AssessmentCTA
+              navigate={navigate}
+              className="btn solid hdr-cta"
+              showArrow={false}
+              style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
+            />
+            <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </header>
 

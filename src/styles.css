@@ -252,11 +252,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- Header / Nav ---------- */
+/* Two-tier header: a quiet utility strip above a spacious main bar. The point is
+   HIERARCHY, not density — the logo anchors, the core offerings lead, one CTA
+   closes, and secondary wayfinding recedes to the utility strip. */
 .hdr {
   position: fixed; top: var(--announce-h, 0); left: 0; right: 0;
   z-index: 80;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 22px var(--gutter);
+  display: flex; flex-direction: column;
   transition: background 320ms ease, backdrop-filter 320ms ease, border-color 320ms ease;
   border-bottom: 1px solid transparent;
 }
@@ -266,41 +268,63 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   -webkit-backdrop-filter: blur(18px);
   border-bottom-color: var(--hairline);
 }
+
+/* ---- Utility tier (secondary wayfinding + contact) ---- */
+.hdr-utility {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 9px var(--gutter);
+  border-bottom: 1px solid var(--hairline);
+}
+.hdr-util-tag {
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--muted); white-space: nowrap;
+}
+.hdr-util-nav { display: flex; align-items: center; gap: clamp(14px, 1.5vw, 26px); }
+.hdr-util-nav a {
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ivory-soft); white-space: nowrap;
+  padding: 4px 0; transition: color 240ms ease;
+}
+.hdr-util-nav a:hover, .hdr-util-nav a.active { color: var(--ivory); }
+.hdr-util-nav .phone { color: var(--muted); letter-spacing: 0.24em; }
+
+/* ---- Main tier (logo anchor · core offerings · CTA) ---- */
+.hdr-main {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: clamp(24px, 4vw, 72px);
+  padding: 16px var(--gutter);
+}
+/* Brand is the anchor — it never shrinks and never wraps. */
 .hdr .brand {
-  display: flex; align-items: center; gap: 12px;
-  font-family: var(--serif); font-size: 18px; letter-spacing: 0.4em;
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--serif); font-size: 19px; letter-spacing: 0.4em;
   text-transform: uppercase; font-weight: 300;
-  color: var(--ivory);
+  color: var(--ivory); white-space: nowrap;
 }
-.hdr .brand img { width: 22px; height: auto; }
-.hdr nav {
-  /* Responsive gap so the 11-item bar fits standard/smaller laptops without
-     shrinking the font: 36px on wide desktops, tightening down toward 16px as the
-     viewport narrows (the inline nav is hidden below 980px — see below). */
-  display: flex; gap: clamp(16px, 2vw, 36px);
-}
-.hdr nav a {
-  font-family: var(--sans); font-size: 11px; letter-spacing: 0.26em;
-  text-transform: uppercase; color: var(--ivory-soft);
+.hdr .brand img { width: 34px; height: auto; }
+.hdr-primary { display: flex; align-items: center; gap: clamp(22px, 2.6vw, 46px); }
+.hdr-primary a {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--ivory-soft); white-space: nowrap;
   position: relative; padding: 6px 0;
   transition: color 240ms ease;
 }
-.hdr nav a:hover, .hdr nav a.active { color: var(--ivory); }
-.hdr nav a.active::after {
+.hdr-primary a:hover, .hdr-primary a.active { color: var(--ivory); }
+.hdr-primary a.active::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
   height: 1px; background: var(--gold);
 }
-.hdr .right { display: flex; align-items: center; gap: 22px; }
-.hdr .phone { font-size: 11px; letter-spacing: 0.26em; color: var(--ivory-soft); text-transform: uppercase; }
+.hdr-actions { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 
-@media (max-width: 980px) {
-  .hdr nav, .hdr .phone { display: none; }
-}
-/* The header CTA carries the full "Start Your AVEN Assessment" label — it only
-   fits alongside the full nav on wide screens. Below that, the nav/menu (which
-   includes Contact) carries the action, so hide the header CTA to keep the
-   compact header from overflowing. Body CTAs remain everywhere. */
+/* ---- Responsive: utility recedes first, then the primary bar → hamburger ---- */
 @media (max-width: 1200px) {
+  /* Below this width the utility strip recedes; its links live in the footer and
+     the mobile menu. The main bar (logo · offerings · CTA) stays spacious. */
+  .hdr-utility { display: none; }
+}
+@media (max-width: 980px) {
+  .hdr-primary { display: none; }
   .hdr-cta { display: none; }
 }
 
@@ -836,9 +860,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 768px) {
   /* Hero — force intentional line breaks and stack visual beneath */
   .hero .hero-inner { grid-template-columns: 1fr !important; gap: 36px !important; }
-  /* Header — Book CTA stays tappable (44px Apple HIG min) but compact text */
-  .hdr .right .btn { padding: 0 16px !important; font-size: 9px !important; height: 44px !important; letter-spacing: 0.24em !important; }
-  .hdr .phone { display: none; }
+  /* Header CTA is hidden below 980px (hamburger carries the action), so no
+     small-screen override is needed here. */
 }
 
 /* ======================================================
