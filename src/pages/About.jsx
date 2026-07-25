@@ -22,7 +22,7 @@ const AboutPage = ({ navigate }) => {
               <h1 className="display" style={{ fontSize: "clamp(40px, 5.4vw, 78px)", margin: "24px 0 24px", lineHeight: 1.05, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
                 <em>Alaa Mashal,</em><br />MSN, APRN, FNP-BC.
               </h1>
-              <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Lead Practitioner</div>
+              <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Clinical Director</div>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, maxWidth: "56ch" }}>
                 AVEN MED is founded and led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified
                 Family Nurse Practitioner whose practice is built around restraint

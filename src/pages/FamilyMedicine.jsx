@@ -330,7 +330,7 @@ const FamilyMedicinePage = ({ navigate }) => {
               One provider, who knows <em>you.</em>
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
-              Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of
+              Your care is led by Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of
               AVEN MED, and a board-certified Family Nurse Practitioner. The person who
               assesses you is the person who cares for you.
             </p>

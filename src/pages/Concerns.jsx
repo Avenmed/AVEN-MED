@@ -240,7 +240,7 @@ const ConcernsPage = ({ navigate }) => {
               One practitioner, <em>always.</em>
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
-              You'll be cared for by Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of
+              You'll be cared for by Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of
               AVEN MED. The person who reads your concern is the person who plans and
               delivers your care.
             </p>

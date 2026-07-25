@@ -415,7 +415,7 @@ const MembershipsPage = ({ navigate }) => {
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               A membership is a relationship with a person, not a plan. That person is
-              Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of AVEN MED — and
+              Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of AVEN MED — and
               Signature members have a direct line to her.
             </p>
             <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">

@@ -1,7 +1,7 @@
 /* AVEN MED — Provider: Alaa Mashal, MSN, APRN, FNP-BC. Registry data module (provider type).
  *
  * Only established facts are used (name, MSN / APRN / FNP-BC — board-certified Family Nurse
- * Practitioner, founder & lead practitioner, AVEN's only injector, she/her, and
+ * Practitioner, founder & clinical director, AVEN's only injector, she/her, and
  * the practice's actual service areas). Education, licensure specifics, additional
  * certifications, memberships, languages, and years of experience are NOT invented
  * — they are flagged via credentials.note and left for the owner to provide. */
@@ -13,15 +13,15 @@ const alaaMashal = {
   changefreq: "monthly",
   seo: {
     title: "Meet Alaa Mashal, MSN, APRN, FNP-BC — Founder of AVEN MED, Orland Park IL",
-    description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and lead practitioner of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner who practices with restraint, continuity, and honest, patient-centered care across aesthetics, wellness, and family medicine.",
+    description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner who practices with restraint, continuity, and honest, patient-centered care across aesthetics, wellness, and family medicine.",
   },
   tags: ["provider", "founder"],
-  hub: { order: 10, blurb: "Founder and lead practitioner of AVEN MED — board-certified Family Nurse Practitioner." },
+  hub: { order: 10, blurb: "Founder and clinical director of AVEN MED — board-certified Family Nurse Practitioner." },
   serviceName: "Alaa Mashal, MSN, APRN, FNP-BC",
   serviceShort: "Alaa Mashal",
   breadcrumbName: "Alaa Mashal, MSN, APRN, FNP-BC",
   personName: "Alaa Mashal, MSN, APRN, FNP-BC",
-  jobTitle: "Founder & Lead Practitioner, AVEN MED",
+  jobTitle: "Founder & Clinical Director, AVEN MED",
   faqHeading: "Getting to know Alaa.",
 
   portrait: {
@@ -34,7 +34,7 @@ const alaaMashal = {
   hero: {
     eyebrow: "Meet Your Provider",
     headline: <>Alaa Mashal, <em>MSN, APRN, FNP-BC.</em></>,
-    role: "Founder · Lead Practitioner",
+    role: "Founder · Clinical Director",
     subheadline:
       "Board-certified Family Nurse Practitioner and founder of AVEN MED — the person who will listen to you, plan with you, and care for you at every visit.",
   },
@@ -62,7 +62,7 @@ const alaaMashal = {
     eyebrow: "Areas of Focus",
     headline: <>Where Alaa's care is <em>concentrated.</em></>,
     intro:
-      "As AVEN's lead practitioner, Alaa's work spans the full practice. Her areas of focus include:",
+      "As AVEN's clinical director, Alaa's work spans the full practice. Her areas of focus include:",
     items: [
       { name: "Injectable Aesthetics", note: "Neuromodulators, dermal fillers, and biostimulators — placed conservatively and mapped to your anatomy." },
       { name: "Facial Balancing", note: "A considered, whole-face approach that prioritizes proportion over volume." },
@@ -78,7 +78,7 @@ const alaaMashal = {
     headline: <>Qualifications & <em>training.</em></>,
     items: [
       { name: "Education & Certification", note: "Master of Science in Nursing (MSN); Advanced Practice Registered Nurse (APRN); board-certified Family Nurse Practitioner (FNP-BC)." },
-      { name: "Role at AVEN", note: "Founder and lead practitioner; AVEN's only injector." },
+      { name: "Role at AVEN", note: "Founder and clinical director; AVEN's only injector." },
     ],
     note: "Full details of Alaa's education, licensure, and additional certifications are being finalized and will be published here soon — and you're always welcome to ask about them at your visit.",
   },
@@ -133,8 +133,8 @@ const alaaMashal = {
   ],
 
   faqs: [
-    { q: "Who will I see at AVEN MED?", a: "You'll see Alaa Mashal, MSN, APRN, FNP-BC — the founder and lead practitioner. AVEN is built around continuity, so the person who assesses you is the person who cares for you at every visit." },
-    { q: "What are Alaa's credentials?", a: "Alaa Mashal is a Master of Science in Nursing (MSN), an Advanced Practice Registered Nurse (APRN), and a board-certified Family Nurse Practitioner (FNP-BC). She is the founder and lead practitioner of AVEN MED. You're always welcome to ask more at your visit." },
+    { q: "Who will I see at AVEN MED?", a: "You'll see Alaa Mashal, MSN, APRN, FNP-BC — the founder and clinical director. AVEN is built around continuity, so the person who assesses you is the person who cares for you at every visit." },
+    { q: "What are Alaa's credentials?", a: "Alaa Mashal is a Master of Science in Nursing (MSN), an Advanced Practice Registered Nurse (APRN), and a board-certified Family Nurse Practitioner (FNP-BC). She is the founder and clinical director of AVEN MED. You're always welcome to ask more at your visit." },
     { q: "Does Alaa perform all treatments personally?", a: "Alaa is AVEN's only injector, and she leads care across the practice. Continuity with one trusted provider is central to how AVEN works." },
     { q: "What is Alaa's approach to aesthetics?", a: "Restraint and natural-looking results. The philosophy is conservative planning and facial balance over volume — the aim is that you look like yourself, rested, never overdone." },
     { q: "Do I have to commit to treatment to meet Alaa?", a: "No. Every relationship begins with the AVEN Assessment — a consultation-first visit with no pressure to proceed. You're welcome to meet, ask questions, and decide in your own time." },

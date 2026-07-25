@@ -282,7 +282,7 @@ const AestheticsPage = ({ navigate }) => {
             </h2>
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               Every treatment at AVEN is performed by Alaa Mashal, MSN, APRN, FNP-BC — founder,
-              lead practitioner, and the only injector at the practice. The person who
+              clinical director, and the only injector at the practice. The person who
               assesses you is the person who cares for you.
             </p>
             <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">

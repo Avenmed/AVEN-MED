@@ -45,7 +45,7 @@ const assessmentFAQ = {
     { q: "Do you pressure patients?", a: "No. Consultation-first and no-pressure is genuinely how we practice, not a slogan. We explain your options, answer your questions, and let you decide in your own time. You will never be pushed toward a treatment." },
     { q: "Is the Assessment paid, and is it credited?", a: "Yes. The Assessment is a paid consultation — the Quick AVEN Assessment is $50 and the Comprehensive is $200 — and the fee is credited toward your treatment, so the time you invest moves into your care." },
     { q: "Why is the consultation paid?", a: "Because it's real clinical time and attention. A paid consultation lets the practice slow down and give every patient unhurried focus — and since the fee credits toward treatment, no appointment is wasted." },
-    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and lead practitioner of AVEN MED. The person who assesses you is the person who cares for you — continuity is central to how AVEN works." },
+    { q: "Who will I meet?", a: "You'll meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and clinical director of AVEN MED. The person who assesses you is the person who cares for you — continuity is central to how AVEN works." },
     { q: "What if AVEN isn't the right fit for my concern?", a: "We'll tell you honestly. If something is outside our scope or better served elsewhere — including urgent, emergency, or specialty care — we'll say so and help point you in the right direction." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],

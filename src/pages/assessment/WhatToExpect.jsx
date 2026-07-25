@@ -41,7 +41,7 @@ const whatToExpect = {
     steps: [
       { label: "Before Your Visit", body: "There's little you need to do. It helps to jot down your goals and questions, and to bring a list of any medications or supplements you take. Come as you are." },
       { label: "Arrival", body: "You're welcomed into a calm, private space. There's no crowded waiting room and no rush — the visit is yours." },
-      { label: "Meeting Your Provider", body: "You meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and lead practitioner. The same person who assesses you is the person who'll care for you." },
+      { label: "Meeting Your Provider", body: "You meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and clinical director. The same person who assesses you is the person who'll care for you." },
       { label: "The Consultation", body: "We start by listening — what's bringing you in, what you'd like to change or maintain, and what matters most to you. This is the heart of the visit." },
       { label: "Evaluation", body: "Depending on your goals, this may include a review of your history, an Aura skin analysis, or a considered look at your facial anatomy or health — always explained as we go." },
       { label: "Your Recommendations", body: "We talk through your options honestly — what may help, what to prioritize, what can wait, and the alternatives — so the plan reflects you, not a template." },
