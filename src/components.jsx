@@ -56,16 +56,29 @@ const Brand = ({ onClick }) => (
   </a>
 );
 
+// Single source of truth for BOTH desktop and mobile navigation (order + labels
+// + destinations). Order follows the patient journey — Trust → Services →
+// Signature Experience → Assessment → Membership → Education → Contact. Groups
+// below are code-organization only (no visible dividers/labels/dropdowns). If AVEN
+// later launches multiple journeys, the "Signature Programs" group is where a
+// broader "Journeys" item would evolve.
 const NAV = [
   { label: "Home", path: "/" },
+  // Brand & Trust
   { label: "About AVEN", path: "/about" },
+  { label: "Meet Your Provider", path: "/providers" },
+  // Clinical Services
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
   { label: "Family Medicine", path: "/family-medicine" },
+  // Signature Programs
+  { label: "Bridal Journey", path: "/bridal-journey" },
+  // Patient Journey
   { label: "AVEN Assessment", path: "/assessment" },
-  { label: "Meet Your Provider", path: "/providers" },
-  { label: "Education", path: "/education" },
   { label: "Memberships", path: "/memberships" },
+  // Education
+  { label: "Education", path: "/education" },
+  // Contact
   { label: "Contact", path: "/contact" },
 ];
 

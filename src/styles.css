@@ -274,7 +274,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .hdr .brand img { width: 22px; height: auto; }
 .hdr nav {
-  display: flex; gap: 36px;
+  /* Responsive gap so the 11-item bar fits standard/smaller laptops without
+     shrinking the font: 36px on wide desktops, tightening down toward 16px as the
+     viewport narrows (the inline nav is hidden below 980px — see below). */
+  display: flex; gap: clamp(16px, 2vw, 36px);
 }
 .hdr nav a {
   font-family: var(--sans); font-size: 11px; letter-spacing: 0.26em;
