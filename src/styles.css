@@ -232,28 +232,37 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-bottom-color: var(--hairline);
 }
 
-/* ---- Level 1: utility strip — practice info only, quiet and supportive ---- */
+/* ---- Level 1: utility strip — practice info only; a low, quiet supporting layer.
+   Location (left) · email | phone (right). Shorter than the main bar so it reads
+   as support, not a second navigation. ---- */
 .hdr-utility {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 8px var(--gutter);
+  padding: 6px var(--gutter);
   border-bottom: 1px solid var(--hairline);
 }
-.hdr-util-tag,
-.hdr-util-phone {
-  font-family: var(--sans); font-size: 10px; letter-spacing: 0.26em;
-  text-transform: uppercase; white-space: nowrap;
+.hdr-util-tag {
+  font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--muted); white-space: nowrap;
 }
-.hdr-util-tag { color: var(--muted); }
-.hdr-util-phone { color: var(--ivory-soft); transition: color 240ms ease; }
-.hdr-util-phone:hover { color: var(--ivory); }
+.hdr-util-contact {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.02em;
+  color: var(--ivory-soft); white-space: nowrap;
+}
+.hdr-util-sep { color: var(--muted); opacity: 0.6; }
+.hdr-util-link { color: var(--ivory-soft); transition: color 240ms ease; }
+.hdr-util-link:hover { color: var(--ivory); }
 
-/* ---- Level 2: main navigation — logo anchor (left) · nav + CTA (right) ---- */
+/* ---- Level 2: main navigation — logo (left) · optically centered nav · CTA (right).
+   The nav lives in a flex-1 wrapper so it sits balanced BETWEEN the logo and the
+   CTA, not clustered to the right. Type, tracking, logo, and gaps scale with the
+   viewport: generous on large screens, clean (no wrap/overlap) down to 1280px. ---- */
 .hdr-main {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: clamp(20px, 3vw, 56px);
-  padding: 15px var(--gutter);
+  display: flex; align-items: center;
+  gap: clamp(14px, 1vw, 24px);
+  padding: 16px var(--gutter);
 }
-/* Brand is the anchor — never shrinks, never wraps. */
+/* Brand is the anchor — never shrinks, never wraps; the mark scales with width. */
 .hdr .brand {
   flex-shrink: 0;
   display: flex; align-items: center; gap: 13px;
@@ -261,17 +270,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-transform: uppercase; font-weight: 300;
   color: var(--ivory); white-space: nowrap;
 }
-.hdr .brand img { width: 32px; height: auto; }
-.hdr-right { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 40px); min-width: 0; }
-/* The full 11-item nav. Font, tracking, and gap scale with the viewport so it is
-   generous on large screens and stays clean (no wrap/overlap) down to 1280px. */
+.hdr .brand img { width: clamp(30px, 2.1vw, 38px) !important; height: auto; }
+.hdr-nav-wrap { flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
 .hdr-nav {
   display: flex; align-items: center; flex-wrap: nowrap;
-  gap: clamp(12px, 1.1vw, 20px);
+  gap: clamp(12px, 0.95vw, 20px);
 }
 .hdr-nav a {
-  font-family: var(--sans); font-size: clamp(9px, 0.66vw, 10.5px);
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-soft);
+  font-family: var(--sans); font-size: clamp(9px, 0.7vw, 11px);
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ivory-soft);
   white-space: nowrap; position: relative; padding: 6px 0;
   transition: color 240ms ease;
 }
@@ -283,10 +290,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hdr-actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 
 /* ---- Responsive: keep it calm; never let items crowd ---- */
-@media (max-width: 1680px) {
-  /* The long CTA needs a wide canvas to sit beside all eleven items; below this it
-     recedes — the action lives in the Contact nav item and in body CTAs on every
-     page. */
+@media (max-width: 1800px) {
+  /* The long CTA needs a wide canvas to sit beside the (now larger) eleven-item
+     nav; below this it recedes — the action stays in the Contact nav item and in
+     the body CTAs on every page. */
   .hdr-cta { display: none; }
 }
 @media (max-width: 1200px) {

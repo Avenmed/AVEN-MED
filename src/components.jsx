@@ -41,10 +41,10 @@ const Brand = ({ onClick }) => (
     style={{ display: "flex", alignItems: "center", gap: 14 }}
     aria-label="AVEN MED home"
   >
-    <Logo size={34} />
+    <Logo size={36} />
     <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
       <span style={{
-        fontFamily: "var(--serif)", fontSize: 19, letterSpacing: "0.42em",
+        fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",
         textTransform: "uppercase", fontWeight: 300, color: "var(--ivory)",
         whiteSpace: "nowrap"
       }}>AVEN MED</span>
@@ -99,16 +99,20 @@ const Header = ({ route, navigate }) => {
   return (
     <>
       <header className={"hdr" + (scrolled ? " scrolled" : "")}>
-        {/* Level 1 — a quiet utility strip: practice info only, no links. */}
+        {/* Level 1 — a quiet utility strip: practice info only. */}
         <div className="hdr-utility">
           <span className="hdr-util-tag">Orland Park · By Appointment</span>
-          <a className="hdr-util-phone" href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phoneDisplay}</a>
+          <span className="hdr-util-contact">
+            <a className="hdr-util-link" href={`mailto:${CLINIC.email}`}>{CLINIC.email}</a>
+            <span className="hdr-util-sep" aria-hidden="true">|</span>
+            <a className="hdr-util-link" href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phoneDisplay}</a>
+          </span>
         </div>
 
-        {/* Level 2 — the main navigation: logo anchor (left) · nav + CTA (right). */}
+        {/* Level 2 — main navigation: logo (left) · optically centered nav · CTA (right). */}
         <div className="hdr-main">
           <Brand onClick={navigate} />
-          <div className="hdr-right">
+          <div className="hdr-nav-wrap">
             <nav className="hdr-nav" aria-label="Primary">
               {NAV.map((n) => (
                 <a
@@ -121,17 +125,17 @@ const Header = ({ route, navigate }) => {
                 </a>
               ))}
             </nav>
-            <div className="hdr-actions">
-              <AssessmentCTA
-                navigate={navigate}
-                className="btn solid hdr-cta"
-                showArrow={false}
-                style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
-              />
-              <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
-                <span></span><span></span><span></span>
-              </button>
-            </div>
+          </div>
+          <div className="hdr-actions">
+            <AssessmentCTA
+              navigate={navigate}
+              className="btn solid hdr-cta"
+              showArrow={false}
+              style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
+            />
+            <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
+              <span></span><span></span><span></span>
+            </button>
           </div>
         </div>
       </header>
