@@ -308,11 +308,12 @@ const MembershipsPage = ({ navigate }) => {
             {[
               ["Monthly contribution", "$100", "$200"],
               ["Banked toward treatments", "$100 / month", "$200 / month"],
-              ["Skin assessment review", "1–2x / year", "1–2x / year"],
-              ["Annual AVEN Assessment (up to 60 min)", "—", "Included"],
+              ["Skin Progress Review", "1–2x / year", "1–2x / year"],
+              ["Annual Comprehensive AVEN Assessment (60 Minutes)", "—", "Included"],
               ["Saturday clinic access", "Included", "Included"],
-              ["Priority booking", "48 hours", "Concierge line"],
-              ["Pathway review", "Quarterly", "Quarterly + on-demand"],
+              ["Priority Scheduling", "48-hour priority scheduling", "24–36 hour priority scheduling"],
+              ["Dedicated Concierge Support", "—", "Included"],
+              ["Care Plan Review", "Quarterly", "Quarterly + on-demand"],
               ["Early access · new technology", "—", "First access"],
               ["The AVEN Birthday", "—", "Included"]
             ].map(([k, e, el], i, arr) => (
@@ -347,12 +348,11 @@ const MembershipsPage = ({ navigate }) => {
           </Reveal>
           {[
             ["Who benefits most from a membership?", "Patients who see their care as ongoing — who value continuity with one practitioner and would rather maintain results steadily than chase corrections. Not everyone needs a membership, and we'll always be honest about that."],
-            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward treatments at AVEN. Banked credit applies to treatments only — not to wellness packages or retail products. The benefits above (priority booking, Saturday access, skin assessment review) are included on top."],
-            ["How does the AVEN Assessment fit in?", "Every plan at AVEN begins with the AVEN Assessment, and the Signature membership includes one full annual Assessment (up to 60 minutes) — a chance to compare your baseline to your progress and plan the next chapter."],
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward treatments at AVEN. Banked credit applies to treatments only — not to wellness packages or retail products. The benefits above (priority scheduling, Saturday access, the Skin Progress Review) are included on top."],
+            ["How does the AVEN Assessment fit in?", "Every plan at AVEN begins with the AVEN Assessment, and the Signature membership includes one Annual Comprehensive AVEN Assessment (60 minutes) — a chance to compare your baseline to your progress and plan the next chapter."],
             ["What happens if I pause?", "Membership can be paused at any time. Your banked credit remains usable for twelve months from the pause date — applied to any service when you're ready to return."],
             ["Can I switch between Maintenance and Signature?", "Yes. You can move between the two tiers at any time. Banked credit carries over."],
-            ["Can I gift membership?", "Yes. Memberships can be gifted in three-, six-, or twelve-month increments."],
-            ["What's included in the skin assessment review?", "Once or twice a year, we sit down to look at your pathway together — what's working, what's next, what to adjust. The skin is read; the plan is updated."]
+            ["What's the difference between the Skin Progress Review and the Care Plan Review?", "The Skin Progress Review is a focused check-in, one or two times a year, on how your skin and treatments are progressing. The Care Plan Review is a scheduled look at your longer-term treatment strategy and what to plan next. The Annual Comprehensive AVEN Assessment is the full 60-minute yearly planning appointment."]
           ].map(([q, a], i) => (
             <Reveal key={q} delay={Math.min(i, 6) * 50}>
               <details style={{
