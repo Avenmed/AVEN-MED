@@ -73,6 +73,10 @@ import assessmentFAQ from '../pages/assessment/AssessmentFAQ.jsx';
 // Meet Your Provider — the clinician(s) behind AVEN.
 import alaaMashal from '../pages/providers/AlaaMashal.jsx';
 
+// Education Center — pure-data article index + categories (bodies are lazy-loaded
+// per article by ArticleTemplate; see src/content/education/index.js).
+import { EDU_CATEGORIES, publishedArticles, categoryBySlug } from './education/index.js';
+
 // type -> template component
 export const TEMPLATES = {
   treatment: TreatmentTemplate,
@@ -194,3 +198,79 @@ export const REGISTRY_SEO = Object.fromEntries(ENTRIES.map((e) => [`/${e.slug}`,
 
 // For sitemap generation / auditing.
 export const REGISTRY_URLS = ENTRIES.map((e) => ({ slug: e.slug, priority: e.priority, changefreq: e.changefreq }));
+
+// ============================================================================
+// EDUCATION CENTER — reads the pure-data index; bodies load lazily elsewhere.
+// ============================================================================
+
+// Published, visible article cards (optionally filtered/searched). Powers the
+// hub, category pages, and search. Lightweight — never touches article bodies.
+export function searchArticles({ category, tag, query } = {}) {
+  let list = publishedArticles().filter((a) => !a.hidden);
+  if (category) list = list.filter((a) => a.category === category);
+  if (tag) list = list.filter((a) => (a.tags || []).includes(tag));
+  if (query) {
+    const q = query.trim().toLowerCase();
+    if (q) list = list.filter((a) =>
+      `${a.title} ${a.excerpt} ${(a.tags || []).join(" ")} ${a.category}`.toLowerCase().includes(q));
+  }
+  return list;
+}
+
+export function getEducationCards(opts) {
+  return searchArticles(opts).map((a) => ({
+    slug: a.slug, title: a.title, excerpt: a.excerpt, category: a.category,
+    path: `/education/${a.slug}`, readingTime: a.readingTime,
+    dateModified: a.dateModified || a.datePublished, featured: !!a.featured,
+  }));
+}
+
+// Route resolver for an article path -> the metadata entry, or null.
+export function getEducationArticle(slug) {
+  return publishedArticles().find((a) => a.slug === slug) || null;
+}
+
+// Same-topic related articles (category match + shared tags), ranked.
+export function getRelatedArticles(slug, limit = 3) {
+  const a = getEducationArticle(slug);
+  if (!a) return [];
+  const mine = new Set(a.tags || []);
+  return publishedArticles()
+    .filter((o) => o.slug !== slug && !o.hidden && (o.category === a.category || (o.tags || []).some((t) => mine.has(t))))
+    .map((o) => ({ o, score: (o.category === a.category ? 1 : 0) + (o.tags || []).filter((t) => mine.has(t)).length }))
+    .sort((x, y) => y.score - x.score)
+    .slice(0, limit)
+    .map((x) => ({ label: x.o.title, path: `/education/${x.o.slug}` }));
+}
+
+// ============================================================================
+// DYNAMIC SITEMAP — the registry is the single source of truth. This pure-data
+// list feeds the build-time sitemap generator (scripts/generate-sitemap.mjs) and
+// any auditing. Static routes + every registry page + Education hub/categories/
+// articles. No hand-maintained URL list.
+// ============================================================================
+const STATIC_SITEMAP_ROUTES = [
+  { path: "/", priority: 1.0, changefreq: "weekly" },
+  { path: "/about", priority: 0.8, changefreq: "monthly" },
+  { path: "/aesthetics", priority: 0.9, changefreq: "monthly" },
+  { path: "/concerns", priority: 0.8, changefreq: "monthly" },
+  { path: "/wellness", priority: 0.9, changefreq: "monthly" },
+  { path: "/family-medicine", priority: 0.9, changefreq: "monthly" },
+  { path: "/assessment", priority: 0.9, changefreq: "monthly" },
+  { path: "/providers", priority: 0.8, changefreq: "monthly" },
+  { path: "/memberships", priority: 0.7, changefreq: "monthly" },
+  { path: "/contact", priority: 0.8, changefreq: "monthly" },
+  { path: "/notes", priority: 0.5, changefreq: "monthly" },
+  { path: "/education", priority: 0.8, changefreq: "weekly" },
+];
+
+export function getSitemapEntries() {
+  const out = [];
+  STATIC_SITEMAP_ROUTES.forEach((r) => out.push({ loc: r.path, priority: r.priority, changefreq: r.changefreq }));
+  REGISTRY_URLS.forEach((u) => out.push({ loc: `/${u.slug}`, priority: u.priority, changefreq: u.changefreq }));
+  EDU_CATEGORIES.forEach((c) => out.push({ loc: `/education/topics/${c.slug}`, priority: 0.6, changefreq: "weekly" }));
+  publishedArticles().forEach((a) => out.push({ loc: `/education/${a.slug}`, priority: 0.7, changefreq: "monthly", lastmod: a.dateModified || a.datePublished }));
+  // de-dupe by loc, stable order
+  const seen = new Set();
+  return out.filter((e) => (seen.has(e.loc) ? false : (seen.add(e.loc), true)));
+}

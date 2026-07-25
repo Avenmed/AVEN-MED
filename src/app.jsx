@@ -21,7 +21,10 @@ import ConcernsPage from './pages/Concerns.jsx';
 import ProvidersPage from './pages/Providers.jsx';
 import ServicePage from './pages/Service.jsx';
 import NotesPage from './pages/Notes.jsx';
-import { getRegistryPage, TEMPLATES } from './content/registry.jsx';
+import EducationPage from './pages/Education.jsx';
+import EducationCategoryPage from './pages/EducationCategory.jsx';
+import ArticleTemplate from './pages/ArticleTemplate.jsx';
+import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles } from './content/registry.jsx';
 
 // Stable wrapper so registry pages don't remount on every App render.
 // key={route} handles remounting on navigation; the schema template cleans
@@ -31,6 +34,22 @@ const RegistryPage = ({ route, navigate }) => {
   if (!entry) return null;
   const Template = TEMPLATES[entry.type];
   return <Template data={entry.data} navigate={navigate} />;
+};
+
+// Education Center category landing — slug derived from the path.
+const EducationCategoryRoute = ({ route, navigate }) => {
+  const slug = route.replace(/^\/education\/topics\//, "").replace(/\/+$/, "");
+  return <EducationCategoryPage category={slug} navigate={navigate} />;
+};
+
+// Education Center article — resolved from the registry (single source of truth),
+// with related articles attached. Unknown/unpublished slugs fall back to the hub.
+const EducationArticleRoute = ({ route, navigate }) => {
+  const slug = route.replace(/^\/education\//, "").replace(/\/+$/, "");
+  const article = getEducationArticle(slug);
+  if (!article) return <EducationPage navigate={navigate} />;
+  const relatedArticles = getRelatedArticles(slug, 3);
+  return <ArticleTemplate article={{ ...article, relatedArticles }} navigate={navigate} />;
 };
 
 // Clean-path routing via the History API.
@@ -166,6 +185,9 @@ const App = () => {
     if (getRegistryPage(route)) return RegistryPage;
     if (route.startsWith("/service/")) return ServicePage;
     if (route.startsWith("/notes")) return NotesPage;
+    if (route === "/education") return EducationPage;
+    if (route.startsWith("/education/topics/")) return EducationCategoryRoute;
+    if (route.startsWith("/education/")) return EducationArticleRoute;
     switch (route) {
       case "/about": return AboutPage;
       case "/concerns": return ConcernsPage;

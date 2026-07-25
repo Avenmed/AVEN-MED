@@ -7,7 +7,8 @@
  * moves from hash routing to History-API routing (see SEO_AUDIT.md, Critical #1). */
 
 import { SERVICE_SLUGS } from './pages/Service.jsx';
-import { REGISTRY_SEO } from './content/registry.jsx';
+import { REGISTRY_SEO, getEducationArticle } from './content/registry.jsx';
+import { categoryBySlug } from './content/education/index.js';
 
 const BASE_URL = "https://avenmedil.com";
 const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -60,6 +61,10 @@ const STATIC_ROUTE_SEO = {
     title: "Notes · AVEN MED, Orland Park IL",
     description: "Notes from AVEN MED — perspectives on aesthetics, skin health, and wellness from a private Orland Park practice.",
   },
+  "/education": {
+    title: "Education Center — Clinically Reviewed Guides · AVEN MED, Orland Park IL",
+    description: "The AVEN Education Center — clear, honest, clinically reviewed writing on aesthetics, skin health, wellness, and family medicine. Every article is reviewed by Alaa Mashal, MSN, APRN, FNP-BC before publication.",
+  },
 };
 
 // Data-driven pages (treatments, and future categories) contribute their own
@@ -103,21 +108,39 @@ const CRUMBS = {
   "/memberships": "Memberships",
   "/contact": "Contact",
   "/notes": "Notes",
+  "/education": "Education Center",
 };
 
 function setBreadcrumb(route, url) {
   const existing = document.getElementById("breadcrumb-dynamic");
-  let name = CRUMBS[route];
-  if (!name && route.startsWith("/service/")) name = titleize(route.replace("/service/", ""));
-  // Home (or unknown) has no second crumb — drop any dynamic breadcrumb.
-  if (!name) { if (existing) existing.remove(); return; }
+
+  // Education article pages own their full breadcrumb via the article schema
+  // (see ArticleTemplate) — don't emit a second, conflicting BreadcrumbList.
+  if (route.startsWith("/education/") && !route.startsWith("/education/topics/")) {
+    if (existing) existing.remove();
+    return;
+  }
+
+  // Build the crumb chain. Education adds a middle "Education Center" crumb.
+  let items = [{ "@type": "ListItem", "position": 1, "name": "Home", "item": BASE_URL + "/" }];
+
+  if (route.startsWith("/education/topics/")) {
+    const cat = categoryBySlug(route.replace("/education/topics/", "").split("/")[0]);
+    if (!cat) { if (existing) existing.remove(); return; }
+    items.push({ "@type": "ListItem", "position": 2, "name": "Education Center", "item": BASE_URL + "/education" });
+    items.push({ "@type": "ListItem", "position": 3, "name": cat.label, "item": url });
+  } else {
+    let name = CRUMBS[route];
+    if (!name && route.startsWith("/service/")) name = titleize(route.replace("/service/", ""));
+    // Home (or unknown) has no second crumb — drop any dynamic breadcrumb.
+    if (!name) { if (existing) existing.remove(); return; }
+    items.push({ "@type": "ListItem", "position": 2, "name": name, "item": url });
+  }
+
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE_URL + "/" },
-      { "@type": "ListItem", "position": 2, "name": name, "item": url },
-    ],
+    "itemListElement": items,
   };
   let el = existing;
   if (!el) {
@@ -149,6 +172,40 @@ export function applySeo(route) {
       meta = { title: "Page not found · AVEN MED", description: "This page could not be found." };
     }
   }
+
+  // Education Center category landing (/education/topics/<slug>).
+  if (!meta && route && route.startsWith("/education/topics/")) {
+    const slug = route.replace("/education/topics/", "").split("/")[0];
+    const cat = categoryBySlug(slug);
+    if (cat) {
+      meta = {
+        title: `${cat.label} — Education Center · AVEN MED, Orland Park IL`,
+        description: `${cat.blurb} Clinically reviewed guides from AVEN MED in Orland Park, IL.`,
+      };
+    } else {
+      notFound = true;
+      robots = ROBOTS_NOINDEX;
+      meta = { title: "Page not found · AVEN MED", description: "This page could not be found." };
+    }
+  }
+
+  // Education Center article (/education/<slug>). '/education' and the topics
+  // sub-tree are handled above, so anything left here is an article slug.
+  if (!meta && route && route.startsWith("/education/") && !route.startsWith("/education/topics/")) {
+    const slug = route.replace("/education/", "").split("/")[0];
+    const article = getEducationArticle(slug);
+    if (article) {
+      meta = {
+        title: `${article.title} · AVEN MED, Orland Park IL`,
+        description: article.excerpt,
+      };
+    } else {
+      notFound = true;
+      robots = ROBOTS_NOINDEX;
+      meta = { title: "Page not found · AVEN MED", description: "This page could not be found." };
+    }
+  }
+
   if (!meta) meta = DEFAULT;
 
   const url = BASE_URL + (route === "/" ? "/" : route);

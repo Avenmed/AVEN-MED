@@ -64,6 +64,7 @@ const NAV = [
   { label: "Family Medicine", path: "/family-medicine" },
   { label: "AVEN Assessment", path: "/assessment" },
   { label: "Meet Your Provider", path: "/providers" },
+  { label: "Education", path: "/education" },
   { label: "Memberships", path: "/memberships" },
   { label: "Contact", path: "/contact" },
 ];
