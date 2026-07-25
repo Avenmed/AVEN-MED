@@ -67,11 +67,14 @@ const Brand = ({ onClick }) => (
 // in patient-journey order. The upper utility strip carries only practice info
 // (no links), so the whole navigation lives here. Groups below are code
 // organization only — no visible dividers/labels.
+// `label` = full wording (used in the mobile menu, which has vertical room).
+// `short` = terse editorial label for the space-constrained DESKTOP bar. Nav
+// labels should be crisper than page titles — the fuller title lives on the page.
 const NAV = [
   { label: "Home", path: "/" },
   // Brand & Trust
-  { label: "About AVEN", path: "/about" },
-  { label: "Meet Your Provider", path: "/providers" },
+  { label: "About AVEN", path: "/about", short: "About" },
+  { label: "Meet Your Provider", path: "/providers", short: "Provider" },
   // Clinical Services
   { label: "Aesthetics", path: "/aesthetics" },
   { label: "Wellness", path: "/wellness" },
@@ -79,7 +82,7 @@ const NAV = [
   // Signature Programs
   { label: "Bridal Journey", path: "/bridal-journey" },
   // Patient Journey
-  { label: "AVEN Assessment", path: "/assessment" },
+  { label: "AVEN Assessment", path: "/assessment", short: "Assessment" },
   { label: "Memberships", path: "/memberships" },
   // Education
   { label: "Education", path: "/education" },
@@ -121,7 +124,7 @@ const Header = ({ route, navigate }) => {
                   onClick={(e) => { e.preventDefault(); navigate(n.path); }}
                   className={route === n.path ? "active" : ""}
                 >
-                  {n.label}
+                  {n.short || n.label}
                 </a>
               ))}
             </nav>
@@ -129,9 +132,10 @@ const Header = ({ route, navigate }) => {
           <div className="hdr-actions">
             <AssessmentCTA
               navigate={navigate}
+              label="Start Assessment"
               className="btn solid hdr-cta"
               showArrow={false}
-              style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
+              style={{ height: 40, padding: "0 18px", fontSize: 10.5 }}
             />
             <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
               <span></span><span></span><span></span>
