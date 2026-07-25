@@ -70,8 +70,8 @@ const MembershipsPage = ({ navigate }) => {
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
-            <Ph label="The practice · continuity of care" meta="warm tungsten · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/concierge-wellness.mp4" />
+            <Ph label="AVEN · Founding Member" meta="cinematic · 4:5" aspect="4/5">
+              <Video src="assets/membership.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={120}>
