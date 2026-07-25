@@ -68,9 +68,9 @@ const MembershipsPage = ({ navigate }) => {
 
       {/* 2 — WHY MEMBERSHIPS EXIST */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 72, alignItems: "center", maxWidth: 1240 }}>
           <Reveal>
-            <Ph label="AVEN · Founding Member" meta="cinematic · 4:5" aspect="4/5">
+            <Ph label="AVEN · Founding Member" meta="cinematic · 4:3" aspect="4/3">
               <Video src="assets/membership.mp4" />
             </Ph>
           </Reveal>
