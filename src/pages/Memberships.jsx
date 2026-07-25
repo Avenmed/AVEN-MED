@@ -9,7 +9,8 @@
  * All plans, pricing, benefits, the comparison table, and FAQs are the existing,
  * approved membership facts — nothing here is invented. */
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import Video from '../Video.jsx';
 
 // The philosophy behind membership — why, before what.
 const PRINCIPLES = [
@@ -67,12 +68,15 @@ const MembershipsPage = ({ navigate }) => {
 
       {/* 2 — WHY MEMBERSHIPS EXIST */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1120 }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
-            <Eyebrow>Why Memberships Exist</Eyebrow>
+            <Ph label="The practice · continuity of care" meta="warm tungsten · 4:5 · placeholder" aspect="4/5">
+              <Video src="assets/concierge-wellness.mp4" />
+            </Ph>
           </Reveal>
           <Reveal delay={120}>
-            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 26px", maxWidth: "20ch", fontWeight: 300 }}>
+            <Eyebrow>Why Memberships Exist</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "18px 0 26px", maxWidth: "20ch", fontWeight: 300 }}>
               Not more treatments. More <em>intentional care.</em>
             </h2>
             <p className="body" style={{ marginBottom: 20, fontSize: 17, lineHeight: 1.85 }}>
@@ -369,15 +373,13 @@ const MembershipsPage = ({ navigate }) => {
 
       {/* 8 — THE AVEN ASSESSMENT */}
       <section className="section">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1120 }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
             <Eyebrow>The AVEN Assessment</Eyebrow>
-          </Reveal>
-          <Reveal delay={120}>
-            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 24px", maxWidth: "18ch", fontWeight: 300 }}>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 4.2vw, 56px)", margin: "18px 0 22px", maxWidth: "18ch", fontWeight: 300 }}>
               Every relationship begins <em>here.</em>
             </h2>
-            <p className="body" style={{ marginBottom: 28, maxWidth: "54ch", fontSize: 17, lineHeight: 1.85 }}>
+            <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               Membership deepens a relationship that starts with the AVEN Assessment — an
               honest read on your goals and a plan built around them. Signature members
               receive a full Assessment each year as part of their membership.
@@ -389,20 +391,28 @@ const MembershipsPage = ({ navigate }) => {
               </a>
             </div>
           </Reveal>
+          <Reveal delay={140}>
+            <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
+              <Video src="assets/sculptra-v2.mp4" />
+            </Ph>
+          </Reveal>
         </div>
       </section>
 
       {/* 9 — MEET YOUR PROVIDER */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1120 }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
-            <Eyebrow>Meet Your Provider</Eyebrow>
+            <Ph label="Alaa Mashal, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+              <Video src="assets/alaa-2.mp4" />
+            </Ph>
           </Reveal>
-          <Reveal delay={120}>
-            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 24px", maxWidth: "18ch", fontWeight: 300 }}>
+          <Reveal delay={140}>
+            <Eyebrow>Meet Your Provider</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 4.2vw, 56px)", margin: "18px 0 22px", maxWidth: "18ch", fontWeight: 300 }}>
               One practitioner, over the <em>long run.</em>
             </h2>
-            <p className="body" style={{ marginBottom: 28, maxWidth: "54ch", fontSize: 17, lineHeight: 1.85 }}>
+            <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               A membership is a relationship with a person, not a plan. That person is
               Alaa Mashal, FNP-BC — founder and lead practitioner of AVEN MED — and
               Signature members have a direct line to her.
