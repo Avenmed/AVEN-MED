@@ -71,7 +71,7 @@ const MembershipsPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
             <Ph label="The practice · continuity of care" meta="warm tungsten · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/contact.mp4" />
+              <Video src="assets/concierge-wellness.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={120}>
@@ -393,7 +393,7 @@ const MembershipsPage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/aura-scan.mp4" />
+              <Video src="assets/sculptra-v2.mp4" />
             </Ph>
           </Reveal>
         </div>

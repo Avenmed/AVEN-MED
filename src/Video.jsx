@@ -15,11 +15,6 @@ import React from 'react';
 
 const Video = ({ src, poster, className = "", style = {} }) => {
   const ref = React.useRef(null);
-  // Fade the clip in once it's actually playing, so it glides out of the clay
-  // placeholder instead of popping. If autoplay is blocked (reduced-motion,
-  // data-saver, slow net), it never plays → stays hidden and the placeholder
-  // remains, exactly as intended.
-  const [playing, setPlaying] = React.useState(false);
 
   React.useEffect(() => {
     const el = ref.current;
@@ -52,7 +47,7 @@ const Video = ({ src, poster, className = "", style = {} }) => {
     <video
       ref={ref}
       className={"ph-video " + className}
-      style={{ opacity: playing ? 1 : 0, transition: "opacity 900ms ease", ...style }}
+      style={style}
       src={src}
       poster={poster}
       muted
@@ -61,7 +56,6 @@ const Video = ({ src, poster, className = "", style = {} }) => {
       preload="none"
       disableRemotePlayback
       aria-hidden="true"
-      onPlaying={() => setPlaying(true)}
     />
   );
 };
