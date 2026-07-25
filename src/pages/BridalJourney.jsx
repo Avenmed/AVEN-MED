@@ -6,10 +6,10 @@
  * single source of truth. Assessment-first: every path leads to a consultation,
  * never to booking individual treatments without a plan.
  *
- * Architecture phase: copy is placeholder and no medical claims/pricing/timings
- * are invented. Structured data: WebPage + BreadcrumbList + FAQPage (answers are
- * visible) + MedicalBusiness + Person (provider) + a Service/program node with no
- * offers or prices. */
+ * Production v1.0 (approved). Copy is still placeholder and no medical claims/
+ * pricing/timings are invented. Structured data: WebPage + BreadcrumbList +
+ * FAQPage (answers are visible) + MedicalBusiness + Person (provider) + a Service/
+ * program node with no offers or prices. */
 import React from 'react';
 import { Eyebrow, Reveal } from '../components.jsx';
 import { CLINIC, DEFAULT_AREAS } from '../content/clinic.js';

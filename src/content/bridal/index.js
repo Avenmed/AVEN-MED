@@ -6,7 +6,10 @@
  * dynamic-sitemap routes all derive from here. PURE DATA — no JSX / no React —
  * so the app AND the build-time sitemap generator can both import it.
  *
- * ARCHITECTURE-ONLY (this phase):
+ * STATUS: Architecture approved — production v1.0 (permanent AVEN feature). Only
+ * the CONTENT is still in progress; the fields below intentionally hold approved
+ * placeholders until copy is finalized. Do not make structural changes unless a
+ * future feature genuinely requires them.
  *  - No final marketing copy. Fields that still need approved copy hold clearly
  *    marked "[Placeholder — …]" strings.
  *  - No invented medical claims, treatment recommendations, pricing, packages,
@@ -219,7 +222,8 @@ export const BRIDAL_ASSESSMENT_FIELDS = [
 ];
 
 // ---- Timeline builder data model ("Build My Bridal Timeline") ---------------
-// FRONT-END ARCHITECTURE ONLY. This tool is a planning/education aid — it must
+// PLANNING AID ONLY (permanent design constraint). This tool is a planning/
+// education aid — it must
 // NOT diagnose, prescribe, determine candidacy, or generate definitive medical
 // recommendations. The only computed output is factual date math (months
 // remaining, and which approved stage-window the date falls in) plus generic
@@ -294,7 +298,7 @@ export const BRIDAL_PATIENT_JOURNEY = {
 };
 
 // ---- Resources (FUTURE downloadable / interactive materials) ---------------
-// Architecture only. NO real PDFs/checklists/downloads/gated forms/lead-capture
+// Placeholders only. NO real PDFs/checklists/downloads/gated forms/lead-capture
 // exist or are created here. All items are status:"planned" + enabled:false with
 // empty destinations, so the BridalResources component renders NOTHING publicly
 // (no empty section, no broken links). Reusable for future groom/wedding-party/
@@ -323,7 +327,7 @@ export const BRIDAL_JOURNEYS = [
     shortTitle: "Bridal Journey",
     category: "journey",
     audience: "bride",
-    status: "architecture",   // architecture | draft | published
+    status: "draft",          // CONTENT status: draft | published (architecture is v1.0/approved)
     enabled: true,
     lifecycleStages: BRIDAL_LIFECYCLE_STAGES,  // optional/internal — see note above
     seo: BRIDAL_ROUTE_SEO["/bridal-journey"],

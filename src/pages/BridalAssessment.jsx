@@ -190,8 +190,8 @@ const BridalAssessmentPage = ({ navigate }) => {
                   Bridal Assessment consultation.
                 </p>
                 <BridalDisclaimer style={{ marginTop: 20 }}>
-                  Note: this is an architecture preview — the form is not yet connected to a live
-                  system, so nothing was sent. To reach us directly, email {CLINIC.email} or call {CLINIC.phoneDisplay}.
+                  Note: this form is not yet connected to a live system, so nothing was sent.
+                  To reach us directly, email {CLINIC.email} or call {CLINIC.phoneDisplay}.
                 </BridalDisclaimer>
                 <div style={{ marginTop: 36, display: "flex", gap: 24, flexWrap: "wrap" }}>
                   <button className="link" onClick={() => { setSubmitted(false); setValues(initialValues()); }}>
