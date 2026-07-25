@@ -77,6 +77,9 @@ import alaaMashal from '../pages/providers/AlaaMashal.jsx';
 // per article by ArticleTemplate; see src/content/education/index.js).
 import { EDU_CATEGORIES, publishedArticles, categoryBySlug } from './education/index.js';
 
+// Bridal Journey — pure-data journey registry (see src/content/bridal/index.js).
+import { bridalSitemapRoutes } from './bridal/index.js';
+
 // type -> template component
 export const TEMPLATES = {
   treatment: TreatmentTemplate,
@@ -193,6 +196,20 @@ export function getHubEntries(type) {
     .sort((a, b) => a.order - b.order);
 }
 
+// Resolve a list of registry slugs to { label, path } links. Lets other systems
+// (e.g. the Bridal Journey) reference existing service pages by slug WITHOUT
+// re-describing them — service pages stay the single source of truth. Unknown
+// slugs are dropped. Falls back to a titleized slug if no breadcrumbName.
+export function getServiceLinksBySlugs(slugs = []) {
+  return slugs
+    .map((slug) => BY_SLUG[slug])
+    .filter(Boolean)
+    .map((e) => ({
+      label: (e.data && e.data.breadcrumbName) || (e.data && e.data.serviceShort) || e.slug,
+      path: `/${e.slug}`,
+    }));
+}
+
 // Per-route SEO for seo.js: { "/slug": { title, description } }.
 export const REGISTRY_SEO = Object.fromEntries(ENTRIES.map((e) => [`/${e.slug}`, e.seo]));
 
@@ -270,6 +287,7 @@ export function getSitemapEntries() {
   REGISTRY_URLS.forEach((u) => out.push({ loc: `/${u.slug}`, priority: u.priority, changefreq: u.changefreq }));
   EDU_CATEGORIES.forEach((c) => out.push({ loc: `/education/topics/${c.slug}`, priority: 0.6, changefreq: "weekly" }));
   publishedArticles().forEach((a) => out.push({ loc: `/education/${a.slug}`, priority: 0.7, changefreq: "monthly", lastmod: a.dateModified || a.datePublished }));
+  bridalSitemapRoutes().forEach((r) => out.push({ loc: r.loc, priority: r.priority, changefreq: r.changefreq }));
   // de-dupe by loc, stable order
   const seen = new Set();
   return out.filter((e) => (seen.has(e.loc) ? false : (seen.add(e.loc), true)));

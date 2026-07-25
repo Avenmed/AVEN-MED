@@ -9,6 +9,7 @@
 import { SERVICE_SLUGS } from './pages/Service.jsx';
 import { REGISTRY_SEO, getEducationArticle } from './content/registry.jsx';
 import { categoryBySlug } from './content/education/index.js';
+import { BRIDAL_ROUTE_SEO } from './content/bridal/index.js';
 
 const BASE_URL = "https://avenmedil.com";
 const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -69,7 +70,7 @@ const STATIC_ROUTE_SEO = {
 
 // Data-driven pages (treatments, and future categories) contribute their own
 // title/description straight from the content registry.
-export const ROUTE_SEO = { ...STATIC_ROUTE_SEO, ...REGISTRY_SEO };
+export const ROUTE_SEO = { ...STATIC_ROUTE_SEO, ...REGISTRY_SEO, ...BRIDAL_ROUTE_SEO };
 
 function setMeta(attr, key, value) {
   if (!value) return;
@@ -117,6 +118,13 @@ function setBreadcrumb(route, url) {
   // Education article pages own their full breadcrumb via the article schema
   // (see ArticleTemplate) — don't emit a second, conflicting BreadcrumbList.
   if (route.startsWith("/education/") && !route.startsWith("/education/topics/")) {
+    if (existing) existing.remove();
+    return;
+  }
+
+  // Bridal Journey pages own their BreadcrumbList in-page (see BridalJourney /
+  // BridalAssessment schema) — don't emit a second, conflicting one here.
+  if (route === "/bridal-journey" || route.startsWith("/bridal-journey/")) {
     if (existing) existing.remove();
     return;
   }

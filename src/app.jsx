@@ -24,6 +24,8 @@ import NotesPage from './pages/Notes.jsx';
 import EducationPage from './pages/Education.jsx';
 import EducationCategoryPage from './pages/EducationCategory.jsx';
 import ArticleTemplate from './pages/ArticleTemplate.jsx';
+import BridalJourneyPage from './pages/BridalJourney.jsx';
+import BridalAssessmentPage from './pages/BridalAssessment.jsx';
 import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles } from './content/registry.jsx';
 
 // Stable wrapper so registry pages don't remount on every App render.
@@ -188,6 +190,8 @@ const App = () => {
     if (route === "/education") return EducationPage;
     if (route.startsWith("/education/topics/")) return EducationCategoryRoute;
     if (route.startsWith("/education/")) return EducationArticleRoute;
+    if (route === "/bridal-journey") return BridalJourneyPage;
+    if (route === "/bridal-journey/assessment") return BridalAssessmentPage;
     switch (route) {
       case "/about": return AboutPage;
       case "/concerns": return ConcernsPage;
