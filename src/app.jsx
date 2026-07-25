@@ -1,8 +1,6 @@
 /* AVEN MED — App shell + router + tweaks */
 import React from 'react';
 import { Header, Footer } from './components.jsx';
-import AnnouncementBar from './AnnouncementBar.jsx';
-import { BOOKING_ENABLED } from './config.js';
 import { applySeo } from './seo.js';
 import Intro from './Intro.jsx';
 import {
@@ -222,7 +220,6 @@ const App = () => {
 
   return (
     <>
-      {isHome && !BOOKING_ENABLED && <AnnouncementBar />}
       <Header route={route} navigate={navigate} />
       {isHome ? (
         <div className={"homepage-content" + (homeRevealed ? " revealed" : "")}>

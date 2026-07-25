@@ -214,49 +214,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
-/* ---------- Pre-launch announcement bar (homepage) ---------- */
-.announce {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
-  height: 40px;
-  display: flex; align-items: center; justify-content: center;
-  gap: 20px;
-  padding: 0 var(--gutter);
-  background: var(--bg-1);
-  border-bottom: 1px solid var(--hairline);
-  color: var(--ivory);
-}
-.announce-msg,
-.announce-actions { margin: 0; display: inline-flex; align-items: center; }
-.announce-msg {
-  font-family: var(--serif);
-  font-size: 14px; letter-spacing: 0.01em; gap: 10px;
-}
-.announce-mark { font-style: italic; color: var(--gold); }
-.announce-dot { color: var(--gold-soft); }
-.announce-tag { color: var(--ivory-soft); }
-.announce-actions { gap: 16px; }
-.announce-cta {
-  font-family: var(--sans); font-size: 10px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--ivory-soft);
-  border-bottom: 1px solid var(--gold-soft); padding-bottom: 2px;
-  transition: color 200ms ease, border-color 200ms ease;
-  min-height: 24px; display: inline-flex; align-items: center;
-}
-.announce-cta:hover { color: var(--ivory); border-bottom-color: var(--gold); }
-@media (max-width: 600px) {
-  .announce { gap: 12px; padding: 0 16px; }
-  .announce-msg { font-size: 12px; gap: 7px; }
-  .announce-tag { display: none; } /* keep it to one clean line on small phones */
-  .announce-dot { display: none; }
-  .announce-actions { gap: 12px; }
-}
-
 /* ---------- Header / Nav ---------- */
-/* Two-tier header: a quiet utility strip above a spacious main bar. The point is
-   HIERARCHY, not density — the logo anchors, the core offerings lead, one CTA
-   closes, and secondary wayfinding recedes to the utility strip. */
+/* Two-level header: a quiet utility strip (practice info only) above the main
+   navigation. Calm, spacious, timeless — the logo anchors, the nav breathes, one
+   CTA closes. No promotional bar. */
 .hdr {
-  position: fixed; top: var(--announce-h, 0); left: 0; right: 0;
+  position: fixed; top: 0; left: 0; right: 0;
   z-index: 80;
   display: flex; flex-direction: column;
   transition: background 320ms ease, backdrop-filter 320ms ease, border-color 320ms ease;
@@ -269,63 +232,68 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-bottom-color: var(--hairline);
 }
 
-/* ---- Utility tier (secondary wayfinding + contact) ---- */
+/* ---- Level 1: utility strip — practice info only, quiet and supportive ---- */
 .hdr-utility {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 9px var(--gutter);
+  padding: 8px var(--gutter);
   border-bottom: 1px solid var(--hairline);
 }
-.hdr-util-tag {
-  font-family: var(--sans); font-size: 10px; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--muted); white-space: nowrap;
+.hdr-util-tag,
+.hdr-util-phone {
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.26em;
+  text-transform: uppercase; white-space: nowrap;
 }
-.hdr-util-nav { display: flex; align-items: center; gap: clamp(14px, 1.5vw, 26px); }
-.hdr-util-nav a {
-  font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--ivory-soft); white-space: nowrap;
-  padding: 4px 0; transition: color 240ms ease;
-}
-.hdr-util-nav a:hover, .hdr-util-nav a.active { color: var(--ivory); }
-.hdr-util-nav .phone { color: var(--muted); letter-spacing: 0.24em; }
+.hdr-util-tag { color: var(--muted); }
+.hdr-util-phone { color: var(--ivory-soft); transition: color 240ms ease; }
+.hdr-util-phone:hover { color: var(--ivory); }
 
-/* ---- Main tier (logo anchor · core offerings · CTA) ---- */
+/* ---- Level 2: main navigation — logo anchor (left) · nav + CTA (right) ---- */
 .hdr-main {
   display: flex; align-items: center; justify-content: space-between;
-  gap: clamp(24px, 4vw, 72px);
-  padding: 16px var(--gutter);
+  gap: clamp(20px, 3vw, 56px);
+  padding: 15px var(--gutter);
 }
-/* Brand is the anchor — it never shrinks and never wraps. */
+/* Brand is the anchor — never shrinks, never wraps. */
 .hdr .brand {
   flex-shrink: 0;
-  display: flex; align-items: center; gap: 14px;
-  font-family: var(--serif); font-size: 19px; letter-spacing: 0.4em;
+  display: flex; align-items: center; gap: 13px;
+  font-family: var(--serif); font-size: 18px; letter-spacing: 0.4em;
   text-transform: uppercase; font-weight: 300;
   color: var(--ivory); white-space: nowrap;
 }
-.hdr .brand img { width: 34px; height: auto; }
-.hdr-primary { display: flex; align-items: center; gap: clamp(22px, 2.6vw, 46px); }
-.hdr-primary a {
-  font-family: var(--sans); font-size: 12px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--ivory-soft); white-space: nowrap;
-  position: relative; padding: 6px 0;
+.hdr .brand img { width: 32px; height: auto; }
+.hdr-right { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 40px); min-width: 0; }
+/* The full 11-item nav. Font, tracking, and gap scale with the viewport so it is
+   generous on large screens and stays clean (no wrap/overlap) down to 1280px. */
+.hdr-nav {
+  display: flex; align-items: center; flex-wrap: nowrap;
+  gap: clamp(12px, 1.1vw, 20px);
+}
+.hdr-nav a {
+  font-family: var(--sans); font-size: clamp(9px, 0.66vw, 10.5px);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory-soft);
+  white-space: nowrap; position: relative; padding: 6px 0;
   transition: color 240ms ease;
 }
-.hdr-primary a:hover, .hdr-primary a.active { color: var(--ivory); }
-.hdr-primary a.active::after {
+.hdr-nav a:hover, .hdr-nav a.active { color: var(--ivory); }
+.hdr-nav a.active::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
   height: 1px; background: var(--gold);
 }
-.hdr-actions { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.hdr-actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 
-/* ---- Responsive: utility recedes first, then the primary bar → hamburger ---- */
-@media (max-width: 1200px) {
-  /* Below this width the utility strip recedes; its links live in the footer and
-     the mobile menu. The main bar (logo · offerings · CTA) stays spacious. */
-  .hdr-utility { display: none; }
-}
-@media (max-width: 980px) {
-  .hdr-primary { display: none; }
+/* ---- Responsive: keep it calm; never let items crowd ---- */
+@media (max-width: 1680px) {
+  /* The long CTA needs a wide canvas to sit beside all eleven items; below this it
+     recedes — the action lives in the Contact nav item and in body CTAs on every
+     page. */
   .hdr-cta { display: none; }
+}
+@media (max-width: 1200px) {
+  /* Below 1200px the full nav would crowd — hand off to the mobile menu, leaving a
+     calm logo + menu. The utility strip recedes with it. */
+  .hdr-utility { display: none; }
+  .hdr-nav { display: none; }
 }
 
 /* ---------- Footer ---------- */
@@ -372,8 +340,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-height: 100vh;
   min-height: 100svh; /* mobile-safe: excludes collapsing browser chrome, no scroll jump */
   display: flex; flex-direction: column; justify-content: center;
-  /* extra top room for the announcement bar when it's present (--announce-h) */
-  padding: calc(clamp(110px, 14vh, 180px) + var(--announce-h, 0px)) 0 0;
+  padding: clamp(110px, 14vh, 180px) 0 0;
   background: var(--bg);
   overflow: hidden;
 }
@@ -780,7 +747,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .aura-video-caption { font-size: 0.95rem; margin-bottom: 3rem; }
 }
 .menu-btn { display: none; }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
+  /* Hamburger appears exactly where the desktop nav recedes (1200px), so there is
+     never a gap with neither nav nor menu. */
   .menu-btn { display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; padding: 8px; min-width: 44px; min-height: 44px; }
   .menu-btn span { display: block; width: 22px; height: 1px; background: var(--ivory); }
 }

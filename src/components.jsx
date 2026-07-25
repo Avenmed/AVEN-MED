@@ -63,31 +63,28 @@ const Brand = ({ onClick }) => (
 // below are code-organization only (no visible dividers/labels/dropdowns). If AVEN
 // later launches multiple journeys, the "Signature Programs" group is where a
 // broader "Journeys" item would evolve.
-// Single source of truth for ALL navigation. Array ORDER is the mobile-menu order
-// (unchanged). `tier` drives the DESKTOP two-tier header hierarchy — not every item
-// deserves equal visual weight:
-//   primary  → the core offerings, given prominence in the main bar
-//   utility  → brand / relationship / contact, in the quiet upper utility bar
-//   brand    → Home, represented by the logo (never a text link)
-// The mobile menu still renders every item in this order, so nothing is lost.
+// Single source of truth for ALL navigation (desktop main bar + mobile menu),
+// in patient-journey order. The upper utility strip carries only practice info
+// (no links), so the whole navigation lives here. Groups below are code
+// organization only — no visible dividers/labels.
 const NAV = [
-  { label: "Home", path: "/", tier: "brand" },
+  { label: "Home", path: "/" },
   // Brand & Trust
-  { label: "About AVEN", path: "/about", tier: "utility" },
-  { label: "Meet Your Provider", path: "/providers", tier: "utility" },
+  { label: "About AVEN", path: "/about" },
+  { label: "Meet Your Provider", path: "/providers" },
   // Clinical Services
-  { label: "Aesthetics", path: "/aesthetics", tier: "primary" },
-  { label: "Wellness", path: "/wellness", tier: "primary" },
-  { label: "Family Medicine", path: "/family-medicine", tier: "primary" },
+  { label: "Aesthetics", path: "/aesthetics" },
+  { label: "Wellness", path: "/wellness" },
+  { label: "Family Medicine", path: "/family-medicine" },
   // Signature Programs
-  { label: "Bridal Journey", path: "/bridal-journey", tier: "primary" },
+  { label: "Bridal Journey", path: "/bridal-journey" },
   // Patient Journey
-  { label: "AVEN Assessment", path: "/assessment", tier: "utility" },
-  { label: "Memberships", path: "/memberships", tier: "utility" },
+  { label: "AVEN Assessment", path: "/assessment" },
+  { label: "Memberships", path: "/memberships" },
   // Education
-  { label: "Education", path: "/education", tier: "utility" },
+  { label: "Education", path: "/education" },
   // Contact
-  { label: "Contact", path: "/contact", tier: "utility" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Header = ({ route, navigate }) => {
@@ -99,55 +96,42 @@ const Header = ({ route, navigate }) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const primaryNav = NAV.filter((n) => n.tier === "primary");
-  const utilityNav = NAV.filter((n) => n.tier === "utility");
-
   return (
     <>
       <header className={"hdr" + (scrolled ? " scrolled" : "")}>
-        {/* Utility tier — quiet secondary wayfinding + contact (wide screens only) */}
+        {/* Level 1 — a quiet utility strip: practice info only, no links. */}
         <div className="hdr-utility">
           <span className="hdr-util-tag">Orland Park · By Appointment</span>
-          <nav className="hdr-util-nav" aria-label="Secondary">
-            {utilityNav.map((n) => (
-              <a
-                key={n.path}
-                href={n.path}
-                onClick={(e) => { e.preventDefault(); navigate(n.path); }}
-                className={route === n.path ? "active" : ""}
-              >
-                {n.label}
-              </a>
-            ))}
-            <a className="phone" href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phoneDisplay}</a>
-          </nav>
+          <a className="hdr-util-phone" href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phoneDisplay}</a>
         </div>
 
-        {/* Main tier — logo anchor · core offerings · one CTA */}
+        {/* Level 2 — the main navigation: logo anchor (left) · nav + CTA (right). */}
         <div className="hdr-main">
           <Brand onClick={navigate} />
-          <nav className="hdr-primary" aria-label="Primary">
-            {primaryNav.map((n) => (
-              <a
-                key={n.path}
-                href={n.path}
-                onClick={(e) => { e.preventDefault(); navigate(n.path); }}
-                className={route === n.path ? "active" : ""}
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <div className="hdr-actions">
-            <AssessmentCTA
-              navigate={navigate}
-              className="btn solid hdr-cta"
-              showArrow={false}
-              style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
-            />
-            <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
-              <span></span><span></span><span></span>
-            </button>
+          <div className="hdr-right">
+            <nav className="hdr-nav" aria-label="Primary">
+              {NAV.map((n) => (
+                <a
+                  key={n.path}
+                  href={n.path}
+                  onClick={(e) => { e.preventDefault(); navigate(n.path); }}
+                  className={route === n.path ? "active" : ""}
+                >
+                  {n.label}
+                </a>
+              ))}
+            </nav>
+            <div className="hdr-actions">
+              <AssessmentCTA
+                navigate={navigate}
+                className="btn solid hdr-cta"
+                showArrow={false}
+                style={{ height: 40, padding: "0 22px", fontSize: 10.5 }}
+              />
+              <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
+                <span></span><span></span><span></span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
