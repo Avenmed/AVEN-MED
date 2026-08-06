@@ -8,9 +8,9 @@ import { getHubEntries } from '../content/registry.jsx';
 // "Soon" teasers for services that don't have a page yet. When one is built and
 // registered, delete its line here and it appears automatically as a live card
 // (via getHubEntries), ordered by its page's hub.order.
-const WELLNESS_SOON = [
-  { label: "Hormone Optimization", blurb: "Conservative, monitored bio-identical hormone and peptide protocols.", order: 50, soon: true, path: null },
-];
+// (No "Soon" wellness teasers at present. Add one here only for a service AVEN
+// genuinely plans to offer — it renders as a non-linking "Soon" card.)
+const WELLNESS_SOON = [];
 
 const WellnessPage = ({ navigate }) => {
   // Live service cards derive from the registry; Soon teasers are merged in and
@@ -64,8 +64,8 @@ const WellnessPage = ({ navigate }) => {
             {[
               { n: "01", k: "Longevity Panels", b: "Quarterly bloodwork tracking inflammation, hormones, metabolic and cardiovascular markers — interpreted, not just delivered." },
               { n: "02", k: "IV Therapy", b: "Custom-formulated infusions for immune support, cognitive performance, recovery, and pre-aesthetic optimization." },
-              { n: "03", k: "Hormone Optimization", b: "Bio-identical hormone replacement and peptide therapies, prescribed conservatively and reviewed annually." },
-              { n: "04", k: "Concierge Primary Care", b: "Same-day access, unhurried visits, and a single practitioner who actually knows your file." }
+              { n: "03", k: "Medical Weight Loss", b: "A physician-directed, whole-person program for weight and metabolic health — with GLP-1 medication as one option when appropriate." },
+              { n: "04", k: "Nutrition & Metabolic Support", b: "Practical, individualized nutrition and metabolic guidance that works alongside the rest of your care." }
             ].map((p, i) => (
               <Reveal key={p.n} delay={i * 100}>
                 <div style={{ padding: "36px 28px", border: "1px solid var(--hairline)", height: "100%", background: "var(--surface)" }}>
@@ -133,7 +133,7 @@ const WellnessPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, border: "1px solid var(--hairline)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--hairline)" }}>
             {[
               {
                 k: "The Foundation",
@@ -149,12 +149,6 @@ const WellnessPage = ({ navigate }) => {
                 feat: true
               },
               {
-                k: "Hormone",
-                p: "Practitioner-prescribed",
-                d: "Bio-identical hormone protocol with quarterly review — conservative, monitored, and continuously adjusted.",
-                items: ["Hormone protocol", "Quarterly review", "Lab-informed adjustments"]
-              },
-              {
                 k: "Weight Loss",
                 p: "Practitioner-led",
                 d: "A physician-directed medical weight-loss program — evaluation, nutrition, movement, and coaching, with GLP-1 medication as one option when it's clinically appropriate.",
@@ -164,8 +158,7 @@ const WellnessPage = ({ navigate }) => {
               <Reveal key={p.k} delay={i * 120}
                 style={{
                   padding: 48,
-                  borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none",
-                  borderTop: i > 1 ? "1px solid var(--hairline)" : "none",
+                  borderRight: i < 2 ? "1px solid var(--hairline)" : "none",
                   background: p.feat ? "var(--surface)" : "transparent"
                 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
