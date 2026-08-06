@@ -88,8 +88,9 @@ const ContactPage = ({ navigate }) => {
                 style={{ display: "grid", gap: 36 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
                   <div className="field">
-                    <label>Full Name</label>
+                    <label htmlFor="contact-name">Full Name</label>
                     <input
+                      id="contact-name"
                       value={form.name}
                       onChange={set("name")}
                       required
@@ -100,8 +101,9 @@ const ContactPage = ({ navigate }) => {
                     />
                   </div>
                   <div className="field">
-                    <label>Email</label>
+                    <label htmlFor="contact-email">Email</label>
                     <input
+                      id="contact-email"
                       type="email"
                       required
                       value={form.email}
@@ -114,8 +116,9 @@ const ContactPage = ({ navigate }) => {
                   </div>
                 </div>
                 <div className="field">
-                  <label>Phone</label>
+                  <label htmlFor="contact-phone">Phone</label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     value={form.phone}
                     onChange={set("phone")}
@@ -126,8 +129,8 @@ const ContactPage = ({ navigate }) => {
                 </div>
 
                 <div className="field">
-                  <label>I am interested in</label>
-                  <select value={form.interest} onChange={set("interest")}>
+                  <label htmlFor="contact-interest">I am interested in</label>
+                  <select id="contact-interest" value={form.interest} onChange={set("interest")}>
                     <option>Aesthetic Medicine Assessment</option>
                     <option>Wellness Assessment</option>
                     <option>Skin Assessment</option>
@@ -138,8 +141,8 @@ const ContactPage = ({ navigate }) => {
                 </div>
 
                 <div className="field">
-                  <label>A few words about what you're hoping for</label>
-                  <textarea value={form.message} onChange={set("message")} placeholder="Optional. Anything you'd like the clinic to know in advance." />
+                  <label htmlFor="contact-message">A few words about what you're hoping for</label>
+                  <textarea id="contact-message" value={form.message} onChange={set("message")} placeholder="Optional. Anything you'd like the clinic to know in advance." />
                 </div>
 
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>

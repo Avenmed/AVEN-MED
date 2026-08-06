@@ -24,8 +24,10 @@ import EducationCategoryPage from './pages/EducationCategory.jsx';
 import ArticleTemplate from './pages/ArticleTemplate.jsx';
 import BridalJourneyPage from './pages/BridalJourney.jsx';
 import BridalAssessmentPage from './pages/BridalAssessment.jsx';
+import NotFoundPage from './pages/NotFound.jsx';
 import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles, getServiceLinksBySlugs } from './content/registry.jsx';
 import { validateBridal } from './content/bridal/index.js';
+import { categoryBySlug } from './content/education/index.js';
 
 // Stable wrapper so registry pages don't remount on every App render.
 // key={route} handles remounting on navigation; the schema template cleans
@@ -37,18 +39,20 @@ const RegistryPage = ({ route, navigate }) => {
   return <Template data={entry.data} navigate={navigate} />;
 };
 
-// Education Center category landing — slug derived from the path.
+// Education Center category landing — slug derived from the path. Unknown category
+// slugs resolve to the NotFound experience (not a silent hub fallback).
 const EducationCategoryRoute = ({ route, navigate }) => {
   const slug = route.replace(/^\/education\/topics\//, "").replace(/\/+$/, "");
+  if (!categoryBySlug(slug)) return <NotFoundPage navigate={navigate} />;
   return <EducationCategoryPage category={slug} navigate={navigate} />;
 };
 
 // Education Center article — resolved from the registry (single source of truth),
-// with related articles attached. Unknown/unpublished slugs fall back to the hub.
+// with related articles attached. Unknown/unpublished slugs resolve to NotFound.
 const EducationArticleRoute = ({ route, navigate }) => {
   const slug = route.replace(/^\/education\//, "").replace(/\/+$/, "");
   const article = getEducationArticle(slug);
-  if (!article) return <EducationPage navigate={navigate} />;
+  if (!article) return <NotFoundPage navigate={navigate} />;
   const relatedArticles = getRelatedArticles(slug, 3);
   return <ArticleTemplate article={{ ...article, relatedArticles }} navigate={navigate} />;
 };
@@ -203,6 +207,7 @@ const App = () => {
     if (route === "/bridal-journey") return BridalJourneyPage;
     if (route === "/bridal-journey/assessment") return BridalAssessmentPage;
     switch (route) {
+      case "/": return Home;
       case "/about": return AboutPage;
       case "/concerns": return ConcernsPage;
       case "/providers": return ProvidersPage;
@@ -212,7 +217,8 @@ const App = () => {
       case "/assessment": return AssessmentPage;
       case "/memberships": return MembershipsPage;
       case "/contact": return ContactPage;
-      default: return Home;
+      // Any other route is genuinely unknown → NotFound (no silent Home fallback).
+      default: return NotFoundPage;
     }
   })();
 

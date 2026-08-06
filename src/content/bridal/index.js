@@ -181,15 +181,15 @@ export const BRIDAL_EDUCATION_REFS = [
 
 // ---- FAQs (medically responsible placeholder answers; final copy pending) ---
 export const BRIDAL_FAQS = [
-  { q: "When should I begin my bridal journey?", a: "There's no single right time — earlier simply allows more flexibility. The best starting point for you is decided together at your AVEN Assessment. (Final answer pending approval.)" },
-  { q: "Is the journey personalized?", a: "Yes. Every bridal plan is individual and is created with your provider at a consultation — this page is an overview, not a plan. (Final answer pending approval.)" },
-  { q: "Do I need to know which treatments I want?", a: "No. You don't need a list beforehand; the Assessment is where goals and options are discussed. (Final answer pending approval.)" },
-  { q: "What happens during the Bridal Assessment?", a: "It's a consultation-first conversation about your goals, timing, and questions — no obligation to proceed. (Final answer pending approval.)" },
-  { q: "Can I start if my wedding is only a few months away?", a: "You're welcome to begin at any point before your date; what's appropriate is determined at your consultation. (Final answer pending approval.)" },
-  { q: "Can members of my wedding party participate?", a: "Additional wedding-related journeys are planned. Please ask at your Assessment. (Final answer pending approval.)" },
-  { q: "Are treatment results guaranteed?", a: "No. AVEN does not guarantee outcomes; care is individualized and discussed honestly at consultation. (Final answer pending approval.)" },
-  { q: "Can treatments be performed immediately before the wedding?", a: "Timing is a clinical decision made with your provider and is not something this page prescribes. (Final answer pending approval.)" },
-  { q: "Is every treatment appropriate for every patient?", a: "No. Appropriateness is always individual and is determined during the AVEN Assessment. (Final answer pending approval.)" },
+  { q: "When should I begin my bridal journey?", a: "There's no single right time — earlier simply allows more flexibility. The best starting point for you is decided together at your AVEN Assessment." },
+  { q: "Is the journey personalized?", a: "Yes. Every bridal plan is individual and is created with your provider at a consultation — this page is an overview, not a plan." },
+  { q: "Do I need to know which treatments I want?", a: "No. You don't need a list beforehand; the Assessment is where goals and options are discussed." },
+  { q: "What happens during the Bridal Assessment?", a: "It's a consultation-first conversation about your goals, timing, and questions — no obligation to proceed." },
+  { q: "Can I start if my wedding is only a few months away?", a: "You're welcome to begin at any point before your date; what's appropriate is determined at your consultation." },
+  { q: "Can members of my wedding party participate?", a: "Additional wedding-related journeys are planned. Please ask at your Assessment." },
+  { q: "Are treatment results guaranteed?", a: "No. AVEN does not guarantee outcomes; care is individualized and discussed honestly at consultation." },
+  { q: "Can treatments be performed immediately before the wedding?", a: "Timing is a clinical decision made with your provider and is not something this page prescribes." },
+  { q: "Is every treatment appropriate for every patient?", a: "No. Appropriateness is always individual and is determined during the AVEN Assessment." },
 ];
 
 // ---- Assessment form field schema ------------------------------------------
@@ -331,10 +331,12 @@ export const BRIDAL_JOURNEYS = [
     enabled: true,
     lifecycleStages: BRIDAL_LIFECYCLE_STAGES,  // optional/internal — see note above
     seo: BRIDAL_ROUTE_SEO["/bridal-journey"],
+    // Restrained, non-medical TEMPORARY copy so the (currently noindex) page never
+    // shows literal placeholder text. Final approved bridal content replaces these.
     hero: {
       eyebrow: "The AVEN Bridal Journey",
-      headline: PLACEHOLDER,          // e.g. "Begin early. Arrive as yourself."
-      supporting: PLACEHOLDER,
+      headline: "Begin early. Arrive as yourself.",
+      supporting: "A considered, consultation-first way to prepare for your wedding — unhurried, individual, and planned around your date with your AVEN provider.",
       primaryCtaLabel: "Begin Your Bridal Journey",
       primaryCtaHref: "/bridal-journey/assessment",
       secondaryCtaLabel: "Explore the Timeline",
@@ -344,8 +346,11 @@ export const BRIDAL_JOURNEYS = [
     },
     introduction: {
       eyebrow: "The Journey",
-      headline: PLACEHOLDER,
-      body: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+      headline: "An overview, not a plan.",
+      body: [
+        "The AVEN Bridal Journey is a way to think about your care in the months before your wedding — calm, individual, and shaped by a conversation with your provider.",
+        "It is an overview, not a medical plan. What's right for you, and when, is decided together at your AVEN Assessment.",
+      ],
       note: PLACEHOLDER,
     },
     timelineStages: BRIDAL_TIMELINE_STAGES,
@@ -354,7 +359,9 @@ export const BRIDAL_JOURNEYS = [
     relatedServices: BRIDAL_SERVICE_SLUGS,
     relatedArticles: BRIDAL_EDUCATION_REFS,
     faqs: BRIDAL_FAQS,
-    structuredData: { includeFaq: true, includeService: true },
+    // FAQ answers are restrained but not owner-approved yet → do NOT emit FAQPage
+    // schema until they are finalized (visible FAQ still renders).
+    structuredData: { includeFaq: false, includeService: true },
     primaryCta: { label: "Begin Your Bridal Journey", href: "/bridal-journey/assessment" },
     secondaryCta: { label: "Explore the Timeline", href: "#timeline" },
   },
@@ -372,9 +379,19 @@ export function getBridalTimeline(journeyId) {
   return (j ? j.timelineStages : BRIDAL_TIMELINE_STAGES).filter((s) => s.enabled !== false);
 }
 
+// The Bridal Journey is indexable only once its content is published (status).
+// While "draft" (placeholder copy), the routes stay LIVE and in the nav, but
+// seo.js marks them noindex and they're excluded from the sitemap. Restores
+// automatically when status flips to "published".
+export function bridalIndexable() {
+  const j = getBridalJourney("bridal-journey");
+  return !!j && j.status === "published";
+}
+
 // Sitemap rows for the dynamic sitemap (consumed by registry.getSitemapEntries).
-// Only the public landing + its assessment entry point.
+// Only the public landing + its assessment entry point — and only while published.
 export function bridalSitemapRoutes() {
+  if (!bridalIndexable()) return [];
   const rows = [];
   enabledBridalJourneys().forEach((j) => {
     rows.push({ loc: `/${j.slug}`, priority: 0.9, changefreq: "monthly" });

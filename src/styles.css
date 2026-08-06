@@ -555,6 +555,30 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .field input:focus, .field textarea:focus, .field select:focus { border-bottom-color: var(--gold); }
 .field textarea { resize: vertical; min-height: 96px; }
 
+/* ---------- Keyboard focus indicator (WCAG 2.4.7) ----------
+   Visible only for keyboard/switch users (:focus-visible), never for mouse
+   clicks. Applies to every interactive element site-wide — nav links, buttons,
+   CTAs, cards-as-links, form fields, the menu button, and native disclosure
+   (details/summary) controls — in the existing AVEN gold. The field underline
+   cue above is preserved for pointer focus. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* Remove the default summary marker so the ring reads cleanly on FAQ/timeline. */
+summary:focus-visible { outline-offset: 2px; }
+
 /* Tweaks button label hint */
 [data-tw] { cursor: default; }
 

@@ -82,9 +82,12 @@ function Field({ field, value, error, onChange }) {
     );
   }
 
+  // Multiselect renders a button group (no single labellable control), so the
+  // label must associate via aria-labelledby, not a dangling htmlFor.
+  const isMulti = field.type === "multiselect";
   return (
     <div className="field">
-      <label htmlFor={field.id}>{field.label}{field.required && " *"}{field.help ? ` · ${field.help}` : ""}</label>
+      <label id={`${field.id}-label`} htmlFor={isMulti ? undefined : field.id}>{field.label}{field.required && " *"}{field.help ? ` · ${field.help}` : ""}</label>
       {field.type === "textarea" ? (
         <textarea {...common} value={value} placeholder={field.placeholder} onChange={(e) => onChange(e.target.value)} />
       ) : field.type === "select" ? (
@@ -92,8 +95,8 @@ function Field({ field, value, error, onChange }) {
           <option value="">Select…</option>
           {field.options.map((o) => <option key={o}>{o}</option>)}
         </select>
-      ) : field.type === "multiselect" ? (
-        <BridalConcernSelector options={field.options} value={value} onChange={onChange} />
+      ) : isMulti ? (
+        <BridalConcernSelector labelledBy={`${field.id}-label`} options={field.options} value={value} onChange={onChange} />
       ) : (
         <input {...common} type={field.type} value={value} placeholder={field.placeholder}
           autoComplete={field.autoComplete} onChange={(e) => onChange(e.target.value)} required={field.required} />

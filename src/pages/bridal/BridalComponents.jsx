@@ -58,12 +58,12 @@ export function BridalHero({ hero, navigate }) {
           <div style={{ maxWidth: "22ch" }}>
             <Eyebrow>{hero.eyebrow}</Eyebrow>
             <h1 className="display" style={{ fontSize: "clamp(46px, 7vw, 108px)", margin: "24px 0 0", lineHeight: 0.98 }}>
-              {isPlaceholder(hero.headline) ? <span style={{ color: "var(--muted)" }}>[Headline placeholder]</span> : hero.headline}
+              {isPlaceholder(hero.headline) ? hero.eyebrow : hero.headline}
             </h1>
           </div>
-          <p className="lede" style={{ maxWidth: "52ch" }}>
-            {isPlaceholder(hero.supporting) ? <span style={{ color: "var(--muted)" }}>[Supporting statement placeholder — final copy pending approval.]</span> : hero.supporting}
-          </p>
+          {!isPlaceholder(hero.supporting) && (
+            <p className="lede" style={{ maxWidth: "52ch" }}>{hero.supporting}</p>
+          )}
           <div style={{ display: "flex", gap: 22, flexWrap: "wrap", alignItems: "center" }}>
             <BridalAssessmentCTA navigate={navigate} label={hero.primaryCtaLabel} href={hero.primaryCtaHref} />
             <a href={hero.secondaryCtaHref} className="link"
@@ -86,13 +86,11 @@ export function BridalIntroduction({ intro }) {
       <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1120 }}>
         <Reveal><Eyebrow>{intro.eyebrow}</Eyebrow></Reveal>
         <Reveal delay={120}>
-          <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 26px", maxWidth: "22ch", fontWeight: 300 }}>
-            {isPlaceholder(intro.headline) ? <span style={{ color: "var(--muted)" }}>[Section headline placeholder]</span> : intro.headline}
-          </h2>
-          {intro.body.map((p, i) => (
-            <p key={i} className="body" style={{ marginBottom: 20, fontSize: 17, lineHeight: 1.85, color: isPlaceholder(p) ? "var(--muted)" : undefined }}>
-              {isPlaceholder(p) ? "[Introduction paragraph placeholder — explains what the AVEN Bridal Journey is, why to plan ahead, why each journey differs, how the AVEN Assessment shapes the plan, and how treatments may be coordinated around the wedding date. Final copy pending approval.]" : p}
-            </p>
+          {!isPlaceholder(intro.headline) && (
+            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 26px", maxWidth: "22ch", fontWeight: 300 }}>{intro.headline}</h2>
+          )}
+          {intro.body.filter((p) => !isPlaceholder(p)).map((p, i) => (
+            <p key={i} className="body" style={{ marginBottom: 20, fontSize: 17, lineHeight: 1.85 }}>{p}</p>
           ))}
           <BridalDisclaimer style={{ marginTop: 8 }}>
             The AVEN Bridal Journey is an overview, not a medical plan. There is no universal timeline that fits every patient — your plan is created individually at a consultation.
@@ -105,15 +103,17 @@ export function BridalIntroduction({ intro }) {
 
 // --- Goals grid -------------------------------------------------------------
 export function BridalGoalsGrid({ goals = [], title = "Possible goals" }) {
-  if (!goals.length) return null;
+  // Only render real (non-placeholder) goals; hide the block entirely otherwise.
+  const real = goals.filter((g) => !isPlaceholder(g));
+  if (!real.length) return null;
   return (
     <div style={{ marginTop: 18 }}>
       <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.2em", marginBottom: 12 }}>{title}</div>
       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10 }}>
-        {goals.map((g, i) => (
-          <li key={i} style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 12, color: isPlaceholder(g) ? "var(--muted)" : "var(--ivory)", fontSize: 15 }}>
+        {real.map((g, i) => (
+          <li key={i} style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 12, color: "var(--ivory)", fontSize: 15 }}>
             <span aria-hidden="true" style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 11 }} />
-            <span>{isPlaceholder(g) ? "[Planning goal placeholder — provider-approved]" : g}</span>
+            <span>{g}</span>
           </li>
         ))}
       </ul>
@@ -132,17 +132,19 @@ export function BridalTimelineStage({ stage, navigate }) {
         <span className="label" style={{ color: "var(--gold)", flexShrink: 0 }}>{stage.range}</span>
       </summary>
       <div style={{ paddingBottom: 30, maxWidth: "64ch" }}>
-        <p className="body" style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 8 }}>
-          {isPlaceholder(stage.intro) ? "[Stage introduction placeholder — final copy pending approval.]" : stage.intro}
-        </p>
+        {!isPlaceholder(stage.intro) && (
+          <p className="body" style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 8 }}>{stage.intro}</p>
+        )}
         <BridalGoalsGrid goals={stage.goals} />
         {/* Related services / articles resolve from the registry once approved */}
         <p className="body-sm" style={{ color: "var(--muted)", marginTop: 16 }}>
-          Related services and reading for this stage will be curated with provider-approved guidance.
+          Services and reading for this stage are curated with your provider at the AVEN Assessment.
         </p>
-        <p className="body-sm" style={{ color: "var(--muted)", marginTop: 8 }}>
-          <strong style={{ color: "var(--ivory-soft)" }}>Timing &amp; safety:</strong> {isPlaceholder(stage.safetyNote) ? "[To be provided by the clinical team.]" : stage.safetyNote}
-        </p>
+        {!isPlaceholder(stage.safetyNote) && (
+          <p className="body-sm" style={{ color: "var(--muted)", marginTop: 8 }}>
+            <strong style={{ color: "var(--ivory-soft)" }}>Timing &amp; safety:</strong> {stage.safetyNote}
+          </p>
+        )}
         <div style={{ marginTop: 18 }}>
           <a href={stage.ctaHref} className="link" onClick={(e) => { e.preventDefault(); navigate(stage.ctaHref); }}>
             <span>{stage.ctaLabel}</span><span className="arrow"></span>
@@ -177,15 +179,18 @@ export function BridalJourneyTimeline({ stages = [], navigate }) {
 }
 
 // --- Concern selector (reusable chip multi-select) --------------------------
-export function BridalConcernSelector({ options = [], value = [], onChange, label }) {
+export function BridalConcernSelector({ options = [], value = [], onChange, label, labelledBy }) {
   const toggle = (opt) => {
     if (!onChange) return;
     onChange(value.includes(opt) ? value.filter((v) => v !== opt) : [...value, opt]);
   };
+  // Prefer aria-labelledby (pointing at an existing visible label) so the group's
+  // accessible name matches the on-screen text; fall back to aria-label.
+  const groupNameProps = labelledBy ? { "aria-labelledby": labelledBy } : { "aria-label": label || "Options" };
   return (
     <div>
       {label && <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.2em", marginBottom: 12 }}>{label}</div>}
-      <div role="group" aria-label={label || "Options"} style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+      <div role="group" {...groupNameProps} style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
         {options.map((opt) => {
           const active = value.includes(opt);
           return (
@@ -299,14 +304,18 @@ export function BridalFAQSection({ faqs = [] }) {
 }
 
 // --- Testimonial + gallery placeholders -------------------------------------
+// Renders nothing publicly until real, approved patient stories exist — no
+// visible placeholder text.
 export function BridalTestimonialPlaceholder() {
+  return null;
+  /* eslint-disable no-unreachable */
   return (
     <section className="section" style={{ textAlign: "center" }}>
       <div className="container" style={{ maxWidth: 720 }}>
         <Reveal>
           <Eyebrow>In Their Words</Eyebrow>
           <div className="display italic" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "var(--muted)", margin: "24px auto 0", maxWidth: "26ch" }}>
-            [Testimonial placeholder — no reviews or quotes will appear until real, approved patient stories exist.]
+            (Reserved for approved patient stories.)
           </div>
         </Reveal>
       </div>
@@ -426,9 +435,9 @@ export function BridalPatientJourneyStep({ step, navigate }) {
       </div>
       <div>
         <h3 className="display" style={{ fontFamily: "var(--serif)", fontSize: "clamp(20px, 2.6vw, 26px)", fontWeight: 400, color: "var(--ivory)", margin: 0 }}>{step.title}</h3>
-        <p className="body" style={{ marginTop: 8, color: "var(--muted)", fontStyle: isPlaceholder(step.description) ? "italic" : "normal", maxWidth: "60ch" }}>
-          {isPlaceholder(step.description) ? "[Step description placeholder — restrained copy pending approval.]" : step.description}
-        </p>
+        {!isPlaceholder(step.description) && (
+          <p className="body" style={{ marginTop: 8, color: "var(--muted)", maxWidth: "60ch" }}>{step.description}</p>
+        )}
         {step.ctaLabel && step.ctaDestination && (
           <div style={{ marginTop: 14 }}>
             <a href={step.ctaDestination} className="link" onClick={(e) => { e.preventDefault(); navigate(step.ctaDestination); }}>
@@ -451,11 +460,11 @@ export function BridalPatientJourney({ patientJourney, navigate }) {
         <Reveal>
           <Eyebrow>{patientJourney.eyebrow || "Your AVEN Bridal Experience"}</Eyebrow>
           <h2 className="display" style={{ fontSize: "clamp(34px, 5vw, 64px)", margin: "20px 0 16px", fontWeight: 300 }}>
-            {isPlaceholder(patientJourney.title) ? <span style={{ color: "var(--muted)" }}>[Experience section headline placeholder]</span> : (patientJourney.title || <>Your <em>experience.</em></>)}
+            {isPlaceholder(patientJourney.title) ? <>Your <em>experience.</em></> : patientJourney.title}
           </h2>
-          <p className="body" style={{ marginBottom: 6, maxWidth: "60ch", color: isPlaceholder(patientJourney.introduction) ? "var(--muted)" : undefined, fontStyle: isPlaceholder(patientJourney.introduction) ? "italic" : "normal" }}>
-            {isPlaceholder(patientJourney.introduction) ? "[Introduction placeholder — describes the AVEN experience from first contact through long-term care. Final copy pending approval.]" : patientJourney.introduction}
-          </p>
+          {!isPlaceholder(patientJourney.introduction) && (
+            <p className="body" style={{ marginBottom: 6, maxWidth: "60ch" }}>{patientJourney.introduction}</p>
+          )}
           <BridalDisclaimer style={{ marginBottom: 24 }}>
             Every plan is individual — the steps below describe the shape of the experience, not a treatment plan. No two journeys are the same.
           </BridalDisclaimer>

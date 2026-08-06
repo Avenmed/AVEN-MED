@@ -68,3 +68,12 @@ export const categoriesInOrder = () => [...EDU_CATEGORIES].sort((a, b) => a.orde
 export function publishedArticles() {
   return EDU_ARTICLES.filter((a) => a.published !== false);
 }
+
+// Published, visible articles in a category (drives indexation + sitemap gating
+// of the category page: index only once a topic has ≥1 published article).
+export function publishedArticlesInCategory(slug) {
+  return publishedArticles().filter((a) => a.category === slug && !a.hidden);
+}
+export function categoryHasArticles(slug) {
+  return publishedArticlesInCategory(slug).length > 0;
+}

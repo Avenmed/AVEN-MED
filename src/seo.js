@@ -8,8 +8,8 @@
 
 import { SERVICE_SLUGS } from './pages/Service.jsx';
 import { REGISTRY_SEO, getEducationArticle } from './content/registry.jsx';
-import { categoryBySlug } from './content/education/index.js';
-import { BRIDAL_ROUTE_SEO } from './content/bridal/index.js';
+import { categoryBySlug, categoryHasArticles } from './content/education/index.js';
+import { BRIDAL_ROUTE_SEO, bridalIndexable } from './content/bridal/index.js';
 
 const BASE_URL = "https://avenmedil.com";
 const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -190,6 +190,9 @@ export function applySeo(route) {
         title: `${cat.label} — Education Center · AVEN MED, Orland Park IL`,
         description: `${cat.blurb} Clinically reviewed guides from AVEN MED in Orland Park, IL.`,
       };
+      // Hold empty category pages from the index until they have ≥1 published
+      // article; restores automatically once content ships.
+      if (!categoryHasArticles(slug)) robots = ROBOTS_NOINDEX;
     } else {
       notFound = true;
       robots = ROBOTS_NOINDEX;
@@ -214,17 +217,34 @@ export function applySeo(route) {
     }
   }
 
-  if (!meta) meta = DEFAULT;
+  // Anything still unresolved is a genuinely unknown route → NotFound. Never let
+  // it fall through to the homepage's DEFAULT metadata (soft-404 / duplicate
+  // content). "/" always resolves via ROUTE_SEO, so it never reaches here.
+  if (!meta) {
+    notFound = true;
+    robots = ROBOTS_NOINDEX;
+    meta = { title: "Page not found · AVEN MED", description: "This page could not be found." };
+  }
 
+  // Hold unfinished architecture from the index while its content is placeholder.
+  // These routes stay live and in the nav — only their indexability changes, and
+  // it restores automatically when the content is published.
+  if ((route === "/bridal-journey" || route.startsWith("/bridal-journey/")) && !bridalIndexable()) {
+    robots = ROBOTS_NOINDEX;
+  }
+
+  // Canonical/OG URL for the route. For not-found routes, point the canonical at
+  // Home rather than self-canonicalizing the invalid URL.
   const url = BASE_URL + (route === "/" ? "/" : route);
+  const canonicalUrl = notFound ? BASE_URL + "/" : url;
 
   document.title = meta.title;
   setMeta("name", "description", meta.description);
   setMeta("name", "robots", robots);
-  setCanonical(url);
+  setCanonical(canonicalUrl);
   setMeta("property", "og:title", meta.title);
   setMeta("property", "og:description", meta.description);
-  setMeta("property", "og:url", url);
+  setMeta("property", "og:url", canonicalUrl);
   setMeta("name", "twitter:title", meta.title);
   setMeta("name", "twitter:description", meta.description);
   if (notFound) {

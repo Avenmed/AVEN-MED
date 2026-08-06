@@ -75,7 +75,7 @@ import alaaMashal from '../pages/providers/AlaaMashal.jsx';
 
 // Education Center — pure-data article index + categories (bodies are lazy-loaded
 // per article by ArticleTemplate; see src/content/education/index.js).
-import { EDU_CATEGORIES, publishedArticles, categoryBySlug } from './education/index.js';
+import { EDU_CATEGORIES, publishedArticles, categoryBySlug, categoryHasArticles } from './education/index.js';
 
 // Bridal Journey — pure-data journey registry (see src/content/bridal/index.js).
 import { bridalSitemapRoutes } from './bridal/index.js';
@@ -285,7 +285,9 @@ export function getSitemapEntries() {
   const out = [];
   STATIC_SITEMAP_ROUTES.forEach((r) => out.push({ loc: r.path, priority: r.priority, changefreq: r.changefreq }));
   REGISTRY_URLS.forEach((u) => out.push({ loc: `/${u.slug}`, priority: u.priority, changefreq: u.changefreq }));
-  EDU_CATEGORIES.forEach((c) => out.push({ loc: `/education/topics/${c.slug}`, priority: 0.6, changefreq: "weekly" }));
+  // Only include a topic page once it has ≥1 published article (empty topic pages
+  // are noindex and held from the sitemap; restores automatically with content).
+  EDU_CATEGORIES.forEach((c) => { if (categoryHasArticles(c.slug)) out.push({ loc: `/education/topics/${c.slug}`, priority: 0.6, changefreq: "weekly" }); });
   publishedArticles().forEach((a) => out.push({ loc: `/education/${a.slug}`, priority: 0.7, changefreq: "monthly", lastmod: a.dateModified || a.datePublished }));
   bridalSitemapRoutes().forEach((r) => out.push({ loc: r.loc, priority: r.priority, changefreq: r.changefreq }));
   // de-dupe by loc, stable order
