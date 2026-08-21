@@ -59,13 +59,12 @@ function setCanonical(html, href) {
   return html.replace(m[0], m[0].replace(/href="[^"]*"/i, `href="${escAttr(href)}"`));
 }
 
-// TEMPORARY DIAGNOSTIC MODE: capture any failure into dist/prerender-status.txt
-// (served by Netlify) and exit 0, so the build deploys and the error is readable
-// via curl — this environment has no Node/Netlify-log access. Fail-visible (exit 1)
-// is restored once the root cause is fixed. The head-injection is non-destructive:
-// a route that isn't written simply falls back to today's client-rendered head.
+// FAIL-VISIBLE: every problem is collected and, if anything failed to generate a
+// valid head, printed to stderr with a non-zero exit so the Netlify build FAILS and
+// the previous good deploy is kept — we never publish a deploy with wrong or
+// soft-404 static heads.
 let ok = 0;
-const errs = [];
+const errors = [];
 let vite;
 try {
   vite = await createServer({
@@ -85,8 +84,6 @@ try {
   const shell = readFileSync(SHELL, 'utf8');
   const routes = getPrerenderRoutes();
   if (!Array.isArray(routes) || !routes.length) throw new Error('no prerender routes returned');
-  errs.push(`INFO routes=${routes.length} shellLen=${shell.length}`);
-  errs.push(`INFO shellHasTitle=${/<title>/i.test(shell)} shellHasDesc=${/name="description"/i.test(shell)} shellHasCanon=${/rel="canonical"/i.test(shell)} shellHasOgTitle=${/property="og:title"/i.test(shell)}`);
 
   for (const route of routes) {
     try {
@@ -117,15 +114,19 @@ try {
       else { const file = resolve(DIST, `.${route}.html`); mkdirSync(dirname(file), { recursive: true }); writeFileSync(file, html); }
       ok++;
     } catch (e) {
-      errs.push(`ROUTE ${route}: ${e && e.message ? e.message : e}`);
+      errors.push(`ROUTE ${route}: ${e && e.message ? e.message : e}`);
     }
   }
 } catch (err) {
-  errs.unshift(`SETUP: ${err && err.stack ? err.stack : (err && err.message ? err.message : String(err))}`);
+  errors.unshift(`SETUP: ${err && err.stack ? err.stack : (err && err.message ? err.message : String(err))}`);
 } finally {
   if (vite) { try { await vite.close(); } catch (e) { /* ignore */ } }
 }
-const status = `prerender ok=${ok} errors=${errs.filter((e) => !e.startsWith('INFO')).length}\n` + errs.join('\n') + '\n';
-try { writeFileSync(resolve(DIST, 'prerender-status.txt'), status); } catch (e) { console.error('could not write status', e && e.message); }
-console.log(`[prerender] ok=${ok}, see /prerender-status.txt`);
+
+if (errors.length) {
+  console.error(`[prerender] FAILED — ${ok} route head(s) written, ${errors.length} error(s):`);
+  for (const e of errors) console.error('  ' + e);
+  process.exit(1);
+}
+console.log(`[prerender] ok — generated ${ok} route heads`);
 process.exit(0);
