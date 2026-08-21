@@ -160,7 +160,11 @@ function setBreadcrumb(route, url) {
   el.textContent = JSON.stringify(data);
 }
 
-export function applySeo(route) {
+// PURE resolver — no DOM. The single source of truth for a route's SEO identity,
+// shared by the client (applySeo, below) AND the build-time prerender/SSG step
+// (scripts/prerender.mjs), so the two can never drift. Returns everything needed
+// to write a route's <head> statically.
+export function resolveSeo(route) {
   let meta = ROUTE_SEO[route];
   let robots = ROBOTS_INDEX;
   let notFound = false;
@@ -236,17 +240,26 @@ export function applySeo(route) {
   // Canonical/OG URL for the route. For not-found routes, point the canonical at
   // Home rather than self-canonicalizing the invalid URL.
   const url = BASE_URL + (route === "/" ? "/" : route);
-  const canonicalUrl = notFound ? BASE_URL + "/" : url;
+  const canonical = notFound ? BASE_URL + "/" : url;
 
-  document.title = meta.title;
-  setMeta("name", "description", meta.description);
+  return { title: meta.title, description: meta.description, robots, canonical, url, notFound };
+}
+
+// Applies the resolved SEO to the live document on every client-side navigation.
+// Idempotent (setMeta/setCanonical update existing tags), so it harmlessly
+// re-affirms the values the prerender already wrote into the static <head>.
+export function applySeo(route) {
+  const { title, description, robots, canonical, url, notFound } = resolveSeo(route);
+
+  document.title = title;
+  setMeta("name", "description", description);
   setMeta("name", "robots", robots);
-  setCanonical(canonicalUrl);
-  setMeta("property", "og:title", meta.title);
-  setMeta("property", "og:description", meta.description);
-  setMeta("property", "og:url", canonicalUrl);
-  setMeta("name", "twitter:title", meta.title);
-  setMeta("name", "twitter:description", meta.description);
+  setCanonical(canonical);
+  setMeta("property", "og:title", title);
+  setMeta("property", "og:description", description);
+  setMeta("property", "og:url", canonical);
+  setMeta("name", "twitter:title", title);
+  setMeta("name", "twitter:description", description);
   if (notFound) {
     const b = document.getElementById("breadcrumb-dynamic");
     if (b) b.remove();

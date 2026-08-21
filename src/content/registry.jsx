@@ -78,7 +78,7 @@ import alaaMashal from '../pages/providers/AlaaMashal.jsx';
 import { EDU_CATEGORIES, publishedArticles, categoryBySlug, categoryHasArticles } from './education/index.js';
 
 // Bridal Journey — pure-data journey registry (see src/content/bridal/index.js).
-import { bridalSitemapRoutes } from './bridal/index.js';
+import { bridalSitemapRoutes, bridalPublicRoutes } from './bridal/index.js';
 
 // type -> template component
 export const TEMPLATES = {
@@ -293,4 +293,21 @@ export function getSitemapEntries() {
   // de-dupe by loc, stable order
   const seen = new Set();
   return out.filter((e) => (seen.has(e.loc) ? false : (seen.add(e.loc), true)));
+}
+
+// ============================================================================
+// PRERENDER ROUTE SOURCE OF TRUTH (scripts/prerender.mjs).
+// Every LIVE public route the app serves — including routes that are live but
+// noindex (draft Bridal, empty Education topics), which the sitemap excludes.
+// Derived entirely from the registry so prerender and sitemap can never drift.
+// Unknown routes are intentionally NOT here (they resolve to the client NotFound).
+// ============================================================================
+export function getPrerenderRoutes() {
+  const routes = new Set();
+  STATIC_SITEMAP_ROUTES.forEach((r) => routes.add(r.path));                 // /, hubs, /education, /notes, /contact …
+  REGISTRY_URLS.forEach((u) => routes.add(`/${u.slug}`));                   // every treatment/concern/wellness/family/assessment/provider
+  EDU_CATEGORIES.forEach((c) => routes.add(`/education/topics/${c.slug}`)); // all 8 topics (empty ones prerender noindex)
+  publishedArticles().forEach((a) => routes.add(`/education/${a.slug}`));   // any published articles (none yet)
+  bridalPublicRoutes().forEach((loc) => routes.add(loc));                   // /bridal-journey (+ /assessment) — noindex while draft
+  return [...routes];
 }

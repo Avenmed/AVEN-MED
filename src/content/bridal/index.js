@@ -388,6 +388,17 @@ export function bridalIndexable() {
   return !!j && j.status === "published";
 }
 
+// All live bridal routes regardless of publish status — used for PRERENDERING
+// (the routes are reachable even while draft; they simply render noindex).
+export function bridalPublicRoutes() {
+  const rows = [];
+  enabledBridalJourneys().forEach((j) => {
+    rows.push(`/${j.slug}`);
+    rows.push(`/${j.slug}/assessment`);
+  });
+  return rows;
+}
+
 // Sitemap rows for the dynamic sitemap (consumed by registry.getSitemapEntries).
 // Only the public landing + its assessment entry point — and only while published.
 export function bridalSitemapRoutes() {
