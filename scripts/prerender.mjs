@@ -21,7 +21,7 @@
  * does. (jiti was tried first but does not enable JSX transform for .jsx files.) */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve, join } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import { createServer } from 'vite';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -109,8 +109,12 @@ try {
       html = setMetaTag(html, 'name', 'twitter:title', title);
       html = setMetaTag(html, 'name', 'twitter:description', description);
 
+      // Emit a FLAT file (dist/<route>.html), not dist/<route>/index.html. Netlify
+      // serves /<route> from /<route>.html with a 200 and no redirect, so the served
+      // URL matches the canonical exactly; a directory index would 301 to a trailing
+      // slash and leave the canonical pointing at the redirecting form.
       if (route === '/') writeFileSync(SHELL, html);
-      else { const dir = resolve(DIST, `.${route}`); mkdirSync(dir, { recursive: true }); writeFileSync(join(dir, 'index.html'), html); }
+      else { const file = resolve(DIST, `.${route}.html`); mkdirSync(dirname(file), { recursive: true }); writeFileSync(file, html); }
       ok++;
     } catch (e) {
       errs.push(`ROUTE ${route}: ${e && e.message ? e.message : e}`);
