@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "sitemap": "node scripts/generate-sitemap.mjs",
-    "prerender": "node scripts/prerender.mjs",
-    "build": "node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs",
+    "sitemap": "node --import jiti/register scripts/generate-sitemap.mjs",
+    "prerender": "node --import jiti/register scripts/prerender.mjs",
+    "build": "node --import jiti/register scripts/generate-sitemap.mjs && vite build && node --import jiti/register scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
