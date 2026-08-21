@@ -68,28 +68,11 @@ function buildSchema(journey) {
       "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
     },
     {
-      "@type": ["MedicalBusiness", "MedicalClinic"],
-      "@id": `${BASE}/#clinic`,
-      "name": CLINIC.name,
-      "url": `${BASE}/`,
-      "telephone": CLINIC.phoneSchema,
-      "email": CLINIC.email,
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": CLINIC.streetAddress,
-        "addressLocality": CLINIC.addressLocality,
-        "addressRegion": CLINIC.addressRegion,
-        "postalCode": CLINIC.postalCode,
-        "addressCountry": CLINIC.country,
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": CLINIC.lat, "longitude": CLINIC.lng },
-      "areaServed": DEFAULT_AREAS.map((name) => ({ "@type": "City", "name": name })),
-    },
-    {
+      // Canonical provider entity — defined once in index.html (#alaa). The clinic
+      // is likewise defined once there and referenced by @id (provider) above.
       "@type": "Person",
+      "@id": `${BASE}/#alaa`,
       "name": CLINICAL_REVIEWER.name,
-      "jobTitle": CLINICAL_REVIEWER.role,
       "worksFor": { "@id": `${BASE}/#clinic` },
     },
   ];

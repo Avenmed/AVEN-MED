@@ -6,7 +6,7 @@ const theAvenAssessment = {
   priority: 0.9,
   changefreq: "monthly",
   seo: {
-    title: "The AVEN Assessment in Orland Park, IL — Where Every Plan Begins | AVEN MED",
+    title: "The AVEN Assessment in Orland Park, IL | AVEN MED",
     description: "The AVEN Assessment is where every patient relationship begins at AVEN MED in Orland Park, IL — a personalized consultation with Alaa Mashal, MSN, APRN, FNP-BC that reviews your history, goals, and options, then builds a plan. Consultation-first, never sales-driven.",
   },
   tags: ["assessment", "consultation"],

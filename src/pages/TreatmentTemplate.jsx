@@ -43,30 +43,14 @@ function useTreatmentSchema(data) {
         })),
       },
       {
-        "@type": ["MedicalBusiness", "MedicalClinic"],
-        "@id": `${BASE_URL}/#clinic`,
-        "name": CLINIC.name,
-        "url": `${BASE_URL}/`,
-        "telephone": CLINIC.phoneSchema,
-        "email": CLINIC.email,
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": CLINIC.streetAddress,
-          "addressLocality": CLINIC.addressLocality,
-          "addressRegion": CLINIC.addressRegion,
-          "postalCode": CLINIC.postalCode,
-          "addressCountry": CLINIC.country,
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": CLINIC.lat, "longitude": CLINIC.lng },
-        "areaServed": areas.map((name) => ({ "@type": "City", "name": name })),
-        "medicalSpecialty": "PlasticSurgery",
-        "availableService": {
-          "@type": "MedicalProcedure",
-          "name": data.procedureName,
-          "procedureType": "https://schema.org/NoninvasiveProcedure",
-          "description": data.procedureDescription,
-        },
+        // Route-specific service. The clinic + provider are defined once,
+        // canonically, in index.html (#clinic / #alaa) and referenced by @id here
+        // — never re-declared — so the whole site resolves to one coherent entity.
+        "@type": "MedicalProcedure",
+        "name": data.procedureName,
+        "procedureType": "https://schema.org/NoninvasiveProcedure",
+        "description": data.procedureDescription,
+        "provider": { "@id": `${BASE_URL}/#clinic` },
       },
     ];
     const el = document.createElement("script");

@@ -6,7 +6,7 @@ const sculptra = {
   slug: "sculptra-orland-park",
   priority: 0.9,
   seo: {
-    title: "Sculptra® in Orland Park, IL — Collagen-Stimulating Injectable | AVEN MED",
+    title: "Sculptra® in Orland Park, IL — Collagen Stimulator | AVEN MED",
     description: "Sculptra in Orland Park, IL at AVEN MED — a gradual, collagen-stimulating injectable that supports facial structure, restores subtle volume, and improves balance over time. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Sculptra®",

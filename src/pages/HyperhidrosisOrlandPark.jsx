@@ -5,7 +5,7 @@ const hyperhidrosis = {
   slug: "hyperhidrosis-treatment-orland-park",
   priority: 0.9,
   seo: {
-    title: "Hyperhidrosis Treatment in Orland Park, IL — Excessive Sweating | AVEN MED",
+    title: "Hyperhidrosis Treatment in Orland Park, IL | AVEN MED",
     description: "Neuromodulator treatment for excessive sweating (hyperhidrosis) in Orland Park, IL at AVEN MED — may reduce underarm and other focal sweating for appropriate candidates. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "Hyperhidrosis Treatment",

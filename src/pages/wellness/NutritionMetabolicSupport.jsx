@@ -6,8 +6,8 @@ const nutritionMetabolicSupport = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Nutrition & Metabolic Support in Orland Park, IL — Practical Guidance | AVEN MED",
-    description: "Nutrition and metabolic support in Orland Park, IL at AVEN MED — practical, individualized nutrition and lifestyle guidance integrated with medical weight loss and broader wellness. No fad diets, no rigid meal plans. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
+    title: "Nutrition & Metabolic Support in Orland Park, IL | AVEN MED",
+    description: "Nutrition and metabolic support in Orland Park, IL at AVEN MED — practical, individualized nutrition and lifestyle guidance, integrated with medical weight loss and broader wellness. No fad diets, no rigid meal plans.",
   },
   tags: ["nutrition", "metabolic", "weight", "wellness"],
   hub: { order: 47, blurb: "Practical, individualized nutrition and lifestyle guidance — integrated with your plan." },

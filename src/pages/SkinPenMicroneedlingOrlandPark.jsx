@@ -6,7 +6,7 @@ const skinpen = {
   slug: "skinpen-microneedling-orland-park",
   priority: 0.9,
   seo: {
-    title: "SkinPen® Microneedling in Orland Park, IL — Collagen Induction | AVEN MED",
+    title: "SkinPen® Microneedling in Orland Park, IL | AVEN MED",
     description: "Medical-grade SkinPen microneedling in Orland Park, IL at AVEN MED. Collagen induction therapy for skin texture, acne scars, fine lines, and tone, led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   treatmentName: "SkinPen®",

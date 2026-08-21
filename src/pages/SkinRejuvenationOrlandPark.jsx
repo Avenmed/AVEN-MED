@@ -5,7 +5,7 @@ const skinRejuvenation = {
   slug: "skin-rejuvenation-orland-park",
   priority: 0.9,
   seo: {
-    title: "Skin Rejuvenation in Orland Park, IL — Personalized Skin Plans | AVEN MED",
+    title: "Skin Rejuvenation in Orland Park, IL | AVEN MED",
     description: "Skin rejuvenation in Orland Park, IL at AVEN MED — a personalized plan combining medical-grade treatments to improve skin quality, texture, and tone over time. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "texture", "tone", "collagen", "aging"],

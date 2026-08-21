@@ -44,7 +44,7 @@ function useArticleSchema(article, category, author, reviewer) {
         "author": author && (author.isClinicalReviewer
           ? { "@type": "Person", "name": author.name }
           : { "@type": "Organization", "name": author.name }),
-        "reviewedBy": reviewer ? { "@type": "Person", "name": reviewer.name, "jobTitle": reviewer.role } : undefined,
+        "reviewedBy": reviewer ? { "@type": "Person", "@id": `${BASE_URL}/#alaa`, "name": reviewer.name } : undefined,
         "publisher": { "@id": `${BASE_URL}/#clinic` },
         "mainEntityOfPage": url,
         "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
@@ -58,25 +58,8 @@ function useArticleSchema(article, category, author, reviewer) {
             })),
           }]
         : []),
-      {
-        "@type": ["MedicalBusiness", "MedicalClinic"],
-        "@id": `${BASE_URL}/#clinic`,
-        "name": CLINIC.name,
-        "url": `${BASE_URL}/`,
-        "telephone": CLINIC.phoneSchema,
-        "email": CLINIC.email,
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": CLINIC.streetAddress,
-          "addressLocality": CLINIC.addressLocality,
-          "addressRegion": CLINIC.addressRegion,
-          "postalCode": CLINIC.postalCode,
-          "addressCountry": CLINIC.country,
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": CLINIC.lat, "longitude": CLINIC.lng },
-        "areaServed": (article.localAreas || DEFAULT_AREAS).map((name) => ({ "@type": "City", "name": name })),
-      },
+      // The clinic (#clinic) is defined canonically in index.html and referenced
+      // by @id (publisher) above — not re-declared here. Ready for future articles.
     ];
     const el = document.createElement("script");
     el.type = "application/ld+json";

@@ -6,7 +6,7 @@ const medicalGradeSkincare = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Medical-Grade Skincare in Orland Park, IL — Personalized Routines | AVEN MED",
+    title: "Medical-Grade Skincare in Orland Park, IL | AVEN MED",
     description: "Medical-grade skincare in Orland Park, IL at AVEN MED — professionally selected, personalized routines that protect and extend your in-office results. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every routine begins with the AVEN Assessment.",
   },
   tags: ["skin", "skincare", "maintenance"],

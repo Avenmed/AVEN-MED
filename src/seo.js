@@ -23,15 +23,15 @@ const DEFAULT = {
 const STATIC_ROUTE_SEO = {
   "/": DEFAULT,
   "/about": {
-    title: "About & Founder — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED, Orland Park IL",
+    title: "About & Founder — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED",
     description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
   "/concerns": {
     title: "Patient Concerns — Causes & Treatment Options · AVEN MED, Orland Park IL",
-    description: "Explore common skin and aesthetic concerns — fine lines, volume loss, uneven tone, sun damage, texture, pores, acne, scarring, laxity, and excessive sweating. Understand the causes, then plan individualized treatment through the AVEN Assessment at AVEN MED in Orland Park, IL.",
+    description: "Explore common skin and aesthetic concerns and their causes, then plan individualized treatment through the AVEN Assessment at AVEN MED in Orland Park, IL.",
   },
   "/providers": {
-    title: "Meet Your Provider — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED, Orland Park IL",
+    title: "Meet Your Provider — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED",
     description: "Meet the clinician behind AVEN MED in Orland Park, IL — Alaa Mashal, MSN, APRN, FNP-BC, founder and clinical director. Care here is personal and continuous: the provider who assesses you is the one who cares for you.",
   },
   "/aesthetics": {

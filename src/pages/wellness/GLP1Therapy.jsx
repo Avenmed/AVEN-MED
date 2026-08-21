@@ -7,7 +7,7 @@ const glp1Therapy = {
   changefreq: "monthly",
   seo: {
     title: "GLP-1 Therapy in Orland Park, IL — Medically Monitored | AVEN MED",
-    description: "GLP-1 therapy in Orland Park, IL at AVEN MED — semaglutide and tirzepatide prescribed and monitored as one part of a physician-directed weight-management program, never in isolation. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
+    description: "GLP-1 therapy in Orland Park, IL at AVEN MED — semaglutide and tirzepatide, prescribed and monitored as one part of a physician-directed weight-management program, never in isolation.",
   },
   tags: ["glp-1", "weight", "metabolic", "medication", "wellness"],
   serviceName: "GLP-1 Therapy",

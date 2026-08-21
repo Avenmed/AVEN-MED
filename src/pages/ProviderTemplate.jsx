@@ -30,7 +30,11 @@ function useProviderSchema(data) {
         ],
       },
       {
+        // Same canonical provider entity as index.html (#alaa) — @id makes this
+        // the one Alaa Mashal, not a second Person. jobTitle comes from the
+        // approved provider data source.
         "@type": "Person",
+        "@id": `${BASE_URL}/#alaa`,
         "name": data.personName,
         "jobTitle": data.jobTitle,
         "description": data.seo.description,
@@ -47,26 +51,8 @@ function useProviderSchema(data) {
             })),
           }]
         : []),
-      {
-        "@type": ["MedicalBusiness", "MedicalClinic"],
-        "@id": `${BASE_URL}/#clinic`,
-        "name": CLINIC.name,
-        "url": `${BASE_URL}/`,
-        "telephone": CLINIC.phoneSchema,
-        "email": CLINIC.email,
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": CLINIC.streetAddress,
-          "addressLocality": CLINIC.addressLocality,
-          "addressRegion": CLINIC.addressRegion,
-          "postalCode": CLINIC.postalCode,
-          "addressCountry": CLINIC.country,
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": CLINIC.lat, "longitude": CLINIC.lng },
-        "areaServed": areas.map((name) => ({ "@type": "City", "name": name })),
-        "medicalSpecialty": "PrimaryCare",
-      },
+      // The clinic (#clinic) is defined canonically in index.html and referenced
+      // by @id (worksFor) above — not re-declared here.
     ];
     const el = document.createElement("script");
     el.type = "application/ld+json";

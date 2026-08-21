@@ -46,26 +46,8 @@ function useConcernSchema(data) {
         "about": { "@type": "MedicalCondition", "name": data.conditionName },
         "provider": { "@id": `${BASE_URL}/#clinic` },
       },
-      {
-        "@type": ["MedicalBusiness", "MedicalClinic"],
-        "@id": `${BASE_URL}/#clinic`,
-        "name": CLINIC.name,
-        "url": `${BASE_URL}/`,
-        "telephone": CLINIC.phoneSchema,
-        "email": CLINIC.email,
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": CLINIC.streetAddress,
-          "addressLocality": CLINIC.addressLocality,
-          "addressRegion": CLINIC.addressRegion,
-          "postalCode": CLINIC.postalCode,
-          "addressCountry": CLINIC.country,
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": CLINIC.lat, "longitude": CLINIC.lng },
-        "areaServed": areas.map((name) => ({ "@type": "City", "name": name })),
-        "medicalSpecialty": "PlasticSurgery",
-      },
+      // The clinic (#clinic) is defined canonically in index.html and referenced
+      // by @id in the MedicalWebPage above — not re-declared here.
     ];
     const el = document.createElement("script");
     el.type = "application/ld+json";
