@@ -15,10 +15,14 @@
  *
  * FAIL-VISIBLE by design: unlike the fail-safe sitemap generator, a prerender error
  * exits non-zero so the build FAILS rather than silently shipping wrong/soft-404
- * HTML. jiti transpiles the JSX registry on the fly (same proven pattern). */
+ * HTML. Source modules are loaded through Vite's own SSR pipeline (ssrLoadModule),
+ * so the app's real transform (@vitejs/plugin-react, import.meta.glob, etc.) applies
+ * — the only mechanism guaranteed to transpile this .jsx tree the same way the build
+ * does. (jiti was tried first but does not enable JSX transform for .jsx files.) */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
+import { createServer } from 'vite';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -62,11 +66,17 @@ function setCanonical(html, href) {
 // a route that isn't written simply falls back to today's client-rendered head.
 let ok = 0;
 const errs = [];
+let vite;
 try {
-  const { createJiti } = await import('jiti');
-  const jiti = createJiti(import.meta.url, { interopDefault: true });
-  const seo = await jiti.import(resolve(ROOT, 'src/seo.js'));
-  const registry = await jiti.import(resolve(ROOT, 'src/content/registry.jsx'));
+  vite = await createServer({
+    root: ROOT,
+    logLevel: 'error',
+    server: { middlewareMode: true, hmr: false },
+    appType: 'custom',
+    optimizeDeps: { noDiscovery: true },
+  });
+  const seo = await vite.ssrLoadModule('/src/seo.js');
+  const registry = await vite.ssrLoadModule('/src/content/registry.jsx');
   const resolveSeo = seo.resolveSeo || (seo.default && seo.default.resolveSeo);
   const getPrerenderRoutes = registry.getPrerenderRoutes || (registry.default && registry.default.getPrerenderRoutes);
   if (typeof resolveSeo !== 'function') throw new Error('resolveSeo export not found');
@@ -108,6 +118,8 @@ try {
   }
 } catch (err) {
   errs.unshift(`SETUP: ${err && err.stack ? err.stack : (err && err.message ? err.message : String(err))}`);
+} finally {
+  if (vite) { try { await vite.close(); } catch (e) { /* ignore */ } }
 }
 const status = `prerender ok=${ok} errors=${errs.filter((e) => !e.startsWith('INFO')).length}\n` + errs.join('\n') + '\n';
 try { writeFileSync(resolve(DIST, 'prerender-status.txt'), status); } catch (e) { console.error('could not write status', e && e.message); }

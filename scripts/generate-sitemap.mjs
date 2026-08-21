@@ -11,10 +11,12 @@
  *  - on failure it leaves the committed public/sitemap.xml untouched (that file is
  *    kept accurate at commit time as a fallback), so the site always ships a valid
  *    sitemap either way.
- * jiti is used to transpile the JSX registry on the fly in plain Node. */
+ * Source modules are loaded through Vite's own SSR pipeline (ssrLoadModule) so the
+ * app's real transform (@vitejs/plugin-react) applies to the .jsx registry. */
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { createServer } from 'vite';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -34,10 +36,16 @@ function toXml(entries) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
+let vite;
 try {
-  const { createJiti } = await import('jiti');
-  const jiti = createJiti(import.meta.url, { interopDefault: true });
-  const mod = await jiti.import(resolve(ROOT, 'src/content/registry.jsx'));
+  vite = await createServer({
+    root: ROOT,
+    logLevel: 'error',
+    server: { middlewareMode: true, hmr: false },
+    appType: 'custom',
+    optimizeDeps: { noDiscovery: true },
+  });
+  const mod = await vite.ssrLoadModule('/src/content/registry.jsx');
   const getSitemapEntries = mod.getSitemapEntries || (mod.default && mod.default.getSitemapEntries);
   if (typeof getSitemapEntries !== 'function') throw new Error('getSitemapEntries export not found');
   const entries = getSitemapEntries();
@@ -46,5 +54,7 @@ try {
   console.log(`[sitemap] wrote ${entries.length} URLs to public/sitemap.xml`);
 } catch (err) {
   console.warn('[sitemap] dynamic generation skipped; keeping committed public/sitemap.xml —', err && err.message);
+} finally {
+  if (vite) { try { await vite.close(); } catch (e) { /* ignore */ } }
 }
 process.exit(0);
