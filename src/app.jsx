@@ -186,8 +186,17 @@ const App = () => {
     if (issues.length) console.warn("[bridal] registry validation issues:\n" + issues.map((i) => " • " + i).join("\n"));
   }, []);
 
-  // Apply tweaks to :root
+  // Apply tweaks to :root — ONLY when the dev tweaks panel is active (?tweaks=1).
+  // The design tokens are locked in styles.css (:root). Applying the tweak DEFAULTS
+  // unconditionally used to write an inline override on <html> for EVERY visitor,
+  // which silently reverted the Phase 8.5 accessible --gold (#7A5C30, 4.6:1) back to
+  // t.accent (#9a7d4a, 2.89:1 — fails AA). Normal page loads now leave the CSS tokens
+  // untouched; the panel still tunes them live in dev.
+  const tweaksOn = React.useMemo(() => {
+    try { return new URLSearchParams(window.location.search).get("tweaks") === "1"; } catch (e) { return false; }
+  }, []);
   React.useEffect(() => {
+    if (!tweaksOn) return;
     const root = document.documentElement;
     root.style.setProperty("--gold", t.accent);
     root.style.setProperty("--gold-bright", t.accent);
@@ -195,7 +204,7 @@ const App = () => {
     root.style.setProperty("--bg", t.bg);
     root.style.setProperty("--serif", `"${t.fontDisplay}", "Cormorant Garamond", serif`);
     root.style.setProperty("--sans", `"${t.fontSans}", -apple-system, sans-serif`);
-  }, [t.accent, t.bg, t.fontDisplay, t.fontSans]);
+  }, [tweaksOn, t.accent, t.bg, t.fontDisplay, t.fontSans]);
 
   const Page = (() => {
     if (getRegistryPage(route)) return RegistryPage;
