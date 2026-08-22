@@ -10,8 +10,12 @@
   --hairline: rgba(154, 125, 74, 0.55);
   --hairline-strong: rgba(154, 125, 74, 0.85);
 
-  /* Brass-gold — buttons + accents (deeper, richer) */
-  --gold: #A67C42;
+  /* Brass-gold — buttons + accents. Deepened in Phase 8.5 so gold TEXT and fills on
+     the cream bg meet WCAG AA: #7A5C30 is 4.6:1 on --bg (vs 2.8:1 for the old
+     #A67C42) and it lifts button-hover text and the focus ring past 3:1 too. The
+     lighter --gold-bright stays for DECORATIVE gold on DARK grounds (the intro
+     splash) where a luminous brass reads better than a deep one. */
+  --gold: #7A5C30;
   --gold-bright: #B89058;
   --gold-soft: rgba(166, 124, 66, 0.55);
   --gold-line: rgba(154, 125, 74, 0.6);   /* brass hairline — box outlines + underlines */
@@ -23,8 +27,8 @@
   /* Warm ink — headlines + body text */
   --ivory: #2E2620;          /* primary text — warm ink */
   --ivory-soft: #4A3D2E;     /* secondary text — slightly softer warm ink */
-  --muted: #7A6B58;          /* tertiary text — muted warm */
-  --muted-2: #A39580;        /* softest text */
+  --muted: #6B5D4A;          /* tertiary text — muted warm (Phase 8.5: 4.8:1 on --bg, was #7A6B58 @ 3.8:1) */
+  --muted-2: #A39580;        /* softest text — DECORATIVE only (2.2:1); never on essential text */
 
   --serif: "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
   --sans: "Jost", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -530,7 +534,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: relative; overflow: hidden;
 }
 .plan.feat { border-color: var(--hairline-strong); background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%); }
-.plan .tier { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); }
+/* On the sand card (--surface) the deep text-gold is only ~3.9:1, so the tier label
+   uses secondary ink (6:1 on the card). Gold stays present on the card via the
+   feature dashes, price, and borders. */
+.plan .tier { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ivory-soft); }
 .plan h3 { font-family: var(--serif); font-weight: 300; font-size: 44px; margin: 0; color: var(--ivory); letter-spacing: -0.01em; }
 .plan .price { display: flex; align-items: baseline; gap: 8px; }
 .plan .price .amt { font-family: var(--sans); font-size: 52px; font-weight: 400; color: var(--ivory); letter-spacing: -0.01em; font-variant-numeric: lining-nums tabular-nums; }
@@ -554,6 +561,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .field input:focus, .field textarea:focus, .field select:focus { border-bottom-color: var(--gold); }
 .field textarea { resize: vertical; min-height: 96px; }
+/* Placeholders are hints only (every field has a visible <label>), but keep them
+   legible: --muted is 4.8:1 on --bg. opacity:1 overrides Firefox's default fade. */
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 1; }
 
 /* ---------- Keyboard focus indicator (WCAG 2.4.7) ----------
    Visible only for keyboard/switch users (:focus-visible), never for mouse
@@ -682,7 +692,9 @@ summary:focus-visible { outline-offset: 2px; }
   font-family: var(--serif);
   font-size: 2.2rem;
   letter-spacing: 0.48em;
-  color: var(--gold);
+  /* On the near-black intro splash a luminous brass reads better than the deep
+     text-gold; #B89058 is 6.5:1 on #0f0c0a. */
+  color: var(--gold-bright);
   font-weight: 500;
   padding-left: 0.48em;
 }

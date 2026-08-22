@@ -94,12 +94,54 @@ const NAV = [
 const Header = ({ route, navigate }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const triggerRef = React.useRef(null);   // hamburger — focus returns here on close
+  const dialogRef = React.useRef(null);     // the modal overlay (for the focus trap)
+  const closeBtnRef = React.useRef(null);   // receives focus when the menu opens
+
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const closeMenu = React.useCallback(() => setMobileOpen(false), []);
+
+  // Mobile menu = accessible modal dialog. While open: focus moves in (to the close
+  // button), Tab/Shift+Tab are trapped inside, Escape closes, background scroll is
+  // locked (scrollbar width compensated to avoid layout shift), and on close focus
+  // returns to the hamburger. The overlay itself is conditionally rendered, so while
+  // closed it is fully absent from the DOM (and from assistive tech). Lightweight —
+  // no dialog library — within the existing React architecture.
+  React.useEffect(() => {
+    if (!mobileOpen) return;
+    const dialog = dialogRef.current;
+    (closeBtnRef.current || dialog)?.focus();
+
+    const scrollBarW = window.innerWidth - document.documentElement.clientWidth;
+    const prevOverflow = document.body.style.overflow;
+    const prevPad = document.body.style.paddingRight;
+    document.body.style.overflow = "hidden";
+    if (scrollBarW > 0) document.body.style.paddingRight = `${scrollBarW}px`;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") { e.preventDefault(); closeMenu(); return; }
+      if (e.key !== "Tab" || !dialog) return;
+      const f = dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPad;
+      triggerRef.current?.focus();
+    };
+  }, [mobileOpen, closeMenu]);
+
   return (
     <>
       <header className={"hdr" + (scrolled ? " scrolled" : "")}>
@@ -124,6 +166,7 @@ const Header = ({ route, navigate }) => {
                   href={n.path}
                   onClick={(e) => { e.preventDefault(); navigate(n.path); }}
                   className={route === n.path ? "active" : ""}
+                  aria-current={route === n.path ? "page" : undefined}
                 >
                   {n.short || n.label}
                 </a>
@@ -138,7 +181,15 @@ const Header = ({ route, navigate }) => {
               showArrow={false}
               style={{ height: 40, padding: "0 18px", fontSize: 10.5 }}
             />
-            <button className="menu-btn" onClick={() => setMobileOpen(true)} aria-label="Menu" aria-expanded={mobileOpen}>
+            <button
+              ref={triggerRef}
+              className="menu-btn"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+              aria-haspopup="dialog"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+            >
               <span></span><span></span><span></span>
             </button>
           </div>
@@ -146,25 +197,41 @@ const Header = ({ route, navigate }) => {
       </header>
 
       {mobileOpen && (
-        <div style={{
-          position: "fixed", inset: 0, zIndex: 100, background: "rgba(233,221,200,0.97)",
-          backdropFilter: "blur(20px)", padding: 32, display: "flex", flexDirection: "column"
-        }}>
+        <div
+          id="mobile-menu"
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
+          style={{
+            position: "fixed", inset: 0, zIndex: 100, background: "rgba(233,221,200,0.97)",
+            backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
+            padding: 32, display: "flex", flexDirection: "column", overflowY: "auto"
+          }}
+        >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Brand onClick={(p) => { navigate(p); setMobileOpen(false); }} />
-            <button onClick={() => setMobileOpen(false)} aria-label="Close"
-              style={{ fontSize: 26, color: "var(--ivory)" }}>×</button>
+            <button
+              ref={closeBtnRef}
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+              style={{
+                width: 44, height: 44, display: "grid", placeItems: "center",
+                fontSize: 26, lineHeight: 1, color: "var(--ivory)", flexShrink: 0
+              }}
+            >×</button>
           </div>
-          <nav style={{
-            display: "flex", flexDirection: "column", gap: 36, marginTop: 100,
+          <nav aria-label="Site" style={{
+            display: "flex", flexDirection: "column", gap: 28, marginTop: 88,
             alignItems: "center", textAlign: "center"
           }}>
             {NAV.map((n) => (
               <a key={n.path} href={n.path}
                 onClick={(e) => { e.preventDefault(); navigate(n.path); setMobileOpen(false); }}
+                aria-current={route === n.path ? "page" : undefined}
                 style={{
                   fontFamily: "var(--serif)", fontSize: 24, fontWeight: 300,
-                  fontStyle: "italic",
+                  fontStyle: "italic", padding: "8px 24px",
                   color: route === n.path ? "var(--gold)" : "var(--ivory)",
                   letterSpacing: "-0.005em"
                 }}>
@@ -217,7 +284,7 @@ const Footer = ({ navigate }) => (
 
       <div style={{
         marginTop: 24,
-        fontSize: 10, letterSpacing: "0.18em", color: "var(--muted-2)", textTransform: "uppercase", fontFamily: "var(--sans)"
+        fontSize: 10, letterSpacing: "0.18em", color: "var(--muted)", textTransform: "uppercase", fontFamily: "var(--sans)"
       }}>
         © 2026 AVEN MED
       </div>

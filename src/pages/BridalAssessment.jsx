@@ -15,7 +15,9 @@ import { BRIDAL_ASSESSMENT_FIELDS } from '../content/bridal/index.js';
 import { useJsonLd, BridalConcernSelector, BridalDisclaimer } from './bridal/BridalComponents.jsx';
 
 const BASE = CLINIC.url;
-const ERR = "#b0563a";
+// Warm terracotta error text, deepened for WCAG AA: #9A4A32 is 4.6:1 on --bg
+// (the previous #b0563a was 3.7:1). Stays on-brand, not a generic alert red.
+const ERR = "#9A4A32";
 
 function initialValues() {
   const v = {};
