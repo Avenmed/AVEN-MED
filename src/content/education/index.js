@@ -39,24 +39,149 @@ export const EDU_CATEGORIES = [
 ];
 
 // ---- Articles (metadata index) ---------------------------------------------
-// EMPTY by design in this phase. Shape of a future entry (pure data, NO JSX):
+// Lightweight METADATA only (no bodies). Shape of an entry (pure data, NO JSX):
 //   {
 //     slug: "unique-article-slug",           // → /education/<slug>
 //     title: "…",
+//     shortTitle: "…",                       // optional terse label (cards/related)
 //     excerpt: "One–two sentence summary for cards, search, and meta description.",
 //     category: "skin-health",               // one EDU_CATEGORIES slug
-//     subcategories: ["acne"],               // optional facets
 //     tags: ["acne", "scarring"],            // powers search + related
 //     authorId: "aven-editorial",            // → people.js
 //     reviewerId: "alaa-mashal",             // clinical reviewer (required)
-//     datePublished: "2026-08-01",
-//     dateModified: "2026-08-01",
+//     datePublished: "2026-08-22",
+//     dateModified: "2026-08-22",            // last-reviewed / last-updated
 //     readingTime: 6,                        // minutes
+//     relatedArticles: ["other-slug"],       // optional curated article→article (resolved to published only)
 //     featured: false,                       // editor's-pick strip on the hub
 //     hidden: false,                         // hide from hub/search (keep route)
-//     published: true,                       // false = draft (no route/sitemap/index)
+//     status: "published",                   // "published" | "clinical-review" | "draft"
 //   }
-export const EDU_ARTICLES = [];
+// The BODY file (src/pages/education/articles/<slug>.jsx) carries the readable
+// content and its OWN links/refs: { keyTakeaways?, body[], faqs?, relatedServices?,
+// relatedConcerns?, references? } — see ArticleTemplate.
+//
+// STATUS GATE (hard requirement): an article is public ONLY when status is
+// "published" — which must mean a clinician has actually reviewed it. "clinical-
+// review" and "draft" are fully held: no route, no sitemap, no index, and not even
+// resolvable by direct URL (getEducationArticle reads publishedArticles()).
+export const EDU_ARTICLES = [
+  // ---- WAVE 1 (Phase 8.8A) — HELD in "clinical-review" ----------------------
+  // Authored by the AVEN Editorial Team and pending Alaa Mashal's clinical review.
+  // status:"clinical-review" keeps every one fully non-public (no route, no
+  // sitemap, no index, not resolvable by URL). Flip to "published" ONLY per article
+  // after Alaa has actually reviewed it; set datePublished to the real publish date.
+  {
+    slug: "the-aven-assessment-what-to-expect",
+    title: "The AVEN Assessment: What to Expect and Why It Comes First",
+    shortTitle: "The AVEN Assessment",
+    excerpt: "How the AVEN Assessment works — the two consultation tiers, what happens during your visit, and why every plan at AVEN begins with an evaluation rather than a treatment.",
+    category: "patient-guides",
+    tags: ["assessment", "consultation", "first visit", "patient guide"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, featured: true, status: "clinical-review",
+  },
+  {
+    slug: "what-is-botox-how-it-works",
+    title: "What Is Botox and How Does It Work?",
+    shortTitle: "What Is Botox?",
+    excerpt: "A clear, medically reviewed explanation of what Botox is, how botulinum toxin softens dynamic lines, which areas it treats, and what to realistically expect.",
+    category: "aesthetics",
+    tags: ["botox", "neuromodulator", "wrinkles", "injectables"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "how-long-does-botox-last",
+    title: "How Long Does Botox Last?",
+    shortTitle: "How Long Does Botox Last?",
+    excerpt: "Botox typically lasts about three to four months, but duration varies. Here's what influences how long results last — and why the effect is temporary by design.",
+    category: "aesthetics",
+    tags: ["botox", "duration", "neuromodulator", "injectables"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 4, status: "clinical-review",
+  },
+  {
+    slug: "how-to-choose-a-med-spa",
+    title: "How to Choose a Med Spa or Aesthetic Provider",
+    shortTitle: "Choosing a Med Spa",
+    excerpt: "What actually matters when choosing a med spa or aesthetic provider — who performs your treatment, the quality of the consultation, safety, and the red flags worth slowing down for.",
+    category: "patient-guides",
+    tags: ["choosing a provider", "med spa", "safety", "patient guide"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "what-is-sculptra-vs-filler",
+    title: "What Is Sculptra and How Is It Different From Filler?",
+    shortTitle: "Sculptra vs. Filler",
+    excerpt: "Sculptra stimulates your own collagen gradually, while hyaluronic-acid fillers add volume immediately. Understanding the two mechanisms is the real difference.",
+    category: "aesthetics",
+    tags: ["sculptra", "filler", "biostimulator", "volume"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "what-is-skinpen-microneedling",
+    title: "What Is SkinPen Microneedling?",
+    shortTitle: "SkinPen Microneedling",
+    excerpt: "How SkinPen microneedling works, what it targets — texture, acne scarring, pore appearance — and what a treatment, recovery, and realistic timeline look like.",
+    category: "aesthetics",
+    tags: ["microneedling", "skinpen", "collagen", "texture", "acne scars"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "medical-weight-loss-what-a-program-includes",
+    title: "Medical Weight Loss: What a Clinician-Guided Program Includes",
+    shortTitle: "Medical Weight Loss",
+    excerpt: "What a clinician-guided medical weight-loss program actually includes: a medical evaluation, individualized goals, nutrition and lifestyle support, monitoring, and medication only when appropriate.",
+    category: "wellness",
+    tags: ["medical weight loss", "metabolic health", "nutrition", "wellness"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "glp-1-medications-for-weight-management",
+    title: "GLP-1 Medications for Weight Management: An Educational Guide",
+    shortTitle: "GLP-1 for Weight Management",
+    excerpt: "An educational guide to GLP-1 receptor agonists for weight management — how they work, approved uses, side effects, and why they belong inside a supervised medical program.",
+    category: "wellness",
+    tags: ["glp-1", "weight management", "medication", "wellness"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "lip-filler-first-time-patients",
+    title: "Lip Filler: What First-Time Patients Should Know",
+    shortTitle: "Lip Filler for First-Timers",
+    excerpt: "What first-time lip filler patients should know — how hyaluronic-acid filler works, what the appointment and recovery feel like, and why restraint matters more than volume.",
+    category: "aesthetics",
+    tags: ["lip filler", "dermal filler", "injectables", "first time"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+  {
+    slug: "acne-scars-vs-acne-marks",
+    title: "Acne Scars vs. Acne Marks: Understanding the Difference",
+    shortTitle: "Acne Scars vs. Marks",
+    excerpt: "Acne marks are discoloration that often fades; acne scars are textural changes that usually need treatment. Knowing the difference guides the right plan.",
+    category: "skin-health",
+    tags: ["acne scars", "acne marks", "hyperpigmentation", "skin health"],
+    authorId: "aven-editorial", reviewerId: "alaa-mashal",
+    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    readingTime: 5, status: "clinical-review",
+  },
+];
 
 // ---- Helpers (pure) --------------------------------------------------------
 export function categoryBySlug(slug) {
@@ -64,9 +189,16 @@ export function categoryBySlug(slug) {
 }
 export const categoriesInOrder = () => [...EDU_CATEGORIES].sort((a, b) => a.order - b.order);
 
+// The single source of truth for "is this article public?" — status must be
+// "published". Legacy `published:false` is honored as not-public for back-compat.
+export function isPublishedArticle(a) {
+  if (a.status) return a.status === "published";
+  return a.published !== false;
+}
+
 // Published, non-hidden articles only (for public listings).
 export function publishedArticles() {
-  return EDU_ARTICLES.filter((a) => a.published !== false);
+  return EDU_ARTICLES.filter(isPublishedArticle);
 }
 
 // Published, visible articles in a category (drives indexation + sitemap gating

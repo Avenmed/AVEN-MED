@@ -48,6 +48,12 @@ function useArticleSchema(article, category, author, reviewer) {
         "publisher": { "@id": `${BASE_URL}/#clinic` },
         "mainEntityOfPage": url,
         "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+        // Only the sources actually used in the article body (never fabricated).
+        "citation": (article.referencesForSchema && article.referencesForSchema.length)
+          ? article.referencesForSchema.map((r) => (r.url
+              ? { "@type": "CreativeWork", "name": r.label, "publisher": r.publisher, "url": r.url }
+              : { "@type": "CreativeWork", "name": r.label, "publisher": r.publisher }))
+          : undefined,
       },
       ...(article.faqsForSchema && article.faqsForSchema.length
         ? [{
@@ -131,8 +137,9 @@ const ArticleTemplate = ({ article, navigate }) => {
   }, [article.slug]);
 
   const faqs = content?.faqs || [];
-  // expose faqs to schema via a side field (kept off the public metadata object)
-  const articleForSchema = React.useMemo(() => ({ ...article, faqsForSchema: faqs }), [article, faqs]);
+  const references = content?.references || [];
+  // expose faqs + references to schema via side fields (kept off public metadata)
+  const articleForSchema = React.useMemo(() => ({ ...article, faqsForSchema: faqs, referencesForSchema: references }), [article, faqs, references]);
   useArticleSchema(articleForSchema, category, author, reviewer);
 
   return (
@@ -154,7 +161,8 @@ const ArticleTemplate = ({ article, navigate }) => {
                   <a href={reviewer.profilePath || "/providers/alaa-mashal"} onClick={(e) => { e.preventDefault(); navigate(reviewer.profilePath || "/providers/alaa-mashal"); }} style={{ color: "var(--gold)" }}>{reviewer.name}</a>
                 </span>
               )}
-              {article.dateModified && <span>· Updated {formatDate(article.dateModified)}</span>}
+              {article.datePublished && <span>· Published {formatDate(article.datePublished)}</span>}
+              {article.dateModified && article.dateModified !== article.datePublished && <span>· Updated {formatDate(article.dateModified)}</span>}
               {article.readingTime && <span>· {article.readingTime} min read</span>}
             </div>
           </Reveal>
@@ -209,6 +217,27 @@ const ArticleTemplate = ({ article, navigate }) => {
                   </details>
                 </Reveal>
               ))}
+            </div>
+          )}
+
+          {/* REFERENCES (only sources actually used; authoritative bodies, not blogs) */}
+          {references.length > 0 && (
+            <div style={{ marginTop: 48 }}>
+              <Reveal>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.22em", marginBottom: 16 }}>References</div>
+                <ol style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 10, maxWidth: "68ch" }}>
+                  {references.map((r, i) => (
+                    <li key={i} className="body-sm" style={{ color: "var(--muted)", lineHeight: 1.7 }}>
+                      {r.url ? (
+                        <a href={r.url} target="_blank" rel="noopener noreferrer nofollow" style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline)" }}>{r.label}</a>
+                      ) : (
+                        <span style={{ color: "var(--ivory-soft)" }}>{r.label}</span>
+                      )}
+                      {r.publisher && <span> — {r.publisher}</span>}
+                    </li>
+                  ))}
+                </ol>
+              </Reveal>
             </div>
           )}
 

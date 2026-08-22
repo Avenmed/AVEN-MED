@@ -272,6 +272,18 @@ export function getRelatedArticles(slug, limit = 3) {
     .map((x) => ({ label: x.o.title, path: `/education/${x.o.slug}` }));
 }
 
+// Service→Education: resolve curated article slugs to links, PUBLISHED-only, so a
+// service page can surface relevant articles (mirrors getServiceLinksBySlugs). A
+// held (clinical-review/draft) or unknown slug is dropped, so no dead or empty
+// "Learn more" section can ever render. Returns [] until Wave 1 articles publish.
+export function getEducationLinksBySlugs(slugs = []) {
+  const bySlug = Object.fromEntries(publishedArticles().map((a) => [a.slug, a]));
+  return (slugs || [])
+    .map((s) => bySlug[s])
+    .filter(Boolean)
+    .map((a) => ({ label: a.shortTitle || a.title, path: `/education/${a.slug}`, note: a.excerpt }));
+}
+
 // ============================================================================
 // DYNAMIC SITEMAP — the registry is the single source of truth. This pure-data
 // list feeds the build-time sitemap generator (scripts/generate-sitemap.mjs) and
