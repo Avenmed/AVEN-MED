@@ -210,6 +210,18 @@ export function getServiceLinksBySlugs(slugs = []) {
     }));
 }
 
+// Curated treatment→concern relationships. A treatment data module may set
+// `relatedConcerns: ["concerns/…"]` (registry slugs, never duplicated titles/URLs);
+// we resolve them to { label, path } links ONCE here — after BY_SLUG exists — and
+// store them on `data.relatedConcernLinks`. Templates then render that field with no
+// import of this registry (which would be circular through the template modules).
+// Unknown slugs are dropped, so a link can never point at a nonexistent page.
+ENTRIES.forEach((e) => {
+  if (Array.isArray(e.data.relatedConcerns) && e.data.relatedConcerns.length) {
+    e.data.relatedConcernLinks = getServiceLinksBySlugs(e.data.relatedConcerns);
+  }
+});
+
 // Per-route SEO for seo.js: { "/slug": { title, description } }.
 export const REGISTRY_SEO = Object.fromEntries(ENTRIES.map((e) => [`/${e.slug}`, e.seo]));
 

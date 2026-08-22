@@ -57,7 +57,14 @@ const AssessmentPage = ({ navigate }) => {
                     </li>
                   ))}
                 </ul>
-                <AssessmentCTA navigate={navigate} className="link" style={{ alignSelf: "flex-start", marginTop: "auto" }} />
+                {/* Learn path (detail page) beside the booking CTA — so a browsing
+                    visitor can understand the tier before scheduling (Part 6). */}
+                <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
+                  <a href="/assessment/quick-assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment/quick-assessment"); }} className="link">
+                    <span>See what's included</span><span className="arrow"></span>
+                  </a>
+                  <AssessmentCTA navigate={navigate} className="link" style={{ alignSelf: "flex-start" }} />
+                </div>
               </div>
             </Reveal>
 
@@ -91,7 +98,12 @@ const AssessmentPage = ({ navigate }) => {
                     </li>
                   ))}
                 </ul>
-                <AssessmentCTA navigate={navigate} style={{ alignSelf: "flex-start", marginTop: "auto" }} />
+                <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
+                  <AssessmentCTA navigate={navigate} style={{ alignSelf: "flex-start" }} />
+                  <a href="/assessment/comprehensive-assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment/comprehensive-assessment"); }} className="link">
+                    <span>See what's included</span><span className="arrow"></span>
+                  </a>
+                </div>
               </div>
             </Reveal>
 

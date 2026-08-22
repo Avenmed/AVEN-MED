@@ -9,6 +9,7 @@ const acneScarTreatment = {
     description: "Acne scar treatment in Orland Park, IL at AVEN MED — a planned, realistic approach to softening acne-scar texture with treatments like microneedling. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "acne-scars", "texture", "collagen"],
+  relatedConcerns: ["concerns/acne-scars", "concerns/skin-texture"],
   treatmentName: "Acne Scar Treatment",
   treatmentShort: "Acne Scar Treatment",
   breadcrumbName: "Acne Scar Treatment in Orland Park",

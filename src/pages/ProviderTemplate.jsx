@@ -157,7 +157,8 @@ const ProviderTemplate = ({ data, navigate }) => {
               <h1 className="display" style={{ fontSize: "clamp(44px, 6vw, 88px)", margin: "22px 0 16px", lineHeight: 1.0, fontWeight: 300 }}>{data.hero.headline}</h1>
               <div className="label" style={{ color: "var(--gold)", marginBottom: 26, letterSpacing: "0.2em" }}>{data.hero.role}</div>
               <p className="lede" style={{ maxWidth: "44ch", marginBottom: 32 }}>{data.hero.subheadline}</p>
-              <AssessmentCTA navigate={navigate} />
+              {/* Early-stage: learn about the Assessment first; final CTA books. */}
+              <AssessmentCTA navigate={navigate} to="/assessment" />
             </div>
           </Reveal>
         </div>

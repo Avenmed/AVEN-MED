@@ -9,6 +9,7 @@ const acneTreatment = {
     description: "Medical acne treatment in Orland Park, IL at AVEN MED — an individualized approach to active acne combining in-office care, skincare, and, when appropriate, medical management. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "acne"],
+  relatedConcerns: ["concerns/acne"],
   treatmentName: "Acne Treatment",
   treatmentShort: "Acne Treatment",
   breadcrumbName: "Acne Treatment in Orland Park",

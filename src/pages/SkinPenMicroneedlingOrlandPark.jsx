@@ -12,6 +12,7 @@ const skinpen = {
   treatmentName: "SkinPen®",
   treatmentShort: "SkinPen",
   tags: ["skin", "collagen", "texture", "acne-scars", "aging"],
+  relatedConcerns: ["concerns/acne-scars", "concerns/skin-texture", "concerns/large-pores"],
   breadcrumbName: "SkinPen Microneedling in Orland Park",
   procedureName: "SkinPen Microneedling — Collagen Induction Therapy",
   procedureDescription:
@@ -138,10 +139,10 @@ const skinpen = {
     { label: "Botox in Orland Park", path: "/botox-orland-park" },
     { label: "Lip Fillers in Orland Park", path: "/lip-fillers-orland-park" },
     { label: "Sculptra", path: "/sculptra-orland-park" },
-    { label: "Chemical Peels", path: "/aesthetics" },
-    { label: "Medical-Grade Skincare", path: "/aesthetics" },
-    { label: "Facials", path: "/aesthetics" },
-    { label: "Medical Weight Loss", path: "/wellness" },
+    { label: "Chemical Peels", path: "/chemical-peels-orland-park" },
+    { label: "Medical-Grade Skincare", path: "/medical-grade-skincare-orland-park" },
+    { label: "Facials", path: "/facials-orland-park" },
+    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss" },
   ],
 
   finalCta: {

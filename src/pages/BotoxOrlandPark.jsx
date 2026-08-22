@@ -13,6 +13,9 @@ const botox = {
   treatmentName: "Botox®",
   treatmentShort: "Botox",
   tags: ["injectable", "neuromodulator", "wrinkles", "aging"],
+  // Curated treatment→concern links (registry slugs). Renders a "Related Concerns"
+  // section; medically-sensible only, left for provider review where uncertain.
+  relatedConcerns: ["concerns/fine-lines-and-wrinkles"],
   breadcrumbName: "Botox in Orland Park",
   procedureName: "Botox — Neuromodulator Injections",
   procedureDescription:

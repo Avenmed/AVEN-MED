@@ -9,6 +9,7 @@ const chemicalPeels = {
     description: "Medical-grade chemical peels in Orland Park, IL at AVEN MED — resurfacing matched to your skin to improve tone, texture, and clarity. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "texture", "tone", "acne", "aging", "pigment"],
+  relatedConcerns: ["concerns/uneven-skin-tone", "concerns/sun-damage", "concerns/skin-texture"],
   treatmentName: "Chemical Peels",
   treatmentShort: "Chemical Peels",
   breadcrumbName: "Chemical Peels in Orland Park",

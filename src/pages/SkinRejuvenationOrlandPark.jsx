@@ -9,6 +9,7 @@ const skinRejuvenation = {
     description: "Skin rejuvenation in Orland Park, IL at AVEN MED — a personalized plan combining medical-grade treatments to improve skin quality, texture, and tone over time. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
   },
   tags: ["skin", "texture", "tone", "collagen", "aging"],
+  relatedConcerns: ["concerns/sun-damage", "concerns/uneven-skin-tone", "concerns/fine-lines-and-wrinkles"],
   treatmentName: "Skin Rejuvenation",
   treatmentShort: "Skin Rejuvenation",
   breadcrumbName: "Skin Rejuvenation in Orland Park",

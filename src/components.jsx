@@ -12,12 +12,16 @@ const HeroBg = () => (
 );
 
 // The one primary call-to-action, site-wide. Change the label in ONE place here.
-// Destination and styling are unchanged — it routes to /contact like before.
+// Destination defaults to /contact (high-intent booking) — the historical behavior,
+// so every existing caller is unchanged. Early-stage / educational surfaces pass
+// `to="/assessment"` so a first-time visitor lands on the Assessment explainer (and
+// its own booking CTA) instead of being pushed straight into scheduling. One prop,
+// one rule — no per-page ad-hoc routing.
 const ASSESSMENT_CTA_LABEL = "Start Your AVEN Assessment";
-const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArrow = true, label = ASSESSMENT_CTA_LABEL }) => (
+const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArrow = true, label = ASSESSMENT_CTA_LABEL, to = "/contact" }) => (
   <a
-    href="/contact"
-    onClick={(e) => { e.preventDefault(); navigate("/contact"); }}
+    href={to}
+    onClick={(e) => { e.preventDefault(); navigate(to); }}
     className={className}
     style={style}
   >
@@ -245,9 +249,50 @@ const Header = ({ route, navigate }) => {
   );
 };
 
+// Secondary information architecture. The header (v1.0) stays deliberately minimal,
+// so the footer carries restrained, grouped discovery — and is the site-wide home for
+// Patient Concerns and Field Notes, which are intentionally kept out of the primary
+// NAV. Every path resolves to a real live route. Descriptive anchors, no dump.
+const FOOTER_NAV = [
+  { h: "Care", links: [
+    { label: "Aesthetics", path: "/aesthetics" },
+    { label: "Patient Concerns", path: "/concerns" },
+    { label: "Wellness", path: "/wellness" },
+    { label: "Family Medicine", path: "/family-medicine" },
+  ] },
+  { h: "The Practice", links: [
+    { label: "About AVEN", path: "/about" },
+    { label: "Meet Your Provider", path: "/providers" },
+    { label: "The AVEN Assessment", path: "/assessment" },
+    { label: "Memberships", path: "/memberships" },
+  ] },
+  { h: "Explore", links: [
+    { label: "The Bridal Journey", path: "/bridal-journey" },
+    { label: "Education", path: "/education" },
+    { label: "Field Notes", path: "/notes" },
+    { label: "Contact", path: "/contact" },
+  ] },
+];
+
 const Footer = ({ navigate }) => (
   <footer className="ftr">
-    <div className="container" style={{ textAlign: "center", padding: "clamp(48px, 6vw, 72px) 24px clamp(32px, 4vw, 48px)" }}>
+    <nav aria-label="Footer" className="container" style={{ paddingTop: "clamp(48px, 6vw, 72px)", paddingBottom: 8 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 40, maxWidth: 760, margin: "0 auto" }}>
+        {FOOTER_NAV.map((g) => (
+          <div key={g.h}>
+            <h5>{g.h}</h5>
+            <ul>
+              {g.links.map((l) => (
+                <li key={l.path}>
+                  <a href={l.path} onClick={(e) => { e.preventDefault(); navigate(l.path); }}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </nav>
+    <div className="container" style={{ textAlign: "center", padding: "clamp(36px, 4vw, 52px) 24px clamp(32px, 4vw, 48px)", borderTop: "1px solid var(--hairline)" }}>
       <Logo size={36} style={{ margin: "0 auto 24px", opacity: 0.9 }} />
       <div style={{
         fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.42em",

@@ -12,6 +12,7 @@ const skinTightening = {
     description: "Radiofrequency skin tightening in Orland Park, IL — a forthcoming, non-ablative treatment at AVEN MED for gradual collagen remodeling and mild laxity. Planned around the AVEN Assessment. Led by Alaa Mashal, MSN, APRN, FNP-BC.",
   },
   tags: ["skin", "tightening", "collagen", "aging", "laxity"],
+  relatedConcerns: ["concerns/skin-laxity"],
   treatmentName: "Skin Tightening",
   treatmentShort: "Skin Tightening",
   breadcrumbName: "Skin Tightening in Orland Park",

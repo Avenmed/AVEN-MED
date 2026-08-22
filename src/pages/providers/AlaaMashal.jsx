@@ -126,6 +126,7 @@ const alaaMashal = {
 
   crossLinksIntro: "Explore the care Alaa leads — every path begins with an Assessment:",
   crossLinks: [
+    { label: "About AVEN", path: "/about", note: "The practice, its story, and the philosophy behind the care." },
     { label: "The AVEN Assessment", path: "/assessment/the-aven-assessment", note: "Where every plan begins — a consultation-first evaluation." },
     { label: "Aesthetics", path: "/aesthetics", note: "Considered, natural-looking aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Prevention-first wellness and metabolic care." },

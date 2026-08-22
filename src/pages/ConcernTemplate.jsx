@@ -138,7 +138,9 @@ const ConcernTemplate = ({ data, navigate }) => {
             <p className="lede" style={{ maxWidth: "56ch", margin: "0 auto 36px" }}>
               {data.hero.subheadline}
             </p>
-            <AssessmentCTA navigate={navigate} />
+            {/* Early-stage: concern pages are educational — send first-time visitors to
+                the Assessment explainer, not straight to booking. Final CTA still books. */}
+            <AssessmentCTA navigate={navigate} to="/assessment" />
             <div className="label" style={{ color: "var(--muted)", marginTop: 32, letterSpacing: "0.22em" }}>
               Serving {areasLine}
             </div>
@@ -344,9 +346,14 @@ const ConcernTemplate = ({ data, navigate }) => {
           <div className="container">
             <Reveal>
               <Eyebrow>Related Concerns</Eyebrow>
-              <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: "20px 0 48px", maxWidth: "20ch", fontWeight: 300 }}>
-                Often <em>connected.</em>
-              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 24, margin: "20px 0 48px" }}>
+                <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: 0, maxWidth: "20ch", fontWeight: 300 }}>
+                  Often <em>connected.</em>
+                </h2>
+                <a href="/concerns" onClick={(e) => { e.preventDefault(); navigate("/concerns"); }} className="link">
+                  <span>All Patient Concerns</span><span className="arrow"></span>
+                </a>
+              </div>
             </Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
               {data.related.map((r, i) => (

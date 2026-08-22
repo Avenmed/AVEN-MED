@@ -29,6 +29,13 @@ const AboutPage = ({ navigate }) => {
                 and the long view of patient care. She is the only injector
                 at AVEN MED; you will only ever be treated by her.
               </p>
+              {/* About = the practice, story & philosophy; the provider page = Alaa's
+                  credentials, approach & clinical journey. Make that relationship clear. */}
+              <div style={{ marginTop: 28 }}>
+                <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">
+                  <span>Meet Alaa Mashal</span><span className="arrow"></span>
+                </a>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -227,7 +234,7 @@ const AboutPage = ({ navigate }) => {
               Assessments are by appointment only and limited to a small
               number of new patients each month.
             </p>
-            <AssessmentCTA navigate={navigate} />
+            <AssessmentCTA navigate={navigate} to="/assessment" />
           </Reveal>
         </div>
       </section>

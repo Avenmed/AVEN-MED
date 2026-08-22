@@ -97,7 +97,7 @@ const NotesPage = ({ navigate }) => {
             <p className="display italic" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", color: "var(--muted)", maxWidth: "26ch", margin: "0 auto 36px" }}>
               The next note arrives soon.
             </p>
-            <AssessmentCTA navigate={navigate} className="link" />
+            <AssessmentCTA navigate={navigate} className="link" to="/assessment" />
           </Reveal>
         </div>
       </section>

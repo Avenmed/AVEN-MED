@@ -12,6 +12,7 @@ const sculptra = {
   treatmentName: "Sculptra®",
   treatmentShort: "Sculptra",
   tags: ["injectable", "biostimulator", "collagen", "volume", "aging", "contour"],
+  relatedConcerns: ["concerns/facial-volume-loss", "concerns/skin-laxity"],
   breadcrumbName: "Sculptra in Orland Park",
   procedureName: "Sculptra — Poly-L-Lactic Acid Collagen Stimulator",
   procedureDescription:
@@ -139,7 +140,7 @@ const sculptra = {
     { label: "Cheek Filler", path: "/cheek-fillers-orland-park" },
     { label: "Chin Filler", path: "/chin-fillers-orland-park" },
     { label: "Jawline Filler", path: "/jawline-fillers-orland-park" },
-    { label: "Medical-Grade Skincare", path: "/aesthetics" },
+    { label: "Medical-Grade Skincare", path: "/medical-grade-skincare-orland-park" },
   ],
 
   finalCta: {

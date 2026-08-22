@@ -116,7 +116,9 @@ const TreatmentTemplate = ({ data, navigate }) => {
             <p className="lede" style={{ maxWidth: "54ch", margin: "0 auto 36px" }}>
               {data.hero.subheadline}
             </p>
-            <AssessmentCTA navigate={navigate} />
+            {/* Early-stage: send first-time visitors to the Assessment explainer, not
+                straight to scheduling. The final CTA (page end) still books. */}
+            <AssessmentCTA navigate={navigate} to="/assessment" />
             <div className="label" style={{ color: "var(--muted)", marginTop: 32, letterSpacing: "0.22em" }}>
               Serving {areasLine}
             </div>
@@ -351,9 +353,14 @@ const TreatmentTemplate = ({ data, navigate }) => {
         <div className="container">
           <Reveal>
             <Eyebrow>Related Treatments</Eyebrow>
-            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: "20px 0 48px", maxWidth: "20ch", fontWeight: 300 }}>
-              A considered <em>pathway.</em>
-            </h2>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 24, margin: "20px 0 48px" }}>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: 0, maxWidth: "20ch", fontWeight: 300 }}>
+                A considered <em>pathway.</em>
+              </h2>
+              <a href="/aesthetics" onClick={(e) => { e.preventDefault(); navigate("/aesthetics"); }} className="link">
+                <span>All Aesthetic Treatments</span><span className="arrow"></span>
+              </a>
+            </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {data.related.map((r, i) => (
@@ -371,6 +378,39 @@ const TreatmentTemplate = ({ data, navigate }) => {
           </div>
         </div>
       </section>
+
+      {/* 8a — RELATED CONCERNS (curated treatment→concern links; only when data exists) */}
+      {data.relatedConcernLinks && data.relatedConcernLinks.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Reveal>
+              <Eyebrow>Related Concerns</Eyebrow>
+              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 24, margin: "20px 0 48px" }}>
+                <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: 0, maxWidth: "22ch", fontWeight: 300 }}>
+                  What it <em>addresses.</em>
+                </h2>
+                <a href="/concerns" onClick={(e) => { e.preventDefault(); navigate("/concerns"); }} className="link">
+                  <span>All Patient Concerns</span><span className="arrow"></span>
+                </a>
+              </div>
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {data.relatedConcernLinks.map((r, i) => (
+                <Reveal key={r.path} delay={(i % 3) * 80}>
+                  <a
+                    href={r.path}
+                    onClick={(e) => { e.preventDefault(); navigate(r.path); }}
+                    style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, padding: "26px 28px", border: "1px solid var(--hairline)", background: "var(--bg)", transition: "border-color 240ms ease" }}
+                  >
+                    <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)" }}>{r.label}</span>
+                    <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 8b — BRIDAL JOURNEY cross-link (only for bridal-relevant services) */}
       {BRIDAL_SERVICE_SLUGS.includes(data.slug) && (
