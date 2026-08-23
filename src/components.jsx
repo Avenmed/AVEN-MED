@@ -24,6 +24,7 @@ const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArro
     onClick={(e) => { e.preventDefault(); navigate(to); }}
     className={className}
     style={style}
+    data-aven-cta="assessment"
   >
     <span>{label}</span>{showArrow && <span className="arrow"></span>}
   </a>

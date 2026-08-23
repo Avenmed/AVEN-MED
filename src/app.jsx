@@ -26,6 +26,27 @@ import BridalJourneyPage from './pages/BridalJourney.jsx';
 import BridalAssessmentPage from './pages/BridalAssessment.jsx';
 import NotFoundPage from './pages/NotFound.jsx';
 import { getRegistryPage, TEMPLATES, getEducationArticle, getRelatedArticles, getServiceLinksBySlugs } from './content/registry.jsx';
+import { initAnalytics, trackPageView } from './analytics.js';
+
+// Safe GA4 page_type derived from the EXISTING registry/route system (no second
+// route registry, no health data). Broad buckets only.
+function pageTypeFor(route) {
+  if (route === "/") return "home";
+  const reg = getRegistryPage(route);
+  if (reg) {
+    return ({ treatment: "treatment", concern: "concern", wellness: "wellness", familyMedicine: "family_medicine", assessment: "assessment", provider: "provider" })[reg.type] || "other";
+  }
+  if (route === "/about") return "about";
+  if (route === "/notes") return "notes";
+  if (route === "/memberships") return "membership";
+  if (route === "/contact") return "contact";
+  if (route === "/assessment") return "assessment";
+  if (route === "/providers") return "provider";
+  if (route === "/education" || route.startsWith("/education/")) return "education";
+  if (route.startsWith("/bridal-journey")) return "bridal";
+  if (["/aesthetics", "/concerns", "/wellness", "/family-medicine"].includes(route)) return "hub";
+  return "not_found";
+}
 import { validateBridal } from './content/bridal/index.js';
 import { categoryBySlug } from './content/education/index.js';
 
@@ -170,9 +191,15 @@ const App = () => {
     setHomeRevealed(true);
   }, []);
 
-  // Keep <title>, meta description, and canonical accurate per route.
+  // Load GA4 once (privacy-scoped; client-only).
+  React.useEffect(() => { initAnalytics(); }, []);
+
+  // Keep <title>, meta description, and canonical accurate per route — then send
+  // exactly one GA4 page_view per route (initial mount + each client-side change),
+  // pathname-only, after applySeo has set the correct document.title.
   React.useEffect(() => {
     applySeo(route);
+    trackPageView(route, document.title, pageTypeFor(route));
   }, [route]);
 
   // DEV-only: surface bridal registry issues in the console. Dead-code-eliminated

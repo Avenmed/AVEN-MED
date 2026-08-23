@@ -234,7 +234,7 @@ const MembershipsPage = ({ navigate }) => {
                   <li key={s}><span>{s}</span></li>
                 ))}
               </ul>
-              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: 8 }}>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link" style={{ alignSelf: "flex-start", marginTop: 8 }} data-aven-cta="membership">
                 <span>Inquire about Maintenance</span><span className="arrow"></span>
               </a>
             </Reveal>
@@ -281,7 +281,7 @@ const MembershipsPage = ({ navigate }) => {
                   )
                 ))}
               </ul>
-              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }}>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="btn solid" style={{ alignSelf: "flex-start" }} data-aven-cta="membership">
                 <span>Inquire about Signature</span><span className="arrow"></span>
               </a>
             </Reveal>

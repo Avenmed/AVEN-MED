@@ -4,6 +4,7 @@ import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, ASSESSMENT_CTA_LABEL } from '../components.jsx';
 import Video from '../Video.jsx';
 import { BOOKING_ENABLED, BOOKING_URL } from '../config.js';
+import { trackContactHandoff } from '../analytics.js';
 import { CLINIC } from '../content/clinic.js';
 
 const ContactPage = ({ navigate }) => {
@@ -23,6 +24,11 @@ const ContactPage = ({ navigate }) => {
   // params — Podium uses them if its booking page supports prefill, else ignores.
   const onSubmit = (e) => {
     e.preventDefault();
+    // Fire the analytics event BEFORE the redirect, with NO form values. The Podium
+    // prefill (name/email/phone in the outbound URL) is preserved for the patient,
+    // but that off-site full-page navigation never produces a GA4 page_view, and this
+    // event carries zero PII — so name/email/phone can never reach GA4.
+    trackContactHandoff();
     const params = new URLSearchParams();
     if (form.name) params.set("name", form.name);
     if (form.email) params.set("email", form.email);
