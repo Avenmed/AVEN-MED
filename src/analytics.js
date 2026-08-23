@@ -86,10 +86,18 @@ function track(name, params) {
   window.gtag("event", name, safe);
 }
 
-// Contact form → Podium handoff. NO form values. Named for what actually happens
-// (a hand-off to booking, not a confirmed appointment).
-export function trackContactHandoff() {
-  track("contact_handoff", {});
+// Contact form → Podium handoff. NO form values (event carries zero PII). Named for
+// what actually happens: a hand-off to booking, not a confirmed appointment.
+// Because the caller immediately navigates off-site, we fire with event_callback and
+// only then run `done()` — so the beacon is actually sent before the page unloads —
+// with a short timeout fallback so the patient is NEVER blocked if analytics is
+// slow/blocked. event_callback/event_timeout are gtag control params, not data.
+export function trackContactHandoff(done) {
+  let called = false;
+  const go = () => { if (!called) { called = true; if (typeof done === "function") done(); } };
+  if (typeof window === "undefined" || typeof window.gtag !== "function") { go(); return; }
+  window.gtag("event", "contact_handoff", { event_callback: go, event_timeout: 800 });
+  setTimeout(go, 900);
 }
 
 function linkLocation(el) {

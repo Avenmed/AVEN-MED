@@ -24,17 +24,18 @@ const ContactPage = ({ navigate }) => {
   // params — Podium uses them if its booking page supports prefill, else ignores.
   const onSubmit = (e) => {
     e.preventDefault();
-    // Fire the analytics event BEFORE the redirect, with NO form values. The Podium
-    // prefill (name/email/phone in the outbound URL) is preserved for the patient,
-    // but that off-site full-page navigation never produces a GA4 page_view, and this
-    // event carries zero PII — so name/email/phone can never reach GA4.
-    trackContactHandoff();
+    // Build the Podium handoff URL — prefill (name/email/phone) preserved for the
+    // patient. It goes ONLY to Podium via a full-page off-site navigation, which
+    // never produces a GA4 page_view, so those values can never reach GA4.
     const params = new URLSearchParams();
     if (form.name) params.set("name", form.name);
     if (form.email) params.set("email", form.email);
     if (form.phone) params.set("phone", form.phone);
     const qs = params.toString();
-    window.location.href = qs ? `${BOOKING_URL}?${qs}` : BOOKING_URL;
+    const dest = qs ? `${BOOKING_URL}?${qs}` : BOOKING_URL;
+    // Fire the PII-free handoff event, then redirect once it has actually been sent
+    // (with a fallback so the patient is never blocked).
+    trackContactHandoff(() => { window.location.href = dest; });
   };
 
   React.useEffect(() => {
