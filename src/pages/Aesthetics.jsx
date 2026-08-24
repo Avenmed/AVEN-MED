@@ -291,7 +291,11 @@ const AestheticsPage = ({ navigate }) => {
       <section className="section">
         <div className="container">
           <Reveal>
-            <div style={{ padding: "clamp(40px, 6vw, 72px)", border: "1px solid var(--gold-soft)", background: "var(--surface)", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+            {/* Editorial feature — de-boxed. A single top hairline marks this as a
+                signature moment (no surrounding border, no clay fill, no shadow). Left
+                carries the information + CTA; right carries the romantic line as a
+                deliberate enlarged epigraph rather than a logo floating in empty space. */}
+            <div className="bridal-feature" style={{ borderTop: "1px solid var(--hairline)", paddingTop: "clamp(40px, 5vw, 64px)", display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: "clamp(48px, 6vw, 96px)", alignItems: "center" }}>
               <div>
                 <Eyebrow>A Signature Experience</Eyebrow>
                 <h2 className="display" style={{ fontSize: "clamp(32px, 4.2vw, 56px)", margin: "18px 0 20px", maxWidth: "16ch", fontWeight: 300 }}>
@@ -305,9 +309,9 @@ const AestheticsPage = ({ navigate }) => {
                   <span>Explore the Bridal Journey</span><span className="arrow"></span>
                 </a>
               </div>
-              <div style={{ textAlign: "center" }}>
-                <Logo size={44} style={{ opacity: 0.85 }} />
-                <div className="display italic" style={{ fontSize: "clamp(18px, 2.2vw, 24px)", color: "var(--muted)", marginTop: 20, maxWidth: "18ch", marginInline: "auto" }}>
+              <div className="bridal-epigraph" style={{ textAlign: "right" }}>
+                <Logo size={40} style={{ opacity: 0.8, marginLeft: "auto" }} />
+                <div className="display italic" style={{ fontSize: "clamp(24px, 2.8vw, 34px)", color: "var(--ivory-soft)", marginTop: 24, maxWidth: "14ch", marginLeft: "auto", fontWeight: 300, lineHeight: 1.35 }}>
                   Begin early. Arrive as yourself.
                 </div>
               </div>

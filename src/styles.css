@@ -1028,6 +1028,16 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .provider-grid { grid-template-columns: 1fr !important; gap: clamp(28px, 6vw, 40px) !important; }
 }
 
+/* Bridal Journey editorial feature (Aesthetics hub) — de-boxed two-column feature.
+   Stack at ≤768px and left-align the romantic epigraph beneath the copy (drop the
+   right-alignment/auto-margins used on desktop) so it reads cleanly on phones. Scoped
+   classes — no global grid change; desktop keeps the inline proportions. */
+@media (max-width: 768px) {
+  .bridal-feature { grid-template-columns: 1fr !important; gap: clamp(28px, 7vw, 44px) !important; }
+  .bridal-epigraph { text-align: left !important; }
+  .bridal-epigraph > * { margin-left: 0 !important; margin-right: 0 !important; }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */
