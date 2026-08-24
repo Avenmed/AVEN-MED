@@ -1028,17 +1028,25 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
 
 /* ---------- "Why AVEN" editorial video (Aesthetics) — scoped refinements ---------- */
 /* Borderless, magazine-style treatment (overrides the default .ph hairline for this
-   one slot only). Crop, aspect, background, and all Video behavior are unchanged. */
+   one slot only). Applies at all widths — mobile is already borderless. */
 .ph.aesthetics-philosophy-media { border: none; }
-/* DESKTOP ONLY: raise the video ~20px and widen it ~6% (uniform scale keeps the
-   portrait crop + aspect ratio), so it aligns with the headline/body rather than
-   centering against the whole column (the eyebrow above the heading offsets it).
-   transform doesn't reflow, so the grid string stays "1fr 1.4fr" and mobile keeps
-   its clean stacked full-width crop untouched. Two easy knobs to tweak:
-     translateY(-20px)  → raise amount (15–25px range)
-     scale(1.06)        → width/size increase (1.05–1.08 ≈ 5–8%) */
+/* DESKTOP ONLY — cinematic 4:3 editorial frame. The Ph carries an inline 4:5 aspect
+   for MOBILE (unchanged); this desktop override needs !important to beat that inline
+   value. The wider 4:3 crop reveals much more limestone + olive on the sides;
+   object-fit: cover + center keeps her face framed. The video is raised and widened
+   (uniform scale preserves the 4:3 aspect) to ~390–400px; height follows 4:3 (~300px),
+   so it's wider without being taller. transform doesn't reflow, so the grid and the
+   text column are untouched and the whitespace between them stays comfortable.
+   Knobs to tweak:
+     aspect-ratio 4/3   → the crop (keep 4/3)
+     scale(1.12)        → width (≈ 1.08–1.14 → ~380–420px on ≥1440 screens)
+     translateY(-20px)  → vertical raise / alignment with the copy */
 @media (min-width: 769px) {
-  .aesthetics-philosophy-media { transform: translateY(-20px) scale(1.06); transform-origin: center center; }
+  .aesthetics-philosophy-media {
+    aspect-ratio: 4 / 3 !important;
+    transform: translateY(-20px) scale(1.12);
+    transform-origin: center center;
+  }
 }
 
 
