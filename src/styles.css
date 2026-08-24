@@ -1020,6 +1020,14 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .cx-head { grid-template-columns: 1fr !important; gap: 18px !important; align-items: start !important; }
 }
 
+/* Meet Your Provider (Aesthetics hub) — portrait + copy. The rebalanced 0.6fr/1fr grid
+   isn't in the global whitelist, so stack it to one column at ≤768px with the portrait
+   full-width and substantial (never a thumbnail), copy beneath. Scoped class — no global
+   grid change; desktop/tablet ≥769px keeps the inline proportions. */
+@media (max-width: 768px) {
+  .provider-grid { grid-template-columns: 1fr !important; gap: clamp(28px, 6vw, 40px) !important; }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */

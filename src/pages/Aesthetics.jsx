@@ -318,7 +318,7 @@ const AestheticsPage = ({ navigate }) => {
 
       {/* 7 — MEET YOUR PROVIDER */}
       <section className="section">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
+        <div className="container provider-grid" style={{ display: "grid", gridTemplateColumns: "0.6fr 1fr", gap: 64, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
             <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
               <Video src="assets/alaa-2.mp4" />
