@@ -1030,23 +1030,28 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
 /* Borderless, magazine-style treatment (overrides the default .ph hairline for this
    one slot only). Applies at all widths — mobile is already borderless. */
 .ph.aesthetics-philosophy-media { border: none; }
-/* DESKTOP ONLY — cinematic 4:3 editorial frame. The Ph carries an inline 4:5 aspect
-   for MOBILE (unchanged); this desktop override needs !important to beat that inline
-   value. The wider 4:3 crop reveals much more limestone + olive on the sides;
-   object-fit: cover + center keeps her face framed. The video is raised and widened
-   (uniform scale preserves the 4:3 aspect) to ~390–400px; height follows 4:3 (~300px),
-   so it's wider without being taller. transform doesn't reflow, so the grid and the
-   text column are untouched and the whitespace between them stays comfortable.
-   Knobs to tweak:
-     aspect-ratio 4/3   → the crop (keep 4/3)
-     scale(1.12)        → width (≈ 1.08–1.14 → ~380–420px on ≥1440 screens)
-     translateY(-20px)  → vertical raise / alignment with the copy */
+/* DESKTOP ONLY — substantial cinematic 4:3 editorial frame. The Ph carries an inline
+   4:5 aspect for MOBILE (unchanged); this desktop override needs !important to beat
+   that inline value. The wider 4:3 crop reveals much more limestone + olive; object-
+   fit: cover + center keeps her face framed. transform-origin:right keeps the RIGHT
+   edge fixed (so the ~80px gap to the copy never shrinks) and grows the frame LEFT
+   into the existing empty space — the grid and text column don't move. It's raised a
+   touch and vertically centered against the main body for a balanced composition.
+   Knobs:
+     scale(1.12) (≥769px)  → size on smaller desktops (kept safe from off-screen clip)
+     scale(1.39) (≥1440px) → ~490px 4:3 on a large desktop
+     translateY(-16px)     → vertical raise / balance against the copy */
 @media (min-width: 769px) {
   .aesthetics-philosophy-media {
     aspect-ratio: 4 / 3 !important;
-    transform: translateY(-20px) scale(1.12);
-    transform-origin: center center;
+    transform: translateY(-16px) scale(1.12);
+    transform-origin: right center;
   }
+}
+@media (min-width: 1440px) {
+  /* Large desktop: the container padding widens to 96px, so the left track is ~353px;
+     scale ~1.39 → ~490px-wide 4:3 (~367px tall), grown leftward, gap to copy unchanged. */
+  .aesthetics-philosophy-media { transform: translateY(-16px) scale(1.39); }
 }
 
 
