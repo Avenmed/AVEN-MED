@@ -51,6 +51,9 @@ export function env() {
 
 // --- AES-256-GCM at-rest encryption for the persisted token set ---
 function keyBuf(encKey) {
+  // Guard: the key must be a STRING (a common footgun is passing the whole env object).
+  // Fail with a safe type-only code, never a cryptic Buffer error or the value.
+  if (typeof encKey !== "string") throw new Error(`bad_enc_key_type:${typeof encKey}`);
   // Accept a 64-char hex or base64 key; both must decode to exactly 32 bytes.
   const buf = /^[0-9a-fA-F]{64}$/.test(encKey)
     ? Buffer.from(encKey, "hex")
@@ -91,6 +94,28 @@ export async function loadTokens(encKey) {
   const store = getStore(BLOB_STORE);
   const b64 = await store.get(BLOB_KEY);
   return b64 ? JSON.parse(decrypt(b64, encKey)) : null;
+}
+
+// TEMPORARY — encryption → Blob write → Blob read → decrypt round-trip using the REAL
+// encrypt/decrypt + a throwaway blob key and DUMMY tokens. Returns safe stage flags +
+// typeof only (never token/key values). Removed after production verification.
+export async function __roundtripSelfTest(encKey) {
+  const KEY = "__roundtrip_selftest";
+  const dummy = {
+    access_token: "dummy.header.payload", refresh_token: "dummy-refresh",
+    token_type: "Bearer", scope: SCOPES.join(" "), obtained_at: 1, expires_at: 2,
+  };
+  const s = { encrypt_ok: false, typeof_encrypted: null, blob_write_ok: false,
+    blob_read_ok: false, typeof_read: null, decrypt_ok: false, match: false };
+  const enc = encrypt(JSON.stringify(dummy), encKey);
+  s.encrypt_ok = true; s.typeof_encrypted = typeof enc;
+  const store = getStore(BLOB_STORE);
+  await store.set(KEY, enc); s.blob_write_ok = true;
+  const back = await store.get(KEY); s.typeof_read = typeof back; s.blob_read_ok = back != null;
+  const dec = JSON.parse(decrypt(back, encKey)); s.decrypt_ok = true;
+  s.match = JSON.stringify(dec) === JSON.stringify(dummy);
+  await store.delete(KEY);
+  return s;
 }
 
 // --- OAuth state: an HMAC-signed nonce bound to an httpOnly cookie (CSRF) ---

@@ -53,7 +53,7 @@ export const handler = async (event) => {
   try {
     const tokens = await exchangeCode(q.code, e); // Client Secret used server-side only
     initBlobs(event);                             // wire Blobs context (v1 Lambda handler)
-    await saveTokens(tokens, e);                  // encrypted at rest in Netlify Blobs
+    await saveTokens(tokens, e.encKey);           // encrypted at rest in Netlify Blobs
 
     // Harmless verification using read_locations only — count, never data.
     let note;
