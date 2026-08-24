@@ -80,17 +80,20 @@ const CONCERNS = [
   { n: "Large Pores", path: "/concerns/large-pores" },
 ];
 
+// Editorial treatment row — de-boxed (styles in .tx-row): a thin top hairline, the
+// serif name + a restrained gold arrow, and the existing short description beneath.
+// The whole row stays a single clickable link to the same landing page.
 const TreatmentCard = ({ t, navigate }) => (
   <a
     href={t.path}
     onClick={(e) => { e.preventDefault(); navigate(t.path); }}
-    style={{ display: "block", padding: "26px 26px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}
+    className="tx-row"
   >
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
-      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400, color: "var(--ivory)" }}>{t.n}</span>
-      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 17, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
-    </div>
-    <p className="body-sm" style={{ marginTop: 10, color: "var(--muted)" }}>{t.d}</p>
+    <span className="tx-head">
+      <span className="tx-name">{t.n}</span>
+      <span aria-hidden="true" className="tx-arrow">&rarr;</span>
+    </span>
+    <span className="tx-desc body-sm">{t.d}</span>
   </a>
 );
 
@@ -201,12 +204,13 @@ const AestheticsPage = ({ navigate }) => {
         <section key={c.eyebrow} className="section" style={ci % 2 === 1 ? { background: "var(--bg-1)" } : undefined}>
           <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 64, alignItems: "start" }}>
             <Reveal>
-              <Eyebrow>{c.eyebrow}</Eyebrow>
+              {/* Quiet wayfinding: number the four pathways 01–04 in the gold eyebrow. */}
+              <Eyebrow>{`${String(ci + 1).padStart(2, "0")} · ${c.eyebrow}`}</Eyebrow>
               <h3 className="display" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", margin: "18px 0 20px", maxWidth: "16ch", fontWeight: 300 }}>{c.headline}</h3>
               <p className="body" style={{ maxWidth: "42ch" }}>{c.lede}</p>
             </Reveal>
             <Reveal delay={120}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+              <div className="tx-grid">
                 {c.treatments.map((t) => (
                   <TreatmentCard key={t.path} t={t} navigate={navigate} />
                 ))}

@@ -913,10 +913,67 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   }
 }
 
+/* Aesthetics hub — editorial treatment index. De-boxed rows that replace the old
+   bordered/filled TreatmentCard: transparent, a single thin top hairline, serif name +
+   muted description + restrained gold arrow — matching the Guiding Principles ruled
+   index. Two columns on desktop; one clean column on tablet and below (names never
+   cramped). Hover/focus stay subtle: no lift, shadow, scale, or background fill. */
+.tx-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 48px;
+  align-items: start;
+}
+.tx-row {
+  display: block;
+  border-top: 1px solid var(--hairline);
+  padding: 20px 0 2px;
+  transition: border-top-color 240ms ease;
+}
+.tx-row .tx-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+.tx-row .tx-name {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--ivory);
+}
+.tx-row .tx-arrow {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 240ms ease;
+}
+.tx-row .tx-desc {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+}
+/* Subtle interaction only: strengthen the hairline + nudge the arrow. */
+.tx-row:hover { border-top-color: var(--hairline-strong); }
+.tx-row:hover .tx-arrow,
+.tx-row:focus-visible .tx-arrow { transform: translateX(4px); }
+.tx-row:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 6px;
+  border-top-color: var(--hairline-strong);
+}
+@media (max-width: 1024px) {
+  .tx-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */
   [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
   [style*="grid-template-columns: 1fr 1.2fr"],
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 1.4fr"],
