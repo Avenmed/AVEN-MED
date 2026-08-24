@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Server-side OAuth (Netlify Functions). The Client Secret and Podium tokens live only
+# here — never in the client bundle.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # ---------------------------------------------------------------------------
 # Redirects (evaluated top-to-bottom). Defined here in netlify.toml — which
 # Netlify reads directly from the repo root — so they never depend on a
@@ -31,6 +37,19 @@
   from = "/reading/*"
   to = "/assessment"
   status = 301
+
+# Podium OAuth server-side endpoints → Netlify Functions. MUST come BEFORE the SPA
+# fallback so these API routes reach the functions instead of index.html. The public
+# URLs stay clean and predictable; the callback URL is what Podium redirects back to.
+[[redirects]]
+  from = "/api/podium/oauth/start"
+  to = "/.netlify/functions/podium-oauth-start"
+  status = 200
+
+[[redirects]]
+  from = "/api/podium/oauth/callback"
+  to = "/.netlify/functions/podium-oauth-callback"
+  status = 200
 
 # SPA fallback — every other clean route serves the app (History-API routing).
 # Existing static files in the publish dir (assets, robots.txt, sitemap.xml)
