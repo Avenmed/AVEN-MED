@@ -977,6 +977,49 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .fm-related-grid { grid-template-columns: 1fr !important; gap: clamp(20px, 5vw, 26px) !important; }
 }
 
+/* Aesthetics hub — Related Concerns editorial index. De-boxed like the treatment
+   rows (top hairline + serif name + restrained gold arrow), but kept terser — name +
+   arrow only, on a single baseline, 3-up — so it reads as a quick "I know the concern,
+   not the treatment" directory: related to the treatment index above, not a duplicate
+   of it. Hover/focus stay subtle (no lift/shadow/scale/fill). */
+.cx-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  border-top: 1px solid var(--hairline);
+  padding: 22px 0 6px;
+  transition: border-top-color 240ms ease;
+}
+.cx-row .cx-name {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--ivory);
+}
+.cx-row .cx-arrow {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 240ms ease;
+}
+.cx-row:hover { border-top-color: var(--hairline-strong); }
+.cx-row:hover .cx-arrow,
+.cx-row:focus-visible .cx-arrow { transform: translateX(4px); }
+.cx-row:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 6px;
+  border-top-color: var(--hairline-strong);
+}
+/* Related Concerns header (1fr auto): stack headline + secondary link at ≤768px so the
+   headline gets full width and never crushes. Scoped class — no global grid change. */
+@media (max-width: 768px) {
+  .cx-head { grid-template-columns: 1fr !important; gap: 18px !important; align-items: start !important; }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */

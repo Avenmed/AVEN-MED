@@ -225,7 +225,7 @@ const AestheticsPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Eyebrow>Related Concerns</Eyebrow>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 40 }}>
+            <div className="cx-head" style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 40 }}>
               <h2 className="display" style={{ fontSize: "clamp(34px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch", fontWeight: 300 }}>
                 Arrived with a concern, not a <em>treatment?</em>
               </h2>
@@ -238,16 +238,20 @@ const AestheticsPage = ({ navigate }) => {
               explain the causes — then point to the right options.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          {/* Editorial concern index — de-boxed rows (styles in .cx-row): a thin top
+              hairline, the serif concern name, and a restrained gold arrow. Terser and
+              3-up so it reads as a quick concern directory, distinct from the treatment
+              index above. The whole row stays one clickable link to the same page. */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "44px 48px", alignItems: "start" }}>
             {CONCERNS.map((c, i) => (
               <Reveal key={c.path} delay={(i % 3) * 80}>
                 <a
                   href={c.path}
                   onClick={(e) => { e.preventDefault(); navigate(c.path); }}
-                  style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, padding: "24px 26px", border: "1px solid var(--hairline)", background: "var(--bg)", transition: "border-color 240ms ease" }}
+                  className="cx-row"
                 >
-                  <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)" }}>{c.n}</span>
-                  <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 17, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
+                  <span className="cx-name">{c.n}</span>
+                  <span aria-hidden="true" className="cx-arrow">&rarr;</span>
                 </a>
               </Reveal>
             ))}
