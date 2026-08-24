@@ -96,28 +96,6 @@ export async function loadTokens(encKey) {
   return b64 ? JSON.parse(decrypt(b64, encKey)) : null;
 }
 
-// TEMPORARY — encryption → Blob write → Blob read → decrypt round-trip using the REAL
-// encrypt/decrypt + a throwaway blob key and DUMMY tokens. Returns safe stage flags +
-// typeof only (never token/key values). Removed after production verification.
-export async function __roundtripSelfTest(encKey) {
-  const KEY = "__roundtrip_selftest";
-  const dummy = {
-    access_token: "dummy.header.payload", refresh_token: "dummy-refresh",
-    token_type: "Bearer", scope: SCOPES.join(" "), obtained_at: 1, expires_at: 2,
-  };
-  const s = { encrypt_ok: false, typeof_encrypted: null, blob_write_ok: false,
-    blob_read_ok: false, typeof_read: null, decrypt_ok: false, match: false };
-  const enc = encrypt(JSON.stringify(dummy), encKey);
-  s.encrypt_ok = true; s.typeof_encrypted = typeof enc;
-  const store = getStore(BLOB_STORE);
-  await store.set(KEY, enc); s.blob_write_ok = true;
-  const back = await store.get(KEY); s.typeof_read = typeof back; s.blob_read_ok = back != null;
-  const dec = JSON.parse(decrypt(back, encKey)); s.decrypt_ok = true;
-  s.match = JSON.stringify(dec) === JSON.stringify(dummy);
-  await store.delete(KEY);
-  return s;
-}
-
 // --- OAuth state: an HMAC-signed nonce bound to an httpOnly cookie (CSRF) ---
 const b64url = (buf) => buf.toString("base64url");
 export function makeState(stateSecret) {
