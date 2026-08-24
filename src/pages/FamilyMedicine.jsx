@@ -268,7 +268,7 @@ const FamilyMedicinePage = ({ navigate }) => {
               useful, we connect the two.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          <div className="fm-related-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {RELATED.map((r, i) => (
               <Reveal key={r.path} delay={(i % 2) * 80}>
                 <a

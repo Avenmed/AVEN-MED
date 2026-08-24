@@ -969,6 +969,14 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .tx-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
+/* Family Medicine — "Alongside Your Care" related-services grid: 2-up boxed cards on
+   desktop; stack to a single column at ≤768px so the cards never cramp or clip on
+   phones. Scoped to this class rather than adding repeat(2 to the global stacking
+   whitelist (which would affect other pages). Desktop/tablet ≥769px unchanged. */
+@media (max-width: 768px) {
+  .fm-related-grid { grid-template-columns: 1fr !important; gap: clamp(20px, 5vw, 26px) !important; }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */
