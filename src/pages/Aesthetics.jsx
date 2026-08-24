@@ -126,7 +126,7 @@ const AestheticsPage = ({ navigate }) => {
               shown under prefers-reduced-motion. object-fit: cover keeps the face centered.
               The Ph aspect-ratio reserves the space, so there is no layout shift. */}
           <Reveal>
-            <Ph label="AVEN · editorial imagery" meta="natural light · 4:5" aspect="4/5">
+            <Ph label="AVEN · editorial imagery" meta="natural light · 4:5" aspect="4/5" className="aesthetics-philosophy-media">
               <Video src="assets/aesthetics-philosophy.mp4" poster="assets/aesthetics-philosophy.jpg" />
             </Ph>
           </Reveal>

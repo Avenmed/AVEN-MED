@@ -1026,4 +1026,19 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .hero-band { font-size: 9.5px; letter-spacing: 0.22em; padding: 18px 18px; gap: 12px; }
 }
 
+/* ---------- "Why AVEN" editorial video (Aesthetics) — scoped refinements ---------- */
+/* Borderless, magazine-style treatment (overrides the default .ph hairline for this
+   one slot only). Crop, aspect, background, and all Video behavior are unchanged. */
+.ph.aesthetics-philosophy-media { border: none; }
+/* DESKTOP ONLY: raise the video ~20px and widen it ~6% (uniform scale keeps the
+   portrait crop + aspect ratio), so it aligns with the headline/body rather than
+   centering against the whole column (the eyebrow above the heading offsets it).
+   transform doesn't reflow, so the grid string stays "1fr 1.4fr" and mobile keeps
+   its clean stacked full-width crop untouched. Two easy knobs to tweak:
+     translateY(-20px)  → raise amount (15–25px range)
+     scale(1.06)        → width/size increase (1.05–1.08 ≈ 5–8%) */
+@media (min-width: 769px) {
+  .aesthetics-philosophy-media { transform: translateY(-20px) scale(1.06); transform-origin: center center; }
+}
+
 
