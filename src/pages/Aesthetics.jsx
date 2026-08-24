@@ -163,12 +163,16 @@ const AestheticsPage = ({ navigate }) => {
               Six ideas behind every <em>plan.</em>
             </h2>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 56 }}>
+          {/* Editorial ruled index — not boxed feature cards. A thin gold hairline tops
+              each principle (no borders/fills/shadows), on the plain beige, with the
+              number, serif title, and body. Keeps the 3-col grid string so the existing
+              mobile stack rule still collapses it to a clean single-column ruled list. */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "64px 56px", marginTop: 64, alignItems: "start" }}>
             {PRINCIPLES.map((p, i) => (
               <Reveal key={p.n} delay={(i % 3) * 90}>
-                <div style={{ padding: "36px 28px", border: "1px solid var(--hairline)", height: "100%", background: "var(--surface)" }}>
-                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.2em" }}>{p.n}</div>
-                  <h3 className="display" style={{ fontSize: 26, margin: "20px 0 14px", fontWeight: 400 }}>{p.k}</h3>
+                <div style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
+                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.24em" }}>{p.n}</div>
+                  <h3 className="display" style={{ fontSize: "clamp(23px, 1.9vw, 28px)", margin: "18px 0 12px", fontWeight: 400, letterSpacing: "-0.005em" }}>{p.k}</h3>
                   <p className="body-sm" style={{ margin: 0 }}>{p.b}</p>
                 </div>
               </Reveal>
