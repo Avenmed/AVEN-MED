@@ -8,7 +8,7 @@
  * success page. No token, code, secret, or contact data is ever logged or shown. */
 import {
   env, verifyState, clearStateCookie, readCookie, STATE_COOKIE_NAME,
-  exchangeCode, saveTokens, countLocations,
+  exchangeCode, saveTokens, countLocations, initBlobs,
 } from "../lib/podium.mjs";
 
 function page(status, title, message) {
@@ -52,6 +52,7 @@ export const handler = async (event) => {
 
   try {
     const tokens = await exchangeCode(q.code, e); // Client Secret used server-side only
+    initBlobs(event);                             // wire Blobs context (v1 Lambda handler)
     await saveTokens(tokens, e);                  // encrypted at rest in Netlify Blobs
 
     // Harmless verification using read_locations only — count, never data.

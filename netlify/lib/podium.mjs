@@ -15,7 +15,7 @@
  * Podium API v4 endpoints confirmed against docs.podium.com (OAuth 2.0 auth-code flow).
  */
 import crypto from "node:crypto";
-import { getStore } from "@netlify/blobs";
+import { getStore, connectLambda } from "@netlify/blobs";
 
 // --- Podium API (v4) ---
 export const PODIUM = {
@@ -70,6 +70,16 @@ function decrypt(b64, encKey) {
   const decipher = crypto.createDecipheriv("aes-256-gcm", keyBuf(encKey), raw.subarray(0, 12));
   decipher.setAuthTag(raw.subarray(12, 28));
   return Buffer.concat([decipher.update(raw.subarray(28)), decipher.final()]).toString("utf8");
+}
+
+// --- Netlify Blobs runtime context ---
+// Classic (v1) Lambda-compatible functions receive the Blobs siteID/token INSIDE the
+// Lambda event, not via the global environment — so getStore() alone throws
+// MissingBlobsEnvironmentError. connectLambda(event) wires that auto-injected context
+// (no manual siteID/token, no personal access token). Call once per invocation before
+// any getStore() usage. Harmless/idempotent.
+export function initBlobs(event) {
+  connectLambda(event);
 }
 
 // --- token persistence (Netlify Blobs, encrypted at rest) ---
