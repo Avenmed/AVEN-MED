@@ -13,6 +13,7 @@ import { Eyebrow, Logo, Reveal, HeroBg, DividerMark } from '../components.jsx';
 import { CLINIC } from '../content/clinic.js';
 import { BRIDAL_ASSESSMENT_FIELDS } from '../content/bridal/index.js';
 import { useJsonLd, BridalConcernSelector, BridalDisclaimer } from './bridal/BridalComponents.jsx';
+import { trackBridalSubmit } from '../analytics.js';
 
 const BASE = CLINIC.url;
 // Warm terracotta error text, deepened for WCAG AA: #9A4A32 is 4.6:1 on --bg
@@ -113,11 +114,14 @@ const BridalAssessmentPage = ({ navigate }) => {
   const [values, setValues] = React.useState(initialValues);
   const [errors, setErrors] = React.useState({});
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState("");
 
   const setField = (id) => (val) => setValues((v) => ({ ...v, [id]: val }));
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    if (sending) return; // prevent double-submit
     const errs = validate(values);
     setErrors(errs);
     if (Object.keys(errs).length) {
@@ -125,11 +129,37 @@ const BridalAssessmentPage = ({ navigate }) => {
       if (first) first.focus();
       return;
     }
-    // SUBMISSION INTEGRATION PLACEHOLDER — intentionally not wired to any
-    // booking/CRM/EMR/email system. When an approved integration exists, send
-    // `values` here. For now we only show the success state.
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSubmitError("");
+    setSending(true);
+    try {
+      // Send ONLY the approved, non-sensitive fields to our own server-side function
+      // (which forwards to Podium). Skin concerns, aesthetic goals, treatment history,
+      // skincare routine, wellness goals, and free-text answers NEVER leave the browser.
+      const payload = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        weddingDate: values.weddingDate,
+        consultationTiming: values.consultationTiming,
+        referral: values.referral,
+        consent: values.consent,
+      };
+      const res = await fetch("/api/podium/bridal-submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error("submit_failed");
+      trackBridalSubmit(); // GA4 — only after a confirmed successful handoff; no PII
+      setSubmitted(true);  // the form is never cleared until success
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      // Never surface backend/Podium error details to the visitor.
+      setSubmitError("Something went wrong sending your details. Please try again in a moment, or contact us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -175,11 +205,16 @@ const BridalAssessmentPage = ({ navigate }) => {
                   <Field key={f.id} field={f} value={values[f.id]} error={errors[f.id]} onChange={setField(f.id)} />
                 ))}
                 <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap", marginTop: 8 }}>
-                  <button type="submit" className="btn solid" style={{ height: 56 }}>
-                    <span>Submit</span><span className="arrow"></span>
+                  <button type="submit" className="btn solid" style={{ height: 56 }} disabled={sending} aria-busy={sending}>
+                    <span>{sending ? "Sending…" : "Submit"}</span><span className="arrow"></span>
                   </button>
                   <span className="body-sm" style={{ color: "var(--muted)" }}>We'll reach out to arrange your consultation.</span>
                 </div>
+                {submitError && (
+                  <div role="alert" className="body-sm" style={{ color: ERR }}>
+                    {submitError} <a href={`mailto:${CLINIC.email}`} style={{ color: ERR, borderBottom: `1px solid ${ERR}` }}>{CLINIC.email}</a>
+                  </div>
+                )}
               </form>
             </Reveal>
           ) : (
@@ -191,12 +226,11 @@ const BridalAssessmentPage = ({ navigate }) => {
                   Thank you, {(values.name || "").split(" ")[0] || "friend"}.
                 </h2>
                 <p className="body" style={{ maxWidth: "52ch" }}>
-                  Your details are ready for our team to review. We'll be in touch to arrange your
-                  Bridal Assessment consultation.
+                  Your Bridal Journey has been received. Our team will review your request and
+                  contact you regarding your Bridal consultation.
                 </p>
                 <BridalDisclaimer style={{ marginTop: 20 }}>
-                  Note: this form is not yet connected to a live system, so nothing was sent.
-                  To reach us directly, email {CLINIC.email} or call {CLINIC.phoneDisplay}.
+                  Prefer to reach us directly? Email {CLINIC.email} or call {CLINIC.phoneDisplay}.
                 </BridalDisclaimer>
                 <div style={{ marginTop: 36, display: "flex", gap: 24, flexWrap: "wrap" }}>
                   <button className="link" onClick={() => { setSubmitted(false); setValues(initialValues()); }}>

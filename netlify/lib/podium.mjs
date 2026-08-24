@@ -46,6 +46,13 @@ export function env() {
     redirectUri: need("PODIUM_REDIRECT_URI"),
     encKey: need("PODIUM_TOKEN_ENC_KEY"),
     stateSecret: need("PODIUM_OAUTH_STATE_SECRET"),
+    // OPTIONAL owner-defined custom-attribute UIDs. Podium requires an attribute to be
+    // defined first (it has a UID); attaching an existing UID needs only write_contacts.
+    // Only fields whose UID is configured are sent to Podium — unset → simply not sent.
+    leadSourceAttrUid: process.env.PODIUM_LEAD_SOURCE_ATTR_UID || null,
+    weddingDateAttrUid: process.env.PODIUM_WEDDING_DATE_ATTR_UID || null,
+    consultTimingAttrUid: process.env.PODIUM_CONSULT_TIMING_ATTR_UID || null,
+    referralAttrUid: process.env.PODIUM_REFERRAL_ATTR_UID || null,
   };
 }
 
@@ -196,4 +203,85 @@ export async function countLocations(accessToken) {
   const body = await res.json();
   const arr = Array.isArray(body?.data) ? body.data : Array.isArray(body) ? body : [];
   return arr.length; // count only — location details are never returned/stored/logged
+}
+
+// =============================================================================
+//  Lead submission (Bridal Journey → Podium contact). write_contacts only.
+// =============================================================================
+export const LEAD_SOURCE = "Bridal Journey";
+
+// Return a valid access token, refreshing (and persisting rotation) when within 60s of
+// expiry or when forced. Never logs token values. Throws "not_connected" if unauthorized.
+export async function getAccessToken(e, { forceRefresh = false } = {}) {
+  const tokens = await loadTokens(e.encKey);
+  if (!tokens || !tokens.access_token) throw new Error("not_connected");
+  const nearExpiry = Date.now() > (tokens.expires_at || 0) - 60000;
+  if ((forceRefresh || nearExpiry) && tokens.refresh_token) {
+    const rotated = await refreshTokens(tokens.refresh_token, e);
+    await saveTokens(rotated, e.encKey); // persist rotated set (encrypted)
+    return rotated.access_token;
+  }
+  return tokens.access_token;
+}
+
+// The single AVEN location UID (read_locations), cached in Blobs to avoid refetching.
+export async function getLocationUid(accessToken) {
+  const store = getStore(BLOB_STORE);
+  const cached = await store.get("location-uid");
+  if (cached) return cached;
+  const res = await fetch(`${PODIUM.api}/locations`, {
+    headers: { Authorization: `Bearer ${accessToken}`, Accept: "application/json" },
+  });
+  if (!res.ok) throw new Error(`locations_read_failed:${res.status}`);
+  const body = await res.json();
+  const arr = Array.isArray(body?.data) ? body.data : Array.isArray(body) ? body : [];
+  const uid = arr[0] && (arr[0].uid || arr[0].id || arr[0].identifier);
+  if (!uid) throw new Error("no_location");
+  await store.set("location-uid", String(uid));
+  return String(uid);
+}
+
+// Create/upsert a contact. Podium dedupes by email/phone/conversation → it UPDATES the
+// existing contact instead of creating a duplicate. Returns the raw Response so the caller
+// can handle 401 (refresh + retry once). No request/response bodies are ever logged.
+export async function postContact(accessToken, payload) {
+  return fetch(`${PODIUM.api}/contacts`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+}
+
+// Normalize a phone to Podium's E.164 (^\+[1-9]\d{1,15}$). Returns null if unusable
+// (the field is then simply omitted — never sent malformed).
+export function normalizePhoneE164(raw) {
+  if (typeof raw !== "string") return null;
+  const t = raw.trim();
+  if (!t) return null;
+  if (/^\+[1-9]\d{1,15}$/.test(t)) return t;
+  const d = t.replace(/\D/g, "");
+  if (d.length === 10) return `+1${d}`;              // US 10-digit
+  if (d.length === 11 && d[0] === "1") return `+${d}`;
+  return null;
+}
+
+// Lightweight per-IP rate limit via Blobs (no native TTL → compare timestamps). Returns
+// true if allowed. Fails OPEN on storage errors so a Blobs hiccup never blocks real leads.
+export async function rateLimitOk(ip, { max = 6, windowMs = 600000 } = {}) {
+  if (!ip) return true;
+  try {
+    const store = getStore("podium-ratelimit");
+    const key = ip.replace(/[^a-zA-Z0-9:._-]/g, "_").slice(0, 80);
+    const now = Date.now();
+    const raw = await store.get(key);
+    let rec = raw ? JSON.parse(raw) : { c: 0, t: now };
+    if (now - rec.t > windowMs) rec = { c: 0, t: now };
+    rec.c += 1;
+    await store.set(key, JSON.stringify(rec));
+    return rec.c <= max;
+  } catch { return true; }
 }

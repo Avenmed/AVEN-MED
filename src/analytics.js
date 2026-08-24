@@ -20,6 +20,7 @@ const GA_ID = "G-VERJY5YD8S";
 const ALLOWED_PARAMS = new Set([
   "page_path", "page_location", "page_title", "page_type",
   "from_page_type", "cta_destination", "tier", "link_location", "network",
+  "form_type",
 ]);
 
 let inited = false;
@@ -84,6 +85,12 @@ function track(name, params) {
   const p = params || {};
   for (const k in p) if (ALLOWED_PARAMS.has(k) && p[k] != null && p[k] !== "") safe[k] = String(p[k]).slice(0, 120);
   window.gtag("event", name, safe);
+}
+
+// Bridal Journey lead — fired ONLY after a confirmed server-side Podium handoff. Carries
+// NO PII: just non-identifying page_type/form_type (hard-whitelisted like every event).
+export function trackBridalSubmit() {
+  track("bridal_form_submit", { page_type: "bridal", form_type: "bridal_journey" });
 }
 
 // Contact form → Podium handoff. NO form values (event carries zero PII). Named for

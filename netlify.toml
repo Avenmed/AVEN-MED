@@ -51,6 +51,12 @@
   to = "/.netlify/functions/podium-oauth-callback"
   status = 200
 
+# Bridal Journey lead handoff → Podium (server-side; browser POSTs here).
+[[redirects]]
+  from = "/api/podium/bridal-submit"
+  to = "/.netlify/functions/podium-bridal-submit"
+  status = 200
+
 # SPA fallback — every other clean route serves the app (History-API routing).
 # Existing static files in the publish dir (assets, robots.txt, sitemap.xml)
 # are served before this rule applies.
