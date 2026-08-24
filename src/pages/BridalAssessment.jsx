@@ -116,12 +116,15 @@ const BridalAssessmentPage = ({ navigate }) => {
   const [submitted, setSubmitted] = React.useState(false);
   const [sending, setSending] = React.useState(false);
   const [submitError, setSubmitError] = React.useState("");
+  // Synchronous guard — blocks a same-tick double-submit that the async `sending`
+  // state (and the disabled button) can't catch before React re-renders.
+  const sendingRef = React.useRef(false);
 
   const setField = (id) => (val) => setValues((v) => ({ ...v, [id]: val }));
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (sending) return; // prevent double-submit
+    if (sending || sendingRef.current) return; // prevent double-submit
     const errs = validate(values);
     setErrors(errs);
     if (Object.keys(errs).length) {
@@ -129,6 +132,7 @@ const BridalAssessmentPage = ({ navigate }) => {
       if (first) first.focus();
       return;
     }
+    sendingRef.current = true;
     setSubmitError("");
     setSending(true);
     try {
@@ -158,6 +162,7 @@ const BridalAssessmentPage = ({ navigate }) => {
       // Never surface backend/Podium error details to the visitor.
       setSubmitError("Something went wrong sending your details. Please try again in a moment, or contact us directly.");
     } finally {
+      sendingRef.current = false;
       setSending(false);
     }
   };
