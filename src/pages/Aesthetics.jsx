@@ -119,12 +119,20 @@ const AestheticsPage = ({ navigate }) => {
 
       {/* 2 — PHILOSOPHY (why AVEN, before what) */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1120 }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
+          {/* Cinematic editorial imagery (left) — atmospheric moving imagery via the same
+              Ph + Video pattern used elsewhere on the site: muted, looping, playsInline,
+              preload="none" + IntersectionObserver, no controls/UI, and a static poster
+              shown under prefers-reduced-motion. object-fit: cover keeps the face centered.
+              The Ph aspect-ratio reserves the space, so there is no layout shift. */}
           <Reveal>
-            <Eyebrow>Why AVEN</Eyebrow>
+            <Ph label="AVEN · editorial imagery" meta="natural light · 4:5" aspect="4/5">
+              <Video src="assets/aesthetics-philosophy.mp4" poster="assets/aesthetics-philosophy.jpg" />
+            </Ph>
           </Reveal>
           <Reveal delay={120}>
-            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "0 0 28px", maxWidth: "20ch", fontWeight: 300 }}>
+            <Eyebrow>Why AVEN</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 54px)", margin: "28px 0 28px", maxWidth: "20ch", fontWeight: 300 }}>
               Aesthetics as <em>medicine</em>, practiced with restraint.
             </h2>
             <p className="body" style={{ marginBottom: 20, fontSize: 17, lineHeight: 1.85 }}>
