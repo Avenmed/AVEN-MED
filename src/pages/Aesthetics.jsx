@@ -347,19 +347,19 @@ const AestheticsPage = ({ navigate }) => {
 
       <DividerMark />
 
-      {/* 8 — CONTACT / SCHEDULING */}
+      {/* 8 — CLOSER (a quiet final invitation, NOT a second Assessment pitch).
+          The AVEN Assessment section above is the substantive conversion moment with the
+          primary solid CTA. Here the pitch prose is dropped and the CTA is demoted to the
+          quiet .link treatment — a retained, lower-intensity conversion, still tracked
+          (data-aven-cta="assessment" via AssessmentCTA) — so the two stop competing. */}
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container">
           <Reveal>
             <Logo size={40} style={{ margin: "0 auto 26px", opacity: 0.85 }} />
-            <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 24px", maxWidth: "14ch", fontWeight: 300 }}>
+            <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 40px", maxWidth: "14ch", fontWeight: 300 }}>
               Begin with a <em>conversation.</em>
             </h2>
-            <p className="body" style={{ margin: "0 auto 40px", maxWidth: "52ch" }}>
-              Start with the AVEN Assessment — the considered first step toward a plan
-              that's genuinely yours.
-            </p>
-            <AssessmentCTA navigate={navigate} />
+            <AssessmentCTA navigate={navigate} className="link" />
           </Reveal>
         </div>
       </section>
