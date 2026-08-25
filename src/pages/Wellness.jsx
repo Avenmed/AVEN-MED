@@ -60,17 +60,21 @@ const WellnessPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
+          {/* Editorial ruled index (de-boxed) — a thin gold hairline tops each pillar, with
+              the mono number, serif title, and body. No border/fill/shadow, matching the
+              Aesthetics Guiding Principles treatment. Copy unchanged. Keeps the repeat(4)
+              grid string so the existing mobile fold (4→2→1) continues to apply. */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "56px 40px", marginTop: 56, alignItems: "start" }}>
             {[
               { n: "01", k: "Longevity Panels", b: "Quarterly bloodwork tracking inflammation, hormones, metabolic and cardiovascular markers — interpreted, not just delivered." },
               { n: "02", k: "IV Therapy", b: "Custom-formulated infusions for immune support, cognitive performance, recovery, and pre-aesthetic optimization." },
               { n: "03", k: "Medical Weight Loss", b: "A physician-directed, whole-person program for weight and metabolic health — with GLP-1 medication as one option when appropriate." },
               { n: "04", k: "Nutrition & Metabolic Support", b: "Practical, individualized nutrition and metabolic guidance that works alongside the rest of your care." }
             ].map((p, i) => (
-              <Reveal key={p.n} delay={i * 100}>
-                <div style={{ padding: "36px 28px", border: "1px solid var(--hairline)", height: "100%", background: "var(--surface)" }}>
-                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.2em" }}>{p.n}</div>
-                  <h4 className="display" style={{ fontSize: 30, margin: "22px 0 16px", fontWeight: 300 }}>{p.k}</h4>
+              <Reveal key={p.n} delay={i * 90}>
+                <div style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
+                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.24em" }}>{p.n}</div>
+                  <h4 className="display" style={{ fontSize: "clamp(22px, 1.7vw, 27px)", margin: "18px 0 12px", fontWeight: 400, letterSpacing: "-0.005em" }}>{p.k}</h4>
                   <p className="body-sm" style={{ margin: 0 }}>{p.b}</p>
                 </div>
               </Reveal>
