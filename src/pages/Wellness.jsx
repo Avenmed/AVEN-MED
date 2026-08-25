@@ -152,13 +152,13 @@ const WellnessPage = ({ navigate }) => {
                 k: "The Foundation",
                 p: "An entry point",
                 d: "An entry-point wellness program — bloodwork twice a year, a single IV infusion, and a skin assessment.",
-                items: ["2 bloodwork panels per year", "1 IV infusion", "1 skin assessment"]
+                items: ["Baseline & follow-up lab testing", "IV therapy when appropriate", "Skin health assessment"]
               },
               {
                 k: "The Compound",
                 p: "The full practice",
                 d: "The deeper practice. Quarterly labs, monthly IV protocol, and twice-yearly skin assessments — the full AVEN wellness practice in one program.",
-                items: ["Quarterly bloodwork", "12 monthly IV infusions", "2 skin assessments"]
+                items: ["Ongoing lab monitoring", "Personalized IV therapy", "Ongoing skin health assessments"]
               },
               {
                 k: "Weight Loss",
