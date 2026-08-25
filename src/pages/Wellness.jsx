@@ -142,7 +142,11 @@ const WellnessPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--hairline)" }}>
+          {/* De-packaged editorial triptych — no enclosing box, column dividers, or featured
+              fill. Each program is a de-boxed entry: thin gold top hairline, the restrained
+              Program 0N / tagline label row, serif name, description, and inclusion list.
+              Folds 3→2→1 via .programs-grid. Copy unchanged (inclusions verbatim). */}
+          <div className="programs-grid">
             {[
               {
                 k: "The Foundation",
@@ -154,8 +158,7 @@ const WellnessPage = ({ navigate }) => {
                 k: "The Compound",
                 p: "The full practice",
                 d: "The deeper practice. Quarterly labs, monthly IV protocol, and twice-yearly skin assessments — the full AVEN wellness practice in one program.",
-                items: ["Quarterly bloodwork", "12 monthly IV infusions", "2 skin assessments"],
-                feat: true
+                items: ["Quarterly bloodwork", "12 monthly IV infusions", "2 skin assessments"]
               },
               {
                 k: "Weight Loss",
@@ -165,16 +168,12 @@ const WellnessPage = ({ navigate }) => {
               }
             ].map((p, i) => (
               <Reveal key={p.k} delay={i * 120}
-                style={{
-                  padding: 48,
-                  borderRight: i < 2 ? "1px solid var(--hairline)" : "none",
-                  background: p.feat ? "var(--surface)" : "transparent"
-                }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                style={{ borderTop: "1px solid var(--hairline)", paddingTop: 28 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
                   <div className="label" style={{ color: "var(--gold)" }}>Program 0{i + 1}</div>
                   <div className="label" style={{ color: "var(--muted)" }}>{p.p}</div>
                 </div>
-                <h3 className="display" style={{ fontSize: 40, margin: "20px 0 18px", fontWeight: 300, letterSpacing: "-0.01em" }}>
+                <h3 className="display" style={{ fontSize: "clamp(32px, 3vw, 40px)", margin: "20px 0 18px", fontWeight: 300, letterSpacing: "-0.01em" }}>
                   {p.k}
                 </h3>
                 <p className="body" style={{ marginBottom: 24, fontSize: 15 }}>{p.d}</p>

@@ -969,6 +969,19 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .tx-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
+/* Wellness Programs — de-packaged editorial triptych. Folds 3 → 2 (≤1024) → 1 (≤768).
+   No enclosing box, no column dividers, no featured fill (all removed in the markup);
+   each program carries only a thin top hairline. Fixes the old stacked borderRight
+   artifact and the cramped 3-col tablet layout. */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(40px, 5vw, 64px);
+  align-items: start;
+}
+@media (max-width: 1024px) { .programs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px)  { .programs-grid { grid-template-columns: 1fr; } }
+
 /* Family Medicine — "Alongside Your Care" related-services grid: 2-up boxed cards on
    desktop; stack to a single column at ≤768px so the cards never cramp or clip on
    phones. Scoped to this class rather than adding repeat(2 to the global stacking
