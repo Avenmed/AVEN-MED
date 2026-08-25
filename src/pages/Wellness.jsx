@@ -236,9 +236,7 @@ const WellnessPage = ({ navigate }) => {
       <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
         <div className="container">
           <Reveal>
-            <Ph label="Patient · post-infusion · healthy" meta="natural light · 16:9 · placeholder" aspect="16/9">
-              <Video src="assets/weight-loss.mp4" />
-            </Ph>
+            <Ph label="Patient · wellness environment" meta="natural light · 16:9 · awaiting final footage" aspect="16/9" />
           </Reveal>
         </div>
       </section>
@@ -263,7 +261,7 @@ const WellnessPage = ({ navigate }) => {
               memberships will open by invitation.
             </p>
             <div style={{ marginTop: 36 }}>
-              <a href="/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link">
+              <a href="/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link" data-aven-cta="membership">
                 <span>Join the founding list</span><span className="arrow"></span>
               </a>
             </div>
