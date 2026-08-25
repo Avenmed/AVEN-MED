@@ -204,7 +204,7 @@ const WellnessPage = ({ navigate }) => {
             <Eyebrow>IV Infusions</Eyebrow>
             <div className="iv-head">
               <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
-                IV infusions — <em>types</em><br />and what each one does.
+                IV therapy, considered around your needs.
               </h2>
               <a href="/wellness/iv-therapy" onClick={(e) => { e.preventDefault(); navigate("/wellness/iv-therapy"); }} className="link">
                 <span>Explore IV Therapy</span><span className="arrow"></span>
