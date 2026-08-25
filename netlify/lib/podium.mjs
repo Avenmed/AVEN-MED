@@ -24,9 +24,10 @@ export const PODIUM = {
   api: "https://api.podium.com/v4",
 };
 
-// Exactly the scopes AVEN requests for this integration — nothing else.
-// (No message / appointment / campaign / payment / review scopes.)
-export const SCOPES = ["read_contacts", "write_contacts", "read_locations"];
+// Exactly the scopes AVEN requests. Contacts + locations for the lead upsert; messages
+// (read/write) for reading/creating the Bridal Journey conversation note. No appointment
+// / campaign / payment / review / clinical (Charts/EMR) scopes.
+export const SCOPES = ["read_contacts", "write_contacts", "read_locations", "read_messages", "write_messages"];
 
 const BLOB_STORE = "podium-oauth";
 const BLOB_KEY = "token-set"; // single AVEN Podium account → one key

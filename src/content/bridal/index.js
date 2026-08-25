@@ -193,10 +193,11 @@ export const BRIDAL_FAQS = [
 ];
 
 // ---- Assessment form field schema ------------------------------------------
-// Drives the Bridal Assessment form (registry-driven, extensible). This form
-// PREPARES for a consultation — it does not diagnose or recommend treatment, and
-// is NOT wired to any booking/CRM/EMR/email system (submission is a placeholder).
-// types: text | email | tel | date | select | multiselect | textarea | checkbox
+// Drives the Bridal Assessment form (registry-driven, extensible). NON-CLINICAL,
+// CRM/pre-consultation planning info ONLY — no skin/treatment/wellness/medical or
+// open-ended clinical questions (removed by design). Submission upserts a Podium CRM
+// contact server-side; it does not diagnose, recommend treatment, or book anything.
+// types: text | email | tel | date | select | checkbox
 export const BRIDAL_ASSESSMENT_FIELDS = [
   { id: "name", label: "Full name", type: "text", required: true, autoComplete: "name", placeholder: "First and last name" },
   { id: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
@@ -205,19 +206,10 @@ export const BRIDAL_ASSESSMENT_FIELDS = [
   { id: "engagementDate", label: "Engagement date", type: "date", required: false, help: "Optional" },
   { id: "consultationTiming", label: "When would you like to consult?", type: "select", required: false,
     options: ["As soon as possible", "Within 1 month", "1–3 months", "Just exploring for now"] },
-  { id: "skinConcerns", label: "Primary skin concerns", type: "multiselect", required: false,
-    options: ["Acne", "Acne scarring", "Texture", "Tone / redness", "Fine lines", "Dullness", "Not sure yet"] },
-  { id: "aestheticGoals", label: "Primary aesthetic goals", type: "textarea", required: false, placeholder: "In your own words (optional)" },
-  { id: "skincareRoutine", label: "Current skincare routine", type: "textarea", required: false, placeholder: "Optional" },
-  { id: "previousTreatments", label: "Previous aesthetic treatments", type: "textarea", required: false, placeholder: "Optional" },
-  { id: "areasOfInterest", label: "Areas of interest", type: "multiselect", required: false,
-    options: ["Injectables", "Skin health / facials", "Microneedling", "Peels", "Medical-grade skincare", "Wellness", "Not sure yet"] },
-  { id: "wellnessGoals", label: "Wellness goals", type: "textarea", required: false, placeholder: "Optional" },
   { id: "appointmentTiming", label: "Preferred appointment timing", type: "select", required: false,
     options: ["Weekday mornings", "Weekday afternoons", "Evenings", "Weekends", "No preference"] },
   { id: "referral", label: "How did you hear about AVEN?", type: "select", required: false,
     options: ["Instagram", "Friend or family", "Google", "A current patient", "Other"] },
-  { id: "notes", label: "Anything else you'd like us to know?", type: "textarea", required: false, placeholder: "Optional" },
   { id: "consent", label: "I understand this form helps AVEN prepare for a consultation and is not a request for medical treatment or a booking.", type: "checkbox", required: true },
 ];
 
