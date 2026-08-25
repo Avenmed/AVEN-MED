@@ -97,28 +97,33 @@ const WellnessPage = ({ navigate }) => {
               default protocol.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          {/* Editorial directory index (de-boxed) — reuses the Aesthetics .tx-grid/.tx-row
+              language: thin top hairline, serif service name, restrained gold arrow, and
+              description; whole row clickable to the same destination. .tx-row carries the
+              gold :focus-visible ring + hover. Distinct from the numbered Four Pillars above.
+              Service names/descriptions/links unchanged (copy freeze). */}
+          <div className="tx-grid">
             {services.map((s, i) => (
-              <Reveal key={s.label} delay={(i % 3) * 80}>
+              <Reveal key={s.label} delay={(i % 2) * 90}>
                 {s.path && !s.soon ? (
                   <a
                     href={s.path}
                     onClick={(e) => { e.preventDefault(); navigate(s.path); }}
-                    style={{ display: "block", padding: "32px 30px", border: "1px solid var(--gold-soft)", background: "var(--surface)", height: "100%", transition: "border-color 240ms ease" }}
+                    className="tx-row"
                   >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
-                      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
-                    </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
+                    <span className="tx-head">
+                      <span className="tx-name">{s.label}</span>
+                      <span aria-hidden="true" className="tx-arrow">&rarr;</span>
+                    </span>
+                    <span className="tx-desc body-sm">{s.blurb}</span>
                   </a>
                 ) : (
-                  <div style={{ padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400, color: "var(--ivory)" }}>{s.label}</span>
+                  <div className="tx-row">
+                    <span className="tx-head">
+                      <span className="tx-name">{s.label}</span>
                       <span className="label" style={{ color: "var(--muted)", flexShrink: 0, letterSpacing: "0.2em" }}>Soon</span>
-                    </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{s.blurb}</p>
+                    </span>
+                    <span className="tx-desc body-sm">{s.blurb}</span>
                   </div>
                 )}
               </Reveal>
