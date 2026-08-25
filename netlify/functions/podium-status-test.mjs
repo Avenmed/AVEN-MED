@@ -27,22 +27,30 @@ export const handler = async (event) => {
     const createText = await cr.text().catch(() => "");
     let createBody = null; try { createBody = JSON.parse(createText); } catch {}
     const accepted = [200, 201, 202].includes(createStatus);
-    const resourceUrl = createBody?.metadata?.url || null;
+    const resourceUrlRaw = (createBody && createBody.metadata && createBody.metadata.url) || null;
+    const urlShape = resourceUrlRaw ? resourceUrlRaw.replace(/[0-9a-f]{8}-[0-9a-f-]{16,}/i, "{id}") : null;
 
     // brief pause — create is 202/async; give it a moment before re-reading
     await new Promise((r) => setTimeout(r, 1500));
 
     let refetch = null;
-    if (resourceUrl) {
-      const gr = await fetch(resourceUrl, { headers: { Authorization: H.Authorization, Accept: "application/json" } });
-      const gt = await gr.text().catch(() => "");
-      let gb = null; try { gb = JSON.parse(gt); } catch {}
-      const c = (gb && gb.data) ? gb.data : gb;
-      refetch = {
-        status: gr.status,
-        keys: (c && typeof c === "object") ? Object.keys(c) : null,
-        contactStatus: pickStatus((c && (c.contactStatus ?? c.status)) ?? null),
-      };
+    if (resourceUrlRaw) {
+      try {
+        const abs = /^https?:\/\//i.test(resourceUrlRaw)
+          ? resourceUrlRaw
+          : `https://api.podium.com${resourceUrlRaw.startsWith("/") ? "" : "/"}${resourceUrlRaw}`;
+        const gr = await fetch(abs, { headers: { Authorization: H.Authorization, Accept: "application/json" } });
+        const gt = await gr.text().catch(() => "");
+        let gb = null; try { gb = JSON.parse(gt); } catch {}
+        const c = (gb && gb.data) ? gb.data : gb;
+        refetch = {
+          status: gr.status,
+          keys: (c && typeof c === "object") ? Object.keys(c) : null,
+          contactStatus: pickStatus((c && (c.contactStatus ?? c.status)) ?? null),
+        };
+      } catch (re) {
+        refetch = { error: ((re && re.message) || "").slice(0, 120) };
+      }
     }
 
     return json(200, {
@@ -52,7 +60,7 @@ export const handler = async (event) => {
         httpStatus: createStatus,
         accepted,
         identifierPresent: !!(createBody && createBody.data && createBody.data.identifier),
-        resourceUrlPresent: !!resourceUrl,
+        resourceUrlShape: urlShape,
         detail: accepted ? undefined : createText.slice(0, 400), // 4xx validation msg (no PII)
       },
       refetch,
