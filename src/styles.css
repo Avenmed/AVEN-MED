@@ -982,6 +982,30 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
 @media (max-width: 1024px) { .programs-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px)  { .programs-grid { grid-template-columns: 1fr; } }
 
+/* Wellness IV Infusions — editorial category overview.
+   .iv-head: headline + secondary link, side-by-side on desktop; at <=768 the link
+   stacks naturally beneath the full-width headline (fixes the old 1fr auto squeeze).
+   .iv-grid: de-boxed index — each category carries only a thin top hairline (no
+   borderRight/box), folds 3 -> 2 -> 1 with no stray vertical artifacts on mobile. */
+.iv-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .iv-head { grid-template-columns: 1fr; align-items: start; gap: 24px; }
+}
+.iv-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(32px, 4vw, 52px) clamp(40px, 5vw, 64px);
+  align-items: start;
+}
+@media (max-width: 1024px) { .iv-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px)  { .iv-grid { grid-template-columns: 1fr; } }
+
 /* Family Medicine — "Alongside Your Care" related-services grid: 2-up boxed cards on
    desktop; stack to a single column at ≤768px so the cards never cramp or clip on
    phones. Scoped to this class rather than adding repeat(2 to the global stacking

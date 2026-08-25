@@ -202,34 +202,29 @@ const WellnessPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Eyebrow>IV Infusions</Eyebrow>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 40 }}>
+            <div className="iv-head">
               <h2 className="display" style={{ fontSize: "clamp(36px, 4.4vw, 60px)", margin: "20px 0 0", maxWidth: "20ch" }}>
                 IV infusions — <em>types</em><br />and what each one does.
               </h2>
-              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-                <span>The full menu</span><span className="arrow"></span>
+              <a href="/wellness/iv-therapy" onClick={(e) => { e.preventDefault(); navigate("/wellness/iv-therapy"); }} className="link">
+                <span>Explore IV Therapy</span><span className="arrow"></span>
               </a>
             </div>
           </Reveal>
 
-          <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--hairline)" }}>
+          <div className="iv-grid">
             {[
-              ["The Restore", "Hydration · Magnesium · B-Complex", "Recovery and nervous-system support."],
-              ["The Glow", "Glutathione · Biotin · Vitamin C", "Skin-luminance support paired with aesthetics."],
-              ["The Architect", "NAD+ · Methylated B12 · Taurine", "Cellular energy and longevity foundation."],
-              ["The Rest", "Magnesium · Glycine · L-Theanine", "Sleep architecture and stress recovery."],
-              ["The Immune", "Zinc · C · Selenium", "Seasonal immune support pre-travel."],
-              ["The Pre-Treatment", "Arnica · C · Bromelain", "Bruise prevention before facial balancing."]
-            ].map(([k, ing, d], i) => (
+              ["Hydration", "Supporting fluid replenishment and overall hydration needs."],
+              ["Recovery", "Support for recovery, travel, demanding schedules, and periods of increased physical stress."],
+              ["Energy", "Individualized support centered on energy and overall wellness goals."],
+              ["Antioxidant & Skin Support", "Supportive IV therapy considered alongside AVEN's broader skin and aesthetic plan."],
+              ["Immune Support", "Individualized nutritional support considered around seasonal or travel-related wellness needs."],
+              ["Pre-Treatment Support", "Supportive planning that may be considered around aesthetic treatment when clinically appropriate."]
+            ].map(([k, d], i) => (
               <Reveal key={k} delay={i * 60}
-                style={{
-                  padding: "36px 32px",
-                  borderRight: (i + 1) % 3 !== 0 ? "1px solid var(--hairline)" : "none",
-                  borderBottom: "1px solid var(--hairline)"
-                }}>
-                <div className="label" style={{ color: "var(--gold)" }}>Infusion · 0{i + 1}</div>
-                <h4 className="display" style={{ fontSize: 32, margin: "16px 0 8px", fontWeight: 300 }}>{k}</h4>
-                <div className="body-sm" style={{ color: "var(--muted)", marginBottom: 14, fontStyle: "italic" }}>{ing}</div>
+                style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.24em" }}>0{i + 1}</div>
+                <h4 className="display" style={{ fontSize: "clamp(24px, 1.9vw, 29px)", margin: "14px 0 10px", fontWeight: 400 }}>{k}</h4>
                 <p className="body-sm" style={{ margin: 0 }}>{d}</p>
               </Reveal>
             ))}
