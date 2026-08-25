@@ -65,6 +65,13 @@ export const handler = async (event) => {
 
     return json(200, {
       ok: true,
+      contactsScanned: list.items.length,
+      nameMatchCount: list.items.filter((c) => c && c.name === TEST_NAME).length,
+      perContact: list.items.map((c) => ({
+        nameLen: (c && c.name ? String(c.name).length : 0),
+        hasTargetAttr: Array.isArray(c?.attributes) && c.attributes.some((a) => a && TARGETS[a.uid]),
+        attrUids: Array.isArray(c?.attributes) ? c.attributes.map((a) => a && a.uid) : [],
+      })),
       contactFound: !!contact,
       embeddedTargets,          // raw structure of the 3 target attributes (values are synthetic)
       embeddedAllShape,         // uid/label/dataType + value type for every embedded attribute (no values)
