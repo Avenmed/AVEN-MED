@@ -709,6 +709,11 @@ summary:focus-visible { outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
   .aven-intro { display: none !important; }
   .homepage-content { opacity: 1 !important; }
+  /* The Home service marquee scrolls continuously and forever; hold it still for
+     visitors who ask for reduced motion. Scoped to the ribbon only — speed and
+     appearance are unchanged for everyone else, and the service names stay in the
+     DOM either way. */
+  .ribbon .row { animation: none; }
 }
 
 @media (max-width: 600px) {
