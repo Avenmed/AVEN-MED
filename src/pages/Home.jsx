@@ -77,22 +77,23 @@ const Home = ({ navigate }) => {
               <Video src="assets/alaa-loop-2.mp4" />
             </Ph>
           </Reveal>
-          <Reveal delay={120} style={{ textAlign: "center", maxWidth: 660, margin: "40px auto 0" }}>
+          <Reveal delay={120} style={{ textAlign: "center", maxWidth: 660, margin: "32px auto 0" }}>
             <Eyebrow>· Clinical Leadership</Eyebrow>
-            <h2 className="display" style={{ fontSize: "clamp(32px, 3.6vw, 48px)", margin: "18px auto 18px", maxWidth: "18ch", fontWeight: 300 }}>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 3.6vw, 48px)", margin: "16px auto 14px", maxWidth: "18ch", fontWeight: 300 }}>
               Care with <em>continuity.</em>
             </h2>
             <div className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)", letterSpacing: "-0.005em" }}>
               Alaa Mashal, MSN, APRN, FNP-BC
             </div>
             <div className="label" style={{ marginTop: 6, color: "var(--gold)" }}>Founder &amp; Clinical Director</div>
-            <p className="body" style={{ margin: "22px auto 0", maxWidth: "56ch" }}>
-              Alaa's practice is built around restraint and the long view. In aesthetics, that
-              means natural-looking results and conservative planning; in wellness and family
-              medicine, honest, evidence-based guidance. The person who assesses you is the
-              person who cares for you.
+            {/* Home's register is short — no other body here runs past ~16 words. Two
+                sentences: the cross-discipline framing, then continuity. */}
+            <p className="body" style={{ margin: "18px auto 0", maxWidth: "54ch" }}>
+              Restraint and the long view — conservative planning in aesthetics, honest,
+              evidence-based guidance in wellness and family medicine. The person who
+              assesses you is the person who cares for you.
             </p>
-            <div style={{ marginTop: 26 }}>
+            <div style={{ marginTop: 22 }}>
               <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">
                 <span>Meet Alaa</span><span className="arrow"></span>
               </a>
