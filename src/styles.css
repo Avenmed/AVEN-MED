@@ -1081,6 +1081,9 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   [style*="grid-template-columns: 1.2fr 1fr"],
   [style*="grid-template-columns: 1fr 1.5fr"],
   [style*="grid-template-columns: 1fr 1.2fr"],
+  /* 1fr 1.1fr — About's founder hero. Note the "1fr 1fr" selector below does NOT
+     match it (the substring is "1fr 1.1fr"), which is why it stayed 2-up on phones. */
+  [style*="grid-template-columns: 1fr 1.1fr"],
   [style*="grid-template-columns: 1fr 1.6fr"],
   [style*="grid-template-columns: 1fr 1.4fr"],
   [style*="grid-template-columns: 1.1fr 1fr"],

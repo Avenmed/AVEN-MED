@@ -30,10 +30,13 @@ const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArro
   </a>
 );
 
-const Logo = ({ size = 22, style = {} }) => (
+// `alt` defaults to the brand name so every existing usage is unchanged. Pass alt=""
+// for purely decorative marks (watermarks, dividers) so a screen reader doesn't
+// announce "AVEN MED" again for an image that carries no content.
+const Logo = ({ size = 22, style = {}, alt = "AVEN MED" }) => (
   <img
     src="assets/logo.png"
-    alt="AVEN MED"
+    alt={alt}
     style={{ width: size, height: "auto", display: "block", ...style }}
   />
 );

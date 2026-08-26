@@ -22,7 +22,7 @@ const AboutPage = ({ navigate }) => {
               <h1 className="display" style={{ fontSize: "clamp(40px, 5.4vw, 78px)", margin: "24px 0 24px", lineHeight: 1.05, maxWidth: "16ch", letterSpacing: "-0.012em" }}>
                 <em>Alaa Mashal,</em><br />MSN, APRN, FNP-BC.
               </h1>
-              <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder · Clinical Director</div>
+              <div className="label" style={{ color: "var(--gold)", marginBottom: 28 }}>Founder &amp; Clinical Director</div>
               <p className="body" style={{ fontSize: 17, lineHeight: 1.85, maxWidth: "56ch" }}>
                 AVEN MED is founded and led by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified
                 Family Nurse Practitioner whose practice is built around restraint
@@ -97,7 +97,7 @@ const AboutPage = ({ navigate }) => {
             {/* Botanical pause */}
             <Reveal delay={180} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 32, padding: "44px 0 32px" }}>
               <span style={{ flex: 1, maxWidth: 160, height: 1, background: "var(--hairline)" }}></span>
-              <Logo size={28} />
+              <Logo size={28} alt="" />
               <span style={{ flex: 1, maxWidth: 160, height: 1, background: "var(--hairline)" }}></span>
             </Reveal>
 
@@ -178,23 +178,21 @@ const AboutPage = ({ navigate }) => {
 
       {/* PULL QUOTE */}
       <section className="section" style={{ background: "var(--bg-1)", padding: "clamp(48px, 7vw, 80px) 0", position: "relative", overflow: "hidden" }}>
-        <Logo size={420} style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
+        <Logo size={420} alt="" style={{ position: "absolute", left: "-80px", top: "20%", opacity: 0.05 }} />
         <div className="container" style={{ position: "relative", textAlign: "center" }}>
           <Reveal>
-            <div style={{ fontFamily: "var(--serif)", color: "var(--gold)", fontSize: 80, lineHeight: 0.5, marginBottom: 28 }}>"</div>
-            <div className="display italic" style={{ fontSize: "clamp(30px, 4vw, 56px)", lineHeight: 1.3, maxWidth: "22ch", margin: "0 auto" }}>
-              A face is not a problem to be solved.
-              It is a long, slow letter the body
-              is writing to itself.
+            {/* An unattributed AVEN statement, not a quotation. The previous line was
+                presented as a direct quote from Alaa that she had not said or approved. */}
+            <div className="display italic" style={{ fontSize: "clamp(30px, 4vw, 56px)", lineHeight: 1.3, maxWidth: "24ch", margin: "0 auto" }}>
+              Aesthetics and wellness, practiced with restraint and the long view.
             </div>
-            <div className="label" style={{ marginTop: 40, color: "var(--gold)" }}>— ALAA MASHAL, MSN, APRN, FNP-BC</div>
           </Reveal>
         </div>
       </section>
 
 
       {/* CONSULTATION JOURNEY */}
-      <section className="section" style={{ background: "var(--bg-1)" }}>
+      <section className="section">
         <div className="container">
           <Reveal>
             <Eyebrow>What an Assessment Feels Like</Eyebrow>
@@ -203,17 +201,21 @@ const AboutPage = ({ navigate }) => {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
+          {/* Editorial ruled index (de-boxed) — matches the Wellness Four Pillars and
+              Aesthetics Guiding Principles treatment: a thin hairline tops each step, with
+              the mono number, serif title, and body. No border, fill, or card hover. Keeps
+              the repeat(4) grid string so the existing mobile fold (4→2→1) still applies. */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "56px 40px", marginTop: 56, alignItems: "start" }}>
             {[
               { t: "01", k: "Arrival", b: "You'll be greeted by staff." },
-              { t: "02", k: "Assessment", b: "You'll meet Aura. A multispectral scan and skin map. One careful portrait of your face in light." },
+              { t: "02", k: "Assessment", b: "You'll meet Aura. Using specialized cameras and lighting, the system helps us look more closely at your skin before the conversation begins." },
               { t: "03", k: "Conversation", b: "We walk the map together. You ask. We explain. Nothing is prescribed yet." },
-              { t: "04", k: "Pathway", b: "You leave with a year-long, written plan — yours to follow, yours to ignore. No obligation." }
+              { t: "04", k: "Pathway", b: "The Comprehensive AVEN Assessment ends with a written plan you keep. Either way, you leave with a clear direction — and no obligation to act on it." }
             ].map((s, i) => (
-              <Reveal key={s.t} delay={i * 100}>
-                <div style={{ padding: "32px 24px", border: "1px solid var(--hairline)", height: "100%", background: "var(--bg)" }}>
-                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.2em" }}>{s.t}</div>
-                  <h4 className="display" style={{ fontSize: 28, margin: "20px 0 14px" }}>{s.k}</h4>
+              <Reveal key={s.t} delay={i * 90}>
+                <div style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
+                  <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.24em" }}>{s.t}</div>
+                  <h3 className="display" style={{ fontSize: "clamp(22px, 1.7vw, 27px)", margin: "18px 0 12px", fontWeight: 400, letterSpacing: "-0.005em" }}>{s.k}</h3>
                   <p className="body-sm" style={{ margin: 0 }}>{s.b}</p>
                 </div>
               </Reveal>
@@ -230,9 +232,9 @@ const AboutPage = ({ navigate }) => {
             <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "16px auto 28px", maxWidth: "14ch" }}>
               Meet the <em>practice.</em>
             </h2>
-            <p className="body" style={{ margin: "0 auto 44px" }}>
-              Assessments are by appointment only and limited to a small
-              number of new patients each month.
+            <p className="body" style={{ margin: "0 auto 44px", maxWidth: "52ch" }}>
+              Assessments are by appointment. It is a paid consultation — and the fee is
+              credited toward your treatment, so the time you invest moves into your care.
             </p>
             <AssessmentCTA navigate={navigate} to="/assessment" />
           </Reveal>
