@@ -9,7 +9,10 @@ import { CLINIC } from '../content/clinic.js';
 
 const ContactPage = ({ navigate }) => {
   const [form, setForm] = React.useState({
-    name: "", email: "", phone: "", interest: "Aesthetics", message: ""
+    // Must match the first <option> exactly — the select is controlled, so a value
+    // with no matching option leaves state and what the visitor sees disagreeing,
+    // and the pre-opening mailto reports the state value.
+    name: "", email: "", phone: "", interest: "Aesthetic Medicine Assessment", message: ""
   });
   const [sent, setSent] = React.useState(false);
   // Pre-launch: no booking ceremony (there's nothing to book yet).
@@ -193,7 +196,7 @@ const ContactPage = ({ navigate }) => {
                 </h2>
                 <p className="body">
                   {BOOKING_ENABLED
-                    ? "We've received your Assessment request. We'll be in touch within one business day."
+                    ? "We've received your Assessment request. Our team will be in touch."
                     : `Your email app should have opened with your details — just hit send and you're on the list. Prefer to reach us directly? Email ${CLINIC.email} or text ${CLINIC.phoneDisplay}.`}
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
