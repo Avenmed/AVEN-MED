@@ -1,9 +1,10 @@
 /* AVEN MED — Wellness */
 
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import Video from '../Video.jsx';
 import { getHubEntries } from '../content/registry.jsx';
+import { BOOKING_ENABLED } from '../config.js';
 
 // "Soon" teasers for services that don't have a page yet. When one is built and
 // registered, delete its line here and it appears automatically as a live card
@@ -232,6 +233,48 @@ const WellnessPage = ({ navigate }) => {
         </div>
       </section>
 
+      {/* THE AVEN ASSESSMENT — the page's substantive conversion moment. Uses the house
+          Assessment shell already established on Aesthetics and Family Medicine (tinted
+          band, 1.1fr 1fr grid, solid CTA + "How the Assessment works" link), so the quiet
+          closer below can stop competing with it. Copy is wellness-native — a baseline and
+          a direction — and deliberately does NOT claim that labs, IV therapy, Aura, or any
+          medication is included: the /assessment tiers define what a visit contains. */}
+      <section className="section" style={{ background: "var(--bg-1)" }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 72, alignItems: "center" }}>
+          <Reveal>
+            <Eyebrow>The AVEN Assessment</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 4.2vw, 56px)", margin: "18px 0 22px", maxWidth: "18ch", fontWeight: 300 }}>
+              Start with a <em>baseline.</em>
+            </h2>
+            <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
+              Wellness care is easier to get right when it starts from something measured
+              rather than assumed. The AVEN Assessment is where we review your history, your
+              goals, and how you actually feel day to day — and decide together what's worth
+              looking at, and what isn't.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "center" }}>
+              <AssessmentCTA navigate={navigate} />
+              <a href="/assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment"); }} className="link">
+                <span>How the Assessment works</span><span className="arrow"></span>
+              </a>
+            </div>
+            {/* Pre-launch only. Gated on the shared BOOKING_ENABLED switch so it removes
+                itself the day booking opens — no launch-day edit needed here. */}
+            {!BOOKING_ENABLED && (
+              <p className="body-sm" style={{ marginTop: 20, marginBottom: 0, maxWidth: "44ch", color: "var(--muted)" }}>
+                AVEN Wellness opens September 15. Share your details now and our team will
+                reach out to coordinate your AVEN Assessment.
+              </p>
+            )}
+          </Reveal>
+          <Reveal delay={140}>
+            <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
+              <Video src="assets/alaa-2.mp4" />
+            </Ph>
+          </Reveal>
+        </div>
+      </section>
+
       {/* PATIENT PHOTO PLACEHOLDER */}
       <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
         <div className="container">
@@ -269,15 +312,21 @@ const WellnessPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* CTA */}
+      <DividerMark />
+
+      {/* CLOSER (a quiet editorial sign-off, NOT a second Assessment pitch). The AVEN
+          Assessment section above now carries the primary conversion with the solid CTA;
+          here the CTA is demoted to the quiet .link treatment — a retained, lower-intensity
+          conversion, still tracked (data-aven-cta="assessment" via AssessmentCTA) — so the
+          two stop competing. */}
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container">
           <Reveal>
-            <Logo size={42} style={{ margin: "0 auto 28px" }} />
-            <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "16px auto 28px", maxWidth: "14ch" }}>
-              Begin <em>beneath</em><br />the surface.
+            <Logo size={40} style={{ margin: "0 auto 26px", opacity: 0.85 }} />
+            <h2 className="display" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 auto 40px", maxWidth: "14ch" }}>
+              The long <em>view.</em>
             </h2>
-            <AssessmentCTA navigate={navigate} />
+            <AssessmentCTA navigate={navigate} className="link" />
           </Reveal>
         </div>
       </section>
