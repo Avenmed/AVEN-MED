@@ -63,13 +63,40 @@ const Home = ({ navigate }) => {
         ))}
       </div>
 
-      {/* PRACTICE VIDEO — Roman clay wall */}
+      {/* CLINICAL LEADERSHIP — repurposes the slot that held a silent olive-branch/clay
+          video, which repeated the hero background's own motif 115px after the hero ended.
+          Home named its practitioner once, 44% down the page, with no credentials and no
+          route to her. The 21:9 ratio is deliberate: a 4:5 portrait would be ~446px tall
+          at 393 and undo the tablet/mobile height work. Copy is condensed from the
+          provider page's approved philosophy/welcome language and is framed across all
+          three disciplines — this is clinical leadership, not an injector profile. */}
       <section style={{ padding: "clamp(40px, 5vw, 64px) 0 clamp(24px, 3vw, 40px)" }}>
         <div className="container">
           <Reveal>
-            <Ph label="The practice · interior wide" meta="warm tungsten · plaster · 16:9" aspect="16/9">
-              <Video src="assets/home-hero.mp4" />
+            <Ph label="Alaa Mashal · in consultation" meta="natural light · 21:9" aspect="21/9">
+              <Video src="assets/alaa-loop-2.mp4" />
             </Ph>
+          </Reveal>
+          <Reveal delay={120} style={{ textAlign: "center", maxWidth: 660, margin: "40px auto 0" }}>
+            <Eyebrow>· Clinical Leadership</Eyebrow>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 3.6vw, 48px)", margin: "18px auto 18px", maxWidth: "18ch", fontWeight: 300 }}>
+              Care with <em>continuity.</em>
+            </h2>
+            <div className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)", letterSpacing: "-0.005em" }}>
+              Alaa Mashal, MSN, APRN, FNP-BC
+            </div>
+            <div className="label" style={{ marginTop: 6, color: "var(--gold)" }}>Founder &amp; Clinical Director</div>
+            <p className="body" style={{ margin: "22px auto 0", maxWidth: "56ch" }}>
+              Alaa's practice is built around restraint and the long view. In aesthetics, that
+              means natural-looking results and conservative planning; in wellness and family
+              medicine, honest, evidence-based guidance. The person who assesses you is the
+              person who cares for you.
+            </p>
+            <div style={{ marginTop: 26 }}>
+              <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">
+                <span>Meet Alaa</span><span className="arrow"></span>
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>

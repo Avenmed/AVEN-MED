@@ -34,7 +34,7 @@ const alaaMashal = {
   hero: {
     eyebrow: "Meet Your Provider",
     headline: <>Alaa Mashal, <em>MSN, APRN, FNP-BC.</em></>,
-    role: "Founder · Clinical Director",
+    role: "Founder & Clinical Director",
     subheadline:
       "Board-certified Family Nurse Practitioner and founder of AVEN MED — the person who will listen to you, plan with you, and care for you at every visit.",
   },
