@@ -1178,10 +1178,15 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
 /* Considered treatments — 3 per row, last row (2 videos) centered */
 .treatments { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
 .treatments > * { flex: 0 0 calc((100% - 48px) / 3); max-width: calc((100% - 48px) / 3); }
-@media (max-width: 1024px) and (min-width: 769px) {
+/* 2-up holds all the way down to the existing 480px breakpoint. Tablets previously
+   dropped to one 4:5 tile per row at 768, which stacked five ~720x900 videos and made
+   Home the tallest layout on the site. Measured: the treatment name stays on one line
+   down to 480 and only wraps at ~440, so 480 is where 1-up genuinely starts to read
+   better — not a device guess. */
+@media (max-width: 1024px) and (min-width: 481px) {
   .treatments > * { flex: 0 0 calc((100% - 24px) / 2); max-width: calc((100% - 24px) / 2); }
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .treatments { gap: clamp(28px, 6vw, 44px); }
   .treatments > * { flex: 0 0 100%; max-width: 100%; }
 }
