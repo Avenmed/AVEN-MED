@@ -160,7 +160,7 @@ const ContactPage = ({ navigate }) => {
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED
                       ? "We respond personally — not from a queue — within one business day."
-                      : "We're opening Fall 2026. Add your details and we'll let you know the moment we do."}
+                      : "AVEN MED opens September 15. Share your details and our team will be in touch."}
                   </div>
                 </div>
               </form>
