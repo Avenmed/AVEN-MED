@@ -307,10 +307,6 @@ const Footer = ({ navigate }) => (
         textTransform: "uppercase", fontWeight: 400, color: "var(--gold)", marginBottom: 44
       }}>Orland Park · By Appointment</div>
 
-      <div style={{ color: "var(--gold)", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", marginBottom: 28 }}>
-        Now welcoming founding members
-      </div>
-
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, fontSize: 13, color: "var(--ivory-soft)", marginBottom: 56 }}>
         <a href={`mailto:${CLINIC.email}`} style={{ color: "var(--ivory-soft)", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>{CLINIC.email}</a>
         <a href={`tel:${CLINIC.phoneE164}`} style={{ color: "var(--ivory-soft)", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", borderBottom: "1px solid var(--hairline-strong)", paddingBottom: 2 }}>{CLINIC.phoneDisplay}</a>

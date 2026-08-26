@@ -43,8 +43,6 @@ const Home = ({ navigate }) => {
           <span>Orland Park</span>
           <span className="band-dot">·</span>
           <span>By appointment</span>
-          <span className="band-dot">·</span>
-          <span style={{ color: "var(--gold)" }}>Now welcoming founding members</span>
         </div>
       </section>
 
