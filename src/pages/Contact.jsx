@@ -3,7 +3,7 @@
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, ASSESSMENT_CTA_LABEL } from '../components.jsx';
 import Video from '../Video.jsx';
-import { BOOKING_ENABLED, BOOKING_URL } from '../config.js';
+import { BOOKING_ENABLED, BOOKING_URL, WAITLIST_EMAIL } from '../config.js';
 import { trackContactHandoff } from '../analytics.js';
 import { CLINIC } from '../content/clinic.js';
 
@@ -19,11 +19,32 @@ const ContactPage = ({ navigate }) => {
   });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  // Once the visitor has shared their details and hit Book, hand them off to
-  // Podium to choose a time. Best-effort prefill: pass name/email/phone as URL
-  // params — Podium uses them if its booking page supports prefill, else ignores.
+  // Pre-opening (BOOKING_ENABLED false), the form is a waitlist sign-up: hand the
+  // details to our real inbox through the visitor's own mail app — nothing is stored
+  // or silently dropped, and nobody is sent to book an appointment at a practice that
+  // has not opened yet. Restores the original pre-launch flow, which commit 14777c4
+  // removed while the switch was still false. The success state tells the visitor to
+  // hit send, and offers the direct email/text fallbacks, so we never claim to have
+  // received something we haven't.
+  //
+  // Once BOOKING_ENABLED flips to true this reverts to the normal Podium submit below.
   const onSubmit = (e) => {
     e.preventDefault();
+    if (!BOOKING_ENABLED) {
+      const subject = `AVEN waitlist — ${form.name || "new sign-up"}`;
+      const body =
+        `Please add me to the AVEN MED list.\n\n` +
+        `Name: ${form.name}\n` +
+        `Email: ${form.email}\n` +
+        `Phone: ${form.phone}\n` +
+        `Interested in: ${form.interest}\n\n` +
+        `${form.message}`;
+      window.location.href =
+        `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+      setSent(true);
+      return;
+    }
     // Build the Podium handoff URL — prefill (name/email/phone) preserved for the
     // patient. It goes ONLY to Podium via a full-page off-site navigation, which
     // never produces a GA4 page_view, so those values can never reach GA4.
@@ -67,9 +88,8 @@ const ContactPage = ({ navigate }) => {
               </h1>
             </div>
             <p className="lede">
-              We accept a limited number of new patients each month. Please
-              share a few details and our clinic coordinator will be in touch
-              within one business day.
+              Tell us what brings you to AVEN. We'll take the time to understand
+              what you're looking for, and guide you toward the right next step.
             </p>
           </Reveal>
         </div>
@@ -159,7 +179,7 @@ const ContactPage = ({ navigate }) => {
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED
-                      ? "We respond personally — not from a queue — within one business day."
+                      ? "We respond personally — not from a queue."
                       : "AVEN MED opens September 15. Share your details and our team will be in touch."}
                   </div>
                 </div>
@@ -259,8 +279,7 @@ const ContactPage = ({ navigate }) => {
           <Reveal>
             <Logo size={42} style={{ margin: "0 auto 24px" }} />
             <div className="display italic" style={{ fontSize: "clamp(24px, 3vw, 38px)", maxWidth: "30ch", margin: "0 auto", color: "var(--ivory)" }}>
-              "We do not advertise. We are introduced.
-              Thank you for finding us."
+              "Thank you for finding us."
             </div>
             <div className="label" style={{ marginTop: 32, color: "var(--muted)" }}>— AVEN MED</div>
           </Reveal>
