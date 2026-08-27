@@ -1080,6 +1080,21 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .bridal-epigraph > * { margin-left: 0 !important; margin-right: 0 !important; }
 }
 
+/* Two-column ruled lists (treatment pages: "What it treats", "Treatment Planning")
+   carry their column divider and the 48px gutter between the two columns as inline
+   styles on alternating items. The grid itself stacks to one column at ≤768 via the
+   whitelist below — but inline styles don't stack, so on a phone every other row kept
+   a 48px indent and half the rows kept a vertical hairline hanging in open space.
+   This clears exactly those three declarations once there is no second column to
+   divide. Desktop and tablet composition above the breakpoint are untouched. */
+@media (max-width: 768px) {
+  .split-list-item {
+    border-right: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 /* === MOBILE (≤ 768px) === */
 @media (max-width: 768px) {
   /* All multi-column inline-style grids stack to single column */

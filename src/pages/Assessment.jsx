@@ -2,6 +2,7 @@
 import React from 'react';
 import { Eyebrow, Logo, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
 import { getHubEntries } from '../content/registry.jsx';
+import { QUICK_ASSESSMENT, COMPREHENSIVE_ASSESSMENT, tierInclusions } from '../content/assessment-tiers.js';
 
 const AssessmentPage = ({ navigate }) => {
   // Directory cards derive from the registry; new Assessment pages appear here
@@ -39,23 +40,19 @@ const AssessmentPage = ({ navigate }) => {
                 consultation, not a pricing table. */}
             <Reveal>
               <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", height: "100%", display: "flex", flexDirection: "column" }}>
-                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Quick</div>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{QUICK_ASSESSMENT.label}</div>
                 <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "20px 0 12px", fontWeight: 300 }}>
                   Quick Consultation with <em>Alaa.</em>
                 </h2>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 8, marginBottom: 20 }}>
-                  <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>From</span>
-                  <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>$50</span>
+                  <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{QUICK_ASSESSMENT.pricePrefix}</span>
+                  <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>{QUICK_ASSESSMENT.price}</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
                   A focused 5–10 minute consultation with Alaa Mashal, MSN, APRN, FNP-BC. Includes an Aura skin analysis — a fast, expert read on what your skin or your goal is showing, and what your next step could be.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
-                  {[
-                    "5–10 minutes with Alaa",
-                    "Aura skin analysis included",
-                    "The $50 is credited toward your treatment"
-                  ].map((it) => (
+                  {tierInclusions(QUICK_ASSESSMENT, [], { credit: true }).map((it) => (
                     <li key={it} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 12, color: "var(--ivory)", fontSize: 14 }}>
                       <span style={{ width: 12, height: 1, background: "var(--gold)", marginTop: 11 }}></span><span>{it}</span>
                     </li>
@@ -75,25 +72,19 @@ const AssessmentPage = ({ navigate }) => {
             {/* TIER 2 — Comprehensive Assessment */}
             <Reveal delay={140}>
               <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", height: "100%", display: "flex", flexDirection: "column" }}>
-                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Comprehensive</div>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{COMPREHENSIVE_ASSESSMENT.label}</div>
                 <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "20px 0 12px", fontWeight: 300 }}>
                   The Comprehensive <em>Assessment.</em>
                 </h2>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 8, marginBottom: 20 }}>
-                  <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>$200</span>
-                  <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>up to 60 minutes</span>
+                  <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>{COMPREHENSIVE_ASSESSMENT.price}</span>
+                  <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{COMPREHENSIVE_ASSESSMENT.durationNote}</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
                   An in-depth consultation with Alaa Mashal, MSN, APRN, FNP-BC. A full review of your history and goals — and a written plan you walk out with. The fee is credited toward your treatment.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
-                  {[
-                    "Up to 60 minutes with Alaa",
-                    "Full history and goals review",
-                    "Aura skin analysis included",
-                    "Written plan — yours to keep",
-                    "The $200 is credited toward your treatment"
-                  ].map((it) => (
+                  {tierInclusions(COMPREHENSIVE_ASSESSMENT, ["Full history and goals review"], { credit: true }).map((it) => (
                     <li key={it} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 12, color: "var(--ivory)", fontSize: 14 }}>
                       <span style={{ width: 12, height: 1, background: "var(--gold)", marginTop: 11 }}></span><span>{it}</span>
                     </li>

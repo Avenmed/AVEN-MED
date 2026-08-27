@@ -10,12 +10,15 @@
  * DOES NOT introduce new styling — reuses existing classes and the same inline
  * patterns as the Assessment / Memberships pages. */
 import React from 'react';
-import { Eyebrow, Logo, Reveal, DividerMark, HeroBg, AssessmentCTA } from '../components.jsx';
+import { Eyebrow, Logo, Reveal, DividerMark, HeroBg, AssessmentCTA, PreOpeningNote } from '../components.jsx';
 import { CLINIC, DEFAULT_AREAS } from '../content/clinic.js';
 // Bridal registry is the single source of truth for which services are commonly
 // part of a bridal plan — so the cross-link surfaces on exactly those pages with
 // no per-page data edits and no duplicated list.
 import { BRIDAL_SERVICE_SLUGS } from '../content/bridal/index.js';
+// Assessment tier FACTS (name, price presentation, duration, Aura, written plan,
+// fee credit) come from one canonical source — never restated per template.
+import { QUICK_ASSESSMENT, COMPREHENSIVE_ASSESSMENT, tierInclusions } from '../content/assessment-tiers.js';
 
 const BASE_URL = CLINIC.url;
 
@@ -66,7 +69,11 @@ const dash = (
   <span style={{ width: 12, height: 1, background: "var(--gold)", marginTop: 11, flexShrink: 0 }}></span>
 );
 
-function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navigate }) {
+/* One Assessment tier card. Every FACT it shows — name, price presentation,
+ * duration, Aura, the written plan, the fee credit — comes from the canonical
+ * tier object in content/assessment-tiers.js. The page passes only its own
+ * `blurb` and its own discipline-specific `extras` for the middle of the list. */
+function AssessmentTier({ tier, blurb, extras = [], featured, navigate }) {
   return (
     <div style={{
       padding: "48px 40px",
@@ -74,14 +81,17 @@ function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navi
       background: featured ? "var(--surface)" : "var(--bg)",
       height: "100%", display: "flex", flexDirection: "column", position: "relative",
     }}>
-      <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{tier}</div>
+      <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{tier.name}</div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 18, marginBottom: 8 }}>
-        <span style={{ fontFamily: "var(--sans)", fontSize: 48, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{price}</span>
-        <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{subtitle}</span>
+        {tier.pricePrefix && (
+          <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{tier.pricePrefix}</span>
+        )}
+        <span style={{ fontFamily: "var(--sans)", fontSize: 48, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{tier.price}</span>
+        <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{tier.durationNote}</span>
       </div>
       <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>{blurb}</p>
       <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
-        {includes.map((it) => (
+        {tierInclusions(tier, extras).map((it) => (
           <li key={it} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 12, color: "var(--ivory)", fontSize: 14 }}>
             {dash}<span>{it}</span>
           </li>
@@ -89,7 +99,7 @@ function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navi
       </ul>
       <div style={{ marginTop: "auto" }}>
         <div className="body-sm" style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 18, fontFamily: "var(--serif)", fontSize: 15 }}>
-          Credited toward your treatment.
+          {tier.creditNote}
         </div>
         <AssessmentCTA navigate={navigate} className={featured ? "btn solid" : "link"} style={{ alignSelf: "flex-start" }} />
       </div>
@@ -154,6 +164,14 @@ const TreatmentTemplate = ({ data, navigate }) => {
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
               {data.whyAven?.practitionerLine || <>You will only ever be treated by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.</>}
             </p>
+            {/* Alaa is named on every treatment page but, until now, was not reachable
+                from one. A quiet .link to her existing profile — no card, no portrait,
+                no repeated credentials, no new analytics. */}
+            <div style={{ marginTop: 22 }}>
+              <a href="/providers/alaa-mashal" onClick={(e) => { e.preventDefault(); navigate("/providers/alaa-mashal"); }} className="link">
+                <span>Meet Alaa</span><span className="arrow"></span>
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -171,7 +189,9 @@ const TreatmentTemplate = ({ data, navigate }) => {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
             {data.treats.items.map((t, i) => (
               <Reveal key={t.name} delay={(i % 2) * 80}>
-                <div style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+                {/* .split-list-item — the alternating divider/indent below are the
+                    2-column composition; the class clears them once the grid stacks. */}
+                <div className="split-list-item" style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
                   <h3 className="display" style={{ fontSize: 24, margin: 0, fontWeight: 400 }}>{t.name}</h3>
                   {t.note && <p className="body-sm" style={{ marginTop: 8, color: "var(--muted)" }}>{t.note}</p>}
                 </div>
@@ -248,25 +268,27 @@ const TreatmentTemplate = ({ data, navigate }) => {
             <Reveal>
               <AssessmentTier
                 navigate={navigate}
-                tier="Quick AVEN Assessment"
-                price="$50"
-                subtitle="focused visit"
+                tier={QUICK_ASSESSMENT}
                 blurb="A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on your face and a clear first recommendation."
-                includes={["Aura Skin Analysis", "Facial Assessment", "Personalized Recommendations"]}
+                extras={["Facial Assessment", "Personalized Recommendations"]}
               />
             </Reveal>
             <Reveal delay={140}>
               <AssessmentTier
                 navigate={navigate}
                 featured
-                tier="Comprehensive AVEN Assessment"
-                price="$200"
-                subtitle="up to 60 minutes"
+                tier={COMPREHENSIVE_ASSESSMENT}
                 blurb="An in-depth consultation and full facial analysis with a written plan you keep — the complete AVEN approach."
-                includes={["Aura Skin Analysis", "Comprehensive Facial Analysis", "Medical Review", "Long-Term Treatment Planning", "Personalized Written Recommendations"]}
+                extras={["Comprehensive Facial Analysis", "Medical Review", "Long-Term Treatment Planning"]}
               />
             </Reveal>
           </div>
+          {/* Pre-launch only. Same shared, BOOKING_ENABLED-gated note and the same
+              position relative to the Assessment CTAs as the four hub pages — the
+              September 15 date stays in its one canonical source. */}
+          <Reveal>
+            <PreOpeningNote subject="AVEN Aesthetics" style={{ marginTop: 32 }} />
+          </Reveal>
         </div>
       </section>
 
@@ -307,7 +329,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
               {data.treatmentPlanning.factors.map((f, i) => (
                 <Reveal key={f} delay={(i % 2) * 80}>
-                  <div style={{ padding: "24px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none", display: "grid", gridTemplateColumns: "16px 1fr", gap: 12 }}>
+                  <div className="split-list-item" style={{ padding: "24px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none", display: "grid", gridTemplateColumns: "16px 1fr", gap: 12 }}>
                     <span style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 11 }}></span>
                     <span className="body" style={{ margin: 0 }}>{f}</span>
                   </div>
