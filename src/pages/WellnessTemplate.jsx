@@ -16,6 +16,10 @@
 import React from 'react';
 import { Eyebrow, Logo, Reveal, DividerMark, HeroBg, AssessmentCTA } from '../components.jsx';
 import { CLINIC, DEFAULT_AREAS } from '../content/clinic.js';
+// Same canonical Assessment tier facts every other surface uses. Wellness keeps
+// its own discipline-specific extras and its own "program" noun — the FACTS
+// (name, price, duration, Aura, written plan, credit) are not restated here.
+import { QUICK_ASSESSMENT, COMPREHENSIVE_ASSESSMENT, tierInclusions } from '../content/assessment-tiers.js';
 
 const BASE_URL = CLINIC.url;
 
@@ -72,7 +76,12 @@ const dash = (
   <span style={{ width: 12, height: 1, background: "var(--gold)", marginTop: 11, flexShrink: 0 }}></span>
 );
 
-function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navigate }) {
+/* One Assessment tier card. Every FACT — name, price presentation, duration,
+ * Aura, the written plan — comes from the canonical tier object in
+ * content/assessment-tiers.js. Wellness passes only its own `blurb`, its own
+ * `extras`, and `creditNote`: the credit FACT is shared, but wellness care is a
+ * program, not a treatment, and that noun is deliberately not flattened. */
+function AssessmentTier({ tier, blurb, extras = [], creditNote, featured, navigate }) {
   return (
     <div style={{
       padding: "48px 40px",
@@ -80,14 +89,17 @@ function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navi
       background: featured ? "var(--surface)" : "var(--bg)",
       height: "100%", display: "flex", flexDirection: "column", position: "relative",
     }}>
-      <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{tier}</div>
+      <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>{tier.name}</div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 18, marginBottom: 8 }}>
-        <span style={{ fontFamily: "var(--sans)", fontSize: 48, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{price}</span>
-        <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{subtitle}</span>
+        {tier.pricePrefix && (
+          <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{tier.pricePrefix}</span>
+        )}
+        <span style={{ fontFamily: "var(--sans)", fontSize: 48, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{tier.price}</span>
+        <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 18 }}>{tier.durationNote}</span>
       </div>
       <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>{blurb}</p>
       <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
-        {includes.map((it) => (
+        {tierInclusions(tier, extras).map((it) => (
           <li key={it} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 12, color: "var(--ivory)", fontSize: 14 }}>
             {dash}<span>{it}</span>
           </li>
@@ -95,7 +107,7 @@ function AssessmentTier({ tier, price, subtitle, blurb, includes, featured, navi
       </ul>
       <div style={{ marginTop: "auto" }}>
         <div className="body-sm" style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 18, fontFamily: "var(--serif)", fontSize: 15 }}>
-          Credited toward your program.
+          {creditNote}
         </div>
         <AssessmentCTA navigate={navigate} className={featured ? "btn solid" : "link"} style={{ alignSelf: "flex-start" }} />
       </div>
@@ -223,7 +235,7 @@ const WellnessTemplate = ({ data, navigate }) => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
               {data.pillars.items.map((t, i) => (
                 <Reveal key={t.name} delay={(i % 2) * 80}>
-                  <div style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+                  <div className="split-list-item" style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
                     <h3 className="display" style={{ fontSize: 24, margin: 0, fontWeight: 400 }}>{t.name}</h3>
                     {t.note && <p className="body-sm" style={{ marginTop: 8, color: "var(--muted)" }}>{t.note}</p>}
                   </div>
@@ -281,22 +293,20 @@ const WellnessTemplate = ({ data, navigate }) => {
             <Reveal>
               <AssessmentTier
                 navigate={navigate}
-                tier="Quick AVEN Assessment"
-                price="$50"
-                subtitle="focused visit"
+                tier={QUICK_ASSESSMENT}
                 blurb="A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an initial review of your goals and health, and a clear first recommendation."
-                includes={["Goal & History Review", "Focused Evaluation", "Personalized Recommendations"]}
+                extras={["Goal & History Review", "Focused Evaluation", "Personalized Recommendations"]}
+                creditNote="Credited toward your program."
               />
             </Reveal>
             <Reveal delay={140}>
               <AssessmentTier
                 navigate={navigate}
                 featured
-                tier="Comprehensive AVEN Assessment"
-                price="$200"
-                subtitle="up to 60 minutes"
+                tier={COMPREHENSIVE_ASSESSMENT}
                 blurb="An in-depth wellness consultation and medical review with a written plan you keep — the complete AVEN approach."
-                includes={["Comprehensive Health Review", "Goals & Metabolic Discussion", "Medical Review", "Long-Term Program Planning", "Personalized Written Plan"]}
+                extras={["Comprehensive Health Review", "Goals & Metabolic Discussion", "Medical Review", "Long-Term Program Planning"]}
+                creditNote="Credited toward your program."
               />
             </Reveal>
           </div>

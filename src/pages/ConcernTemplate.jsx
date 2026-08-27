@@ -110,7 +110,7 @@ function MarkerGrid({ items }) {
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
       {items.map((t, i) => (
         <Reveal key={t.name || t} delay={(i % 2) * 80}>
-          <div style={{ padding: "26px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+          <div className="split-list-item" style={{ padding: "26px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
             {typeof t === "string" ? (
               <div style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 12 }}>
                 <span style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 11 }}></span>

@@ -137,7 +137,7 @@ const MembershipsPage = ({ navigate }) => {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
             {BENEFITS.map((c, i) => (
               <Reveal key={c.k} delay={(i % 2) * 80}>
-                <div style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+                <div className="split-list-item" style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
                   <h3 className="display" style={{ fontSize: 23, margin: 0, fontWeight: 400 }}>{c.k}</h3>
                   <p className="body-sm" style={{ marginTop: 8, color: "var(--muted)" }}>{c.b}</p>
                 </div>
