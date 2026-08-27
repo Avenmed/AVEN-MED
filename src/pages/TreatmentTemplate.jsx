@@ -623,9 +623,10 @@ const TreatmentTemplate = ({ data, navigate }) => {
             )
     ),
     finalCta: (
-      <DividerMark />
-
-            {/* 9 — FINAL CTA */}
+      /* DividerMark + the closing section are one unit; a fragment because a
+         section entry must have a single JSX root. */
+      <>
+            <DividerMark />
             <section className="section" style={{ textAlign: "center" }}>
               <div className="container">
                 <Reveal>
@@ -640,6 +641,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
                 </Reveal>
               </div>
             </section>
+      </>
     ),
     approach: (
       data.approach && (
