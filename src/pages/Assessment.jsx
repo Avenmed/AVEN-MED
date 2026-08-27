@@ -16,9 +16,9 @@ const AssessmentPage = ({ navigate }) => {
         <div className="container" style={{ maxWidth: 880, textAlign: "center" }}>
           <Reveal>
             <Logo size={48} style={{ margin: "0 auto 32px", opacity: 0.9 }} />
-            <Eyebrow>· Inside the Process</Eyebrow>
+            <Eyebrow>· The AVEN Assessment</Eyebrow>
             <h1 className="display" style={{ fontSize: "clamp(48px, 7vw, 110px)", margin: "32px auto 24px", lineHeight: 1.02, maxWidth: "18ch", fontWeight: 300 }}>
-              Time with <em>Alaa.</em>
+              Care begins with <em>understanding.</em>
             </h1>
             <p className="lede" style={{ maxWidth: "56ch", margin: "0 auto 24px" }}>
               Every plan at AVEN begins with a consultation — whether you're here for aesthetics,
