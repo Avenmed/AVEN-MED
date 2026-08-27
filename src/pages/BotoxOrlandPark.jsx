@@ -79,15 +79,13 @@ const botox = {
     ],
     closing:
       "AVEN would rather begin conservatively and reassess than use more product simply because more can be sold.",
-    // Existing asset. Depicts a clinician assessing a patient's face — the pre-treatment
-    // evaluation this section describes. Labelled for what it shows; it is not presented
-    // as Botox being administered.
-    media: {
-      src: "/assets/alaa-loop-2.mp4",
-      label: "Facial assessment · in-room",
-      meta: "natural light · 4:5 · placeholder",
-      aspect: "4/5",
-    },
+    // MEDIA SLOT INTENTIONALLY EMPTY — see the report accompanying this commit.
+    // The template supports `media` here, and /assets/alaa-loop-2.mp4 was trialled,
+    // but that clip shows a syringe in hand: it depicts treatment, not the
+    // pre-treatment evaluation this section is about, and looping it beside copy
+    // that argues "we look before we dose" says the opposite. No existing asset
+    // honestly depicts facial assessment on its own, so the slot stays unset rather
+    // than being filled with footage that misrepresents the moment.
   },
 
   provider: {
