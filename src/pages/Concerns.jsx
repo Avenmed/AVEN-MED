@@ -7,7 +7,7 @@
  * registered concerns appear here automatically. Only the group headers, their
  * ledes, and group order are editorial and kept here. */
 import React from 'react';
-import { Eyebrow, Reveal, HeroBg, AssessmentCTA, DividerMark, Logo, Ph } from '../components.jsx';
+import { Eyebrow, Reveal, HeroBg, AssessmentCTA, DividerMark, Logo, Ph, PreOpeningNote } from '../components.jsx';
 import Video from '../Video.jsx';
 import { getHubEntries } from '../content/registry.jsx';
 
@@ -217,6 +217,9 @@ const ConcernsPage = ({ navigate }) => {
                 <span>How the Assessment works</span><span className="arrow"></span>
               </a>
             </div>
+            {/* Pre-launch only. Renders while BOOKING_ENABLED is false and removes itself
+                the day booking opens — same gated line and placement as the other hubs. */}
+            <PreOpeningNote subject="AVEN MED" nextStep="your next step" />
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">

@@ -1,10 +1,9 @@
 /* AVEN MED — Wellness */
 
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA, PreOpeningNote } from '../components.jsx';
 import Video from '../Video.jsx';
 import { getHubEntries } from '../content/registry.jsx';
-import { BOOKING_ENABLED } from '../config.js';
 
 // "Soon" teasers for services that don't have a page yet. When one is built and
 // registered, delete its line here and it appears automatically as a live card
@@ -258,14 +257,9 @@ const WellnessPage = ({ navigate }) => {
                 <span>How the Assessment works</span><span className="arrow"></span>
               </a>
             </div>
-            {/* Pre-launch only. Gated on the shared BOOKING_ENABLED switch so it removes
-                itself the day booking opens — no launch-day edit needed here. */}
-            {!BOOKING_ENABLED && (
-              <p className="body-sm" style={{ marginTop: 20, marginBottom: 0, maxWidth: "44ch", color: "var(--muted)" }}>
-                AVEN Wellness opens September 15. Share your details now and our team will
-                reach out to coordinate your AVEN Assessment.
-              </p>
-            )}
+            {/* Pre-launch only — same gated line as before, now via the shared component
+                so the September 15 date is not hard-coded on four separate hubs. */}
+            <PreOpeningNote subject="AVEN Wellness" />
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">

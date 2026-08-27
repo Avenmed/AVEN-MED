@@ -2,6 +2,7 @@
 import React from 'react';
 import Video from './Video.jsx';
 import { CLINIC } from './content/clinic.js';
+import { BOOKING_ENABLED } from './config.js';
 
 /* Cinematic animation behind a page's top hero/title area.
  * Drop as the first child of a hero <section className="has-hero-bg">. */
@@ -384,4 +385,26 @@ const Eyebrow = ({ children, muted = false }) => (
   </div>
 );
 
-export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV, HeroBg, AssessmentCTA, ASSESSMENT_CTA_LABEL };
+
+/* Pre-opening notice — the single place the September 15 date lives in hub copy.
+ *
+ * Renders only while BOOKING_ENABLED is false and removes itself the day the switch
+ * flips, so there is no launch-day edit on any hub. Deliberately inert: static text,
+ * not focusable, no form, no CTA, no analytics, no scarcity or response-time promise.
+ *
+ * `subject` is what the hub actually speaks for — "AVEN Aesthetics", "AVEN Wellness",
+ * "AVEN Family Medicine" — or "AVEN MED" for /concerns, which is a patient-entry
+ * surface rather than a clinical discipline. `nextStep` is the hand-off the hub can
+ * honestly name: the Assessment where the hub sells the Assessment, "your next step"
+ * where it doesn't. Style matches the existing .body-sm editorial line it replaces. */
+const PreOpeningNote = ({ subject, nextStep = "your AVEN Assessment", style = {} }) => {
+  if (BOOKING_ENABLED) return null;
+  return (
+    <p className="body-sm" style={{ marginTop: 20, marginBottom: 0, maxWidth: "44ch", color: "var(--muted)", ...style }}>
+      {subject} opens September 15. Share your details now and our team will
+      reach out to coordinate {nextStep}.
+    </p>
+  );
+};
+
+export { Logo, Brand, Header, Footer, Ph, Reveal, DividerMark, Eyebrow, NAV, HeroBg, AssessmentCTA, ASSESSMENT_CTA_LABEL, PreOpeningNote };

@@ -1209,25 +1209,55 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
 /* DESKTOP ONLY — substantial cinematic 4:3 editorial frame. The Ph carries an inline
    4:5 aspect for MOBILE (unchanged); this desktop override needs !important to beat
    that inline value. The wider 4:3 crop reveals much more limestone + olive; object-
-   fit: cover + center keeps her face framed. transform-origin:right keeps the RIGHT
-   edge fixed (so the ~80px gap to the copy never shrinks) and grows the frame LEFT
-   into the existing empty space — the grid and text column don't move. It's raised a
-   touch and vertically centered against the main body for a balanced composition.
+   fit: cover + center keeps her face framed. It's raised a touch and vertically
+   centered against the main body for a balanced composition.
+
+   The frame grows LEFT while its right edge stays put, so the ~80px gap to the copy
+   never shrinks and the text column never moves. That used to be done with
+   transform: scale() from a right origin — but a transform cannot see the page
+   gutter, so between 769px and ~1130px, where the container has no outer margin left
+   to grow into, the frame ran 1–3px past the LEFT viewport edge (hidden only by the
+   page's overflow clip, never a scrollbar).
+
+   It now grows by a real, bounded bleed instead: never more than the outer margin the
+   container actually has at this viewport. So the left edge lands exactly on the page
+   gutter and can never cross it, and below 1120px the bleed is 0 and the frame simply
+   fills its grid track. 100vw counts a classic scrollbar where one exists, which makes
+   the bleed marginally generous there — tens of px inside the gutter, never outside it.
    Knobs:
-     scale(1.12) (≥769px)  → size on smaller desktops (kept safe from off-screen clip)
-     scale(1.39) (≥1440px) → ~490px 4:3 on a large desktop
-     translateY(-16px)     → vertical raise / balance against the copy */
+     106px (769–1439px) → bleed cap; lands on ~491px at 1439 so 1440 is seamless
+     138px (≥1440px)   → reproduces the previous scale(1.39) frame exactly (491×368)
+     translateY(-16px) → vertical raise / balance against the copy */
 @media (min-width: 769px) {
   .aesthetics-philosophy-media {
     aspect-ratio: 4 / 3 !important;
-    transform: translateY(-16px) scale(1.12);
-    transform-origin: right center;
+    --phil-bleed: min(106px, max(0px, (100vw - 1120px) / 2));
+    width: calc(100% + var(--phil-bleed));
+    margin-left: calc(-1 * var(--phil-bleed));
+    transform: translateY(-16px);
   }
 }
 @media (min-width: 1440px) {
   /* Large desktop: the container padding widens to 96px, so the left track is ~353px;
-     scale ~1.39 → ~490px-wide 4:3 (~367px tall), grown leftward, gap to copy unchanged. */
-  .aesthetics-philosophy-media { transform: translateY(-16px) scale(1.39); }
+     a 138px bleed → the same ~491px-wide 4:3 (~368px tall) the scale(1.39) produced. */
+  .aesthetics-philosophy-media { --phil-bleed: 138px; }
+}
+
+/* ---------- Aesthetics tablet media — scoped ---------- */
+/* Below 769px the page's three 4:5 slots stack at full container width, so a portrait
+   tablet rendered them ~720×900 each and made 768 ~1,500px TALLER than 393. Same
+   failure the Home .treatments rule above fixed for tiles; the standalone slots get
+   the equivalent treatment — a max-width cap, centred in the column. The 4:5 aspect
+   and object-fit: cover are untouched, so nothing is re-cropped: the frame is smaller,
+   not tighter, and no face moves within it. Inert below ~528px, where the container is
+   already narrower than the cap, so phone composition is unchanged. */
+@media (max-width: 768px) {
+  .aesthetics-philosophy-media,
+  .aesthetics-media {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 

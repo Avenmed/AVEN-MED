@@ -6,7 +6,7 @@
  * a light editorial presentation over the registry's treatment pages — the hub
  * introduces; the landing pages teach. */
 import React from 'react';
-import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA, DividerMark } from '../components.jsx';
+import { Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA, DividerMark, PreOpeningNote } from '../components.jsx';
 import Video from '../Video.jsx';
 
 // Guiding principles — the philosophy, before the treatments.
@@ -278,9 +278,12 @@ const AestheticsPage = ({ navigate }) => {
                 <span>How the Assessment works</span><span className="arrow"></span>
               </a>
             </div>
+            {/* Pre-launch only. Renders while BOOKING_ENABLED is false and removes itself
+                the day booking opens — same gated line and placement as the other hubs. */}
+            <PreOpeningNote subject="AVEN Aesthetics" />
           </Reveal>
           <Reveal delay={140}>
-            <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5" className="aesthetics-media">
               <Video src="/assets/sculptra-v2.mp4" />
             </Ph>
           </Reveal>
@@ -324,7 +327,7 @@ const AestheticsPage = ({ navigate }) => {
       <section className="section">
         <div className="container provider-grid" style={{ display: "grid", gridTemplateColumns: "0.6fr 1fr", gap: 64, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
-            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
+            <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5" className="aesthetics-media">
               <Video src="/assets/alaa-2.mp4" />
             </Ph>
           </Reveal>

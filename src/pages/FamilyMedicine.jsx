@@ -6,7 +6,7 @@
  * The service directory derives from the registry (getHubEntries), so new Family
  * Medicine pages appear automatically. The hub introduces; the landing pages teach. */
 import React from 'react';
-import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA } from '../components.jsx';
+import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, AssessmentCTA, PreOpeningNote } from '../components.jsx';
 import Video from '../Video.jsx';
 import { getHubEntries } from '../content/registry.jsx';
 
@@ -307,6 +307,9 @@ const FamilyMedicinePage = ({ navigate }) => {
                 <span>How the Assessment works</span><span className="arrow"></span>
               </a>
             </div>
+            {/* Pre-launch only. Renders while BOOKING_ENABLED is false and removes itself
+                the day booking opens — same gated line and placement as the other hubs. */}
+            <PreOpeningNote subject="AVEN Family Medicine" nextStep="your next step" />
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
