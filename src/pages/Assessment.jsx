@@ -64,10 +64,10 @@ const AssessmentPage = ({ navigate }) => {
                 {/* Learn path (detail page) beside the booking CTA — so a browsing
                     visitor can understand the tier before scheduling (Part 6). */}
                 <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
+                  <AssessmentCTA navigate={navigate} className="link" style={{ alignSelf: "flex-start" }} />
                   <a href="/assessment/quick-assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment/quick-assessment"); }} className="link" data-aven-cta="assessment-tier" data-tier="quick">
                     <span>See what's included</span><span className="arrow"></span>
                   </a>
-                  <AssessmentCTA navigate={navigate} className="link" style={{ alignSelf: "flex-start" }} />
                 </div>
               </div>
             </Reveal>
@@ -100,7 +100,10 @@ const AssessmentPage = ({ navigate }) => {
                   ))}
                 </ul>
                 <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
-                  <AssessmentCTA navigate={navigate} style={{ alignSelf: "flex-start" }} />
+                  {/* Both depths use the same quiet .link treatment and the same order, so
+                      neither is visually recommended. The one solid CTA lives at the foot
+                      of the page. */}
+                  <AssessmentCTA navigate={navigate} className="link" style={{ alignSelf: "flex-start" }} />
                   <a href="/assessment/comprehensive-assessment" onClick={(e) => { e.preventDefault(); navigate("/assessment/comprehensive-assessment"); }} className="link" data-aven-cta="assessment-tier" data-tier="comprehensive">
                     <span>See what's included</span><span className="arrow"></span>
                   </a>
