@@ -20,8 +20,9 @@ const AssessmentPage = ({ navigate }) => {
             <h1 className="display" style={{ fontSize: "clamp(48px, 7vw, 110px)", margin: "32px auto 24px", lineHeight: 1.02, maxWidth: "18ch", fontWeight: 300 }}>
               Time with <em>Alaa.</em>
             </h1>
-            <p className="lede" style={{ maxWidth: "52ch", margin: "0 auto 24px" }}>
-              Every plan at AVEN begins with a consultation. Two paths to the practice — both paid, both credited toward your treatment.
+            <p className="lede" style={{ maxWidth: "56ch", margin: "0 auto 24px" }}>
+              Every plan at AVEN begins with a consultation — whether you're here for aesthetics,
+              wellness, or family medicine. Two paths in: both paid, both credited toward your treatment.
             </p>
           </Reveal>
         </div>
@@ -32,10 +33,13 @@ const AssessmentPage = ({ navigate }) => {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
 
-            {/* TIER 1 — Quick Consultation */}
+            {/* TIER 1 — Quick Consultation.
+                De-boxed: both depths carry the same thin hairline and no fill, so neither
+                reads as a budget option or an upsell. They are two lengths of the same
+                consultation, not a pricing table. */}
             <Reveal>
-              <div style={{ padding: "48px 40px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", display: "flex", flexDirection: "column" }}>
-                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Tier 01 · Quick</div>
+              <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", height: "100%", display: "flex", flexDirection: "column" }}>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Quick</div>
                 <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "20px 0 12px", fontWeight: 300 }}>
                   Quick Consultation with <em>Alaa.</em>
                 </h2>
@@ -44,7 +48,7 @@ const AssessmentPage = ({ navigate }) => {
                   <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>$50</span>
                 </div>
                 <p className="body" style={{ margin: "0 0 24px", maxWidth: "44ch" }}>
-                  A focused 5–10 minute consultation with Alaa Mashal, MSN, APRN, FNP-BC. Includes an Aura skin analysis — a fast, expert read on what your skin is showing and what your next step could be.
+                  A focused 5–10 minute consultation with Alaa Mashal, MSN, APRN, FNP-BC. Includes an Aura skin analysis — a fast, expert read on what your skin or your goal is showing, and what your next step could be.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {[
@@ -70,11 +74,8 @@ const AssessmentPage = ({ navigate }) => {
 
             {/* TIER 2 — AVEN Assessment */}
             <Reveal delay={140}>
-              <div style={{ padding: "48px 40px", border: "1px solid var(--gold-soft)", background: "var(--surface)", height: "100%", display: "flex", flexDirection: "column", position: "relative" }}>
-                <div style={{ position: "absolute", top: 24, right: 24, padding: "6px 14px", border: "1px solid var(--gold)", color: "var(--gold)", fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase" }}>
-                  In-Depth
-                </div>
-                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Tier 02 · AVEN Assessment</div>
+              <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", height: "100%", display: "flex", flexDirection: "column" }}>
+                <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Comprehensive</div>
                 <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "20px 0 12px", fontWeight: 300 }}>
                   The <em>AVEN</em> Assessment.
                 </h2>
@@ -88,8 +89,8 @@ const AssessmentPage = ({ navigate }) => {
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 12, paddingTop: 20, borderTop: "1px solid var(--hairline)" }}>
                   {[
                     "Up to 60 minutes with Alaa",
-                    "Full anatomical and goals review",
-                    "Aura skin analysis included",
+                    "Full history and goals review",
+                    "Aura skin analysis, where relevant",
                     "Written plan — yours to keep",
                     "The $200 is credited toward your treatment"
                   ].map((it) => (
@@ -119,7 +120,7 @@ const AssessmentPage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={120}>
             <h3 className="display" style={{ fontSize: "clamp(28px, 3vw, 44px)", margin: "0 0 24px", maxWidth: "26ch", fontWeight: 300 }}>
-              Time with a top injector, <em>valued.</em>
+              Real clinical time, <em>valued.</em>
             </h3>
             <p className="body" style={{ marginBottom: 22 }}>
               The consultation is where the work begins. Listening to goals and writing a plan takes Alaa's full attention — and that time has value. A paid consultation lets the practice slow down, focus, and treat every visit with the same care.
@@ -145,19 +146,22 @@ const AssessmentPage = ({ navigate }) => {
                 before you ever book.
               </p>
             </Reveal>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+            {/* Reuses the approved .tx-grid/.tx-row editorial index (Aesthetics, Home
+                Disciplines) instead of bordered cards — no new CSS, and it inherits the
+                established focus-visible treatment. */}
+            <div className="tx-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
               {pages.map((p) => (
                 <Reveal key={p.label}>
                   <a
                     href={p.path}
                     onClick={(e) => { e.preventDefault(); navigate(p.path); }}
-                    style={{ display: "block", padding: "32px 30px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}
+                    className="tx-row"
                   >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                      <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400, color: "var(--ivory)" }}>{p.label}</span>
-                      <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
-                    </div>
-                    <p className="body-sm" style={{ marginTop: 14, color: "var(--muted)" }}>{p.blurb}</p>
+                    <span className="tx-head">
+                      <span className="tx-name">{p.label}</span>
+                      <span aria-hidden="true" className="tx-arrow">&rarr;</span>
+                    </span>
+                    <span className="tx-desc body-sm">{p.blurb}</span>
                   </a>
                 </Reveal>
               ))}
