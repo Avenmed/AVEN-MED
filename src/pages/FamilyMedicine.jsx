@@ -71,7 +71,7 @@ const FamilyMedicinePage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
             <Ph label="Family medicine · the practice" meta="warm tungsten · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/family-med.mp4" />
+              <Video src="/assets/family-med.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={120}>
@@ -206,7 +206,7 @@ const FamilyMedicinePage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
             <Ph aspect="16/9">
-              <Video src="assets/concierge-family-med.mp4" />
+              <Video src="/assets/concierge-family-med.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>
@@ -310,7 +310,7 @@ const FamilyMedicinePage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/family-med.mp4" />
+              <Video src="/assets/family-med.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -321,7 +321,7 @@ const FamilyMedicinePage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
             <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/alaa-2.mp4" />
+              <Video src="/assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>

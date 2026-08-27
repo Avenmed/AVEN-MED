@@ -45,7 +45,7 @@ const WellnessPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="Patient · healthy · in the wellness suite" meta="natural light · 21:9 · placeholder" aspect="21/9">
-              <Video src="assets/iv-drip-v2.mp4" />
+              <Video src="/assets/iv-drip-v2.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -269,7 +269,7 @@ const WellnessPage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/alaa-2.mp4" />
+              <Video src="/assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -289,7 +289,7 @@ const WellnessPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
             <Ph aspect="16/9">
-              <Video src="assets/concierge-wellness.mp4" />
+              <Video src="/assets/concierge-wellness.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>

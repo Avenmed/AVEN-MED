@@ -220,7 +220,7 @@ const ConcernsPage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/skin-rejuvenation.mp4" />
+              <Video src="/assets/skin-rejuvenation.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -231,7 +231,7 @@ const ConcernsPage = ({ navigate }) => {
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <Reveal>
             <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/alaa-2.mp4" />
+              <Video src="/assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>

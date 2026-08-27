@@ -28,7 +28,7 @@ const alaaMashal = {
     label: "Alaa Mashal, MSN, APRN, FNP-BC · portrait",
     meta: "natural light · 4:5 · placeholder",
     aspect: "4/5",
-    video: "assets/alaa-2.mp4",
+    video: "/assets/alaa-2.mp4",
   },
 
   hero: {

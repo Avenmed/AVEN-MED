@@ -103,7 +103,7 @@ const ContactPage = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="The clinic · interior · 16:9" meta="warm tungsten · plaster · placeholder" aspect="16/9">
-              <Video src="assets/contact.mp4" />
+              <Video src="/assets/contact.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -213,7 +213,7 @@ const ContactPage = ({ navigate }) => {
 
           <Reveal delay={140}>
             <Ph label="The clinic · entry · 16:9" meta="warm tungsten · brass detail · placeholder" aspect="16/9">
-              <Video src="assets/contact-entry.mp4" />
+              <Video src="/assets/contact-entry.mp4" />
             </Ph>
             <div style={{ marginTop: 40, display: "grid", gap: 28 }}>
               <div>

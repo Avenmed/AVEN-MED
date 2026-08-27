@@ -16,7 +16,7 @@ const Home = ({ navigate }) => {
       {/* HERO */}
       <section className="hero">
         <div className="hero-bg" aria-hidden="true">
-          <Video src="assets/home-hero-bg-v2.mp4" />
+          <Video src="/assets/home-hero-bg-v2.mp4" />
         </div>
         <div className="container hero-inner">
           <div>
@@ -74,7 +74,7 @@ const Home = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="Alaa Mashal · in consultation" meta="natural light · 21:9" aspect="21/9">
-              <Video src="assets/alaa-loop-2.mp4" />
+              <Video src="/assets/alaa-loop-2.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={120} style={{ textAlign: "center", maxWidth: 660, margin: "32px auto 0" }}>
@@ -117,7 +117,7 @@ const Home = ({ navigate }) => {
         <div className="container">
           <Reveal>
             <Ph label="Aura · skin imaging" meta="skin map · 16:9" aspect="16/9">
-              <Video src="assets/aura-scan.mp4" />
+              <Video src="/assets/aura-scan.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -201,16 +201,16 @@ const Home = ({ navigate }) => {
           </Reveal>
           <div className="treatments">
             {[
-              { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format", video: "assets/lip-filler.mp4", path: "/lip-fillers-orland-park" },
-              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "assets/botox-v2.mp4", path: "/botox-orland-park" },
-              { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro", video: "assets/microneedling.mp4", path: "/skinpen-microneedling-orland-park" },
-              { label: "Sculptra", meta: "biostimulator · collagen-led", photo: "Sculptra · in-room · medium format", video: "assets/sculptra-v2.mp4", path: "/sculptra-orland-park" },
+              { label: "Lip Filler", meta: "filler · balancing · proportion", photo: "Lip filler · in-room · medium format", video: "/assets/lip-filler.mp4", path: "/lip-fillers-orland-park" },
+              { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "/assets/botox-v2.mp4", path: "/botox-orland-park" },
+              { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro", video: "/assets/microneedling.mp4", path: "/skinpen-microneedling-orland-park" },
+              { label: "Sculptra", meta: "biostimulator · collagen-led", photo: "Sculptra · in-room · medium format", video: "/assets/sculptra-v2.mp4", path: "/sculptra-orland-park" },
               // Advanced Rejuvenation: no honest destination yet. The tile reads
               // "laser · energy · forthcoming", which matches /skin-tightening-orland-park
               // (forthcoming, RF) — but the name matches /skin-rejuvenation-orland-park,
               // which is a LIVE service. Linking to either would contradict the tile or
               // mislabel a live page, so it stays non-interactive pending an owner call.
-              { label: "Advanced Rejuvenation", meta: "laser · energy · forthcoming", photo: "Advanced rejuvenation · editorial", video: "assets/skin-rejuvenation.mp4", path: null },
+              { label: "Advanced Rejuvenation", meta: "laser · energy · forthcoming", photo: "Advanced rejuvenation · editorial", video: "/assets/skin-rejuvenation.mp4", path: null },
             ].map((s, i) => {
               const inner = (
                 <>

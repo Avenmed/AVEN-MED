@@ -7,7 +7,7 @@ import { CLINIC } from './content/clinic.js';
  * Drop as the first child of a hero <section className="has-hero-bg">. */
 const HeroBg = () => (
   <div className="hero-header-bg" aria-hidden="true">
-    <Video src="assets/home-hero-bg-v2.mp4" />
+    <Video src="/assets/home-hero-bg-v2.mp4" />
   </div>
 );
 
@@ -35,7 +35,7 @@ const AssessmentCTA = ({ navigate, className = "btn solid", style = {}, showArro
 // announce "AVEN MED" again for an image that carries no content.
 const Logo = ({ size = 22, style = {}, alt = "AVEN MED" }) => (
   <img
-    src="assets/logo.png"
+    src="/assets/logo.png"
     alt={alt}
     style={{ width: size, height: "auto", display: "block", ...style }}
   />

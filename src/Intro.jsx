@@ -133,7 +133,7 @@ const Intro = ({ onDone }) => {
         <img
           ref={logoRef}
           className="intro-logo-real"
-          src="assets/logo.png"
+          src="/assets/logo.png"
           alt=""
         />
       </div>
@@ -143,7 +143,7 @@ const Intro = ({ onDone }) => {
       </div>
 
       <audio ref={chimeRef} id="bloom-chime" preload="auto">
-        <source src="assets/bloom-chime.mp3" type="audio/mpeg" />
+        <source src="/assets/bloom-chime.mp3" type="audio/mpeg" />
       </audio>
     </div>
   );

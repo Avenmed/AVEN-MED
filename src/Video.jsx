@@ -1,7 +1,7 @@
 /* AVEN MED — cinematic background video for image slots
  *
  * Drops into any existing Ph slot, e.g.:
- *   <Ph aspect="16/9"><Video src="assets/hero.mp4" poster="assets/hero.jpg" /></Ph>
+ *   <Ph aspect="16/9"><Video src="/assets/hero.mp4" poster="/assets/hero.jpg" /></Ph>
  *
  * Mobile-first, data-conscious:
  *  - preload="none" + play driven by IntersectionObserver → nothing is fetched
@@ -12,6 +12,19 @@
  *  - Silent, muted, looping, playsInline → autoplays on iOS when it does play.
  */
 import React from 'react';
+
+/* Public assets live at /assets/*. A path written as "assets/foo.mp4" is resolved by
+ * the browser against the CURRENT ROUTE, so on a nested URL like
+ * /assessment/comprehensive-assessment it becomes /assessment/assets/foo.mp4 — which
+ * Netlify's SPA catch-all answers with index.html (HTTP 200, text/html), so the media
+ * silently fails to load while looking healthy at the status-code level.
+ *
+ * Every call site now passes a root-relative path; this is a guard so a future one
+ * written without the leading slash cannot reintroduce the defect. Absolute URLs and
+ * data:/blob: sources pass through untouched, and an already-correct /assets/... path
+ * is returned unchanged (no double slashes). */
+const rootRelative = (u) =>
+  typeof u === "string" && /^assets\//.test(u) ? "/" + u : u;
 
 const Video = ({ src, poster, className = "", style = {} }) => {
   const ref = React.useRef(null);
@@ -48,8 +61,8 @@ const Video = ({ src, poster, className = "", style = {} }) => {
       ref={ref}
       className={"ph-video " + className}
       style={style}
-      src={src}
-      poster={poster}
+      src={rootRelative(src)}
+      poster={rootRelative(poster)}
       muted
       loop
       playsInline

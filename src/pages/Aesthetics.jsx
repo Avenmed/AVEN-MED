@@ -130,7 +130,7 @@ const AestheticsPage = ({ navigate }) => {
               The Ph aspect-ratio reserves the space, so there is no layout shift. */}
           <Reveal>
             <Ph label="AVEN · editorial imagery" meta="natural light · 4:5" aspect="4/5" className="aesthetics-philosophy-media">
-              <Video src="assets/aesthetics-philosophy.mp4" poster="assets/aesthetics-philosophy.jpg" />
+              <Video src="/assets/aesthetics-philosophy.mp4" poster="/assets/aesthetics-philosophy.jpg" />
             </Ph>
           </Reveal>
           <Reveal delay={120}>
@@ -281,7 +281,7 @@ const AestheticsPage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={140}>
             <Ph label="The practice · consultation" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/sculptra-v2.mp4" />
+              <Video src="/assets/sculptra-v2.mp4" />
             </Ph>
           </Reveal>
         </div>
@@ -325,7 +325,7 @@ const AestheticsPage = ({ navigate }) => {
         <div className="container provider-grid" style={{ display: "grid", gridTemplateColumns: "0.6fr 1fr", gap: 64, alignItems: "center", maxWidth: 1120 }}>
           <Reveal>
             <Ph label="Alaa Mashal, MSN, APRN, FNP-BC · portrait" meta="natural light · 4:5 · placeholder" aspect="4/5">
-              <Video src="assets/alaa-2.mp4" />
+              <Video src="/assets/alaa-2.mp4" />
             </Ph>
           </Reveal>
           <Reveal delay={140}>
