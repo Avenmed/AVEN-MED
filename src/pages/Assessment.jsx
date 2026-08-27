@@ -72,12 +72,12 @@ const AssessmentPage = ({ navigate }) => {
               </div>
             </Reveal>
 
-            {/* TIER 2 — AVEN Assessment */}
+            {/* TIER 2 — Comprehensive Assessment */}
             <Reveal delay={140}>
               <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", height: "100%", display: "flex", flexDirection: "column" }}>
                 <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.28em" }}>Comprehensive</div>
                 <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "20px 0 12px", fontWeight: 300 }}>
-                  The <em>AVEN</em> Assessment.
+                  The Comprehensive <em>Assessment.</em>
                 </h2>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 8, marginBottom: 20 }}>
                   <span style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 300, color: "var(--gold)", letterSpacing: "-0.01em" }}>$200</span>
@@ -90,7 +90,7 @@ const AssessmentPage = ({ navigate }) => {
                   {[
                     "Up to 60 minutes with Alaa",
                     "Full history and goals review",
-                    "Aura skin analysis, where relevant",
+                    "Aura skin analysis included",
                     "Written plan — yours to keep",
                     "The $200 is credited toward your treatment"
                   ].map((it) => (

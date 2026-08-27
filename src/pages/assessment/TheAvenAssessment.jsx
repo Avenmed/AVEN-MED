@@ -81,7 +81,6 @@ const theAvenAssessment = {
     { q: "Can wellness or family medicine be part of it?", a: "Yes, when relevant. The Assessment isn't limited to aesthetics — we can discuss wellness goals or whether ongoing primary care fits your needs, and point you to the right part of the practice." },
     { q: "Who will I meet?", a: "You'll meet Alaa Mashal, MSN, APRN, FNP-BC — the founder and clinical director of AVEN MED. Continuity matters here, so the person who assesses you is the person who cares for you." },
     { q: "Which Assessment should I choose?", a: "The Quick AVEN Assessment is a focused first step; the Comprehensive AVEN Assessment is a longer, in-depth visit with a written plan. Both are credited toward your treatment. You can read more about each and decide what fits." },
-    { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 
   finalCta: {

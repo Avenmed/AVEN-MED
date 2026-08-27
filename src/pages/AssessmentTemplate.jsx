@@ -169,7 +169,9 @@ function PriceCallout({ block }) {
     <section className="section" style={{ background: "var(--bg-1)" }}>
       <div className="container" style={{ maxWidth: 900 }}>
         <Reveal>
-          <div style={{ padding: "40px 44px", border: "1px solid var(--gold-soft)", background: "var(--surface)", display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "8px 18px" }}>
+          {/* De-boxed: a hairline rule instead of a filled, four-sided card. The price
+              itself carries the emphasis, matching the /assessment tier treatment. */}
+          <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "8px 18px" }}>
             <span style={{ fontFamily: "var(--sans)", fontSize: 52, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{block.price}</span>
             <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 20 }}>{block.unit}</span>
             <span className="body" style={{ width: "100%", marginTop: 14, color: "var(--ivory-soft)" }}>{block.note}</span>
@@ -189,16 +191,18 @@ function LinkGrid({ eyebrow, headline, intro, items, background, navigate }) {
           <h2 className="display" style={{ fontSize: "clamp(30px, 4vw, 52px)", margin: "20px 0 20px", maxWidth: "22ch", fontWeight: 300 }}>{headline}</h2>
           {intro && <p className="body" style={{ marginBottom: 48, maxWidth: "62ch" }}>{intro}</p>}
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        {/* De-boxed: the approved .tx-grid/.tx-row editorial index already used on
+            Aesthetics, Home Disciplines and /assessment — a hairline per row instead of
+            a bordered card, and it inherits that component's focus-visible treatment. */}
+        <div className="tx-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {items.map((r) => (
             <Reveal key={r.path}>
-              <a href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.path); }}
-                style={{ display: "block", padding: "28px 28px", border: "1px solid var(--hairline)", background: "var(--bg)", height: "100%", transition: "border-color 240ms ease" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14 }}>
-                  <span className="display" style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 400, color: "var(--ivory)" }}>{r.label}</span>
-                  <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>&rarr;</span>
-                </div>
-                {r.note && <p className="body-sm" style={{ marginTop: 12, color: "var(--muted)" }}>{r.note}</p>}
+              <a href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.path); }} className="tx-row">
+                <span className="tx-head">
+                  <span className="tx-name">{r.label}</span>
+                  <span aria-hidden="true" className="tx-arrow">&rarr;</span>
+                </span>
+                {r.note && <span className="tx-desc body-sm">{r.note}</span>}
               </a>
             </Reveal>
           ))}
@@ -273,10 +277,12 @@ const AssessmentTemplate = ({ data, navigate }) => {
       <section className="section" style={{ textAlign: "center" }}>
         <div className="container">
           <Reveal>
-            <Logo size={40} style={{ margin: "0 auto 26px", opacity: 0.85 }} />
+            <Logo size={40} alt="" style={{ margin: "0 auto 26px", opacity: 0.85 }} />
             <h2 className="display" style={{ fontSize: "clamp(36px, 5.4vw, 72px)", margin: data.finalCta?.copy ? "0 auto 24px" : "0 auto 36px", maxWidth: "16ch", fontWeight: 300 }}>{data.finalCta?.headline || <>Begin with an <em>Assessment.</em></>}</h2>
             {data.finalCta?.copy && <p className="body" style={{ margin: "0 auto 40px", maxWidth: "52ch" }}>{data.finalCta.copy}</p>}
-            <AssessmentCTA navigate={navigate} />
+            {/* Quiet closer: the hero above carries the one solid CTA on the page. Same
+                component, so the same route and the same assessment_cta_click event. */}
+            <AssessmentCTA navigate={navigate} className="link" />
           </Reveal>
         </div>
       </section>

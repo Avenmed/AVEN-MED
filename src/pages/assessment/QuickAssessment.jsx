@@ -79,6 +79,7 @@ const quickAssessment = {
   crossLinks: [
     { label: "Aesthetics", path: "/aesthetics", note: "Considered, natural-looking aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Prevention-first wellness and metabolic care." },
+    { label: "Family Medicine", path: "/family-medicine", note: "Relationship-based primary care for adults and families." },
     { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "The clinician you'll meet — Alaa Mashal, MSN, APRN, FNP-BC." },
   ],
 
@@ -89,7 +90,6 @@ const quickAssessment = {
     { q: "How is it different from the Comprehensive Assessment?", a: "The Quick Assessment is a focused first read; the Comprehensive AVEN Assessment is a longer, in-depth visit (up to 60 minutes) for multiple concerns, full planning, and a written roadmap you keep. Both are credited toward treatment." },
     { q: "Do I have to book treatment afterward?", a: "No. There's no obligation and no pressure. You're welcome to take your recommendation, think it over, and decide in your own time." },
     { q: "Will I still get a recommendation?", a: "Yes. Even in a focused visit, you'll leave with a clear, honest recommendation and a sensible next step — that's the point of the visit." },
-    { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 
   finalCta: {

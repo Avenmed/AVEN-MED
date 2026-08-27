@@ -43,7 +43,7 @@ const whatToExpect = {
       { label: "Arrival", body: "You're welcomed into a calm, private space. There's no crowded waiting room and no rush — the visit is yours." },
       { label: "Meeting Your Provider", body: "You meet Alaa Mashal, MSN, APRN, FNP-BC, the founder and clinical director. The same person who assesses you is the person who'll care for you." },
       { label: "The Consultation", body: "We start by listening — what's bringing you in, what you'd like to change or maintain, and what matters most to you. This is the heart of the visit." },
-      { label: "Evaluation", body: "Depending on your goals, this may include a review of your history, an Aura skin analysis, or a considered look at your facial anatomy or health — always explained as we go." },
+      { label: "Evaluation", body: "An Aura skin analysis is part of every Assessment. Depending on your goals, this may also include a review of your history or a considered look at your facial anatomy or health — always explained as we go." },
       { label: "Your Recommendations", body: "We talk through your options honestly — what may help, what to prioritize, what can wait, and the alternatives — so the plan reflects you, not a template." },
       { label: "Questions", body: "There's dedicated time for your questions. Nothing is too small, and you're never made to feel rushed toward a decision." },
       { label: "Next Steps", body: "Together we decide what, if anything, comes next — and when. It's completely fine to take time to think it over." },
@@ -70,6 +70,7 @@ const whatToExpect = {
     { label: "Meet Your Provider", path: "/providers/alaa-mashal", note: "Get to know Alaa Mashal, MSN, APRN, FNP-BC before your visit." },
     { label: "Aesthetics", path: "/aesthetics", note: "Explore considered aesthetic treatments." },
     { label: "Wellness", path: "/wellness", note: "Explore prevention-first wellness care." },
+    { label: "Family Medicine", path: "/family-medicine", note: "Relationship-based primary care for adults and families." },
   ],
 
   faqs: [
@@ -78,7 +79,6 @@ const whatToExpect = {
     { q: "Will I feel pressured to make a decision?", a: "No. The visit is built around education and shared decisions, not pressure. It's completely fine to take your plan home and decide in your own time." },
     { q: "Do I need to prepare anything?", a: "Very little. Jotting down your goals and questions and bringing a list of your medications and supplements is helpful, but you can simply come as you are." },
     { q: "Will I leave with a plan?", a: "Yes. You leave with a clear, personalized plan and a sense of exactly what happens next. With the Comprehensive Assessment, that plan is written for you to keep." },
-    { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 
   finalCta: {

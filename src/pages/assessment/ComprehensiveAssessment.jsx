@@ -62,7 +62,7 @@ const comprehensiveAssessment = {
     items: [
       "Up to 60 minutes with Alaa Mashal, MSN, APRN, FNP-BC",
       "A full review of your history and goals",
-      "An Aura skin analysis, where relevant",
+      "An Aura skin analysis",
       "Planning across multiple concerns",
       "A written treatment roadmap — yours to keep",
       "The $200 credited toward your treatment",
@@ -94,7 +94,6 @@ const comprehensiveAssessment = {
     { q: "Do I leave with a written plan?", a: "Yes. A written, personalized roadmap is a defining part of the Comprehensive Assessment — what to prioritize, what can wait, and how it fits together — so the value of the visit stays with you." },
     { q: "Can we include wellness or family medicine?", a: "Yes, where relevant. The Comprehensive Assessment is well suited to folding in metabolic and preventive goals, or discussing whether ongoing primary care fits your needs, alongside any aesthetic planning." },
     { q: "Is there any pressure to begin treatment?", a: "None. The Assessment is consultation-first: you leave with a plan and can act on it whenever the timing is right for you — today, later, or in stages." },
-    { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 
   finalCta: {
