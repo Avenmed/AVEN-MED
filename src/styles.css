@@ -16,7 +16,7 @@
      #A67C42) and it lifts button-hover text and the focus ring past 3:1 too. The
      lighter --gold-bright stays for DECORATIVE gold on DARK grounds (the intro
      splash) where a luminous brass reads better than a deep one. */
-  --gold: #74572D;          /* Wave 8: 4.31 -> 4.66 on --bg-1 (was failing AA at 11px). 4.98 on --bg. */
+  --gold: #6D522A;          /* Wave 8: clears AA at 11px on ALL THREE grounds — 5.41 on --bg, 5.07 on --bg-1, 4.64 on --surface (the darkest, which the first pass missed). */
   --gold-bright: #B89058;
   --gold-soft: rgba(166, 124, 66, 0.55);
   --gold-line: rgba(154, 125, 74, 0.6);   /* brass hairline — box outlines + underlines */
@@ -28,7 +28,7 @@
   /* Warm ink — headlines + body text */
   --ivory: #2E2620;          /* primary text — warm ink */
   --ivory-soft: #4A3D2E;     /* secondary text — slightly softer warm ink */
-  --muted: #685A48;          /* tertiary text — muted warm. Phase 8.5 took it from #7A6B58 (3.8:1); Wave 8 to #685A48 so it also clears AA on --bg-1 (4.45 -> 4.66). */
+  --muted: #625544;          /* tertiary text — muted warm. Phase 8.5 took it from #7A6B58 (3.8:1); Wave 8 to #625544 for AA on all three grounds — 5.39 / 5.05 / 4.63. */
   --muted-2: #A39580;        /* softest text — DECORATIVE only (2.2:1); never on essential text */
 
   --serif: "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
