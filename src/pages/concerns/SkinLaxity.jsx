@@ -83,7 +83,7 @@ const skinLaxity = {
       { name: "Degree of Laxity", note: "Whether it's mild and early or more advanced." },
       { name: "Laxity vs. Volume", note: "Whether looseness, lost volume, or both are driving the change." },
       { name: "Skin Quality", note: "Thickness, collagen, and how the skin may respond." },
-      { name: "The Right Route", note: "Whether energy-based treatment, collagen support, or surgery fits best." },
+      { name: "The Right Route", note: "Whether collagen-building treatment, structural support, or surgery fits best." },
     ],
   },
 
@@ -92,7 +92,6 @@ const skinLaxity = {
     intro:
       "For appropriate candidates, non-surgical treatments can firm and support mild laxity by building collagen. Depending on your assessment, options may include:",
     items: [
-      { name: "Skin Tightening", path: "/skin-tightening-orland-park", note: "Radiofrequency collagen remodeling for mild laxity (forthcoming at AVEN)." },
       { name: "Sculptra", path: "/sculptra-orland-park", note: "A biostimulator that rebuilds collagen and structural support." },
       { name: "SkinPen Microneedling", path: "/skinpen-microneedling-orland-park", note: "Collagen induction to improve firmness and crepey texture." },
       { name: "Jawline Filler", path: "/jawline-fillers-orland-park", note: "Structural support and definition along a softening jaw." },
@@ -118,7 +117,6 @@ const skinLaxity = {
     { q: "Can non-surgical treatments really tighten skin?", a: "For mild, early laxity, yes — treatments that build collagen can genuinely firm and support the skin. But they're often oversold, and they can't replicate a surgical lift. We're honest about which category you're in." },
     { q: "How do I know if I need surgery instead?", a: "It depends on the degree of laxity. Significant sagging generally needs a surgical approach to achieve real change, while mild looseness may respond to non-surgical treatment. Your assessment gives an honest read, including a referral if appropriate." },
     { q: "What's the difference between laxity and volume loss?", a: "Laxity is loosening of the skin itself, while volume loss is deflation of the underlying support. They often occur together, and sometimes restoring volume improves the appearance of laxity. We distinguish them at your assessment." },
-    { q: "Is skin tightening available at AVEN now?", a: "Radiofrequency skin tightening is a forthcoming service arriving at AVEN. Assessments and the waitlist are open now, so we can evaluate your candidacy and plan ahead of its arrival." },
     { q: "Will results be dramatic?", a: "For mild laxity, expect gradual, natural firming rather than a dramatic lift. We plan for realistic improvement and won't promise surgical-level results from non-surgical treatment." },
     { q: "How long do results last?", a: "It varies by treatment. Collagen-based improvements can last many months, though skin continues to age. Periodic maintenance may help, and we'll plan it around your skin rather than a fixed schedule." },
     { q: "Can I prevent skin laxity?", a: "You can't stop the underlying aging, but sun protection, not smoking, a stable weight, and collagen-supportive care all slow it. Addressing early laxity is often easier to keep natural than waiting." },

@@ -189,8 +189,11 @@ const Home = ({ navigate }) => {
       </section>
 
       {/* CONSIDERED TREATMENTS — cinematic treatment videos, each tile a link to its
-          existing landing page. `path: null` keeps a tile deliberately non-interactive
-          when no honest destination exists yet (see Advanced Rejuvenation below). */}
+          existing landing page. Every tile shown is a service AVEN currently offers;
+          `path: null` remains supported for a deliberately non-interactive tile, but
+          nothing uses it (the Advanced Rejuvenation laser/energy tile was removed —
+          AVEN does not own or offer that modality). Four tiles render as a 2x2 on
+          desktop via the .treatments rule in styles.css. */}
       <section className="section" style={{ padding: "clamp(32px, 5vw, 56px) 0 clamp(40px, 6vw, 72px)" }}>
         <div className="container">
           <Reveal style={{ textAlign: "center", marginBottom: 44 }}>
@@ -205,12 +208,6 @@ const Home = ({ navigate }) => {
               { label: "Botox", meta: "neuromodulators · expression kept", photo: "Botox injection · gloved hand · 35mm", video: "/assets/botox-v2.mp4", path: "/botox-orland-park" },
               { label: "Microneedling", meta: "collagen induction · seasonal", photo: "Microneedling · skin · macro", video: "/assets/microneedling.mp4", path: "/skinpen-microneedling-orland-park" },
               { label: "Sculptra", meta: "biostimulator · collagen-led", photo: "Sculptra · in-room · medium format", video: "/assets/sculptra-v2.mp4", path: "/sculptra-orland-park" },
-              // Advanced Rejuvenation: no honest destination yet. The tile reads
-              // "laser · energy · forthcoming", which matches /skin-tightening-orland-park
-              // (forthcoming, RF) — but the name matches /skin-rejuvenation-orland-park,
-              // which is a LIVE service. Linking to either would contradict the tile or
-              // mislabel a live page, so it stays non-interactive pending an owner call.
-              { label: "Advanced Rejuvenation", meta: "laser · energy · forthcoming", photo: "Advanced rejuvenation · editorial", video: "/assets/skin-rejuvenation.mp4", path: null },
             ].map((s, i) => {
               const inner = (
                 <>

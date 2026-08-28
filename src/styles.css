@@ -1217,6 +1217,17 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .treatments { gap: clamp(28px, 6vw, 44px); }
   .treatments > * { flex: 0 0 100%; max-width: 100%; }
 }
+/* Four tiles, not five (the Advanced Rejuvenation laser/energy tile was removed — AVEN
+   does not offer that modality). At the 3-up basis above, four items leave a lone tile
+   centered under the middle column with ~424px of dead space either side. Measured at
+   1440/1280/1130/1025: pinning the tile to 400px — exactly its current 1440 width — and
+   capping the row at 824px yields a clean 2x2, perfectly centered, metas still one line,
+   zero overflow. Tile scale, aspect, gap and type are unchanged; ≤1024 already resolves
+   to 2x2 and ≤480 to a 4-stack, so nothing below desktop is touched. */
+@media (min-width: 1025px) {
+  .treatments { max-width: 824px; margin-left: auto; margin-right: auto; }
+  .treatments > * { flex: 0 0 400px; max-width: 400px; }
+}
 .closing-band-line {
   font-family: var(--serif);
   font-style: italic;

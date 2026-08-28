@@ -98,7 +98,7 @@ const sunDamage = {
       { name: "Medical-Grade Skincare", path: "/medical-grade-skincare-orland-park", note: "Daily actives and SPF to repair and prevent further damage." },
       { name: "Facials", path: "/facials-orland-park", note: "Supportive maintenance for brighter, healthier-looking skin." },
     ],
-    closing: "AVEN's advanced laser and energy-based treatments for pigment and vessels are forthcoming, and may factor into future plans. What fits you today is decided at your AVEN Assessment.",
+    closing: "Sun damage responds to a sequenced plan rather than a single treatment. What fits you today — and in what order — is decided at your AVEN Assessment.",
   },
 
   lifestyle: {

@@ -52,7 +52,6 @@ const CATEGORIES = [
     treatments: [
       { n: "Sculptra", d: "Collagen-stimulating structural support.", path: "/sculptra-orland-park" },
       { n: "SkinPen Microneedling", d: "Collagen induction for texture.", path: "/skinpen-microneedling-orland-park" },
-      { n: "Skin Tightening", d: "Radiofrequency remodeling (forthcoming).", path: "/skin-tightening-orland-park" },
     ],
   },
   {
