@@ -1,27 +1,24 @@
 /* AVEN MED — site config
  *
- * BOOKING_ENABLED is the single switch for the pre-launch state.
+ * BOOKING_ENABLED is the single canonical control for whether a captured lead
+ * continues on to Podium scheduling. It is NOT a launch flag and NOT a lead-capture
+ * switch:
  *
- *   false  → pre-launch: every "Book…" CTA reads "Join the Waitlist", the
- *            /contact form becomes a waitlist sign-up that emails us the details
- *            (no real appointments), and the booking-ceremony intro is hidden.
+ *   true  → Contact posts the lead to /api/podium/lead and, once Podium has
+ *           confirmed delivery, hands the visitor on to BOOKING_URL to pick a time.
  *
- *   true   → licensed / open: flip this to true on the day we have our
- *            certificate of occupancy. All booking CTAs + the /contact form
- *            return to their normal behavior.
+ *   false → Contact posts the same lead the same way and shows an in-page success
+ *           state instead of redirecting. The lead is still captured.
  *
- * Reverting the pre-launch changes is this one line.
+ * Lead capture is unconditional either way — the retired mailto waitlist is gone and
+ * must not come back. See netlify/functions/podium-lead.mjs.
+ *
+ * Actual appointment availability is owned by the Podium scheduling calendar, not by
+ * this site. Do not add date logic here.
  */
-import { CLINIC } from './content/clinic.js';
+export const BOOKING_ENABLED = true;
 
-export const BOOKING_ENABLED = false;
-
-/* Working channels used for the pre-launch waitlist (email + text hand-off).
- * These reach the real inbox/phone — nothing is stored or dropped.
- * At launch, wire the waitlist to Podium instead. */
-export const WAITLIST_EMAIL = CLINIC.email;
-export const WAITLIST_PHONE = CLINIC.phoneE164;
-
-/* Podium online booking. After a visitor fills out the Contact form and hits
- * Book, they're handed off here to pick a time. */
+/* Podium online booking — PUBLIC, browser-visible by design, and not to be confused
+ * with the secret PODIUM_WEBHOOK_URL, which is server-side only. A visitor reaches
+ * this only after their lead has already been captured. */
 export const BOOKING_URL = "https://booking.podium.com/medspa/019e704b-019f-760d-a64e-532c1666178c";

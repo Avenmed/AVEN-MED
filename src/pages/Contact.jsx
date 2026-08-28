@@ -3,7 +3,7 @@
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, ASSESSMENT_CTA_LABEL } from '../components.jsx';
 import Video from '../Video.jsx';
-import { BOOKING_ENABLED } from '../config.js';
+import { BOOKING_ENABLED, BOOKING_URL } from '../config.js';
 import { trackContactLeadSubmit } from '../analytics.js';
 import { CLINIC } from '../content/clinic.js';
 
@@ -17,6 +17,9 @@ const ContactPage = ({ navigate }) => {
   const [sent, setSent] = React.useState(false);
   const [sending, setSending] = React.useState(false);
   const [submitError, setSubmitError] = React.useState("");
+  const [redirecting, setRedirecting] = React.useState(false);
+  // Read synchronously by `finally`, which runs even on the early return below.
+  const redirectingRef = React.useRef(false);
   // Ref guard as well as state: a second click can land before React re-renders and
   // disables the button, and a duplicate lead is expensive when Podium dedupes on
   // phone. Same pattern the Bridal form already uses.
@@ -56,6 +59,19 @@ const ContactPage = ({ navigate }) => {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error("submit_failed");
+
+      /* ORDER MATTERS. The lead is captured first and confirmed by Podium, THEN the
+       * analytics event, THEN — only when booking is enabled — the hand-off to
+       * scheduling. A visitor who opens the calendar, looks at dates and leaves has
+       * still reached us. We never redirect before delivery is confirmed. */
+      if (BOOKING_ENABLED) {
+        redirectingRef.current = true;
+        setRedirecting(true);
+        // Fires the event and navigates once it has actually been sent, with a short
+        // timeout so the patient is never blocked by analytics.
+        trackContactLeadSubmit(() => { window.location.href = BOOKING_URL; });
+        return; // stay in the sending/redirecting state until the browser leaves
+      }
       trackContactLeadSubmit(); // GA4 — only after confirmed delivery; zero PII
       setSent(true);            // values are never cleared until success
     } catch {
@@ -63,8 +79,13 @@ const ContactPage = ({ navigate }) => {
       // so they can simply press the button again.
       setSubmitError("Something went wrong sending your details. Please try again in a moment, or reach us directly below.");
     } finally {
-      sendingRef.current = false;
-      setSending(false);
+      // `finally` runs even on the early return above, so the hand-off case must stay
+      // locked: the page is navigating away and re-enabling the button would invite a
+      // second lead for the same visitor.
+      if (!redirectingRef.current) {
+        sendingRef.current = false;
+        setSending(false);
+      }
     }
   };
 
@@ -186,12 +207,12 @@ const ContactPage = ({ navigate }) => {
                   <button type="submit" className="btn solid" disabled={sending}
                     aria-busy={sending ? "true" : undefined}
                     style={{ height: 56, opacity: sending ? 0.6 : 1 }}>
-                    <span>{sending ? "Sending…" : ASSESSMENT_CTA_LABEL}</span><span className="arrow"></span>
+                    <span>{redirecting ? "Taking you to scheduling…" : sending ? "Sending…" : ASSESSMENT_CTA_LABEL}</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED
                       ? "We respond personally — not from a queue."
-                      : "AVEN MED opens September 15. Share your details and our team will be in touch."}
+                      : "Share your details and our team will be in touch."}
                   </div>
                 </div>
                 {submitError && (
@@ -210,7 +231,7 @@ const ContactPage = ({ navigate }) => {
                 <p className="body">
                   {BOOKING_ENABLED
                     ? "We've received your Assessment request. Our team will be in touch."
-                    : `We have your details. AVEN MED opens September 15, and our team will reach out to coordinate your AVEN Assessment. Prefer to reach us directly? Email ${CLINIC.email} or text ${CLINIC.phoneDisplay}.`}
+                    : `We have your details, and our team will reach out to coordinate your AVEN Assessment. Prefer to reach us directly? Email ${CLINIC.email} or text ${CLINIC.phoneDisplay}.`}
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>

@@ -98,8 +98,24 @@ export function trackBridalSubmit() {
 // network failure, an upstream non-2xx, or a retry that has not yet succeeded.
 // Carries zero PII: no name, email, phone, message or interest text, just the two
 // hard-whitelisted non-identifying params.
-export function trackContactLeadSubmit() {
-  track("contact_lead_submit", { page_type: "contact", form_type: "contact" });
+// `done` is optional. When the caller is about to navigate to Podium booking, the
+// beacon can be killed by the unload, so we fire with event_callback and only then
+// continue — with a short timeout fallback so the patient is NEVER blocked if
+// analytics is slow or blocked. Same shape the old booking handoff used. The event
+// name and params are unchanged; this only makes delivery reliable.
+export function trackContactLeadSubmit(done) {
+  let called = false;
+  const go = () => { if (!called) { called = true; if (typeof done === "function") done(); } };
+  if (typeof window === "undefined" || typeof window.gtag !== "function") { go(); return; }
+  if (typeof done !== "function") {
+    track("contact_lead_submit", { page_type: "contact", form_type: "contact" });
+    return;
+  }
+  window.gtag("event", "contact_lead_submit", {
+    page_type: "contact", form_type: "contact",
+    event_callback: go, event_timeout: 800,
+  });
+  setTimeout(go, 900);
 }
 
 // LEGACY — retained, no longer called. The Contact form used this when submitting
