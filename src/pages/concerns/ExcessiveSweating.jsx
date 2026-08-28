@@ -92,7 +92,6 @@ const excessiveSweating = {
       "For focal hyperhidrosis, particularly of the underarms, effective in-office treatment is available and can dramatically reduce sweating for months at a time. Depending on your assessment, options may include:",
     items: [
       { name: "Hyperhidrosis Treatment", path: "/hyperhidrosis-treatment-orland-park", note: "Neuromodulator injections that calm overactive sweat glands — the primary in-office option." },
-      { name: "Medical-Grade Skincare", path: "/medical-grade-skincare-orland-park", note: "Clinical topical measures that may support your plan." },
     ],
     closing: "The right approach depends on your pattern and history. Whether in-office treatment suits you is decided together at your AVEN Assessment — and we'll refer on if an underlying cause needs evaluation.",
   },

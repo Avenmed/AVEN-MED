@@ -31,7 +31,7 @@ const skinRejuvenation = {
       "Skin rejuvenation in Orland Park, IL — not one treatment but a sequenced plan built for your skin by Alaa Mashal, MSN, APRN, FNP-BC. Assessment first.",
   },
   tags: ["skin", "texture", "tone", "aging", "collagen"],
-  relatedConcerns: ["concerns/sun-damage", "concerns/uneven-skin-tone", "concerns/fine-lines-and-wrinkles"],
+  relatedConcerns: ["concerns/sun-damage", "concerns/uneven-skin-tone", "concerns/fine-lines-and-wrinkles", "concerns/skin-texture", "concerns/large-pores"],
   treatmentName: "Skin Rejuvenation",
   treatmentShort: "Skin Rejuvenation",
   breadcrumbName: "Skin Rejuvenation in Orland Park",

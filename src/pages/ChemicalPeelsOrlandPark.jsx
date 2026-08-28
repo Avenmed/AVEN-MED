@@ -43,7 +43,7 @@ const chemicalPeels = {
       "Chemical peels in Orland Park, IL — depth and formulation matched to your skin type and history by Alaa Mashal, MSN, APRN, FNP-BC. Assessment first.",
   },
   tags: ["skin", "texture", "tone", "acne", "aging", "pigment"],
-  relatedConcerns: ["concerns/uneven-skin-tone", "concerns/sun-damage", "concerns/skin-texture"],
+  relatedConcerns: ["concerns/uneven-skin-tone", "concerns/sun-damage", "concerns/skin-texture", "concerns/large-pores"],
   treatmentName: "Chemical Peels",
   treatmentShort: "Chemical Peels",
   breadcrumbName: "Chemical Peels in Orland Park",

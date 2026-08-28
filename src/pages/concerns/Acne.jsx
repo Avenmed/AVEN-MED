@@ -95,7 +95,6 @@ const acne = {
       { name: "Acne Treatment", path: "/acne-treatment-orland-park", note: "An individualized medical plan for active acne — the primary path." },
       { name: "Medical-Grade Skincare", path: "/medical-grade-skincare-orland-park", note: "Targeted actives that keep pores clear and support the plan daily." },
       { name: "Chemical Peels", path: "/chemical-peels-orland-park", note: "Certain peels can help clear congestion in appropriate skin." },
-      { name: "Facials", path: "/facials-orland-park", note: "Supportive deep-cleansing care for acne-prone skin, where suitable." },
       { name: "Acne Scar Treatment", path: "/acne-scar-treatment-orland-park", note: "For scarring, addressed separately once acne is controlled." },
     ],
     closing: "Active acne is treated first and medically; scars come later. Your individualized plan is built at the AVEN Assessment — no single product suits everyone.",
