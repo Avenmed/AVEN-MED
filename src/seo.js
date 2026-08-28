@@ -40,7 +40,7 @@ const STATIC_ROUTE_SEO = {
   },
   "/wellness": {
     title: "Wellness & IV Therapy · AVEN MED, Orland Park IL",
-    description: "Concierge wellness, IV therapy, and medical weight loss in Orland Park, IL. Prevention-first care and bloodwork at AVEN MED.",
+    description: "Provider-led wellness in Orland Park, IL — IV therapy, medical weight management, vitamin injections and clinician-guided lab testing at AVEN MED.",
   },
   "/family-medicine": {
     title: "Family Medicine · AVEN MED, Orland Park IL",
@@ -52,7 +52,7 @@ const STATIC_ROUTE_SEO = {
   },
   "/memberships": {
     title: "Memberships · AVEN MED, Orland Park IL",
-    description: "AVEN Maintenance ($100/mo) and Signature ($200/mo) memberships bank monthly toward treatments at AVEN MED, Orland Park, IL.",
+    description: "AVEN memberships bank a monthly contribution toward your treatments in Orland Park, IL — care planned over time rather than decided one visit at a time.",
   },
   "/contact": {
     title: "Contact & Book · AVEN MED, Orland Park IL",
