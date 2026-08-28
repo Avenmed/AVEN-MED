@@ -11,7 +11,8 @@
   --hairline-strong: rgba(154, 125, 74, 0.85);
 
   /* Brass-gold — buttons + accents. Deepened in Phase 8.5 so gold TEXT and fills on
-     the cream bg meet WCAG AA: #7A5C30 is 4.6:1 on --bg (vs 2.8:1 for the old
+     the cream bg meet WCAG AA. Wave 8 deepened it again to #74572D so it also clears
+     AA on the --bg-1 bands (4.31 -> 4.66); it is 4.98 on --bg (vs 2.8:1 for the old
      #A67C42) and it lifts button-hover text and the focus ring past 3:1 too. The
      lighter --gold-bright stays for DECORATIVE gold on DARK grounds (the intro
      splash) where a luminous brass reads better than a deep one. */
@@ -160,7 +161,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 /* Primary CTA: light brass border (like the header CTA), dark gold-brass text
    on a clear background so the wording reads clearly. Fills gold on hover. */
-.btn.solid { background: transparent; color: #7a5c30; border-color: var(--gold-soft); }
+.btn.solid { background: transparent; color: var(--gold); border-color: var(--gold-soft); } /* Wave 8: was a hardcoded #7a5c30 that bypassed the token and kept failing AA after --gold was deepened. */
 .btn.solid::before { background: transparent; }
 .btn.solid:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); }
 
