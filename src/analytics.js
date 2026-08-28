@@ -93,6 +93,19 @@ export function trackBridalSubmit() {
   track("bridal_form_submit", { page_type: "bridal", form_type: "bridal_journey" });
 }
 
+// Contact form → Podium lead, delivered server-side. Fires ONLY after our own
+// endpoint has confirmed Podium returned a 2xx — never on click, validation failure,
+// network failure, an upstream non-2xx, or a retry that has not yet succeeded.
+// Carries zero PII: no name, email, phone, message or interest text, just the two
+// hard-whitelisted non-identifying params.
+export function trackContactLeadSubmit() {
+  track("contact_lead_submit", { page_type: "contact", form_type: "contact" });
+}
+
+// LEGACY — retained, no longer called. The Contact form used this when submitting
+// meant an off-site hand-off to Podium booking; it now posts to our own endpoint and
+// fires contact_lead_submit on confirmed delivery instead. Kept rather than removed
+// so no other flow can break on its absence.
 // Contact form → Podium handoff. NO form values (event carries zero PII). Named for
 // what actually happens: a hand-off to booking, not a confirmed appointment.
 // Because the caller immediately navigates off-site, we fire with event_callback and

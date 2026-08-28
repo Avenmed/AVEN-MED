@@ -201,7 +201,9 @@ export const BRIDAL_FAQS = [
 export const BRIDAL_ASSESSMENT_FIELDS = [
   { id: "name", label: "Full name", type: "text", required: true, autoComplete: "name", placeholder: "First and last name" },
   { id: "email", label: "Email", type: "email", required: true, autoComplete: "email", placeholder: "you@example.com" },
-  { id: "phone", label: "Phone", type: "tel", required: false, autoComplete: "tel", placeholder: "Optional" },
+  // Required: Podium identifies contacts primarily by phone, so a lead without one
+  // cannot be deduped reliably.
+  { id: "phone", label: "Phone", type: "tel", required: true, autoComplete: "tel", placeholder: "(708) 555-0142" },
   { id: "weddingDate", label: "Wedding date", type: "date", required: false },
   { id: "engagementDate", label: "Engagement date", type: "date", required: false, help: "Optional" },
   { id: "consultationTiming", label: "When would you like to consult?", type: "select", required: false,

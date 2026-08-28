@@ -54,6 +54,7 @@ const SOURCES = {
       referral_source: BRIDAL_REFERRAL,
     },
     dates: ["wedding_date", "engagement_date"],
+    requireConsent: true,
   },
 };
 
@@ -104,6 +105,13 @@ export const handler = async (event) => {
    * rejected; one is never fabricated to satisfy the contract. */
   const phone = normalizePhoneE164(str(body.phone, 40));
   if (!phone) return json(400, { ok: false, error: "invalid_phone" });
+
+  /* Bridal carries a consent checkbox that is a legal gate, not a preference. The
+   * previous OAuth endpoint enforced it server-side and that protection is preserved
+   * here. Consent itself is never forwarded — it gates, it is not lead data. */
+  if (spec.requireConsent && body.consent !== true) {
+    return json(400, { ok: false, error: "consent_required" });
+  }
 
   const payload = {
     location: LOCATION,

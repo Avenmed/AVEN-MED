@@ -3,18 +3,24 @@
 import React from 'react';
 import { DividerMark, Eyebrow, Logo, Ph, Reveal, HeroBg, ASSESSMENT_CTA_LABEL } from '../components.jsx';
 import Video from '../Video.jsx';
-import { BOOKING_ENABLED, BOOKING_URL, WAITLIST_EMAIL } from '../config.js';
-import { trackContactHandoff } from '../analytics.js';
+import { BOOKING_ENABLED } from '../config.js';
+import { trackContactLeadSubmit } from '../analytics.js';
 import { CLINIC } from '../content/clinic.js';
 
 const ContactPage = ({ navigate }) => {
   const [form, setForm] = React.useState({
     // Must match the first <option> exactly — the select is controlled, so a value
     // with no matching option leaves state and what the visitor sees disagreeing,
-    // and the pre-opening mailto reports the state value.
+    // and the exact visible label is what gets sent to Podium.
     name: "", email: "", phone: "", interest: "Aesthetic Medicine Assessment", message: ""
   });
   const [sent, setSent] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState("");
+  // Ref guard as well as state: a second click can land before React re-renders and
+  // disables the button, and a duplicate lead is expensive when Podium dedupes on
+  // phone. Same pattern the Bridal form already uses.
+  const sendingRef = React.useRef(false);
   // Pre-launch: no booking ceremony (there's nothing to book yet).
   const [showCeremony, setShowCeremony] = React.useState(() => {
     if (!BOOKING_ENABLED) return false;
@@ -22,44 +28,44 @@ const ContactPage = ({ navigate }) => {
   });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  // Pre-opening (BOOKING_ENABLED false), the form is a waitlist sign-up: hand the
-  // details to our real inbox through the visitor's own mail app — nothing is stored
-  // or silently dropped, and nobody is sent to book an appointment at a practice that
-  // has not opened yet. Restores the original pre-launch flow, which commit 14777c4
-  // removed while the switch was still false. The success state tells the visitor to
-  // hit send, and offers the direct email/text fallbacks, so we never claim to have
-  // received something we haven't.
-  //
-  // Once BOOKING_ENABLED flips to true this reverts to the normal Podium submit below.
-  const onSubmit = (e) => {
+  /* The form posts to AVEN's own Netlify function, which forwards the lead to Podium
+   * server-side. The browser never sees or calls the Podium webhook. The visitor is
+   * only ever shown success after that function confirms Podium returned a 2xx — we
+   * never claim to have received something we haven't.
+   *
+   * This replaced the pre-opening mailto waitlist, which is fully retired: exactly one
+   * delivery path fires, never both. */
+  const onSubmit = async (e) => {
     e.preventDefault();
-    if (!BOOKING_ENABLED) {
-      const subject = `AVEN waitlist — ${form.name || "new sign-up"}`;
-      const body =
-        `Please add me to the AVEN MED list.\n\n` +
-        `Name: ${form.name}\n` +
-        `Email: ${form.email}\n` +
-        `Phone: ${form.phone}\n` +
-        `Interested in: ${form.interest}\n\n` +
-        `${form.message}`;
-      window.location.href =
-        `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
-      setSent(true);
-      return;
+    if (sending || sendingRef.current) return; // no double-submit
+    sendingRef.current = true;
+    setSubmitError("");
+    setSending(true);
+    try {
+      const res = await fetch("/api/podium/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          website_lead_source: "Website — Contact",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          interest: form.interest, // exact visible option label, never a slug
+          message: form.message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error("submit_failed");
+      trackContactLeadSubmit(); // GA4 — only after confirmed delivery; zero PII
+      setSent(true);            // values are never cleared until success
+    } catch {
+      // Never surface backend/Podium detail to the visitor. Entered values are kept
+      // so they can simply press the button again.
+      setSubmitError("Something went wrong sending your details. Please try again in a moment, or reach us directly below.");
+    } finally {
+      sendingRef.current = false;
+      setSending(false);
     }
-    // Build the Podium handoff URL — prefill (name/email/phone) preserved for the
-    // patient. It goes ONLY to Podium via a full-page off-site navigation, which
-    // never produces a GA4 page_view, so those values can never reach GA4.
-    const params = new URLSearchParams();
-    if (form.name) params.set("name", form.name);
-    if (form.email) params.set("email", form.email);
-    if (form.phone) params.set("phone", form.phone);
-    const qs = params.toString();
-    const dest = qs ? `${BOOKING_URL}?${qs}` : BOOKING_URL;
-    // Fire the PII-free handoff event, then redirect once it has actually been sent
-    // (with a fallback so the patient is never blocked).
-    trackContactHandoff(() => { window.location.href = dest; });
   };
 
   React.useEffect(() => {
@@ -150,6 +156,7 @@ const ContactPage = ({ navigate }) => {
                   <input
                     id="contact-phone"
                     type="tel"
+                    required
                     value={form.phone}
                     onChange={set("phone")}
                     placeholder={CLINIC.phoneDisplay}
@@ -176,9 +183,10 @@ const ContactPage = ({ navigate }) => {
                 </div>
 
                 <div style={{ display: "flex", gap: 32, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
-                  <button type="submit" className="btn solid"
-                    style={{ height: 56 }}>
-                    <span>{ASSESSMENT_CTA_LABEL}</span><span className="arrow"></span>
+                  <button type="submit" className="btn solid" disabled={sending}
+                    aria-busy={sending ? "true" : undefined}
+                    style={{ height: 56, opacity: sending ? 0.6 : 1 }}>
+                    <span>{sending ? "Sending…" : ASSESSMENT_CTA_LABEL}</span><span className="arrow"></span>
                   </button>
                   <div className="body-sm" style={{ color: "var(--muted)" }}>
                     {BOOKING_ENABLED
@@ -186,18 +194,23 @@ const ContactPage = ({ navigate }) => {
                       : "AVEN MED opens September 15. Share your details and our team will be in touch."}
                   </div>
                 </div>
+                {submitError && (
+                  <p className="body-sm" role="alert" style={{ marginTop: 20, marginBottom: 0, color: "var(--gold)", maxWidth: "48ch" }}>
+                    {submitError}
+                  </p>
+                )}
               </form>
             ) : (
               <div style={{ padding: "80px 0", textAlign: "left" }}>
                 <Logo size={48} />
-                <div className="label" style={{ marginTop: 32, color: "var(--gold)" }}>{BOOKING_ENABLED ? "Received" : "Almost there"}</div>
+                <div className="label" style={{ marginTop: 32, color: "var(--gold)" }}>Received</div>
                 <h2 className="display" style={{ fontSize: 56, margin: "20px 0 24px", fontWeight: 300 }}>
                   Thank you, {form.name.split(" ")[0] || "friend"}.
                 </h2>
                 <p className="body">
                   {BOOKING_ENABLED
                     ? "We've received your Assessment request. Our team will be in touch."
-                    : `Your email app should have opened with your details — just hit send and you're on the list. Prefer to reach us directly? Email ${CLINIC.email} or text ${CLINIC.phoneDisplay}.`}
+                    : `We have your details. AVEN MED opens September 15, and our team will reach out to coordinate your AVEN Assessment. Prefer to reach us directly? Email ${CLINIC.email} or text ${CLINIC.phoneDisplay}.`}
                 </p>
                 <div style={{ marginTop: 40, display: "flex", gap: 22 }}>
                   <button className="link" onClick={() => setSent(false)}>

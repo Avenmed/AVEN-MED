@@ -137,18 +137,23 @@ const BridalAssessmentPage = ({ navigate }) => {
     setSending(true);
     try {
       // Send ONLY the approved, non-sensitive fields to our own server-side function
-      // (which forwards to Podium). Skin concerns, aesthetic goals, treatment history,
-      // skincare routine, wellness goals, and free-text answers NEVER leave the browser.
+      // (which forwards to the Podium webhook). Skin concerns, aesthetic goals,
+      // treatment history, skincare routine, wellness goals, and free-text answers
+      // NEVER leave the browser. Keys are the canonical snake_case contract.
       const payload = {
+        website_lead_source: "Website — Bridal Journey",
         name: values.name,
         email: values.email,
         phone: values.phone,
-        weddingDate: values.weddingDate,
-        consultationTiming: values.consultationTiming,
-        referral: values.referral,
+        wedding_date: values.weddingDate,
+        engagement_date: values.engagementDate,
+        // Exact visible option labels — never slugified.
+        consultation_timing: values.consultationTiming,
+        preferred_appointment: values.appointmentTiming,
+        referral_source: values.referral,
         consent: values.consent,
       };
-      const res = await fetch("/api/podium/bridal-submit", {
+      const res = await fetch("/api/podium/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
