@@ -1180,6 +1180,21 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   /* Native disclosure controls: FAQ summaries measured 35px. */
   main details > summary { min-height: 44px; }
 
+  /* Standalone contact and social controls in page content — the Contact page
+     renders its own email, phone and social links outside the footer. */
+  main a[href^="mailto:"],
+  main a[href^="tel:"],
+  main a[target="_blank"] {
+    display: inline-flex; align-items: center;
+    min-height: 44px;
+  }
+  /* ...except inside a status message, where the link is part of a sentence and
+     must keep normal inline flow. */
+  [role="alert"] a[href^="mailto:"],
+  [role="alert"] a[href^="tel:"] {
+    display: inline; min-height: 0;
+  }
+
   /* Tighter section padding on mobile so pages aren't endless */
   .section { padding: clamp(36px, 9vw, 60px) 0 !important; }
   .section.tight { padding: clamp(26px, 7vw, 44px) 0 !important; }
