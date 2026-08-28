@@ -7,9 +7,11 @@
  * CLINICAL SOURCING. Two source classes, kept separate:
  *  - OBJECTIVE FACT, from the FDA labeling for onabotulinumtoxinA (BOTOX):
  *      · indicated for severe primary axillary hyperhidrosis inadequately managed
- *        with topical agents (§1);
- *      · "The safety and effectiveness of BOTOX for hyperhidrosis in other body
- *        areas have not been established" (§1);
+ *        with topical agents (§1.6) — the UNDERARM only;
+ *      · §1.6 Limitations of Use: "The safety and effectiveness of BOTOX for
+ *        hyperhidrosis in other body areas have not been established. Weakness of
+ *        hand muscles and blepharoptosis may occur in patients who receive BOTOX
+ *        for palmar hyperhidrosis and facial hyperhidrosis, respectively.";
  *      · patients should be evaluated for potential causes of secondary
  *        hyperhidrosis (e.g. hyperthyroidism) (§5);
  *      · axillary adverse reactions: injection site pain and hemorrhage,
@@ -22,10 +24,16 @@
  *  - AVEN POLICY: the 18+ minimum, the pregnancy/breastfeeding position,
  *    medication review and the follow-up rhythm are AVEN's own, already approved.
  *
- * The previous version promised "Certain other areas may be considered on an
- * individual basis" without noting that the labeling does not establish safety or
- * effectiveness outside the underarm. Corrected — no new treatment areas are
- * invented, and none are ruled in by this page. */
+ * TREATMENT AREAS — AVEN PRACTICE FACT, supplied by Alaa: AVEN treats excessive
+ * sweating of the UNDERARMS, HANDS and SCALP. This is a practice/offering fact and
+ * is kept strictly separate from the regulatory one above: only the underarm is a
+ * labeled indication. Hand and scalp treatment is therefore never described as
+ * approved, and the axillary trial data is never restated as though it applied to
+ * them. The label's palmar hand-weakness observation IS carried, because it is
+ * sourced and area-specific. The scalp appears nowhere in the labeling, so this
+ * page deliberately says less about it rather than extrapolating from the facial
+ * hyperhidrosis observation. Off-label status is stated where accuracy requires it
+ * and is not used as promotional copy. */
 import React from 'react';
 
 const hyperhidrosis = {
@@ -34,7 +42,7 @@ const hyperhidrosis = {
   seo: {
     title: "Hyperhidrosis Treatment in Orland Park, IL | AVEN MED",
     description:
-      "Treatment for severe underarm sweating in Orland Park, IL when antiperspirants aren't enough. Assessment first, with Alaa Mashal, MSN, APRN, FNP-BC.",
+      "Treatment for excessive sweating of the underarms, hands or scalp in Orland Park, IL. Assessment first, with Alaa Mashal, MSN, APRN, FNP-BC.",
   },
   treatmentName: "Hyperhidrosis Treatment",
   treatmentShort: "Hyperhidrosis Treatment",
@@ -43,7 +51,7 @@ const hyperhidrosis = {
   breadcrumbName: "Hyperhidrosis Treatment in Orland Park",
   procedureName: "Hyperhidrosis Treatment — Neuromodulator for Excessive Sweating",
   procedureDescription:
-    "Neuromodulator treatment for severe primary axillary hyperhidrosis in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — for appropriate candidates whose underarm sweating is inadequately managed with topical agents.",
+    "Neuromodulator treatment for excessive sweating of the underarms, hands or scalp in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC, for appropriate candidates following an individualized assessment. Severe primary axillary hyperhidrosis inadequately managed with topical agents is an approved indication; hand and scalp treatment is not.",
 
   editorial: true,
   sectionOrder: [
@@ -56,7 +64,7 @@ const hyperhidrosis = {
     eyebrow: "Aesthetics · Neuromodulators",
     headline: <>Hyperhidrosis Treatment in <em>Orland Park.</em></>,
     subheadline:
-      "For severe underarm sweating that antiperspirants haven't controlled — a treatment that quiets the signal to the sweat glands in the skin that is treated.",
+      "For excessive sweating of the underarms, hands or scalp — a treatment that quiets the signal to the sweat glands in the skin that is treated, and only there.",
   },
 
   whyAven: {
@@ -64,7 +72,7 @@ const hyperhidrosis = {
     intro:
       "People who sweat like this have usually spent years managing it privately — choosing clothes by how well they hide, keeping a spare shirt, sitting out of situations. It is a recognised medical condition, and the most useful thing a clinic can do first is stop treating it as a confidence issue and start assessing it as a condition.",
     body:
-      "That also means not reaching for the injection immediately. Topical treatment is genuinely enough for many people, and it is cheaper and simpler; this treatment exists for the sweating that topicals have not controlled. And where the pattern suggests the sweating is a symptom of something else, the right next step is finding that out, not covering it.",
+      "That also means not reaching for the injection immediately. Where a topical treatment is a realistic option for the area involved, it is cheaper and simpler and worth trying properly first. And where the pattern suggests the sweating is a symptom of something else, the right next step is finding that out, not covering it.",
     practitionerLine:
       "Your treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
@@ -75,10 +83,11 @@ const hyperhidrosis = {
     body: [
       "The assessment starts with the pattern, because the pattern is the diagnosis. Alaa asks where you sweat and whether it is confined to specific areas or general, whether it is symmetrical, when it started, whether it happens at night, and what actually sets it off — heat and nerves, or nothing identifiable at all. Focal sweating that has been there since your teens, is roughly symmetrical and stops when you sleep behaves very differently from sweating that is generalised, one-sided, night-time or new.",
       "That distinction matters more than anything else on this page. Sweating can be a symptom of another condition — a thyroid problem, for instance — and the labeling is explicit that potential causes of secondary hyperhidrosis should be evaluated so that the sweating is not simply treated while the underlying cause goes undiagnosed. Where your history raises that question, evaluation comes first.",
-      "Then what you have already tried, and how properly you tried it. Clinical-strength antiperspirant used correctly is a real treatment, and the approved use of this injection is specifically for severe underarm sweating that topical agents have not adequately managed.",
+      "Then the area itself, because the three regions AVEN treats — underarms, hands and scalp — are not interchangeable. Hands are working tools with grip and fine movement to protect, the scalp carries its own practical considerations, and the underarm is the one region with an approved indication behind it. What you have already tried matters here too: clinical-strength antiperspirant used correctly is a real treatment, and how far it can realistically get you differs by area.",
     ],
     considers: [
-      "Where you sweat, and whether it is focal or generalised",
+      "Which area is affected — underarm, hand or scalp",
+      "Whether the sweating is focal or generalised",
       "Symmetry, timing, and whether it occurs during sleep",
       "Age at onset and how it has changed",
       "Whether a secondary cause should be evaluated first",
@@ -101,7 +110,7 @@ const hyperhidrosis = {
   assessmentIntro: {
     headline: <>Assessed before it is <em>treated.</em></>,
     body:
-      "Nothing is planned before your history and pattern of sweating have been reviewed — including whether another cause should be evaluated first. An Aura skin analysis is part of every AVEN Assessment; it is a skin-imaging tool and plays no part in diagnosing hyperhidrosis or planning this treatment, which comes from Alaa's clinical assessment. The fee is credited toward your treatment.",
+      "Nothing is planned before your history and pattern of sweating have been reviewed — including whether another cause should be evaluated first. An Aura skin analysis is part of every AVEN Assessment; it is a skin-imaging tool and plays no part in diagnosing hyperhidrosis or in deciding which area is treated, the dose, or your candidacy — all of that is Alaa's clinical assessment. The fee is credited toward your treatment.",
   },
   assessmentTiers: {
     quickExtras: ["A first read on whether treatment is appropriate"],
@@ -110,14 +119,14 @@ const hyperhidrosis = {
 
   treats: {
     intro:
-      "Botulinum toxin is approved for severe primary axillary hyperhidrosis — severe underarm sweating that topical agents have not adequately managed. Where that describes you, treatment may be considered for:",
+      "AVEN treats excessive sweating of the underarms, the hands and the scalp. The three are assessed separately, because they differ in what the treatment has to protect and in what evidence stands behind it. Treatment may be considered for:",
     items: [
-      { name: "Severe Underarm Sweating", note: "The underarm is the studied, approved area and the treatment AVEN offers here." },
-      { name: "Sweat That Topicals Haven't Controlled", note: "For sweating that persists despite clinical-strength antiperspirant used properly." },
+      { name: "Underarm Sweating", note: "Severe underarm sweating not adequately managed by topical agents — the one approved indication." },
+      { name: "Sweating of the Hands", note: "Clammy palms that affect grip, handwriting, tools, and shaking hands." },
+      { name: "Scalp and Hairline Sweating", note: "Sweat running from the scalp and hairline through the day." },
+      { name: "Sweat Topicals Haven't Controlled", note: "Where a topical was a realistic option for the area and wasn't enough." },
       { name: "Sweat-Soaked and Ruined Clothing", note: "Visible marks and staining that dictate what you can wear." },
-      { name: "Daily Planning Around Sweating", note: "Spare shirts, seat choices, and avoiding situations because of it." },
-      { name: "Managing Around Warmer Months", note: "Some patients time treatment ahead of summer or a specific event." },
-      { name: "Sweating Elsewhere on the Body", note: "A different conversation — the labeling does not establish safety or effectiveness for other areas, and it is not something this page offers." },
+      { name: "Daily Planning Around Sweating", note: "Spare shirts, avoided handshakes, and situations skipped because of it." },
     ],
   },
 
@@ -127,7 +136,7 @@ const hyperhidrosis = {
     body: [
       "Sweat glands do not decide to sweat. They are switched on by nerves that release a chemical messenger — acetylcholine — onto the gland, and in hyperhidrosis that signalling is excessive relative to what the body actually needs for cooling. The glands themselves are usually normal; the instruction reaching them is not.",
       "A neuromodulator blocks the release of that messenger from the nerve endings where it is injected. Placed into the skin across the treated area, it quiets the signal to the sweat glands beneath it, so those glands produce much less sweat. Nothing is removed and no gland is destroyed — the connection is temporarily interrupted, and it restores itself over months as new nerve endings form.",
-      "Two consequences follow from that, and both matter. It works only where it is placed, in the skin that was treated — this is not a treatment for sweating in general. And because the effect is a small grid of shallow injections covering an area rather than a few points in a muscle, the treatment involves more injections than a facial one, and lasts considerably longer.",
+      "Two consequences follow from that, and both matter. It works only where it is placed, in the skin that was treated — treating an underarm does nothing for a hand, which is why the areas are planned individually rather than as one treatment. And because the effect depends on covering an area of skin rather than reaching a few points in a muscle, this involves more injections spread more widely than a facial treatment does.",
     ],
   },
 
@@ -135,20 +144,20 @@ const hyperhidrosis = {
     eyebrow: "Antiperspirant · Neuromodulator",
     headline: "There is an order to this.",
     intro:
-      "This is not simply our preference for starting gently — the approved use of the injection is specifically for severe underarm sweating that topical agents have not adequately managed. Topicals genuinely come first, and for many people they are the end of it.",
+      "This is not simply a preference for starting gently. For the underarm, the approved use of the injection is specifically for severe sweating that topical agents have not adequately managed — topicals genuinely come first there, and for many people they are the end of it. How far a topical can get you differs by area, which is part of what the assessment weighs.",
     items: [
-      { name: "Clinical-Strength Antiperspirant", note: "Inexpensive, available without a visit, and effective for many people — particularly when applied to dry skin at night rather than in the morning, which is how it is often got wrong." },
-      { name: "Neuromodulator Treatment", note: "For severe underarm sweating that topicals have not adequately managed. Temporarily reduces sweating in the treated skin, typically for several months." },
+      { name: "Clinical-Strength Antiperspirant", note: "Inexpensive and available without a visit — and often written off after being used the wrong way. Applied to dry skin at night rather than in the morning is how it is meant to be used." },
+      { name: "Neuromodulator Treatment", note: "Temporarily reduces sweating in the skin that is treated, typically for several months. For the underarm this is the approved use where topicals have not been enough; for the hands and scalp it is a clinical decision made case by case." },
       { name: "When Neither Is the Answer", note: "If the pattern suggests a secondary cause, the priority is evaluating that — not reducing the sweating and leaving the reason for it unexamined." },
     ],
     closing: "We will tell you when the cheaper option is worth doing properly first.",
   },
 
   whatToExpect: [
-    { label: "Treatment", body: "A grid of small, shallow injections is placed across each underarm — more injections than a facial treatment, but each one very superficial. It typically takes around ten to fifteen minutes for both sides." },
-    { label: "Recovery", body: "Most people return to their day. Injection-site soreness or small bruises are the usual after-effects. Avoid strenuous exercise, saunas and hot baths for the rest of the day." },
+    { label: "Treatment", body: "A pattern of small, shallow injections is placed across the affected area — more of them than in a facial treatment, but each one very superficial. How many, and how long the visit takes, depends on the area being treated and is set out at your assessment rather than assumed here." },
+    { label: "Recovery", body: "Most people return to their day. Injection-site soreness or small bruises are the usual after-effects. Avoid strenuous exercise, saunas and hot baths for the rest of the day. Where the hands have been treated, Alaa will go through what to expect of grip and fine movement before you leave." },
     { label: "Onset", body: "Reduced sweating is usually noticed within about one to two weeks as the treatment takes effect. The degree of reduction varies between patients." },
-    { label: "Longevity", body: "For underarm sweating the effect commonly lasts several months — meaningfully longer than facial neuromodulator treatment — and repeat treatment is given when the effect of the previous one has diminished." },
+    { label: "Longevity", body: "For underarm sweating the effect commonly lasts several months — meaningfully longer than facial neuromodulator treatment. Repeat treatment is given when the effect of the previous one has diminished, judged on how your area actually responded rather than on a fixed interval." },
     { label: "Follow-Up", body: "We review at around two weeks, once the effect has taken hold — how completely the area responded and whether any patches were missed — then refine the mapping for next time. Duration and degree vary from person to person." },
   ],
 
@@ -159,25 +168,28 @@ const hyperhidrosis = {
       "This is a prescription medical treatment, and the assessment before it is a genuine part of the safety of it. The points below are drawn from the approved prescribing information for botulinum toxin, together with AVEN's own practice policies.",
     items: [
       { name: "Rule out another cause first", note: "The labeling is explicit that patients should be evaluated for potential causes of secondary hyperhidrosis — hyperthyroidism, for example — so that sweating is not treated symptomatically while an underlying condition goes undiagnosed. Sweating that is generalised, one-sided, night-time or newly started particularly warrants that." },
-      { name: "The underarm is the established area", note: "Botulinum toxin is approved for severe primary axillary hyperhidrosis inadequately managed with topical agents. The labeling states that safety and effectiveness for hyperhidrosis in other body areas have not been established — so treating elsewhere is a different decision on a different evidence base, and is not what this page offers." },
-      { name: "Common after treatment", note: "In the underarm trials the reported reactions included injection-site pain and bleeding, increased sweating at sites other than the underarm, sore throat and flu-like symptoms." },
+      { name: "The three areas do not share one evidence base", note: "Botulinum toxin is approved for severe primary axillary hyperhidrosis inadequately managed with topical agents — that is the underarm, and only the underarm. The labeling states that safety and effectiveness for hyperhidrosis in other body areas have not been established. Treating the hands or scalp is therefore a clinical decision made with you, not an approved use, and we will say so plainly rather than let the underarm approval stand in for all three." },
+      { name: "Common after treatment — underarm", note: "In the underarm trials the reported reactions included injection-site pain and bleeding, increased sweating at sites other than the underarm, sore throat and flu-like symptoms. These figures come from underarm studies and are not restated here as though they applied identically to the hands or scalp." },
+      { name: "Specific to the hands", note: "The labeling notes that weakness of the hand muscles may occur where botulinum toxin is given for sweating of the palms. Because your hands grip, write and work, that possibility is discussed before treatment rather than after, and it is a real reason some people choose not to treat this area." },
+      { name: "Specific to the scalp", note: "The scalp is not an area the labeling addresses, so there is no labeled safety or effectiveness data for it and we will not invent any. General botulinum toxin considerations apply, and anything more specific than that is a conversation about your individual scalp rather than a claim we can make on a page." },
       { name: "When it should not be used", note: "Botulinum toxin is not given to anyone with a known hypersensitivity to a botulinum toxin preparation or to any ingredient in it, or where there is an infection at the intended injection site." },
       { name: "Tell us about", note: "Neuromuscular conditions — including myasthenia gravis and Lambert-Eaton syndrome — and other peripheral motor neuropathic or neuromuscular junction disorders warrant monitoring with botulinum toxin. Bring your medications, supplements and medical history; never stop a prescribed medication for this treatment without speaking to the clinician who prescribed it." },
       { name: "Age, pregnancy and breastfeeding", note: "AVEN treats adults 18 and over for injectable treatment, and does not perform elective treatment during pregnancy or while breastfeeding. The labeling notes there are no adequate data in pregnancy and no data on whether it is present in human milk." },
-      { name: "It is temporary and local", note: "The effect wears off over months as nerve endings regenerate, and it only ever affects the skin that was treated. It is not a permanent solution and does not stop you sweating elsewhere — which is how the body should still be able to cool itself." },
+      { name: "It is temporary and local", note: "The effect wears off over months as nerve endings regenerate, and it only ever affects the skin that was treated. It is not a permanent solution, and it does not stop you sweating elsewhere — which is how the body should still be able to cool itself." },
     ],
     closing:
       "Botulinum toxin products carry a boxed warning that effects can, rarely, spread beyond the injection site, with symptoms such as swallowing or breathing difficulty that can be serious; the labeling notes no definitive serious reports of this for severe primary axillary hyperhidrosis at the recommended dose. If you have any difficulty swallowing, speaking or breathing after treatment, seek emergency medical care. For anything else that doesn't seem right, contact AVEN.",
   },
 
   faqs: [
-    { q: "How does it stop the sweating?", a: "Sweat glands are switched on by a chemical messenger released from nearby nerve endings. The injection blocks the release of that messenger in the skin where it is placed, so the glands beneath produce much less sweat. Nothing is removed, and the connection restores itself over months." },
-    { q: "Which areas do you treat?", a: "The underarm. That is the area the treatment is approved for, and the labeling states that safety and effectiveness for hyperhidrosis in other body areas have not been established. Sweating elsewhere is a different decision on a different evidence base and is not something we offer from this page." },
-    { q: "Should I try antiperspirants first?", a: "Usually yes — and properly. The approved use is specifically for severe underarm sweating that topical agents have not adequately managed. Clinical-strength antiperspirant applied to dry skin at night is genuinely effective for many people, and is often written off after being used the wrong way." },
+    { q: "How does it stop the sweating?", a: "Sweat glands are switched on by a chemical messenger released from nearby nerve endings. The injection blocks the release of that messenger in the skin where it is placed, so the glands beneath produce much less sweat. Nothing is removed, the connection restores itself over months, and it only works where it was placed — treating one area does nothing for another." },
+    { q: "Which areas do you treat?", a: "The underarms, the hands and the scalp. They are assessed separately rather than as one treatment, because what the treatment has to work around differs — hands especially, since you use them. It is worth knowing that only the underarm is an approved indication for this treatment; hand and scalp treatment is a clinical decision made with you, and we would rather tell you that than blur the three together." },
+    { q: "Should I try antiperspirants first?", a: "For the underarm, usually yes — and properly. The approved use there is specifically for severe sweating that topical agents have not adequately managed, and clinical-strength antiperspirant applied to dry skin at night is genuinely effective for many people. How realistic a topical is for the hands or scalp is part of what we weigh at the assessment rather than a rule." },
     { q: "Could my sweating be a sign of something else?", a: "It can be, which is why the assessment covers it. The labeling specifically directs that potential causes of secondary hyperhidrosis, such as a thyroid problem, be evaluated so the sweating is not simply treated while the cause goes undiagnosed. Sweating that is generalised, one-sided, night-time or new especially warrants a look." },
     { q: "How long does it last?", a: "For underarm sweating, commonly several months — noticeably longer than facial neuromodulator treatment. Repeat treatment is given when the effect of the previous one has worn off, rather than on a fixed schedule." },
-    { q: "Does it hurt?", a: "It is a grid of small, very shallow injections across each underarm, so there are more of them than in a facial treatment, though each is superficial. Most people tolerate it well, and comfort measures can be discussed at your assessment." },
-    { q: "Will I stop sweating everywhere?", a: "No, and you should not want to. The effect is confined to the skin that was treated, so the rest of your body sweats normally and can still regulate your temperature. Increased sweating at other sites was among the reactions reported in the underarm trials." },
+    { q: "Does it hurt?", a: "It is a pattern of small, very shallow injections across the area, so there are more of them than in a facial treatment, though each is superficial. How it feels varies by area — the hands are a more sensitive region than the underarm — and comfort measures are discussed at your assessment rather than assumed." },
+    { q: "Will I stop sweating everywhere?", a: "No, and you should not want to. The effect is confined to the skin that was treated, so the rest of your body sweats normally and can still regulate your temperature. Increased sweating at other sites was among the reactions reported in the underarm trials specifically." },
+    { q: "Will treating my hands affect my grip?", a: "It is the one area-specific risk the labeling calls out: weakness of the hand muscles may occur where botulinum toxin is given for sweating of the palms. Your hands grip, write and work, so this is discussed properly before anything is agreed — and for some people it is a good reason to treat a different area, or none." },
     { q: "Is there downtime?", a: "Most people return to normal activities the same day. Soreness or small bruises at the injection sites are usual. Avoid strenuous exercise, saunas and hot baths for the rest of the day." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
