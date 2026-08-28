@@ -25,15 +25,15 @@ const WellnessPage = ({ navigate }) => {
         <div className="container">
           <Reveal style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "end" }}>
             <div>
-              <Eyebrow>Wellness · Concierge</Eyebrow>
+              <Eyebrow>Wellness · Medical</Eyebrow>
               <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 132px)", margin: "24px 0 0", lineHeight: 0.96, maxWidth: "12ch" }}>
                 The architecture<br /><em>beneath</em> the skin.
               </h1>
             </div>
             <p className="lede">
-              AVEN Wellness is a concierge practice for patients who want their
-              skin, their bloodwork, and their sleep treated as one continuous
-              conversation. Prevention first. Vitality always.
+              AVEN Wellness is provider-led medical care for patients who want
+              their skin, their bloodwork, and their general health treated as
+              one continuous conversation rather than three separate errands.
             </p>
           </Reveal>
         </div>
@@ -66,8 +66,8 @@ const WellnessPage = ({ navigate }) => {
               grid string so the existing mobile fold (4→2→1) continues to apply. */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "56px 40px", marginTop: 56, alignItems: "start" }}>
             {[
-              { n: "01", k: "Longevity Panels", b: "Quarterly bloodwork tracking inflammation, hormones, metabolic and cardiovascular markers — interpreted, not just delivered." },
-              { n: "02", k: "IV Therapy", b: "Custom-formulated infusions for immune support, cognitive performance, recovery, and pre-aesthetic optimization." },
+              { n: "01", k: "Lab Testing", b: "Clinician-selected bloodwork, at a cadence set for you — interpreted properly, not just delivered." },
+              { n: "02", k: "IV Therapy", b: "Individually selected infusions for hydration and nutrient support, considered where there is a genuine reason for one." },
               { n: "03", k: "Medical Weight Loss", b: "A physician-directed, whole-person program for weight and metabolic health — with GLP-1 medication as one option when appropriate." },
               { n: "04", k: "Nutrition & Metabolic Support", b: "Practical, individualized nutrition and metabolic guidance that works alongside the rest of your care." }
             ].map((p, i) => (
@@ -151,13 +151,13 @@ const WellnessPage = ({ navigate }) => {
               {
                 k: "The Foundation",
                 p: "An entry point",
-                d: "An entry-point wellness program — bloodwork twice a year, a single IV infusion, and a skin assessment.",
+                d: "An entry point — baseline and follow-up bloodwork, IV therapy where it is appropriate, and a skin assessment.",
                 items: ["Baseline & follow-up lab testing", "IV therapy when appropriate", "Skin health assessment"]
               },
               {
                 k: "The Compound",
                 p: "The full practice",
-                d: "The deeper practice. Quarterly labs, monthly IV protocol, and twice-yearly skin assessments — the full AVEN wellness practice in one program.",
+                d: "The deeper practice — ongoing lab monitoring, IV therapy planned around your needs, and continuing skin assessment, at a rhythm set for you.",
                 items: ["Ongoing lab monitoring", "Personalized IV therapy", "Ongoing skin health assessments"]
               },
               {
