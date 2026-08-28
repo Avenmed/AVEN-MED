@@ -80,7 +80,7 @@ const tmj = {
       "Whether referral or shared care fits better",
     ],
     closing:
-      "AVEN is a cash-pay practice and does not bill insurance. Where treatment is appropriate, cost is discussed at your assessment before anything is agreed.",
+      "Insurance coverage for TMJ-related care varies by plan and by the specific treatment involved — contact AVEN MED to confirm current payment and insurance options before your visit. Where treatment is appropriate, cost is discussed at your assessment before anything is agreed.",
   },
 
   provider: {
@@ -173,7 +173,7 @@ const tmj = {
     { q: "How will I know whether it worked?", a: "Because we agree beforehand which symptom is being targeted and roughly when a change should show. At the follow-up around two weeks we review against that, rather than a general impression. If it did not help, that is a real answer and we act on it." },
     { q: "Will my chewing be affected?", a: "You are having chewing muscles relaxed, so firm foods can feel like harder work while the effect is present. Placement stays within the target muscles, which is what protects normal jaw movement and smiling." },
     { q: "How long does it last?", a: "Typically a few months, and it is not permanent. Muscle activity returns gradually, and whether to repeat is judged on how much the first course actually helped." },
-    { q: "Does insurance cover it?", a: "AVEN MED is a cash-pay practice and does not bill insurance. Cost is discussed at your assessment. We cannot speak to what an individual insurer may or may not do." },
+    { q: "Does insurance cover it?", a: "Coverage for TMJ-related care varies by plan and by the specific treatment involved, and we cannot speak to what an individual insurer will or will not do. Contact AVEN MED to confirm current payment and insurance options before your visit. Cost is discussed at your assessment either way." },
     { q: "How is this different from cosmetic masseter Botox?", a: "The muscle can overlap; the purpose does not. Cosmetic masseter treatment is about the appearance of the lower face and is assessed on anatomy and proportion. This is symptom-directed, assessed on your symptom pattern and history, and often belongs alongside dental care." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
