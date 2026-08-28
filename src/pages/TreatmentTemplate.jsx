@@ -235,7 +235,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
                     <Reveal key={t.name} delay={(i % 2) * 80}>
                       {/* .split-list-item — the alternating divider/indent below are the
                           2-column composition; the class clears them once the grid stacks. */}
-                      <div className="split-list-item" style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+                      <div className={"split-list-item" + (data.editorial ? " split-list-tight" : "")} style={{ padding: "30px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
                         {/* An area with its own landing page links to it; the rest stay
                             static text. Opt-in per item via `path` — no invented routes. */}
                         <h3 className="display" style={{ fontSize: 24, margin: 0, fontWeight: 400 }}>
@@ -317,7 +317,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
               {data.assessmentIntro?.body || "Two ways to begin — both credited toward your treatment, so nothing is ever wasted."}
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
+          <div className="tier-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
             <Reveal>
               <EditorialTier navigate={navigate} tier={QUICK_ASSESSMENT}
                 blurb={data.assessmentTiers?.quickBlurb || "A focused consultation with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on your face and a clear first recommendation."}
@@ -718,7 +718,7 @@ const TreatmentTemplate = ({ data, navigate }) => {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderTop: "1px solid var(--hairline)" }}>
               {data.safety.items.map((s, i) => (
                 <Reveal key={s.name} delay={(i % 2) * 80}>
-                  <div className="split-list-item" style={{ padding: "28px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
+                  <div className="split-list-item split-list-tight" style={{ padding: "28px 0", borderBottom: "1px solid var(--hairline)", paddingRight: i % 2 === 0 ? 48 : 0, paddingLeft: i % 2 === 1 ? 48 : 0, borderRight: i % 2 === 0 ? "1px solid var(--hairline)" : "none" }}>
                     <h3 className="display" style={{ fontSize: 23, margin: 0, fontWeight: 400 }}>{s.name}</h3>
                     <p className="body-sm" style={{ marginTop: 8, color: "var(--muted)" }}>{s.note}</p>
                   </div>

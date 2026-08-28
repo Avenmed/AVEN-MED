@@ -47,17 +47,12 @@ const botox = {
   whyAven: {
     headline: <>We start with the face, not the <em>units.</em></>,
     intro:
-      "A neuromodulator is an easy thing to sell. It is quick, it is popular, and there is always somewhere else on a face it could be used. AVEN is built the other way around: the first question is not how much you would like, but whether treatment is the right answer, and if so, where the least of it will do the most.",
-    considers: [
-      "How your face moves, at rest and in expression",
-      "Which lines are dynamic and which have settled",
-      "Facial balance rather than one isolated area",
-      "What you actually want to change",
-      "Previous treatment, where relevant",
-      "Whether treatment is warranted at all",
-    ],
+      "A neuromodulator is an easy thing to sell. It is quick, it is popular, and there is always somewhere else on a face it could be used. AVEN is built the other way around: the first question is not how much you would like, but whether treatment is the right answer at all.",
+    // The factor list that used to sit here duplicated `approach.considers` almost
+    // exactly — one item word-for-word. Philosophy belongs here; how the decision is
+    // actually made belongs in the next section.
     body:
-      "That means you will sometimes be told that an area does not need treating, or that something other than a neuromodulator would serve you better. Education comes before recommendation here, and a recommendation is not a sale.",
+      "So you will sometimes be told that an area does not need treating, or that something other than a neuromodulator would serve you better. Education comes before recommendation, and a recommendation is not a sale.",
     practitionerLine:
       "Every injection at AVEN is placed by Alaa Mashal, MSN, APRN, FNP-BC — a board-certified Family Nurse Practitioner and the only injector at the practice.",
   },
@@ -103,9 +98,12 @@ const botox = {
     body:
       "No unit count is quoted before your face has been assessed — a number given in advance is a guess with a price on it. An Aura skin analysis is part of every AVEN Assessment, and the fee is credited toward your treatment.",
   },
+  // Page-level extras only — every canonical fact (price, duration, Aura, written plan,
+  // credit) still comes from content/assessment-tiers.js. Trimmed to the one or two
+  // that are actually Botox-specific; the rest were restating the canonical lines.
   assessmentTiers: {
-    quickExtras: ["Facial movement assessment", "A clear first recommendation"],
-    comprehensiveExtras: ["Full facial analysis", "Medical review", "Long-term treatment planning"],
+    quickExtras: ["A clear first recommendation"],
+    comprehensiveExtras: ["Full facial analysis", "Long-term treatment planning"],
   },
 
   treats: {
@@ -139,7 +137,7 @@ const botox = {
     eyebrow: "Botox · Dysport · Xeomin",
     headline: "Three neuromodulators, one honest conversation.",
     intro:
-      "Botox, Dysport, and Xeomin are all FDA-approved botulinum toxin type A neuromodulators. They share the same fundamental mechanism — temporarily relaxing a targeted muscle so the skin above it smooths. The differences between them are subtle, and the right choice depends on your anatomy, your goals, and how your face moves. That is exactly what the AVEN Assessment is for.",
+      "All three are FDA-approved botulinum toxin type A neuromodulators and share the same mechanism. The differences between them are subtle, and the right choice depends on your face — which is what the Assessment is for.",
     items: [
       { name: "Botox®", note: "The most studied and widely recognized of the three. Precise and predictable — well suited to detailed, small-area work." },
       { name: "Dysport®", note: "Spreads slightly more from each point, which can suit broader areas such as the forehead. Some patients notice onset a day or two sooner." },
@@ -160,7 +158,7 @@ const botox = {
     eyebrow: "Safety & Candidacy",
     headline: <>What to know <em>first.</em></>,
     intro:
-      "Botulinum toxin has been used cosmetically for over two decades and is well studied. It is still a medical treatment, it carries risks, and it is not right for everyone — which is why your history is reviewed before anything is recommended. The following is drawn from the approved prescribing information.",
+      "Botulinum toxin is well studied, but it is a medical treatment: it carries risks and it is not right for everyone, which is why your history is reviewed before anything is recommended. The following is drawn from the approved prescribing information.",
     items: [
       { name: "Common after treatment", note: "Reactions at the injection site — tenderness, redness, swelling or bruising — can occur, and headache is among the most commonly reported effects. These are generally temporary." },
       { name: "Less common", note: "Temporary drooping of an eyelid or weakness in nearby muscles is a recognised effect of treatment around the brow and eye, and eye irritation has been reported with treatment near the outer eye." },
@@ -174,18 +172,15 @@ const botox = {
   },
 
   faqs: [
-    { q: "Is Botox safe?", a: "Botulinum toxin has been used cosmetically for over two decades and is well studied, but like any medical treatment it carries risks and is not appropriate for everyone. The Safety & Candidacy section above sets out the main points. At AVEN MED it is administered only by Alaa Mashal, MSN, APRN, FNP-BC, after a review of your anatomy and health history." },
-    { q: "Will Botox make me look frozen?", a: "That is the opposite of the goal here. Conservative dosing mapped to how your face moves is intended to soften a line while leaving surrounding expression intact — a rested version of your own face rather than a treated one. If you are worried about it, say so at your Assessment; it directly shapes the plan." },
-    { q: "Does Botox hurt?", a: "Very little. We use fine needles and precise placement; most patients describe a series of quick pinches. No numbing is usually needed, and you can return to your day right away." },
-    { q: "How soon will I see results?", a: "Movement begins to soften around three to five days after treatment, with the full effect visible at ten to fourteen days. We often re-assess at two weeks to confirm you are where you want to be." },
-    { q: "How long does Botox last?", a: "Commonly around three to four months, though it varies with the area treated, the dose, and how expressive the muscle is. We plan maintenance around your face rather than a fixed calendar." },
-    { q: "How does AVEN decide how much to use?", a: "By watching how your face actually moves before anything is drawn up — which muscles pull hardest, where a line is caused by movement and where it has settled, and what you want to change. The plan starts conservatively and is reviewed, rather than beginning with a number." },
+    { q: "Is Botox safe?", a: "It is well studied, but like any medical treatment it carries risks and is not appropriate for everyone — see Safety & Candidacy above. At AVEN MED it is administered only by Alaa Mashal, MSN, APRN, FNP-BC, after a review of your history." },
+    { q: "Will Botox make me look frozen?", a: "That is the opposite of the goal. Conservative dosing mapped to how your face moves is intended to soften a line while leaving surrounding expression intact. If it worries you, say so at your Assessment — it directly shapes the plan." },
+    { q: "Does Botox hurt?", a: "Very little — fine needles and precise placement; most patients describe a series of quick pinches. No numbing is usually needed." },
+    { q: "How soon will I see results?", a: "Movement begins to soften around three to five days, with the full effect at ten to fourteen days. We often re-assess at two weeks." },
+    { q: "How long does Botox last?", a: "Commonly around three to four months, though it varies with the area, the dose and how expressive the muscle is. Maintenance is planned around your face, not a fixed calendar." },
     { q: "What is preventative Botox?", a: "Preventative (or 'baby') Botox describes using small, conservative doses earlier, with the aim of softening lines caused by movement before they settle into the skin at rest. Whether it makes sense for you depends on your face and your goals, and that is a conversation to have at an Assessment rather than a default recommendation." },
     { q: "What is the difference between Botox and dermal fillers?", a: "Botox relaxes muscles to soften lines caused by movement. Fillers add volume to restore structure or plumpness. They solve different problems and are often used together in a considered plan." },
     { q: "How much does Botox cost in Orland Park?", a: "We do not publish per-unit pricing, because unit counts only make sense once your face has been assessed. Your personalized plan and pricing are quoted at your AVEN Assessment — and the assessment fee is credited toward your treatment." },
-    { q: "Who performs Botox at AVEN MED?", a: "Every treatment is performed by Alaa Mashal, MSN, APRN, FNP-BC — the founder and only injector at AVEN MED. You will always be treated by the same practitioner, visit after visit." },
     { q: "Do you treat patients outside of Orland Park?", a: "Yes. AVEN MED welcomes patients from across the Southwest suburbs, including Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, and New Lenox." },
-    { q: "How do I get started?", a: "Every plan begins with the AVEN Assessment — a focused Quick Assessment or a Comprehensive Assessment, both credited toward your treatment. It is the honest first step before any recommendation is made." },
   ],
 
   related: [

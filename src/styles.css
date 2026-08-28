@@ -1080,6 +1080,18 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .bridal-epigraph > * { margin-left: 0 !important; margin-right: 0 !important; }
 }
 
+/* Botox-prototype mobile density. Opt-in ONLY: `.split-list-tight` is emitted on the
+   editorial treatment path and on the page-scoped Safety section, so the seventeen
+   legacy treatment pages are untouched. Once these rows stack, roughly 44% of each
+   row's height is vertical padding — trimming it recovers real length without
+   shrinking type, crushing line-height or touching a global spacing token. Desktop
+   keeps the full editorial breathing room. */
+@media (max-width: 768px) {
+  .split-list-item.split-list-tight { padding-top: 20px !important; padding-bottom: 20px !important; }
+  /* Two tall stacked Assessment tiers do not need a 56px gutter between them. */
+  .tier-grid { gap: 34px !important; }
+}
+
 /* Two-column ruled lists (treatment pages: "What it treats", "Treatment Planning")
    carry their column divider and the 48px gutter between the two columns as inline
    styles on alternating items. The grid itself stacks to one column at ≤768 via the
