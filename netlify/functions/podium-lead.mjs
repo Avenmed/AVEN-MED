@@ -4,6 +4,10 @@
  * directly). ONE webhook serves every website lead source; `website_lead_source`
  * distinguishes them, per Jordan's confirmed contract.
  *
+ * Canonical source labels (owner-approved): "Website — Contact" and
+ * "Website — Bridal Journey". The older OAuth path's LEAD_SOURCE constant
+ * ("Bridal Journey") is a different integration and is deliberately left alone.
+ *
  * SECURITY: the Podium webhook URL lives only in the PODIUM_WEBHOOK_URL environment
  * variable, read server-side. It must never appear in the client bundle, the HTML, a
  * form action, a query string, analytics, or a log line.
@@ -42,7 +46,7 @@ const SOURCES = {
     fields: ["interest", "message"],
     choices: { interest: CONTACT_INTEREST },
   },
-  "Bridal Journey": {
+  "Website — Bridal Journey": {
     fields: ["wedding_date", "engagement_date", "consultation_timing", "preferred_appointment", "referral_source"],
     choices: {
       consultation_timing: BRIDAL_CONSULT_TIMING,
@@ -94,9 +98,12 @@ export const handler = async (event) => {
   if (!isEmail(email)) return json(400, { ok: false, error: "invalid_email" });
 
   /* Phone is Podium's primary dedup key, so it is normalized to one consistent
-   * representation before it ever leaves here. An unparseable or absent number sends
-   * an empty string — never a placeholder, never a fabricated number. */
-  const phone = normalizePhoneE164(str(body.phone, 40)) || "";
+   * representation before it ever leaves here, and — owner-approved — it is now
+   * REQUIRED for both live schemas: a lead Podium cannot dedupe reliably is worse
+   * than a lead we ask the visitor to correct. A number that will not normalize is
+   * rejected; one is never fabricated to satisfy the contract. */
+  const phone = normalizePhoneE164(str(body.phone, 40));
+  if (!phone) return json(400, { ok: false, error: "invalid_phone" });
 
   const payload = {
     location: LOCATION,
