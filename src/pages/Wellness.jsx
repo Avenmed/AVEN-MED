@@ -74,7 +74,7 @@ const WellnessPage = ({ navigate }) => {
               <Reveal key={p.n} delay={i * 90}>
                 <div style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
                   <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.24em" }}>{p.n}</div>
-                  <h4 className="display" style={{ fontSize: "clamp(22px, 1.7vw, 27px)", margin: "18px 0 12px", fontWeight: 400, letterSpacing: "-0.005em" }}>{p.k}</h4>
+                  <h3 className="display" style={{ fontSize: "clamp(22px, 1.7vw, 27px)", margin: "18px 0 12px", fontWeight: 400, letterSpacing: "-0.005em" }}>{p.k}</h3>
                   <p className="body-sm" style={{ margin: 0 }}>{p.b}</p>
                 </div>
               </Reveal>
@@ -224,7 +224,7 @@ const WellnessPage = ({ navigate }) => {
               <Reveal key={k} delay={i * 60}
                 style={{ borderTop: "1px solid var(--hairline)", paddingTop: 26 }}>
                 <div className="label" style={{ color: "var(--gold)", letterSpacing: "0.24em" }}>0{i + 1}</div>
-                <h4 className="display" style={{ fontSize: "clamp(24px, 1.9vw, 29px)", margin: "14px 0 10px", fontWeight: 400 }}>{k}</h4>
+                <h3 className="display" style={{ fontSize: "clamp(24px, 1.9vw, 29px)", margin: "14px 0 10px", fontWeight: 400 }}>{k}</h3>
                 <p className="body-sm" style={{ margin: 0 }}>{d}</p>
               </Reveal>
             ))}
