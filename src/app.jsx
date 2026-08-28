@@ -116,6 +116,33 @@ const useHistoryRoute = () => {
   return [route, navigate];
 };
 
+/* Wave 8 — SPA route-change focus.
+ *
+ * Client-side navigation swaps the page under the user but leaves keyboard and
+ * screen-reader focus wherever it was, so the next Tab continues from a control
+ * that no longer relates to what is on screen. This moves focus to the new
+ * page's <main> landmark after each route change, which puts a screen reader at
+ * the start of the new content and makes the next Tab land inside the page.
+ *
+ * Deliberately NOT on first paint — focusing main on initial load would steal
+ * focus from the document and is not what a fresh page visit should do. The
+ * landmark is given tabindex="-1" only for the moment it is focused, and the
+ * focus ring is suppressed because this is programmatic rather than a keyboard
+ * action; :focus-visible still applies normally to real Tab navigation. */
+const useRouteFocus = (route) => {
+  const first = React.useRef(true);
+  React.useEffect(() => {
+    if (first.current) { first.current = false; return; }
+    const main = document.querySelector("main");
+    if (!main) return;
+    main.setAttribute("tabindex", "-1");
+    main.style.outline = "none";
+    main.focus({ preventScroll: true });
+    const clear = () => { main.removeAttribute("tabindex"); main.style.outline = ""; };
+    main.addEventListener("blur", clear, { once: true });
+  }, [route]);
+};
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#9a7d4a",
   "bg": "#E9DDC8",
@@ -257,6 +284,8 @@ const App = () => {
       default: return NotFoundPage;
     }
   })();
+
+  useRouteFocus(route);
 
   const isHome = route === "/";
 

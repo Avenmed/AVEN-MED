@@ -153,6 +153,24 @@ const Header = ({ route, navigate }) => {
 
   return (
     <>
+      {/* Wave 8 — skip link. First keyboard stop on every route. Targets the page's
+          <main> landmark by query rather than a hard id, so it works on all 50+
+          routes without touching a single page file. */}
+      <a
+        className="skip-link"
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault();
+          const main = document.querySelector("main");
+          if (!main) return;
+          main.setAttribute("tabindex", "-1");
+          main.focus({ preventScroll: false });
+          main.scrollIntoView({ block: "start", behavior: "instant" });
+          main.addEventListener("blur", () => main.removeAttribute("tabindex"), { once: true });
+        }}
+      >
+        Skip to main content
+      </a>
       <header className={"hdr" + (scrolled ? " scrolled" : "")}>
         {/* Level 1 — a quiet utility strip: practice info only. */}
         <div className="hdr-utility">

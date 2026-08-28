@@ -15,7 +15,7 @@
      #A67C42) and it lifts button-hover text and the focus ring past 3:1 too. The
      lighter --gold-bright stays for DECORATIVE gold on DARK grounds (the intro
      splash) where a luminous brass reads better than a deep one. */
-  --gold: #7A5C30;
+  --gold: #74572D;          /* Wave 8: 4.31 -> 4.66 on --bg-1 (was failing AA at 11px). 4.98 on --bg. */
   --gold-bright: #B89058;
   --gold-soft: rgba(166, 124, 66, 0.55);
   --gold-line: rgba(154, 125, 74, 0.6);   /* brass hairline — box outlines + underlines */
@@ -27,7 +27,7 @@
   /* Warm ink — headlines + body text */
   --ivory: #2E2620;          /* primary text — warm ink */
   --ivory-soft: #4A3D2E;     /* secondary text — slightly softer warm ink */
-  --muted: #6B5D4A;          /* tertiary text — muted warm (Phase 8.5: 4.8:1 on --bg, was #7A6B58 @ 3.8:1) */
+  --muted: #685A48;          /* tertiary text — muted warm. Phase 8.5 took it from #7A6B58 (3.8:1); Wave 8 to #685A48 so it also clears AA on --bg-1 (4.45 -> 4.66). */
   --muted-2: #A39580;        /* softest text — DECORATIVE only (2.2:1); never on essential text */
 
   --serif: "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
@@ -135,7 +135,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--ivory);
   border: 1px solid var(--gold-soft);
   background: transparent;
-  transition: all 320ms cubic-bezier(.2,.7,.2,1);
+  /* Wave 8: was `transition: all`, which animated the focus outline — the ring
+     faded in over 320ms instead of appearing at once. Explicit properties only;
+     outline is deliberately excluded so :focus-visible is instantaneous. */
+  transition: color 320ms cubic-bezier(.2,.7,.2,1), border-color 320ms cubic-bezier(.2,.7,.2,1), background-color 320ms cubic-bezier(.2,.7,.2,1);
   position: relative;
   overflow: hidden;
 }
@@ -175,6 +178,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   width: 5px; height: 5px; border-right: 1px solid currentColor; border-top: 1px solid currentColor;
   transform: rotate(45deg);
 }
+
+/* ---------- Skip link (Wave 8) ----------
+   First keyboard stop on every page. Off-screen until focused, then rendered in
+   the house button language. Targets #main, which every route renders. */
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 10000;
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding: 0 20px;
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ivory); background: var(--bg);
+  border: 1px solid var(--gold-soft);
+  transition: top 160ms ease;
+}
+.skip-link:focus { top: 16px; }
 
 /* ---------- Layout ---------- */
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
@@ -1147,6 +1164,21 @@ img:not([loading]) { /* opt-in via Vite/JSX; CSS hint only */ }
   .link { padding: 8px 0 8px; min-height: 44px; }
   .btn { min-height: 44px; }
   .video-sound-toggle { width: 44px; height: 44px; }
+
+  /* Wave 8 — standalone controls measured under 44px at 393. Footer navigation
+     links rendered 19px tall, the contact/social links 21-24px, and the brand
+     link 36px. These are navigation controls rather than prose, so they take the
+     full target; inline links inside body copy are deliberately left alone. */
+  .ftr nav ul li a,
+  .ftr a[href^="mailto:"],
+  .ftr a[href^="tel:"],
+  .ftr a[target="_blank"] {
+    display: inline-flex; align-items: center;
+    min-height: 44px;
+  }
+  .brand { min-height: 44px; }
+  /* Native disclosure controls: FAQ summaries measured 35px. */
+  main details > summary { min-height: 44px; }
 
   /* Tighter section padding on mobile so pages aren't endless */
   .section { padding: clamp(36px, 9vw, 60px) 0 !important; }
