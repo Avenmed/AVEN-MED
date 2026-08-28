@@ -6,8 +6,8 @@ const skinTexture = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Skin Texture in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand rough, uneven, or dull skin texture — what drives it and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Skin Texture — Causes & Treatment Options | AVEN MED",
+    description: "Rough, uneven or dull texture has more than one cause. How AVEN MED in Orland Park works out which one you have before choosing a treatment.",
   },
   tags: ["texture", "pores", "skin-quality"],
   concernName: "Skin Texture",

@@ -6,8 +6,8 @@ const largePores = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Large Pores in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand what makes pores look larger — oil, sun damage, and loss of firmness — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Large Pores — Causes & Treatment Options | AVEN MED",
+    description: "Pores do not open and close, but they can look larger. What actually drives it, and the skin-quality treatments AVEN MED in Orland Park considers.",
   },
   tags: ["pores", "texture", "skin-quality", "oil"],
   concernName: "Large Pores",

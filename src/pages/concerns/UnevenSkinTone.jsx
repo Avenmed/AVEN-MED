@@ -6,8 +6,8 @@ const unevenSkinTone = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Uneven Skin Tone in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand uneven skin tone — redness, discoloration, and pigmentation — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Uneven Skin Tone — Causes & Options | AVEN MED",
+    description: "Redness, discoloration and pigmentation each behave differently. How AVEN MED in Orland Park identifies the cause before recommending a treatment.",
   },
   tags: ["tone", "pigment", "sun"],
   concernName: "Uneven Skin Tone",

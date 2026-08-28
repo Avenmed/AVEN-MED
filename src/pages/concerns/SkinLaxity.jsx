@@ -6,8 +6,8 @@ const skinLaxity = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Skin Laxity in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand skin laxity — why skin loosens with age — and the individualized options at AVEN MED in Orland Park, IL, with honest guidance on where non-surgical treatment helps. Every plan begins with the AVEN Assessment.",
+    title: "Skin Laxity — Causes & Treatment Options | AVEN MED",
+    description: "Where non-surgical treatment genuinely helps mild laxity and where it does not. Honest guidance from AVEN MED in Orland Park, including when to refer.",
   },
   tags: ["aging", "laxity", "structure"],
   concernName: "Skin Laxity",

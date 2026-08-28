@@ -6,8 +6,8 @@ const comprehensiveAssessment = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Comprehensive AVEN Assessment ($200) in Orland Park, IL | AVEN MED",
-    description: "The Comprehensive AVEN Assessment ($200, credited toward treatment) is an in-depth, up-to-60-minute consultation with Alaa Mashal, MSN, APRN, FNP-BC in Orland Park, IL — multiple concerns, full planning, and a written treatment roadmap you keep.",
+    title: "Comprehensive AVEN Assessment | AVEN MED Orland Park",
+    description: "An in-depth visit with Alaa Mashal, MSN, APRN, FNP-BC covering multiple concerns, full facial and skin planning, and a written plan that is yours to keep.",
   },
   tags: ["assessment", "comprehensive"],
   hub: { order: 30, blurb: "An in-depth visit with a written plan — multiple concerns, full planning. $200, credited toward treatment." },

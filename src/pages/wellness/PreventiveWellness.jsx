@@ -6,8 +6,8 @@ const preventiveWellness = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Preventive Wellness in Orland Park, IL — Proactive Care | AVEN MED",
-    description: "Preventive wellness in Orland Park, IL at AVEN MED — proactive, individualized guidance to understand your risk factors, build sustainable routines, and stay engaged with your health, coordinated with primary care.",
+    title: "Preventive Wellness in Orland Park | AVEN MED",
+    description: "Proactive, individualized guidance at AVEN MED in Orland Park — understanding your risk factors and building routines you will keep, alongside primary care.",
   },
   tags: ["prevention", "wellness", "longevity", "metabolic"],
   hub: { order: 45, blurb: "Proactive, individualized guidance to understand your risks and build sustainable routines." },

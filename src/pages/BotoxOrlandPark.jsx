@@ -18,7 +18,7 @@ const botox = {
   seo: {
     title: "Botox in Orland Park, IL — Natural Results | AVEN MED",
     description:
-      "Natural-looking Botox in Orland Park, IL. Conservative, anatomy-mapped dosing by Alaa Mashal, FNP-BC. Every plan begins with an AVEN Assessment.",
+      "Botox in Orland Park, IL — small, precisely placed doses mapped to how your face actually moves, so expression stays intact. By Alaa Mashal, FNP-BC.",
   },
   treatmentName: "Botox®",
   treatmentShort: "Botox",

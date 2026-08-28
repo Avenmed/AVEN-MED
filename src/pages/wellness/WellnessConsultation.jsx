@@ -7,8 +7,8 @@ const wellnessConsultation = {
   priority: 0.9,
   changefreq: "monthly",
   seo: {
-    title: "Wellness Consultation in Orland Park, IL — Where to Start | AVEN MED",
-    description: "A wellness consultation in Orland Park, IL at AVEN MED — a provider-led visit to review your goals, health history, and concerns, then map you to the right wellness service. Led by Alaa Mashal, MSN, APRN, FNP-BC. The considered way to begin.",
+    title: "Wellness Consultation in Orland Park | AVEN MED",
+    description: "A provider-led visit to review your goals, history and concerns, then map you to the right wellness service at AVEN MED — or tell you that you need none.",
   },
   tags: ["consultation", "wellness", "prevention"],
   hub: { order: 5, blurb: "Not sure where to start? A provider-led visit that maps your goals to the right wellness path." },

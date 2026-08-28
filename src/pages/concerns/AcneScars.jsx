@@ -6,8 +6,8 @@ const acneScars = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Acne Scars in Orland Park, IL — Causes & Treatment Options | AVEN MED",
-    description: "Understand acne scars — how they form, the different types, and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Acne Scars — Causes & Treatment Options | AVEN MED",
+    description: "Much of what people call acne scarring is flat marking that fades on its own. How AVEN MED in Orland Park tells the two apart before recommending anything.",
   },
   tags: ["acne", "scars", "texture"],
   concernName: "Acne Scars",

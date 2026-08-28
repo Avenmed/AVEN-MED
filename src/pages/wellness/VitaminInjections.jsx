@@ -6,8 +6,8 @@ const vitaminInjections = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Vitamin Injections in Orland Park, IL — B12 & More | AVEN MED",
-    description: "Vitamin injections in Orland Park, IL at AVEN MED — including B12 and lipotropic injections, selected for the right candidate and monitored by a practitioner. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
+    title: "Vitamin & B12 Injections in Orland Park | AVEN MED",
+    description: "B12 and other vitamin injections at AVEN MED in Orland Park, given where an evaluation shows a genuine need rather than offered to everyone who asks.",
   },
   tags: ["vitamins", "injections", "energy", "metabolic", "wellness"],
   serviceName: "Vitamin Injections",

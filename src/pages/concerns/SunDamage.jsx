@@ -6,8 +6,8 @@ const sunDamage = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Sun Damage in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand sun damage — sunspots, texture, and premature aging from UV exposure — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Sun Damage — Causes & Treatment Options | AVEN MED",
+    description: "Sunspots, texture change and premature aging from UV exposure. What AVEN MED in Orland Park can realistically improve, and why protection comes first.",
   },
   tags: ["sun", "pigment", "tone", "aging"],
   concernName: "Sun Damage",

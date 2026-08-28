@@ -12,8 +12,8 @@ const alaaMashal = {
   priority: 0.9,
   changefreq: "monthly",
   seo: {
-    title: "Meet Alaa Mashal, MSN, APRN, FNP-BC — Founder of AVEN MED",
-    description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of AVEN MED in Orland Park, IL. Honest, continuous, patient-centered care across aesthetics, wellness, and family medicine.",
+    title: "Alaa Mashal, MSN, APRN, FNP-BC | AVEN MED",
+    description: "Founder and Clinical Director of AVEN MED in Orland Park — a board-certified Family Nurse Practitioner and the practice's only injector.",
   },
   tags: ["provider", "founder"],
   hub: { order: 10, blurb: "Founder and clinical director of AVEN MED — board-certified Family Nurse Practitioner." },

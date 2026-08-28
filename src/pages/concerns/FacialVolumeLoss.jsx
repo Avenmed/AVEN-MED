@@ -6,8 +6,8 @@ const facialVolumeLoss = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Facial Volume Loss in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand facial volume loss — why the face deflates and flattens with age — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Facial Volume Loss — Causes & Options | AVEN MED",
+    description: "Why the face flattens and hollows over time, and how AVEN MED in Orland Park separates lost volume from loosened skin before suggesting a treatment.",
   },
   tags: ["aging", "volume", "structure"],
   concernName: "Facial Volume Loss",

@@ -29,7 +29,7 @@ const lipFillers = {
   seo: {
     title: "Lip Filler in Orland Park, IL — Natural Results | AVEN MED",
     description:
-      "Natural-looking lip filler in Orland Park, IL. Conservative, proportion-first planning by Alaa Mashal, FNP-BC. Every plan begins with an AVEN Assessment.",
+      "Lip filler in Orland Park, IL — proportion first, built gradually, and an honest no when filler is not what your lips need. By Alaa Mashal, FNP-BC.",
   },
   treatmentName: "Lip Filler",
   treatmentShort: "Lip Filler",

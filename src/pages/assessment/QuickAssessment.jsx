@@ -6,8 +6,8 @@ const quickAssessment = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Quick AVEN Assessment ($50) in Orland Park, IL | AVEN MED",
-    description: "The Quick AVEN Assessment ($50, credited toward treatment) is a focused consultation with Alaa Mashal, MSN, APRN, FNP-BC in Orland Park, IL — an expert first read and a clear recommendation. A fast, low-commitment first step.",
+    title: "Quick AVEN Assessment in Orland Park | AVEN MED",
+    description: "A focused first visit with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on what you raised, and one clear recommendation. The low-commitment way to start.",
   },
   tags: ["assessment", "quick"],
   hub: { order: 20, blurb: "A focused first step — an expert read and a clear recommendation. $50, credited toward treatment." },

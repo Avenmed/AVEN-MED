@@ -6,8 +6,8 @@ const assessmentFAQ = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "AVEN Assessment FAQ — Orland Park, IL | AVEN MED",
-    description: "Answers to common questions about the AVEN Assessment in Orland Park, IL — whether treatment is required, taking time to decide, bringing someone with you, discussing multiple concerns, wellness and family medicine, and AVEN's no-pressure philosophy.",
+    title: "AVEN Assessment — Questions Answered | AVEN MED",
+    description: "Whether treatment is required, taking time to decide, bringing someone, raising several concerns at once — the questions patients actually ask before booking.",
   },
   tags: ["assessment", "faq"],
   hub: { order: 50, blurb: "Straight answers to the questions patients ask most about the Assessment." },

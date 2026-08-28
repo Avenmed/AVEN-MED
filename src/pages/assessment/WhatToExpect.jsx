@@ -6,8 +6,8 @@ const whatToExpect = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "What to Expect at Your AVEN Assessment — Orland Park, IL | AVEN MED",
-    description: "What to expect at your AVEN Assessment in Orland Park, IL — from before your visit through meeting Alaa Mashal, MSN, APRN, FNP-BC, your consultation and evaluation, to leaving with a personalized plan. A calm, unhurried, no-pressure experience.",
+    title: "What to Expect at Your AVEN Assessment | AVEN MED",
+    description: "A walk through the visit at AVEN MED in Orland Park — before you arrive, meeting Alaa, the evaluation, and leaving with a plan. Unhurried, never a sales pitch.",
   },
   tags: ["assessment", "experience"],
   hub: { order: 40, blurb: "A step-by-step walkthrough of your visit — so you know exactly what to expect." },

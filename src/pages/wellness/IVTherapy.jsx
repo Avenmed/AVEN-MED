@@ -6,8 +6,8 @@ const ivTherapy = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "IV Therapy in Orland Park, IL — Custom Infusions | AVEN MED",
-    description: "IV therapy in Orland Park, IL at AVEN MED — custom-formulated infusions for hydration, recovery, energy, and wellness support, delivered under medical oversight. Led by Alaa Mashal, MSN, APRN, FNP-BC. Every plan begins with the AVEN Assessment.",
+    title: "IV Therapy in Orland Park | AVEN MED",
+    description: "Infusions selected individually and given under medical oversight at AVEN MED in Orland Park — considered where there is a real reason, not offered as a menu.",
   },
   tags: ["iv", "hydration", "recovery", "energy", "wellness"],
   serviceName: "IV Therapy",

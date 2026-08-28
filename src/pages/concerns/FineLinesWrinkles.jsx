@@ -6,8 +6,8 @@ const fineLinesWrinkles = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Fine Lines & Wrinkles in Orland Park, IL — Causes & Options | AVEN MED",
-    description: "Understand what causes fine lines and wrinkles — from muscle movement to collagen loss and sun exposure — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Fine Lines & Wrinkles — Causes & Options | AVEN MED",
+    description: "Lines made by movement behave differently from lines already settled into the skin. How AVEN MED in Orland Park tells them apart, and what each one needs.",
   },
   tags: ["aging", "wrinkles", "texture"],
   concernName: "Fine Lines & Wrinkles",

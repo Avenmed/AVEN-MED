@@ -17,26 +17,26 @@ const ROBOTS_NOINDEX = "noindex, follow";
 
 const DEFAULT = {
   title: "AVEN MED · Medical Spa & Family Medicine in Orland Park, IL",
-  description: "AVEN MED is a private medical spa in Orland Park, IL offering Botox, dermal fillers, Sculptra, microneedling, IV therapy, medical weight loss, and family medicine. Led by Alaa Mashal, MSN, APRN, FNP-BC.",
+  description: "A private practice in Orland Park, IL bringing aesthetics, wellness and family medicine under one clinician — Alaa Mashal, MSN, APRN, FNP-BC.",
 };
 
 const STATIC_ROUTE_SEO = {
   "/": DEFAULT,
   "/about": {
-    title: "About & Founder — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED",
-    description: "Meet Alaa Mashal, MSN, APRN, FNP-BC — founder and clinical director of AVEN MED in Orland Park, IL. A board-certified Family Nurse Practitioner and the only injector at the practice.",
+    title: "About AVEN MED & Alaa Mashal, FNP-BC | Orland Park",
+    description: "How AVEN MED was built and the thinking behind it — a practice led by Alaa Mashal, MSN, APRN, FNP-BC, where restraint is the point rather than the exception.",
   },
   "/concerns": {
-    title: "Patient Concerns — Causes & Treatment Options · AVEN MED, Orland Park IL",
-    description: "Explore common skin and aesthetic concerns and their causes, then plan individualized treatment through the AVEN Assessment at AVEN MED in Orland Park, IL.",
+    title: "Patient Concerns — Causes & Options | AVEN MED",
+    description: "Start from what is actually bothering you. Common skin and aesthetic concerns explained by AVEN MED in Orland Park, with the pathways each one may lead to.",
   },
   "/providers": {
-    title: "Meet Your Provider — Alaa Mashal, MSN, APRN, FNP-BC · AVEN MED",
-    description: "Meet the clinician behind AVEN MED in Orland Park, IL — Alaa Mashal, MSN, APRN, FNP-BC, founder and clinical director. Care here is personal and continuous: the provider who assesses you is the one who cares for you.",
+    title: "Meet Your Provider | AVEN MED, Orland Park IL",
+    description: "One clinician assesses you, treats you and reviews the result. Why continuity is the model at AVEN MED in Orland Park rather than a rotating list of injectors.",
   },
   "/aesthetics": {
-    title: "Botox, Fillers, Sculptra & Microneedling · AVEN MED, Orland Park IL",
-    description: "Botox, dermal fillers, Sculptra biostimulators, and microneedling in Orland Park, IL. Considered aesthetic treatments sequenced into pathways at AVEN MED, led by Alaa Mashal, MSN, APRN, FNP-BC.",
+    title: "Aesthetic Treatments in Orland Park, IL | AVEN MED",
+    description: "Botox, fillers, biostimulators, microneedling and skin treatments in Orland Park — sequenced into a plan rather than sold from a menu, by one injector.",
   },
   "/wellness": {
     title: "Wellness & IV Therapy · AVEN MED, Orland Park IL",
@@ -63,8 +63,8 @@ const STATIC_ROUTE_SEO = {
     description: "Notes from AVEN MED — perspectives on aesthetics, skin health, and wellness from a private Orland Park practice.",
   },
   "/education": {
-    title: "Education Center — Clinically Reviewed Guides · AVEN MED, Orland Park IL",
-    description: "The AVEN Education Center — clear, honest, clinically reviewed writing on aesthetics, skin health, wellness, and family medicine. Every article is reviewed by Alaa Mashal, MSN, APRN, FNP-BC before publication.",
+    title: "Education Center | AVEN MED, Orland Park IL",
+    description: "Clear, clinically reviewed writing on aesthetics, skin health and wellness from AVEN MED in Orland Park. Every article is reviewed before it is published.",
   },
 };
 

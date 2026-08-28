@@ -6,8 +6,8 @@ const nutritionMetabolicSupport = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Nutrition & Metabolic Support in Orland Park, IL | AVEN MED",
-    description: "Nutrition and metabolic support in Orland Park, IL at AVEN MED — practical, individualized nutrition and lifestyle guidance, integrated with medical weight loss and broader wellness. No fad diets, no rigid meal plans.",
+    title: "Nutrition & Metabolic Support | AVEN MED Orland Park",
+    description: "Practical, individualized nutrition and lifestyle guidance at AVEN MED in Orland Park, built around your wider care. No fad diets and no rigid meal plans.",
   },
   tags: ["nutrition", "metabolic", "weight", "wellness"],
   hub: { order: 47, blurb: "Practical, individualized nutrition and lifestyle guidance — integrated with your plan." },

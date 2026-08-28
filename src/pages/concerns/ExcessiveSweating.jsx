@@ -6,8 +6,8 @@ const excessiveSweating = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Excessive Sweating in Orland Park, IL — Hyperhidrosis Options | AVEN MED",
-    description: "Understand excessive sweating (hyperhidrosis) — why it happens and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Excessive Sweating — Causes & Options | AVEN MED",
+    description: "Sweating beyond what the body needs to cool itself. How AVEN MED in Orland Park assesses the pattern, considers other causes, and what may help.",
   },
   tags: ["sweating", "medical"],
   concernName: "Excessive Sweating",

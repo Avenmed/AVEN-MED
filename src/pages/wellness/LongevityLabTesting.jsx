@@ -6,8 +6,8 @@ const longevityLabTesting = {
   priority: 0.85,
   changefreq: "monthly",
   seo: {
-    title: "Longevity & Lab Testing in Orland Park, IL — Clinician-Guided | AVEN MED",
-    description: "Clinician-guided lab testing and interpretation in Orland Park, IL at AVEN MED — individualized bloodwork reviewed against your history, symptoms, and goals to help you understand your current health.",
+    title: "Lab Testing & Interpretation | AVEN MED Orland Park",
+    description: "Clinician-guided bloodwork read against your history, symptoms and goals at AVEN MED in Orland Park. No lifespan prediction and no anti-aging claims.",
   },
   tags: ["labs", "longevity", "prevention", "metabolic", "wellness"],
   hub: { order: 46, blurb: "Clinician-guided lab evaluation and interpretation to understand your current health." },

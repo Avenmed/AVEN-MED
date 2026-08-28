@@ -6,8 +6,8 @@ const acne = {
   priority: 0.8,
   changefreq: "monthly",
   seo: {
-    title: "Acne in Orland Park, IL — Causes & Treatment Options | AVEN MED",
-    description: "Understand acne — its drivers, patterns, and why it's a medical concern — and the individualized treatment options at AVEN MED in Orland Park, IL. Every plan begins with the AVEN Assessment.",
+    title: "Acne — Causes & Treatment Options | AVEN MED",
+    description: "Acne is a medical condition, not a skincare failure. How AVEN MED in Orland Park assesses type and severity, and what treatment realistically involves.",
   },
   tags: ["acne", "oil", "skin-quality"],
   concernName: "Acne",
