@@ -57,6 +57,14 @@
   to = "/.netlify/functions/podium-bridal-submit"
   status = 200
 
+# Website lead → Podium webhook (server-side; browser POSTs here). ONE endpoint for
+# every lead source — `website_lead_source` in the body distinguishes them. The Podium
+# webhook URL lives only in the PODIUM_WEBHOOK_URL env var, never in the bundle.
+[[redirects]]
+  from = "/api/podium/lead"
+  to = "/.netlify/functions/podium-lead"
+  status = 200
+
 # SPA fallback — every other clean route serves the app (History-API routing).
 # Existing static files in the publish dir (assets, robots.txt, sitemap.xml)
 # are served before this rule applies.
