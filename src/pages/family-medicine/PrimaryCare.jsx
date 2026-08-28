@@ -124,7 +124,7 @@ const primaryCare = {
       "A short list of your questions and concerns",
       "Relevant family medical history, if known",
     ],
-    note: "AVEN Family Medicine is a cash-pay practice. Contact AVEN MED for current visit pricing and scheduling.",
+    note: "Insurance participation is being established for AVEN Family Medicine, and coverage varies by plan. Contact AVEN MED to confirm what applies to you, and for current visit pricing and scheduling.",
   },
 
   crossLinksIntro:
@@ -148,7 +148,7 @@ const primaryCare = {
     { q: "What should I bring to my first visit?", a: "A photo ID, a current list of your medications and supplements with doses, your relevant medical history, any recent test results, your pharmacy information, and a short list of your questions. Family history is helpful if you know it." },
     { q: "Can you order and interpret labs?", a: "Yes, when it's clinically appropriate. We order relevant labs based on your needs and interpret the results in the context of your history, symptoms, and goals rather than in isolation." },
     { q: "How does primary care work with AVEN Wellness?", a: "They complement each other. Primary care is your medical home; wellness services like preventive wellness, nutrition, and lab testing can support your goals alongside it. Where it's clinically useful, we coordinate the two." },
-    { q: "How does payment work, and do you take insurance?", a: "AVEN Family Medicine is a cash-pay practice — you pay directly, without insurance billing. We don't publish visit pricing on the site; please contact AVEN MED for current pricing and scheduling." },
+    { q: "How does payment work, and do you take insurance?", a: "Insurance participation is being established for AVEN Family Medicine. Coverage and network participation vary from plan to plan, so please contact us to confirm what applies to you before your visit — and self-pay remains available either way. We don't publish visit pricing on the site; contact AVEN MED for current pricing and scheduling." },
     { q: "Do you see patients from outside Orland Park?", a: "Yes. AVEN MED welcomes patients from Tinley Park, Frankfort, Mokena, Palos Heights, Homer Glen, New Lenox, and across the Southwest suburbs." },
   ],
 

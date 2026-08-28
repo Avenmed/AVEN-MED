@@ -287,7 +287,7 @@ const WellnessPage = ({ navigate }) => {
             </Ph>
           </Reveal>
           <Reveal delay={140}>
-            <Eyebrow>Arriving 2027</Eyebrow>
+            <Eyebrow>In Development</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", margin: "16px 0 20px", maxWidth: "18ch" }}>
               Concierge <em>Wellness,</em><br />in its full form.
             </h2>

@@ -228,7 +228,10 @@ const FamilyMedicinePage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* 7 — HOW IT WORKS (cash-pay, owner-confirmed) */}
+      {/* 7 — HOW IT WORKS. Insurance participation is being established for Family
+          Medicine; the previous categorical "cash-pay, no insurance billing" claim is
+          retired. Do NOT state network status, name a payer, or promise coverage,
+          reimbursement, a copay or a deductible — none of that is established. */}
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start", maxWidth: 1080 }}>
           <Reveal>
@@ -236,12 +239,13 @@ const FamilyMedicinePage = ({ navigate }) => {
           </Reveal>
           <Reveal delay={120}>
             <h3 className="display" style={{ fontSize: "clamp(28px, 3vw, 44px)", margin: "0 0 24px", maxWidth: "26ch", fontWeight: 300 }}>
-              A <em>cash-pay</em> practice.
+              Payment and <em>insurance.</em>
             </h3>
             <p className="body" style={{ marginBottom: 22 }}>
-              AVEN family medicine is a cash-pay practice — you pay directly,
-              without insurance billing. The focus stays on a steady, continuous
-              relationship with your provider rather than paperwork and claims.
+              Insurance participation is being established for AVEN Family
+              Medicine. Coverage and network participation vary by plan, so
+              please contact us to confirm what applies to you before your
+              visit. Self-pay remains available either way.
             </p>
             <p className="body" style={{ color: "var(--ivory-soft)" }}>
               Contact AVEN MED for current visit pricing and scheduling.
