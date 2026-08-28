@@ -145,14 +145,13 @@ const lipFlip = {
     eyebrow: "Safety & Candidacy",
     headline: <>What to know <em>first.</em></>,
     intro:
-      "A lip flip is small, but it is still a prescription medical treatment, and it is not right for everyone. Your history is reviewed before anything is recommended. The points below are drawn from the approved prescribing information for botulinum toxin, together with AVEN's own practice policies.",
+      "A lip flip is small, but it is still a prescription medical treatment, and it is not right for everyone. Your history is reviewed before anything is recommended. The points below are drawn from the prescribing information for botulinum toxin, together with AVEN's own practice policies.",
     items: [
       { name: "Common after treatment", note: "Injection-site reactions — tenderness, redness, swelling or bruising — can occur, and headache is among the most commonly reported effects of botulinum toxin treatment. These are generally temporary." },
       { name: "Effects specific to the lip", note: "The muscle treated is the one that closes and shapes your mouth, so while the effect is present some people notice their lip feels different in use — forming certain sounds, drinking from a straw, or getting a firm lip seal. The dose is kept small precisely to limit this, and it resolves as the effect wears off." },
-      { name: "What the labeling does and doesn't cover", note: "A lip flip is not among the cosmetic uses in the approved labeling, so there is no labeled figure for how often lip-specific effects occur. We would rather tell you that than quote a number we cannot support." },
       { name: "When it should not be used", note: "Botulinum toxin is not given to anyone with a known hypersensitivity to a botulinum toxin preparation or to any ingredient in it, or where there is an infection at the intended injection site." },
       { name: "Tell us about", note: "Neuromuscular conditions — including myasthenia gravis and Lambert-Eaton syndrome — and other peripheral motor neuropathic or neuromuscular junction disorders warrant monitoring with botulinum toxin. Bring your medications, supplements and medical history; never stop a prescribed medication for an aesthetic treatment without speaking to the clinician who prescribed it." },
-      { name: "Age, pregnancy and breastfeeding", note: "AVEN treats adults 18 and over for aesthetic injectables, and does not perform elective aesthetic treatment during pregnancy or while breastfeeding. The labeling notes there are no adequate data in pregnancy and no data on whether it is present in human milk." },
+      { name: "Age, pregnancy and breastfeeding", note: "AVEN treats adults 18 and over for aesthetic injectables, and does not perform elective aesthetic treatment during pregnancy or while breastfeeding. There are no adequate data on use in pregnancy, and it is not known whether it passes into breast milk." },
       { name: "Effects are temporary", note: "The result fades gradually as muscle activity returns. It cannot be dissolved or switched off on request — unlike filler — which is exactly why the first dose is a conservative one." },
     ],
     closing:

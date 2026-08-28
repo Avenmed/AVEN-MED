@@ -148,15 +148,14 @@ const masseter = {
     eyebrow: "Safety & Candidacy",
     headline: <>What to know <em>first.</em></>,
     intro:
-      "This is a prescription medical treatment in a muscle you use to eat, and it is not right for everyone. Your history is reviewed before anything is recommended. The points below are drawn from the approved prescribing information for botulinum toxin, together with AVEN's own practice policies.",
+      "This is a prescription medical treatment in a muscle you use to eat, and it is not right for everyone. Your history is reviewed before anything is recommended. The points below are drawn from the prescribing information for botulinum toxin, together with AVEN's own practice policies.",
     items: [
       { name: "Common after treatment", note: "Injection-site reactions — tenderness, redness, swelling or bruising — can occur, and headache is among the most commonly reported effects of botulinum toxin treatment. These are generally temporary." },
       { name: "Effects specific to the jaw", note: "Because a working muscle is being relaxed, chewing can feel weaker or tire more easily with firm foods while the effect is present. The masseter also sits next to the muscles that lift the corner of the mouth, which is why placement is kept within its borders — a temporarily altered smile is the effect that careful placement exists to avoid." },
-      { name: "What the labeling does and doesn't cover", note: "Jaw slimming is not among the cosmetic uses in the approved labeling, so there is no labeled figure for how often jaw-specific effects occur. We would rather say that than quote a number we cannot support." },
       { name: "This is not TMJ treatment", note: "Softening the appearance of the lower face is a cosmetic goal. It does not treat a temporomandibular joint disorder, a bite problem or a dental cause, and it is not a substitute for dental assessment. If your concern is pain rather than shape, that is a different conversation." },
       { name: "When it should not be used", note: "Botulinum toxin is not given to anyone with a known hypersensitivity to a botulinum toxin preparation or to any ingredient in it, or where there is an infection at the intended injection site." },
       { name: "Tell us about", note: "Neuromuscular conditions — including myasthenia gravis and Lambert-Eaton syndrome — and other peripheral motor neuropathic or neuromuscular junction disorders warrant monitoring with botulinum toxin. Bring your medications, supplements and medical history; never stop a prescribed medication for an aesthetic treatment without speaking to the clinician who prescribed it." },
-      { name: "Age, pregnancy and breastfeeding", note: "AVEN treats adults 18 and over for aesthetic injectables, and does not perform elective aesthetic treatment during pregnancy or while breastfeeding. The labeling notes there are no adequate data in pregnancy and no data on whether it is present in human milk." },
+      { name: "Age, pregnancy and breastfeeding", note: "AVEN treats adults 18 and over for aesthetic injectables, and does not perform elective aesthetic treatment during pregnancy or while breastfeeding. There are no adequate data on use in pregnancy, and it is not known whether it passes into breast milk." },
       { name: "Effects are temporary", note: "Muscle activity returns gradually, and with it the original bulk if treatment stops. It cannot be switched off on request, which is why the first dose is conservative." },
     ],
     closing:
