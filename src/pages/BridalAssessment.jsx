@@ -76,7 +76,7 @@ function Field({ field, value, error, onChange }) {
     return (
       <div className="field" style={{ flexDirection: "row", alignItems: "flex-start", gap: 12 }}>
         <input type="checkbox" {...common} checked={value} onChange={(e) => onChange(e.target.checked)}
-          style={{ width: 20, height: 20, marginTop: 2, flexShrink: 0 }} required={field.required} />
+          style={{ width: 24, height: 24, marginTop: 2, flexShrink: 0 }} required={field.required} />
         <label htmlFor={field.id} style={{ textTransform: "none", letterSpacing: "normal", fontSize: 14, color: "var(--ivory-soft)", lineHeight: 1.6 }}>
           {field.label}{field.required && " *"}
         </label>
