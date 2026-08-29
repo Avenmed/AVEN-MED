@@ -217,13 +217,8 @@ const FamilyMedicinePage = ({ navigate }) => {
             <p className="body">
               A small-panel concierge practice is in development at AVEN — direct
               practitioner access, longer visits, and care held by one provider
-              who knows your file. Founding memberships will open by invitation.
+              who knows your file. It is not open to patients yet.
             </p>
-            <div style={{ marginTop: 36 }}>
-              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("/contact"); }} className="link">
-                <span>Join the founding list</span><span className="arrow"></span>
-              </a>
-            </div>
           </Reveal>
         </div>
       </section>
@@ -359,10 +354,15 @@ const FamilyMedicinePage = ({ navigate }) => {
               A medical home you can <em>return to.</em>
             </h2>
             <p className="body" style={{ margin: "0 auto 40px", maxWidth: "52ch" }}>
-              Begin with the AVEN Assessment — an honest first conversation with the
-              practitioner who will care for you.
+              Start with a conversation — your history, your goals, and what matters
+              to you — with the practitioner who will care for you.
             </p>
-            <AssessmentCTA navigate={navigate} />
+            {/* The page's primary conversion point is a Family Medicine action, not the
+                aesthetic Assessment. Same shared component, same /contact destination and
+                the same data-aven-cta tracking; only the label is discipline-appropriate,
+                matching the Primary Care page. /contact now carries a Family Medicine
+                interest option, so the lead reaches Podium correctly labelled. */}
+            <AssessmentCTA navigate={navigate} label="Schedule a Family Medicine Consult" />
           </Reveal>
         </div>
       </section>

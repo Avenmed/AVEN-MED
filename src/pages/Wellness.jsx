@@ -295,13 +295,8 @@ const WellnessPage = ({ navigate }) => {
               We are building a full concierge medical practice within
               AVEN — a small panel, direct practitioner access, and the same
               standard of restraint we bring to aesthetics. Founding
-              memberships will open by invitation.
+              memberships are not open.
             </p>
-            <div style={{ marginTop: 36 }}>
-              <a href="/memberships" onClick={(e) => { e.preventDefault(); navigate("/memberships"); }} className="link" data-aven-cta="membership">
-                <span>Join the founding list</span><span className="arrow"></span>
-              </a>
-            </div>
           </Reveal>
         </div>
       </section>

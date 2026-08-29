@@ -192,8 +192,9 @@ const ContactPage = ({ navigate }) => {
                     <option>Aesthetic Medicine Assessment</option>
                     <option>Wellness Assessment</option>
                     <option>Skin Assessment</option>
-                    <option>AVEN Essential membership</option>
-                    <option>AVEN Elevate (founding cohort)</option>
+                    <option>Family Medicine</option>
+                    <option>AVEN Maintenance membership</option>
+                    <option>AVEN Signature membership</option>
                     <option>Press · Other</option>
                   </select>
                 </div>
