@@ -269,14 +269,8 @@ const WellnessPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* PATIENT PHOTO PLACEHOLDER */}
-      <section style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
-        <div className="container">
-          <Reveal>
-            <Ph label="Patient · wellness environment" meta="natural light · 16:9 · awaiting final footage" aspect="16/9" />
-          </Reveal>
-        </div>
-      </section>
+      {/* Patient/environment photography slot not mounted — it rendered an empty clay
+          panel. Restore this section once approved AVEN footage exists. */}
 
       {/* FUTURE CONCIERGE */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
@@ -287,15 +281,16 @@ const WellnessPage = ({ navigate }) => {
             </Ph>
           </Reveal>
           <Reveal delay={140}>
-            <Eyebrow>In Development</Eyebrow>
+            <Eyebrow>The Wider Practice</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", margin: "16px 0 20px", maxWidth: "18ch" }}>
               Concierge <em>Wellness,</em><br />in its full form.
             </h2>
             <p className="body">
-              We are building a full concierge medical practice within
-              AVEN — a small panel, direct practitioner access, and the same
-              standard of restraint we bring to aesthetics. Founding
-              memberships are not open.
+              AVEN Wellness is built to extend into a full concierge practice — a
+              small panel, direct practitioner access, and the same restraint we
+              bring to aesthetics. That describes the direction of the practice
+              rather than something you can join today; the wellness care available
+              now is set out above, and it stands on its own.
             </p>
           </Reveal>
         </div>

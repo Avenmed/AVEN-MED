@@ -166,8 +166,8 @@ const FamilyMedicinePage = ({ navigate }) => {
                 Where to <em>begin.</em>
               </h2>
               <p className="body" style={{ marginBottom: 56, maxWidth: "58ch" }}>
-                Relationship-based primary care, with more of the family-medicine
-                practice arriving over time. Step into the detailed page to learn how it works.
+                Relationship-based primary care — evidence-based, continuous, and
+                coordinated. Step into the detailed page to learn how it works.
               </p>
             </Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
@@ -201,7 +201,8 @@ const FamilyMedicinePage = ({ navigate }) => {
         </section>
       )}
 
-      {/* 6 — CONCIERGE — coming soon (editorial teaser, unchanged in scope) */}
+      {/* 6 — CONCIERGE. Describes the direction of the practice, never availability.
+          No status eyebrow, no waitlist, no founding list, no enrolment path. */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 96, alignItems: "center" }}>
           <Reveal>
@@ -210,14 +211,16 @@ const FamilyMedicinePage = ({ navigate }) => {
             </Ph>
           </Reveal>
           <Reveal delay={140}>
-            <Eyebrow>· Coming Soon</Eyebrow>
+            <Eyebrow>· The Wider Practice</Eyebrow>
             <h2 className="display" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", margin: "16px 0 20px", maxWidth: "18ch" }}>
               AVEN <em>Concierge</em><br />Family Medicine.
             </h2>
             <p className="body">
-              A small-panel concierge practice is in development at AVEN — direct
-              practitioner access, longer visits, and care held by one provider
-              who knows your file. It is not open to patients yet.
+              The same primary care, held closer still — a small panel, direct
+              practitioner access, and longer visits with the provider who already
+              knows your file. That describes where AVEN Family Medicine is
+              heading rather than something you can join today. Primary care
+              itself is open now.
             </p>
           </Reveal>
         </div>

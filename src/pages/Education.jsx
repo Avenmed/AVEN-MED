@@ -83,7 +83,11 @@ const EducationPage = ({ navigate }) => {
         </div>
       </section>
 
-      {/* 3 — SEARCH + FILTER */}
+      {/* 3 — SEARCH + FILTER. Mounted only once there is something to search: a
+          search box and nine topic filters over an empty library is a dead control,
+          not restraint. Gated on the existing hasAnyArticles flag, so it returns by
+          itself the moment the first article publishes. */}
+      {hasAnyArticles && (
       <section className="section">
         <div className="container">
           <Reveal>
@@ -122,6 +126,7 @@ const EducationPage = ({ navigate }) => {
           )}
         </div>
       </section>
+      )}
 
       {/* 4 — BROWSE BY TOPIC (registry-derived categories) */}
       <section className="section" style={{ background: "var(--bg-1)" }}>
@@ -177,11 +182,6 @@ const EducationPage = ({ navigate }) => {
               <a href={CLINICAL_REVIEWER.profilePath} onClick={(e) => { e.preventDefault(); navigate(CLINICAL_REVIEWER.profilePath); }} style={{ color: "var(--gold)" }}>{CLINICAL_REVIEWER.name}</a>,
               {" "}{CLINICAL_REVIEWER.role}. That's the difference between health content and honest medical education.
             </p>
-            {!hasAnyArticles && (
-              <p className="body-sm" style={{ color: "var(--muted)", fontStyle: "italic", marginTop: 12 }}>
-                The library is being built — the first reviewed articles are on their way.
-              </p>
-            )}
           </Reveal>
         </div>
       </section>

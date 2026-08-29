@@ -65,6 +65,49 @@
   to = "/.netlify/functions/podium-lead"
   status = 200
 
+# ---------------------------------------------------------------------------
+# Retired legacy service routes (Wave 11 content completion).
+#
+# /service/<slug> predated the current registry-driven pages. Five slugs were
+# still LIVE, index/follow and self-canonical while being thin, duplicated by a
+# real page, absent from the sitemap and linked from nowhere. Each is retired to
+# its canonical current equivalent, resolved from the content registry — never
+# guessed. These MUST stay above the SPA fallback so the request is redirected at
+# the edge and the legacy URL never renders an independent indexable document.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/service/lip-filler"
+  to = "/lip-fillers-orland-park"
+  status = 301
+
+[[redirects]]
+  from = "/service/neuromodulators"
+  to = "/botox-orland-park"
+  status = 301
+
+[[redirects]]
+  from = "/service/microneedling"
+  to = "/skinpen-microneedling-orland-park"
+  status = 301
+
+[[redirects]]
+  from = "/service/sculptra"
+  to = "/sculptra-orland-park"
+  status = 301
+
+[[redirects]]
+  from = "/service/iv-therapy"
+  to = "/wellness/iv-therapy"
+  status = 301
+
+# Any other /service/* path is a legacy shape with no current equivalent — send it
+# to the Aesthetics hub rather than letting the SPA render a thin legacy page.
+[[redirects]]
+  from = "/service/*"
+  to = "/aesthetics"
+  status = 301
+
 # SPA fallback — every other clean route serves the app (History-API routing).
 # Existing static files in the publish dir (assets, robots.txt, sitemap.xml)
 # are served before this rule applies.

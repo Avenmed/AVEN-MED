@@ -80,7 +80,9 @@ const alaaMashal = {
       { name: "Education & Certification", note: "Master of Science in Nursing (MSN); Advanced Practice Registered Nurse (APRN); board-certified Family Nurse Practitioner (FNP-BC)." },
       { name: "Role at AVEN", note: "Founder and clinical director; AVEN's only injector." },
     ],
-    note: "Full details of Alaa's education, licensure, and additional certifications are being finalized and will be published here soon — and you're always welcome to ask about them at your visit.",
+    // No promise of future publication: only what is verified today, plus the
+    // standing invitation. Do not add credentials that are not published above.
+    note: "You're always welcome to ask about Alaa's training and licensure at your visit.",
   },
 
   consultationApproach: {

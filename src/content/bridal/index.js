@@ -52,14 +52,23 @@ export const BRIDAL_LIFECYCLE_STAGES = [
 // Labels + date ranges are the program's approved stage structure. monthsMin/
 // monthsMax bound each window (in months before the wedding) purely for factual
 // date math in the timeline builder — NOT a medical schedule. Everything else is
-// a placeholder to be replaced with provider-approved guidance. relatedServices/
-// relatedArticles hold registry slugs only (empty until approved).
+// PLANNING-LEVEL guidance only: each stage explains how planning changes as the
+// date approaches. It states no treatment calendar, no cutoff date, no protocol
+// and no recovery promise — every clinical decision stays with Alaa at the
+// Assessment. `safetyNote` and `consultationGuidance` remain placeholders (they
+// render nothing) because they would require clinical specifics AVEN has not
+// approved. relatedServices/relatedArticles hold registry slugs only (empty
+// until approved).
 export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "12-plus-months", label: "12+ months before", range: "12+ months before",
     monthsMin: 12, monthsMax: Infinity,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "The advantage this far out is simple: nothing has to be rushed, and nothing has to be combined. The approaches that work gradually — collagen-led treatment, a resurfacing series, the daily routine that takes longest to show — are only genuinely on the table when there is a year to give them.",
+    goals: [
+      "Begin with an AVEN Assessment, so the plan is built from your face rather than from a date.",
+      "Settle the daily part first — skincare is the slowest thing to show and the easiest thing to start.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -68,8 +77,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "9-12-months", label: "9–12 months before", range: "9–12 months before",
     monthsMin: 9, monthsMax: 12,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "This is where a course begins rather than finishes. Anything that works as a series is started here so there is room to watch how your skin actually responds between sessions instead of compressing them.",
+    goals: [
+      "Start any planned course now, while the gaps between sessions can stay comfortable.",
+      "Record where you are starting from — photographs at the beginning earn their place later.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -78,8 +91,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "6-9-months", label: "6–9 months before", range: "6–9 months before",
     monthsMin: 6, monthsMax: 9,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "The reviewing stage. The first results are readable now, so the plan is adjusted to how your skin answered rather than how it was expected to. This is also the last stretch where introducing something new is comfortable rather than tight.",
+    goals: [
+      "Review what has actually changed, and adjust the plan to the evidence.",
+      "If something new belongs in the plan, this is the unhurried moment to add it.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -88,8 +105,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "3-6-months", label: "3–6 months before", range: "3–6 months before",
     monthsMin: 3, monthsMax: 6,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "The plan narrows. Attention moves to what is already working rather than to what else could be added — not because adding is unsafe, but because there is progressively less room to see how you respond and to change course if you would rather.",
+    goals: [
+      "Consolidate: refine what is working instead of widening the plan.",
+      "Keep maintenance predictable so nothing needs catching up later.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -98,8 +119,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "1-3-months", label: "1–3 months before", range: "1–3 months before",
     monthsMin: 1, monthsMax: 3,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "Conservative by design. Anything in this window is best kept to treatment your face has already met, where both you and Alaa know how you respond. A first-ever treatment this close is discouraged as a matter of planning — you would be learning your response and preparing for a wedding at the same time.",
+    goals: [
+      "Stay with the familiar — repeat what has already been assessed on you.",
+      "Leave room for anything to settle, and for a review if you want one.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -108,8 +133,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "wedding-month", label: "Wedding month", range: "The wedding month",
     monthsMin: 0.25, monthsMax: 1,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "The plan stops advancing and starts being protected. This month is about steadiness — keeping the routine you have built and letting everything that was done earlier read as your own skin rather than as recent treatment.",
+    goals: [
+      "Hold the routine steady rather than changing it.",
+      "Raise anything on your mind now, while there is still time to talk it through.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -118,8 +147,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "wedding-week", label: "Wedding week", range: "The wedding week",
     monthsMin: 0, monthsMax: 0.25,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "This week belongs to rest and routine rather than to planning. AVEN deliberately does not prescribe from a page what can or cannot happen in the final days — that is a clinical judgment Alaa makes with you, and the right time to raise it is at your Assessment rather than in the week itself.",
+    goals: [
+      "Keep to the routine your skin already knows.",
+      "Anything you are unsure about is a conversation with Alaa, not a decision made from a website.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -128,8 +161,12 @@ export const BRIDAL_TIMELINE_STAGES = [
   {
     id: "after-wedding", label: "After the wedding", range: "After the wedding",
     monthsMin: -Infinity, monthsMax: 0,
-    intro: PLACEHOLDER,
-    goals: [PLACEHOLDER, PLACEHOLDER],
+    intro:
+      "The date stops driving. Care returns to the long arc it was always meant to follow — maintenance planned around your face rather than around a calendar, and anything deliberately deferred can now be considered properly.",
+    goals: [
+      "Return to maintenance at a rhythm set by your face, not by a date.",
+      "Revisit anything that was set aside, with the time it deserves.",
+    ],
     relatedServices: [], relatedArticles: [],
     consultationGuidance: PLACEHOLDER,
     safetyNote: "[Placeholder — timing/safety guidance to be provided by the clinical team]",
@@ -186,7 +223,7 @@ export const BRIDAL_FAQS = [
   { q: "Do I need to know which treatments I want?", a: "No. You don't need a list beforehand; the Assessment is where goals and options are discussed." },
   { q: "What happens during the Bridal Assessment?", a: "It's a consultation-first conversation about your goals, timing, and questions — no obligation to proceed." },
   { q: "Can I start if my wedding is only a few months away?", a: "You're welcome to begin at any point before your date; what's appropriate is determined at your consultation." },
-  { q: "Can members of my wedding party participate?", a: "Additional wedding-related journeys are planned. Please ask at your Assessment." },
+  { q: "Can members of my wedding party participate?", a: "Anyone is welcome to begin with their own AVEN Assessment — care is always individual, so each person is assessed and planned for on their own terms. Ask at your Assessment and we will help you think it through." },
   { q: "Are treatment results guaranteed?", a: "No. AVEN does not guarantee outcomes; care is individualized and discussed honestly at consultation." },
   { q: "Can treatments be performed immediately before the wedding?", a: "Timing is a clinical decision made with your provider and is not something this page prescribes." },
   { q: "Is every treatment appropriate for every patient?", a: "No. Appropriateness is always individual and is determined during the AVEN Assessment." },
@@ -280,14 +317,15 @@ export const BRIDAL_ROUTE_SEO = {
 export const BRIDAL_PATIENT_JOURNEY = {
   eyebrow: "Your AVEN Bridal Experience",
   title: PLACEHOLDER,
-  introduction: PLACEHOLDER,
+  introduction:
+    "From the first conversation to long after the day itself, this is the shape the relationship takes.",
   steps: [
-    { id: "assessment", order: 1, title: "Begin Your Bridal Assessment", description: PLACEHOLDER, icon: "", ctaLabel: "Begin Your Bridal Journey", ctaDestination: "/bridal-journey/assessment", enabled: true },
-    { id: "meet-provider", order: 2, title: "Meet With Your Provider", description: PLACEHOLDER, icon: "", ctaLabel: "Meet Your Provider", ctaDestination: "/providers", enabled: true },
-    { id: "personalized-plan", order: 3, title: "Receive Your Personalized Plan", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
-    { id: "begin-journey", order: 4, title: "Begin Your Journey", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
-    { id: "prepare-wedding", order: 5, title: "Prepare for the Wedding", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
-    { id: "maintenance", order: 6, title: "Continue With Long-Term Maintenance", description: PLACEHOLDER, icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "assessment", order: 1, title: "Begin Your Bridal Assessment", description: "Everything starts with a conversation rather than a treatment. You share your date and what is on your mind; Alaa listens first.", icon: "", ctaLabel: "Begin Your Bridal Journey", ctaDestination: "/bridal-journey/assessment", enabled: true },
+    { id: "meet-provider", order: 2, title: "Meet With Your Provider", description: "You meet the clinician who will actually care for you. The person who assesses you is the person who treats you, at every visit.", icon: "", ctaLabel: "Meet Your Provider", ctaDestination: "/providers", enabled: true },
+    { id: "personalized-plan", order: 3, title: "Receive Your Personalized Plan", description: "You leave with a plan built around your face, your goals and the time you have — not a package, and not a template.", icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "begin-journey", order: 4, title: "Begin Your Journey", description: "Care begins at a pace that leaves room to see how you respond, and to adjust before anything is repeated.", icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "prepare-wedding", order: 5, title: "Prepare for the Wedding", description: "As the date comes closer the plan gets more conservative on purpose, so nothing is still settling when it matters.", icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
+    { id: "maintenance", order: 6, title: "Continue With Long-Term Maintenance", description: "After the wedding, care carries on at a rhythm set by your face rather than by a date.", icon: "", ctaLabel: "", ctaDestination: "", enabled: true },
   ],
 };
 

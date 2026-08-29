@@ -71,8 +71,10 @@ export function BridalHero({ hero, navigate }) {
               <span>{hero.secondaryCtaLabel}</span><span className="arrow"></span>
             </a>
           </div>
-          {/* Bridal photography / video slot — placeholder */}
-          <Ph label="Bridal editorial · 16:9 · placeholder" meta="soft natural light · placeholder" aspect="16/9" style={{ marginTop: 16 }} />
+          {/* Bridal photography/video slot intentionally absent until approved AVEN
+              imagery exists. It rendered an empty clay panel — a visibly unfinished
+              surface — so the slot is not mounted at all rather than mounted empty.
+              Restore by placing a <Ph aspect="16/9"><Video src="…" /></Ph> here. */}
         </Reveal>
       </div>
     </section>
@@ -136,10 +138,11 @@ export function BridalTimelineStage({ stage, navigate }) {
           <p className="body" style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 8 }}>{stage.intro}</p>
         )}
         <BridalGoalsGrid goals={stage.goals} />
-        {/* Related services / articles resolve from the registry once approved */}
-        <p className="body-sm" style={{ color: "var(--muted)", marginTop: 16 }}>
-          Services and reading for this stage are curated with your provider at the AVEN Assessment.
-        </p>
+        {/* This used to print one identical sentence in every stage, which made all
+            eight read the same. Each stage now carries its own intro and goals; the
+            section-level disclaimer above already says the plan is set at the
+            Assessment. Related services/articles still resolve from the registry
+            once approved. */}
         {!isPlaceholder(stage.safetyNote) && (
           <p className="body-sm" style={{ color: "var(--muted)", marginTop: 8 }}>
             <strong style={{ color: "var(--ivory-soft)" }}>Timing &amp; safety:</strong> {stage.safetyNote}

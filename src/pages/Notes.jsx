@@ -64,10 +64,10 @@ const NotesPage = ({ navigate }) => {
       {NOTES.map((note, idx) => (
         <section key={note.slug} id={note.slug} className="section" style={{ paddingTop: idx === 0 ? 0 : 48, paddingBottom: 64, borderTop: idx === 0 ? "none" : "1px solid var(--hairline)" }}>
           <div className="container" style={{ maxWidth: 820 }}>
-            <Reveal>
-              <Ph label={note.image} meta="ivory · medium format · natural light" aspect="16/9" />
-            </Reveal>
-            <Reveal delay={100} style={{ marginTop: 56, textAlign: "center" }}>
+            {/* Editorial image slot intentionally not mounted — it rendered an empty
+                clay panel above every note. `note.image` is kept as the art direction
+                for the eventual shoot; restore with <Ph label={note.image} …/> here. */}
+            <Reveal delay={100} style={{ textAlign: "center" }}>
               <Eyebrow>Field Note · 0{idx + 1}</Eyebrow>
               <h2 className="display italic" style={{ fontSize: "clamp(40px, 5.4vw, 72px)", margin: "24px auto 12px", lineHeight: 1.05, maxWidth: "14ch", fontWeight: 300 }}>
                 {note.title}
@@ -93,10 +93,7 @@ const NotesPage = ({ navigate }) => {
       <section className="section" style={{ textAlign: "center", paddingTop: 40, paddingBottom: 64 }}>
         <div className="container">
           <Reveal>
-            <Logo size={28} style={{ margin: "0 auto 24px", opacity: 0.85 }} />
-            <p className="display italic" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", color: "var(--muted)", maxWidth: "26ch", margin: "0 auto 36px" }}>
-              The next note arrives soon.
-            </p>
+            <Logo size={28} style={{ margin: "0 auto 36px", opacity: 0.85 }} />
             <AssessmentCTA navigate={navigate} className="link" to="/assessment" />
           </Reveal>
         </div>

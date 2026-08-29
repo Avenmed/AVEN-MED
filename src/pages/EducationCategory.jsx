@@ -73,9 +73,10 @@ const EducationCategoryPage = ({ category: slug, navigate }) => {
             <Reveal>
               <div style={{ padding: "56px 40px", border: "1px solid var(--hairline)", background: "var(--surface)", textAlign: "center", maxWidth: 680, margin: "0 auto" }}>
                 <Logo size={34} style={{ margin: "0 auto 22px", opacity: 0.8 }} />
-                <h2 className="display" style={{ fontSize: "clamp(24px, 3vw, 34px)", fontWeight: 300, margin: "0 0 14px" }}>Articles are on the way</h2>
+                {/* No promise of forthcoming articles. Point at what genuinely exists. */}
+                <h2 className="display" style={{ fontSize: "clamp(24px, 3vw, 34px)", fontWeight: 300, margin: "0 0 14px" }}>Explore {category.label.toLowerCase()} at AVEN</h2>
                 <p className="body" style={{ margin: "0 auto", maxWidth: "48ch", color: "var(--muted)" }}>
-                  We're preparing clinically reviewed writing on {category.label.toLowerCase()}. In the meantime, explore the topic with our team directly.
+                  The clearest picture of how AVEN approaches {category.label.toLowerCase()} is the practice itself — the pages below, and the conversation at your Assessment.
                 </p>
               </div>
             </Reveal>

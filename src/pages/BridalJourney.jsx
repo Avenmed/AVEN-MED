@@ -19,7 +19,7 @@ import { getBridalJourney } from '../content/bridal/index.js';
 import {
   useJsonLd, BridalHero, BridalIntroduction, BridalJourneyTimeline, BridalPatientJourney,
   BridalTimelineBuilder, BridalServiceConnections, BridalEducationLinks, BridalResources,
-  BridalFAQSection, BridalGalleryPlaceholder, BridalTestimonialPlaceholder, BridalFinalCTA,
+  BridalFAQSection, BridalTestimonialPlaceholder, BridalFinalCTA,
 } from './bridal/BridalComponents.jsx';
 import { BRIDAL_TIMELINE_BUILDER } from '../content/bridal/index.js';
 
@@ -108,10 +108,18 @@ const BridalJourneyPage = ({ navigate }) => {
       <BridalPatientJourney patientJourney={journey.patientJourney} navigate={navigate} />
       <BridalTimelineBuilder builder={BRIDAL_TIMELINE_BUILDER} navigate={navigate} />
       <BridalServiceConnections serviceLinks={serviceLinks} navigate={navigate} />
-      <BridalEducationLinks refs={journey.relatedArticles} navigate={navigate} />
+      {/* Bridal Education renders ONLY published articles. The ten planned topics
+          stay in the registry (BRIDAL_EDUCATION_REFS) — they simply do not render
+          as disabled "Soon" cards while unwritten. BridalEducationLinks returns
+          null on an empty list, so the section restores itself the moment a topic
+          flips to status:"published". */}
+      <BridalEducationLinks refs={(journey.relatedArticles || []).filter((a) => a.status === "published")} navigate={navigate} />
       {/* Future materials — renders nothing until a resource is enabled with a destination */}
       <BridalResources resources={journey.resources} navigate={navigate} />
-      <BridalGalleryPlaceholder />
+      {/* Gallery not mounted: it rendered three empty placeholder boxes and
+          "A gallery, in time." BridalGalleryPlaceholder is still exported — restore
+          by re-adding <BridalGalleryPlaceholder /> here once approved AVEN bridal
+          photography exists. No stock or generated imagery. */}
       <BridalTestimonialPlaceholder />
       <BridalFAQSection faqs={journey.faqs} />
 
