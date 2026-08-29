@@ -31,8 +31,9 @@ const CONTACT_INTEREST = [
   "Aesthetic Medicine Assessment",
   "Wellness Assessment",
   "Skin Assessment",
-  "AVEN Essential membership",
-  "AVEN Elevate (founding cohort)",
+  "Family Medicine",
+  "AVEN Maintenance membership",
+  "AVEN Signature membership",
   "Press · Other",
 ];
 const BRIDAL_CONSULT_TIMING = ["As soon as possible", "Within 1 month", "1–3 months", "Just exploring for now"];
