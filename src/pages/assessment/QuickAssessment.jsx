@@ -1,5 +1,12 @@
-/* AVEN MED — Assessment: Quick AVEN Assessment. Registry data module. */
+/* AVEN MED — Assessment: Quick AVEN Assessment. Registry data module.
+ *
+ * The fee facts come from content/assessment-tiers.js, which is canonical. The
+ * Quick price is a STARTING POINT ("From $50"), not a flat fee — this page used
+ * to carry its own "$50" literals and so contradicted /assessment and the 36
+ * service templates that already read the prefix from the tier object. Do not
+ * reintroduce a bare price literal here. */
 import React from 'react';
+import { QUICK_ASSESSMENT } from '../../content/assessment-tiers.js';
 
 const quickAssessment = {
   slug: "assessment/quick-assessment",
@@ -10,7 +17,7 @@ const quickAssessment = {
     description: "A focused first visit with Alaa Mashal, MSN, APRN, FNP-BC — an expert read on what you raised, and one clear recommendation. The low-commitment way to start.",
   },
   tags: ["assessment", "quick"],
-  hub: { order: 20, blurb: "A focused first step — an expert read and a clear recommendation. $50, credited toward treatment." },
+  hub: { order: 20, blurb: `A focused first step — an expert read and a clear recommendation. ${QUICK_ASSESSMENT.pricePrefix} ${QUICK_ASSESSMENT.price}, credited toward treatment.` },
   serviceName: "Quick AVEN Assessment",
   serviceShort: "The Quick Assessment",
   breadcrumbName: "Quick Assessment",
@@ -36,9 +43,10 @@ const quickAssessment = {
   },
 
   priceCallout: {
-    price: "$50",
-    unit: "focused visit",
-    note: "The $50 is credited toward your treatment, so nothing is wasted — it moves with you into your care.",
+    pricePrefix: QUICK_ASSESSMENT.pricePrefix,
+    price: QUICK_ASSESSMENT.price,
+    unit: QUICK_ASSESSMENT.durationNote,
+    note: `${QUICK_ASSESSMENT.creditInclusion}, so nothing is wasted — it moves with you into your care.`,
   },
 
   whoFor: {
@@ -61,7 +69,7 @@ const quickAssessment = {
       "An Aura skin analysis — an expert read on your skin",
       "A clear first recommendation and next step",
       "Honest, no-pressure guidance",
-      "The $50 credited toward your treatment",
+      QUICK_ASSESSMENT.creditInclusion,
     ],
   },
 
@@ -85,7 +93,7 @@ const quickAssessment = {
 
   faqs: [
     { q: "What is the Quick Assessment?", a: "It's a short, focused consultation with Alaa Mashal, MSN, APRN, FNP-BC, including an Aura skin analysis and a clear first recommendation. It's an easy, low-commitment way to get an expert opinion and understand your options." },
-    { q: "How much is it, and is it credited?", a: "The Quick AVEN Assessment is $50, and that fee is credited toward your treatment — so if you move forward, nothing is wasted. It moves with you into your care." },
+    { q: "How much is it, and is it credited?", a: `The Quick AVEN Assessment starts at ${QUICK_ASSESSMENT.price}, and that fee is credited toward your treatment — so if you move forward, nothing is wasted. It moves with you into your care.` },
     { q: "When does a Quick Assessment make sense?", a: "It's ideal when you're exploring, have a single concern, want a fast professional read, or are short on time. For multiple concerns or long-term planning, the Comprehensive Assessment is a better fit." },
     { q: "How is it different from the Comprehensive Assessment?", a: "The Quick Assessment is a focused first read; the Comprehensive AVEN Assessment is a longer, in-depth visit (up to 60 minutes) for multiple concerns, full planning, and a written roadmap you keep. Both are credited toward treatment." },
     { q: "Do I have to book treatment afterward?", a: "No. There's no obligation and no pressure. You're welcome to take your recommendation, think it over, and decide in your own time." },

@@ -172,6 +172,13 @@ function PriceCallout({ block }) {
           {/* De-boxed: a hairline rule instead of a filled, four-sided card. The price
               itself carries the emphasis, matching the /assessment tier treatment. */}
           <div style={{ paddingTop: 26, borderTop: "1px solid var(--hairline)", display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "8px 18px" }}>
+            {/* Optional prefix ("From") so a tier whose price is a starting point rather
+                than a flat fee reads the same here as it does on /assessment. It comes
+                from the tier object in content/assessment-tiers.js, never a page literal:
+                Comprehensive has pricePrefix null and renders exactly as before. */}
+            {block.pricePrefix && (
+              <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 20 }}>{block.pricePrefix}</span>
+            )}
             <span style={{ fontFamily: "var(--sans)", fontSize: 52, fontWeight: 400, color: "var(--gold)", letterSpacing: "-0.01em", fontVariantNumeric: "lining-nums tabular-nums" }}>{block.price}</span>
             <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--muted)", fontSize: 20 }}>{block.unit}</span>
             <span className="body" style={{ width: "100%", marginTop: 14, color: "var(--ivory-soft)" }}>{block.note}</span>

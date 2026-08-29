@@ -200,16 +200,16 @@ const BridalAssessmentPage = ({ navigate }) => {
         <div className="container" style={{ maxWidth: 720 }}>
           {!submitted ? (
             <Reveal>
-              {/* Disclaimers */}
-              <div style={{ marginBottom: 40, display: "grid", gap: 12 }}>
-                <BridalDisclaimer>
-                  <strong style={{ color: "var(--ivory-soft)", fontStyle: "normal" }}>Medical disclaimer (placeholder):</strong> This form does not provide medical advice, diagnosis, or treatment, and completing it does not create a provider–patient relationship. Any plan is made with a qualified provider at a consultation.
-                </BridalDisclaimer>
-                <BridalDisclaimer>
-                  <strong style={{ color: "var(--ivory-soft)", fontStyle: "normal" }}>Privacy (placeholder):</strong> Your information is used only to prepare for your visit. A finalized privacy notice will appear here before launch.
-                </BridalDisclaimer>
-              </div>
-
+              {/* The two provisional legal notices that used to sit here — a
+                  "Medical disclaimer (placeholder)" and a "Privacy (placeholder)"
+                  that promised a finalized notice "before launch" — were removed at
+                  Wave 10 certification. They were unfinished copy left visible on a
+                  live form, and the site had already launched. Do NOT reinstate them,
+                  and do NOT replace them with invented legal text: real notices are an
+                  owner/legal decision. The substance a visitor needs is already stated
+                  in non-provisional copy — the hero says this is "not a booking, and
+                  not a request for medical treatment", and the required consent
+                  checkbox says the same thing again before submission. */}
               <form onSubmit={onSubmit} noValidate style={{ display: "grid", gap: 30 }}>
                 {BRIDAL_ASSESSMENT_FIELDS.map((f) => (
                   <Field key={f.id} field={f} value={values[f.id]} error={errors[f.id]} onChange={setField(f.id)} />
