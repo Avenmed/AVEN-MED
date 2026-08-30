@@ -67,7 +67,7 @@ const alaaMashal = {
       { name: "Injectable Aesthetics", note: "Neuromodulators, dermal fillers, and biostimulators — placed conservatively and mapped to your anatomy." },
       { name: "Facial Balancing", note: "A considered, whole-face approach that prioritizes proportion over volume." },
       { name: "Skin Health", note: "Microneedling, peels, and medical-grade skincare within a longer-term plan." },
-      { name: "Medical Weight Loss", note: "Physician-directed, whole-person weight and metabolic care." },
+      { name: "Medical Weight Loss", note: "Clinician-guided, whole-person weight and metabolic care." },
       { name: "Preventive Wellness", note: "Proactive, prevention-first guidance and lab interpretation." },
       { name: "Family Medicine", note: "Relationship-based primary care for adults and families." },
     ],
