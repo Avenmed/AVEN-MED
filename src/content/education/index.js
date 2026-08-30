@@ -84,7 +84,7 @@ export const EDU_ARTICLES = [
     category: "patient-guides",
     tags: ["assessment", "consultation", "first visit", "patient guide"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, featured: true, status: "published",
   },
   {
@@ -95,7 +95,7 @@ export const EDU_ARTICLES = [
     category: "aesthetics",
     tags: ["botox", "neuromodulator", "wrinkles", "injectables"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -106,7 +106,7 @@ export const EDU_ARTICLES = [
     category: "aesthetics",
     tags: ["botox", "duration", "neuromodulator", "injectables"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 4, status: "published",
   },
   {
@@ -117,7 +117,7 @@ export const EDU_ARTICLES = [
     category: "patient-guides",
     tags: ["choosing a provider", "med spa", "safety", "patient guide"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -128,7 +128,7 @@ export const EDU_ARTICLES = [
     category: "aesthetics",
     tags: ["sculptra", "filler", "biostimulator", "volume"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -139,7 +139,7 @@ export const EDU_ARTICLES = [
     category: "aesthetics",
     tags: ["microneedling", "skinpen", "collagen", "texture", "acne scars"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -150,7 +150,7 @@ export const EDU_ARTICLES = [
     category: "wellness",
     tags: ["medical weight loss", "metabolic health", "nutrition", "wellness"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -161,7 +161,7 @@ export const EDU_ARTICLES = [
     category: "wellness",
     tags: ["glp-1", "weight management", "medication", "wellness"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -172,7 +172,7 @@ export const EDU_ARTICLES = [
     category: "aesthetics",
     tags: ["lip filler", "dermal filler", "injectables", "first time"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
   {
@@ -183,7 +183,7 @@ export const EDU_ARTICLES = [
     category: "skin-health",
     tags: ["acne scars", "acne marks", "hyperpigmentation", "skin health"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
-    datePublished: "2026-08-22", dateModified: "2026-08-22",
+    datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
 ];

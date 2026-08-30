@@ -95,7 +95,7 @@ export default {
   faqs: [
     {
       q: "Does lip filler hurt?",
-      a: "Most patients describe it as tolerable rather than painful. Numbing cream is commonly applied, and many fillers contain a local anesthetic. You may feel pinching, pressure, or stinging during the injections, and the lips can be tender for a day or two afterward.",
+      a: "Most patients describe it as tolerable rather than painful. Numbing cream is commonly applied beforehand, and the filler products Alaa selects at AVEN also contain a local anesthetic. You may feel pinching, pressure, or stinging during the injections, and the lips can be tender for a day or two afterward.",
     },
     {
       q: "How long until my lips look normal and settled?",
