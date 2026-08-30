@@ -46,7 +46,7 @@ export default {
       heading: "Why they belong inside a supervised program",
       body: [
         "A GLP-1 medication is most useful as one component of a structured plan, not a substitute for the rest of it. Nutrition, physical activity, sleep, and other habits still do much of the work, and the medication is intended to support those changes rather than replace them.",
-        "Supervision matters for reasons beyond convenience. Response differs between individuals, side effects need managing, and periodic check-ins let a clinician confirm the treatment is still appropriate and adjust the overall plan. This is why AVEN provides GLP-1 care within a physician-directed medical program rather than as a product handed out on request.",
+        "Supervision matters for reasons beyond convenience. Response differs between individuals, side effects need managing, and periodic check-ins let a clinician confirm the treatment is still appropriate and adjust the overall plan. This is why AVEN provides GLP-1 care within a clinician-guided medical program rather than as a product handed out on request.",
       ],
     },
     {
@@ -54,7 +54,7 @@ export default {
       heading: "Side effects and monitoring",
       body: [
         "The most commonly reported side effects are gastrointestinal — nausea is the one people mention most, along with other digestive symptoms. For many people these are more noticeable early on, and a clinician helps manage them as part of ongoing care.",
-        "Less common but more serious risks exist as well, which is part of why medical evaluation and monitoring are not optional. The prescribing clinician is responsible for weighing risks against potential benefit, watching for problems over time, and deciding whether to continue, pause, or change course. Those decisions are made in the clinic, not by the patient alone.",
+        "Less common but more serious risks exist as well. This article deliberately does not attempt a complete list of them, or of the histories and conditions that make these medications unsuitable — that is not something a webpage can do responsibly, and its brevity here should not be read as meaning the list is short. Candidacy, your medical and family history, contraindications and risks are reviewed individually by the clinician who would prescribe, who is also responsible for weighing risk against potential benefit, watching for problems over time, and deciding whether to continue, pause, or change course.",
       ],
     },
     {
@@ -95,18 +95,18 @@ export default {
   ],
   relatedServices: [
     { label: "GLP-1 Therapy", path: "/wellness/glp-1-therapy", note: "GLP-1 care within AVEN's medical program." },
-    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "The broader physician-directed program." },
+    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "The broader clinician-guided program." },
   ],
   references: [
     {
       label: "Prescription Medications to Treat Overweight & Obesity",
-      publisher: "National Institute of Diabetes and Digestive and Kidney Diseases (NIH NIDDK)",
-      url: "https://www.niddk.nih.gov",
+      publisher: "NIH National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      url: "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
     },
     {
-      label: "Approved prescribing information and drug information for semaglutide and tirzepatide products",
-      publisher: "U.S. Food and Drug Administration",
-      url: "https://www.fda.gov",
+      label: "Treatment for Overweight & Obesity",
+      publisher: "NIH National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      url: "https://www.niddk.nih.gov/health-information/weight-management/adult-overweight-obesity/treatment",
     },
   ],
 };

@@ -35,7 +35,7 @@ const RELATED = [
   { n: "Preventive Wellness", d: "Proactive guidance to understand your risks and build sustainable routines.", path: "/wellness/preventive-wellness" },
   { n: "Longevity & Lab Testing", d: "Clinician-guided lab evaluation, coordinated with your primary care.", path: "/wellness/longevity-lab-testing" },
   { n: "Nutrition & Metabolic Support", d: "Practical, sustainable nutrition guidance alongside your medical care.", path: "/wellness/nutrition-metabolic-support" },
-  { n: "Medical Weight Loss", d: "A physician-directed program for weight and metabolic health.", path: "/wellness/medical-weight-loss" },
+  { n: "Medical Weight Loss", d: "A clinician-guided program for weight and metabolic health.", path: "/wellness/medical-weight-loss" },
 ];
 
 const FamilyMedicinePage = ({ navigate }) => {

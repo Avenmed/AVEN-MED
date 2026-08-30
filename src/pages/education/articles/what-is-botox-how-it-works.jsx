@@ -3,7 +3,7 @@ export default {
     "Botox is a brand of botulinum toxin type A, a neuromodulator that briefly relaxes the targeted muscle it is placed into.",
     "It softens dynamic lines — the creases that appear when you move — rather than lines already etched into resting skin.",
     "It is a prescription medication that must be administered by a qualified, trained clinician.",
-    "Results build over several days to about two weeks and are temporary, fading gradually over a few months.",
+    "Movement begins to soften within a few days; AVEN judges the settled result at 10 to 14 days. The effect is temporary, fading gradually over a few months.",
     "Natural-looking results come from conservative, anatomy-based placement, not from treating more.",
   ],
   body: [
@@ -48,7 +48,7 @@ export default {
       type: "section",
       heading: "What to expect from timing",
       body: [
-        "Botox does not work the moment it is injected. It typically begins to take effect within a few days, with the fuller result settling in over roughly two weeks. If you are judging your outcome, that two-week mark is the honest time to look.",
+        "Botox does not work the moment it is injected. Softening of movement usually begins within a few days of treatment. That early change is not the finished result — at AVEN the settled effect is judged at 10 to 14 days, and that is the honest point to look at your outcome and decide whether anything should be adjusted.",
         "The effect is temporary by design. Movement returns gradually over the following months, and how long any individual's results last varies from person to person based on factors like the area treated, muscle strength, and individual metabolism. Maintaining a result means repeating treatment over time rather than expecting a single session to be permanent.",
       ],
     },
@@ -73,7 +73,7 @@ export default {
     },
     {
       q: "How soon will I see results?",
-      a: "Most people notice the effect within a few days, with the full result settling over about two weeks. It is reasonable to wait until that two-week point before assessing how your treatment turned out.",
+      a: "Most people notice movement beginning to soften within a few days. The settled result is judged at 10 to 14 days, so that is the point at which your outcome is reviewed rather than the first few days after treatment.",
     },
     {
       q: "How long do results last?",
@@ -86,14 +86,19 @@ export default {
   ],
   references: [
     {
-      label: "BOTOX (onabotulinumtoxinA) — prescribing information and drug resources",
-      publisher: "U.S. Food and Drug Administration (FDA)",
-      url: "https://www.fda.gov/drugs",
+      label: "BOTOX Cosmetic (onabotulinumtoxinA) — Full Prescribing Information",
+      publisher: "AbbVie / Allergan Aesthetics",
+      url: "https://www.rxabbvie.com/pdf/botox-cosmetic_pi.pdf",
     },
     {
-      label: "Botulinum toxin: overview for patients",
-      publisher: "American Academy of Dermatology (AAD)",
-      url: "https://www.aad.org",
+      label: "BOTOX COSMETIC (onabotulinumtoxinA) — FDA label",
+      publisher: "U.S. National Library of Medicine, DailyMed",
+      url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=485d9b71-6881-42c5-a620-a4360c7192ab",
+    },
+    {
+      label: "Botulinum toxin therapy: FAQs",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/wrinkles/botulinum-toxin-faqs",
     },
   ],
 };

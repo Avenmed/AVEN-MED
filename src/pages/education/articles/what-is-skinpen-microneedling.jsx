@@ -4,6 +4,8 @@ export default {
     "It is used to improve skin texture, some acne scarring, the look of enlarged pores, and overall skin quality — not to erase every concern.",
     "A session typically leaves the skin looking and feeling like a mild sunburn for a day or two, with redness settling over the days that follow.",
     "Results build gradually over weeks as new collagen forms, and most goals call for a planned series rather than a single visit.",
+    "The device is FDA-cleared for facial acne scars in adults aged 22 and over, and AVEN treats from 22 for SkinPen — deliberately different from its 18+ policy for aesthetic injectables.",
+    "The device labeling carries real contraindications, including current isotretinoin use and pregnancy or nursing, which is why history matters as much as skin here.",
     "Whether microneedling suits you, and how your skin should be cared for afterward, is decided by a trained provider after an in-person evaluation.",
   ],
   body: [
@@ -51,6 +53,15 @@ export default {
     { type: "cta" },
     {
       type: "section",
+      heading: "Who the device is indicated for, and who it is not for",
+      body: [
+        "SkinPen Precision is FDA-cleared to improve the appearance of facial acne scars in adults aged 22 years and older, across all Fitzpatrick skin types, and separately for wrinkles of the neck in Fitzpatrick types II to IV. AVEN treats from 22 for SkinPen. That is deliberately different from AVEN's 18+ policy for aesthetic injectables — the age here follows the device's own indication rather than the practice's general aesthetic policy.",
+        "The device labeling also sets out who it should not be used on. Its contraindications include active skin cancer in the treatment area; open wounds, sores or irritated skin in the area; an allergy to stainless steel or to anesthetics; a bleeding or clotting disorder; pregnancy or nursing; and current use of isotretinoin. Where oral isotretinoin has been taken and stopped, AVEN follows the labeling's six-month wait before treating.",
+        "Several other things change the plan rather than ruling it out: a tendency to keloid or abnormal scarring, a history of cold sores, and active inflammatory or cystic acne, which is generally brought under control before scar-focused work begins. None of this is visible by looking at your face, which is why the history is taken properly.",
+      ],
+    },
+    {
+      type: "section",
       heading: "What a session and recovery look like",
       body: [
         "A treatment is usually preceded by cleansing the skin, and a topical numbing preparation is commonly used for comfort before the device is passed over the treatment area. The active treatment itself is relatively brief, though total appointment time varies with the size of the area and the plan.",
@@ -84,6 +95,14 @@ export default {
       a: "There is no single answer. Because results build as new collagen forms, many goals are approached as a planned series spaced weeks apart. The right number depends on your skin and your goals, which a provider determines during your evaluation.",
     },
     {
+      q: "Is there an age requirement?",
+      a: "Yes. SkinPen Precision is FDA-cleared for facial acne scars in adults aged 22 and over, and AVEN treats from 22 for this device. That is intentionally different from AVEN's 18+ policy for aesthetic injectables — here the age follows the device's own indication.",
+    },
+    {
+      q: "I have taken isotretinoin. Can I have microneedling?",
+      a: "Not while you are taking it — current isotretinoin use is a contraindication in the device labeling. If you have taken oral isotretinoin and stopped, AVEN follows the labeling's six-month wait before treating. Tell us either way, because it changes the timing rather than simply the answer.",
+    },
+    {
       q: "How is SkinPen different from an at-home microneedling roller?",
       a: "SkinPen is an FDA-cleared device used by a trained provider with sterile, single-use needle cartridges and controlled treatment depth. At-home rollers are not held to that standard and carry different, often higher, risks of irritation and infection.",
     },
@@ -99,14 +118,24 @@ export default {
   ],
   references: [
     {
-      label: "Microneedling Devices — consumer information",
-      publisher: "U.S. Food and Drug Administration",
-      url: "https://www.fda.gov",
+      label: "SkinPen Precision Device — User Manual / Instructions for Use (indications, contraindications, isotretinoin timing)",
+      publisher: "Crown Aesthetics",
+      url: "https://crownaesthetics.com/wp-content/uploads/2021/04/SkinPen-IFU-User-Manual.pdf",
     },
     {
-      label: "Microneedling: overview and what to expect",
+      label: "SkinPen Precision System — 510(k) K202243 (neck wrinkle indication)",
+      publisher: "U.S. Food and Drug Administration",
+      url: "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K202243.pdf",
+    },
+    {
+      label: "Microneedling Devices: Getting to the Point on Benefits, Risks and Safety",
+      publisher: "U.S. Food and Drug Administration",
+      url: "https://www.fda.gov/consumers/consumer-updates/microneedling-devices-getting-point-benefits-risks-and-safety",
+    },
+    {
+      label: "Microneedling can fade scars, uneven skin tone, and more",
       publisher: "American Academy of Dermatology",
-      url: "https://www.aad.org",
+      url: "https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars",
     },
   ],
 };

@@ -7,13 +7,13 @@ const medicalWeightLoss = {
   changefreq: "monthly",
   seo: {
     title: "Medical Weight Loss in Orland Park | AVEN MED",
-    description: "A physician-directed program at AVEN MED in Orland Park combining medical evaluation, nutrition, movement and coaching — with medication only where appropriate.",
+    description: "A clinician-guided program at AVEN MED in Orland Park combining medical evaluation, nutrition, movement and coaching — with medication only where appropriate.",
   },
   tags: ["weight", "metabolic", "glp-1", "longevity", "wellness"],
   serviceName: "Medical Weight Loss",
   serviceShort: "Medical weight loss",
   breadcrumbName: "Medical Weight Loss",
-  hub: { order: 10, blurb: "A physician-directed, whole-person program — with GLP-1 medication as one option when appropriate." },
+  hub: { order: 10, blurb: "A clinician-guided, whole-person program — with GLP-1 medication as one option when appropriate." },
   procedureName: "Medical Weight Loss — Physician-Directed Program",
   procedureDescription:
     "Physician-directed medical weight loss in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — an individualized, whole-person program combining medical evaluation, nutrition and lifestyle guidance, and, when clinically appropriate, GLP-1 medication.",
@@ -22,7 +22,7 @@ const medicalWeightLoss = {
     eyebrow: "Wellness · Metabolic Health",
     headline: <>Medical Weight <em>Loss.</em></>,
     subheadline:
-      "A physician-directed program built around your metabolism and your life — not a medication handed out in isolation. Education and evaluation come first.",
+      "A clinician-guided program built around your metabolism and your life — not a medication handed out in isolation. Education and evaluation come first.",
   },
 
   overview: {
@@ -106,7 +106,7 @@ const medicalWeightLoss = {
   },
 
   faqs: [
-    { q: "What is medical weight loss?", a: "It's a physician-directed program that treats weight as a medical matter — combining evaluation, personalized planning, nutrition and lifestyle guidance, monitoring, and, when appropriate, medication. It's the opposite of a one-size diet or a medication handed out in isolation." },
+    { q: "What is medical weight loss?", a: "It's a clinician-guided program that treats weight as a medical matter — combining evaluation, personalized planning, nutrition and lifestyle guidance, monitoring, and, when appropriate, medication. It's the opposite of a one-size diet or a medication handed out in isolation." },
     { q: "Do I have to take medication like semaglutide or tirzepatide?", a: "No. GLP-1 medications are one option within the program, not a requirement. Whether they're appropriate for you is a medical decision made after evaluation, and many patients are supported effectively through the plan's other elements." },
     { q: "How much weight will I lose?", a: "We don't promise a specific number or timeline — results vary widely based on your body, health, and how the plan fits your life. Our focus is steady, sustainable progress and better metabolic health, with honest expectations from the start." },
     { q: "Is this just about appearance?", a: "No. Medical weight loss is about metabolic health — how you feel, move, and function, and reducing weight-related health risks. Any change in appearance is a byproduct of improving your health, not the primary goal." },
@@ -122,7 +122,7 @@ const medicalWeightLoss = {
 
   finalCta: {
     headline: <>A medical plan for lasting <em>change.</em></>,
-    copy: "Begin with an AVEN Assessment for a physician-directed weight-loss plan built around your health, your goals, and your life.",
+    copy: "Begin with an AVEN Assessment for a clinician-guided weight-loss plan built around your health, your goals, and your life.",
   },
 
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],

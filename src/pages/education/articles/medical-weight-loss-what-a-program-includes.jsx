@@ -4,7 +4,7 @@ export default {
     "The core of the program is ongoing support: nutrition, activity, behavior, and sleep, with regular monitoring and follow-up.",
     "Goals are individualized, and results vary from person to person; no outcome can be guaranteed.",
     "When clinically appropriate, prescription medication may be used as one tool within the program — candidacy is a medical decision, and it is not right for everyone.",
-    "The aim is whole-person, sustainable change built on a physician-directed plan, not a rapid fix.",
+    "The aim is whole-person, sustainable change built on a clinician-guided plan, not a rapid fix.",
   ],
   body: [
     {
@@ -16,7 +16,7 @@ export default {
       heading: "What makes it medical, not just a diet",
       body: [
         "Fad diets tend to share a shape: the same rules for everyone, a promise of speed, and no medical context behind them. A medical program inverts that. Because weight is influenced by metabolism, medications you take, sleep, stress, hormones, and health conditions, the starting point is a look at the whole person rather than a calorie rule applied blindly.",
-        "That framing matters because two people with the same goal can need very different plans. A physician-directed program is designed to account for those differences before anything is recommended, and to adjust as your body responds over time.",
+        "That framing matters because two people with the same goal can need very different plans. A clinician-guided program is designed to account for those differences before anything is recommended, and to adjust as your body responds over time.",
       ],
     },
     {
@@ -98,7 +98,7 @@ export default {
     {
       label: "Medical Weight Loss",
       path: "/wellness/medical-weight-loss",
-      note: "AVEN's physician-directed program.",
+      note: "AVEN's clinician-guided program.",
     },
     {
       label: "Nutrition & Metabolic Support",
@@ -108,19 +108,19 @@ export default {
   ],
   references: [
     {
-      label: "Losing weight — healthy weight",
-      publisher: "Centers for Disease Control and Prevention (CDC)",
-      url: "https://www.cdc.gov",
+      label: "Steps for Losing Weight",
+      publisher: "Centers for Disease Control and Prevention",
+      url: "https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html",
     },
     {
-      label: "Treatment for overweight & obesity",
+      label: "Treatment for Overweight & Obesity",
       publisher: "NIH National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
-      url: "https://www.niddk.nih.gov",
+      url: "https://www.niddk.nih.gov/health-information/weight-management/adult-overweight-obesity/treatment",
     },
     {
-      label: "Managing your weight",
-      publisher: "NIH MedlinePlus",
-      url: "https://medlineplus.gov",
+      label: "Prescription Medications to Treat Overweight & Obesity",
+      publisher: "NIH National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      url: "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
     },
   ],
 };

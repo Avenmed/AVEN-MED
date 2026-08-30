@@ -108,7 +108,7 @@ const wellnessConsultation = {
     "A consultation may point toward any of these, depending on what genuinely fits you — including primary care when that's what you need:",
   crossLinks: [
     { label: "Preventive Wellness", path: "/wellness/preventive-wellness", note: "Proactive guidance to understand risks and build sustainable routines." },
-    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "A physician-directed, whole-person weight-management program." },
+    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "A clinician-guided, whole-person weight-management program." },
     { label: "GLP-1 Therapy", path: "/wellness/glp-1-therapy", note: "Medically monitored GLP-1 medication, as one part of a program." },
     { label: "Nutrition & Metabolic Support", path: "/wellness/nutrition-metabolic-support", note: "Practical, sustainable nutrition and lifestyle guidance." },
     { label: "IV Therapy", path: "/wellness/iv-therapy", note: "Custom infusions for hydration, recovery, and wellness support." },

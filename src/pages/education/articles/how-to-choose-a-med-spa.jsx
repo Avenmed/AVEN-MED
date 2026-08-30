@@ -15,7 +15,7 @@ export default {
       type: "section",
       heading: "Know who is actually treating you",
       body: [
-        "Med spas vary widely in how they are staffed and supervised. In most settings, injectables and energy-based treatments are performed by licensed clinicians — physicians, nurse practitioners, physician assistants, or registered nurses — often working under or in collaboration with a supervising or medical director physician. What matters is that the person treating you is properly licensed for the procedure and that qualified oversight exists.",
+        "Med spas vary widely in how they are staffed and supervised, and who may perform a given treatment is set by state licensing and scope-of-practice rules rather than by anything universal. That is exactly why the question is worth asking out loud rather than assumed: which clinician will treat you, what licence and training do they hold for this specific procedure, and what supervising or collaborating arrangement is in place.",
         "It is entirely reasonable to ask who will hold the syringe or device, what their credentials and experience are, and who supervises the practice. A confident, well-run clinic answers these questions plainly. Vague answers, or a hand-off to whoever is available that day, are worth noting.",
       ],
     },
@@ -63,14 +63,14 @@ export default {
       type: "section",
       heading: "One model, as an example",
       body: [
-        "There is no single correct structure for a good practice, but consistency and accountability help. AVEN MED is built around a single provider and an assessment-first first visit: the initial appointment is a consultation, not a treatment sold as one. That is one way to keep the person evaluating you and the person treating you the same, and to make honesty over pressure the default. Other well-run practices reach the same standard through different structures — what matters is that the questions above are answered clearly wherever you go.",
+        "There is no single correct structure for a good practice, but consistency and accountability help. AVEN MED is built around a single provider — Alaa Mashal, MSN, APRN, FNP-BC — and an assessment-first first visit: the initial appointment is a consultation, not a treatment sold as one. That is one way to keep the person evaluating you and the person treating you the same, and to make honesty over pressure the default. Other well-run practices reach the same standard through different structures — what matters is that the questions above are answered clearly wherever you go.",
       ],
     },
   ],
   faqs: [
     {
       q: "Do I need a doctor, or is a nurse practitioner or PA fine for injectables?",
-      a: "Injectables and many aesthetic treatments are commonly and appropriately performed by nurse practitioners, physician assistants, and registered nurses, often with physician supervision or collaboration. The key is that the clinician is properly licensed and trained for the specific procedure and that qualified oversight is in place. Ask about credentials and supervision, and judge the answer on clarity, not title alone.",
+      a: "Which clinicians may perform injectables is governed by state licensing and scope-of-practice rules, so there is no single national answer and this article does not try to give one. What you can do anywhere is ask directly: who will treat me, what licence and training do they hold for this procedure, and who supervises or collaborates on the practice. A clinic that answers plainly is telling you something useful; a vague answer is too."
     },
     {
       q: "Is a cheaper price always a red flag?",
@@ -87,19 +87,19 @@ export default {
   ],
   references: [
     {
-      label: "Minimally Invasive Procedures and Injectables — consumer information",
-      publisher: "U.S. Food and Drug Administration (FDA)",
-      url: "https://www.fda.gov",
+      label: "Best questions to ask when considering a cosmetic treatment",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/safety/ask-questions",
     },
     {
-      label: "Choosing a qualified provider for cosmetic procedures",
-      publisher: "American Academy of Dermatology (AAD)",
-      url: "https://www.aad.org",
+      label: "Your safety: cosmetic treatments",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/safety",
     },
     {
-      label: "Guidance on selecting a qualified physician for dermatologic and cosmetic procedures",
-      publisher: "American Society for Dermatologic Surgery (ASDS)",
-      url: "https://www.asds.net",
+      label: "Dermal Fillers (Soft Tissue Fillers) — including counterfeit and unapproved product warnings",
+      publisher: "U.S. Food and Drug Administration",
+      url: "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/dermal-fillers-soft-tissue-fillers",
     },
   ],
 };

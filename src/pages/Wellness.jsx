@@ -68,7 +68,7 @@ const WellnessPage = ({ navigate }) => {
             {[
               { n: "01", k: "Lab Testing", b: "Clinician-selected bloodwork, at a cadence set for you — interpreted properly, not just delivered." },
               { n: "02", k: "IV Therapy", b: "Individually selected infusions for hydration and nutrient support, considered where there is a genuine reason for one." },
-              { n: "03", k: "Medical Weight Loss", b: "A physician-directed, whole-person program for weight and metabolic health — with GLP-1 medication as one option when appropriate." },
+              { n: "03", k: "Medical Weight Loss", b: "A clinician-guided, whole-person program for weight and metabolic health — with GLP-1 medication as one option when appropriate." },
               { n: "04", k: "Nutrition & Metabolic Support", b: "Practical, individualized nutrition and metabolic guidance that works alongside the rest of your care." }
             ].map((p, i) => (
               <Reveal key={p.n} delay={i * 90}>
@@ -163,7 +163,7 @@ const WellnessPage = ({ navigate }) => {
               {
                 k: "Weight Loss",
                 p: "Practitioner-led",
-                d: "A physician-directed medical weight-loss program — evaluation, nutrition, movement, and coaching, with GLP-1 medication as one option when it's clinically appropriate.",
+                d: "A clinician-guided medical weight-loss program — evaluation, nutrition, movement, and coaching, with GLP-1 medication as one option when it's clinically appropriate.",
                 items: ["Medical evaluation & planning", "Nutrition, movement & coaching", "GLP-1 medication when appropriate"]
               }
             ].map((p, i) => (

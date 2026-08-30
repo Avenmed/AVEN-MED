@@ -66,11 +66,16 @@ export const EDU_CATEGORIES = [
 // review" and "draft" are fully held: no route, no sitemap, no index, and not even
 // resolvable by direct URL (getEducationArticle reads publishedArticles()).
 export const EDU_ARTICLES = [
-  // ---- WAVE 1 (Phase 8.8A) — HELD in "clinical-review" ----------------------
-  // Authored by the AVEN Editorial Team and pending Alaa Mashal's clinical review.
-  // status:"clinical-review" keeps every one fully non-public (no route, no
-  // sitemap, no index, not resolvable by URL). Flip to "published" ONLY per article
-  // after Alaa has actually reviewed it; set datePublished to the real publish date.
+  // ---- WAVE 1 (Phase 8.8A) — PUBLISHED 2026-08-29 ---------------------------
+  // Authored by the AVEN Editorial Team, clinically reviewed by Alaa Mashal, MSN,
+  // APRN, FNP-BC, and published on her approval. Her decisions are recorded in the
+  // article bodies: Botox settles at 10–14 days; duration "about 3 to 4 months" is a
+  // typical range, never a promise; GLP-1 risk stays high level with candidacy
+  // reviewed individually; the weight-loss programme is clinician-guided, not
+  // physician-directed; SkinPen follows the device labeling (22+, isotretinoin);
+  // filler carries AVEN's 18+ practice policy and the full vascular escalation.
+  // Every citation points at a specific verified document, never an organisation
+  // home page. A future article stays at "clinical-review" until Alaa reviews it.
   {
     slug: "the-aven-assessment-what-to-expect",
     title: "The AVEN Assessment: What to Expect and Why It Comes First",
@@ -80,7 +85,7 @@ export const EDU_ARTICLES = [
     tags: ["assessment", "consultation", "first visit", "patient guide"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, featured: true, status: "clinical-review",
+    readingTime: 5, featured: true, status: "published",
   },
   {
     slug: "what-is-botox-how-it-works",
@@ -91,7 +96,7 @@ export const EDU_ARTICLES = [
     tags: ["botox", "neuromodulator", "wrinkles", "injectables"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "how-long-does-botox-last",
@@ -102,7 +107,7 @@ export const EDU_ARTICLES = [
     tags: ["botox", "duration", "neuromodulator", "injectables"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 4, status: "clinical-review",
+    readingTime: 4, status: "published",
   },
   {
     slug: "how-to-choose-a-med-spa",
@@ -113,7 +118,7 @@ export const EDU_ARTICLES = [
     tags: ["choosing a provider", "med spa", "safety", "patient guide"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "what-is-sculptra-vs-filler",
@@ -124,7 +129,7 @@ export const EDU_ARTICLES = [
     tags: ["sculptra", "filler", "biostimulator", "volume"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "what-is-skinpen-microneedling",
@@ -135,7 +140,7 @@ export const EDU_ARTICLES = [
     tags: ["microneedling", "skinpen", "collagen", "texture", "acne scars"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "medical-weight-loss-what-a-program-includes",
@@ -146,7 +151,7 @@ export const EDU_ARTICLES = [
     tags: ["medical weight loss", "metabolic health", "nutrition", "wellness"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "glp-1-medications-for-weight-management",
@@ -157,7 +162,7 @@ export const EDU_ARTICLES = [
     tags: ["glp-1", "weight management", "medication", "wellness"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "lip-filler-first-time-patients",
@@ -168,7 +173,7 @@ export const EDU_ARTICLES = [
     tags: ["lip filler", "dermal filler", "injectables", "first time"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "acne-scars-vs-acne-marks",
@@ -179,7 +184,7 @@ export const EDU_ARTICLES = [
     tags: ["acne scars", "acne marks", "hyperpigmentation", "skin health"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-22", dateModified: "2026-08-22",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
 ];
 

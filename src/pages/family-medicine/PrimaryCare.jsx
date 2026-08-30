@@ -134,7 +134,7 @@ const primaryCare = {
     { label: "Preventive Wellness", path: "/wellness/preventive-wellness", note: "Proactive guidance that complements guideline-based primary care." },
     { label: "Longevity & Lab Testing", path: "/wellness/longevity-lab-testing", note: "Clinician-guided lab evaluation, coordinated with your primary care." },
     { label: "Nutrition & Metabolic Support", path: "/wellness/nutrition-metabolic-support", note: "Practical nutrition guidance alongside your medical care." },
-    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "A physician-directed program for weight and metabolic health." },
+    { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "A clinician-guided program for weight and metabolic health." },
   ],
 
   faqs: [

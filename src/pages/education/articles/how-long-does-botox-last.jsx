@@ -1,15 +1,16 @@
 export default {
   keyTakeaways: [
-    "For most people, Botox results last about 3 to 4 months, though the range varies from person to person.",
+    "For most people, Botox results last about 3 to 4 months — a typical range, not a promise — and it varies from person to person.",
     "Duration depends on the area treated, the dose used, muscle strength, individual metabolism, and daily activity.",
     "Results fade gradually rather than stopping abruptly, as treated muscles slowly regain movement.",
     "With repeated treatment over time, some people find their pattern of movement softens, but Botox is not permanent.",
+    "The settled result is judged at 10 to 14 days after treatment, which is also when duration starts being counted.",
     "A clinician assessment is the best way to set realistic expectations for your face and goals.",
   ],
   body: [
     {
       type: "lede",
-      text: "The short answer most people are looking for: Botox typically lasts about 3 to 4 months. That figure is an average, not a promise, and where you land within it depends on your muscles, the area treated, and how your body processes the product.",
+      text: "The short answer most people are looking for: Botox typically lasts about 3 to 4 months. That figure is a typical range and an average, not a promise or a minimum, and where you land within it depends on your muscles, the area treated, and how your body processes the product. The clock effectively starts once the result has settled, which AVEN judges at 10 to 14 days after treatment.",
     },
     {
       type: "section",
@@ -69,7 +70,7 @@ export default {
   faqs: [
     {
       q: "How long does Botox usually last?",
-      a: "For most people, results last about 3 to 4 months. This is a typical range, not a fixed guarantee, and your own duration can fall above or below it depending on your anatomy and how your body responds.",
+      a: "For most people, results last about 3 to 4 months. This is a typical range and an average — not a guarantee, a minimum, or a fixed duration — and your own can fall above or below it depending on your anatomy and how your body responds.",
     },
     {
       q: "Does Botox last longer the more you get it?",
@@ -94,14 +95,14 @@ export default {
   ],
   references: [
     {
-      label: "Botulinum toxin (BOTOX) prescribing information",
-      publisher: "U.S. Food and Drug Administration (FDA)",
-      url: "https://www.fda.gov",
+      label: "Botulinum toxin therapy: FAQs — how long results last",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/wrinkles/botulinum-toxin-faqs",
     },
     {
-      label: "Botulinum toxin: overview and what to expect",
-      publisher: "American Academy of Dermatology (AAD)",
-      url: "https://www.aad.org",
+      label: "BOTOX Cosmetic (onabotulinumtoxinA) — Full Prescribing Information",
+      publisher: "AbbVie / Allergan Aesthetics",
+      url: "https://www.rxabbvie.com/pdf/botox-cosmetic_pi.pdf",
     },
   ],
 };

@@ -1,7 +1,13 @@
+import { QUICK_ASSESSMENT, COMPREHENSIVE_ASSESSMENT } from "../../../content/assessment-tiers.js";
+
+// Fee facts come from the canonical tier object, never a literal in this file:
+// Quick is presented as a starting point ("From $50"), Comprehensive as a flat
+// price. Aura is a property of BOTH tiers; the written plan is Comprehensive-only.
 export default {
   keyTakeaways: [
     "Every patient relationship at AVEN begins with a paid Assessment — no treatment is booked before one.",
-    "Two tiers are available: a Quick Assessment (about $50) and a Comprehensive Assessment (about $200), each credited toward treatment if you proceed.",
+    `Two tiers are available: a Quick Assessment (${QUICK_ASSESSMENT.pricePrefix.toLowerCase()} ${QUICK_ASSESSMENT.price}) and a Comprehensive Assessment (${COMPREHENSIVE_ASSESSMENT.price}), each credited toward treatment if you proceed.`,
+    "An Aura skin analysis is part of every AVEN Assessment, at both tiers, alongside your history, goals and an in-person evaluation.",
     "The visit covers your history and goals, a skin and facial evaluation, and an honest review of your options — the comprehensive tier adds a written plan.",
     "It is a conversation, not a sales pitch: you leave with information whether or not you decide to move forward.",
   ],
@@ -23,8 +29,8 @@ export default {
       heading: "Two tiers, and what each includes",
       body: [
         "AVEN offers the Assessment at two levels so you can match the depth of the visit to where you are in your thinking. Both are credited toward the cost of treatment if you choose to proceed, so the fee is not lost when you move forward.",
-        "The Quick Assessment (about $50) is a focused visit for a specific question — one concern, one area, or a straightforward \"is this right for me?\" It gives you a professional read and clear direction without the depth of a full workup.",
-        "The Comprehensive Assessment (about $200) is a longer, whole-picture visit for anyone weighing more than one option, planning several changes, or wanting a considered strategy over time. It includes a full evaluation and a written plan you can take with you and reference later.",
+        `The Quick Assessment (${QUICK_ASSESSMENT.pricePrefix.toLowerCase()} ${QUICK_ASSESSMENT.price}) is a focused visit for a specific question — one concern, one area, or a straightforward "is this right for me?" It runs ${QUICK_ASSESSMENT.durationInclusion.toLowerCase()} and gives you a professional read and clear direction without the depth of a full workup, and without a written plan.`,
+        `The Comprehensive Assessment (${COMPREHENSIVE_ASSESSMENT.price}) is a longer, whole-picture visit — ${COMPREHENSIVE_ASSESSMENT.durationNote} — for anyone weighing more than one option, planning several changes, or wanting a considered strategy over time. It includes a full evaluation and a written plan you can take with you and reference later.`,
       ],
     },
     {
@@ -39,6 +45,7 @@ export default {
       items: [
         "History and goals: a review of your relevant medical and skincare history, any past treatments, and — most importantly — what you actually want to change and why.",
         "Skin and facial evaluation: an in-person look at your skin's condition and your facial structure, which is what makes a recommendation specific to you rather than generic.",
+      "An Aura skin analysis: skin imaging that is part of every AVEN Assessment. It adds to the picture of your skin — it does not diagnose a condition or decide your treatment on its own. That judgment is the clinician's.",
         "Honest options: a plain-language walkthrough of what is appropriate, what to expect, what it involves, and what it does not address — including when the honest answer is that a treatment is not the right fit.",
         "A written plan (Comprehensive tier): a documented summary of findings and suggested next steps, so you leave with something concrete rather than a memory of the conversation.",
       ],
@@ -69,7 +76,7 @@ export default {
   faqs: [
     {
       q: "Why is the Assessment paid rather than free?",
-      a: "The fee reserves dedicated, unhurried time for a genuine evaluation and honest guidance, and it keeps the focus on education rather than a sale. Both tiers are credited toward the cost of treatment if you decide to proceed, so the amount is applied to your care.",
+      a: "The fee reserves dedicated, unhurried time for a genuine evaluation and honest guidance, and it keeps the focus on education rather than a sale. Both tiers include an Aura skin analysis, and both are credited toward the cost of treatment if you decide to proceed, so the amount is applied to your care.",
     },
     {
       q: "Am I obligated to book a treatment afterward?",
@@ -90,8 +97,14 @@ export default {
   ],
   references: [
     {
-      label: "Choosing a provider and what to expect from a cosmetic consultation",
+      label: "Best questions to ask when considering a cosmetic treatment",
       publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/safety/ask-questions",
+    },
+    {
+      label: "Your safety: cosmetic treatments",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/cosmetic/safety",
     },
   ],
 };

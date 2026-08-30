@@ -7,7 +7,7 @@ const glp1Therapy = {
   changefreq: "monthly",
   seo: {
     title: "GLP-1 Therapy in Orland Park | AVEN MED",
-    description: "GLP-1 therapy in Orland Park — prescribed and monitored as one part of a physician-directed weight-management program, never in isolation.",
+    description: "GLP-1 therapy in Orland Park — prescribed and monitored as one part of a clinician-guided weight-management program, never in isolation.",
   },
   tags: ["glp-1", "weight", "metabolic", "medication", "wellness"],
   serviceName: "GLP-1 Therapy",
@@ -16,7 +16,7 @@ const glp1Therapy = {
   hub: { order: 40, blurb: "Dedicated, medically monitored GLP-1 care for appropriate candidates." },
   procedureName: "GLP-1 Therapy — Medically Monitored Medication",
   procedureDescription:
-    "GLP-1 therapy in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — prescribed and monitored as one component of a physician-directed medical weight-management program, where clinically appropriate.",
+    "GLP-1 therapy in Orland Park, IL by Alaa Mashal, MSN, APRN, FNP-BC — prescribed and monitored as one component of a clinician-guided medical weight-management program, where clinically appropriate.",
 
   hero: {
     eyebrow: "Wellness · Metabolic Health",
@@ -30,7 +30,7 @@ const glp1Therapy = {
     headline: <>What GLP-1 medications <em>are.</em></>,
     body: [
       "GLP-1 medications — including semaglutide and tirzepatide — are prescription treatments that mimic gut hormones your body already makes. They help regulate appetite and blood sugar, which for the right patient can make it easier to eat less and feel satisfied sooner.",
-      "This page explains the medications specifically. The full, physician-directed program they belong to is our Medical Weight Loss program — and that distinction matters: a GLP-1 medication is one component of comprehensive medical weight management, not a standalone solution.",
+      "This page explains the medications specifically. The full, clinician-guided program they belong to is our Medical Weight Loss program — and that distinction matters: a GLP-1 medication is one component of comprehensive medical weight management, not a standalone solution.",
       "We're deliberate about that framing because it's medically honest. The medication can be a powerful tool, but lasting results come from the whole program — evaluation, nutrition, movement, coaching, and monitoring — with medication used where it genuinely fits.",
     ],
   },
@@ -99,14 +99,14 @@ const glp1Therapy = {
   },
 
   crossLinksIntro:
-    "GLP-1 therapy is one part of how we approach weight. Explore the complete, physician-directed program it belongs to:",
+    "GLP-1 therapy is one part of how we approach weight. Explore the complete, clinician-guided program it belongs to:",
   crossLinks: [
     { label: "Medical Weight Loss", path: "/wellness/medical-weight-loss", note: "The comprehensive, whole-person program — evaluation, nutrition, movement, coaching, and medication when appropriate." },
   ],
 
   faqs: [
     { q: "What are GLP-1 medications?", a: "GLP-1 medications, such as semaglutide and tirzepatide, are prescription treatments that mimic gut hormones to help regulate appetite and blood sugar. For appropriate patients, they can make it easier to eat less and feel full sooner." },
-    { q: "How is GLP-1 therapy different from your Medical Weight Loss program?", a: "GLP-1 therapy refers to the medications specifically; Medical Weight Loss is the complete, physician-directed program. The medication is one component of that program — alongside evaluation, nutrition, movement, coaching, and monitoring — not a standalone service." },
+    { q: "How is GLP-1 therapy different from your Medical Weight Loss program?", a: "GLP-1 therapy refers to the medications specifically; Medical Weight Loss is the complete, clinician-guided program. The medication is one component of that program — alongside evaluation, nutrition, movement, coaching, and monitoring — not a standalone service." },
     { q: "Can I just get the medication on its own?", a: "No. We prescribe GLP-1 medications only within a monitored program, because that's how they're used safely and effectively. Medication without evaluation, coaching, and follow-up isn't an approach we consider responsible." },
     { q: "What are the side effects?", a: "The most common are nausea, digestive changes, and reduced appetite, usually most noticeable early and often easing with time and gradual dosing. Less common but more serious effects exist, which is why medical evaluation and monitoring are essential." },
     { q: "How much weight will I lose?", a: "We don't promise a specific amount or timeline — response varies widely between individuals. The focus is on gradual, sustainable progress and metabolic health within the full program, with honest expectations rather than headline numbers." },
@@ -121,7 +121,7 @@ const glp1Therapy = {
 
   finalCta: {
     headline: <>Medication, in its proper <em>place.</em></>,
-    copy: "Begin with an AVEN Assessment to learn whether GLP-1 therapy fits you — as one part of a complete, physician-directed plan.",
+    copy: "Begin with an AVEN Assessment to learn whether GLP-1 therapy fits you — as one part of a complete, clinician-guided plan.",
   },
 
   localAreas: ["Orland Park", "Tinley Park", "Frankfort", "Mokena", "Palos Heights", "Homer Glen", "New Lenox"],

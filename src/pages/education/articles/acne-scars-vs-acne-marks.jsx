@@ -91,8 +91,25 @@ export default {
     { label: "Acne", path: "/concerns/acne", note: "Treating active acne first." },
   ],
   references: [
-    { label: "Acne scars: diagnosis and treatment", publisher: "American Academy of Dermatology (AAD)", url: "https://www.aad.org" },
-    { label: "Acne: overview, causes, and management", publisher: "American Academy of Dermatology (AAD)", url: "https://www.aad.org" },
-    { label: "Acne — patient health information", publisher: "NIH MedlinePlus", url: "https://medlineplus.gov" },
+    {
+      label: "Acne scars: Overview",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/diseases/acne/derm-treat/scars",
+    },
+    {
+      label: "Acne scars: Consultation and treatment",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/diseases/acne/derm-treat/scars/treatment",
+    },
+    {
+      label: "Acne scars: Signs and symptoms",
+      publisher: "American Academy of Dermatology",
+      url: "https://www.aad.org/public/diseases/acne/derm-treat/scars/symptoms",
+    },
+    {
+      label: "Acne",
+      publisher: "NIH MedlinePlus",
+      url: "https://medlineplus.gov/acne.html",
+    },
   ],
 };
