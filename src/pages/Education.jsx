@@ -31,8 +31,12 @@ const EducationPage = ({ navigate }) => {
   const [query, setQuery] = React.useState("");
   const [activeCat, setActiveCat] = React.useState(null);
 
-  const filtering = query.trim() !== "" || activeCat !== null;
-  const results = filtering ? getEducationCards({ query, category: activeCat }) : [];
+  // The full published library is the default view. An empty default made sense
+  // when the library was empty; with 20 articles live it hid 19 of them behind a
+  // control the visitor had to think to use first. getEducationCards({}) returns
+  // everything, so search/filter now narrows a visible list rather than revealing
+  // a hidden one. Same registry, same helper, same card.
+  const results = getEducationCards({ query, category: activeCat });
   const featured = getEducationCards({}).filter((a) => a.featured).slice(0, 3);
   const hasAnyArticles = searchArticles({}).length > 0;
 
@@ -107,23 +111,21 @@ const EducationPage = ({ navigate }) => {
             </div>
           </Reveal>
 
-          {/* Results (only while filtering/searching) */}
-          {filtering && (
-            <div style={{ marginTop: 40 }}>
-              <div className="body-sm" aria-live="polite" style={{ color: "var(--muted)", marginBottom: 24 }}>
-                {results.length} {results.length === 1 ? "article" : "articles"}
-              </div>
-              {results.length > 0 ? (
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-                  {results.map((a, i) => <Reveal key={a.slug} delay={(i % 3) * 80}><ArticleCard a={a} navigate={navigate} /></Reveal>)}
-                </div>
-              ) : (
-                <p className="body" style={{ color: "var(--muted)", fontStyle: "italic" }}>
-                  Nothing here yet — try another topic, or browse the categories below.
-                </p>
-              )}
+          {/* Results — the whole published library by default; search/filter narrows it. */}
+          <div style={{ marginTop: 40 }}>
+            <div className="body-sm" aria-live="polite" style={{ color: "var(--muted)", marginBottom: 24 }}>
+              {results.length} {results.length === 1 ? "article" : "articles"}
             </div>
-          )}
+            {results.length > 0 ? (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+                {results.map((a, i) => <Reveal key={a.slug} delay={(i % 3) * 80}><ArticleCard a={a} navigate={navigate} /></Reveal>)}
+              </div>
+            ) : (
+              <p className="body" style={{ color: "var(--muted)", fontStyle: "italic" }}>
+                Nothing here yet — try another topic, or browse the categories below.
+              </p>
+            )}
+          </div>
         </div>
       </section>
       )}

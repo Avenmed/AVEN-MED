@@ -329,7 +329,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Footer ---------- */
 .ftr { padding: 0; background: var(--bg); border-top: 1px solid var(--hairline); margin-top: 0; }
 .ftr-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 64px; }
-.ftr h5 { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin: 0 0 22px; font-weight: 500; }
+/* Footer nav group labels. Semantically these are headings inside the footer
+   landmark, so they are h2 (an h5 here produced a site-wide h2->h5 skip).
+   The generic `h1, h2, h3, h4 { font-weight: 600 !important }` rule below
+   did not reach h5, so the weight is restated here to keep the visual
+   result byte-identical to the h5 version. */
+.ftr nav h2 { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin: 0 0 22px; font-weight: 500 !important; }
 .ftr ul { list-style: none; padding: 0; margin: 0; }
 .ftr li { margin: 8px 0; font-size: 13px; color: var(--ivory-soft); }
 .ftr li a:hover { color: var(--ivory); }

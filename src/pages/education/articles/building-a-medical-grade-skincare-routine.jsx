@@ -79,6 +79,6 @@ export default {
     { label: "\"Cosmeceutical\" Label on Cosmetics — the term has no meaning under the law", publisher: "U.S. Food and Drug Administration", url: "https://www.fda.gov/cosmetics/cosmetics-labeling-claims/cosmeceutical" },
     { label: "Is It a Cosmetic, a Drug, or Both? (Or Is It Soap?)", publisher: "U.S. Food and Drug Administration", url: "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap" },
     { label: "How to apply sunscreen", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/how-to-apply-sunscreen" },
-    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-tips-dermatologists-use" },
+    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/healthier-looking-skin" },
   ],
 };

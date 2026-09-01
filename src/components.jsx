@@ -303,7 +303,7 @@ const Footer = ({ navigate }) => (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 40, maxWidth: 760, margin: "0 auto" }}>
         {FOOTER_NAV.map((g) => (
           <div key={g.h}>
-            <h5>{g.h}</h5>
+            <h2>{g.h}</h2>
             <ul>
               {g.links.map((l) => (
                 <li key={l.path}>

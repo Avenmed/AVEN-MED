@@ -74,7 +74,7 @@ export default {
   ],
   references: [
     { label: "Acne scars: Overview", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/diseases/acne/derm-treat/scars" },
-    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-tips-dermatologists-use" },
+    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/healthier-looking-skin" },
     { label: "Best questions to ask when considering a cosmetic treatment", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/cosmetic/safety/ask-questions" },
   ],
 };

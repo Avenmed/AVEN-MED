@@ -78,8 +78,10 @@ export const EDU_ARTICLES = [
   // home page. A future article stays at "clinical-review" until Alaa reviews it.
   {
     slug: "the-aven-assessment-what-to-expect",
+    seoTitle: "The AVEN Assessment: What to Expect",
     title: "The AVEN Assessment: What to Expect and Why It Comes First",
     shortTitle: "The AVEN Assessment",
+    metaDescription: "How the AVEN Assessment works — the two consultation tiers, what happens during your visit, and why every plan begins with an evaluation.",
     excerpt: "How the AVEN Assessment works — the two consultation tiers, what happens during your visit, and why every plan at AVEN begins with an evaluation rather than a treatment.",
     category: "patient-guides",
     tags: ["assessment", "consultation", "first visit", "patient guide"],
@@ -113,6 +115,7 @@ export const EDU_ARTICLES = [
     slug: "how-to-choose-a-med-spa",
     title: "How to Choose a Med Spa or Aesthetic Provider",
     shortTitle: "Choosing a Med Spa",
+    metaDescription: "What actually matters when choosing a med spa or aesthetic provider — who performs your treatment, the quality of the consultation, and safety.",
     excerpt: "What actually matters when choosing a med spa or aesthetic provider — who performs your treatment, the quality of the consultation, safety, and the red flags worth slowing down for.",
     category: "patient-guides",
     tags: ["choosing a provider", "med spa", "safety", "patient guide"],
@@ -122,6 +125,7 @@ export const EDU_ARTICLES = [
   },
   {
     slug: "what-is-sculptra-vs-filler",
+    seoTitle: "What Is Sculptra and How It Differs From Filler",
     title: "What Is Sculptra and How Is It Different From Filler?",
     shortTitle: "Sculptra vs. Filler",
     excerpt: "Sculptra stimulates your own collagen gradually, while hyaluronic-acid fillers add volume immediately. Understanding the two mechanisms is the real difference.",
@@ -144,8 +148,10 @@ export const EDU_ARTICLES = [
   },
   {
     slug: "medical-weight-loss-what-a-program-includes",
+    seoTitle: "Medical Weight Loss: What a Program Includes",
     title: "Medical Weight Loss: What a Clinician-Guided Program Includes",
     shortTitle: "Medical Weight Loss",
+    metaDescription: "What a clinician-guided medical weight-loss program includes: medical evaluation, individualized goals, nutrition and lifestyle support, monitoring.",
     excerpt: "What a clinician-guided medical weight-loss program actually includes: a medical evaluation, individualized goals, nutrition and lifestyle support, monitoring, and medication only when appropriate.",
     category: "wellness",
     tags: ["medical weight loss", "metabolic health", "nutrition", "wellness"],
@@ -155,8 +161,10 @@ export const EDU_ARTICLES = [
   },
   {
     slug: "glp-1-medications-for-weight-management",
+    seoTitle: "GLP-1 Medications for Weight Management",
     title: "GLP-1 Medications for Weight Management: An Educational Guide",
     shortTitle: "GLP-1 for Weight Management",
+    metaDescription: "An educational guide to GLP-1 receptor agonists for weight management — how they work, approved uses, side effects, and medical supervision.",
     excerpt: "An educational guide to GLP-1 receptor agonists for weight management — how they work, approved uses, side effects, and why they belong inside a supervised medical program.",
     category: "wellness",
     tags: ["glp-1", "weight management", "medication", "wellness"],
@@ -168,6 +176,7 @@ export const EDU_ARTICLES = [
     slug: "lip-filler-first-time-patients",
     title: "Lip Filler: What First-Time Patients Should Know",
     shortTitle: "Lip Filler for First-Timers",
+    metaDescription: "What first-time lip filler patients should know — how hyaluronic-acid filler works, what the appointment and recovery involve, and why restraint matters.",
     excerpt: "What first-time lip filler patients should know — how hyaluronic-acid filler works, what the appointment and recovery feel like, and why restraint matters more than volume.",
     category: "aesthetics",
     tags: ["lip filler", "dermal filler", "injectables", "first time"],
@@ -177,6 +186,7 @@ export const EDU_ARTICLES = [
   },
   {
     slug: "acne-scars-vs-acne-marks",
+    seoTitle: "Acne Scars vs. Acne Marks: The Difference",
     title: "Acne Scars vs. Acne Marks: Understanding the Difference",
     shortTitle: "Acne Scars vs. Marks",
     excerpt: "Acne marks are discoloration that often fades; acne scars are textural changes that usually need treatment. Knowing the difference guides the right plan.",
@@ -225,6 +235,7 @@ export const EDU_ARTICLES = [
   },
   {
     slug: "why-not-to-try-new-treatments-before-an-event",
+    seoTitle: "Why Not to Try New Treatments Before an Event",
     title: "Why New Treatments Shouldn't Be Scheduled Right Before an Event",
     shortTitle: "Nothing New Before an Event",
     excerpt: "Not because treatments are dangerous, but because individual response is learned by having one. As a date approaches, predictability is worth more.",
@@ -304,6 +315,7 @@ export const EDU_ARTICLES = [
     slug: "post-wedding-maintenance",
     title: "Post-Wedding Maintenance",
     shortTitle: "After the Wedding",
+    metaDescription: "After the wedding the date stops driving. Some event-specific treatment is no longer necessary; other care may remain appropriate, reassessed to your goals.",
     excerpt: "The date stops driving. Some event-specific treatment will no longer be necessary and other care may remain appropriate — reassessed against your goals rather than assumed either way.",
     category: "aesthetics",
     tags: ["bridal", "maintenance", "long-term care", "after"],

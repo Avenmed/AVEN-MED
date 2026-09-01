@@ -210,9 +210,14 @@ export function resolveSeo(route) {
     const slug = route.replace("/education/", "").split("/")[0];
     const article = getEducationArticle(slug);
     if (article) {
+      // Education articles answer informational queries, not local ones, so the
+      // title carries the brand but drops the city — the long suffix was pushing
+      // 13 of 20 past the ~60-char display limit. `seoTitle` / `metaDescription`
+      // are optional SEO-only overrides: the editorial title and the visible
+      // lede (article.excerpt) stay exactly as written.
       meta = {
-        title: `${article.title} · AVEN MED, Orland Park IL`,
-        description: article.excerpt,
+        title: `${article.seoTitle || article.title} · AVEN MED`,
+        description: article.metaDescription || article.excerpt,
       };
     } else {
       notFound = true;

@@ -80,7 +80,7 @@ export default {
   ],
   references: [
     { label: "How to apply sunscreen", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/how-to-apply-sunscreen" },
-    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-tips-dermatologists-use" },
+    { label: "10 skin care secrets for healthier-looking skin", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/healthier-looking-skin" },
     { label: "Acne: Tips for managing", publisher: "American Academy of Dermatology", url: "https://www.aad.org/public/diseases/acne/skin-care/tips" },
   ],
 };
