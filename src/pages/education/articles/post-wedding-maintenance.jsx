@@ -5,10 +5,10 @@
 export default {
   keyTakeaways: [
     "The date stops driving. Care returns to a rhythm set by your face rather than by a calendar.",
-    "Stopping something is a legitimate outcome — not every treatment begun for a wedding needs continuing.",
+    "Some event-specific treatment will no longer be necessary; other care may remain appropriate. Neither is assumed.",
     "What tends to be worth keeping is the daily part, because that is what produced most of the change.",
     "Anything deliberately deferred before the wedding can now be considered with the time it deserves.",
-    "A good practice will tell you when the honest answer is that you need less than you are doing.",
+    "Where the honest answer is that you need less than you are doing, that should be said plainly — recommending less is appropriate when less is right.",
   ],
   body: [
     {
@@ -34,7 +34,7 @@ export default {
     {
       type: "callout",
       tone: "caution",
-      text: "Maintenance means keeping what is genuinely useful, not repeating everything indefinitely because it was once appropriate. A plan that never gets smaller was probably never a plan.",
+      text: "Maintenance means keeping what is genuinely useful rather than repeating everything indefinitely because it was once appropriate — and equally, not stopping something that is still doing real work simply because the wedding has passed.",
     },
     {
       type: "section",
@@ -62,9 +62,10 @@ export default {
     },
     {
       type: "section",
-      heading: "The measure of a good plan",
+      heading: "Reassessed, rather than assumed either way",
       body: [
-        "A bridal plan worked if you looked like yourself on the day and if, afterwards, you are not locked into anything. If the honest recommendation now is that you need less than you are doing, that should be said plainly — and it is the recommendation we would rather give than one designed to keep a schedule full.",
+        "The point of a review afterwards is not to talk you out of care any more than it is to talk you into it. Some event-specific treatment will no longer be necessary once the event has passed. Other things may remain genuinely appropriate as part of longer-term maintenance, and stopping them would be the wrong call.",
+        "What decides it is your current goals, what your skin and health actually need, clinical appropriateness, your own preference, and Alaa's judgment — reassessed now rather than assumed from what was true before the wedding. Ongoing care is not an obligation you took on by planning a wedding, and it is not something to abandon on principle either.",
       ],
     },
   ],

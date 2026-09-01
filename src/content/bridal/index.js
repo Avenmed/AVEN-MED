@@ -197,23 +197,24 @@ export const BRIDAL_SERVICE_SLUGS = [
   "wellness/medical-weight-loss",
 ];
 
-// ---- Education connections (planned Education Center articles) --------------
-// References only. These articles are NOT written yet and are NOT in the
-// Education index, so the page renders them as non-linking "planned" cards until
-// they exist. slugs are proposed (education route = /education/<slug>).
+// ---- Education connections (PUBLISHED Education Center articles) ------------
+// All ten are written, clinically reviewed and published. BridalEducationLinks
+// filters on the status field BELOW, not on the education index — so this file and
+// src/content/education/index.js must be changed in the SAME commit or the cards and
+// the routes fall out of step. slugs are the education route (/education/<slug>).
 // lifecycleStages here are content/campaign tags (see BRIDAL_LIFECYCLE_STAGES) —
 // optional, used later for bridal-education filtering. Not medical timing.
 export const BRIDAL_EDUCATION_REFS = [
-  { slug: "when-to-begin-wedding-skincare", title: "When to begin wedding skincare", status: "planned", lifecycleStages: ["engagement", "planning"] },
-  { slug: "treatment-timing-before-a-wedding", title: "Understanding treatment timing before a wedding", status: "planned", lifecycleStages: ["planning", "preparation"] },
-  { slug: "why-not-to-try-new-treatments-before-an-event", title: "Why new treatments shouldn't be scheduled right before an event", status: "planned", lifecycleStages: ["preparation", "wedding"] },
-  { slug: "how-to-prepare-for-a-bridal-consultation", title: "How to prepare for a bridal consultation", status: "planned", lifecycleStages: ["engagement", "planning"] },
-  { slug: "building-a-medical-grade-skincare-routine", title: "Creating a medical-grade skincare routine", status: "planned", lifecycleStages: ["planning", "preparation"] },
-  { slug: "managing-acne-before-a-wedding", title: "Managing acne before a wedding", status: "planned", lifecycleStages: ["planning", "preparation"] },
-  { slug: "injectable-treatment-timing", title: "What to know about injectable treatment timing", status: "planned", lifecycleStages: ["planning", "preparation"] },
-  { slug: "wedding-week-skincare-guidance", title: "Wedding-week skincare guidance", status: "planned", lifecycleStages: ["wedding"] },
-  { slug: "bridal-skincare-myths", title: "Bridal skincare myths", status: "planned", lifecycleStages: ["engagement", "planning"] },
-  { slug: "post-wedding-maintenance", title: "Post-wedding maintenance", status: "planned", lifecycleStages: ["post-wedding", "maintenance"] },
+  { slug: "when-to-begin-wedding-skincare", title: "When to Begin Wedding Skincare", status: "published", lifecycleStages: ["engagement", "planning"] },
+  { slug: "treatment-timing-before-a-wedding", title: "Understanding Treatment Timing Before a Wedding", status: "published", lifecycleStages: ["planning", "preparation"] },
+  { slug: "why-not-to-try-new-treatments-before-an-event", title: "Why New Treatments Shouldn't Be Scheduled Right Before an Event", status: "published", lifecycleStages: ["preparation", "wedding"] },
+  { slug: "how-to-prepare-for-a-bridal-consultation", title: "How to Prepare for a Bridal Consultation", status: "published", lifecycleStages: ["engagement", "planning"] },
+  { slug: "building-a-medical-grade-skincare-routine", title: "Creating a Medical-Grade Skincare Routine", status: "published", lifecycleStages: ["planning", "preparation"] },
+  { slug: "managing-acne-before-a-wedding", title: "Managing Acne Before a Wedding", status: "published", lifecycleStages: ["planning", "preparation"] },
+  { slug: "injectable-treatment-timing", title: "What to Know About Injectable Treatment Timing", status: "published", lifecycleStages: ["planning", "preparation"] },
+  { slug: "wedding-week-skincare-guidance", title: "Wedding-Week Skincare Guidance", status: "published", lifecycleStages: ["wedding"] },
+  { slug: "bridal-skincare-myths", title: "Bridal Skincare Myths", status: "published", lifecycleStages: ["engagement", "planning"] },
+  { slug: "post-wedding-maintenance", title: "Post-Wedding Maintenance", status: "published", lifecycleStages: ["post-wedding", "maintenance"] },
 ];
 
 // ---- FAQs (medically responsible placeholder answers; final copy pending) ---

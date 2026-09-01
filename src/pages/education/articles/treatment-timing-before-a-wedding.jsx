@@ -8,7 +8,8 @@ export default {
     "Hyaluronic-acid filler shows a change the same day, but what you see on day one is not the final result.",
     "A biostimulator like Sculptra changes almost nothing on the day and builds over months as a staged series.",
     "Resurfacing and skincare are cumulative: the work happens across a course, not in one appointment.",
-    "None of this converts into a universal countdown. Sequencing is set at your assessment.",
+    "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — a practice policy, and a floor rather than a target.",
+    "Beyond that boundary there is no universal countdown. Sequencing is set at your assessment.",
   ],
   body: [
     {
@@ -58,15 +59,24 @@ export default {
     },
     {
       type: "section",
+      heading: "Where AVEN draws a line",
+      body: [
+        "There is one fixed point in all of this, and it is AVEN's own. AVEN does not perform aesthetic treatment within two weeks of a wedding or major event.",
+        "It is worth being precise about what that is and is not. It is a practice policy — AVEN's planning boundary, not a regulatory requirement, a manufacturer instruction or an industry standard. It is also not a claim that two weeks is enough time for everything to settle. Plenty of things need considerably longer than that, and how much longer is individual.",
+        "Read it as a floor rather than a target. It is the point beneath which nothing is scheduled, not a window to aim for. Most planning worth doing happens a great deal earlier than two weeks out, and treatments that build gradually or run as a series need months rather than weeks.",
+      ],
+    },
+    {
+      type: "section",
       heading: "What this article deliberately does not do",
       body: [
-        "It does not tell you how many weeks before your wedding to have anything. There is no universal answer to that, and a page cannot produce one responsibly — the honest version depends on your skin, your history, what is being considered, and how you have responded to it before.",
+        "Beyond that boundary, it does not tell you how many weeks before your wedding to have any particular thing. That part has no universal answer, and a page cannot produce one responsibly — the honest version depends on your skin, your history, what is being considered, and how you have responded to it before.",
         "What it can do is give you the vocabulary to have a better conversation. If you arrive at your assessment understanding that some things are immediate and some accumulate, the planning discussion becomes a real one rather than a list of names.",
       ],
     },
   ],
   faqs: [
-    { q: "How far in advance should I have treatment before my wedding?", a: "That is genuinely individual and is set at your assessment rather than by a general rule. What is consistent is the principle: leave enough room that what you see is the settled result rather than a stage on the way to it, and enough room to review and adjust if you want to." },
+    { q: "How far in advance should I have treatment before my wedding?", a: "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — that is the practice's own planning policy rather than a regulatory or industry rule. Outside that boundary, timing is individual: it depends on the treatment, the area, your history and how you have responded before. And two weeks is a floor rather than a target — it is not a claim that two weeks is long enough for everything to settle. The principle behind it is to leave enough room that what you see is the settled result rather than a stage on the way to it." },
     { q: "Can I combine treatments to save time?", a: "Sometimes, when a clinician judges it appropriate — but combining reduces your ability to tell what caused what, which matters most when there is a date involved. Where several treatments are appropriate, they are usually sequenced across a plan rather than stacked." },
     { q: "Which treatment works fastest?", a: "Filler produces a same-day change, but it still settles over one to two weeks. A neuromodulator takes days to begin and 10 to 14 days to settle. Nothing that works gradually — collagen-led treatment, a resurfacing series, skincare — can be accelerated to fit a deadline, which is why those are the ones that benefit most from starting early." },
     { q: "Is it better to do more, earlier?", a: "No. More is not the goal, and a longer runway is best spent doing a considered amount properly rather than a larger amount comfortably. The plan that ends early because it worked is a good outcome." },

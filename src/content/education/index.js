@@ -186,7 +186,7 @@ export const EDU_ARTICLES = [
     datePublished: "2026-08-29", dateModified: "2026-08-29",
     readingTime: 5, status: "published",
   },
-  // ---- BRIDAL EDUCATION LIBRARY — HELD in "clinical-review" -----------------
+  // ---- BRIDAL EDUCATION LIBRARY — PUBLISHED 2026-08-29 ---------------------
   // Ten articles authored to complete the Bridal Journey's education layer. They
   // answer "what does this mean when planning around a wedding?" — the general
   // Education articles answer "what is this treatment?" — and link across rather
@@ -194,8 +194,13 @@ export const EDU_ARTICLES = [
   // exactly; that registry's own status field must flip to "published" in the SAME
   // commit as these, or the Bridal cards will stay hidden while the routes are live.
   // Filed under existing categories only (no new topic page is created).
-  // datePublished below is the AUTHORING date — set it to the real publish date when
-  // Alaa's review completes, as was done for the Wave 1 articles.
+  // Clinically reviewed and published on Alaa's approval. Her decisions are carried
+  // in the bodies: AVEN performs no aesthetic treatment within two weeks of a wedding
+  // or major event (a PRACTICE policy and a floor — never a regulatory rule, and never
+  // a claim that two weeks is sufficient settling time); no separate minimum lead time
+  // for a first-ever treatment; acne aims at control well in advance, never clearance
+  // by a date; post-wedding care is reassessed rather than assumed in either
+  // direction. datePublished is the real publish date.
   {
     slug: "when-to-begin-wedding-skincare",
     title: "When to Begin Wedding Skincare",
@@ -205,7 +210,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "planning", "skincare", "timing"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "treatment-timing-before-a-wedding",
@@ -216,7 +221,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "timing", "planning", "treatments"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "why-not-to-try-new-treatments-before-an-event",
@@ -227,7 +232,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "safety", "timing", "planning"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "how-to-prepare-for-a-bridal-consultation",
@@ -238,7 +243,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "assessment", "consultation", "patient guide"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "building-a-medical-grade-skincare-routine",
@@ -249,7 +254,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "skincare", "medical-grade", "routine"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "managing-acne-before-a-wedding",
@@ -260,7 +265,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "acne", "skin health", "planning"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "injectable-treatment-timing",
@@ -271,7 +276,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "injectables", "botox", "filler", "timing"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 7, status: "clinical-review",
+    readingTime: 7, status: "published",
   },
   {
     slug: "wedding-week-skincare-guidance",
@@ -282,7 +287,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "wedding week", "skincare", "planning"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
   {
     slug: "bridal-skincare-myths",
@@ -293,7 +298,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "myths", "skincare", "expectations"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 6, status: "clinical-review",
+    readingTime: 6, status: "published",
   },
   {
     slug: "post-wedding-maintenance",
@@ -304,7 +309,7 @@ export const EDU_ARTICLES = [
     tags: ["bridal", "maintenance", "long-term care", "after"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",
     datePublished: "2026-08-29", dateModified: "2026-08-29",
-    readingTime: 5, status: "clinical-review",
+    readingTime: 5, status: "published",
   },
 ];
 

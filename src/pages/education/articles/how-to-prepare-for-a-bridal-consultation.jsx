@@ -45,7 +45,7 @@ export default {
     {
       type: "callout",
       tone: "caution",
-      text: "Do not stop or change a prescription medication before a consultation. Bring the list and let it be discussed — changing how you take something you were prescribed is a conversation with the clinician who prescribed it.",
+      text: "Do not stop or change a prescription medication in order to book or attend a consultation. Bring the list as it is. Alaa reviews any medication considerations when working out whether and how treatment might proceed — and changing how you take something you were prescribed is a conversation with the clinician who prescribed it, never a step you take on your own."
     },
     {
       type: "section",
@@ -77,7 +77,7 @@ export default {
   faqs: [
     { q: "Do I need to know what treatments I want beforehand?", a: "No. Arriving without a list is normal and often better — it leaves the conversation open. What helps is being able to describe what you notice and what you would like to be different, in whatever words you have." },
     { q: "Which Assessment should I book for bridal planning?", a: "Either can work. A single specific question suits the Quick Assessment; weighing several considerations or wanting a written plan across time points to the Comprehensive. Bridal planning does not require the longer visit — if you are unsure, start with the concern that brought you in." },
-    { q: "Should I stop my skincare or medication before coming in?", a: "No. Bring your products and your medication list as they are. Changing either beforehand removes the information the visit is meant to gather, and prescription changes are a conversation with the clinician who prescribed them." },
+    { q: "Should I stop my skincare or medication before coming in?", a: "No. You do not need to stop or change anything to book or attend a consultation — bring your products and your medication list as they are. Changing either beforehand removes the information the visit is meant to gather. Where a medication is relevant to a specific treatment, that is worked out individually at the assessment; prescription changes are always a conversation with the clinician who prescribed them, never something to do on your own." },
     { q: "Can I bring photographs of results I like?", a: "Yes, and it is genuinely helpful — as communication rather than as a target. Say what you like about the image. Individual anatomy differs, results vary between people, and no outcome can be guaranteed." },
     { q: "Will I be pressured to book something?", a: "No. The Assessment is a consultation, not a commitment, and leaving to think about it is a normal outcome. So is being told that a treatment is not appropriate, or not yet." },
   ],

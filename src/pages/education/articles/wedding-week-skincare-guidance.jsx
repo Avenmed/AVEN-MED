@@ -1,11 +1,12 @@
 /* Bridal Education — the final week. WRITTEN DELIBERATELY WITHOUT the four open
- * clinical questions (final-week guidance specifics, first-injectable lead time, a
- * named "last appointment" concept, herpes prophylaxis). States no lead time, no
- * cutoff date, no medication instruction and no prophylaxis protocol. Its position is
- * that timing close to an event is individualized and belongs to the provider. */
+ * clinical questions on medication and prophylaxis. States no medication instruction
+ * and no prophylaxis protocol. It DOES carry AVEN's own two-week practice boundary
+ * (Alaa, approved) — framed as a floor and a practice policy, never as a regulatory
+ * rule or as a claim that two weeks is sufficient settling time. */
 export default {
   keyTakeaways: [
-    "The final week is not the moment to introduce anything your skin has not already met.",
+    "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — so the final week is not a treatment window at all.",
+    "It is also not the moment to introduce anything your skin has not already met at home.",
     "A routine that has been stable for months is an asset — the useful instruction is usually to keep doing it.",
     "Follow the individualized aftercare or timing instructions your provider has already given you; they outrank anything general.",
     "Basic barrier care and daily sun protection do more this week than any new product could.",
@@ -40,10 +41,11 @@ export default {
     },
     {
       type: "section",
-      heading: "On treatment timing this close to the date",
+      heading: "Aesthetic treatment in the final two weeks",
       body: [
-        "This article does not tell you whether a particular treatment can happen in your final week, and it will not give a last safe date for anything. That is genuinely individual: it depends on the treatment, the area, your history, how you have responded before, and where you are in a plan.",
-        "It is a clinical judgment, and the right moment to make it is at your assessment, well before the week itself — not by reading a page and deciding. If the question is live for you, raise it early enough that there is room for the answer to be \"yes, and here is when\" rather than \"not now\".",
+        "On this one point AVEN is not vague. AVEN does not perform aesthetic treatment within two weeks of a wedding or major event. If your wedding is inside that window, the answer to \"could I still fit something in?\" is no, and it is no by policy rather than by case-by-case negotiation.",
+        "That is AVEN's own planning boundary — not a regulatory rule, not an industry standard, and not a claim that everything is settled and safe once a fortnight has passed. Many treatments need considerably more room than that. It is simply the point beneath which nothing is scheduled, because introducing treatment this close to an event removes any margin to see how you respond and to act if you would rather something were different.",
+        "It applies to aesthetic treatment. It has nothing to do with your ordinary skincare, sunscreen, hygiene, or any medical or family-medicine care you need — none of which is paused because a wedding is close.",
       ],
     },
     { type: "cta" },
@@ -65,8 +67,8 @@ export default {
     },
   ],
   faqs: [
-    { q: "Can I have a facial the week of my wedding?", a: "That depends on your skin, what else you have had recently and when — it is an individualized decision rather than a general rule. A facial before an event is planned with enough room that any transient flushing has settled, and skin recovering from a peel or microneedling should not receive one in the same window. Raise it at your assessment rather than booking on instinct." },
-    { q: "Is there a last date for injectables before the wedding?", a: "There is no universal one, and this article deliberately does not invent it. What is appropriate close to a date depends on the treatment, the area, your history and how you have responded before. That judgment belongs to your provider, and the useful time to ask is well before the week in question." },
+    { q: "Can I have a facial the week of my wedding?", a: "Not at AVEN. AVEN does not perform aesthetic treatment within two weeks of a wedding or major event, and that includes the week itself. Planned earlier, a facial before an event is scheduled with enough room that any transient flushing has settled, and skin recovering from a peel or microneedling would not receive one in the same window." },
+    { q: "Is there a last date for injectables before the wedding?", a: "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event, so that is the outer limit — as a practice policy, and as a floor rather than a recommendation. It is not a claim that two weeks is enough room for any given treatment; most need more. Beyond that boundary the timing is individual and set at your assessment, well before the window in question." },
     { q: "Should I do anything special in the final week?", a: "Mostly, no — and that is the recommendation rather than an absence of one. Keep to the routine your skin knows, support the barrier, protect from the sun, and resist adding anything new. Stability is what you are aiming for." },
     { q: "I've broken out days before the wedding. What should I do?", a: "Contact AVEN rather than escalating on your own. Attacking a breakout with something stronger frequently leaves skin more irritated than the breakout would have been. There may be something appropriate, or the better answer may be to leave it to settle — and that is a judgment made by someone who can look at it." },
   ],

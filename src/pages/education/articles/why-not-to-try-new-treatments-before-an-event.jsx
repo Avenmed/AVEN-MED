@@ -1,5 +1,6 @@
 /* Bridal Education — the strongest of the ten. Argues from predictability, not fear.
- * Every safety statement is sourced; no universal cutoff is invented. */
+ * Every safety statement is sourced. The only fixed date stated is AVEN's own
+ * two-week practice boundary; no external or universal cutoff is invented. */
 export default {
   keyTakeaways: [
     "Individual response to a treatment is not knowable in advance — it is learned by having it once.",
@@ -7,6 +8,7 @@ export default {
     "Some reactions to filler are reported days or later rather than immediately, which is why a settled interval matters.",
     "A major event is a poor moment to be learning how your body answers something new.",
     "As the date approaches, predictability becomes worth more than potential upside.",
+    "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — a practice policy, not a claim that two weeks settles everything.",
   ],
   body: [
     {
@@ -49,6 +51,7 @@ export default {
       body: [
         "It is not doing nothing. It is deciding, as the date gets closer, that the plan stops widening and starts consolidating — repeating what has already worked on you rather than introducing variables, and leaving room for anything to settle and for a review if you want one.",
         "In practice that often means a first-time treatment is discouraged close to a wedding as a matter of planning rather than prohibition. It is not that it cannot be done. It is that you would be learning your own response and preparing for a wedding at the same time, and there is rarely a good reason to do both at once.",
+        "AVEN also holds one fixed boundary: it does not perform aesthetic treatment within two weeks of a wedding or major event. That is the practice's own planning policy rather than a regulatory or industry rule, and it is not a claim that two weeks is long enough for everything to settle — many things need longer. It is simply the point beneath which nothing is scheduled.",
       ],
     },
     {
@@ -60,7 +63,7 @@ export default {
     },
   ],
   faqs: [
-    { q: "Is there a date after which I shouldn't have treatment?", a: "There is no universal cutoff, and this article deliberately does not invent one. What is appropriate close to a date depends on the treatment, the area, your history and how you have responded before — which is a conversation with your provider at your assessment, ideally well before the window in question." },
+    { q: "Is there a date after which I shouldn't have treatment?", a: "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — that is the practice's own planning policy rather than a regulatory or industry rule. Outside that boundary, timing is individual: it depends on the treatment, the area, your history and how you have responded before. And two weeks is a floor rather than a target — it is not a claim that two weeks is long enough for everything to settle. The conversation to have is at your assessment, well before the window in question." },
     { q: "I've had this treatment before with no problems. Is that different?", a: "Yes, meaningfully. Familiarity is the point of this article. A repeat of something you have already had, with the clinician who did it, is far more predictable than a first-time treatment — and predictability is what matters most as a date approaches." },
     { q: "Are you saying treatments are risky?", a: "No. Most go exactly as expected, and serious complications are uncommon. The argument here is about variability and timing, not danger: ordinary, expected effects vary between people, and some reactions are reported later rather than immediately, so leaving room is simply sensible." },
     { q: "What if I really want to try something and my wedding is soon?", a: "Raise it at your assessment rather than deciding from a page. There may be a version of what you want that is appropriate, a version that is better postponed until afterwards, or a reason to say not yet. Saying not yet is a legitimate outcome." },

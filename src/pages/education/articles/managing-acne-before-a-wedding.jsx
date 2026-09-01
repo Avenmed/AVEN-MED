@@ -5,14 +5,14 @@ export default {
   keyTakeaways: [
     "Active acne, the marks it leaves, and true scarring are three different problems with three different timelines.",
     "Acne treatment takes weeks to months to show, which is the argument for starting early rather than escalating late.",
-    "No plan can promise clear skin by a specific date, and any that does is overpromising.",
+    "The goal is to bring active acne under control well before the wedding — not to promise clear skin by a date, which nobody can.",
     "Active breakouts are usually brought under control before scar-focused work, because ongoing inflammation keeps producing new damage.",
     "Aggressive last-minute intervention is the most reliable way to arrive with irritated skin.",
   ],
   body: [
     {
       type: "lede",
-      text: "Acne before a wedding is worth treating properly and worth starting early, for one unglamorous reason: it responds over weeks to months rather than days. Nothing about a date changes that biology, and plans that pretend otherwise tend to make skin worse rather than better.",
+      text: "The goal with acne before a wedding is to bring the active condition under control well in advance of the date. That is deliberately different from promising clear skin by it. Acne responds over weeks to months rather than days, it is managed in steps, and nothing about a date changes that — which is why starting early is the whole of the advice.",
     },
     {
       type: "section",
@@ -33,7 +33,7 @@ export default {
       heading: "Why active acne is addressed first",
       body: [
         "Both marks and scars begin with inflammation from acne. While new lesions keep forming, they keep producing the inflammation that leaves fresh discoloration and, in some cases, damages tissue enough to scar. Working on old marks while breakouts continue is repainting a wall with the leak still running.",
-        "Bringing the active condition under control does two things at once: it reduces new damage, and it makes any later work on existing texture worth doing. That ordering is not a delay tactic — it is what makes the second stage effective.",
+        "Bringing the active condition under control does two things at once: it reduces new damage, and it makes any later work on existing texture worth doing. That ordering is not a delay tactic — it is what makes the second stage effective. It is also why the goal is stated as control well in advance rather than clearance by a date: control is achievable and assessable; a guaranteed date is neither.",
       ],
     },
     {
@@ -50,7 +50,7 @@ export default {
       heading: "What this article will not do",
       body: [
         "It will not tell you what to take. Acne is a medical condition, and what is appropriate — topical, oral, procedural, or a combination — depends on the type and severity of yours, your history, and what you have already tried. That is an examination and a conversation, not something an article can responsibly assign.",
-        "It also will not promise clearance by your date. Nobody can. What a good plan offers is a realistic direction, honest expectations, and a route that does not make things worse in the meantime.",
+        "It also will not promise clearance by your date. Nobody can, and a plan that does is overpromising. What a good plan offers is a realistic direction toward control, honest expectations, and a route that does not make things worse in the meantime. Acne management is stepwise: start, assess the response, adjust — which needs time rather than force.",
       ],
     },
     {
@@ -70,7 +70,7 @@ export default {
     },
   ],
   faqs: [
-    { q: "Can my acne be clear by my wedding?", a: "No responsible plan promises that, and we will not. Acne treatment takes weeks to months to show, and individual response varies. What a plan can offer is a realistic direction, an honest sense of what is achievable in the time you have, and an approach that does not risk making your skin worse close to the date." },
+    { q: "Can my acne be clear by my wedding?", a: "No responsible plan promises that, and we will not. The goal is to bring active acne under control well before the wedding, which is a different and more achievable aim than clear skin by a date. Acne treatment takes weeks to months to show, it is adjusted in steps, and individual response varies — which is why starting early matters more than any single treatment choice." },
     { q: "Should I treat my acne scars before the wedding?", a: "Usually the sequence matters more than the timing. Active acne is generally brought under control first, because ongoing breakouts keep producing the inflammation behind new marks and new scarring. Scar-focused work is more worthwhile once that is settled — and it tends to be a planned series rather than a single appointment." },
     { q: "Is it worth trying something stronger to speed things up?", a: "Escalating close to a date is one of the more reliable ways to arrive with irritated skin. Skin frequently passes through an adjustment period, and there is little room for that in the final weeks. Starting earlier is what makes a gentler approach possible." },
     { q: "Are the marks left after a breakout the same as scars?", a: "No. Marks are flat colour changes on smooth skin and usually fade over weeks to months, helped considerably by daily sun protection. Scars are textural — a dent or a raised area you can feel — and generally do not resolve on their own. Which you have is confirmed in person." },

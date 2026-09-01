@@ -8,6 +8,7 @@ export default {
     "A neuromodulator begins softening movement within days; AVEN judges the settled result at 10 to 14 days, and the effect typically lasts about three to four months.",
     "Filler shows a change the same day, but swelling and settling mean day one is not the result you keep.",
     "Sculptra is not a wedding treatment in any short-notice sense: it builds over months and cannot be reversed on demand.",
+    "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event — a practice policy and a floor, not a recommended window.",
     "AVEN treats adults 18 and over for aesthetic injectables as practice policy, and does not treat during pregnancy or breastfeeding.",
   ],
   body: [
@@ -50,10 +51,11 @@ export default {
     },
     {
       type: "section",
-      heading: "What this article will not give you",
+      heading: "The one fixed date, and what it is not",
       body: [
-        "A last safe date. There is no universal one, and inventing one would be worse than unhelpful — it would be wrong for most people who read it. What is appropriate close to an event depends on which treatment, which area, your history, and how you have responded to it before.",
-        "What is consistent is the principle behind the answer you will get: as the date approaches, familiar and predictable is worth more than new and promising. A repeat of something you have already had, at a similar amount, with the clinician who did it, is a different proposition from a first-time treatment.",
+        "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event. That is the practice's own planning policy — not a regulatory requirement, not a manufacturer instruction, and not an industry standard.",
+        "It is also not a statement that two weeks is long enough. A neuromodulator's settled result is judged at 10 to 14 days, but that is a fact about how the product behaves, not permission to schedule it a fortnight out; the two-week boundary is where AVEN stops scheduling, not where good planning starts. Filler settles over roughly one to two weeks and reactions are not always immediate. Sculptra builds across months. None of those is accommodated by two weeks.",
+        "Read it as a floor. Beyond it, what is appropriate depends on which treatment, which area, your history, and how you have responded before — and the principle behind the answer stays the same: as the date approaches, familiar and predictable is worth more than new and promising.",
       ],
     },
     {
@@ -66,11 +68,11 @@ export default {
     },
   ],
   faqs: [
-    { q: "When should I have Botox before my wedding?", a: "There is no universal answer and this article does not invent one. What is fixed is how it behaves: movement begins softening within days, the settled result is judged at 10 to 14 days, and the effect typically lasts about three to four months. Your timing is set at assessment around those facts and your own history." },
+    { q: "When should I have Botox before my wedding?", a: "AVEN does not perform aesthetic treatment within two weeks of a wedding or major event, so that is the outer boundary — but it is a floor rather than a recommendation, and 10 to 14 days being the point at which the result settles does not mean a fortnight is the right amount of room. Beyond that boundary the answer is individual, set at assessment around how the product behaves and your own history." },
     { q: "Will my lips still be swollen on the day?", a: "That depends entirely on when treatment happens relative to your date, which is exactly why it is planned rather than fitted in. Swelling after lip filler is normal and expected, most of it eases within a few days, and the filler settles over roughly one to two weeks." },
     { q: "Can I have Sculptra for my wedding?", a: "It can be part of a plan, but not a short-notice one. It works gradually over months as a staged series, changes almost nothing on the day, and cannot be reversed on demand. If you need a visible change soon, it is the wrong treatment and you will be told so." },
     { q: "Is it safe to have injectables while pregnant or breastfeeding?", a: "AVEN does not perform aesthetic treatment during pregnancy or while breastfeeding. Tell us if either applies so the plan is built around it from the start." },
-    { q: "I've never had an injectable. Should I start before my wedding?", a: "Possibly — but earlier rather than later, and conservatively. A first treatment is where you learn how you respond, and it is better to learn that with time in hand than in the weeks before a date. Raise it at your assessment with your date on the table." },
+    { q: "I've never had an injectable. Should I start before my wedding?", a: "Possibly — but earlier rather than later, and conservatively. There is no separate minimum lead time for a first treatment; what applies is the same two-week boundary, plus the plain fact that a first treatment is where you learn how you respond. It is far better to learn that with time in hand. Raise it at your assessment with your date on the table." },
   ],
   relatedServices: [
     { label: "What Is Botox and How Does It Work?", path: "/education/what-is-botox-how-it-works", note: "Mechanism and what it treats." },
