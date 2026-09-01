@@ -304,7 +304,7 @@ export const EDU_ARTICLES = [
     slug: "post-wedding-maintenance",
     title: "Post-Wedding Maintenance",
     shortTitle: "After the Wedding",
-    excerpt: "The date stops driving. What is worth keeping, what is worth stopping, and why a plan that never gets smaller was probably never a plan.",
+    excerpt: "The date stops driving. Some event-specific treatment will no longer be necessary and other care may remain appropriate — reassessed against your goals rather than assumed either way.",
     category: "aesthetics",
     tags: ["bridal", "maintenance", "long-term care", "after"],
     authorId: "aven-editorial", reviewerId: "alaa-mashal",

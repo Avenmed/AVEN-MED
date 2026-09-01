@@ -255,7 +255,7 @@ export function BridalEducationLinks({ refs = [], navigate }) {
             Read before you <em>plan.</em>
           </h2>
           <BridalDisclaimer style={{ marginBottom: 40 }}>
-            These clinically reviewed guides are being written for the AVEN Education Center. They'll link here as they publish.
+            Clinically reviewed guides from the AVEN Education Center, written for the questions that come up while planning. Reading is not a plan — what is right for you is decided at your Assessment.
           </BridalDisclaimer>
         </Reveal>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
