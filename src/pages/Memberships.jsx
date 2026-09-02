@@ -18,7 +18,7 @@ const PRINCIPLES = [
   { n: "02", k: "Prevention Over Reaction", b: "The steady, unglamorous work of maintaining results and staying ahead — not chasing corrections after the fact." },
   { n: "03", k: "Consistent Care", b: "One practitioner, one continuous plan, refined visit after visit as your goals and your life change." },
   { n: "04", k: "Personalized Planning", b: "Your pathway is reviewed and adjusted through the year — considered, never on a coupon cycle." },
-  { n: "05", k: "Flexible by Design", b: "Pause without penalty, keep what you've banked, and move between tiers whenever it suits you." },
+  { n: "05", k: "Nothing Wasted", b: "Every contribution banks as AVEN credit. It does not expire while your membership is active, and it stays usable for twelve months after it ends." },
   { n: "06", k: "Better Through Continuity", b: "The best outcomes come from steady attention over time — which is exactly what a membership makes possible." },
 ];
 
@@ -27,10 +27,10 @@ const PRINCIPLES = [
 const BENEFITS = [
   { k: "A Considered Investment", b: "A steady monthly contribution banks toward your treatments, so care becomes a plan rather than a run of one-off decisions. It isn't a discount — it's your own care, funded intentionally." },
   { k: "Ongoing Guidance", b: "Your care plan is reviewed with you through the year, with a Skin Progress Review that keeps things current — attention, not just access." },
-  { k: "Priority Access", b: "Priority scheduling and Saturday clinic access, so care fits your life. Signature adds dedicated concierge support — a direct line to your practitioner." },
+  { k: "Priority Access", b: "A 48-hour booking window before general availability, and access to Saturday clinic appointments when they are offered. Signature adds dedicated concierge support — a direct line to your practitioner." },
   { k: "Continuity of Care", b: "The same practitioner and the same plan, deepening over time. Continuity is the quiet advantage behind lasting results." },
-  { k: "Flexibility", b: "Pause without penalty and keep your banked credit; switch tiers whenever it suits you. The membership bends to your life." },
-  { k: "Member Moments", b: "Early access to new treatments and technology — and, for Signature, the AVEN Birthday, marked the way it should be." },
+  { k: "Credit That Keeps", b: "Your banked credit does not expire while your membership is active, and remains usable for twelve months after it ends. It is your own care, funded ahead of time." },
+  { k: "Member Moments", b: "Early access to eligible new treatments and clinic technology — and, for Signature, the AVEN Birthday, marked the way it should be." },
 ];
 
 // Who it's designed for — editorial framing, not invented facts.
@@ -189,10 +189,10 @@ const MembershipsPage = ({ navigate }) => {
           {/* HOW IT WORKS */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
             {[
-              { n: "01", k: "Bank Monthly", b: "Your membership contribution accrues toward treatments. Nothing expires while active." },
-              { n: "02", k: "Plan Quarterly", b: "We review your pathway with you four times a year — adjusting for season, life, and progress." },
-              { n: "03", k: "Treat When Ready", b: "Visit when your pathway calls for it. There is no pressure to spend down." },
-              { n: "04", k: "Stay, or Pause", b: "Memberships pause without penalty. Banked credit stays usable for twelve months." }
+              { n: "01", k: "Bank Monthly", b: "Your full contribution banks as AVEN credit toward eligible treatments. Nothing expires while your membership is active." },
+              { n: "02", k: "Review Together", b: "A Skin Progress Review, up to twice a membership year, keeps your pathway current as your skin changes." },
+              { n: "03", k: "Treat When Ready", b: "Visit when your pathway calls for it. We recommend — we never require." },
+              { n: "04", k: "Twelve Months, Then Monthly", b: "An initial twelve-month term, then month-to-month with thirty days' written notice." }
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 100}>
                 <div style={{ padding: "34px 26px", border: "1px solid var(--hairline)", height: "100%", background: "var(--bg)" }}>
@@ -225,11 +225,10 @@ const MembershipsPage = ({ navigate }) => {
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "$100 banked monthly toward treatments",
-                  "Skin Progress Review — 1–2x a year",
-                  "Saturday clinic access",
-                  "Priority Scheduling · 48-hour priority scheduling",
-                  "Banked credit retained if you pause"
+                  "$100 banked monthly as AVEN credit",
+                  "Skin Progress Review — up to 2 times per membership year",
+                  "Saturday Clinic Access",
+                  "Priority Scheduling — 48-hour priority scheduling"
                 ].map((s) => (
                   <li key={s}><span>{s}</span></li>
                 ))}
@@ -245,7 +244,8 @@ const MembershipsPage = ({ navigate }) => {
               <h3 style={{ marginBottom: 10 }}>Signature</h3>
               <p className="body-sm" style={{ margin: 0, maxWidth: "44ch" }}>
                 The deeper practice. A larger monthly contribution that
-                banks toward treatments, with expanded access.
+                banks toward treatments, with expanded access. $200 is the
+                full monthly contribution — not an addition to Maintenance.
               </p>
               <div className="price">
                 <span className="amt">$200</span>
@@ -256,17 +256,19 @@ const MembershipsPage = ({ navigate }) => {
               </div>
               <ul style={{ marginTop: 12 }}>
                 {[
-                  "$200 banked monthly toward treatments",
+                  "$200 banked monthly as AVEN credit",
                   {
-                    primary: "One Annual Comprehensive AVEN Assessment (60 minutes), included with your Signature membership.",
-                    descriptor: "A full review at the end of your pathway comparing your baseline to your progress and planning your next chapter."
+                    primary: "One Annual Comprehensive AVEN Assessment, up to 60 minutes, each membership year.",
+                    descriptor: "Includes an Aura skin analysis, and is intended to compare your baseline to your current progress and plan the next chapter of your care. It is distinct from the shorter Skin Progress Review."
                   },
-                  "Saturday clinic access",
-                  "Dedicated Concierge Support — a direct line to your clinical lead, Alaa Mashal, MSN, APRN, FNP-BC",
-                  "Early access to new treatments and clinic technology",
+                  {
+                    primary: "Dedicated Concierge Support — a direct communication line to Alaa Mashal, MSN, APRN, FNP-BC.",
+                    descriptor: "For treatment-pathway questions and care coordination during normal AVEN operating hours. It is not emergency or after-hours access."
+                  },
+                  "Early access to eligible new treatments and clinic technology",
                   {
                     primary: "The AVEN Birthday.",
-                    descriptor: "Every year, we mark yours the way it should be — with something personal, chosen just for you. What it is stays a surprise. That we remembered doesn't."
+                    descriptor: "Every year, we mark yours the way it should be — one personal recognition, chosen by us. What it is stays a surprise. That we remembered doesn't."
                   }
                 ].map((s, i) => (
                   typeof s === "string" ? (
@@ -306,15 +308,14 @@ const MembershipsPage = ({ navigate }) => {
               <div className="label" style={{ color: "var(--gold)" }}>Signature</div>
             </div>
             {[
-              ["Monthly contribution", "$100", "$200"],
-              ["Banked toward treatments", "$100 / month", "$200 / month"],
-              ["Skin Progress Review", "1–2x / year", "1–2x / year"],
-              ["Annual Comprehensive AVEN Assessment (60 Minutes)", "—", "Included"],
-              ["Saturday clinic access", "Included", "Included"],
-              ["Priority Scheduling", "48-hour priority scheduling", "24–36 hour priority scheduling"],
+              ["Monthly contribution (total)", "$100", "$200"],
+              ["Banked monthly as AVEN credit", "$100 / month", "$200 / month"],
+              ["Skin Progress Review", "Up to 2x / membership year", "Up to 2x / membership year"],
+              ["Annual Comprehensive AVEN Assessment (up to 60 minutes)", "—", "Included"],
+              ["Saturday Clinic Access", "Included", "Included"],
+              ["Priority Scheduling", "48-hour", "48-hour"],
               ["Dedicated Concierge Support", "—", "Included"],
-              ["Care Plan Review", "Quarterly", "Quarterly + on-demand"],
-              ["Early access · new technology", "—", "First access"],
+              ["Early access · eligible new treatments and technology", "—", "Included"],
               ["The AVEN Birthday", "—", "Included"]
             ].map(([k, e, el], i, arr) => (
               <div key={k}
@@ -334,6 +335,14 @@ const MembershipsPage = ({ navigate }) => {
               Whichever tier you choose, the value is the same: more intentional care, not more treatments.
             </p>
           </Reveal>
+          <Reveal>
+            <p className="body-sm" style={{ marginTop: 18, maxWidth: "62ch", color: "var(--muted)" }}>
+              Saturday Clinic Access means access to limited Saturday appointments when
+              they are offered — not a guaranteed Saturday appointment. Priority Scheduling
+              means a 48-hour booking window before general availability; it never displaces
+              a patient who is already booked.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -348,11 +357,15 @@ const MembershipsPage = ({ navigate }) => {
           </Reveal>
           {[
             ["Who benefits most from a membership?", "Patients who see their care as ongoing — who value continuity with one practitioner and would rather maintain results steadily than chase corrections. Not everyone needs a membership, and we'll always be honest about that."],
-            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked toward treatments at AVEN. Banked credit applies to treatments only — not to wellness packages or retail products. The benefits above (priority scheduling, Saturday access, the Skin Progress Review) are included on top."],
-            ["How does the AVEN Assessment fit in?", "Every plan at AVEN begins with the AVEN Assessment, and the Signature membership includes one Annual Comprehensive AVEN Assessment (60 minutes) — a chance to compare your baseline to your progress and plan the next chapter."],
-            ["What happens if I pause?", "Membership can be paused at any time. Your banked credit remains usable for twelve months from the pause date — applied to any service when you're ready to return."],
-            ["Can I switch between Maintenance and Signature?", "Yes. You can move between the two tiers at any time. Banked credit carries over."],
-            ["What's the difference between the Skin Progress Review and the Care Plan Review?", "The Skin Progress Review is a focused check-in, one or two times a year, on how your skin and treatments are progressing. The Care Plan Review is a scheduled look at your longer-term treatment strategy and what to plan next. The Annual Comprehensive AVEN Assessment is the full 60-minute yearly planning appointment."]
+            ["What does my monthly contribution actually pay for?", "Your full monthly contribution is banked as AVEN credit. It can be applied to eligible aesthetic treatments and services, selected wellness treatments and services, eligible IV therapy, and eligible vitamin injections. The benefits above — priority scheduling, Saturday Clinic Access, the Skin Progress Review — are included on top of that credit."],
+            ["What can't membership credit be used for?", "Skincare and retail products, unrelated Family Medicine charges and services, and cancellation or no-show fees. Credit is personal, nontransferable, non-refundable, and cannot be redeemed for cash."],
+            ["Does my credit expire?", "Not while your membership is active. If your membership ends, any remaining eligible credit stays usable for twelve months."],
+            ["Does banking credit lock in today's prices?", "No. Banked credit is not a prepaid treatment package and does not lock future pricing — current AVEN pricing applies when a treatment or service is received. If your credit doesn't cover the full amount, we apply what you have and you pay the difference at the time of treatment."],
+            ["Is a membership financing?", "No. A membership is not financing and is not a prepaid treatment package. It is a way to fund your own care steadily, in advance, at your own pace. We recommend — we never require."],
+            ["How long does a membership last?", "There is a firm initial twelve-month term. After that, membership continues month to month and can be cancelled with thirty days' written notice. There is no routine pause, freeze, or early cancellation; genuinely extraordinary circumstances are considered individually by management rather than being a standing benefit."],
+            ["How does the AVEN Assessment fit in?", "Every plan at AVEN begins with the AVEN Assessment, and the Signature membership includes one Annual Comprehensive AVEN Assessment of up to 60 minutes each membership year — a chance to compare your baseline to your progress and plan the next chapter."],
+            ["What's the difference between the Skin Progress Review and the Annual Comprehensive AVEN Assessment?", "The Skin Progress Review is a shorter progress touchpoint, available up to two times per membership year, focused on how your skin and treatments are coming along. Aura may be used when it is appropriate. The Annual Comprehensive AVEN Assessment is the longer yearly appointment — up to 60 minutes, included with Signature — for comparing baseline to progress and planning what comes next."],
+            ["What does Signature's early access actually mean?", "When AVEN introduces a new treatment or technology and there is an early-access period for it, Signature members are offered it first. Not every new offering has one, and early access never implies that a treatment is right for you — candidacy is always a clinical decision, and it is not a discount."]
           ].map(([q, a], i) => (
             <Reveal key={q} delay={Math.min(i, 6) * 50}>
               <details style={{
@@ -383,7 +396,7 @@ const MembershipsPage = ({ navigate }) => {
             <p className="body" style={{ marginBottom: 22, maxWidth: "48ch" }}>
               Membership deepens a relationship that starts with the AVEN Assessment — an
               honest read on your goals and a plan built around them. Signature members
-              receive a full Assessment each year as part of their membership.
+              receive one Comprehensive AVEN Assessment, up to 60 minutes, each membership year.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "center" }}>
               <AssessmentCTA navigate={navigate} />

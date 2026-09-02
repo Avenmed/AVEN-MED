@@ -17,11 +17,11 @@ import { CLINICAL_REVIEWER } from '../content/people.js';
 import { getServiceLinksBySlugs } from '../content/registry.jsx';
 import { getBridalJourney } from '../content/bridal/index.js';
 import {
-  useJsonLd, BridalHero, BridalIntroduction, BridalJourneyTimeline, BridalPatientJourney,
+  useJsonLd, BridalHero, BridalIntroduction, BridalProgram, BridalJourneyTimeline, BridalPatientJourney,
   BridalTimelineBuilder, BridalServiceConnections, BridalEducationLinks, BridalResources,
   BridalFAQSection, BridalTestimonialPlaceholder, BridalFinalCTA,
 } from './bridal/BridalComponents.jsx';
-import { BRIDAL_TIMELINE_BUILDER } from '../content/bridal/index.js';
+import { BRIDAL_TIMELINE_BUILDER, BRIDAL_PROGRAM } from '../content/bridal/index.js';
 
 const BASE = CLINIC.url;
 
@@ -103,6 +103,8 @@ const BridalJourneyPage = ({ navigate }) => {
     <main className="page">
       <BridalHero hero={journey.hero} navigate={navigate} />
       <BridalIntroduction intro={journey.introduction} />
+      {/* How the Bridal Journey actually works — the finalized program model. */}
+      <BridalProgram program={BRIDAL_PROGRAM} navigate={navigate} />
       <BridalJourneyTimeline stages={journey.timelineStages} navigate={navigate} />
       {/* Your AVEN Bridal Experience — after the timeline, before the conversion sections */}
       <BridalPatientJourney patientJourney={journey.patientJourney} navigate={navigate} />

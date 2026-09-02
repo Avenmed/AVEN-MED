@@ -22,6 +22,8 @@
  *    (see BRIDAL_AUDIENCES) without restructuring — only the "bride" journey is
  *    enabled now. */
 
+import { COMPREHENSIVE_ASSESSMENT } from '../assessment-tiers.js';
+
 const PLACEHOLDER = "[Placeholder — approved copy pending]";
 
 // ---- Future journey audiences (extensibility only; not built yet) ----------
@@ -228,7 +230,95 @@ export const BRIDAL_FAQS = [
   { q: "Are treatment results guaranteed?", a: "No. AVEN does not guarantee outcomes; care is individualized and discussed honestly at consultation." },
   { q: "Can treatments be performed immediately before the wedding?", a: "Timing is a clinical decision made with your provider and is not something this page prescribes." },
   { q: "Is every treatment appropriate for every patient?", a: "No. Appropriateness is always individual and is determined during the AVEN Assessment." },
+  { q: "Is the Bridal Journey a package or a membership?", a: "Neither. It is a personalized Bridal Plan built for you at your Comprehensive AVEN Assessment. There is no set bridal price and no bridal membership tier." },
+  { q: "Is this financing?", a: "No. It is not financing, a loan, or an installment plan. You choose what you contribute toward your own care, and contributions that clear become banked AVEN credit on your account." },
+  { q: "Do I have to spend the estimated total?", a: "No. The estimated total shows what your plan would cost at today's pricing so you can plan with open eyes. It is not a commitment, and your plan can change. We recommend — we never require." },
+  { q: "Does contributing more mean I am treated sooner?", a: "No. Your provider decides treatment timing clinically. Your contribution schedule and your treatment schedule are separate." },
+  { q: "What if my balance doesn't cover a treatment?", a: "We apply the credit you have and you pay the difference at the time of treatment." },
+  { q: "Can I use my credit on skincare?", a: "Skincare that is specifically part of your personalized Bridal Plan can be covered while your Journey is active — this is a Bridal-only exception. Once you tell us your Journey is complete, skincare can no longer be purchased with remaining credit." },
+  { q: "When does my Bridal Journey end?", a: "You decide. It does not end automatically on your wedding day. When you tell us you are complete, contributions stop and any remaining eligible credit stays usable for a full twelve months toward eligible aesthetic and selected wellness services, including eligible IV therapy and vitamin injections. It is not refunded as cash." },
+  { q: "What if I pay for my plan in full?", a: "Paying your agreed original plan in full locks the pricing for the treatments and services in that plan. It never obliges us to perform something clinically inappropriate, and it does not guarantee candidacy or an outcome or override clinical timing. Anything added later is at current pricing, and price locking applies only to the paid-in-full option." },
+  { q: "What happens after the wedding?", a: "We may suggest AVEN Maintenance, AVEN Signature, continued care without a membership, or no treatment at all. Membership is optional, and any eligible credit you still hold simply stays on your AVEN account." },
 ];
+
+// ---- The Bridal Journey program model --------------------------------------
+// The finalized, patient-facing shape of the program: it is a PERSONALIZED PLAN,
+// not a package and not a fixed-price bridal membership. Price and duration come
+// from the canonical Assessment tier so this can never drift from /assessment.
+//
+// Deliberate language rules, from the approved Bridal Journey Agreement:
+//  - NEVER "financing", "installments", "loan", "payment plan" or "debt". The
+//    bride chooses what she contributes; contributions become banked credit.
+//  - The contribution schedule NEVER implies a treatment schedule. Treatment
+//    timing is the provider's clinical decision.
+//  - The estimated total is an estimate, never a spending commitment.
+//  - Bridal-plan skincare is the ONE bridal-only credit exception, and it ends
+//    when the bride declares her Journey complete.
+//  - Price locking belongs to the paid-in-full option only, and it never
+//    overrides clinical judgement, candidacy, or AVEN's event-timing policy.
+export const BRIDAL_PROGRAM = {
+  eyebrow: "How the Bridal Journey Works",
+  headline: "A plan built for you — not a package.",
+  introduction: [
+    `The AVEN Bridal Journey begins with the ${COMPREHENSIVE_ASSESSMENT.name} — ${COMPREHENSIVE_ASSESSMENT.price}, ${COMPREHENSIVE_ASSESSMENT.durationNote}, and credited toward your eligible treatment exactly as it is for every other AVEN patient.`,
+    "From that Assessment, your provider builds a personalized Bridal Plan. It is not a bridal package and not a fixed-price membership — it is your plan, and it can change as your skin, your goals, and your date change.",
+  ],
+  steps: [
+    { n: "01", k: "Begin With the Assessment", b: `Your Journey starts with the ${COMPREHENSIVE_ASSESSMENT.name}. ${COMPREHENSIVE_ASSESSMENT.creditInclusion}.` },
+    { n: "02", k: "Receive Your Bridal Plan", b: "A personalized plan that may set out recommended treatments and services, approximate treatment windows, current estimated pricing, and an estimated total investment." },
+    { n: "03", k: "Contribute at Your Own Pace", b: "You choose what you contribute toward your Journey, and you can change it. Each contribution that clears becomes banked AVEN credit." },
+    { n: "04", k: "Treat When It's Right", b: "Your provider decides treatment timing clinically. Your contribution schedule never sets your treatment schedule." },
+  ],
+  planNotes: [
+    "Your Bridal Plan is a living document. Your provider may add, remove, delay, or modify recommendations as your Journey unfolds, and a new recommendation never obliges you to spend more or to contribute more.",
+    "The estimated total is an estimate of what the plan would cost at today's pricing. It is not a spending commitment, and nothing in it is required. We recommend — we never require.",
+    "Your Bridal Plan is built and adjusted clinically, by your provider, at your appointments.",
+  ],
+  contribution: {
+    title: "How contributions work",
+    body: [
+      "You decide how you contribute toward your Bridal Journey. You may choose your own amount, increase it, decrease it, pause it, resume it, or make one-time additional contributions whenever you like.",
+      "Contributions that are successfully collected become banked AVEN credit on your account. If your banked balance is less than the cost of a treatment on the day, we apply the credit you have and you pay the difference then.",
+    ],
+    // Explicit disclaimer — the program is not a credit product.
+    disclaimer: "This is not financing, a loan, or an installment plan. You are funding your own care, ahead of time, at a pace you set.",
+  },
+  credit: {
+    title: "What Bridal Journey credit covers",
+    eligible: [
+      "Eligible aesthetic treatments and services",
+      "Selected wellness treatments and services",
+      "Eligible IV therapy",
+      "Eligible vitamin injections",
+      "Skincare specifically included in your personalized Bridal Plan",
+    ],
+    note: "Skincare included in your Bridal Plan is a Bridal-only exception, and it applies while your Journey is active. Bridal Journey credit is not general-purpose Family Medicine credit.",
+  },
+  scheduling: {
+    title: "Scheduling around your date",
+    body: "Bridal patients receive proactive scheduling and timeline protection around the treatment windows your provider has planned, so the appointments that matter are held in good time. It is not unlimited priority booking, and it never displaces a patient who is already booked.",
+  },
+  completion: {
+    title: "When your Journey is complete",
+    body: [
+      "Your Bridal Journey does not end automatically on your wedding day. You decide when it is complete and tell us.",
+      "When you do, contributions stop and Bridal-plan skincare eligibility ends. Any remaining eligible banked credit stays available for a full twelve months, and can still be used toward eligible aesthetic and selected wellness services, including eligible IV therapy and vitamin injections. Remaining credit is not converted to cash.",
+    ],
+  },
+  paidInFull: {
+    title: "Paying in full",
+    body: [
+      "If you choose to pay your agreed personalized Bridal Plan in full up front, the pricing for the treatments and services in that original plan is locked.",
+      "Price locking never obliges AVEN to perform a treatment that is not clinically appropriate, and it does not guarantee candidacy, guarantee an outcome, or override clinical timing or AVEN's event-timing policy. If a planned treatment later becomes unnecessary or inappropriate, or you simply decline it, that value stays on your account as banked AVEN credit. Anything added to your plan later is at current AVEN pricing.",
+      "Price locking applies to the paid-in-full option only.",
+    ],
+  },
+  afterward: {
+    title: "After the wedding",
+    body: "When your Journey ends we may suggest AVEN Maintenance, AVEN Signature, continued care without a membership, or no treatment at all — whichever is genuinely right for you. Membership is always optional. If you do join, any eligible credit you have simply stays on your AVEN account; there are never two separate balances to manage.",
+    membershipsPath: "/memberships",
+  },
+};
 
 // ---- Assessment form field schema ------------------------------------------
 // Drives the Bridal Assessment form (registry-driven, extensible). NON-CLINICAL,

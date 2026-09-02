@@ -103,6 +103,109 @@ export function BridalIntroduction({ intro }) {
   );
 }
 
+// --- Program model ----------------------------------------------------------
+// The finalized Bridal Journey program: how it begins, how the personalized plan
+// works, how contributions become banked credit, what that credit covers, and how
+// the Journey ends. Pure presentation — every fact comes from BRIDAL_PROGRAM.
+// House shell only: existing .section / .container / Reveal / Eyebrow, no new CSS.
+export function BridalProgram({ program, navigate }) {
+  if (!program) return null;
+  const Detail = ({ title, children }) => (
+    <div style={{ padding: "28px 0", borderTop: "1px solid var(--hairline)" }}>
+      <h3 className="display" style={{ fontSize: 23, margin: "0 0 12px", fontWeight: 400 }}>{title}</h3>
+      {children}
+    </div>
+  );
+  return (
+    <section className="section" id="how-it-works">
+      <div className="container">
+        <Reveal>
+          <Eyebrow>{program.eyebrow}</Eyebrow>
+          <h2 className="display" style={{ fontSize: "clamp(34px, 4.4vw, 60px)", margin: "20px 0 26px", maxWidth: "20ch", fontWeight: 300 }}>
+            {program.headline}
+          </h2>
+          {program.introduction.map((p, i) => (
+            <p key={i} className="body" style={{ marginBottom: 18, maxWidth: "62ch", fontSize: 17, lineHeight: 1.85 }}>{p}</p>
+          ))}
+        </Reveal>
+
+        {/* Four steps */}
+        <div className="bridal-program-steps" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48 }}>
+          {program.steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 90}>
+              <div style={{ padding: "34px 26px", border: "1px solid var(--hairline)", height: "100%", background: "var(--surface)" }}>
+                <div style={{ fontFamily: "var(--mono)", color: "var(--gold)", fontSize: 11, letterSpacing: "0.2em" }}>{s.n}</div>
+                <h3 className="display" style={{ fontSize: 24, margin: "20px 0 12px", fontWeight: 300 }}>{s.k}</h3>
+                <p className="body-sm" style={{ margin: 0 }}>{s.b}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div style={{ marginTop: 44, maxWidth: "68ch" }}>
+            {program.planNotes.map((p, i) => (
+              <p key={i} className="body" style={{ marginBottom: 16 }}>{p}</p>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* The detail the agreement requires, kept out of the marketing cards */}
+        <div className="bridal-program-detail" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, columnGap: 64, marginTop: 56 }}>
+          <Reveal>
+            <Detail title={program.contribution.title}>
+              {program.contribution.body.map((p, i) => (
+                <p key={i} className="body-sm" style={{ marginBottom: 12, color: "var(--ivory-soft)" }}>{p}</p>
+              ))}
+              <BridalDisclaimer style={{ marginTop: 6 }}>{program.contribution.disclaimer}</BridalDisclaimer>
+            </Detail>
+          </Reveal>
+          <Reveal delay={90}>
+            <Detail title={program.credit.title}>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 12px" }}>
+                {program.credit.eligible.map((c) => (
+                  <li key={c} style={{ display: "grid", gridTemplateColumns: "16px 1fr", gap: 12, color: "var(--ivory-soft)", fontSize: 14, marginBottom: 10 }}>
+                    <span aria-hidden="true" style={{ width: 10, height: 1, background: "var(--gold)", marginTop: 10 }}></span><span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+              <BridalDisclaimer>{program.credit.note}</BridalDisclaimer>
+            </Detail>
+          </Reveal>
+          <Reveal>
+            <Detail title={program.scheduling.title}>
+              <p className="body-sm" style={{ margin: 0, color: "var(--ivory-soft)" }}>{program.scheduling.body}</p>
+            </Detail>
+          </Reveal>
+          <Reveal delay={90}>
+            <Detail title={program.completion.title}>
+              {program.completion.body.map((p, i) => (
+                <p key={i} className="body-sm" style={{ marginBottom: 12, color: "var(--ivory-soft)" }}>{p}</p>
+              ))}
+            </Detail>
+          </Reveal>
+          <Reveal>
+            <Detail title={program.paidInFull.title}>
+              {program.paidInFull.body.map((p, i) => (
+                <p key={i} className="body-sm" style={{ marginBottom: 12, color: "var(--ivory-soft)" }}>{p}</p>
+              ))}
+            </Detail>
+          </Reveal>
+          <Reveal delay={90}>
+            <Detail title={program.afterward.title}>
+              <p className="body-sm" style={{ margin: "0 0 14px", color: "var(--ivory-soft)" }}>{program.afterward.body}</p>
+              <a href={program.afterward.membershipsPath} className="link"
+                onClick={(e) => { e.preventDefault(); navigate(program.afterward.membershipsPath); }}>
+                <span>Explore AVEN memberships</span><span className="arrow"></span>
+              </a>
+            </Detail>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // --- Goals grid -------------------------------------------------------------
 export function BridalGoalsGrid({ goals = [], title = "Possible goals" }) {
   // Only render real (non-placeholder) goals; hide the block entirely otherwise.
